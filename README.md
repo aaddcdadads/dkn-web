@@ -1,7 +1,7 @@
 JEECG BOOT 低代码平台（Vue3前端）
 ===============
 
-当前最新版本： 1.0.0（20220321）
+当前最新版本： 1.1.0-beta（预计发布时间：20220516）
 
 
 ## 简介
@@ -11,30 +11,26 @@ JeecgBoot-Vue3采用 Vue3.0、Vite、 Ant-Design-Vue、TypeScript 等新技术�
 > 全新的VUE3技术栈，不只是追赶技术潮流，用了之后才能体会到Vue3的好处，的确比2更加适合大型项目。
 
 
-
-## 相关文档
-
-
-*  开发文档：http://vue3.jeecg.com
-*  入门视频：[新手零基础入门视频](https://www.bilibili.com/video/BV1V34y187Y9)
-*  JEECG官网：[www.jeecg.com](http://www.jeecg.com)
-*  代码生成：http://vue3.jeecg.com/2677352
-*  在线演示：http://boot3.jeecg.com
-*  QQ交流群：683903138
-
-
-## 源码下载
+### 源码下载：
 
 > - 重要必看：切换Vue3路由： [http://vue3.jeecg.com/2671576](http://vue3.jeecg.com/2671576)
 > - 后台版本要求：`jeecgboot v3.0+`以上， 因为从3.0版本开始，后台为了兼容vue3.0前端做了很多适配工作。
 
-|     |   JAVA后端   | VUE3前端  |
+|     |   后端源码   | vue3前端源码  |
 |---  |--- | --- |
 |  github   | https://github.com/jeecgboot/jeecg-boot   | https://github.com/jeecgboot/jeecgboot-vue3  |
 |  码云   |  https://gitee.com/jeecg/jeecg-boot   | https://gitee.com/jeecg/jeecgboot-vue3  |
 
 
-## 安装与使用
+### 相关文档：
+
+*  在线演示：http://boot3.jeecg.com
+*  QQ交流群：683903138
+*  开发文档：http://vue3.jeecg.com
+*  代码生成：http://vue3.jeecg.com/2677352
+*  B站： [快速入门视频](https://www.bilibili.com/video/BV1V34y187Y9)
+
+## Install and use
 
 
   
