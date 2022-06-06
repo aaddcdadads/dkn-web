@@ -182,6 +182,46 @@ yarn build
 ```
 
 
+
+
+
+##   系统效果
+系统后台
+![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_20220310142327.png "在这里输入图片标题")
+![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_20220310142354.png "在这里输入图片标题")
+![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_20220310142339.png "在这里输入图片标题")
+![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_20220310142409.png "在这里输入图片标题")
+![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_20220310142401.png "在这里输入图片标题")
+![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_11.png "在这里输入图片标题")
+
+online表单&online报表
+![](https://oscimg.oschina.net/oscnet/up-84c0b938696a23f17cd3de3d315d78ec46a.png)
+![](https://oscimg.oschina.net/oscnet/up-a884f4e410519426f556cec974a86579508.png)
+报表效果
+![](https://static.oschina.net/uploads/img/201904/14160828_pkFr.png "")
+![](https://static.oschina.net/uploads/img/201904/14160834_Lo23.png "")
+![](https://static.oschina.net/uploads/img/201904/14160842_QK7B.png "")
+![](https://static.oschina.net/uploads/img/201904/14160849_GBm5.png "")
+![](https://static.oschina.net/uploads/img/201904/14160858_6RAM.png "")
+
+接口文档
+![](https://oscimg.oschina.net/oscnet/up-a8f2c5392742b64aca4918f1fc5798512c0.png)
+
+流程设计&表单设计&报表设计
+![](https://oscimg.oschina.net/oscnet/up-9994c95e161469d21846257894525e966ae.png)
+![](https://static.oschina.net/uploads/img/201904/14160917_9Ftz.png "")
+![](https://static.oschina.net/uploads/img/201904/14160633_u59G.png "")
+![](https://static.oschina.net/uploads/img/201907/05165142_yyQ7.png "")
+![](https://oscimg.oschina.net/oscnet/up-7d6d8a56320c59300158212b6a7ab97c1f3.png)
+![](https://oscimg.oschina.net/oscnet/up-80c27c964b94e16c3e2c0b17f49b4c71063.png)
+![](https://oscimg.oschina.net/oscnet/up-649cb79c01eb95d5c2217a5dad28515da82.png)
+
+大屏模板
+![](https://static.oschina.net/uploads/img/201912/25133248_Ag1C.jpg "")
+
+![](https://static.oschina.net/uploads/img/201912/25133301_k9Kc.jpg "")
+
+
 ## 入门必备
 
 本项目需要一定前端基础知识，请确保掌握 Vue 的基础知识，以便能处理一些常见的问题。 建议在开发前先学一下以下内容，提前了解和学习这些知识，会对项目理解非常有帮助:
@@ -208,19 +248,6 @@ yarn build
 | [![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png)](http://godban.github.io/browsers-support-badges/)IE | [![ Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png)](http://godban.github.io/browsers-support-badges/)Edge | [![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)](http://godban.github.io/browsers-support-badges/)Firefox | [![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)](http://godban.github.io/browsers-support-badges/)Chrome | [![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)](http://godban.github.io/browsers-support-badges/)Safari |
 | --- | --- | --- | --- | --- |
 | not support | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
-
-
-
-
-##   系统效果
-
-![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_20220310142327.png "在这里输入图片标题")
-![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_20220310142354.png "在这里输入图片标题")
-![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_20220310142339.png "在这里输入图片标题")
-![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_20220310142409.png "在这里输入图片标题")
-![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_20220310142401.png "在这里输入图片标题")
-![输入图片说明](https://jeecgos.oss-cn-beijing.aliyuncs.com/files/site/vue3_11.png "在这里输入图片标题")
-
 
 
 
