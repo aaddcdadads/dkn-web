@@ -24,6 +24,8 @@ publish:
   only:
     - master
   cache:
+    paths:
+      - node_modules/
     policy: pull
   script:
     - bash ./deploy.sh
