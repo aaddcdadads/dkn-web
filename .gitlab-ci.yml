@@ -11,7 +11,7 @@ cache:
 install:
   stage: install
   tags:
-    - shared
+    - sz-server3
   only:
     - master
   script:
@@ -20,7 +20,7 @@ install:
 publish:
   stage: publish
   tags:
-    - shared
+    - sz-server3
   only:
     - master
   cache:
