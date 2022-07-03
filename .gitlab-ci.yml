@@ -1,0 +1,25 @@
+stages:
+  - install
+  - publish
+
+cache:
+  paths:
+    - node_modules/
+
+install:
+  stage: install
+  tags:
+    - shared
+  only:
+    - master
+  script:
+    - tyn
+
+publish:
+  stage: publish
+  tags:
+    - shared
+  only:
+    - master
+  script:
+    - bash ./deploy.sh
