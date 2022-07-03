@@ -3,6 +3,8 @@ stages:
   - publish
 
 cache:
+  untracked: true
+  key: "jeecgboot-vue3"
   paths:
     - node_modules/
 
