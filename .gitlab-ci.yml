@@ -4,7 +4,7 @@ stages:
 
 cache:
   untracked: true
-  key: "jeecgboot-vue3"
+  key: $CI_COMMIT_REF_SLUG
   paths:
     - node_modules/
 
@@ -23,5 +23,7 @@ publish:
     - shared
   only:
     - master
+  cache:
+    policy: pull
   script:
     - bash ./deploy.sh
