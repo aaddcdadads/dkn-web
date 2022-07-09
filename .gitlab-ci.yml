@@ -10,7 +10,7 @@ cache:
 publish:
   stage: publish
   tags:
-    - sz-server3
+    - shared
   only:
     - master
   cache:
