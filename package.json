@@ -34,6 +34,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@formily/core": "^2.1.9",
+    "@formily/vue": "^2.1.9",
     "@iconify/iconify": "^2.0.4",
     "@jeecg/online": "1.0.1",
     "@vueuse/core": "^6.6.2",
