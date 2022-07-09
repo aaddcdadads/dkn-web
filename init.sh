@@ -11,13 +11,13 @@ api_proxy=http://jeecgboot-vue3.dev.haomo-tech.com:8000/jeecg-boot
 # 检查以上脚本是否已经修改
 if [ ${deploy_dir} == '/var/www/html/jeecgboot-vue3' ]
 then
-  echo '请修改部署参数'
+  echo '请修改部署参数。如不清楚修改步骤，请阅读文档：毫末部署说明.md'
   exit -1
 fi
 
 if [ ${api_proxy} == 'http://jeecgboot-vue3.dev.haomo-tech.com:8000/jeecg-boot' ]
 then
-  echo '请修改部署参数'
+  echo '请修改部署参数。如不清楚修改步骤，请阅读文档：毫末部署说明.md'
   exit -1
 fi
 
