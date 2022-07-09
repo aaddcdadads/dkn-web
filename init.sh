@@ -1,8 +1,4 @@
 #!/bin/bash
-# 部署服务器地址
-deploy_host=192.168.1.7
-# 部署服务器账号
-deploy_host=haomo
 # 部署服务器目录
 deploy_dir=/var/www/html/jeecgboot-vue3
 # api proxy地址
