@@ -1,5 +1,4 @@
 stages:
-  - install
   - publish
 
 cache:
@@ -7,15 +6,6 @@ cache:
   key: $CI_COMMIT_REF_SLUG
   paths:
     - node_modules/
-
-install:
-  stage: install
-  tags:
-    - sz-server3
-  only:
-    - master
-  script:
-    - tyn
 
 publish:
   stage: publish
@@ -28,4 +18,5 @@ publish:
       - node_modules/
     policy: pull
   script:
+    - tyn
     - bash ./deploy.sh
