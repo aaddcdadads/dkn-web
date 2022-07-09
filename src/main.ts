@@ -20,6 +20,8 @@ import { registerThirdComp } from '/@/settings/registerThirdComp';
 import { useSso } from '/@/hooks/web/useSso';
 import { registerPackages } from '/@/utils/monorepo/registerPackages';
 
+import { registerBlockDesign } from '/@/utils/blockDesign';
+
 // 在本地开发中引入的,以提高浏览器响应速度
 if (import.meta.env.DEV) {
   import('ant-design-vue/dist/antd.less');
@@ -63,6 +65,9 @@ async function bootstrap() {
 
   // 当路由准备好时在执行挂载( https://next.router.vuejs.org/api/#isready)
   await router.isReady();
+
+  // 注册毫末设计云相关文件
+  registerBlockDesign(app);
 
   // 挂载应用
   app.mount('#app', true);

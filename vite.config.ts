@@ -51,6 +51,18 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           find: /\/#\//,
           replacement: pathResolve('types') + '/',
         },
+        {
+          find: '@',
+          replacement: resolve(__dirname, 'src'),
+        },
+        {
+          find: '/@/pages',
+          replacement: resolve(__dirname, 'src/pages'),
+        },
+        {
+          find: 'vue',
+          replacement: 'vue/dist/vue.esm-bundler.js',
+        },
       ],
     },
     server: {

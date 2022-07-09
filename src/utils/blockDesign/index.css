@@ -1,0 +1,63 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* text-align: center; */
+  color: #2c3e50;
+  width: 100%;
+  height: 100%;
+}
+
+.page.card {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+
+.hm-slot {
+  width: 100%;
+  height: 100%;
+}
+
+.sortable-list > .card {
+  margin: 0px !important;
+}
+
+.page.card > .sortable-list:empty {
+  height: 100%;
+  text-align: left;
+}
+
+.hm-slot > .sortable-list {
+  text-align: inherit !important;
+}
+
+.hm-slot > .sortable-list:empty {
+  height: 100%;
+}
+
+.sortable-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.ele-wrapper {
+  display: inline-block;
+}
+
+/* 对话框的处理 */
+.ant-modal-body > .hm-slot {
+  position: relative;
+  min-height: 200px;
+	height: 100%;
+	height: 1px;
+}
+
+
