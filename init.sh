@@ -36,3 +36,6 @@ sedi "s/\/var\/www\/html\/jeecgboot\-vue3/$ESCAPED_DEPLOY_DIR/g" deploy.sh
 # 修改.env.development中的代理路径
 ESCAPED_API_PROXY=$(printf '%s\n' "$api_proxy" | sed -e 's/[\/&]/\\&/g')
 sedi "s/http:\/\/jeecgboot\-vue3.dev.haomo-tech.com:8000\/jeecg\-boot/$ESCAPED_API_PROXY/g" .env.development
+
+git add .
+git commit -m "init project"
