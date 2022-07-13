@@ -38,6 +38,8 @@ export function configStyleImportPlugin(isBuild: boolean) {
             'layout-footer',
             'layout-header',
             'step',
+            'range-picker',
+            'textarea',
             'select-option',
             'select-opt-group',
             'card-grid',
