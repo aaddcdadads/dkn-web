@@ -2,6 +2,7 @@ import axios from 'axios';
 import { VueCookieNext } from 'vue-cookie-next';
 import { TOKEN } from '@/utils/blockDesign/store/mutation-types';
 import { Modal, notification } from 'ant-design-vue';
+import { getToken } from '/@/utils/auth';
 
 //设置baseURL
 axios.defaults.baseURL = '';
@@ -64,13 +65,11 @@ function setBasicAuth(config) {
 }
 
 function setJeecgAuth(config) {
-  let token = localStorage.getItem('pro__Access-Token');
+  const token = getToken();
+  console.log('token', token);
   if (!token) {
     return;
   }
-  console.log(`pro__Access-Token: `, token);
-  token = token ? JSON.parse(token).value : null;
-  // const sessionid = localStorage.getItem("sessionId");
   config.headers[TOKEN] = token ? token : '';
   return config;
 }
@@ -103,16 +102,7 @@ axios.interceptors.request.use(
     setEleAdminAuth(config);
     setDesignAuth(config);
 
-    config = transformAxiosRequest(config);
-
-    // if (sessionid) config.headers['sessionId'] = sessionid;
-    if (config.method === 'post') {
-      //序列化
-      config.data = JSON.stringify(config.data);
-      config.params = {};
-    }
-    //请求之前重新拼装url
-    // config.url = root + config.url;
+    // config = transformAxiosRequest(config);
     return config;
   },
   (error) => {
