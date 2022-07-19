@@ -33,6 +33,7 @@ export function registerBlockDesign(app) {
   app.config.globalProperties.$reduce = reduce;
   app.config.globalProperties.$array2tree = array2tree;
 
+  app.use(Antd);
   app.use(loadComponent);
   app.use(eventBus);
   app.use(VuePdf);
