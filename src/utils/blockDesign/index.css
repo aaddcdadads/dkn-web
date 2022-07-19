@@ -60,4 +60,7 @@
 	height: 1px;
 }
 
-
+/* 修复左侧菜单的bug */
+.ant-layout-sider {
+  position: fixed !important;
+}
