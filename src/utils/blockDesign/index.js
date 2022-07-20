@@ -5,6 +5,7 @@ import { VueCookieNext } from 'vue-cookie-next';
 import eventBus from 'vue3-eventbus';
 import VuePdf from 'vue3-pdfjs';
 
+import "font-awesome/css/font-awesome.min.css";
 import Antd from 'ant-design-vue';
 import loadComponent from './loadComponent';
 import { map, filter, reduce, array2tree } from './flowUtils';

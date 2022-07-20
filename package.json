@@ -50,6 +50,7 @@
     "cropperjs": "^1.5.12",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.10.6",
+    "font-awesome": "^4.7.0",
     "dom-align": "^1.12.2",
     "echarts": "^5.2.1",
     "echarts-for-vue": "^1.4.1",
