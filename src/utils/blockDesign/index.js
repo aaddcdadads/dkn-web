@@ -10,6 +10,7 @@ import Antd from 'ant-design-vue';
 import loadComponent from './loadComponent';
 import { map, filter, reduce, array2tree } from './flowUtils';
 import { getAction, downloadAction, downloadFile, postAction, deleteAction, putAction } from '/@/request/http';
+import { getToken } from '/@/utils/auth';
 
 import './index.css';
 
@@ -29,6 +30,7 @@ export function registerBlockDesign(app) {
     }
     return `${value}px`;
   };
+  app.config.globalProperties.$getToken = getToken;
   app.config.globalProperties.$map = map;
   app.config.globalProperties.$filter = filter;
   app.config.globalProperties.$reduce = reduce;
