@@ -1,5 +1,4 @@
 import moment from 'moment';
-import 'moment/dist/locale/zh-cn';
 import axios from 'axios';
 import { VueCookieNext } from 'vue-cookie-next';
 import eventBus from 'vue3-eventbus';
