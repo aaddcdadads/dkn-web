@@ -94,13 +94,17 @@ function setDesignAuth(config) {
   return config;
 }
 
+export function setAuth(config) {
+  setBasicAuth(config);
+  setJeecgAuth(config);
+  setEleAdminAuth(config);
+  setDesignAuth(config);
+}
+
 // 请求拦截器
 axios.interceptors.request.use(
   (config) => {
-    setBasicAuth(config);
-    setJeecgAuth(config);
-    setEleAdminAuth(config);
-    setDesignAuth(config);
+    setAuth(config);
 
     // config = transformAxiosRequest(config);
     return config;
