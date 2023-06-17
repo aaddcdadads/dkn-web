@@ -45,3 +45,7 @@ export function registerBlockDesign(app) {
   app.use(VueCookieNext);
   return app;
 }
+
+export default {
+  registerBlockDesign
+} 
