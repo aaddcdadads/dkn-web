@@ -57,9 +57,12 @@
         }
       }
 
-      function handleChange(_, ...args) {
-        emitData.value = args;
-        console.info(emitData);
+      function handleChange(array, ...args) {
+        // emitData.value = args;
+        //update-begin-author:taoyan date:2022-6-27 for: VUEN-1424【vue3】树表、单表、jvxe、erp 、内嵌子表省市县 选择不上
+        // 上面改的v-model:value导致选中数据没有显示
+        state.value = array;
+        //update-end-author:taoyan date:2022-6-27 for: VUEN-1424【vue3】树表、单表、jvxe、erp 、内嵌子表省市县 选择不上
       }
       return {
         state,

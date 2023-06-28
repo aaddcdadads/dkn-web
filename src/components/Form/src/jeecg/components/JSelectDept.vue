@@ -1,7 +1,7 @@
 <!--部门选择组件-->
 <template>
   <div>
-    <JSelectBiz @handleOpen="handleOpen" :loading="loadingEcho" v-bind="attrs" />
+    <JSelectBiz @handleOpen="handleOpen" :loading="loadingEcho" v-bind="attrs" @change="handleChange"/>
     <DeptSelectModal @register="regModal" @getSelectResult="setValue" v-bind="getBindValue" />
   </div>
 </template>
@@ -13,7 +13,7 @@
   import { propTypes } from '/@/utils/propTypes';
   import { useRuleFormItem } from '/@/hooks/component/useFormItem';
   import { useAttrs } from '/@/hooks/core/useAttrs';
-  import { SelectTypes } from 'ant-design-vue/es/select';
+  import { SelectValue } from 'ant-design-vue/es/select';
 
   export default defineComponent({
     name: 'JSelectDept',
@@ -29,13 +29,13 @@
     },
     emits: ['options-change', 'change', 'select', 'update:value'],
     setup(props, { emit, refs }) {
-      const emitData = ref<object>();
+      const emitData = ref<any[]>();
       //注册model
       const [regModal, { openModal }] = useModal();
       //表单值
       const [state] = useRuleFormItem(props, 'value', 'change', emitData);
       //下拉框选项值
-      const selectOptions = ref<SelectTypes['options']>([]);
+      const selectOptions = ref<SelectValue>([]);
       //下拉框选中值
       let selectValues = reactive<Recordable>({
         value: [],
@@ -119,6 +119,17 @@
         emit('update:value', values.join(','));
       }
       const getBindValue = Object.assign({}, unref(props), unref(attrs));
+
+      //update-begin---author:wangshuai ---date:20230406  for：【issues/397】在表单中使用v-model:value绑定JSelectDept组件时无法清除已选择的数据------------
+      /**
+       * 值改变事件更新value值
+       * @param values
+       */
+      function handleChange(values) {
+        emit('update:value', values);
+      }
+      //update-end---author:wangshuai ---date:20230406  for：【issues/397】在表单中使用v-model:value绑定JSelectDept组件时无法清除已选择的数据------------
+      
       return {
         state,
         attrs,
@@ -130,6 +141,7 @@
         regModal,
         setValue,
         handleOpen,
+        handleChange
       };
     },
   });
@@ -150,7 +162,7 @@
       width: 100%;
     }
 
-    ::v-deep(.ant-select-search__field) {
+    :deep(.ant-select-search__field) {
       display: none !important;
     }
   }

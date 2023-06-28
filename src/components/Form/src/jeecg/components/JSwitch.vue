@@ -1,6 +1,14 @@
 <template>
   <div :class="prefixCls">
-    <a-select v-if="query" v-model:value="value" :options="selectOptions" :disabled="disabled" style="width: 100%" v-bind="attrs" @change="onSelectChange" />
+    <a-select
+      v-if="query"
+      v-model:value="state"
+      :options="selectOptions"
+      :disabled="disabled"
+      style="width: 100%"
+      v-bind="attrs"
+      @change="onSelectChange"
+    />
     <a-switch v-else v-model:checked="checked" :disabled="disabled" v-bind="attrs" @change="onSwitchChange" />
   </div>
 </template>
@@ -10,7 +18,7 @@
   import { propTypes } from '/@/utils/propTypes';
   import { useAttrs } from '/@/hooks/core/useAttrs';
   import { useDesign } from '/@/hooks/web/useDesign';
-
+  import { useRuleFormItem } from '/@/hooks/component/useFormItem';
   const { prefixCls } = useDesign('j-switch');
   const props = defineProps({
     // v-model:value
@@ -28,7 +36,7 @@
   const emit = defineEmits(['change', 'update:value']);
 
   const checked = ref<boolean>(false);
-
+  const [state] = useRuleFormItem(props, 'value', 'change');
   watch(
     () => props.value,
     (val) => {

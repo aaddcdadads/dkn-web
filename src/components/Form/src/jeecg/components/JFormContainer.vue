@@ -1,10 +1,6 @@
 <template>
   <div :class="disabled ? 'jeecg-form-container-disabled' : ''">
     <fieldset :disabled="disabled">
-      <slot name="detail"></slot>
-    </fieldset>
-    <slot name="edit"></slot>
-    <fieldset disabled>
       <slot></slot>
     </fieldset>
   </div>
@@ -25,7 +21,7 @@
   });
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
   .jeecg-form-container-disabled {
     cursor: not-allowed;
 
@@ -45,6 +41,12 @@
 
     .ant-upload-list {
       cursor: grabbing;
+    }
+
+    fieldset[disabled]{
+      .anticon-delete{
+        display: none !important;
+      }
     }
   }
 

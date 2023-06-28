@@ -1,6 +1,15 @@
 <!--字典下拉多选-->
 <template>
-  <a-select :value="arrayValue" @change="onChange" mode="multiple" :filter-option="filterOption" :disabled="disabled" :placeholder="placeholder" allowClear :getPopupContainer="getParentContainer">
+  <a-select
+    :value="arrayValue"
+    @change="onChange"
+    mode="multiple"
+    :filter-option="filterOption"
+    :disabled="disabled"
+    :placeholder="placeholder"
+    allowClear
+    :getPopupContainer="getParentContainer"
+  >
     <a-select-option v-for="(item, index) in dictOptions" :key="index" :getPopupContainer="getParentContainer" :value="item.value">
       {{ item.text || item.label }}
     </a-select-option>
@@ -88,9 +97,19 @@
         }
       );
 
+      //适用于 动态改变下拉选项的操作
+      watch(()=>props.options, ()=>{
+        if (props.dictCode) {
+          // nothing to do
+        } else {
+          dictOptions.value = props.options;
+        }
+      });
+
       function onChange(selectedValue) {
         if (props.triggerChange) {
           emit('change', selectedValue.join(props.spliter));
+          emit('update:value', selectedValue.join(props.spliter));
         } else {
           emit('input', selectedValue.join(props.spliter));
           emit('update:value', selectedValue.join(props.spliter));
@@ -127,7 +146,7 @@
 
       //update-begin-author:taoyan date:2022-5-31 for: VUEN-1145 下拉多选，搜索时，查不到数据
       function filterOption(input, option) {
-        return option.children[0].el.data.toLowerCase().indexOf(input.toLowerCase()) >= 0;
+        return option.children()[0].children.toLowerCase().indexOf(input.toLowerCase()) >= 0;
       }
       //update-end-author:taoyan date:2022-5-31 for: VUEN-1145 下拉多选，搜索时，查不到数据
 

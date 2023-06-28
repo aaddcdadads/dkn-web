@@ -13,6 +13,7 @@
     v-bind="attrs"
     @change="onChange"
     @search="onSearch"
+    :tree-checkable="treeCheckAble"
   >
   </a-tree-select>
 </template>
@@ -43,10 +44,19 @@
     pidValue: propTypes.string.def(''),
     //update-end---author:wangshuai ---date:20220620  for：JTreeSelect组件pidValue还原成空，否则会影响自定义组件树示例--------------
     hasChildField: propTypes.string.def(''),
+    converIsLeafVal: propTypes.integer.def(1),
     condition: propTypes.string.def(''),
     multiple: propTypes.bool.def(false),
     loadTriggleChange: propTypes.bool.def(false),
     reload: propTypes.number.def(1),
+    //update-begin-author:taoyan date:2022-11-8 for: issues/4173 Online JTreeSelect控件changeOptions方法未生效
+    url: propTypes.string.def(''),
+    params: propTypes.object.def({}),
+    //update-end-author:taoyan date:2022-11-8 for: issues/4173 Online JTreeSelect控件changeOptions方法未生效
+    //update-begin---author:wangshuai date: 20230202 for: 新增是否有复选框
+    //默认没有选择框
+    treeCheckAble: propTypes.bool.def(false),
+    //update-end---author:wangshuai date: 20230202 for: 新增是否有复选框
   });
   const attrs = useAttrs();
   const emit = defineEmits(['change', 'update:value']);
@@ -96,19 +106,29 @@
    */
   async function loadItemByCode() {
     if (!props.value || props.value == '0') {
-      treeValue.value = null;
-    } else {
-      let params = { key: props.value };
-      let result = await defHttp.get({ url: `${Api.view}${props.dict}`, params }, { isTransformResponse: false });
-      if (result.success) {
-        let values = props.value.split(',');
-        treeValue.value = result.result.map((item, index) => ({
-          key: values[index],
-          value: values[index],
-          label: item,
-        }));
-        onLoadTriggleChange(result.result[0]);
+      if(props.multiple){
+        treeValue.value = [];
+      }else{
+        treeValue.value = null;
       }
+    } else {
+      //update-begin-author:taoyan date:2022-11-8 for: issues/4173 Online JTreeSelect控件changeOptions方法未生效
+      if(props.url){
+        getItemFromTreeData();
+      }else{
+        let params = { key: props.value };
+        let result = await defHttp.get({ url: `${Api.view}${props.dict}`, params }, { isTransformResponse: false });
+        if (result.success) {
+          let values = props.value.split(',');
+          treeValue.value = result.result.map((item, index) => ({
+            key: values[index],
+            value: values[index],
+            label: item,
+          }));
+          onLoadTriggleChange(result.result[0]);
+        }
+      }
+      //update-end-author:taoyan date:2022-11-8 for: issues/4173 Online JTreeSelect控件changeOptions方法未生效
     }
   }
 
@@ -137,6 +157,7 @@
       pid: props.pidValue,
       pidField: props.pidField,
       hasChildField: props.hasChildField,
+      converIsLeafVal: props.converIsLeafVal,
       condition: props.condition,
       tableName: unref(tableName),
       text: unref(text),
@@ -161,11 +182,15 @@
     if (treeNode.dataRef.children) {
       return Promise.resolve();
     }
+    if(props.url){
+      return Promise.resolve();
+    }
     let pid = treeNode.dataRef.key;
     let params = {
       pid: pid,
       pidField: props.pidField,
       hasChildField: props.hasChildField,
+      converIsLeafVal: props.converIsLeafVal,
       condition: props.condition,
       tableName: unref(tableName),
       text: unref(text),
@@ -254,6 +279,67 @@
       }
     });
   }
+
+  //update-begin-author:taoyan date:2022-11-8 for: issues/4173 Online JTreeSelect控件changeOptions方法未生效
+  watch(()=>props.url, async (val)=>{
+    if(val){
+      await loadRootByUrl();
+    }
+  });
+
+  /**
+   * 根据自定义的请求地址加载数据
+   */
+  async function loadRootByUrl(){
+    let url = props.url;
+    let params = props.params;
+    let res = await defHttp.get({ url, params }, { isTransformResponse: false });
+    if (res.success && res.result) {
+      for (let i of res.result) {
+        i.key = i.value;
+        i.isLeaf = !!i.leaf;
+      }
+      treeData.value = [...res.result];
+    } else {
+      console.log('数根节点查询结果异常', res);
+    }
+  }
+
+  /**
+   * 根据已有的树数据 翻译选项
+   */
+  function getItemFromTreeData(){
+    let data = treeData.value;
+    let arr = []
+    findChildrenNode(data, arr);
+    if(arr.length>0){
+      treeValue.value = arr
+      onLoadTriggleChange(arr[0]);
+    }
+  }
+
+  /**
+   * 递归找子节点
+   * @param data
+   * @param arr
+   */
+  function findChildrenNode(data, arr){
+    let val = props.value;
+    if(data && data.length){
+      for(let item of data){
+        if(val===item.value){
+          arr.push({
+            key: item.key,
+            value: item.value,
+            label: item.label||item.title
+          })
+        }else{
+          findChildrenNode(item.children, arr)
+        }
+      }
+    }
+  }
+  //update-end-author:taoyan date:2022-11-8 for: issues/4173 Online JTreeSelect控件changeOptions方法未生效
 
   // onCreated
   validateProp().then(() => {

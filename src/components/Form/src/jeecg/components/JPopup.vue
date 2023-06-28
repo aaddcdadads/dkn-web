@@ -13,7 +13,16 @@
       <!-- update-begin-author:taoyan date:2022-5-31 for: VUEN-1157 popup 选中后，有两个清除图标；后边这个清除，只是把输入框中数据清除，实际值并没有清除 -->
     </a-input>
     <!--popup弹窗-->
-    <JPopupOnlReportModal @register="regModal" :code="code" :multi="multi" :sorter="sorter" :groupId="uniqGroupId" :param="param" @ok="callBack"></JPopupOnlReportModal>
+    <JPopupOnlReportModal
+      @register="regModal"
+      :code="code"
+      :multi="multi"
+      :sorter="sorter"
+      :groupId="uniqGroupId"
+      :param="param"
+      @ok="callBack"
+      :getContainer="getContainer"
+    ></JPopupOnlReportModal>
   </div>
 </template>
 <script lang="ts">
@@ -42,6 +51,7 @@
       groupId: propTypes.string.def(''),
       formElRef: propTypes.object,
       setFieldsValue: propTypes.func,
+      getContainer: propTypes.func,
       fieldConfig: {
         type: Array,
         default: () => [],

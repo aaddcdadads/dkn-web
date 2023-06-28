@@ -13,7 +13,7 @@
   import { propTypes } from '/@/utils/propTypes';
   import { useRuleFormItem } from '/@/hooks/component/useFormItem';
   import { useAttrs } from '/@/hooks/core/useAttrs';
-  import { SelectTypes } from 'ant-design-vue/es/select';
+  import { SelectValue } from 'ant-design-vue/es/select';
 
   export default defineComponent({
     name: 'JSelectPosition',
@@ -37,15 +37,15 @@
         default: () => {},
       },
     },
-    emits: ['options-change', 'change'],
+    emits: ['options-change', 'change', 'update:value'],
     setup(props, { emit, refs }) {
-      const emitData = ref<object>();
+      const emitData = ref<any[]>();
       //注册model
       const [regModal, { openModal }] = useModal();
       //表单值
       const [state] = useRuleFormItem(props, 'value', 'change', emitData);
       //下拉框选项值
-      const selectOptions = ref<SelectTypes['options']>([]);
+      const selectOptions = ref<SelectValue>([]);
       //下拉框选中值
       let selectValues = reactive<object>({
         value: [],
@@ -108,6 +108,10 @@
         //emitData.value = values.join(",");
         state.value = values;
         selectValues.value = values;
+        //update-begin-author:liusq date:20230517 for:选择职务组件v-model方式绑定值不生效
+        emit('update:value', values.join(','));
+        //update-begin-author:liusq date:20230517 for:选择职务组件v-model方式绑定值不生效
+
       }
 
       const getBindValue = Object.assign({}, unref(props), unref(attrs));
@@ -142,7 +146,7 @@
       width: 100%;
     }
 
-    ::v-deep(.ant-select-search__field) {
+    :deep(.ant-select-search__field) {
       display: none !important;
     }
   }

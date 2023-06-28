@@ -1,5 +1,5 @@
 <template>
-  <a-radio-group v-if="compType === CompTypeEnum.Radio" v-bind="attrs" v-model:value="state" @change="handleChange">
+  <a-radio-group v-if="compType === CompTypeEnum.Radio" v-bind="attrs" v-model:value="state" @change="handleChangeRadio">
     <template v-for="item in dictOptions" :key="`${item.value}`">
       <a-radio :value="item.value">
         {{ item.label }}
@@ -7,7 +7,13 @@
     </template>
   </a-radio-group>
 
-  <a-radio-group v-else-if="compType === CompTypeEnum.RadioButton" v-bind="attrs" v-model:value="state" buttonStyle="solid" @change="handleChange">
+  <a-radio-group
+    v-else-if="compType === CompTypeEnum.RadioButton"
+    v-bind="attrs"
+    v-model:value="state"
+    buttonStyle="solid"
+    @change="handleChangeRadio"
+  >
     <template v-for="item in dictOptions" :key="`${item.value}`">
       <a-radio-button :value="item.value">
         {{ item.label }}
@@ -22,8 +28,17 @@
         <LoadingOutlined />
       </template>
     </a-input>
-    <a-select v-else :placeholder="placeholder" v-bind="attrs" v-model:value="state" :filterOption="handleFilterOption" :getPopupContainer="getPopupContainer" @change="handleChange">
-      <a-select-option v-if="showChooseOption" :value="undefined">请选择</a-select-option>
+    <a-select
+      v-else
+      :placeholder="placeholder"
+      v-bind="attrs"
+      v-model:value="state"
+      :filterOption="handleFilterOption"
+      :getPopupContainer="getPopupContainer"
+      :style="style"
+      @change="handleChange"
+    >
+      <a-select-option v-if="showChooseOption" :value="null">请选择…</a-select-option>
       <template v-for="item in dictOptions" :key="`${item.value}`">
         <a-select-option :value="item.value">
           <span style="display: inline-block; width: 100%" :title="item.label">
@@ -35,13 +50,13 @@
   </template>
 </template>
 <script lang="ts">
-  import { defineComponent, PropType, ref, reactive, watchEffect, computed, unref, watch, onMounted } from 'vue';
+  import { defineComponent, PropType, ref, reactive, watchEffect, computed, unref, watch, onMounted, nextTick } from 'vue';
   import { propTypes } from '/@/utils/propTypes';
   import { useAttrs } from '/@/hooks/core/useAttrs';
-  import { initDictOptions } from '/@/utils/dict/index';
+  import { initDictOptions } from '/@/utils/dict';
   import { get, omit } from 'lodash-es';
   import { useRuleFormItem } from '/@/hooks/component/useFormItem';
-  import { CompTypeEnum } from '/@/enums/CompTypeEnum.ts';
+  import { CompTypeEnum } from '/@/enums/CompTypeEnum';
   import { LoadingOutlined } from '@ant-design/icons-vue';
 
   export default defineComponent({
@@ -66,13 +81,13 @@
         default: [],
         required: false,
       },
+      style: propTypes.any,
     },
-    emits: ['options-change', 'change'],
+    emits: ['options-change', 'change','update:value'],
     setup(props, { emit, refs }) {
-      const emitData = ref<any[]>([]);
       const dictOptions = ref<any[]>([]);
       const attrs = useAttrs();
-      const [state] = useRuleFormItem(props, 'value', 'change', emitData);
+      const [state, , , formItemContext] = useRuleFormItem(props, 'value', 'change');
       const getBindValue = Object.assign({}, unref(props), unref(attrs));
       // 是否正在加载回显数据
       const loadingEcho = ref<boolean>(false);
@@ -108,6 +123,7 @@
         () => {
           if (props.value === '') {
             emit('change', '');
+            nextTick(() => formItemContext.onFieldChange());
           }
         }
       );
@@ -131,13 +147,46 @@
       }
 
       function handleChange(e) {
-        emitData.value = [e?.target?.value || e];
+        const { mode } = unref<Recordable>(getBindValue);
+        let changeValue:any;
+        // 兼容多选模式
+        
+        //update-begin---author:wangshuai ---date:20230216  for：[QQYUN-4290]公文发文：选择机关代字报错,是因为值改变触发了change事件三次，导致数据发生改变------------
+        //采用一个值，不然的话state值变换触发多个change
+        if (mode === 'multiple') {
+          changeValue = e?.target?.value ?? e;
+          // 过滤掉空值
+          if (changeValue == null || changeValue === '') {
+            changeValue = [];
+          }
+          if (Array.isArray(changeValue)) {
+            changeValue = changeValue.filter((item) => item != null && item !== '');
+          }
+        } else {
+          changeValue = e?.target?.value ?? e;
+        }
+        state.value = changeValue;
+
+        //update-begin---author:wangshuai ---date:20230403  for：【issues/4507】JDictSelectTag组件使用时，浏览器给出警告提示：Expected Function, got Array------------
+        emit('update:value',changeValue)
+        //update-end---author:wangshuai ---date:20230403  for：【issues/4507】JDictSelectTag组件使用时，浏览器给出警告提示：Expected Function, got Array述------------
+        //update-end---author:wangshuai ---date:20230216  for：[QQYUN-4290]公文发文：选择机关代字报错,是因为值改变触发了change事件三次，导致数据发生改变------------
+        
+        // nextTick(() => formItemContext.onFieldChange());
+      }
+
+      /** 单选radio的值变化事件 */
+      function handleChangeRadio(e) {
+        state.value = e?.target?.value ?? e;
+        //update-begin---author:wangshuai ---date:20230504  for：【issues/506】JDictSelectTag 组件 type="radio" 没有返回值------------
+        emit('update:value',e?.target?.value ?? e)
+        //update-end---author:wangshuai ---date:20230504  for：【issues/506】JDictSelectTag 组件 type="radio" 没有返回值------------
       }
 
       /** 用于搜索下拉框中的内容 */
       function handleFilterOption(input, option) {
         // 在 label 中搜索
-        let labelIf = option?.children[0]?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0;
+        let labelIf = option.children()[0]?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0;
         if (labelIf) {
           return true;
         }
@@ -154,6 +203,7 @@
         dictOptions,
         CompTypeEnum,
         handleChange,
+        handleChangeRadio,
         handleFilterOption,
       };
     },

@@ -71,12 +71,13 @@
         required: false,
       },
     },
-    emits: ['options-change', 'change'],
+    emits: ['options-change', 'change', 'update:value'],
     setup(props, { emit, refs }) {
       console.info(props);
       const emitData = ref<any[]>([]);
       const treeData = ref<any[]>([]);
-      const treeValue = ref('');
+      const treeValue = ref();
+      treeValue.value = '';
       const attrs = useAttrs();
       const [state] = useRuleFormItem(props, 'value', 'change', emitData);
       watch(
@@ -102,21 +103,27 @@
         };
         console.info(param);
         loadTreeData(param).then((res) => {
-          for (let i of res) {
-            i.value = i.key;
-            if (i.leaf == false) {
-              i.isLeaf = false;
-            } else if (i.leaf == true) {
-              i.isLeaf = true;
-            }
-          }
-          treeData.value = res;
+            if(res && res.length>0){
+                for (let i of res) {
+                    i.value = i.key;
+                    if (i.leaf == false) {
+                        i.isLeaf = false;
+                    } else if (i.leaf == true) {
+                        i.isLeaf = true;
+                    }
+                }
+                treeData.value = res;
+						}
         });
       }
 
       function loadItemByCode() {
         if (!props.value || props.value == '0') {
-          treeValue.value = [];
+          if(props.multiple){
+            treeValue.value = [];
+          }else{
+            treeValue.value = null;
+          }
         } else {
           loadDictItem({ ids: props.value }).then((res) => {
             let values = props.value.split(',');
@@ -125,6 +132,9 @@
               value: values[index],
               label: item,
             }));
+            if(!props.multiple){
+              treeValue.value = treeValue.value[0];
+            }
             onLoadTriggleChange(res[0]);
           });
         }
@@ -143,17 +153,17 @@
           obj[props.back] = label;
         }
         emit('change', value, obj);
+        emit("update:value",value)
       }
 
       function asyncLoadTreeData(treeNode) {
         let dataRef = treeNode.dataRef;
-        return new Promise((resolve) => {
-          if (treeNode.children.length > 0) {
+        return new Promise<void>((resolve) => {
+          if (treeNode.children && treeNode.children.length > 0) {
             resolve();
             return;
           }
           let pid = dataRef.key;
-          console.info(treeNode);
           let param = {
             pid: pid,
             condition: props.condition,
@@ -176,7 +186,6 @@
       }
 
       function addChildren(pid, children, treeArray) {
-        console.info('treeArray', treeArray);
         if (treeArray && treeArray.length > 0) {
           for (let item of treeArray) {
             if (item.key == pid) {
@@ -197,6 +206,7 @@
         if (!value) {
           emit('change', '');
           treeValue.value = '';
+          emit("update:value",'')
         } else if (Array.isArray(value)) {
           let labels = [];
           let values = value.map((item) => {

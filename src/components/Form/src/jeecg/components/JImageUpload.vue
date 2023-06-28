@@ -2,6 +2,7 @@
   <div class="clearfix">
     <a-upload
       :listType="listType"
+      accept="image/*"
       :multiple="multiple"
       :action="uploadUrl"
       :headers="headers"
@@ -123,13 +124,16 @@
       watch(
         () => props.value,
         (val, prevCount) => {
-          if (val instanceof Array) {
+         //update-begin---author:liusq ---date:20230601  for：【issues/556】JImageUpload组件value赋初始值没显示图片------------
+            if (val && val instanceof Array) {
             val = val.join(',');
           }
           if (initTag.value == true) {
             initFileList(val);
           }
-        }
+        },
+        { immediate: true }
+        //update-end---author:liusq ---date:20230601  for：【issues/556】JImageUpload组件value赋初始值没显示图片------------
       );
 
       /**
@@ -182,6 +186,9 @@
         if (file.status != 'uploading') {
           fileList.forEach((file) => {
             if (file.status === 'done') {
+              //update-begin---author:wangshuai ---date:20221121  for：[issues/248]原生表单内使用图片组件,关闭弹窗图片组件值不会被清空------------
+              initTag.value = true;
+              //update-end---author:wangshuai ---date:20221121  for：[issues/248]原生表单内使用图片组件,关闭弹窗图片组件值不会被清空------------
               fileUrls.push(file.response.message);
             }
           });
@@ -189,7 +196,7 @@
             handleDelete(file);
           }
         }
-        emitData.value = fileUrls.join(',');
+        // emitData.value = fileUrls.join(',');
         state.value = fileUrls.join(',');
         emit('update:value', fileUrls.join(','));
       }
