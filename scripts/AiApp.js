@@ -24,6 +24,9 @@ AiApp.prototype.createProjet = function(config) {
     //处理应用代码、脚本存储目录
     config.workdir = handleAppDir(config);
 
+    //初始化数据库
+    initDataBase(config);
+
     //应用前端代码仓库初始化
     initAppWebRepo(config);
 
@@ -36,6 +39,51 @@ AiApp.prototype.createProjet = function(config) {
     console.log(`-- 应用:${config.appData.projectName}创建完成！`)
 
 }
+
+/**
+ * 初始化数据库
+ * @param {*} config 
+ */
+function initDataBase(config) {
+    console.log("初始化数据库~");
+    //生成初始化数据库脚本文件
+    let output = genDbInitShFile(config);
+    console.log(`数据库初始化脚本：${output}`)
+
+    //执行db初始脚本文件
+    try {
+        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+    } catch (e) {
+        console.error(`数据库初始化脚本执行报错：`, e);
+    }
+}
+
+
+/**
+ * 生成创数据库初始化脚本文件
+ * @param {*} config 
+ * @returns 
+ */
+function genDbInitShFile(config){
+    let renderData = {
+        dbHost: config.appData.dbConfig.dbHost,
+        dbAdmin: config.appData.dbConfig.dbAdmin,
+        dbAdmingPassword: config.appData.dbConfig.dbAdmingPassword,
+        dbName: config.appData.dbConfig.dbName,
+        microDbNames: config.appData.dbConfig.microDbNames.join(','),
+        sqlPath: config.appData.dbConfig.sqlPath
+      };
+  
+    let template = fs.readFileSync(`./templates/init_mult_db.hbs`, "utf8");
+    let hbTemplate = Handlebars.compile(template);
+    let templateContent = hbTemplate(renderData);
+    //创建新的db初始脚本文件
+    let output = path.join(config.workdir,`/init_mult_db.sh`);
+    fs.writeFileSync(output, templateContent);
+
+    return output;
+}
+
 
 /**
  * 应用后端端代码仓库初始化
@@ -56,8 +104,23 @@ function initBackendRepo(config){
         return;
     }
 
+    //处理多数据源
+    handleMultDatasource(config);
+
     //处理后端pom文件并发布后端
     handleAppBackendRepo(config);
+}
+
+/**
+ * @todo
+ * 处理多数据源
+ * 
+ * 从库名称=主库名称_微应用数据库名称
+ * 
+ * @param {*} config 
+ */
+function handleMultDatasource(config) {
+
 }
 
 /**

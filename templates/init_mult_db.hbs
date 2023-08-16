@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# MySQL数据库信息
+DB_HOST={{dbConfig.dbHost}}
+DB_USER={{dbConfig.dbAdmin}}
+DB_PASS={{dbConfig.dbAdmingPassword}}
+DB_NAME={{dbConfig.dbName}}
+# 需要拷贝的源数据库名
+SOURCE_DB_STR={{dbConfig.microDbNames}}
+# 业务sql脚本文件
+SQL_FILE_PATH={{dbConfig.sqlPath}}
+
+# 将IFS设置为逗号
+IFS=','
+# 将字符串分割为数组
+SOURCE_DB_ARR=($SOURCE_DB_STR)
+
+
+# 创建数据库
+echo "===> 1.创建应用数据库 start"
+mysql -h $DB_HOST -u $DB_USER -p$DB_PASS -e "CREATE DATABASE IF NOT EXISTS $DB_NAME DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci;"
+echo "===> 1.创建应用数据库 success"
+
+echo "===> 2.开始jeecgboot-vue3模板数据库表结构同步"
+mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST --no-data jeecgboot-vue3 | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST $DB_NAME
+echo ===> 2.开始jeecgboot-vue3模板数据库表结构同步完成"
+
+echo "===> 3.开始jeecgboot-vue3模板数据库表数据同步"
+mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST --no-create-info jeecgboot-vue3 | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST $DB_NAME
+echo "===> 3.jeecgboot-vue3模板数据库表数据同步完成"
+
+
+
+# 执行业务sql文件
+if [ -z "$SQL_FILE_PATH" ]; then
+    echo "业务sql脚本路径为空,无需执行。"
+else
+    # 检查文件是否存在
+    if [ -f "$SQL_FILE_PATH" ]; then
+        # 执行sql脚本
+        echo "===> 4.开始执行业务sql脚本"
+        mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME < $SQL_FILE_PATH
+        echo "===> 4.业务sql脚本执行完成"
+    else
+        echo "业务sql脚本不存在,请确保输入的文件路径有效。"
+    fi
+fi
+
+
+
+echo "===> 5.拷贝微应用数据库 start"
+for SOURCE_DB in "${SOURCE_DB_ARR[@]}"; do  
+    # 创建数据库
+    mysql -h $DB_HOST -u $DB_USER -p$DB_PASS -e "CREATE DATABASE IF NOT EXISTS ${DB_NAME}_${SOURCE_DB} DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci;"
+    # 拷贝SOURCE_DB所有表结构到DB_NAME
+    echo " $SOURCE_DB 开始表结构同步"
+    mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST --no-data $SOURCE_DB | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST ${DB_NAME}_${SOURCE_DB}
+    echo " $SOURCE_DB 表结构同步完成"
+
+    # 拷贝SOURCE_DB所有表数据到DB_NAME
+    echo " $SOURCE_DB 开始表数据同步"
+    mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST --no-create-info $SOURCE_DB | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST ${DB_NAME}_${SOURCE_DB}
+    echo " $SOURCE_DB 数据同步完成"
+done
+echo "===> 5.拷贝微应用数据库 success"
+
+
+echo "===> 数据库初始化完成！"
