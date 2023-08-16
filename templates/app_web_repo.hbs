@@ -27,15 +27,15 @@ merge_dirs=($merge_dirs_str)
 cd $base_dir
 
 # 克隆仓库代码
-echo "1.克隆仓库代码 start"
+echo "===> 1.克隆仓库代码 start"
 for url in "${gitlab_urls[@]}"; do
     git clone $url
 done
-echo "1.克隆仓库代码 success"
+echo "===> 1.克隆仓库代码 success"
 
 
 # 合并merge_dirs文件夹到base_dir
-echo "2.合并web目录 start"
+echo "===> 2.合并web目录 start"
 for dir in "${merge_dirs[@]}"; do
     # 检查目录是否存在
     if [ -d "$base_dir/$dir" ]; then
@@ -51,31 +51,37 @@ for dir in "${merge_dirs[@]}"; do
         echo "文件夹 $dir 不存在"
     fi
 done
-echo "2.合并web目录 success"
+echo "===> 2.合并web目录 success"
 
 
-echo "3.初始化项目配置 start"
+echo "===> 3.初始化项目配置 start"
 # 拷贝init.sh脚本
 cp {{initJeecgVue3ShPath}} $target_dir/init_jeecg_vue3.sh
 cd $target_dir
 chmod a+x init_jeecg_vue3.sh
 ./init_jeecg_vue3.sh
-echo "3.初始化项目配置 success"
+echo "===> 3.初始化项目配置 success"
 
 
 # 提交应用web仓库代码
-echo "4.提交应用web仓库代码 start"
+echo "===> 4.提交应用web仓库代码 start"
 cd $target_dir
+pwd
 git add .
 git commit -m "init repo"
 git push
-echo "4.提交应用web仓库代码 success"
+echo "===> 4.提交应用web仓库代码 success"
 
+# 安装依赖
+echo "===> 5.安装依赖 start"
+npm install --force
+echo "===> 5.安装依赖 success"
 
 #部署服务
-echo "5.部署服务 start"
+echo "===> 6.部署服务 start"
+pwd
 ./deploy.sh
-echo "5.部署服务 success"
+echo "===> 6.部署服务 success"
 
 
 echo "~~ 应用web仓库初始化完成 ~~"

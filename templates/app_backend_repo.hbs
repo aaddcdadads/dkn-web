@@ -27,18 +27,18 @@ merge_dirs=($merge_dirs_str)
 cd $base_dir
 
 # 克隆仓库代码
-echo "1.克隆仓库代码 start"
+echo "===> 1.克隆仓库代码 start"
 for url in "${gitlab_urls[@]}"; do
     git clone $url
 done
-echo "1.克隆仓库代码 success"
+echo "===> 1.克隆仓库代码 success"
 
 
 # 创建一个文件夹,用于存放所有微应用项目的父项目pom.xml文件
 mkdir pom
 
 # 合并merge_dirs文件夹到base_dir
-echo "2.合并web目录 start"
+echo "===> 2.合并web目录 start"
 for dir in "${merge_dirs[@]}"; do
     # 检查目录是否存在
     if [ -d "$base_dir/$dir" ]; then
@@ -55,34 +55,35 @@ for dir in "${merge_dirs[@]}"; do
         echo "文件夹 $dir 不存在"
     fi
 done
-echo "2.合并web目录 success"
+echo "===> 2.合并web目录 success"
 
 
-echo "3.初始化项目配置 start"
+echo "===> 3.初始化项目配置 start"
 # 拷贝init.sh脚本
 cp {{initJeecgShPath}} $target_dir/init_jeecg.sh
 #进入仓库目录
 cd $target_dir
+pwd
 chmod a+x init_jeecg.sh
 ./init_jeecg.sh
-echo "3.初始化项目配置 success"
+echo "===> 3.初始化项目配置 success"
 
 
 # 提交应用web仓库代码
-echo "4.提交应用仓库代码 start"
+echo "===> 4.提交应用仓库代码 start"
 git add .
 git commit -m "init repo"
 git push
-echo "4.提交应用仓库代码 success"
+echo "===> 4.提交应用仓库代码 success"
 
 
 # 同步nginx配置
-echo "5.同步nginx配置 start"
+echo "===> 5.同步nginx配置 start"
 # 同步nginx配置到nginx server
-rsync -avz --progress jeecg-boot/docs/$project.conf {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
+rsync -avz --progress jeecg-boot/docs/{{projectCode}}.conf {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
 # 重载nginx配置
 ssh {{nginxUser}}@{{nginxServer}} "service nginx reload && exit"
-echo "5.同步nginx配置 success"
+echo "===> 5.同步nginx配置 success"
 
 
 echo "~~ 应用后端仓库初始化完成 ~~"

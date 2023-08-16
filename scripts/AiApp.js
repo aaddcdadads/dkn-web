@@ -248,6 +248,7 @@ function genBackendDeploySh(config) {
 function genAppBackendRepoSh(config){
     let renderData = {
         workdir:config.workdir,
+        projectCode:config.app.projectCode,
         initJeecgShPath:config.initJeecgShPath,
         targetDir:config.appData.gitLab.appBackendRepoName,
         gitlabUrls:config.appData.gitLab.backendRepoUrls.join(','),

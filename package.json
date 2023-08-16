@@ -40,6 +40,7 @@
     "@iconify/iconify": "^2.0.4",
     "@jeecg/online": "1.0.1",
     "@vueuse/core": "^6.6.2",
+    "@vueuse/shared": "^10.3.0",
     "@zxcvbn-ts/core": "^1.0.0-beta.0",
     "ant-design-vue": "2.2.8",
     "axios": "^0.23.0",

@@ -106,6 +106,7 @@ function initMicroBackendRepo(config){
 function genMicroBackendRepoSh(config){
     let renderData = {
         repoDirectory:config.workdir,
+        projectCode:config.microAppData.projectCode,
         backendRepoUrl:config.microAppData.gitLab.backendRepoUrl,
         backendRepoName:config.microAppData.gitLab.backendRepoName,
         backendTemplateRepoUrl:config.microAppData.gitLab.backendTemplateRepoUrl,
