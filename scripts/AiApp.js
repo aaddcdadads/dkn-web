@@ -276,6 +276,7 @@ function genJeecgBackendInitSh(config){
         projectCode:config.appData.projectCode,
         deployHost:config.appData.deploy.deployBackendHost,
         deployPort:config.appData.deploy.deployBackendPort,
+        deployBackendUser:config.microAppData.deploy.deployBackendUser,
         dbUser:config.appData.dbConfig.dbUser,
         dbPassword:config.appData.dbConfig.dbPassword,
         dbName:config.appData.dbConfig.dbName,

@@ -2173,10 +2173,10 @@
     regenerator-runtime "^0.13.9"
     systemjs "^6.10.3"
 
-"@vitejs/plugin-vue-jsx@^1.2.0":
+"@vitejs/plugin-vue-jsx@1.2.0":
   version "1.2.0"
-  resolved "https://registry.npmmirror.com/@vitejs/plugin-vue-jsx/download/@vitejs/plugin-vue-jsx-1.2.0.tgz#a4216bdbb8b12800537d39e3b5711fcf2eb470ef"
-  integrity sha1-pCFr27ixKABTfTnjtXEfzy60cO8=
+  resolved "https://registry.npmmirror.com/@vitejs/plugin-vue-jsx/-/plugin-vue-jsx-1.2.0.tgz#a4216bdbb8b12800537d39e3b5711fcf2eb470ef"
+  integrity sha512-Y4Er2bn8bHNiUziJizcVT1yQKTq6oOJeBrKkxvjo2yKT/RTSK1ZlkP/qnzchxxuBkx0tYG4Aaxbb9xuVnNNDEA==
   dependencies:
     "@babel/core" "^7.15.5"
     "@babel/plugin-syntax-import-meta" "^7.10.4"
@@ -2185,10 +2185,10 @@
     "@vue/babel-plugin-jsx" "^1.0.7"
     hash-sum "^2.0.0"
 
-"@vitejs/plugin-vue@^1.9.3":
+"@vitejs/plugin-vue@1.9.4":
   version "1.9.4"
-  resolved "https://registry.npmmirror.com/@vitejs/plugin-vue/download/@vitejs/plugin-vue-1.9.4.tgz?cache=0&sync_timestamp=1635475280393&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40vitejs%2Fplugin-vue%2Fdownload%2F%40vitejs%2Fplugin-vue-1.9.4.tgz#4f48485432cbb986a9fb9d254dc33ce30ddccbfa"
-  integrity sha1-T0hIVDLLuYap+50lTcM84w3cy/o=
+  resolved "https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-1.9.4.tgz#4f48485432cbb986a9fb9d254dc33ce30ddccbfa"
+  integrity sha512-0CZqaCoChriPTTtGkERy1LGPcYjGFpi2uYRhBPIkqJqUGV5JnJFhQAgh6oH9j5XZHfrRaisX8W0xSpO4T7S78A==
 
 "@volar/code-gen@0.28.10":
   version "0.28.10"
@@ -11539,10 +11539,10 @@ vite-plugin-windicss@^1.4.12:
     debug "^4.3.2"
     windicss "^3.1.9"
 
-vite@^2.6.10:
+vite@2.6.13:
   version "2.6.13"
-  resolved "https://registry.npmmirror.com/vite/download/vite-2.6.13.tgz#16b3ec85a66d5b461ac29a903874d4357f9af432"
-  integrity sha1-FrPshaZtW0YawpqQOHTUNX+a9DI=
+  resolved "https://registry.npmmirror.com/vite/-/vite-2.6.13.tgz#16b3ec85a66d5b461ac29a903874d4357f9af432"
+  integrity sha512-+tGZ1OxozRirTudl4M3N3UTNJOlxdVo/qBl2IlDEy/ZpTFcskp+k5ncNjayR3bRYTCbqSOFz2JWGN1UmuDMScA==
   dependencies:
     esbuild "^0.13.2"
     postcss "^8.3.8"

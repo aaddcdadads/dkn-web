@@ -209,9 +209,10 @@ function genJeecgBackendInitSh(config){
         projectCode:config.microAppData.projectCode,
         deployHost:config.microAppData.deploy.deployBackendHost,
         deployPort:config.microAppData.deploy.deployBackendPort,
+        deployBackendUser:config.microAppData.deploy.deployBackendUser,
         dbUser:config.microAppData.dbConfig.dbUser,
         dbPassword:config.microAppData.dbConfig.dbPassword,
-        dbName:config.microAppData.dbConfig.dbName,
+        dbName:config.microAppData.dbConfig.dbName
       };
   
     let template = fs.readFileSync(`./templates/init_jeecg.hbs`, "utf8");
