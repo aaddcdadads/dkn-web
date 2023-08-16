@@ -2527,6 +2527,13 @@
   dependencies:
     vue-demi "*"
 
+"@vueuse/shared@^10.3.0":
+  version "10.3.0"
+  resolved "https://registry.npmmirror.com/@vueuse/shared/-/shared-10.3.0.tgz#ce6b4b6860e14aaa293025dcf0cbe1036a25869f"
+  integrity sha512-kGqCTEuFPMK4+fNWy6dUOiYmxGcUbtznMwBZLC1PubidF4VZY05B+Oht7Jh7/6x4VOWGpvu3R37WHi81cKpiqg==
+  dependencies:
+    vue-demi ">=0.14.5"
+
 "@windicss/config@1.4.12":
   version "1.4.12"
   resolved "https://registry.npmmirror.com/@windicss/config/download/@windicss/config-1.4.12.tgz#32842fe009b64176b004c83a93c5189066042c33"
@@ -12313,6 +12320,11 @@ vue-demi@*:
   version "0.12.0"
   resolved "https://registry.npmmirror.com/vue-demi/download/vue-demi-0.12.0.tgz#b202a01cdfc635443e41faea697d624caac0fa73"
   integrity sha1-sgKgHN/GNUQ+QfrqaX1iTKrA+nM=
+
+vue-demi@>=0.14.5:
+  version "0.14.5"
+  resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.14.5.tgz#676d0463d1a1266d5ab5cba932e043d8f5f2fbd9"
+  integrity sha512-o9NUVpl/YlsGJ7t+xuqJKx8EBGf1quRhCiT6D/J0pfwmk9zUwYkC7yrF4SZCe6fETvSM3UNL2edcbYrSyc4QHA==
 
 vue-demi@^0.9.0:
   version "0.9.1"
