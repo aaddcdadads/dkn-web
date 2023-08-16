@@ -20,6 +20,17 @@ echo "clone $repo_url success"
 #克隆后端模板仓库代码
 echo "1.克隆后端模板仓库代码 start"
 git clone $backend_template_url
+
+# 判断变量是否为jeecg-boot模板仓库
+if [ "$backend_template_url" == 'ssh://git@gitlab.haomo-studio.com:15822/templates/jeecg-boot.git' ]; then
+    cd $backend_template_name
+    # 切换到incubator分支
+    git checkout incubator
+    cd $repo_directory
+else
+    echo "采用项目仓库做模板"
+fi
+
 echo "1.克隆后端模板仓库代码 success"
 
 #将模板仓库代码复制到微应用仓库中

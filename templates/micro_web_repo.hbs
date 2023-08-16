@@ -21,6 +21,17 @@ echo "clone $repo_url success"
 echo "1.克隆web模板仓库代码 start"
 git clone $web_template_url
 echo "clone $web_template_url success"
+
+# 判断变量是否为jeecg-vue3模板仓库
+if [ "$web_template_url" == 'ssh://git@gitlab.haomo-studio.com:15822/templates/jeecgboot-vue3.git' ]; then
+    cd $web_template_name
+    # 切换到incubation分支
+    git checkout incubation
+    cd $repo_directory
+else
+    echo "采用项目仓库做模板"
+fi
+
 echo "1.克隆web模板仓库代码 success"
 
 #将模板仓库代码复制到微应用仓库中
