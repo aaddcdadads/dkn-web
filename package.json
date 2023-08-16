@@ -50,13 +50,16 @@
     "cropperjs": "^1.5.12",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.10.6",
-    "font-awesome": "^4.7.0",
     "dom-align": "^1.12.2",
     "echarts": "^5.2.1",
     "echarts-for-vue": "^1.4.1",
     "enquire.js": "^2.1.6",
+    "font-awesome": "^4.7.0",
+    "handlebars": "^4.4.3",
+    "handlebars-helpers": "^0.10.0",
     "intro.js": "^4.2.2",
     "jsonpath": "^1.1.1",
+    "just-handlebars-helpers": "^1.0.19",
     "lodash-es": "^4.17.21",
     "md5": "^2.3.0",
     "mockjs": "^1.1.0",
@@ -86,7 +89,8 @@
     "vuedraggable": "^4.1.0",
     "vxe-table": "4.1.0",
     "vxe-table-plugin-antd": "^3.0.3",
-    "xe-utils": "^3.3.1"
+    "xe-utils": "^3.3.1",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",

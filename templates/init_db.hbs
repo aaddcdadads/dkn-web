@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# MySQL数据库信息
+DB_HOST={{dbConfig.dbHost}}
+DB_USER={{dbConfig.dbAdmin}}
+DB_PASS={{dbConfig.dbAdmingPassword}}
+DB_NAME={{dbConfig.dbName}}
+# 需要拷贝的源数据库名
+SOURCE_DB={{dbConfig.sourceDb}}
+# 业务sql脚本文件
+SQL_FILE_PATH={{dbConfig.sqlPath}}
+
+# 创建数据库
+mysql -h $DB_HOST -u $DB_USER -p$DB_PASS -e "CREATE DATABASE IF NOT EXISTS $DB_NAME DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci;"
+echo "1.创建数据库完成"
+
+# 拷贝SOURCE_DB所有表结构到DB_NAME
+mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST --no-data $SOURCE_DB | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST $DB_NAME
+echo "2.同步数据库表结构完成"
+
+# 拷贝SOURCE_DB所有表数据到DB_NAME
+mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST --no-create-info $SOURCE_DB | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST $DB_NAME
+echo "3.同步数据库数据完成"
+
+# 执行业务SQL文件
+#mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME < $SQL_FILE_PATH
+#echo "4.执行业务SQL文件."
+
+# 执行业务sql文件
+if [ -z "$SQL_FILE_PATH" ]; then
+    echo "5.业务sql脚本路径为空,无需执行。"
+else
+    # 检查文件是否存在
+    if [ -f "$SQL_FILE_PATH" ]; then
+        # 执行sql脚本
+        mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME < $SQL_FILE_PATH
+        echo "5.业务sql脚本执行完成"
+    else
+        echo "5.业务sql脚本不存在,请确保输入的文件路径有效。"
+    fi
+fi

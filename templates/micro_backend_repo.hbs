@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# 后端仓库初始化
+# 设置仓库信息
+repo_directory={{repoDirectory}}
+repo_url={{backendRepoUrl}}
+repo_name={{backendRepoName}}
+
+# 模板仓库信息
+backend_template_url={{backendTemplateRepoUrl}}
+backend_template_name=jeecg-boot
+
+# 进入仓库保存目录
+cd $repo_directory
+
+# 克隆微应用后端仓库代码
+git clone $repo_url
+echo "clone $repo_url success"
+
+#克隆后端模板仓库代码
+echo "1.克隆后端模板仓库代码 start"
+git clone $backend_template_url
+echo "1.克隆后端模板仓库代码 success"
+
+#将模板仓库代码复制到微应用仓库中
+echo "2.将模板仓库代码复制到微应用仓库中 start"
+rsync -avz --progress --exclude='.git' --exclude='.gitlab-ci.yml' $backend_template_name/ $repo_name
+echo "2.将模板仓库代码复制到微应用仓库中 success"
+
+# 拷贝init.sh脚本
+cp {{initJeecgShPath}} $repo_name/init_jeecg.sh
+# 初始化项目配置
+echo "3.初始化后端项目配置 start"
+cd $repo_name
+chmod a+x init_jeecg.sh
+./init_jeecg.sh
+echo "3.初始化后端项目配置 success"
+
+# 提交代码
+echo "4.微应用后端代码提交 start"
+git add .
+git commit -m "repo init"
+git push
+echo "4.微应用后端代码提交 success"
+
+
+# 同步nginx配置
+echo "5.同步nginx配置 start"
+# 同步nginx配置到nginx server
+rsync -avz --progress jeecg-boot/docs/$project.conf {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
+# 重载nginx配置
+ssh {{nginxUser}}@{{nginxServer}} "service nginx reload && exit"
+echo "5.同步nginx配置 success"
+
+#部署服务
+echo "6.部署服务 start"
+cd jeecg-boot
+./deploy.sh
+echo "6.部署服务 success"
+
+
+echo "~~后端仓库初始化完成~~"

@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "category": "app",
+  "action": "create",
+  "workdir": "/Users/mac/sili/temp/init_micro",
+  "appData": {
+    "appType": 0,
+    "projectId": "123456",
+    "projectName": "Demo-app",
+    "projectCode": "demo-app",
+    "deploy": {
+      "deployBackendHost": "192.168.1.61",
+      "deployBackendPort": "8322",
+      "nginxUser": "root",
+      "nginxServer": "192.168.1.7"
+    },
+    "dbConfig": {
+      "dbHost": "127.0.0.1",
+      "dbName": "sucai",
+      "dbUser": "haomo",
+      "dbPassword": "haomo123",
+      "dbAdmin": "root",
+      "dbAdmingPassword": "12346",
+      "microDbNames": [],
+      "sqlPath": "/Users/mac/sili/temp/sql_file.sql"
+    },
+    "gitLab": {
+      "appWebRepoName": "demo-web",
+      "microWebRepoNames": [],
+      "webRepoUrls": [],
+      "appBackendRepoName": "demo-backend",
+      "microBackendRepoNames": ["test1","test2","test3"],
+      "backendRepoUrls": []
+    }
+  },
+  "microAppData": {
+    "appType": 0,
+    "projectId": "123456",
+    "projectName": "Demo",
+    "projectCode": "demo",
+    "projectPrefix": "test_",
+    "deploy": {
+      "deployBackendHost": "192.168.1.61",
+      "deployBackendPort": "8322",
+      "nginxUser": "root",
+      "nginxServer": "192.168.1.7"
+    },
+    "dbConfig": {
+      "dbHost": "127.0.0.1",
+      "dbName": "sucai",
+      "dbUser": "haomo",
+      "dbPassword": "haomo123",
+      "dbAdmin": "root",
+      "dbAdmingPassword": "12346",
+      "sourceDb": "jeecgboot-vue3",
+      "sqlPath": "/Users/mac/sili/temp/sql_file.sql"
+    },
+    "gitLab": {
+      "accessToken": "",
+      "webRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/sili/sili-test-081401.git",
+      "webRepoName": "sili-test-081401",
+      "webTemplateRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/sili/jeecgboot-vue3.git",
+      "repoDescription": "Demo",
+      "backendRepoUrl": "",
+      "backendRepoName": "demo-backend",
+      "backendTemplateRepoUrl": ""
+    }
+  },
+  "initJeecgVue3ShPath": "/Users/mac/sili/temp/init_micro/demo/init_jeecg_vue3.sh",
+  "initJeecgShPath": "/Users/mac/sili/temp/init_micro/demo-app/demo-app/init_jeecg.sh"
+}

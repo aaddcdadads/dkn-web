@@ -1,0 +1,76 @@
+#!/bin/bash
+# 项目简写（小写下划线格式）。注意：跟其他项目不能冲突，最好跟jira里的项目简称保护一致
+project={{projectCode}}
+# 部署服务器地址
+deploy_host={{deployHost}}
+# 部署服务器账号
+deploy_user=haomo
+# 部署映射端口号
+deploy_port={{deployPort}}
+# 数据库用户名。数据库位于 192.168.1.9 上
+db_username={{dbUser}}
+# 数据库密码
+db_password={{dbPassword}}
+# 数据库
+db={{dbName}}
+# redis端口号。redis服务器位于 192.168.1.9 上
+redis_port=6379
+# redis database编号。可用编号 0-15
+redis_database=10
+
+# 检查以上脚本是否已经修改
+
+deploy_dir=/data/docker/$project
+
+upstream_api_server=$deploy_host:$deploy_port
+
+echo "请确认服务器 $deploy_host 上的端口号 $deploy_port 可用。若端口 $deploy_port 已被占用，会导致后台无法启动"
+
+# 兼容mac和Linux的
+sedi () {
+    case $(uname -s) in
+        *[Dd]arwin* | *BSD* ) sed -i '' "$@";;
+        *) sed -i "$@";;
+    esac
+}
+
+# 修改jeecg-boot/docs/docker-compose.yml
+sedi "s/jeecg-boot-system/$project/g" jeecg-boot/docs/docker-compose.yml
+sedi "s/8080:8080/$deploy_port:8080/g" jeecg-boot/docs/docker-compose.yml
+
+# 修改 jeecg-boot/deploy.sh文件
+sedi "s/deploy_username=haomo/deploy_username=$deploy_user/g" jeecg-boot/deploy.sh
+sedi "s/deploy_server=192.168.202.164/deploy_server=$deploy_host/g" jeecg-boot/deploy.sh
+ESCAPED_DEPLOY_DIR=$(printf '%s\n' "$deploy_dir" | sed -e 's/[\/&]/\\&/g')
+sedi "s/deploy_dir=\/data\/docker\/jeecg\-boot/deploy_dir=$ESCAPED_DEPLOY_DIR/g" jeecg-boot/deploy.sh
+sedi "s/jeecg-boot-system/$project/g" jeecg-boot/deploy.sh
+
+# 修改nginx配置文件
+mv jeecg-boot/docs/jeecgboot-vue3.conf jeecg-boot/docs/$project.conf
+sedi "s/jeecgboot-vue3/$project/g" jeecg-boot/docs/$project.conf
+sedi "s/api_service/{{projectCode}}_api_service/g" jeecg-boot/docs/$project.conf
+sedi "s/192.168.202.164:8080/$deploy_host:$deploy_port/g" jeecg-boot/docs/$project.conf
+
+# 修改数据库配置
+sedi "s/username: haomo/username: $db_username/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-dev.yml
+sedi "s/password: haomo123/password: $db_password/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-dev.yml
+sedi "s/3306\/jeecgboot-vue3/3306\/$db/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-dev.yml
+sedi "s/username: haomo/username: $db_username/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-prod.yml
+sedi "s/password: haomo123/password: $db_password/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-prod.yml
+sedi "s/3306\/jeecgboot-vue3/3306\/$db/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-prod.yml
+
+# 修改redis配置
+sedi "s/database: 0/database: $redis_database/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-dev.yml
+sedi "s/port: 6379/port: $redis_port/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-dev.yml
+sedi "s/jeecgboot-vue3/$db/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-dev.yml
+sedi "s/database: 0/database: $redis_database/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-prod.yml
+sedi "s/port: 6379/port: $redis_port/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-prod.yml
+sedi "s/jeecgboot-vue3/$db/g" jeecg-boot/jeecg-boot-module-system/src/main/resources/application-prod.yml
+
+# 修改gitlab-ci里的配置
+sedi "s/jeecgboot-vue3/$project/g" jeecg-boot/.gitlab-ci.yml
+
+#git add .
+#git commit -m "chore: init project"
+
+echo "请等十分钟左右访问后端接口地址: http://$project.dev.haomo-tech.com:8000/jeecg-boot/doc.html"

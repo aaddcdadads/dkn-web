@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# 前端仓库初始化
+# 设置仓库信息
+repo_directory={{repoDirectory}}
+repo_url={{webRepoUrl}}
+name_web={{webRepoName}}
+
+# 模板仓库信息
+web_template_url={{webTemplateRepoUrl}}
+web_template_name=jeecgboot-vue3
+
+# 进入仓库保存目录
+cd $repo_directory
+
+# 克隆微应用web仓库代码
+git clone $repo_url
+echo "clone $repo_url success"
+
+#克隆web模板仓库代码
+echo "1.克隆web模板仓库代码 start"
+git clone $web_template_url
+echo "clone $web_template_url success"
+echo "1.克隆web模板仓库代码 success"
+
+#将模板仓库代码复制到微应用仓库中
+echo "2.将模板仓库代码复制到微应用仓库中 start"
+rsync -avz --progress --exclude='.git' --exclude='.gitlab-ci.yml' $web_template_name/ $name_web
+echo "2.将模板仓库代码复制到微应用仓库中 success"
+
+# 拷贝init.sh脚本
+cp {{initJeecgVue3ShPath}} $name_web/init_jeecg_vue3.sh
+
+# 初始化项目配置
+echo "3.初始化项目配置 start"
+cd $name_web
+chmod a+x init_jeecg_vue3.sh
+./init_jeecg_vue3.sh
+echo "3.初始化项目配置 success"
+
+
+# 提交代码
+echo "4.微应用前端代码提交 start"
+git add .
+git commit -m "repo init"
+git push
+echo "4.微应用前端代码提交 success"
+
+#部署服务
+echo "5.部署服务 start"
+./deploy.sh
+echo "5.部署服务 success"
+
+echo "~~前端仓库初始化完成~~"
