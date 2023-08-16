@@ -10,7 +10,7 @@
     "projectCode": "demo-app",
     "deploy": {
       "deployBackendHost": "192.168.1.61",
-      "deployBackendPort": "8322",
+      "deployBackendPort": 8322,
       "deployBackendUser": "haomo",
       "nginxUser": "root",
       "nginxServer": "192.168.1.7"
@@ -42,7 +42,7 @@
     "projectPrefix": "test_",
     "deploy": {
       "deployBackendHost": "192.168.1.61",
-      "deployBackendPort": "8322",
+      "deployBackendPort": 8322,
       "deployBackendUser": "haomo",
       "nginxUser": "root",
       "nginxServer": "192.168.1.7"
