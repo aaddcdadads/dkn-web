@@ -7,8 +7,16 @@ import AiApp from './AiApp.js'
 const aiMicroApp = new AiMicroApp();
 const aiApp = new AiApp();
 
+console.log(import.meta);
+//node命令传递过来的参数[ DIR,LIMIT ]
+const args = process.argv.slice(2);
+console.log(args);
+
+ // 获取项目编码
+const projectCode = (args && args.length>0)?args[0]:null;
+
 //读取配置
-const config = JSON.parse(fs.readFileSync('./scripts/init.json', 'utf8'));
+const config = JSON.parse(fs.readFileSync(`./scripts/init.json`, 'utf8'));
 console.log(config)
 
 switch(config.action){

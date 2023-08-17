@@ -42,7 +42,8 @@ AiMicroApp.prototype.createProjet = function(config) {
  * @param {*} config 
  */
 function rewriteInitJson(config){
-    fs.writeFileSync(`./scripts/init.json`, JSON.stringify(config, null, 2))
+    let path = path.join(config.workdir,`/${config.microAppData.gitLab.webRepoName}/scripts/init.json`)
+    fs.writeFileSync(path, JSON.stringify(config, null, 2))
 }
 
 /**

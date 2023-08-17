@@ -440,7 +440,8 @@ function handleAppDir(config) {
  * @param {*} config 
  */
 function rewriteInitJson(config){
-    fs.writeFileSync(`./scripts/init.json`, JSON.stringify(config, null, 2))
+    let path = path.join(config.workdir,`/${config.appData.gitLab.webRepoName}/scripts/init.json`)
+    fs.writeFileSync(path, JSON.stringify(config, null, 2))
 }
 
 module.exports = AiApp;
