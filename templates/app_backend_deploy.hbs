@@ -12,10 +12,10 @@ cd $base_dir/$target_dir
 
 # 提交应用web仓库代码
 echo "===> 1.提交应用仓库代码 start"
-git pull
-git add .
-git commit -m "init repo"
-git push
+git pull --quiet
+git add . --quiet
+git commit -m "init repo" --quiet
+git push --quiet
 echo "===> 1.提交应用仓库代码 success"
 
 

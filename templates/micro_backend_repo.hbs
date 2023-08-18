@@ -14,18 +14,18 @@ backend_template_name=jeecg-boot
 cd $repo_directory
 
 # 克隆微应用后端仓库代码
-git clone $repo_url
+git clone $repo_url --quiet
 echo "clone $repo_url success"
 
 #克隆后端模板仓库代码
 echo "===> 1.克隆后端模板仓库代码 start"
-git clone $backend_template_url
+git clone $backend_template_url --quiet
 
 # 判断变量是否为jeecg-boot模板仓库
 if [ "$backend_template_url" == 'ssh://git@gitlab.haomo-studio.com:15822/templates/jeecg-boot.git' ]; then
     cd $backend_template_name
     # 切换到incubator分支
-    git checkout incubator
+    git checkout incubator --quiet
     cd $repo_directory
 else
     echo "采用项目仓库做模板"
@@ -50,16 +50,16 @@ echo "===> 3.初始化后端项目配置 success"
 
 # 提交代码
 echo "===> 4.微应用后端代码提交 start"
-git add .
-git commit -m "repo init"
-git push
+git add . --quiet
+git commit -m "repo init" --quiet
+git push --quiet
 echo "===> 4.微应用后端代码提交 success"
 
 
 # 同步nginx配置
 echo "===> 5.同步nginx配置 start"
 # 同步nginx配置到nginx server
-rsync -avz --progress jeecg-boot/docs/{{projectCode}}.conf {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
+rsync -az jeecg-boot/docs/{{projectCode}}.conf {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
 # 重载nginx配置
 ssh {{nginxUser}}@{{nginxServer}} "service nginx reload && exit"
 echo "===> 5.同步nginx配置 success"

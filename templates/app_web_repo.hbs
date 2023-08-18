@@ -29,7 +29,7 @@ cd $base_dir
 # 克隆仓库代码
 echo "===> 1.克隆仓库代码 start"
 for url in "${gitlab_urls[@]}"; do
-    git clone $url
+    git clone $url --quiet
 done
 echo "===> 1.克隆仓库代码 success"
 
@@ -67,15 +67,15 @@ echo "===> 3.初始化项目配置 success"
 echo "===> 4.提交应用web仓库代码 start"
 cd $target_dir
 pwd
-git add .
-git commit -m "init repo"
-git push
+git add . --quiet
+git commit -m "init repo" --quiet
+git push --quiet
 echo "===> 4.提交应用web仓库代码 success"
 
 # 安装依赖
 echo "===> 5.安装依赖 start"
-#npm install --force
-yarn install --force
+#npm install --force > /dev/null
+yarn install --force > /dev/null
 echo "===> 5.安装依赖 success"
 
 #部署服务

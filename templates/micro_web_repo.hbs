@@ -14,20 +14,20 @@ web_template_name=jeecgboot-vue3
 cd $repo_directory
 
 # 克隆微应用web仓库代码
-git clone $repo_url
+git clone $repo_url --quiet
 echo "clone $repo_url success"
 
 #克隆web模板仓库代码
 echo "===> 1.克隆web模板仓库代码 start"
-git clone $web_template_url
+git clone $web_template_url --quiet
 echo "clone $web_template_url success"
 
 # 判断变量是否为jeecg-vue3模板仓库
 if [ "$web_template_url" == 'ssh://git@gitlab.haomo-studio.com:15822/templates/jeecgboot-vue3.git' ]; then
     cd $web_template_name
     # 切换到incubation分支
-    git checkout incubation
-    git pull
+    git checkout incubation --quiet
+    git pull --quiet
     cd $repo_directory
 else
     echo "采用项目仓库做模板"
@@ -37,7 +37,7 @@ echo "===> 1.克隆web模板仓库代码 success"
 
 #将模板仓库代码复制到微应用仓库中
 echo "===> 2.将模板仓库代码复制到微应用仓库中 start"
-rsync -avz --progress --exclude='.git' --exclude='.gitlab-ci.yml' $web_template_name/ $name_web
+rsync -az --exclude='.git' --exclude='.gitlab-ci.yml' $web_template_name/ $name_web
 echo "===> 2.将模板仓库代码复制到微应用仓库中 success"
 
 # 拷贝init.sh脚本
@@ -54,15 +54,15 @@ echo "===> 3.初始化项目配置 success"
 
 # 提交代码
 echo "===> 4.微应用前端代码提交 start"
-git add .
-git commit -m "repo init"
-git push
+git add . --quiet
+git commit -m "repo init" --quiet
+git push --quiet
 echo "===> 4.微应用前端代码提交 success"
 
 # 安装依赖
 echo "===> 5.安装依赖 start"
-#npm install --force
-yarn install --force
+#npm install --force > /dev/null
+yarn install --force > /dev/null
 echo "===> 5.安装依赖 success"
 
 #部署服务
