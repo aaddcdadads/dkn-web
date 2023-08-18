@@ -48,6 +48,8 @@ for dir in "${merge_dirs[@]}"; do
         cp $base_dir/$dir/jeecg-boot/pom.xml pom/$dir.xml
         # 移动目录中的文件到 target_dir
         mv "$base_dir/$dir"/* "$base_dir/$target_dir/"
+        # 隐藏文件也需要复制
+        cp -a $base_dir/$dir/. $base_dir/$target_dir/
         # 删除空目录
         # rmdir "$base_dir/$dir"
         echo "文件夹 $dir 已合并到 $target_dir"

@@ -62,7 +62,7 @@ sed -i 's:{{baseDir}}:{{baseDir}}/{{projectCode}}:g' .gitlab-ci.yml
 
 # 提交代码
 echo "===> 4.微应用前端代码提交 start"
-git add .
+git add . > /dev/null 2>&1
 git commit -m "repo init" --quiet
 git push --quiet
 echo "===> 4.微应用前端代码提交 success"

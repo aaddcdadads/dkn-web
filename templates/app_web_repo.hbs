@@ -44,6 +44,8 @@ for dir in "${merge_dirs[@]}"; do
         rm -rf $base_dir/$dir/.gitlab-ci.yml
         # 移动目录中的文件到 target_dir
         mv "$base_dir/$dir"/* "$base_dir/$target_dir/"
+        # 隐藏文件也需要复制
+        cp -a $base_dir/$dir/. $base_dir/$target_dir/
         # 删除空目录
         # rmdir "$base_dir/$dir"
         echo "文件夹 $dir 已合并到 $target_dir"
@@ -71,7 +73,7 @@ sed -i "s/"version": "1.0"/"version": "1.1"/g" scripts/init.json
 echo "===> 4.提交应用web仓库代码 start"
 cd $target_dir
 pwd
-git add .
+git add . > /dev/null 2>&1
 git commit -m "init repo" --quiet
 git push --quiet
 echo "===> 4.提交应用web仓库代码 success"
