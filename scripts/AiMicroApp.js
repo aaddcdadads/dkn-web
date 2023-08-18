@@ -44,6 +44,8 @@ AiMicroApp.prototype.createProjet = function(config) {
 function rewriteInitJson(config){
     let path = path.join(config.workdir,`/${config.microAppData.gitLab.webRepoName}/scripts/init.json`)
     fs.writeFileSync(path, JSON.stringify(config, null, 2))
+    let basePath = path.join(config.baseDir,`/${config.microAppData.gitLab.webRepoName}/scripts/init.json`)
+    fs.writeFileSync(basePath, JSON.stringify(config, null, 2))
 }
 
 /**
@@ -130,7 +132,8 @@ function genMicroBackendRepoSh(config){
  * 处理应用代码存储目录
  */
 function handleAppDir(config) {
-    let dir = path.join(config.workdir,`/${config.microAppData.projectCode}`);
+    let workdir = config.workdir;
+    let dir = path.join(workdir,`/${config.microAppData.projectCode}`);
     // 创建一个新的文件夹
     fs.mkdir(dir, { recursive: true }, (err) => {
         if (err) {
@@ -139,6 +142,7 @@ function handleAppDir(config) {
         }
         console.log(`${dir} The directory has been created successfully.`);
     });
+    config.baseDir = workdir;
     return dir;
 }
 
