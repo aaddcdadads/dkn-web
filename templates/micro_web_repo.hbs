@@ -52,23 +52,19 @@ chmod a+x init_jeecg_vue3.sh
 echo "===> 3.初始化项目配置 success"
 
 
+# 指定文件路径和替换的文本内容
+search='"version": "1.0"'
+replace='"version": "1.1"'
+# 修改init.json中的版本号,防止后面二次触发初始ci
+sed "s/$search/$replace/g" scripts/init.json > tmpfile && mv tmpfile scripts/init.json
+#切换ci执行目录为新的仓库目录
+sed -i 's:{{baseDir}}:{{baseDir}}/{{projectCode}}:g' .gitlab-ci.yml
+
 # 提交代码
 echo "===> 4.微应用前端代码提交 start"
 git add .
 git commit -m "repo init" --quiet
 git push --quiet
 echo "===> 4.微应用前端代码提交 success"
-
-# 安装依赖
-echo "===> 5.安装依赖 start"
-#npm install --force > /dev/null
-yarn install --force > /dev/null
-echo "===> 5.安装依赖 success"
-
-#部署服务
-echo "===> 6.部署服务 start"
-pwd
-./deploy.sh
-echo "===> 6.部署服务 success"
 
 echo "~~前端仓库初始化完成~~"

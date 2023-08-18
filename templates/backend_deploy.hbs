@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# 应用后端部署脚本
+
+
+# 进入项目目录
+cd {{workdir}}
+pwd
+
+# 更新代码
+echo "===> 1.更新代码 start"
+git pull --quiet
+echo "===> 1.更新代码 success"
+
+#部署服务
+echo "===> 2.部署服务 start"
+./deploy.sh
+echo "===> 2.部署服务 success"

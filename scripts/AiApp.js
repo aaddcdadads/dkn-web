@@ -93,7 +93,7 @@ function initBackendRepo(config){
     console.log(`==> 开始初始化应用后端仓库`)
     //生成jeecgboot后端init.sh
     config.initJeecgShPath = genJeecgBackendInitSh(config);
-    //生成应用后端代码仓库初始化脚本
+    //生成应用后端代码仓库初始化脚本 app_backend_repo.sh
     let output = genAppBackendRepoSh(config);
     //执行脚本文件
     try {
@@ -107,8 +107,46 @@ function initBackendRepo(config){
     //处理多数据源
     handleMultDatasource(config);
 
-    //处理后端pom文件并发布后端
+    //处理后端pom文件
     handleAppBackendRepo(config);
+
+    //代码提交
+    commitRepo(config);
+}
+
+/**
+ * 提交代码
+ */
+function commitRepo(config){
+    console.log(`==> 代码提交`)
+    //生成脚本  commit.sh
+    let output = genCommitSh(config);
+    //执行脚本
+    try {
+        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+    } catch (e) {
+        console.error(`代码提交脚本执行报错：`, e);
+    }
+}
+
+/**
+ * 生成代码提交脚本
+ * @param {*} config 
+ */
+function genCommitSh(config) {
+    let renderData = {
+        workdir:path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}`),
+        desc:"init repo"
+      };
+  
+    let template = fs.readFileSync(`./templates/commit.hbs`, "utf8");
+    let hbTemplate = Handlebars.compile(template);
+    let templateContent = hbTemplate(renderData);
+    //生成脚本文件
+    let output = path.join(config.workdir,`/commit.sh`);
+    fs.writeFileSync(output, templateContent);
+    console.log(`生成代码提交脚本:${output}`)
+    return output;
 }
 
 /**

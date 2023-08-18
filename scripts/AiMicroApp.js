@@ -11,8 +11,7 @@ function AiMicroApp() {}
  */
 AiMicroApp.prototype.createProjet = function(config) {
     console.log(`-- 开始创建微应用:${config.microAppData.projectName}`)
-    if(config.version !== "1.0"){
-        console.log(`只有version=1.0才会进行项目初始化`);
+    if(checkInitStaus(config)){
         return;
     }
     //更新version
@@ -35,6 +34,34 @@ AiMicroApp.prototype.createProjet = function(config) {
 
     console.log(`==> 微应用:${config.microAppData.projectName}创建完成！`)
 
+}
+
+/**
+ * 检查初始化状态
+ */
+function checkInitStaus(config){
+    if(config.version != "1.0"){
+        console.log(`只有version=1.0才会进行项目初始化`);
+        return true;
+    }
+
+    //检查是否存在本地仓库
+    let workdir = config.workdir;
+    let dir = path.join(workdir,`/${config.microAppData.projectCode}/${config.microAppData.gitLab.webRepoName}`);
+
+    let initFlag = false;
+    //判断文件夹是否存在
+    fs.access(dir, fs.constants.F_OK, (err) => {
+        if (err) {
+            console.log('项目未初始化');
+            initFlag = false;
+        } else {
+            console.log('项目已初始化');
+            initFlag = true;
+        }
+    });
+
+    return initFlag;
 }
 
 /**
@@ -70,7 +97,9 @@ function initMicroWebRepo(config){
  */
 function genMicroWebRepoSh(config){
     let renderData = {
+        baseDir:config.baseDir,
         repoDirectory:config.workdir,
+        projectCode:config.microAppData.projectCode,
         webRepoUrl:config.microAppData.gitLab.webRepoUrl,
         webRepoName:config.microAppData.gitLab.webRepoName,
         webTemplateRepoUrl:config.microAppData.gitLab.webTemplateRepoUrl,
@@ -136,7 +165,9 @@ function genMicroBackendRepoSh(config){
  */
 function handleAppDir(config) {
     let workdir = config.workdir;
+    //代码存储目录
     let dir = path.join(workdir,`/${config.microAppData.projectCode}`);
+
     // 创建一个新的文件夹
     fs.mkdir(dir, { recursive: true }, (err) => {
         if (err) {

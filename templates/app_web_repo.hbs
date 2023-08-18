@@ -63,6 +63,10 @@ chmod a+x init_jeecg_vue3.sh
 echo "===> 3.初始化项目配置 success"
 
 
+# 使用sed命令修改init.json中的版本号,防止后面二次触发初始ci
+sed -i "s/"version": "1.0"/"version": "1.1"/g" scripts/init.json
+
+
 # 提交应用web仓库代码
 echo "===> 4.提交应用web仓库代码 start"
 cd $target_dir

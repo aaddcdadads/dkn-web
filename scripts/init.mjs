@@ -12,8 +12,6 @@ console.log(import.meta);
 const args = process.argv.slice(2);
 console.log(args);
 
- // 获取项目编码
-const projectCode = (args && args.length>0)?args[0]:null;
 
 //读取配置
 const config = JSON.parse(fs.readFileSync(`./scripts/init.json`, 'utf8'));
