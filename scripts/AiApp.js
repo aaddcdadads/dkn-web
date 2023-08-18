@@ -311,13 +311,14 @@ function genBackendDeploySh(config) {
 function genAppBackendRepoSh(config){
     let renderData = {
         workdir:config.workdir,
-        projectCode:config.app.projectCode,
+        projectCode:config.appData.projectCode,
         initJeecgShPath:config.initJeecgShPath,
         targetDir:config.appData.gitLab.appBackendRepoName,
         gitlabUrls:config.appData.gitLab.backendRepoUrls.join(','),
         mergeDirs:config.appData.gitLab.microBackendRepoNames.join(','),
         nginxUser:config.appData.deploy.nginxUser,
-        nginxServer:config.appData.deploy.nginxServer
+        nginxServer:config.appData.deploy.nginxServer,
+        nginxConf:path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}/jeecg-boot/docs/${config.appData.projectCode}.conf`)
       };
   
     let template = fs.readFileSync(`./templates/app_backend_repo.hbs`, "utf8");
@@ -340,7 +341,7 @@ function genJeecgBackendInitSh(config){
         projectCode:config.appData.projectCode,
         deployHost:config.appData.deploy.deployBackendHost,
         deployPort:config.appData.deploy.deployBackendPort,
-        deployBackendUser:config.microAppData.deploy.deployBackendUser,
+        deployBackendUser:config.appData.deploy.deployBackendUser,
         dbUser:config.appData.dbConfig.dbUser,
         dbPassword:config.appData.dbConfig.dbPassword,
         dbName:config.appData.dbConfig.dbName,
@@ -442,10 +443,10 @@ function handleAppDir(config) {
  * @param {*} config 
  */
 function rewriteInitJson(config){
-    let path = path.join(config.workdir,`/${config.appData.gitLab.webRepoName}/scripts/init.json`)
-    fs.writeFileSync(path, JSON.stringify(config, null, 2))
-    let basePath = path.join(config.baseDir,`/${config.appData.gitLab.webRepoName}/scripts/init.json`)
-    fs.writeFileSync(basePath, JSON.stringify(config, null, 2))
+    let file = path.join(config.workdir,`/${config.appData.gitLab.webRepoName}/scripts/init.json`)
+    fs.writeFileSync(file, JSON.stringify(config, null, 2))
+    let baseFile = path.join(config.baseDir,`/${config.appData.gitLab.webRepoName}/scripts/init.json`)
+    fs.writeFileSync(baseFile, JSON.stringify(config, null, 2))
 }
 
 module.exports = AiApp;

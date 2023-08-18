@@ -50,7 +50,7 @@ echo "===> 3.初始化后端项目配置 success"
 
 # 提交代码
 echo "===> 4.微应用后端代码提交 start"
-git add . --quiet
+git add .
 git commit -m "repo init" --quiet
 git push --quiet
 echo "===> 4.微应用后端代码提交 success"
@@ -59,7 +59,7 @@ echo "===> 4.微应用后端代码提交 success"
 # 同步nginx配置
 echo "===> 5.同步nginx配置 start"
 # 同步nginx配置到nginx server
-rsync -az jeecg-boot/docs/{{projectCode}}.conf {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
+rsync -az {{nginxConf}} {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
 # 重载nginx配置
 ssh {{nginxUser}}@{{nginxServer}} "service nginx reload && exit"
 echo "===> 5.同步nginx配置 success"

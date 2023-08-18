@@ -71,7 +71,7 @@ echo "===> 3.初始化项目配置 success"
 
 # 提交应用web仓库代码
 echo "===> 4.提交应用仓库代码 start"
-git add . --quiet
+git add .
 git commit -m "init repo" --quiet
 git push --quiet
 echo "===> 4.提交应用仓库代码 success"
@@ -80,7 +80,7 @@ echo "===> 4.提交应用仓库代码 success"
 # 同步nginx配置
 echo "===> 5.同步nginx配置 start"
 # 同步nginx配置到nginx server
-rsync -avz --progress jeecg-boot/docs/{{projectCode}}.conf {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
+rsync -avz {{nginxConf}} {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
 # 重载nginx配置
 ssh {{nginxUser}}@{{nginxServer}} "service nginx reload && exit"
 echo "===> 5.同步nginx配置 success"

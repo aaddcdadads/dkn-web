@@ -42,10 +42,10 @@ AiMicroApp.prototype.createProjet = function(config) {
  * @param {*} config 
  */
 function rewriteInitJson(config){
-    let path = path.join(config.workdir,`/${config.microAppData.gitLab.webRepoName}/scripts/init.json`)
-    fs.writeFileSync(path, JSON.stringify(config, null, 2))
-    let basePath = path.join(config.baseDir,`/${config.microAppData.gitLab.webRepoName}/scripts/init.json`)
-    fs.writeFileSync(basePath, JSON.stringify(config, null, 2))
+    let file = path.join(config.workdir,`/${config.microAppData.gitLab.webRepoName}/scripts/init.json`)
+    fs.writeFileSync(file, JSON.stringify(config, null, 2))
+    let baseFile = path.join(config.baseDir,`/${config.microAppData.gitLab.webRepoName}/scripts/init.json`)
+    fs.writeFileSync(baseFile, JSON.stringify(config, null, 2))
 }
 
 /**
@@ -117,7 +117,8 @@ function genMicroBackendRepoSh(config){
         backendTemplateRepoUrl:config.microAppData.gitLab.backendTemplateRepoUrl,
         initJeecgShPath:config.initJeecgShPath,
         nginxUser:config.microAppData.deploy.nginxUser,
-        nginxServer:config.microAppData.deploy.nginxServer
+        nginxServer:config.microAppData.deploy.nginxServer,
+        nginxConf:path.join(config.workdir,`/${config.microAppData.gitLab.backendRepoName}/jeecg-boot/docs/${config.microAppData.projectCode}.conf`)
       };
   
     let template = fs.readFileSync(`./templates/micro_backend_repo.hbs`, "utf8");
@@ -153,7 +154,7 @@ function handleAppDir(config) {
  * @param {*} config 
  */
 function initDataBase(config){
-    console.log("==> 初始化数据库");
+    console.log("==> 1.初始化数据库");
     //生成初始化数据库脚本文件
     let output = genDbInitShFile(config);
     console.log(`数据库初始化脚本：${output}`)
