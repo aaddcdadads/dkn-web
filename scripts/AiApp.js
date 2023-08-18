@@ -36,7 +36,7 @@ AiApp.prototype.createProjet = function(config) {
     //重新写入init.json文件
     rewriteInitJson(config);
 
-    console.log(`-- 应用:${config.appData.projectName}创建完成！`)
+    console.log(`==> 应用:${config.appData.projectName}创建完成！`)
 
 }
 
@@ -45,7 +45,7 @@ AiApp.prototype.createProjet = function(config) {
  * @param {*} config 
  */
 function initDataBase(config) {
-    console.log("初始化数据库~");
+    console.log("==> 初始化数据库");
     //生成初始化数据库脚本文件
     let output = genDbInitShFile(config);
     console.log(`数据库初始化脚本：${output}`)

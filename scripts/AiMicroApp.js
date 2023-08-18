@@ -33,7 +33,7 @@ AiMicroApp.prototype.createProjet = function(config) {
     //重新写入init.json文件
     rewriteInitJson(config);
 
-    console.log(`-- 微应用:${config.microAppData.projectName}创建完成！`)
+    console.log(`==> 微应用:${config.microAppData.projectName}创建完成！`)
 
 }
 
@@ -52,6 +52,7 @@ function rewriteInitJson(config){
  * 微应用前端代码仓库初始化
  */
 function initMicroWebRepo(config){
+    console.log("==> 初始化前端仓库");
     //生成jeecgboot-vue3前端init.sh
     config.initJeecgVue3ShPath = genJeecgVue3WebInitSh(config);
     //生成微应用前端代码仓库初始化脚本
@@ -90,6 +91,7 @@ function genMicroWebRepoSh(config){
  * 微应用后端代码仓库初始化
  */
 function initMicroBackendRepo(config){
+    console.log("==> 初始化后端仓库");
     //生成jeecgboot后端init.sh
     config.initJeecgShPath = genJeecgBackendInitSh(config);
     //生成微应用后端代码仓库初始化脚本
@@ -151,7 +153,7 @@ function handleAppDir(config) {
  * @param {*} config 
  */
 function initDataBase(config){
-    console.log("初始化数据库~");
+    console.log("==> 初始化数据库");
     //生成初始化数据库脚本文件
     let output = genDbInitShFile(config);
     console.log(`数据库初始化脚本：${output}`)

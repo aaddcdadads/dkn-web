@@ -27,6 +27,7 @@ if [ "$web_template_url" == 'ssh://git@gitlab.haomo-studio.com:15822/templates/j
     cd $web_template_name
     # 切换到incubation分支
     git checkout incubation
+    git pull
     cd $repo_directory
 else
     echo "采用项目仓库做模板"
@@ -60,7 +61,8 @@ echo "===> 4.微应用前端代码提交 success"
 
 # 安装依赖
 echo "===> 5.安装依赖 start"
-npm install --force
+#npm install --force
+yarn install --force
 echo "===> 5.安装依赖 success"
 
 #部署服务
