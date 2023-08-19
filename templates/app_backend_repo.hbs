@@ -7,6 +7,9 @@ base_dir={{workdir}}
 
 # 应用web仓库文件夹名称
 target_dir={{targetDir}}
+# 模板仓库信息
+backend_template_url={{backendTemplateRepoUrl}}
+backend_template_name={{backendTemplateRepoName}}
 
 # 仓库gitlab clone地址列表 示例: dirs=("ssh://xx1.git,ssh://xx2.git,ssh://xx3.git,ssh://xx4.git,ssh://xx5.git")
 gitlab_urls_str=({{gitlabUrls}})
@@ -27,29 +30,38 @@ merge_dirs=($merge_dirs_str)
 cd $base_dir
 
 # 克隆仓库代码
-echo "===> 1.克隆仓库代码 start"
+echo "===> 1.克隆后端仓库代码 start"
+echo "拷贝模板仓库"
+time git clone -b incubator $backend_template_url
+#拷贝微应用仓库
 for url in "${gitlab_urls[@]}"; do
-    git clone $url --quiet
+    echo "===> clone  $url "
+    time git clone $url --quiet
 done
-echo "===> 1.克隆仓库代码 success"
+echo "===> 1.克隆后端仓库代码 success"
 
 
 # 创建一个文件夹,用于存放所有微应用项目的父项目pom.xml文件
 mkdir pom
 
 # 合并merge_dirs文件夹到base_dir
-echo "===> 2.合并web目录 start"
+echo "===> 2.合并后端仓库目录 start"
+echo "合并模板仓库"
+rm -rf $backend_template_name/.git
+time cp -a $backend_template_name/. $base_dir/$target_dir/
+#微应用仓库
 for dir in "${merge_dirs[@]}"; do
+    echo "合并微应用仓库 $dir "
     # 检查目录是否存在
     if [ -d "$base_dir/$dir" ]; then
         #删除目录中的.git 
         rm -rf $base_dir/$dir/.git
         #拷贝父项目pom.xml文件
         cp $base_dir/$dir/jeecg-boot/pom.xml pom/$dir.xml
-        # 移动目录中的文件到 target_dir
-        mv "$base_dir/$dir"/* "$base_dir/$target_dir/"
+        # 移动目录中的文件到 target_dir,这里mv命令无法覆盖非空文件夹,所以选用比较慢的cp
+        # mv -f "$base_dir/$dir"/* "$base_dir/$target_dir/"
         # 隐藏文件也需要复制
-        cp -a $base_dir/$dir/. $base_dir/$target_dir/
+        time cp -a $base_dir/$dir/. $base_dir/$target_dir/
         # 删除空目录
         # rmdir "$base_dir/$dir"
         echo "文件夹 $dir 已合并到 $target_dir"
@@ -57,7 +69,7 @@ for dir in "${merge_dirs[@]}"; do
         echo "文件夹 $dir 不存在"
     fi
 done
-echo "===> 2.合并web目录 success"
+echo "===> 2.合并后端仓库目录 success"
 
 
 echo "===> 3.初始化项目配置 start"
@@ -71,17 +83,18 @@ chmod a+x init_jeecg.sh
 echo "===> 3.初始化项目配置 success"
 
 
-# 提交应用web仓库代码
+# 提交应用仓库代码
 echo "===> 4.提交应用仓库代码 start"
-git add .
+time git add . > /dev/null 2>&1
 git commit -m "init repo" --quiet
-git push --quiet
+time git push --quiet
 echo "===> 4.提交应用仓库代码 success"
 
 
 # 同步nginx配置
 echo "===> 5.同步nginx配置 start"
 # 同步nginx配置到nginx server
+echo " {{nginxConf}} "
 rsync -avz {{nginxConf}} {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
 # 重载nginx配置
 ssh {{nginxUser}}@{{nginxServer}} "service nginx reload && exit"

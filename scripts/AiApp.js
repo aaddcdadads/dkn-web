@@ -41,6 +41,51 @@ AiApp.prototype.createProjet = function(config) {
 }
 
 /**
+ * 发布应用
+ * @param {*} config 
+ */
+AiApp.prototype.publishProjet = function(config) {
+    console.logg("==> 应用部署 start");
+    //发布后端
+    deployBackend(config);
+    //发布前端
+    deployWeb(config);
+    console.logg("==> 应用部署成功！");
+}
+
+/**
+ * 发布后端
+ */
+function deployBackend(config){
+    //生成后端发布脚本  backend_deploy.hbs
+    let output = genBackendDeploySh(config);
+    //执行脚本发布脚本部署后端
+    try {
+        console.log(`==> 开始部署应用后端服务`)
+        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+    } catch (e) {
+        console.error(`应用后端部署脚本执行报错：`, e);
+        console.error(`==> 请手动部署应用后端！`);
+    }
+}
+
+/**
+ * 发布前端
+ */
+function deployWeb(config){
+    //生成前端发布脚本  deploy_web.hbs
+    let output = genWebeploySh(config);
+    //执行脚本发布脚本部署后端
+    try {
+        console.log(`==> 开始部署应用前端服务`)
+        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+    } catch (e) {
+        console.error(`应用前端部署脚本执行报错：`, e);
+        console.error(`==> 请手动部署应用前端！`);
+    }
+}
+
+/**
  * 初始化数据库
  * @param {*} config 
  */
@@ -66,12 +111,9 @@ function initDataBase(config) {
  */
 function genDbInitShFile(config){
     let renderData = {
-        dbHost: config.appData.dbConfig.dbHost,
-        dbAdmin: config.appData.dbConfig.dbAdmin,
-        dbAdmingPassword: config.appData.dbConfig.dbAdmingPassword,
-        dbName: config.appData.dbConfig.dbName,
-        microDbNames: config.appData.dbConfig.microDbNames.join(','),
-        sqlPath: config.appData.dbConfig.sqlPath
+        dbWorkdir:config.appData.dbConfig.workdir,
+        projectCode: config.appData.projectCode,
+        dbWorkdir:config.appData.dbConfig.workdir
       };
   
     let template = fs.readFileSync(`./templates/init_mult_db.hbs`, "utf8");
@@ -90,7 +132,7 @@ function genDbInitShFile(config){
  * @param {*} config 
  */
 function initBackendRepo(config){
-    console.log(`==> 开始初始化应用后端仓库`)
+    console.log(`===> 开始初始化应用后端仓库`)
     //生成jeecgboot后端init.sh
     config.initJeecgShPath = genJeecgBackendInitSh(config);
     //生成应用后端代码仓库初始化脚本 app_backend_repo.sh
@@ -108,7 +150,7 @@ function initBackendRepo(config){
     handleMultDatasource(config);
 
     //处理后端pom文件
-    handleAppBackendRepo(config);
+    handleAppPom(config);
 
     //代码提交
     commitRepo(config);
@@ -136,7 +178,7 @@ function commitRepo(config){
 function genCommitSh(config) {
     let renderData = {
         workdir:path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}`),
-        desc:"init repo"
+        describe:"init repo"
       };
   
     let template = fs.readFileSync(`./templates/commit.hbs`, "utf8");
@@ -161,25 +203,6 @@ function handleMultDatasource(config) {
 
 }
 
-/**
- * 处理后端pom文件并发布后端
- * @param {*} config 
- */
-function handleAppBackendRepo(config){
-    console.log(`==> pom.xml文件处理中`)
-    //处理pom文件
-    handleAppPom(config);
-    //生成后端发布脚本  app_backend_deploy.hbs
-    let output = genBackendDeploySh(config);
-    //执行脚本发布脚本部署后端
-    try {
-        console.log(`==> 开始部署应用后端服务`)
-        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
-    } catch (e) {
-        console.error(`应用后端部署脚本执行报错：`, e);
-        console.error(`==> 请手动部署应用后端！`);
-    }
-}
 
 /**
  * 处理pom文件
@@ -204,7 +227,7 @@ function handleAppPom(config) {
  * @param {*} config 
  */
 function rewriteSystemPom(modules,config){
-    let file = path.join(config.workdir,`/${config.appData.gitLab.appBackendRepoName}/jeecg-boot/jeecg-boot-module-system/pom.xml`)
+    let file = path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}/jeecg-boot/jeecg-boot-module-system/pom.xml`)
     // 读取 XML 文件内容
     const xmlData = fs.readFileSync(file, 'utf8');
 
@@ -252,7 +275,7 @@ function rewriteSystemPom(modules,config){
  * @param {*} config 
  */
 function rewriteParentPom(modules,config){
-    let file = path.join(config.workdir,`/${config.appData.gitLab.appBackendRepoName}/jeecg-boot/pom.xml`)
+    let file = path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}/jeecg-boot/pom.xml`)
     // 读取 XML 文件内容
     const xmlData = fs.readFileSync(file, 'utf8');
 
@@ -323,22 +346,40 @@ function parsePomDom(config) {
 }
 
 /**
- * 生成后端发布脚本  app_backend_deploy.hbs
+ * 生成后端发布脚本  backend_deploy.hbs
  * @param {*} config 
  */
 function genBackendDeploySh(config) {
     let renderData = {
-        workdir:config.workdir,
-        targetDir:config.appData.gitLab.appBackendRepoName
+        workdir:path.join(config.workdir,`/${config.appData.projectCode}/${config.appData.gitLab.backendRepoName}/jeecg-boot`)
       };
   
-    let template = fs.readFileSync(`./templates/app_backend_deploy.hbs`, "utf8");
+    let template = fs.readFileSync(`./templates/backend_deploy.hbs`, "utf8");
     let hbTemplate = Handlebars.compile(template);
     let templateContent = hbTemplate(renderData);
     //生成脚本文件
-    let output = path.join(config.workdir,`/app_backend_deploy.sh`);
+    let output = path.join(config.workdir,`/backend_deploy.sh`);
     fs.writeFileSync(output, templateContent);
     console.log(`生成后端发布脚本:${output}`)
+    return output;
+}
+
+/**
+ * 生成前端发布脚本  deploy_web.hbs
+ * @param {*} config 
+ */
+function genWebeploySh(config) {
+    let renderData = {
+        workdir:path.join(config.workdir,`/${config.appData.projectCode}/${config.appData.gitLab.backendRepoName}`)
+      };
+  
+    let template = fs.readFileSync(`./templates/deploy_web.hbs`, "utf8");
+    let hbTemplate = Handlebars.compile(template);
+    let templateContent = hbTemplate(renderData);
+    //生成脚本文件
+    let output = path.join(config.workdir,`/deploy_web.sh`);
+    fs.writeFileSync(output, templateContent);
+    console.log(`生成前端发布脚本:${output}`)
     return output;
 }
 
@@ -351,11 +392,13 @@ function genAppBackendRepoSh(config){
         workdir:config.workdir,
         projectCode:config.appData.projectCode,
         initJeecgShPath:config.initJeecgShPath,
-        targetDir:config.appData.gitLab.appBackendRepoName,
+        targetDir:config.appData.gitLab.backendRepoName,
         gitlabUrls:config.appData.gitLab.backendRepoUrls.join(','),
         mergeDirs:config.appData.gitLab.microBackendRepoNames.join(','),
         nginxUser:config.appData.deploy.nginxUser,
         nginxServer:config.appData.deploy.nginxServer,
+        backendTemplateRepoUrl:config.appData.gitLab.backendTemplateRepoUrl,
+        backendTemplateRepoName:getGitRepoFolderName(config.appData.gitLab.backendTemplateRepoUrl),
         nginxConf:path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}/jeecg-boot/docs/${config.appData.projectCode}.conf`)
       };
   
@@ -422,11 +465,15 @@ function initAppWebRepo(config){
  */
 function genAppWebRepoSh(config){
     let renderData = {
+        baseDir:config.baseDir,
         workdir:config.workdir,
+        projectCode:config.appData.projectCode,
         initJeecgVue3ShPath:config.initJeecgVue3ShPath,
-        targetDir:config.appData.gitLab.appWebRepoName,
+        targetDir:config.appData.gitLab.webRepoName,
+        webTemplateRepoUrl:config.appData.gitLab.webTemplateRepoUrl,
         gitlabUrls:config.appData.gitLab.webRepoUrls.join(','),
-        mergeDirs:config.appData.gitLab.microWebRepoNames.join(',')
+        mergeDirs:config.appData.gitLab.microWebRepoNames.join(','),
+        webTemplateRepoName:getGitRepoFolderName(config.appData.gitLab.webTemplateRepoUrl)
       };
     let template = fs.readFileSync(`./templates/app_web_repo.hbs`, "utf8");
     let hbTemplate = Handlebars.compile(template);
@@ -437,6 +484,14 @@ function genAppWebRepoSh(config){
     console.log(`生成应用前端代码仓库初始化脚本:${output}`)
     return output;
 }
+
+/**
+ * 获取git仓库文件夹名称
+ * @param {*} url 
+ */
+function getGitRepoFolderName(url){
+    return url.substring(url.lastIndexOf('/')+1,url.indexOf('.git'))
+ }
 
 /**
  * 生成jeecgboot-vue3前端init.sh

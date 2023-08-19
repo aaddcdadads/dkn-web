@@ -14,10 +14,10 @@ echo "===> 1.更新代码 success"
 
 # 安装依赖
 echo "===> 2.安装依赖 start"
-yarn install --force > /dev/null
+time yarn install --force > /dev/null
 echo "===> 2.安装依赖 success"
 
 #部署服务
 echo "===> 3.部署服务 start"
-./deploy.sh
+time ./deploy.sh
 echo "===> 3.部署服务 success"

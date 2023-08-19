@@ -40,15 +40,15 @@ function createProject(){
     }
 }
 
-
-//创建应用
-function createAppProjet(){
-
-}
-
 //发布应用
 function publishProject(){
-
+    if(config.category === "micro"){
+        //发布微应用
+        aiMicroApp.publishProjet(config);
+    }else{
+        //发布应用
+        aiApp.publishProjet(config);
+    }
 }
 
 //回滚应用

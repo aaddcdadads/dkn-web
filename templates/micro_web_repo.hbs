@@ -8,7 +8,7 @@ name_web={{webRepoName}}
 
 # 模板仓库信息
 web_template_url={{webTemplateRepoUrl}}
-web_template_name=jeecgboot-vue3
+web_template_name={{webTemplateRepoName}}
 
 # 进入仓库保存目录
 cd $repo_directory
@@ -19,7 +19,7 @@ echo "clone $repo_url success"
 
 #克隆web模板仓库代码
 echo "===> 1.克隆web模板仓库代码 start"
-git clone $web_template_url --quiet
+time git clone $web_template_url --quiet
 echo "clone $web_template_url success"
 
 # 判断变量是否为jeecg-vue3模板仓库
@@ -37,7 +37,14 @@ echo "===> 1.克隆web模板仓库代码 success"
 
 #将模板仓库代码复制到微应用仓库中
 echo "===> 2.将模板仓库代码复制到微应用仓库中 start"
-rsync -az --exclude='.git' --exclude='.gitlab-ci.yml' $web_template_name/ $name_web
+#rsync -az --exclude='.git' --exclude='.gitlab-ci.yml' $web_template_name/ $name_web
+#删除.git文件
+rm -rf $web_template_name/.git
+rm -rf $web_template_name/.gitlab-ci.yml
+# 移动文件
+# mv -f $web_template_name/* $name_web/ 
+# 隐藏文件也需要复制
+time cp -a $web_template_name/. $name_web/
 echo "===> 2.将模板仓库代码复制到微应用仓库中 success"
 
 # 拷贝init.sh脚本
@@ -56,15 +63,15 @@ echo "===> 3.初始化项目配置 success"
 search='"version": "1.0"'
 replace='"version": "1.1"'
 # 修改init.json中的版本号,防止后面二次触发初始ci
-sed "s/$search/$replace/g" scripts/init.json > tmpfile && mv tmpfile scripts/init.json
+sed "s/$search/$replace/g" scripts/init.json > tmpfile && mv -f tmpfile scripts/init.json
 #切换ci执行目录为新的仓库目录
 sed -i 's:{{baseDir}}:{{baseDir}}/{{projectCode}}:g' .gitlab-ci.yml
 
 # 提交代码
 echo "===> 4.微应用前端代码提交 start"
-git add . > /dev/null 2>&1
+time git add . > /dev/null 2>&1
 git commit -m "repo init" --quiet
-git push --quiet
+time git push --quiet
 echo "===> 4.微应用前端代码提交 success"
 
 echo "~~前端仓库初始化完成~~"

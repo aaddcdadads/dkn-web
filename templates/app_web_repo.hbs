@@ -7,6 +7,8 @@ base_dir={{workdir}}
 
 # 应用web仓库文件夹名称
 target_dir={{targetDir}}
+# 模板仓库名
+web_template_name={{webTemplateRepoName}}
 
 # 仓库gitlab clone地址列表 示例: dirs=("ssh://xx1.git,ssh://xx2.git,ssh://xx3.git,ssh://xx4.git,ssh://xx5.git")
 gitlab_urls_str=({{gitlabUrls}})
@@ -28,24 +30,33 @@ cd $base_dir
 
 # 克隆仓库代码
 echo "===> 1.克隆仓库代码 start"
+echo "拷贝模板仓库"
+time git clone -b incubation {{webTemplateRepoUrl}}
+#拷贝应用仓库
 for url in "${gitlab_urls[@]}"; do
-    git clone $url --quiet
+    echo "===> clone $url "
+    time git clone $url --quiet
 done
 echo "===> 1.克隆仓库代码 success"
 
 
 # 合并merge_dirs文件夹到base_dir
 echo "===> 2.合并web目录 start"
+echo "合并模板仓库"
+rm -rf $web_template_name/.git
+time cp -a $web_template_name/. $base_dir/$target_dir/
+# 合并微应用仓库
 for dir in "${merge_dirs[@]}"; do
+    echo "合并微应用仓库 $dir "
     # 检查目录是否存在
     if [ -d "$base_dir/$dir" ]; then
         #删除目录中的.git 
         rm -rf $base_dir/$dir/.git
         rm -rf $base_dir/$dir/.gitlab-ci.yml
-        # 移动目录中的文件到 target_dir
-        mv "$base_dir/$dir"/* "$base_dir/$target_dir/"
+        # 移动目录中的文件到 target_dir,这里mv命令无法覆盖非空文件夹,所以选用比较慢的cp
+        # mv -f "$base_dir/$dir"/* "$base_dir/$target_dir/"
         # 隐藏文件也需要复制
-        cp -a $base_dir/$dir/. $base_dir/$target_dir/
+        time cp -a $base_dir/$dir/. $base_dir/$target_dir/
         # 删除空目录
         # rmdir "$base_dir/$dir"
         echo "文件夹 $dir 已合并到 $target_dir"
@@ -59,36 +70,28 @@ echo "===> 2.合并web目录 success"
 echo "===> 3.初始化项目配置 start"
 # 拷贝init.sh脚本
 cp {{initJeecgVue3ShPath}} $target_dir/init_jeecg_vue3.sh
+# 进入项目仓库目录
 cd $target_dir
+pwd
 chmod a+x init_jeecg_vue3.sh
 ./init_jeecg_vue3.sh
 echo "===> 3.初始化项目配置 success"
 
 
-# 使用sed命令修改init.json中的版本号,防止后面二次触发初始ci
-sed -i "s/"version": "1.0"/"version": "1.1"/g" scripts/init.json
-
+# 指定文件路径和替换的文本内容
+search='"version": "1.0"'
+replace='"version": "1.1"'
+# 修改init.json中的版本号,防止后面二次触发初始ci
+sed "s/$search/$replace/g" scripts/init.json > tmpfile && mv -f tmpfile scripts/init.json
+#切换ci执行目录为新的仓库目录
+sed -i 's:{{baseDir}}:{{baseDir}}/{{projectCode}}:g' .gitlab-ci.yml
 
 # 提交应用web仓库代码
 echo "===> 4.提交应用web仓库代码 start"
-cd $target_dir
-pwd
-git add . > /dev/null 2>&1
+time git add . > /dev/null 2>&1
 git commit -m "init repo" --quiet
-git push --quiet
+time git push --quiet
 echo "===> 4.提交应用web仓库代码 success"
-
-# 安装依赖
-echo "===> 5.安装依赖 start"
-#npm install --force > /dev/null
-yarn install --force > /dev/null
-echo "===> 5.安装依赖 success"
-
-#部署服务
-echo "===> 6.部署服务 start"
-pwd
-./deploy.sh
-echo "===> 6.部署服务 success"
 
 
 echo "~~ 应用web仓库初始化完成 ~~"

@@ -36,6 +36,92 @@ AiMicroApp.prototype.createProjet = function(config) {
 
 }
 
+
+
+/**
+ * 发布应用
+ * @param {*} config 
+ */
+AiMicroApp.prototype.publishProjet = function(config) {
+    console.logg("==> 微应用部署 start");
+    //发布后端
+    deployBackend(config);
+    //发布前端
+    deployWeb(config);
+    console.logg("==> 微应用部署成功！");
+}
+
+/**
+ * 发布后端
+ */
+function deployBackend(config){
+    //生成后端发布脚本 backend_deploy.hbs
+    let output = genBackendDeploySh(config);
+    //执行脚本发布脚本部署后端
+    try {
+        console.log(`==> 开始部署微应用后端服务`)
+        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+    } catch (e) {
+        console.error(`微应用后端部署脚本执行报错：`, e);
+        console.error(`==> 请手动部署微应用后端！`);
+    }
+}
+
+/**
+ * 发布前端
+ */
+function deployWeb(config){
+    //生成前端发布脚本  deploy_web.hbs
+    let output = genWebeploySh(config);
+    //执行脚本发布脚本部署后端
+    try {
+        console.log(`==> 开始部署应用前端服务`)
+        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+    } catch (e) {
+        console.error(`应用前端部署脚本执行报错：`, e);
+        console.error(`==> 请手动部署应用前端！`);
+    }
+}
+
+
+/**
+ * 生成前端发布脚本  deploy_web.hbs
+ * @param {*} config 
+ */
+function genWebeploySh(config) {
+    let renderData = {
+        workdir:path.join(config.workdir,`/${config.microAppData.projectCode}/${config.microAppData.gitLab.appBackendRepoName}`)
+      };
+  
+    let template = fs.readFileSync(`./templates/deploy_web.hbs`, "utf8");
+    let hbTemplate = Handlebars.compile(template);
+    let templateContent = hbTemplate(renderData);
+    //生成脚本文件
+    let output = path.join(config.workdir,`/deploy_web.sh`);
+    fs.writeFileSync(output, templateContent);
+    console.log(`生成前端发布脚本:${output}`)
+    return output;
+}
+
+/**
+ * 生成后端发布脚本  backend_deploy.hbs
+ * @param {*} config 
+ */
+function genBackendDeploySh(config) {
+    let renderData = {
+        workdir:path.join(config.workdir,`/${config.microAppData.projectCode}/${config.microAppData.gitLab.appBackendRepoName}/jeecg-boot`)
+      };
+  
+    let template = fs.readFileSync(`./templates/backend_deploy.hbs`, "utf8");
+    let hbTemplate = Handlebars.compile(template);
+    let templateContent = hbTemplate(renderData);
+    //生成脚本文件
+    let output = path.join(config.workdir,`/backend_deploy.sh`);
+    fs.writeFileSync(output, templateContent);
+    console.log(`生成后端发布脚本:${output}`)
+    return output;
+}
+
 /**
  * 检查初始化状态
  */
@@ -86,7 +172,15 @@ function initMicroWebRepo(config){
     let output = genMicroWebRepoSh(config);
     //执行脚本文件
      try {
-        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+        //execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+        exec(`chmod a+x ${output} && sh ${output}`, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`执行脚本时发生错误: ${error}`);
+                return;
+            }
+            console.log(stdout);
+            console.log(stderr);
+        });
     } catch (e) {
         console.error(`微应用前端代码仓库初始化脚本执行报错：`, e);
     }
@@ -103,7 +197,8 @@ function genMicroWebRepoSh(config){
         webRepoUrl:config.microAppData.gitLab.webRepoUrl,
         webRepoName:config.microAppData.gitLab.webRepoName,
         webTemplateRepoUrl:config.microAppData.gitLab.webTemplateRepoUrl,
-        initJeecgVue3ShPath:config.initJeecgVue3ShPath
+        initJeecgVue3ShPath:config.initJeecgVue3ShPath,
+        webTemplateRepoName:getGitRepoFolderName(config.microAppData.gitLab.webTemplateRepoUrl)
       };
   
     let template = fs.readFileSync(`./templates/micro_web_repo.hbs`, "utf8");
@@ -117,6 +212,14 @@ function genMicroWebRepoSh(config){
 }
 
 /**
+ * 获取git仓库文件夹名称
+ * @param {*} url 
+ */
+function getGitRepoFolderName(url){
+   return url.substring(url.lastIndexOf('/')+1,url.indexOf('.git'))
+}
+
+/**
  * 微应用后端代码仓库初始化
  */
 function initMicroBackendRepo(config){
@@ -127,7 +230,15 @@ function initMicroBackendRepo(config){
     let output = genMicroBackendRepoSh(config);
     //执行脚本文件
     try {
-        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+        //execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+        exec(`chmod a+x ${output} && sh ${output}`, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`执行脚本时发生错误: ${error}`);
+                return;
+            }
+            console.log(stdout);
+            console.log(stderr);
+        });
     } catch (e) {
         console.error(`生成微应用后端代码仓库初始化脚本执行报错：`, e);
     }
@@ -147,6 +258,7 @@ function genMicroBackendRepoSh(config){
         initJeecgShPath:config.initJeecgShPath,
         nginxUser:config.microAppData.deploy.nginxUser,
         nginxServer:config.microAppData.deploy.nginxServer,
+        backendTemplateRepoName:getGitRepoFolderName(config.microAppData.gitLab.backendTemplateRepoUrl),
         nginxConf:path.join(config.workdir,`/${config.microAppData.gitLab.backendRepoName}/jeecg-boot/docs/${config.microAppData.projectCode}.conf`)
       };
   
@@ -192,7 +304,15 @@ function initDataBase(config){
 
     //执行db初始脚本文件
     try {
-        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+        //execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+        exec(`chmod a+x ${output} && sh ${output}`, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`执行脚本时发生错误: ${error}`);
+                return;
+            }
+            console.log(stdout);
+            console.log(stderr);
+        });
     } catch (e) {
         console.error(`数据库初始化脚本执行报错：`, e);
     }
@@ -205,7 +325,8 @@ function initDataBase(config){
  */
 function genDbInitShFile(config){
     let renderData = {
-        dbConfig: config.microAppData.dbConfig
+        dbConfig: config.microAppData.dbConfig,
+        projectCode:config.microAppData.projectCode
       };
   
     let template = fs.readFileSync(`./templates/init_db.hbs`, "utf8");

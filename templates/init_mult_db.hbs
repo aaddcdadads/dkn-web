@@ -1,79 +1,29 @@
 #!/bin/bash
 
-# MySQL数据库信息
+# 应用数据库初始化脚本
+
+# 数据库初始化工作目录
+DB_WORKDIR={{dbWorkdir}}
+# 服务器ip
 DB_HOST={{dbConfig.dbHost}}
-DB_USER={{dbConfig.dbAdmin}}
-DB_PASS={{dbConfig.dbAdmingPassword}}
-DB_NAME={{dbConfig.dbName}}
-# 需要拷贝的源数据库名
-SOURCE_DB_STR={{dbConfig.microDbNames}}
-# 业务sql脚本文件
+# 服务器用户
+DB_USER={{dbConfig.dbUser}}
+# 以项目编码作为数据库名称，会同步创建一个数据库同名用户
+PROJECT_CODE={{projectCode}}
+#应用数据库密码
+DB_PASSWORD={{dbConfig.dbPassword}}
+#模板数据库
+DB_TEMPLATE={{dbConfig.sourceDb}}
+#是否导入模板库数据(0:否,1:是)
+IMPORT_DATA=1
+# 微应用数据库名称，多个用逗号拼接
+MICRO_DB_NAMES={{dbConfig.microDbNames}}
+# 业务sql脚本文件(非必须)
 SQL_FILE_PATH={{dbConfig.sqlPath}}
 
-# 将IFS设置为逗号
-IFS=','
-# 将字符串分割为数组
-SOURCE_DB_ARR=($SOURCE_DB_STR)
+echo " 业务sql脚本文件: ${SQL_FILE_PATH} "
+# 创建数据库、创建用户、拷贝模板库(表结构和数据)、创建微应用数据库并拷贝原微应用业务库表结构
+ssh ${DB_HOST}@${DB_USER} "cd ${DB_WORKDIR} && ./init_app_db.sh ${PROJECT_CODE} ${DB_PASSWORD} ${DB_TEMPLATE} ${IMPORT_DATA} ${MICRO_DB_NAMES} ${SQL_FILE_PATH}"
 
-
-# 创建数据库
-echo "===> 1.创建应用数据库 start"
-mysql -h $DB_HOST -u $DB_USER -p$DB_PASS -e "CREATE DATABASE IF NOT EXISTS $DB_NAME DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci;"
-echo "===> 1.创建应用数据库 success"
-
-# 创建数据库同名用户
-mysql -u $DB_USER -p"$DB_PASS" -e "CREATE USER '$DB_NAME'@'localhost' IDENTIFIED BY '$DB_PASS';"
-
-# 授予用户对数据库的所有权限
-mysql -u $DB_USER -p"$DB_PASS" -e "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_NAME'@'localhost';"
-
-echo "===> 2.开始jeecgboot-vue3模板数据库表结构同步"
-mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST --no-data jeecgboot-vue3 | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST $DB_NAME
-echo ===> 2.开始jeecgboot-vue3模板数据库表结构同步完成"
-
-echo "===> 3.开始jeecgboot-vue3模板数据库表数据同步"
-mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST --no-create-info jeecgboot-vue3 | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST $DB_NAME
-echo "===> 3.jeecgboot-vue3模板数据库表数据同步完成"
-
-
-
-# 执行业务sql文件
-if [ -z "$SQL_FILE_PATH" ]; then
-    echo "业务sql脚本路径为空,无需执行。"
-else
-    # 检查文件是否存在
-    if [ -f "$SQL_FILE_PATH" ]; then
-        # 执行sql脚本
-        echo "===> 4.开始执行业务sql脚本"
-        mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME < $SQL_FILE_PATH
-        echo "===> 4.业务sql脚本执行完成"
-    else
-        echo "业务sql脚本不存在,请确保输入的文件路径有效。"
-    fi
-fi
-
-
-
-echo "===> 5.拷贝微应用数据库 start"
-for SOURCE_DB in "${SOURCE_DB_ARR[@]}"; do  
-    # 创建数据库
-    mysql -h $DB_HOST -u $DB_USER -p$DB_PASS -e "CREATE DATABASE IF NOT EXISTS ${DB_NAME}_${SOURCE_DB} DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci;"
-    # 授予用户对数据库的所有权限
-    mysql -u $DB_USER -p"$DB_PASS" -e "GRANT ALL PRIVILEGES ON ${DB_NAME}_${SOURCE_DB}.* TO '$DB_NAME'@'localhost';"
-
-    # 拷贝SOURCE_DB所有表结构到DB_NAME
-    echo " $SOURCE_DB 开始表结构同步"
-    mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST --no-data $SOURCE_DB | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST ${DB_NAME}_${SOURCE_DB}
-    echo " $SOURCE_DB 表结构同步完成"
-
-    # 拷贝SOURCE_DB所有表数据到DB_NAME
-    echo " $SOURCE_DB 开始表数据同步"
-    mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST --no-create-info $SOURCE_DB | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST ${DB_NAME}_${SOURCE_DB}
-    echo " $SOURCE_DB 数据同步完成"
-done
-echo "===> 5.拷贝微应用数据库 success"
-
-# 刷新权限
-mysql -u $DB_USER -p"$DB_PASS" -e "FLUSH PRIVILEGES;"
-
-echo "===> 数据库初始化完成！"
+# 退出服务器
+exit

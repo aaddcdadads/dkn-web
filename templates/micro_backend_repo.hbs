@@ -8,7 +8,7 @@ repo_name={{backendRepoName}}
 
 # 模板仓库信息
 backend_template_url={{backendTemplateRepoUrl}}
-backend_template_name=jeecg-boot
+backend_template_name={{backendTemplateRepoName}}
 
 # 进入仓库保存目录
 cd $repo_directory
@@ -19,7 +19,7 @@ echo "clone $repo_url success"
 
 #克隆后端模板仓库代码
 echo "===> 1.克隆后端模板仓库代码 start"
-git clone $backend_template_url --quiet
+time git clone $backend_template_url --quiet
 
 # 判断变量是否为jeecg-boot模板仓库
 if [ "$backend_template_url" == 'ssh://git@gitlab.haomo-studio.com:15822/templates/jeecg-boot.git' ]; then
@@ -39,9 +39,9 @@ echo "===> 2.将模板仓库代码复制到微应用仓库中 start"
 #删除.git文件
 rm -rf $backend_template_name/.git
 # 移动文件
-mv $backend_template_name/* $repo_name/ 
+# mv -f $backend_template_name/* $repo_name/ 
 # 隐藏文件也需要复制
-cp -a $backend_template_name/. $repo_name/
+time cp -a $backend_template_name/. $repo_name/
 echo "===> 2.将模板仓库代码复制到微应用仓库中 success"
 
 # 拷贝init.sh脚本
@@ -56,9 +56,9 @@ echo "===> 3.初始化后端项目配置 success"
 
 # 提交代码
 echo "===> 4.微应用后端代码提交 start"
-git add . > /dev/null 2>&1
+time git add . > /dev/null 2>&1
 git commit -m "repo init" --quiet
-git push --quiet
+time git push --quiet
 echo "===> 4.微应用后端代码提交 success"
 
 
@@ -69,13 +69,6 @@ rsync -az {{nginxConf}} {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/m
 # 重载nginx配置
 ssh {{nginxUser}}@{{nginxServer}} "service nginx reload && exit"
 echo "===> 5.同步nginx配置 success"
-
-#部署服务
-echo "===> 6.部署服务 start"
-cd jeecg-boot
-pwd
-./deploy.sh
-echo "===> 6.部署服务 success"
 
 
 echo "~~后端仓库初始化完成~~"
