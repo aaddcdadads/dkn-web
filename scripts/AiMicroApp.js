@@ -242,6 +242,107 @@ function initMicroBackendRepo(config){
     } catch (e) {
         console.error(`生成微应用后端代码仓库初始化脚本执行报错：`, e);
     }
+
+    //处理yml配置文件
+    handleYml(config);
+
+    //提交处理后的代码
+    commitBackendRepo(config);
+}
+
+
+
+/**
+ * 提交后端代码
+ */
+function commitBackendRepo(config){
+    console.log(`==> 代码提交`)
+    //生成脚本  commit.sh
+    let output = genBackendCommitSh(config);
+    //执行脚本
+    try {
+        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+    } catch (e) {
+        console.error(`代码提交脚本执行报错：`, e);
+    }
+}
+
+/**
+ * 生成后端代码提交脚本
+ * @param {*} config 
+ */
+function genBackendCommitSh(config) {
+    let renderData = {
+        workdir:path.join(config.workdir,`/${config.microAppData.gitLab.backendRepoName}`),
+        describe:"init repo"
+      };
+  
+    let template = fs.readFileSync(`./templates/commit.hbs`, "utf8");
+    let hbTemplate = Handlebars.compile(template);
+    let templateContent = hbTemplate(renderData);
+    //生成脚本文件
+    let output = path.join(config.workdir,`/commit.sh`);
+    fs.writeFileSync(output, templateContent);
+    console.log(`生成代码提交脚本:${output}`)
+    return output;
+}
+
+
+
+
+/**
+ * 处理yml配置文件
+ */
+function handleYml(config){
+    //配置文件所在目录
+    let baseDir = path.join(config.workdir,`/${config.microAppData.gitLab.backendRepoName}/jeecg-boot/jeecg-boot-module-system/src/main/resources/`);
+    //dev
+    let devYmlFlile = path.join(baseDir,`application-dev.yml`);
+    handleDatasuorceYml(config,devYmlFlile);
+    //test
+    let testYmlFlile = path.join(baseDir,`application-test.yml`);
+    handleDatasuorceYml(config,testYmlFlile);
+    //prod
+    let prodYmlFlile = path.join(baseDir,`application-prod.yml`);
+    handleDatasuorceYml(config,prodYmlFlile);
+}
+
+/**
+ * 处理yml文件数据库配置
+ * @param {*} config 
+ * @param {*} file 
+ */
+function handleDatasuorceYml(config,ymlFlile){
+    try {
+        // 读取YAML文件内容
+        const fileContents = fs.readFileSync(ymlFlile, 'utf8');
+    
+        // 解析YAML内容
+        const data = yaml.load(fileContents);
+        console.log(data.spring.datasource.dynamic.datasource);
+        let datasource = data.spring.datasource.dynamic.datasource;
+        // 输出提取的配置信息
+        //console.log('datasource ---> ', datasource);
+
+        //master处理
+        datasource.master={
+            url:`jdbc:mysql://${config.microAppData.dbConfig.dbHost}:3306/${config.microAppData.projectCode}?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai`,
+            username: config.appData.projectCode,
+            password: config.appData.dbConfig.dbPassword,
+            'driver-class-name': 'com.mysql.cj.jdbc.Driver'
+        }
+
+        data.spring.datasource.dynamic.datasource = datasource;
+
+        // 创建新的YAML对象，包含修改后的配置信息
+        const newData = { ...data}; // 使用展开操作符（spread operator）来合并修改后的配置信息
+
+        // 将新的YAML对象写回到文件
+        fs.writeFileSync(ymlFlile, yaml.dump(newData));
+
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 /**

@@ -4,6 +4,7 @@ const fs = require('fs');
 const Handlebars = require('../lib/handlebars');
 const { func } = require('vue-types');
 const xml2js = require('xml2js');
+import yaml from 'js-yaml';
 
 
 function AiApp() {}
@@ -200,7 +201,78 @@ function genCommitSh(config) {
  * @param {*} config 
  */
 function handleMultDatasource(config) {
+    //处理yml配置文件
+    handleYml(config);
 
+    //@todo 处理service ，微应用需要加@DS注解使用对应的数据源
+
+}
+
+/**
+ * 处理yml配置文件
+ */
+function handleYml(config){
+    //配置文件所在目录
+    let baseDir = path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}/jeecg-boot/jeecg-boot-module-system/src/main/resources/`);
+    //dev
+    let devYmlFlile = path.join(baseDir,`application-dev.yml`);
+    handleDatasuorceYml(config,devYmlFlile);
+    //test
+    let testYmlFlile = path.join(baseDir,`application-test.yml`);
+    handleDatasuorceYml(config,testYmlFlile);
+    //prod
+    let prodYmlFlile = path.join(baseDir,`application-prod.yml`);
+    handleDatasuorceYml(config,prodYmlFlile);
+}
+
+/**
+ * 处理yml文件数据库配置
+ * @param {*} config 
+ * @param {*} file 
+ */
+function handleDatasuorceYml(config,ymlFlile){
+    try {
+        // 读取YAML文件内容
+        const fileContents = fs.readFileSync(ymlFlile, 'utf8');
+    
+        // 解析YAML内容
+        const data = yaml.load(fileContents);
+        console.log(data.spring.datasource.dynamic.datasource);
+        let datasource = data.spring.datasource.dynamic.datasource;
+        // 输出提取的配置信息
+        //console.log('datasource ---> ', datasource);
+
+        //master处理
+        datasource.master={
+            url:`jdbc:mysql://${config.appData.dbConfig.dbHost}:3306/${config.appData.projectCode}?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai`,
+            username: config.appData.projectCode,
+            password: config.appData.dbConfig.dbPassword,
+            'driver-class-name': 'com.mysql.cj.jdbc.Driver'
+        }
+
+        //微应用处理
+        if(config.appData.dbConfig.microDbNames && config.appData.dbConfig.microDbNames.length>0){
+            config.appData.dbConfig.microDbNames.forEach(slave=>{
+                datasource[slave]={
+                    url:`jdbc:mysql://${config.appData.dbConfig.dbHost}:3306/${config.appData.projectCode}_${slave}?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai`,
+                    username: config.appData.projectCode,
+                    password: config.appData.dbConfig.dbPassword,
+                    'driver-class-name': 'com.mysql.cj.jdbc.Driver'
+                }
+            });
+        }
+
+        data.spring.datasource.dynamic.datasource = datasource;
+
+        // 创建新的YAML对象，包含修改后的配置信息
+        const newData = { ...data}; // 使用展开操作符（spread operator）来合并修改后的配置信息
+
+        // 将新的YAML对象写回到文件
+        fs.writeFileSync(ymlFlile, yaml.dump(newData));
+
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 
