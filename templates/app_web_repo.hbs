@@ -30,8 +30,9 @@ cd $base_dir
 
 # 克隆仓库代码
 echo "===> 1.克隆仓库代码 start"
-echo "clone 模板仓库"
-time git clone -b incubation {{webTemplateRepoUrl}}
+echo "clone 模板仓库 git clone -b {{webTemplateRepoBranch}} {{webTemplateRepoUrl}} "
+time git clone -b {{webTemplateRepoBranch}} {{webTemplateRepoUrl}}
+
 #克隆应用仓库
 for url in "${gitlab_urls[@]}"; do
     echo "===> clone $url "

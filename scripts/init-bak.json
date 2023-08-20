@@ -30,11 +30,13 @@
     "gitLab": {
       "webRepoName": "app081907-web",
       "microWebRepoNames": ["test081828-web","test081827-web"],
+      "webTemplateRepoBranch":"incubation",
       "webTemplateRepoUrl":"ssh://git@gitlab.haomo-studio.com:15822/templates/jeecgboot-vue3.git",
       "webRepoUrls": ["ssh://git@gitlab.haomo-studio.com:15822/ai-app-incubation-group/app081907-web.git",
       "ssh://git@gitlab.haomo-studio.com:15822/ai-app-incubation-group/test081828-web.git",
       "ssh://git@gitlab.haomo-studio.com:15822/ai-app-incubation-group/test081827-web.git"],
       "backendRepoName": "app081907-backend",
+      "backendTemplateRepoBranch":"incubator",
       "backendTemplateRepoUrl":"ssh://git@gitlab.haomo-studio.com:15822/templates/jeecg-boot.git",
       "microBackendRepoNames": ["test081828-backend","test081827-backend"],
       "backendRepoUrls": ["ssh://git@gitlab.haomo-studio.com:15822/ai-app-incubation-group/app081907-backend.git",
@@ -64,10 +66,12 @@
       "gitLab": {
           "webRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/ai-app-incubation-group/test082002-web.git",
           "webRepoName": "test082002-web",
+          "webTemplateRepoBranch":"incubation",
           "webTemplateRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/templates/jeecgboot-vue3.git",
           "repoDescription": "测试23082002",
           "backendRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/ai-app-incubation-group/test082002-backend.git",
           "backendRepoName": "test082002-backend",
+          "backendTemplateRepoBranch":"incubator",
           "backendTemplateRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/templates/jeecg-boot.git"
       }
   }

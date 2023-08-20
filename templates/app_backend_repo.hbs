@@ -31,8 +31,9 @@ cd $base_dir
 
 # 克隆仓库代码
 echo "===> 1.克隆后端仓库代码 start"
-echo "clone 模板仓库"
-time git clone -b incubator $backend_template_url
+echo "clone 模板仓库 git clone -b {{backendTemplateRepoBranch}} $backend_template_url "
+time git clone -b {{backendTemplateRepoBranch}} $backend_template_url
+
 #克隆微应用仓库
 for url in "${gitlab_urls[@]}"; do
     echo "===> clone  $url "

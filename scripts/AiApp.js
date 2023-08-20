@@ -527,6 +527,7 @@ function genAppBackendRepoSh(config){
         nginxUser:config.appData.deploy.nginxUser,
         nginxServer:config.appData.deploy.nginxServer,
         backendTemplateRepoUrl:config.appData.gitLab.backendTemplateRepoUrl,
+        backendTemplateRepoBranch:config.appData.gitLab.backendTemplateRepoBranch,
         backendTemplateRepoName:getGitRepoFolderName(config.appData.gitLab.backendTemplateRepoUrl),
         nginxConf:path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}/jeecg-boot/docs/${config.appData.projectCode}.conf`)
       };
@@ -600,6 +601,7 @@ function genAppWebRepoSh(config){
         initJeecgVue3ShPath:config.initJeecgVue3ShPath,
         targetDir:config.appData.gitLab.webRepoName,
         webTemplateRepoUrl:config.appData.gitLab.webTemplateRepoUrl,
+        webTemplateRepoBranch:config.appData.gitLab.webTemplateRepoBranch,
         gitlabUrls:config.appData.gitLab.webRepoUrls.join(','),
         mergeDirs:config.appData.gitLab.microWebRepoNames.join(','),
         webTemplateRepoName:getGitRepoFolderName(config.appData.gitLab.webTemplateRepoUrl)

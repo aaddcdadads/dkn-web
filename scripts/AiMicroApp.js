@@ -193,6 +193,7 @@ function genMicroWebRepoSh(config){
         webRepoUrl:config.microAppData.gitLab.webRepoUrl,
         webRepoName:config.microAppData.gitLab.webRepoName,
         webTemplateRepoUrl:config.microAppData.gitLab.webTemplateRepoUrl,
+        webTemplateRepoBranch:config.microAppData.gitLab.webTemplateRepoBranch,
         initJeecgVue3ShPath:config.initJeecgVue3ShPath,
         webTemplateRepoName:getGitRepoFolderName(config.microAppData.gitLab.webTemplateRepoUrl)
       };
@@ -342,6 +343,7 @@ function genMicroBackendRepoSh(config){
         backendRepoUrl:config.microAppData.gitLab.backendRepoUrl,
         backendRepoName:config.microAppData.gitLab.backendRepoName,
         backendTemplateRepoUrl:config.microAppData.gitLab.backendTemplateRepoUrl,
+        backendTemplateRepoBranch:config.microAppData.gitLab.backendTemplateRepoBranch,
         initJeecgShPath:config.initJeecgShPath,
         nginxUser:config.microAppData.deploy.nginxUser,
         nginxServer:config.microAppData.deploy.nginxServer,
