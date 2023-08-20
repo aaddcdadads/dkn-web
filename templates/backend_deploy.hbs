@@ -9,10 +9,19 @@ pwd
 
 # 更新代码
 echo "===> 1.更新代码 start"
-git pull --quiet
+time git pull --quiet
 echo "===> 1.更新代码 success"
 
 #部署服务
 echo "===> 2.部署服务 start"
-time ./deploy.sh
+time ./jeecg-boot/deploy.sh
 echo "===> 2.部署服务 success"
+
+# 同步nginx配置
+echo "===> 3.同步nginx配置 start"
+# 同步nginx配置到nginx server
+echo " jeecg-boot/docs/{{projectCode}}.conf "
+rsync -avz jeecg-boot/docs/{{projectCode}} {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
+# 重载nginx配置
+ssh {{nginxUser}}@{{nginxServer}} "cd /etc/nginx/sites-enabled/member && service nginx reload"
+echo "===> 3.同步nginx配置 success"

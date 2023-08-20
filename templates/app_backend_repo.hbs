@@ -31,9 +31,9 @@ cd $base_dir
 
 # 克隆仓库代码
 echo "===> 1.克隆后端仓库代码 start"
-echo "拷贝模板仓库"
+echo "clone 模板仓库"
 time git clone -b incubator $backend_template_url
-#拷贝微应用仓库
+#克隆微应用仓库
 for url in "${gitlab_urls[@]}"; do
     echo "===> clone  $url "
     time git clone $url --quiet
@@ -48,6 +48,9 @@ mkdir pom
 echo "===> 2.合并后端仓库目录 start"
 echo "合并模板仓库"
 rm -rf $backend_template_name/.git
+# 移动文件
+time mv -f $backend_template_name/* $base_dir/$target_dir/ 
+# 隐藏文件也需要复制
 time cp -a $backend_template_name/. $base_dir/$target_dir/
 #微应用仓库
 for dir in "${merge_dirs[@]}"; do
@@ -58,10 +61,11 @@ for dir in "${merge_dirs[@]}"; do
         rm -rf $base_dir/$dir/.git
         #拷贝父项目pom.xml文件
         cp $base_dir/$dir/jeecg-boot/pom.xml pom/$dir.xml
-        # 移动目录中的文件到 target_dir,这里mv命令无法覆盖非空文件夹,所以选用比较慢的cp
+        # 移动目录中的文件到 target_dir,这里mv命令无法覆盖非空文件夹
         # mv -f "$base_dir/$dir"/* "$base_dir/$target_dir/"
         # 隐藏文件也需要复制
-        time cp -a $base_dir/$dir/. $base_dir/$target_dir/
+        #time cp -a $base_dir/$dir/. $base_dir/$target_dir/
+        time rsync -azq $base_dir/$dir/ $base_dir/$target_dir
         # 删除空目录
         # rmdir "$base_dir/$dir"
         echo "文件夹 $dir 已合并到 $target_dir"
@@ -81,24 +85,6 @@ pwd
 chmod a+x init_jeecg.sh
 ./init_jeecg.sh
 echo "===> 3.初始化项目配置 success"
-
-
-# 提交应用仓库代码
-echo "===> 4.提交应用仓库代码 start"
-time git add . > /dev/null 2>&1
-git commit -m "init repo" --quiet
-time git push --quiet
-echo "===> 4.提交应用仓库代码 success"
-
-
-# 同步nginx配置
-echo "===> 5.同步nginx配置 start"
-# 同步nginx配置到nginx server
-echo " {{nginxConf}} "
-rsync -avz {{nginxConf}} {{nginxUser}}@{{nginxServer}}:/etc/nginx/sites-enabled/member/
-# 重载nginx配置
-ssh {{nginxUser}}@{{nginxServer}} "service nginx reload && exit"
-echo "===> 5.同步nginx配置 success"
 
 
 echo "~~ 应用后端仓库初始化完成 ~~"

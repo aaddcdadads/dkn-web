@@ -2,7 +2,7 @@
   "version": "1.0",
   "category": "app",
   "action": "create",
-  "workdir": "/Users/mac/sili/temp/init_app",
+  "workdir": "/Users/mac/sili/data/docker/application-incubation-backends/repository",
   "appData": {
     "appType": 0,
     "projectId": "123456",
@@ -24,7 +24,7 @@
       "dbAdmin": "",
       "dbAdmingPassword": "",
       "sourceDb": "jeecgboot-vue3",
-      "microDbNames": [],
+      "microDbNames": ["test081828","test081827"],
       "sqlPath": "/Users/mac/sili/temp/sql_file.sql"
     },
     "gitLab": {
@@ -43,40 +43,32 @@
     }
   },
   "microAppData": {
-    "appType": 0,
-    "projectId": "test-web-2023081601",
-    "projectName": "测试项目1",
-    "projectCode": "test-web-2023081601",
-    "projectPrefix": "test_",
-    "deploy": {
-      "deployBackendHost": "192.168.1.61",
-      "deployBackendPort": 8381,
-      "deployBackendUser": "haomo",
-      "nginxUser": "root",
-      "nginxServer": "192.168.1.7"
-    },
-    "dbConfig": {
-      "workdir":"/data/database",
-      "dbHost": "192.168.1.206",
-      "dbName": "test-web-2023081601",
-      "dbUser": "haomo",
-      "dbPassword": "haomo123",
-      "dbAdmin": "",
-      "dbAdmingPassword": "",
-      "sourceDb": "jeecgboot-vue3",
-      "sqlPath": "/Users/mac/sili/temp/sql_file.sql"
-    },
-    "gitLab": {
-      "accessToken": "",
-      "webRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/ai-app-incubation-group/test-web-2023081601.git",
-      "webRepoName": "test-web-2023081601",
-      "webTemplateRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/templates/jeecgboot-vue3.git",
-      "repoDescription": "test-web-2023081601",
-      "backendRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/ai-app-incubation-group/test-backend-2023081601.git",
-      "backendRepoName": "test-backend-2023081601",
-      "backendTemplateRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/templates/jeecg-boot.git"
-    }
-  },
-  "initJeecgVue3ShPath": "/Users/mac/sili/temp/init_micro/test-web-2023081601/init_jeecg_vue3.sh",
-  "initJeecgShPath": "/Users/mac/sili/temp/init_micro/test-web-2023081601/init_jeecg.sh"
+      "appType": 0,
+      "projectName": "测试23082002",
+      "projectCode": "test082002",
+      "deploy": {
+          "deployBackendHost": "192.168.1.61",
+          "deployBackendPort": 8107,
+          "deployBackendUser": "haomo",
+          "nginxUser": "root",
+          "nginxServer": "192.168.1.7"
+      },
+      "dbConfig": {
+          "dbHost": "192.168.1.206",
+          "dbName": "test082002",
+          "dbUser": "haomo",
+          "dbPassword": "haomo123",
+          "sourceDb": "jeecgboot-vue3",
+          "workdir": "/data/database"
+      },
+      "gitLab": {
+          "webRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/ai-app-incubation-group/test082002-web.git",
+          "webRepoName": "test082002-web",
+          "webTemplateRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/templates/jeecgboot-vue3.git",
+          "repoDescription": "测试23082002",
+          "backendRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/ai-app-incubation-group/test082002-backend.git",
+          "backendRepoName": "test082002-backend",
+          "backendTemplateRepoUrl": "ssh://git@gitlab.haomo-studio.com:15822/templates/jeecg-boot.git"
+      }
+  }
 }

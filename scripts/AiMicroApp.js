@@ -2,6 +2,7 @@ const { exec,execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 const Handlebars = require('../lib/handlebars');
+const yaml  = require('js-yaml');
 
 function AiMicroApp() {}
 
@@ -109,7 +110,10 @@ function genWebeploySh(config) {
  */
 function genBackendDeploySh(config) {
     let renderData = {
-        workdir:path.join(config.workdir,`/${config.microAppData.projectCode}/${config.microAppData.gitLab.appBackendRepoName}/jeecg-boot`)
+        workdir:path.join(config.workdir,`/${config.microAppData.projectCode}/${config.microAppData.gitLab.appBackendRepoName}`),
+        projectCode:config.microAppData.projectCode,
+        nginxUser:config.microAppData.deploy.nginxUser,
+        nginxServer:config.microAppData.deploy.nginxServer
       };
   
     let template = fs.readFileSync(`./templates/backend_deploy.hbs`, "utf8");
@@ -172,15 +176,7 @@ function initMicroWebRepo(config){
     let output = genMicroWebRepoSh(config);
     //执行脚本文件
      try {
-        //execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
-        exec(`chmod a+x ${output} && sh ${output}`, (error, stdout, stderr) => {
-            if (error) {
-                console.error(`执行脚本时发生错误: ${error}`);
-                return;
-            }
-            console.log(stdout);
-            console.log(stderr);
-        });
+        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
     } catch (e) {
         console.error(`微应用前端代码仓库初始化脚本执行报错：`, e);
     }
@@ -230,15 +226,7 @@ function initMicroBackendRepo(config){
     let output = genMicroBackendRepoSh(config);
     //执行脚本文件
     try {
-        //execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
-        exec(`chmod a+x ${output} && sh ${output}`, (error, stdout, stderr) => {
-            if (error) {
-                console.error(`执行脚本时发生错误: ${error}`);
-                return;
-            }
-            console.log(stdout);
-            console.log(stderr);
-        });
+        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
     } catch (e) {
         console.error(`生成微应用后端代码仓库初始化脚本执行报错：`, e);
     }
@@ -319,16 +307,14 @@ function handleDatasuorceYml(config,ymlFlile){
     
         // 解析YAML内容
         const data = yaml.load(fileContents);
-        console.log(data.spring.datasource.dynamic.datasource);
+        //console.log(data.spring.datasource.dynamic.datasource);
         let datasource = data.spring.datasource.dynamic.datasource;
-        // 输出提取的配置信息
-        //console.log('datasource ---> ', datasource);
 
         //master处理
         datasource.master={
             url:`jdbc:mysql://${config.microAppData.dbConfig.dbHost}:3306/${config.microAppData.projectCode}?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai`,
-            username: config.appData.projectCode,
-            password: config.appData.dbConfig.dbPassword,
+            username: config.microAppData.projectCode,
+            password: config.microAppData.dbConfig.dbPassword,
             'driver-class-name': 'com.mysql.cj.jdbc.Driver'
         }
 
@@ -398,22 +384,22 @@ function handleAppDir(config) {
  * @param {*} config 
  */
 function initDataBase(config){
-    console.log("==> 1.初始化数据库");
+    console.log("==> 初始化数据库");
     //生成初始化数据库脚本文件
     let output = genDbInitShFile(config);
     console.log(`数据库初始化脚本：${output}`)
 
     //执行db初始脚本文件
     try {
-        //execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
-        exec(`chmod a+x ${output} && sh ${output}`, (error, stdout, stderr) => {
-            if (error) {
-                console.error(`执行脚本时发生错误: ${error}`);
-                return;
-            }
-            console.log(stdout);
-            console.log(stderr);
-        });
+        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+        // exec(`chmod a+x ${output} && sh ${output}`, (error, stdout, stderr) => {
+        //     if (error) {
+        //         console.error(`执行脚本时发生错误: ${error}`);
+        //         return;
+        //     }
+        //     console.log(stdout);
+        //     console.log(stderr);
+        // });
     } catch (e) {
         console.error(`数据库初始化脚本执行报错：`, e);
     }

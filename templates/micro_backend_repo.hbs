@@ -14,7 +14,8 @@ backend_template_name={{backendTemplateRepoName}}
 cd $repo_directory
 
 # 克隆微应用后端仓库代码
-git clone $repo_url --quiet
+echo "clone $repo_url start"
+time git clone $repo_url --quiet
 echo "clone $repo_url success"
 
 #克隆后端模板仓库代码
@@ -35,11 +36,11 @@ echo "===> 1.克隆后端模板仓库代码 success"
 
 #将模板仓库代码复制到微应用仓库中
 echo "===> 2.将模板仓库代码复制到微应用仓库中 start"
-# rsync -az --progress --exclude='.git' --exclude='.gitlab-ci.yml' $backend_template_name/ $repo_name
 #删除.git文件
 rm -rf $backend_template_name/.git
+#time rsync -azq --progress --exclude='.git' --exclude='.gitlab-ci.yml' $backend_template_name/ $repo_name
 # 移动文件
-# mv -f $backend_template_name/* $repo_name/ 
+time mv -f $backend_template_name/* $repo_name/ 
 # 隐藏文件也需要复制
 time cp -a $backend_template_name/. $repo_name/
 echo "===> 2.将模板仓库代码复制到微应用仓库中 success"
@@ -54,13 +55,9 @@ chmod a+x init_jeecg.sh
 ./init_jeecg.sh
 echo "===> 3.初始化后端项目配置 success"
 
-# 提交代码
-#echo "===> 4.微应用后端代码提交 start"
-#time git add . > /dev/null 2>&1
-#git commit -m "repo init" --quiet
-#time git push --quiet
-#echo "===> 4.微应用后端代码提交 success"
-
+# system-module下面创建微应用业务代码包
+mkdir -p jeecg-boot/jeecg-boot-module-system/src/main/java/org/jeecg/modules/{{projectCode}}
+echo "微应用业务代码请放这里" > jeecg-boot/jeecg-boot-module-system/src/main/java/org/jeecg/modules/{{projectCode}}/README.md
 
 # 同步nginx配置
 echo "===> 5.同步nginx配置 start"

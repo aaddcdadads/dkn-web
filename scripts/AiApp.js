@@ -4,7 +4,7 @@ const fs = require('fs');
 const Handlebars = require('../lib/handlebars');
 const { func } = require('vue-types');
 const xml2js = require('xml2js');
-import yaml from 'js-yaml';
+const yaml  = require('js-yaml');
 
 
 function AiApp() {}
@@ -114,7 +114,7 @@ function genDbInitShFile(config){
     let renderData = {
         dbWorkdir:config.appData.dbConfig.workdir,
         projectCode: config.appData.projectCode,
-        dbWorkdir:config.appData.dbConfig.workdir
+        dbConfig:config.appData.dbConfig
       };
   
     let template = fs.readFileSync(`./templates/init_mult_db.hbs`, "utf8");
@@ -204,8 +204,61 @@ function handleMultDatasource(config) {
     //处理yml配置文件
     handleYml(config);
 
-    //@todo 处理service ，微应用需要加@DS注解使用对应的数据源
+    //@todo 处理serviceImpl ，微应用需要加@DS注解使用对应的数据源
+    handleServiceImpl(config);
+}
 
+/**
+ * 处理serviceImpl ，微应用需要加DS注解使用对应的数据源
+ */
+function handleServiceImpl(config){
+   let microNames = config.appData.dbConfig.microDbNames;
+   if(!microNames || microNames.length==0){
+        return;
+   }
+
+   microNames.forEach(pkg=>{
+        console.log(`处理 ${pkg} @DS数据源 start`)
+        // 指定要扫描的文件夹路径
+        const folderPath = path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}/jeecg-boot/jeecg-boot-module-system/src/main/java/org/jeecg/modules/${pkg}`)
+        //插入DS注解
+        try{
+            insertDsAnno(folderPath,pkg)
+            console.log(`处理 ${pkg} @DS数据源 success`)
+        }catch(e){
+            console.error(`处理 ${pkg} @DS数据源异常:`+e)
+        }
+   })
+}
+
+/**
+ * 处理serviceImpl ，微应用需要加DS注解使用对应的数据源
+ * @param {*} config 
+ */
+function insertDsAnno(folderPath,slave) {
+    // 检查文件路径是否以ServiceImpl结尾
+    const isServiceImplFile = (fileName) => {
+        return fileName.endsWith('ServiceImpl.java');
+    };
+
+    // 扫描文件夹
+    fs.readdirSync(folderPath).forEach((file) => {
+        const filePath = path.join(folderPath, file);
+    
+        // 检查文件是否为ServiceImpl结尾
+        if (isServiceImplFile(file)) {
+            // 读取文件内容
+            const content = fs.readFileSync(filePath, 'utf8');
+            
+            // 在@Service行前面插入@DS("slave")
+            const updatedContent = content.replace(/(@Service)/g, `@DS("${slave}")\n$1`);
+            
+            // 将修改后的内容写入文件
+            fs.writeFileSync(filePath, updatedContent, 'utf8');
+        }
+    });
+
+    console.log('扫描和修改完成！');
 }
 
 /**
@@ -237,10 +290,8 @@ function handleDatasuorceYml(config,ymlFlile){
     
         // 解析YAML内容
         const data = yaml.load(fileContents);
-        console.log(data.spring.datasource.dynamic.datasource);
+        //console.log(data.spring.datasource.dynamic.datasource);
         let datasource = data.spring.datasource.dynamic.datasource;
-        // 输出提取的配置信息
-        //console.log('datasource ---> ', datasource);
 
         //master处理
         datasource.master={
@@ -423,7 +474,10 @@ function parsePomDom(config) {
  */
 function genBackendDeploySh(config) {
     let renderData = {
-        workdir:path.join(config.workdir,`/${config.appData.projectCode}/${config.appData.gitLab.backendRepoName}/jeecg-boot`)
+        workdir:path.join(config.workdir,`/${config.appData.projectCode}/${config.appData.gitLab.backendRepoName}`),
+        projectCode:config.appData.projectCode,
+        nginxUser:config.appData.deploy.nginxUser,
+        nginxServer:config.appData.deploy.nginxServer
       };
   
     let template = fs.readFileSync(`./templates/backend_deploy.hbs`, "utf8");

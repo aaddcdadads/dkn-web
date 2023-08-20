@@ -30,9 +30,9 @@ cd $base_dir
 
 # 克隆仓库代码
 echo "===> 1.克隆仓库代码 start"
-echo "拷贝模板仓库"
+echo "clone 模板仓库"
 time git clone -b incubation {{webTemplateRepoUrl}}
-#拷贝应用仓库
+#克隆应用仓库
 for url in "${gitlab_urls[@]}"; do
     echo "===> clone $url "
     time git clone $url --quiet
@@ -44,7 +44,9 @@ echo "===> 1.克隆仓库代码 success"
 echo "===> 2.合并web目录 start"
 echo "合并模板仓库"
 rm -rf $web_template_name/.git
-time cp -a $web_template_name/. $base_dir/$target_dir/
+#time cp -a $web_template_name/. $base_dir/$target_dir/
+time rsync -azq --exclude='.git' --exclude='.gitlab-ci.yml'  $web_template_name/ $base_dir/$target_dir
+
 # 合并微应用仓库
 for dir in "${merge_dirs[@]}"; do
     echo "合并微应用仓库 $dir "
@@ -56,7 +58,8 @@ for dir in "${merge_dirs[@]}"; do
         # 移动目录中的文件到 target_dir,这里mv命令无法覆盖非空文件夹,所以选用比较慢的cp
         # mv -f "$base_dir/$dir"/* "$base_dir/$target_dir/"
         # 隐藏文件也需要复制
-        time cp -a $base_dir/$dir/. $base_dir/$target_dir/
+        #time cp -a $base_dir/$dir/. $base_dir/$target_dir/
+        time rsync -azq $base_dir/$dir/ $base_dir/$target_dir
         # 删除空目录
         # rmdir "$base_dir/$dir"
         echo "文件夹 $dir 已合并到 $target_dir"

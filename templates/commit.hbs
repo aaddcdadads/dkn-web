@@ -9,6 +9,7 @@ pwd
 # 提交代码
 echo "===> 代码提交 start"
 time git add . > /dev/null 2>&1
-git commit -m "{{describe}} -Incubation " --quiet
+echo "commit repo"
+time git commit -m "{{describe}} -Incubation " --quiet
 time git push --quiet
 echo "===> 代码提交 success"
