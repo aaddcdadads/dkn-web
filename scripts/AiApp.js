@@ -220,7 +220,7 @@ function handleServiceImpl(config){
    microNames.forEach(pkg=>{
         console.log(`处理 ${pkg} @DS数据源 start`)
         // 指定要扫描的文件夹路径
-        const folderPath = path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}/jeecg-boot/jeecg-boot-module-system/src/main/java/org/jeecg/modules/${pkg}`)
+        const folderPath = path.join(config.workdir,`/${config.appData.gitLab.backendRepoName}/jeecg-boot/jeecg-boot-module-system/src/main/java/org/jeecg/modules/${pkg}/service/impl`)
         //插入DS注解
         try{
             insertDsAnno(folderPath,pkg)
@@ -250,11 +250,14 @@ function insertDsAnno(folderPath,slave) {
             // 读取文件内容
             const content = fs.readFileSync(filePath, 'utf8');
             
+            // 在@Service行前面插入@DS依赖 import com.baomidou.dynamic.datasource.annotation.DS;
+            let updatedContent = content.replace(/(@Service)/g, `import com.baomidou.dynamic.datasource.annotation.DS;\n$1`);
             // 在@Service行前面插入@DS("slave")
-            const updatedContent = content.replace(/(@Service)/g, `@DS("${slave}")\n$1`);
+            const replaceContent = updatedContent.replace(/(@Service)/g, `@DS("${slave}")\n$1`);
+            
             
             // 将修改后的内容写入文件
-            fs.writeFileSync(filePath, updatedContent, 'utf8');
+            fs.writeFileSync(filePath, replaceContent, 'utf8');
         }
     });
 
@@ -662,10 +665,14 @@ function handleAppDir(config) {
  * @param {*} config 
  */
 function rewriteInitJson(config){
+    try{
     let file = path.join(config.workdir,`/${config.appData.gitLab.webRepoName}/scripts/init.json`)
     fs.writeFileSync(file, JSON.stringify(config, null, 2))
     let baseFile = path.join(config.baseDir,`/${config.appData.gitLab.webRepoName}/scripts/init.json`)
     fs.writeFileSync(baseFile, JSON.stringify(config, null, 2))
+    }catch(e){
+        console.error(e)
+    }
 }
 
 module.exports = AiApp;
