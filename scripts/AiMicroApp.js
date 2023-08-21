@@ -143,7 +143,7 @@ function checkInitStaus(config){
     //判断文件夹是否存在
     fs.access(dir, fs.constants.F_OK, (err) => {
         if (err) {
-            console.log('项目未初始化');
+            //console.log('项目未初始化');
             initFlag = false;
         } else {
             console.log('项目已初始化');

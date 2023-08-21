@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#初始化微应用数据库脚本
+##初始化微应用数据库脚本
 
-# 数据库初始化工作目录
-DB_WORKDIR={{dbWorkdir}}
+# 数据库初始化脚本所在目录
+DB_WORKDIR={{dbConfig.workdir}}
 # 服务器ip
 DB_HOST={{dbConfig.dbHost}}
 # 服务器用户
@@ -19,7 +19,4 @@ SQL_FILE_PATH={{dbConfig.sqlPath}}
 
 echo " 业务sql脚本文件: ${SQL_FILE_PATH} "
 # 创建数据库、创建用户、拷贝模板库(表结构和数据)
-ssh ${DB_HOST}@${DB_USER} "cd ${DB_WORKDIR} && ./init_db.sh ${PROJECT_CODE} ${DB_PASS} ${SOURCE_DB} 1 ${SQL_FILE_PATH}"
-
-# 退出服务器
-exit
+ssh -t ${DB_HOST}@${DB_USER} "./${DB_WORKDIR}/init_db.sh ${PROJECT_CODE} ${DB_PASS} ${SOURCE_DB} 1 ${SQL_FILE_PATH}"
