@@ -142,7 +142,7 @@ function initBackendRepo(config){
     let output = genAppBackendRepoSh(config);
     //执行脚本文件
     try {
-        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+        execSync(`chmod a+x ${output} && bash ${output}`, {stdio: 'inherit'});
     } catch (e) {
         console.error(`合并微应用代码仓库脚本执行报错：`, e);
         console.error(`==> 请手动进行微应用代码仓库合并，然后手动执行发布！`);
@@ -583,8 +583,8 @@ function initAppWebRepo(config){
     let output = genAppWebRepoSh(config);
     //执行脚本文件
      try {
-        console.log(`==> 开始部署应用前端服务`)
-        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+        console.log(`==> 开始初始化应用前端服务`)
+        execSync(`chmod a+x ${output} && bash ${output}`, {stdio: 'inherit'});
     } catch (e) {
         console.error(`应用前端代码仓库初始化脚本执行报错：`, e);
         console.error(`==> 请手动合并web端微应用代码！`);

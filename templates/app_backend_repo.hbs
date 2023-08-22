@@ -12,19 +12,10 @@ backend_template_url={{backendTemplateRepoUrl}}
 backend_template_name={{backendTemplateRepoName}}
 
 # 仓库gitlab clone地址列表 示例: dirs=("ssh://xx1.git,ssh://xx2.git,ssh://xx3.git,ssh://xx4.git,ssh://xx5.git")
-gitlab_urls_str=({{gitlabUrls}})
-# 将IFS设置为逗号
-IFS=','
-# 将字符串分割为数组
-gitlab_urls=($gitlab_urls_str)
+IFS=',' read -ra gitlab_urls <<< "{{gitlabUrls}}"
 
 # 待合并的微应用仓库文件夹名列表 示例: dirs=("dir2,dir3,dir4,dir5")
-merge_dirs_str=({{mergeDirs}})
-# 将IFS设置为逗号
-IFS=','
-# 将字符串分割为数组
-merge_dirs=($merge_dirs_str)
-
+IFS=',' read -ra merge_dirs <<< "{{mergeDirs}}"
 
 # 进入工作目录
 cd $base_dir
@@ -32,7 +23,7 @@ cd $base_dir
 # 克隆仓库代码
 echo "===> 1.克隆后端仓库代码 start"
 echo "clone 模板仓库 git clone -b {{backendTemplateRepoBranch}} $backend_template_url "
-time git clone -b {{backendTemplateRepoBranch}} $backend_template_url
+time git clone -b {{backendTemplateRepoBranch}} $backend_template_url --quiet
 
 #克隆微应用仓库
 for url in "${gitlab_urls[@]}"; do
@@ -78,8 +69,13 @@ echo "===> 2.合并后端仓库目录 success"
 
 
 echo "===> 3.初始化项目配置 start"
-# 拷贝init.sh脚本
-cp {{initJeecgShPath}} $target_dir/init_jeecg.sh
+# 拷贝init.sh脚本、模板仓库初始化配置相关文件
+cp -f {{initJeecgShPath}} $target_dir/init_jeecg.sh
+cp -f $backend_template_name/jeecg-boot/docs/docker-compose.yml $target_dir/jeecg-boot/docs
+cp -f $backend_template_name/jeecg-boot/deploy.sh $target_dir/jeecg-boot
+cp -f $backend_template_name/jeecg-boot/docs/jeecgboot-vue3.conf $target_dir/jeecg-boot/docs
+cp -f $backend_template_name/jeecg-boot/jeecg-boot-module-system/src/main/resources/application* $target_dir/jeecg-boot/jeecg-boot-module-system/src/main/resources
+
 #进入仓库目录
 cd $target_dir
 pwd

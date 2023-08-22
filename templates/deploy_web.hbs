@@ -12,6 +12,10 @@ echo "===> 1.更新代码 start"
 git pull --quiet
 echo "===> 1.更新代码 success"
 
+#删除test文件夹,避免依赖缺失导致打包失败
+rm -rf src/views/haomo/test
+rm -rf src/pages/test
+
 # 安装依赖
 echo "===> 2.安装依赖 start"
 time yarn install --force > /dev/null
