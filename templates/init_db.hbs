@@ -19,4 +19,4 @@ SQL_FILE_PATH={{dbConfig.sqlPath}}
 
 echo " 业务sql脚本文件: ${SQL_FILE_PATH} "
 # 创建数据库、创建用户、拷贝模板库(表结构和数据)
-ssh -t ${DB_HOST}@${DB_USER} "./${DB_WORKDIR}/init_db.sh ${PROJECT_CODE} ${DB_PASS} ${SOURCE_DB} 1 ${SQL_FILE_PATH}"
+ssh -t -t ${DB_USER}@${DB_HOST} "sh ${DB_WORKDIR}/init_db.sh ${PROJECT_CODE} ${DB_PASS} ${SOURCE_DB} 1 ${SQL_FILE_PATH}"

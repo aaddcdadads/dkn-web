@@ -98,7 +98,9 @@ function initDataBase(config) {
 
     //执行db初始脚本文件
     try {
-        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
+        execSync(`chmod a+x ${output}`, {stdio: 'inherit'});
+        let res = execSync(`bash ${output}`, {stdio: 'inherit'});
+        console.log(res);
     } catch (e) {
         console.error(`数据库初始化脚本执行报错：`, e);
     }

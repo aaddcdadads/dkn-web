@@ -1,4 +1,4 @@
-const { exec,execSync } = require('child_process');
+const { exec,execSync,spawnSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 const Handlebars = require('../lib/handlebars');
@@ -393,15 +393,15 @@ function initDataBase(config){
 
     //执行db初始脚本文件
     try {
-        execSync(`chmod a+x ${output} && sh ${output}`, {stdio: 'inherit'});
-        // exec(`chmod a+x ${output} && sh ${output}`, (error, stdout, stderr) => {
-        //     if (error) {
-        //         console.error(`执行脚本时发生错误: ${error}`);
-        //         return;
-        //     }
-        //     console.log(stdout);
-        //     console.log(stderr);
-        // });
+        execSync(`chmod a+x ${output}`, {stdio: 'inherit'});
+        let res = execSync(`bash ${output}`, {stdio: 'inherit'});
+        console.log(res);
+
+        // 远程连接服务器并执行命令
+        //let sqlFile = config.microAppData.dbConfig.sqlPath?config.microAppData.dbConfig.sqlPath:"";
+        //const command = `ssh -t -t ${config.microAppData.dbConfig.dbUser}@${config.microAppData.dbConfig.dbHost} 'bash ${config.microAppData.dbConfig.workdir}/init_db.sh ${config.microAppData.projectCode} ${config.microAppData.dbConfig.dbPassword} ${config.microAppData.dbConfig.sourceDb} 1 ${sqlFile}'`;
+        //console.log(`command: ${command}`);
+        //const res = execSync(command, { encoding: 'utf-8',stdio: 'inherit' });
     } catch (e) {
         console.error(`数据库初始化脚本执行报错：`, e);
     }
