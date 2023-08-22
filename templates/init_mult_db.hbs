@@ -24,6 +24,3 @@ SQL_FILE_PATH={{dbConfig.sqlPath}}
 echo " 业务sql脚本文件: ${SQL_FILE_PATH} "
 # 创建数据库、创建用户、拷贝模板库(表结构和数据)、创建微应用数据库并拷贝原微应用业务库表结构
 ssh -t -t ${DB_USER}@${DB_HOST} "sh ${DB_WORKDIR}/init_app_db.sh ${PROJECT_CODE} ${DB_PASSWORD} ${DB_TEMPLATE} ${IMPORT_DATA} ${MICRO_DB_NAMES} ${SQL_FILE_PATH}"
-
-# 退出服务器
-exit
