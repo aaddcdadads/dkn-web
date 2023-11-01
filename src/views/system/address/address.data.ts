@@ -33,6 +33,11 @@ export const columns: BasicColumn[] = [
     width: 150,
     dataIndex: 'email',
   },
+  {
+    title: '状态',
+    width: 150,
+    dataIndex: 'statusNm',
+  },
 ];
 
 export const searchFormSchema: FormSchema[] = [
