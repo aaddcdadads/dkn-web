@@ -35,6 +35,7 @@ import { createForm, onFieldValueChange } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/vue'
 import UploadImage from '/@/components/built-in/jeecg/formily/UploadImage.vue'
 import HmAntInput from '/@/components/built-in/jeecg/HmAntInput.vue'
+import HmAntInputPassword from '/@/components/built-in/jeecg/HmAntInputPassword.vue'
 import HmAntUpload from '/@/components/built-in/jeecg/HmAntUpload.vue'
 import HmAntSelect from '/@/components/built-in/jeecg/HmAntSelect.vue'
 import HmAntButton from '/@/components/built-in/jeecg/HmAntButton.vue'
@@ -42,8 +43,11 @@ import HmAntTreeSelect from '/@/components/built-in/jeecg/HmAntTreeSelect.vue'
 import HmAntTree from '/@/components/built-in/jeecg/HmAntTree.vue'
 import HmAntCascader from '/@/components/built-in/jeecg/HmAntCascader.vue'
 import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
+import HmAntIconTextImport from '/@/components/built-in/jeecg/HmAntIconText.vue'
+import HmAntBgText from '/@/components/built-in/jeecg/HmAntBgText.vue'
+
 import moment from 'moment'
-import 'ant-design-vue/dist/antd.css'
+// import 'ant-design-vue/dist/antd.css'
 import _ from 'lodash'
 import locale from "ant-design-vue/es/date-picker/locale/zh_CN";
 
@@ -174,6 +178,20 @@ const Img = defineComponent({
   },
 })
 
+const HmAntIconText = defineComponent({
+  name: 'HmAntIconText',
+  render() {
+    const props = this.$attrs
+    return h(
+      HmAntIconTextImport,
+      {
+        ...props,
+        text: props.value
+      }
+    )
+  },
+})
+
 const { SchemaField } = createSchemaField({
   components: {
     Form,
@@ -199,6 +217,7 @@ const { SchemaField } = createSchemaField({
     Upload,
     UploadImage,
     HmAntInput,
+    HmAntInputPassword,
     HmAntSelect,
     HmAntUpload,
     HmAntButton,
@@ -206,6 +225,8 @@ const { SchemaField } = createSchemaField({
     HmAntTree,
     HmAntCascader,
     HmWangEditor,
+    HmAntIconText,
+    HmAntBgText,
     Span,
     Pre,
     Img
@@ -493,7 +514,8 @@ export default {
         //获取form组件整体最大宽度
         const formWidth = componentDom.getBoundingClientRect().width
         //计算表单项宽度,单项宽度不应小过最小宽度,分栏计算后单项宽度小于最小宽度，赋值为最小宽度,若大于最小宽度，即赋值为计算后的百分比
-        const fieldWidth = (formWidth / this.colNum) <= fieldMinWidth ? `${fieldMinWidth}px` : `${(100 / this.colNum).toFixed(1)}%`
+        const fieldWidth = (formWidth != 0 && (formWidth / this.colNum) <= fieldMinWidth ) 
+          ? `${fieldMinWidth}px` : `${(100 / this.colNum).toFixed(1)}%`
         //将宽度赋值给每个表单项
         for (const key in schema.properties.form.properties) {
           const element = schema.properties.form.properties[key];

@@ -1,0 +1,120 @@
+{
+  "name": "HmJsonEditor",
+  "props": [
+    {
+      "kind": "prop",
+      "keywords": [],
+      "visibility": "public",
+      "type": "Array",
+      "name": "v-model",
+      "default":"",
+      "describeModel": false
+    },
+    {
+      "kind": "prop",
+      "keywords": [],
+      "visibility": "public",
+      "type": "boolean",
+      "name": "show-btns",
+      "default":"true",
+      "describeModel": false
+    },
+    {
+      "kind": "prop",
+      "keywords": [{
+        "name": "options",
+        "description": "[\"tree\",\"view\",\"form\"]"
+      }],
+      "visibility": "public",
+      "type": "Enum",
+      "default": "false",
+      "name": "expandedOnStart",
+      "describeModel": false
+    },
+    {
+      "kind": "prop",
+      "keywords": [],
+      "visibility": "public",
+      "type": "string",
+      "name": "mode",
+      "default": "tree",
+      "describeModel": false
+    },
+    {
+      "kind": "prop",
+      "keywords": [],
+      "visibility": "public",
+      "type": "string",
+      "name": "lang",
+      "default": "en",
+      "describeModel": false
+    }
+  ],
+  "inheritAttrs": true,
+  "errors": [],
+  "warnings": [],
+  "keywords": [],
+  "slots": [],
+  "data": [],
+  "computed": [],
+  "events": [
+    {
+      "kind": "method",
+      "keywords": [],
+      "visibility": "public",
+      "name": "json-change",
+      "params": [
+        {
+          "name": "e",
+          "type": "unknow",
+          "rest": false
+        }
+      ],
+      "syntax": [
+        "sort(e: unknow): void"
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "kind": "method",
+      "keywords": [],
+      "visibility": "public",
+      "name": "json-save",
+      "params": [
+        {
+          "name": "e",
+          "type": "unknow",
+          "rest": false
+        }
+      ],
+      "syntax": [
+        "sort(e: unknow): void"
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "kind": "method",
+      "keywords": [],
+      "visibility": "public",
+      "name": "has-error",
+      "params": [
+        {
+          "name": "e",
+          "type": "unknow",
+          "rest": false
+        }
+      ],
+      "syntax": [
+        "sort(e: unknow): void"
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ],
+  "methods": []
+}

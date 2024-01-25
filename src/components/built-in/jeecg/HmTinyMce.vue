@@ -1,7 +1,9 @@
 <template>
   <!-- npm install --save tinymce "@tinymce/tinymce-vue@^4" -->
   <!-- 中文文档 http://tinymce.ax-z.cn/ -->
-    <editor :init="cInit" :disabled="disabled" v-model="cValue" :setup="editorChange()"/>
+    <editor
+    :api-key="apiKey"
+     :init="cInit" :disabled="disabled" v-model="cValue" :setup="editorChange()"/>
 </template>
 <script>
 import cloneDeep from 'lodash/cloneDeep';
@@ -19,6 +21,13 @@ export default {
       type: String,
       default: "Welcome to TinyMCE Vue!"
     },
+    /**
+     * api-key
+     */
+     apiKey:{
+      type:String,
+      default:"7lh90i362jbjoc7b5pa0ruww1a0gp77a0fcc35n4m22l8hxu"
+     },
     /**
      * 是否禁用
      */

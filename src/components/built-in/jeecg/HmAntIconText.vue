@@ -5,6 +5,7 @@
       :class="icon"
       class="text-icon"
       :style="cIconStyle"
+      @click.stop="onIconClick"
     ></i>
     <img
       v-if="img && ['left', 'top'].indexOf(iconPosition) >= 0"
@@ -18,6 +19,7 @@
       :class="icon"
       class="text-icon"
       :style="cIconStyle"
+      @click.stop="onIconClick"
     ></i>
     <img
       v-if="img && ['right', 'bottom'].indexOf(iconPosition) >= 0"
@@ -215,6 +217,10 @@ export default {
         // console.log("触发点击事件");
         self.onClick();
       }, 300);
+    },
+    onIconClick: function() {
+      this.$emit("onIconClick");
+      console.log("触发图标点击事件");
     },
     onClick: function() {
       this.$emit("onClick");

@@ -1,53 +1,39 @@
 <template>
-  <div>
-    <a-button type="primary" @click="showDrawer">Open</a-button>
-    <a-drawer
-      :title="title"
-      :placement="placement"
-      :closable="closable"
-      v-model:visible="cVisible"
-      :after-visible-change="afterVisibleChange"
-      :destory-on-close="destroyOnClose"
-      :mask="mask"
-      :mask-style="maskStyle"
-      :wrap-class-name="wrapClassName"
-      :wrap-style="wrapStyle"
-      :drawer-style="drawerStyle"
-      :header-style="headerStyle"
-      :body-style="bodyStyle"
-      :width="width"
-      :height="height"
-      :z-index="zIndex"
-      :keyboard="keyboard"
-      @close="onClose"
-    >
-      <!-- 设置后抽屉直接挂载到 DOM 上，你可以通过该 handle 控制抽屉打开关闭 -->
-      <template #handle></template>
-      <!-- 标题 -->
-      <template #title><smile-outlined /></template>
-      {{ content }}
-    </a-drawer>
-  </div>
+  <a-drawer
+    :placement="placement"
+    :closable="closable"
+    v-model:visible="cVisible"
+    :after-visible-change="afterVisibleChange"
+    :destroy-on-close="destroyOnClose"
+    :mask="mask"
+    :mask-style="maskStyle"
+    :wrap-class-name="wrapClassName"
+    :wrap-style="wrapStyle"
+    :drawer-style="drawerStyle"
+    :header-style="headerStyle"
+    :body-style="bodyStyle"
+    :width="width"
+    :height="height"
+    :z-index="zIndex"
+    :keyboard="keyboard"
+    :get-container="getContainer(getContainerClass)"
+    :mask-closable="maskClosable"
+    @close="onClose"
+  >
+    <!-- 设置后抽屉直接挂载到 DOM 上，你可以通过该 handle 控制抽屉打开关闭 -->
+    <template #handle></template>
+    <!-- 标题 -->
+    <template #title>
+      <slot name="title">
+        <span>{{ title }}</span>
+      </slot>
+    </template>
+    <slot name="content">{{ content }}</slot>
+  </a-drawer>
 </template>
-
 <script>
-import { SmileOutlined } from "@ant-design/icons-vue";
-import { defineComponent, ref } from "vue";
-export default defineComponent({
-  components: {
-    SmileOutlined,
-  },
-  data() {
-    return {
-      cVisible: false,
-    };
-  },
-  watch: {
-    visible(value) {
-      this.cVisible = value;
-      console.log("value", value);
-    },
-  },
+export default {
+  name: "HmAntDrawer",
   props: {
     /**
      * 内容
@@ -71,17 +57,14 @@ export default defineComponent({
       default: false,
     },
     /**
-     *抽屉的方向
+     * 抽屉的方向
+     * @type Enum
+     * @default right
+     * @options ["left","right","top","bottom"]
      */
     placement: {
       type: String,
       default: "right",
-    },
-    /**
-     * 切换抽屉时动画结束后的回调
-     */
-    afterVisibleChange: {
-      type: Function,
     },
     /**
      * 标题
@@ -109,6 +92,9 @@ export default defineComponent({
      */
     maskStyle: {
       type: Object,
+      default: function () {
+        return {};
+      },
     },
     /**
      * 对话框外层容器的类名
@@ -121,6 +107,11 @@ export default defineComponent({
      */
     wrapStyle: {
       type: Object,
+      default: function () {
+        return {
+          position: "absolute",
+        };
+      },
     },
     /**
      * 用于设置 Drawer 弹出层的样式
@@ -168,16 +159,64 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    /**
+     * 指定 Drawer 挂载的 HTML 节点
+     */
+    getContainerClass: {
+      type: String,
+      default: "body",
+    },
+    /**
+     * 点击蒙层是否允许关闭
+     */
+    maskClosable: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      cVisible: false,
+    };
+  },
+  watch: {
+    visible(value) {
+      this.cVisible = value;
+    },
+  },
+  mounted() {
+    this.cVisible = this.visible;
   },
   methods: {
     showDrawer() {
       this.cVisible = true;
     },
+    closeDrawer() {
+      this.cVisible = false;
+    },
+    // 点击遮罩层或右上角叉或取消按钮的回调
     onClose: function (e) {
       this.$emit("close", e);
     },
+    // 获取指定Dom节点
+    getContainer(e) {
+      let self = this;
+      let UserCSS = self.getContainerClass || e;
+      let DOM = false;
+      let defaultCSS = ".ele-wrapper-";
+      if (!UserCSS || UserCSS == "body") {
+        return DOM;
+      }else{
+        DOM = /^[.#]/.test(UserCSS) ? UserCSS : defaultCSS + UserCSS;
+      }
+      return DOM;
+    },
+    // 切换抽屉时动画结束后的回调
+    afterVisibleChange(e) {
+      this.$emit("change", e);
+    },
   },
-});
+};
 </script>
 
 <style>

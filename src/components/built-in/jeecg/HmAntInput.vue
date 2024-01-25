@@ -127,7 +127,7 @@ export default {
     onPressEnter: function (e) {
       this.$emit("pressEnter", e);
     },
-    onSuffixClick: function() {
+    onSuffixClick: function(e) {
       this.$emit("suffixClick", e);
     },
     getCssUnit(value) {

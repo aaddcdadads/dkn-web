@@ -109,7 +109,7 @@
                     <span v-for="action in actions" :key="action.name">
                         <i v-if="action.name.indexOf('fa-') === 0" :class="'action-icon fa ' + action.name" :style="`font-size: ${action.size}px; color: ${action.color || null
                         }`" @click="action.callback(record, index, column)"></i>
-                        <a-button v-if="action.name.indexOf('fa-') !== 0 && hasPermission(action.auth)" class="action-btn"
+                        <a-button v-if="action.name.indexOf('fa-') !== 0 && hasPermission(action.auth) && (action.isShow == undefined || action.isShow(record))" class="action-btn"
                             :type="action.type || 'primary'" :size="action.size || 'default'" :shape="action.shape"
                             @click="action.callback(record, index, column)">
                             <template v-if="action.icon" #icon>
@@ -124,7 +124,7 @@
                     <template #overlay>
                         <a-menu>
                             <div v-for="action in cActions" :key="action.name">
-                                <a-menu-item v-if="hasPermission(action.auth)"
+                                <a-menu-item v-if="hasPermission(action.auth) && (action.isShow == undefined || action.isShow(record))"
                                 @click="action.callback(record, index, column)">{{ action.name }}</a-menu-item>
                             </div>
                         </a-menu>
@@ -741,6 +741,7 @@ export default {
             cActions: [],
             cRowHeight: "42px",
             cRowSelection: {},
+            selectedRows:[],
             cPagination: {
                 current: 1,
                 pageSize: 10,
@@ -1078,26 +1079,32 @@ export default {
             });
             return ret;
         },
-        onSelectChange(selectedRowKeys, selectedRows) {
+        onSelectChange(selectedRowKeys, selectedRows) {            
+            // 先拼接
+            this.selectedRows = [...this.selectedRows,...selectedRows]
+            // 后过滤,此id是区分的唯一标识
+            this.selectedRows = _(this.selectedRows)
+                .filter(item => selectedRowKeys.indexOf(item.id) > -1)
+                .unionBy("id")
+                .value();
             console.log(
                 `onSelectChange: selectedRowKeys: ${selectedRowKeys}`,
                 "selectedRows: ",
-                selectedRows
+                this.selectedRows
             );
-            this.rowSelection.selectedRowKeys = selectedRowKeys;
-            this.$emit("onSelectChange", { selectedRowKeys, selectedRows });
+            this.$emit("onSelectChange", { selectedRowKeys, selectedRows: this.selectedRows });
         },
         onSelect(record, selected, selectedRows) {
             console.log(
-                `onSelect: record: ${record}, selected: ${selected}, selectedRows: ${selectedRows}`
+                `onSelect: record: ${record}, selected: ${selected}, selectedRows: ${this.selectedRows}`
             );
-            this.$emit("onSelect", { record, selected, selectedRows });
+            this.$emit("onSelect", { record, selected, selectedRows:this.selectedRows });
         },
         onSelectAll(selected, selectedRows, changeRows) {
             console.log(
-                `onSelectAll: selected: ${selected}, selectedRows: ${selectedRows}, changeRows: ${changeRows}`
+                `onSelectAll: selected: ${selected}, selectedRows: ${this.selectedRows}, changeRows: ${changeRows}`
             );
-            this.$emit("onSelectAll", { selected, selectedRows, changeRows });
+            this.$emit("onSelectAll", { selected, selectedRows:this.selectedRows, changeRows });
         },
         onChange(pagination, filters, sorter, { currentDataSource }) {
             console.log(

@@ -3,7 +3,7 @@
     <div style="width: 100%">
       <a-input-search
         style="width: 100%"
-        v-model:value="value"
+        v-model:value="cValue"
         placeholder="input search text"
         @search="onSearch"
       />
@@ -28,6 +28,14 @@
 export default {
   name: "HmAntLettersCard",
   props: {
+    /**
+     * 值
+     * @model
+     */
+     value: {
+      type: String,
+      default: "",
+    },
     /**
      * 按钮文字
      */
@@ -68,6 +76,7 @@ export default {
   },
   data() {
     return {
+      cValue: "",
       list: [
         {
           value: "收件箱",
@@ -93,15 +102,21 @@ export default {
     };
   },
   watch: {
+    value(value) {
+      this.cValue = value;
+    },
     clist(value) {
       this.list = value;
     },
   },
   mounted() {
+    this.cValue = this.value;
     this.list = this.clist;
   },
   methods: {
     onSearch: function (e) {
+      // console.log("onSearch",this.cValue);
+      this.$emit("update:value", this.cValue);
       this.$emit("search", e);
     },
   },

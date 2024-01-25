@@ -10,6 +10,7 @@
       :destroyOnClose="destroyOnClose"
       :closable="closable"
       :mask="mask"
+      :maskClosable="maskClosable"
       :bodyStyle="{
 				height: cHeight,
         padding: '24px'
@@ -23,6 +24,7 @@
       :footer="okButtonBoole||cancelButtonProps ?undefined:null"
       :zIndex="cZIndex"
       :style="style"
+      :dialogClass="dialogClass"
       @ok="handleOk"
       @cancel="handleCancel"
       @afterClose="afterClose"
@@ -141,6 +143,13 @@ export default {
       default: true
     },
     /**
+     * 点击遮罩关闭
+     */
+    maskClosable: {
+      type: Boolean,
+      default: true
+    },
+    /**
      * 设置浮层样式
      */
     style: {
@@ -151,6 +160,13 @@ export default {
         }
       },
     },
+    /**
+     * dialogClass
+     */
+    dialogClass:{
+      type: String,
+      default: "dialog-class"
+    }
   },
   data() {
     return {

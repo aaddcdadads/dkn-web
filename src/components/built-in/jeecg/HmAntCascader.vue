@@ -3,7 +3,7 @@
     <div class="cascader-title" v-if="title != ''" :style="{ width: labelWidth + 'px' }">{{ title }}:</div>
     <a-cascader class="cascader-value" :allowClear="allowClear" :showSearch="searchOptions" :expandTrigger="expandTrigger"
       :notFoundContent="notFoundContent" :options="cOptions" :placeholder="placeholder" :popupPlacement="popupPlacement"
-      :size="size" :changeOnSelect="changeOnSelect" :disabled="disabled" :field-names="dataMap" :value="value"
+      :size="size" :changeOnSelect="changeOnSelect" :disabled="disabled" :field-names="dataMap" v-model:value="value"
       @change="change" @popupVisibleChange="popupVisibleChange" @search="search"></a-cascader>
   </div>
 </template>

@@ -1,0 +1,59 @@
+{
+  "name": "HmJsonEditor",
+  "props": [
+    {
+      "kind": "prop",
+      "keywords": [],
+      "visibility": "public",
+      "type": "String",
+      "name": "id",
+      "default":"",
+      "describeModel": false
+    },
+    {
+      "kind": "prop",
+      "keywords": [],
+      "visibility": "public",
+      "type": "Object",
+      "name": "options",
+      "default": "function() {\n        return {\n            };\n       }",
+      "describeModel": false
+    },
+    {
+      "kind": "prop",
+      "keywords": [],
+      "visibility": "public",
+      "type": "String",
+      "default": "",
+      "name": "url",
+      "describeModel": false
+    },
+    {
+      "kind": "prop",
+      "keywords": [],
+      "visibility": "public",
+      "type": "Function",
+      "name": "particlesLoaded",
+      "default": "function() {\n        return {\n            };\n       }",
+      "describeModel": false
+    },
+    {
+      "kind": "prop",
+      "keywords": [],
+      "visibility": "public",
+      "type": "Function",
+      "name": "particlesInit",
+      "default": "function() {\n        return {\n            };\n       }",
+      "describeModel": false
+    }
+  ],
+  "inheritAttrs": true,
+  "errors": [],
+  "warnings": [],
+  "keywords": [],
+  "slots": [],
+  "data": [],
+  "computed": [],
+  "events": [],
+  "methods": []
+}

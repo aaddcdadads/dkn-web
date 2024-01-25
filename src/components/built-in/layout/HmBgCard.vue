@@ -1,5 +1,6 @@
 <template>
-  <div v-cloak class="hm-bg-card" v-show="!hidden" v-if="visible" :style="{'background-image': `url('${backgroundImage}')`}" @click="bgClick">
+  <div v-cloak class="hm-bg-card" v-show="!hidden" v-if="visible" :style="{'background-image': `url('${backgroundImage}')`}" 
+  @mouseenter="onMouseenter" @mouseleave="onMouseleave" @mousemove="onMousemove" @click="bgClick">
     <slot></slot>
   </div>
 </template>
@@ -109,7 +110,7 @@ export default {
      */
     boxShadowColor: {
       type: String,
-      default: 'rgba(0,0,0,0.04)'
+      default: 'rgba(0,0,0,0.00)'
     },
     /**
      * 背景色
@@ -229,7 +230,16 @@ export default {
     },
     bgClick() {
       this.$emit('bgClick')
-    }
+    },
+    onMouseEnter(e) {
+      this.$emit("onMouseEnter", e);
+    },
+    onMouseLeave(e) {
+      this.$emit("onMouseLeave", e);
+    },
+    onMousemove(e) {
+      this.$emit("onMousemove", e);
+    },
   },
 };
 </script>

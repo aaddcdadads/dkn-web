@@ -65,6 +65,5 @@ export default {
 .hm-iframe {
   width: v-bind(cWidth);
   height: v-bind(cHeight);
-  margin-top: -36px;
 }
 </style>

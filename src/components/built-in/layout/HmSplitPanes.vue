@@ -146,6 +146,34 @@ export default {
               minSize: 10,
               maxSize: 100,
               name: "middle",
+              children: {
+                horizontal: true,
+                pushOtherPanes: false,
+                dblClickSplitter: true,
+                rtl: false,
+                firstSplitter: false,
+                events: {},
+                panes: [
+                  {
+                    size: 30,
+                    minSize: 20,
+                    maxSize: 50,
+                    name: "top",
+                  },
+                  {
+                    size: 40,
+                    minSize: 20,
+                    maxSize: 50,
+                    name: "center",
+                  },
+                  {
+                    size: 30,
+                    minSize: 20,
+                    maxSize: 50,
+                    name: "bottom",
+                  },
+                ]
+              }
             },
             {
               size: 20,

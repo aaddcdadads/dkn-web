@@ -3,7 +3,7 @@
     :mode="mode"
     :openKeys="openKeys"
     selectable
-    :selectedKeys="selectedKeys"
+    v-model:selectedKeys="selectedKeys"
     :subMenuCloseDelay="subMenuCloseDelay"
     :subMenuOpenDelay="subMenuOpenDelay"
     :theme="theme"
@@ -12,7 +12,7 @@
     @openChange="openChange"
     @select="select"
   >
-    <a-sub-menu v-for="(item, index) in menuList" :key="index">
+    <a-sub-menu v-for="item in menuList" :key="item.title" @titleClick="onTitleClick(item,$event)">
       <template #title>
         <span class="submenu-title-wrapper">
           <!-- <setting-outlined /> -->
@@ -21,8 +21,8 @@
         </span>
       </template>
       <a-menu-item-group
-        :title="submenuTitleList.submenuTitle"
         v-for="submenuTitleList in item.child"
+        :title="submenuTitleList.submenuTitle"
         :key="submenuTitleList.submenuTitle"
       >
         <a-menu-item
@@ -148,10 +148,31 @@ export default {
       type: Number,
       default: 0.1,
     },
+    /**
+     * 当前选中项
+     */
+     selectedKeys:{
+      type:Array,
+      default:function(){
+        return []
+      }
+    },
+    /**
+     * 当前展开项
+     */
+    openKeys:{
+      type:Array,
+      default:function(){
+        return []
+      }
+    }
   },
   methods: {
+    onTitleClick(item,e){
+      this.$emit("onTitleClick",item,e);
+    },
     click: function (e) {
-      this.$emit("click", e);
+      this.$emit("onClick", e);
     },
     deselect: function (e) {
       this.$emit("deselect", e);
@@ -160,7 +181,7 @@ export default {
       this.$emit("openChange", e);
     },
     select: function (e) {
-      this.$emit("select", e);
+      this.$emit("onSelect", e);
     },
   },
 };

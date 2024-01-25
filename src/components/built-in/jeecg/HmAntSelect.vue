@@ -10,13 +10,12 @@
     <a-select
       v-model:value="cValue"
       class="ant-select"
-      :notFoundContent="fetching ? undefined : null"
       :showArrow="showArrow"
       :placeholder="placeholder"
       :size="size"
       :mode="mode"
       :show-search="showSearch"
-      :filter-option="filterOption"
+      :filter-option="false"
       :disabled="disabled"
       :allowClear="allowClear"
       :options="cOptions"
@@ -196,7 +195,7 @@ export default {
       cWidth: "200px",
       cValue: undefined,
       cOptions: [],
-      fetching: false,
+      lastFetchId: 0
     };
   },
   watch: {
@@ -238,21 +237,19 @@ export default {
     }
     this.cWidth = this.getCssUnit(this.width);
     this.cOptions = this.options;
-    if (!this.showSearch) {
-      this.getData();
-    }
+    this.getData();
   },
   methods: {
     click: function (e) {
       this.$emit("change", e);
     },
     onBlur: function (e) {
-      this.$emit("onBlur", e);
-    },
-    focus: function (e) {
       if (this.showSearch) {
         this.getData();
       }
+      this.$emit("onBlur", e);
+    },
+    focus: function (e) {
       this.$emit("focus", e);
     },
     handleChange: function (e) {
@@ -285,18 +282,18 @@ export default {
     },
     //查询过滤数据
     searchByInput: debounce(function(val) {
-      if (!val) return
-      this.fetching = true
       const searchParams = {
         ...(this.params ? cloneDeep(this.params) : {})
       }
       const filterKey = this.filterKey || this.dataMap.label
-      searchParams[filterKey] = `*${val}*`
+      searchParams[filterKey] = val ? `*${val}*` : ""
       this.getData(null, searchParams)
-    }),
+    },300),
     //将查询接口的数据渲染到list中
     getData(url, params) {
       let self = this;
+      self.lastFetchId += 1;
+      const fetchId = self.lastFetchId;
       url = url || this.url;
       params =
         params || (this.params ? cloneDeep(this.params) : {});
@@ -305,6 +302,9 @@ export default {
       if (!url) return;
       console.log("getData", url, params);
       getAction(url, params).then((resp) => {
+        if(fetchId !== this.lastFetchId){
+          return;
+        }
         console.log("res", resp);
         //查询数据库的数组
         self.cOptions = [];
@@ -325,9 +325,7 @@ export default {
         }
         self.cOptions = self.mapData(data);
         self.$emit("getData", self.cOptions)
-        self.fetching = false
       });
-      //console.log("请求使用的url和参数", url, params);
     },
     filterOption(input, option) {
       return option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0;

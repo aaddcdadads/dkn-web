@@ -23,11 +23,10 @@
     </a>
     <template #overlay>
       <a-menu>
-        <a-menu-item v-for="(item, index) in cTitleList" :key="index">
+        <a-menu-item v-for="(item, index) in cTitleList" :key="index" @click="onClick(item, index)">
           <a
             href="javascript:;"
             class="hrefText"
-            @click="onClick(item, index)"
             >{{ item.value }}</a
           >
         </a-menu-item>
@@ -49,12 +48,19 @@ export default {
       default: "",
     },
     /**
+     * 是否展开菜单
+     */
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+    /**
      * 数据
      * @model
      */
     titleList: {
       type: Array,
-      default: function () {
+      default: function() {
         return [
           {
             key: 1,
@@ -85,7 +91,7 @@ export default {
      */
     trigger: {
       type: Array,
-      default: function () {
+      default: function() {
         return ["click"];
       },
     },
@@ -211,10 +217,10 @@ export default {
         this.cIconStyle = "display: block";
       }
     },
-    visibleChange: function (e) {
+    visibleChange: function(e) {
       this.$emit("visibleChange", e);
     },
-    onClick: function (e, index) {
+    onClick: function(e, index) {
       console.log("onClick", e, index);
       this.$emit("onClick", e, index);
     },
