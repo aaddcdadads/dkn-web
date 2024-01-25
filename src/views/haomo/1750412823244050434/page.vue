@@ -13,6 +13,9 @@
       <div class="ele-wrapper ele-wrapper-32eea8c3-0498-4fe2-a144-9a004fdaa60d">
         <hm-bg-card> </hm-bg-card>
       </div>
+      <div class="ele-wrapper ele-wrapper-b887353f-cf53-4f8c-82e6-bb5ac781fdc2">
+        <hm-bg-card> </hm-bg-card>
+      </div>
     </div>
   </div>
 </template>
