@@ -1,0 +1,4 @@
+{
+  "url": "http://geovis.dev.haomo-tech.com:8000/api/v1/licence/status2?productName=iexplorer_600&moduleName=sdk",
+  "socketUrl": "ws://geovis.dev.haomo-tech.com:8000/verify/iexplorer_600/sdk"
+}

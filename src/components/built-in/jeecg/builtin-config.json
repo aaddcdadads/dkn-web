@@ -1,0 +1,1675 @@
+[
+  {
+    "id": 1,
+    "name": "布局",
+    "componentList": [
+      {
+        "name": "HmGrid",
+        "title": "多列布局",
+        "importPath": "built-in/layout/HmGrid",
+        "imgUrl": "built-in/layout/img/HmGrid.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/布局-hmgrid--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmMultiGrid",
+        "title": "Grid布局",
+        "importPath": "built-in/layout/HmMultiGrid",
+        "imgUrl": "built-in/layout/img/HmMultiGrid.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/布局-hmmultigrid--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "容器组件",
+    "componentList": [
+      {
+        "name": "HmBgCard",
+        "title": "背景框",
+        "importPath": "built-in/layout/HmBgCard",
+        "imgUrl": "built-in/layout/img/HmBgCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmbgcard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmLoop",
+        "title": "循环器",
+        "importPath": "built-in/layout/HmLoop",
+        "imgUrl": "built-in/layout/img/HmBgCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmloop--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmTabs",
+        "title": "标签页",
+        "importPath": "built-in/layout/HmTabs",
+        "imgUrl": "built-in/layout/img/HmTabs.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmtabs--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmLoopTabs",
+        "title": "循环标签页",
+        "importPath": "built-in/layout/HmLoopTabs",
+        "imgUrl": "built-in/layout/img/HmTabs.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/hmlooptabs--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmPanel",
+        "title": "面板",
+        "importPath": "built-in/layout/HmPanel",
+        "imgUrl": "built-in/layout/img/HmPanel.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmpanel--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmDragPanel",
+        "title": "可拖拽面板",
+        "importPath": "built-in/layout/HmDragPanel",
+        "imgUrl": "built-in/layout/img/HmDragPanel.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmdragpanel--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmModal",
+        "title": "对话框",
+        "importPath": "built-in/layout/HmModal",
+        "imgUrl": "built-in/layout/img/HmModal.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmmodal--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCollapse",
+        "title": "折叠面板",
+        "importPath": "built-in/jeecg/HmAntCollapse",
+        "imgUrl": "built-in/jeecg/img/HmAntCollapse.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmantcollapse--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntDrawer",
+        "title": "抽屉",
+        "importPath": "built-in/jeecg/HmAntDrawer",
+        "imgUrl": "built-in/jeecg/img/HmAntDrawer.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmantdrawer--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmSplitPanes",
+        "title": "分割布局",
+        "importPath": "built-in/layout/HmSplitPanes",
+        "imgUrl": "built-in/layout/img/HmSplitPanes.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmsplitpanes--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmImportPage",
+        "title": "引用页面",
+        "importPath": "built-in/layout/HmImportPage",
+        "imgUrl": "built-in/layout/img/HmBgCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmimportpage--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmPanZoom",
+        "title": "移动缩放容器",
+        "importPath": "built-in/jeecg/HmPanZoom",
+        "imgUrl": "built-in/layout/img/HmPanZoom.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmpanzoom--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmDragResize",
+        "title": "拖拽自由布局",
+        "importPath": "built-in/jeecg/HmDragResize",
+        "imgUrl": "built-in/jeecg/img/HmDragResize.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/容器组件-hmdragresize--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "动画组件",
+    "componentList": [
+      {
+        "name": "HmAnimejs",
+        "title": "Anime动画",
+        "importPath": "built-in/vue-animation/HmAnimejs",
+        "imgUrl": "built-in/vue-animation/img/HmAnimejs.gif",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/动画组件-hmanimejs--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "表单",
+    "componentList": [
+      {
+        "name": "HmAntButton",
+        "title": "按钮",
+        "importPath": "built-in/jeecg/HmAntButton",
+        "imgUrl": "built-in/jeecg/img/HmAntButton.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantbutton--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntInput",
+        "title": "输入框",
+        "importPath": "built-in/jeecg/HmAntInput",
+        "imgUrl": "built-in/jeecg/img/HmAntInput.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantinput--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmCodeMirror",
+        "title": "代码编辑器",
+        "importPath": "built-in/jeecg/HmCodeMirror",
+        "imgUrl": "built-in/jeecg/img/HmCodeMirror.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmcodemirror--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "AInput",
+        "title": "输入框(json)",
+        "importPath": "ant-design-vue",
+        "docPath": "built-in/jeecg/HmAntInput.json",
+        "imgUrl": "built-in/jeecg/img/HmAntInput.png",
+        "docUrl": "",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntInputPassword",
+        "title": "密码输入框",
+        "importPath": "built-in/jeecg/HmAntInputPassword",
+        "imgUrl": "built-in/jeecg/img/HmAntInput.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantinputpassword--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntTextarea",
+        "title": "文本框",
+        "importPath": "built-in/jeecg/HmAntTextarea",
+        "imgUrl": "built-in/jeecg/img/HmAntTextarea.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmanttextarea--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntInputeNumber",
+        "title": "数字输入框",
+        "importPath": "built-in/jeecg/HmAntInputeNumber",
+        "imgUrl": "built-in/jeecg/img/HmAntInputeNumber.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantinputenumber--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntSelect",
+        "title": "选择器",
+        "importPath": "built-in/jeecg/HmAntSelect",
+        "imgUrl": "built-in/jeecg/img/HmAntSelect.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantselect--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCascader",
+        "title": "级联选择",
+        "importPath": "built-in/jeecg/HmAntCascader",
+        "imgUrl": "built-in/jeecg/img/HmAntCascader.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantcascader--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntAutoComplete",
+        "title": "自动完成",
+        "importPath": "built-in/jeecg/HmAntAutoComplete",
+        "imgUrl": "built-in/jeecg/img/HmAutoComplete.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantautocomplete--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntRadio",
+        "title": "单选按钮",
+        "importPath": "built-in/jeecg/HmAntRadio",
+        "imgUrl": "built-in/jeecg/img/HmAntRadio.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantradio--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCheckbox",
+        "title": "多选框",
+        "importPath": "built-in/jeecg/HmAntCheckbox",
+        "imgUrl": "built-in/jeecg/img/HmAntCheckbox.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantcheckbox--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntSwitch",
+        "title": "开关",
+        "importPath": "built-in/jeecg/HmAntSwitch",
+        "imgUrl": "built-in/jeecg/img/HmAntSwitch.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantswitch--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntUpload",
+        "title": "上传",
+        "importPath": "built-in/jeecg/HmAntUpload",
+        "imgUrl": "built-in/jeecg/img/HmAntUpload.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantupload--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntSlider",
+        "title": "滑动输入条",
+        "importPath": "built-in/jeecg/HmAntSlider",
+        "imgUrl": "built-in/jeecg/img/HmAntSlider.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantslider--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntDatePicker",
+        "title": "日期选择框",
+        "importPath": "built-in/jeecg/HmAntDatePicker",
+        "imgUrl": "built-in/jeecg/img/HmAntDatePicker.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantdatepicker--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntTimePicker",
+        "title": "时间选择框",
+        "importPath": "built-in/jeecg/HmAntTimePicker",
+        "imgUrl": "built-in/jeecg/img/HmAntTimePicker.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmanttimepicker--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntRate",
+        "title": "评分",
+        "importPath": "built-in/jeecg/HmAntRate",
+        "imgUrl": "built-in/jeecg/img/HmAntRate.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmantrate--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntTag",
+        "title": "标签",
+        "importPath": "built-in/jeecg/HmAntTag",
+        "imgUrl": "built-in/jeecg/img/HmTag.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmanttag--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntTreeSelect",
+        "title": "树型选择控件",
+        "importPath": "built-in/jeecg/HmAntTreeSelect",
+        "imgUrl": "built-in/jeecg/img/HmAntTreeSelect.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/表单-hmanttreeselect--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "数据展示",
+    "componentList": [
+      {
+        "name": "HmAntTable",
+        "title": "表格",
+        "importPath": "built-in/jeecg/HmAntTable",
+        "imgUrl": "built-in/jeecg/img/HmTable.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/数据展示-hmanttable--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmPanelTable",
+        "title": "面板表格",
+        "importPath": "built-in/jeecg/HmPanelTable",
+        "imgUrl": "built-in/jeecg/img/HmTable.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/数据展示-hmpaneltable--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntTimeline",
+        "title": "时间轴",
+        "importPath": "built-in/jeecg/HmAntTimeline",
+        "imgUrl": "built-in/jeecg/img/HmAntTimeline.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/数据展示-hmanttimeline--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCalendar",
+        "title": "AntDesign日历",
+        "importPath": "built-in/jeecg/HmAntCalendar",
+        "imgUrl": "built-in/jeecg/img/HmAntCalendar.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/数据展示-hmantcalendar--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCarousel",
+        "title": "走马灯",
+        "importPath": "built-in/jeecg/HmAntCarousel",
+        "imgUrl": "built-in/jeecg/img/HmAntCarousel.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/数据展示-hmantcarousel--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntTree",
+        "title": "树形控件",
+        "importPath": "built-in/jeecg/HmAntTree",
+        "imgUrl": "built-in/jeecg/img/HmAntTree.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/数据展示-hmanttree--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmVCalendar",
+        "title": "VCalendar日历",
+        "importPath": "built-in/jeecg/HmVCalendar",
+        "imgUrl": "built-in/jeecg/img/HmVCalendar.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/数据展示-hmvcalendar--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmPdf",
+        "title": "展示pdf",
+        "importPath": "built-in/jeecg/HmPdf",
+        "imgUrl": "built-in/jeecg/img/HmPdf.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/数据展示-hmpdf--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmPdfEmbed",
+        "title": "PdfEmbed查看",
+        "importPath": "built-in/jeecg/HmPdfEmbed",
+        "imgUrl": "built-in/jeecg/img/HmPdfEmbed.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/数据展示-hmpdfembed--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmImage",
+        "title": "图片展示",
+        "importPath": "built-in/jeecg/HmImage",
+        "imgUrl": "built-in/jeecg/img/HmImage.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/数据展示-hmimage--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntvX6BpFlow",
+        "title": "流程图",
+        "importPath": "built-in/jeecg/antv-x6-vue3/HmAntvX6BpFlow",
+        "imgUrl": "built-in/jeecg/img/HmAntvX6BpFlow.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/hmantvx6bpflow--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntvX6MindMap",
+        "title": "思维导图",
+        "importPath": "built-in/jeecg/antv-x6-vue3/HmAntvX6MindMap",
+        "imgUrl": "built-in/jeecg/img/HmAntvX6MindMap.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/hmantvx6mindmap--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntEditingTable",
+        "title": "可编辑表格",
+        "importPath": "built-in/jeecg/HmAntEditingTable",
+        "imgUrl": "built-in/jeecg/img/HmTable.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/hmanteditingtable--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "卡片类",
+    "componentList": [
+      {
+        "name": "HmAntCardData",
+        "title": "数据卡片",
+        "importPath": "built-in/jeecg/HmAntCardData",
+        "imgUrl": "built-in/jeecg/img/HmAntCardData.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmantcarddata--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCardEchartsAreaStack",
+        "title": "数据卡片堆叠面积图",
+        "importPath": "built-in/jeecg/HmAntCardEchartsAreaStack",
+        "imgUrl": "built-in/jeecg/img/HmAntCardEchartsAreaStack.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmantcardechartsareastack--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCardEchartsSimple",
+        "title": "数据卡片带柱形图",
+        "importPath": "built-in/jeecg/HmAntCardEchartsSimple",
+        "imgUrl": "built-in/jeecg/img/HmAntCardEchartsSimple.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmantcardechartssimple--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCardDataProgress",
+        "title": "数据卡片带进度条",
+        "importPath": "built-in/jeecg/HmAntCardDataProgress",
+        "imgUrl": "built-in/jeecg/img/HmAntCardDataProgress.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmantcarddataprogress--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmDataCard",
+        "title": "数字卡片",
+        "importPath": "built-in/jeecg/HmDataCard",
+        "imgUrl": "built-in/jeecg/img/HmDataCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmdatacard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCountingCard",
+        "title": "计数卡片",
+        "importPath": "built-in/jeecg/HmAntCountingCard",
+        "imgUrl": "built-in/jeecg/img/HmAntCountingCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmantcountingcard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntRankingListCard",
+        "title": "排行榜卡片",
+        "importPath": "built-in/jeecg/HmAntRankingListCard",
+        "imgUrl": "built-in/jeecg/img/HmAntRankingListCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmantrankinglistcard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntInfoCardItem",
+        "title": "信息卡片",
+        "importPath": "built-in/jeecg/HmAntInfoCardItem",
+        "imgUrl": "built-in/jeecg/img/HmAntInfoCardItem.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmantinfocarditem--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntInfoCardList",
+        "title": "信息卡片列表",
+        "importPath": "built-in/jeecg/HmAntInfoCardList",
+        "imgUrl": "built-in/jeecg/img/HmAntInfoCardList.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmantinfocardlist--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "图表",
+    "componentList": [
+      {
+        "name": "HmEchartsLineSimple",
+        "title": "echarts基础折线图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsLineSimple",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsLineSimple.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartslinesimple--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsLineStack",
+        "title": "echarts堆叠折线图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsLineStack",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsLineStack.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartslinestack--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsAreaStack",
+        "title": "echarts堆叠面积图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsAreaStack",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsAreaStack.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsareastack--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsBarSimple",
+        "title": "echarts基础柱状图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsBarSimple",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsBarSimple.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsbarsimple--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsBarStack",
+        "title": "echarts堆叠柱状图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsBarStack",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsBarStack.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsbarstack--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsBarYCategoryStack",
+        "title": "echarts堆叠条形图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsBarYCategoryStack",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsBarYCategoryStack.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsbarycategorystack--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsPieSimple",
+        "title": "echarts基础饼图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsPieSimple",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsPieSimple.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartspiesimple--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsPieDoughnut",
+        "title": "echarts环形饼图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsPieDoughnut",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsPieDoughnut.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartspiedoughnut--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsGauge",
+        "title": "echarts基础仪表盘",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsGauge",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsGauge.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsgauge--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsGaugeStage",
+        "title": "echarts阶段仪表盘",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsGaugeStage",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsGaugeStage.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsgaugestage--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsBoxplot",
+        "title": "echarts箱线图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsBoxplot",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsBoxplot.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsboxplot--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsBar3DHistogram",
+        "title": "echarts基础3D柱状图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsBar3DHistogram",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsBar3DHistogram.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsbar3dhistogram--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsRadar",
+        "title": "echarts雷达图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsRadar",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsRadar.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsradar--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsGeoMap",
+        "title": "echarts地图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsGeoMap",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsGeoMap.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsgeomap--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsWordCloud",
+        "title": "echarts词云",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsWordCloud",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsWordCloud.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartswordcloud--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsAreaChart",
+        "title": "基础面积折线图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsAreaChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsAreaChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsCircularDiagram",
+        "title": "环形图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsCircularDiagram",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsCircularDiagram.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsColumnLineChart",
+        "title": "柱状折线图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsColumnLineChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsColumnLineChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsCurveChart",
+        "title": "曲线图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsCurveChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsCurveChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsDataHistogram",
+        "title": "数据柱状图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsDataHistogram",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsDataHistogram.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsFunnelChart",
+        "title": "漏斗图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsFunnelChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsFunnelChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsLine",
+        "title": "echarts无Y轴折线图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsLine",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsLine.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsMeter",
+        "title": "圆环图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsMeter",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsMeter.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsNestedRing",
+        "title": "嵌套环形图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsNestedRing",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsNestedRing.png",
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsPersonaMap",
+        "title": "关系图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsPersonaMap",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsPersonaMap.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsPictographicColumn",
+        "title": "象形柱状图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsPictographicColumn",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsPictographicColumn.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsRiver",
+        "title": "河流图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsRiver",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsRiver.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsRoseChart",
+        "title": "玫瑰饼图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsRoseChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsRoseChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsRotatingChart",
+        "title": "多环饼图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsRotatingChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsRotatingChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsRoundColumnar",
+        "title": "图行柱状图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsRoundColumnar",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsRoundColumnar.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsScatter",
+        "title": "关系图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsScatter",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsScatter.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsScatterPlot",
+        "title": "散点图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsScatterPlot",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsScatterPlot.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsSunFigure",
+        "title": "旭日图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsSunFigure",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsSunFigure.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsTwoHistogram",
+        "title": "双向柱形图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsTwoHistogram",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsTwoHistogram.png",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "地图",
+    "componentList": [
+      {
+        "name": "HmBaiduMap",
+        "title": "百度地图组件",
+        "importPath": "built-in/jeecg/HmBaiduMap",
+        "imgUrl": "built-in/jeecg/img/HmBaiduMap.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/地图-hmbaidumap--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsGeoMap",
+        "title": "echarts地图",
+        "importPath": "built-in/jeecg/echarts-vue3/HmEchartsGeoMap",
+        "imgUrl": "built-in/jeecg/echarts-vue3/img/HmEchartsGeoMap.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/图表-hmechartsgeomap--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmSuperMap",
+        "title": "超图iClient",
+        "importPath": "built-in/jeecg/HmSuperMap",
+        "imgUrl": "built-in/jeecg/img/HmSuperMap.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/地图-hmsupermap--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmGeovis",
+        "title": "GEOVIS地图",
+        "importPath": "built-in/vue3map/HmGeovis",
+        "imgUrl": "built-in/vue3map/img/HmGeovis.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/地图-hmgeovis--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "高级",
+    "componentList": [
+      {
+        "name": "HmAntvX6Er",
+        "title": "Er图",
+        "importPath": "built-in/jeecg/HmAntvX6Er",
+        "imgUrl": "built-in/jeecg/img/HmAntvX6Er.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/高级-hmantvx6er--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "音视频组件",
+    "componentList": [
+      {
+        "name": "HmZlmWebrtcPlayer",
+        "title": "webrtc播放器",
+        "importPath": "built-in/vue3-multimedia/zlm/HmZlmWebrtcPlayer",
+        "imgUrl": "built-in/vue3-multimedia/zlm/img/HmZlmWebrtcPlayer.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/音视频组件-hmzlmwebrtcplayer--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "3D交互",
+    "componentList": [
+      {
+        "name": "HmEgjs3DViewer",
+        "title": "3D查看器egjs",
+        "importPath": "built-in/vue3-3d/HmEgjs3DViewer",
+        "imgUrl": "built-in/vue3-3d/img/HmEgjs3DViewer.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/3d交互-hmegjs3dviewer--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "其他",
+    "componentList": [
+      {
+        "name": "HmAntAffix",
+        "title": "固钉",
+        "importPath": "built-in/jeecg/HmAntAffix",
+        "imgUrl": "built-in/jeecg/img/HmAntAffix.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantaffix--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntBreadcrumb",
+        "title": "面包屑",
+        "importPath": "built-in/jeecg/HmAntBreadcrumb",
+        "imgUrl": "built-in/jeecg/img/HmAntBreadcrumb.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantbreadcrumb--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntDropdown",
+        "title": "下拉菜单",
+        "importPath": "built-in/jeecg/HmAntDropdown",
+        "imgUrl": "built-in/jeecg/img/HmAntDropdown.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantdropdown--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntDropdownMenu",
+        "title": "下拉菜单(可改图标)",
+        "importPath": "built-in/jeecg/HmAntDropdownMenu",
+        "imgUrl": "built-in/jeecg/img/HmAntDropdown.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantdropdownmenu--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntMenu",
+        "title": "导航菜单",
+        "importPath": "built-in/jeecg/HmAntMenu",
+        "imgUrl": "built-in/jeecg/img/HmAntMenu.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantmenu--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntPagination",
+        "title": "分页",
+        "importPath": "built-in/jeecg/HmAntPagination",
+        "imgUrl": "built-in/jeecg/img/HmAntPagination.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantpagination--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntSteps",
+        "title": "步骤条",
+        "importPath": "built-in/jeecg/HmAntSteps",
+        "imgUrl": "built-in/jeecg/img/HmAntSteps.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantsteps--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntBadge",
+        "title": "徽标数",
+        "importPath": "built-in/jeecg/HmAntBadge",
+        "imgUrl": "built-in/jeecg/img/HmAntBadge.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantbadge--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntAvatar",
+        "title": "头像",
+        "importPath": "built-in/jeecg/HmAntAvatar",
+        "imgUrl": "built-in/jeecg/img/HmAvatar.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantavatar--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntList",
+        "title": "列表",
+        "importPath": "built-in/jeecg/HmAntList",
+        "imgUrl": "built-in/jeecg/img/HmAntList.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantlist--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntListCard",
+        "title": "列表卡片",
+        "importPath": "built-in/jeecg/HmAntListCard",
+        "imgUrl": "built-in/jeecg/img/HmAntListCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantlistcard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntTooltip",
+        "title": "文字提示",
+        "importPath": "built-in/jeecg/HmAntTooltip",
+        "imgUrl": "built-in/jeecg/img/HmAntTooltip.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmanttooltip--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntStatistic",
+        "title": "统计数值",
+        "importPath": "built-in/jeecg/HmAntStatistic",
+        "imgUrl": "built-in/jeecg/img/HmAntStatistic.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantstatistic--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntComment",
+        "title": "评论",
+        "importPath": "built-in/jeecg/HmAntComment",
+        "imgUrl": "built-in/jeecg/img/HmAntComment.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantcomment--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntPopover",
+        "title": "气泡卡片",
+        "importPath": "built-in/jeecg/HmAntPopover",
+        "imgUrl": "built-in/jeecg/img/HmAntPopover.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantpopover--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntBubbleTab",
+        "title": "气泡选项卡",
+        "importPath": "built-in/jeecg/HmAntBubbleTab",
+        "imgUrl": "built-in/jeecg/img/HmAntBubbleTab.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantbubbletab--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCard",
+        "title": "卡片",
+        "importPath": "built-in/jeecg/HmAntCard",
+        "imgUrl": "built-in/jeecg/img/HmAntCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantcard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntMentions",
+        "title": "提及",
+        "importPath": "built-in/jeecg/HmAntMentions",
+        "imgUrl": "built-in/jeecg/img/HmAntMentions.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantmentions--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntTransfer",
+        "title": "穿梭框",
+        "importPath": "built-in/jeecg/HmAntTransfer",
+        "imgUrl": "built-in/jeecg/img/HmAntTransfer.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmanttransfer--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntForm",
+        "title": "表单",
+        "importPath": "built-in/jeecg/HmAntForm",
+        "imgUrl": "built-in/jeecg/img/HmAntForm.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantform--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntFormModel",
+        "title": "复合表单",
+        "importPath": "built-in/jeecg/HmAntFormModel",
+        "imgUrl": "built-in/jeecg/img/HmAntFormModel.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantformmodel--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntFormily",
+        "title": "Formily表单",
+        "importPath": "built-in/jeecg/HmAntFormily",
+        "imgUrl": "built-in/jeecg/img/HmAntFormily.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantformily--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntProgress",
+        "title": "进度条",
+        "importPath": "built-in/jeecg/HmAntProgress",
+        "imgUrl": "built-in/jeecg/img/HmAntProgress.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantprogress--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntAlert",
+        "title": "警告提示",
+        "importPath": "built-in/jeecg/HmAntAlert",
+        "imgUrl": "built-in/jeecg/img/HmAntAlert.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantalert--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntPopconfirm",
+        "title": "汽泡确认框",
+        "importPath": "built-in/jeecg/HmAntPopconfirm",
+        "imgUrl": "built-in/jeecg/img/HmAntPopconfirm.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantpopconfirm--doc",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntAnchor",
+        "title": "锚点",
+        "importPath": "built-in/jeecg/HmAntAnchor",
+        "imgUrl": "built-in/jeecg/img/HmAntAnchor.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantanchor--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntBackTop",
+        "title": "回到顶部",
+        "importPath": "built-in/jeecg/HmAntBackTop",
+        "imgUrl": "built-in/jeecg/img/HmAntBackTop.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantbacktop--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntDivider",
+        "title": "分割线",
+        "importPath": "built-in/jeecg/HmAntDivider",
+        "imgUrl": "built-in/jeecg/img/HmAntDivider.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantdivider--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntDescriptions",
+        "title": "描述列表",
+        "importPath": "built-in/jeecg/HmAntDescriptions",
+        "imgUrl": "built-in/jeecg/img/HmAntDescriptions.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantdescriptions--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntProjectCard",
+        "title": "项目卡片",
+        "importPath": "built-in/jeecg/HmAntProjectCard",
+        "imgUrl": "built-in/jeecg/img/HmAntProjectCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantprojectcard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntApplicationCard",
+        "title": "应用卡片",
+        "importPath": "built-in/jeecg/HmAntApplicationCard",
+        "imgUrl": "built-in/jeecg/img/HmAntApplicationCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantapplicationcard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntEmpty",
+        "title": "空状态",
+        "importPath": "built-in/jeecg/HmAntEmpty",
+        "imgUrl": "built-in/jeecg/img/HmAntEmpty.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantempty--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntSlider",
+        "title": "滑动输入条",
+        "importPath": "built-in/jeecg/HmAntSlider",
+        "imgUrl": "built-in/jeecg/img/HmAntSlider.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantempty--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntUserinformation",
+        "title": "个人信息",
+        "importPath": "built-in/jeecg/HmAntUserinformation",
+        "imgUrl": "built-in/jeecg/img/HmAntUserinformation.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantuserinformation--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntPersonalInformation",
+        "title": "用户信息",
+        "importPath": "built-in/jeecg/HmAntPersonalInformation",
+        "imgUrl": "built-in/jeecg/img/HmAntPersonalInformation.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantpersonalinformation--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCardDataRanking",
+        "title": "门店销售排行榜",
+        "importPath": "built-in/jeecg/HmAntCardDataRanking",
+        "imgUrl": "built-in/jeecg/img/HmAntCardDataRanking.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmantcarddataranking--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntIconText",
+        "title": "图标文字",
+        "importPath": "built-in/jeecg/HmAntIconText",
+        "imgUrl": "built-in/jeecg/img/HmAntIconText.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmanticontext--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntBgText",
+        "title": "文字",
+        "importPath": "built-in/jeecg/HmAntBgText",
+        "imgUrl": "built-in/jeecg/img/HmAntBgText.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantbgtext--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmMarkdown",
+        "title": "编辑器",
+        "importPath": "built-in/jeecg/HmMarkdown",
+        "imgUrl": "built-in/jeecg/img/HmMarkdown.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmmarkdown--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmColorKit",
+        "title": "颜色选择框",
+        "importPath": "built-in/jeecg/HmColorKit",
+        "imgUrl": "built-in/jeecg/img/HmColorKit.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmmarkdown--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmBaiduMap",
+        "title": "百度地图组件",
+        "importPath": "built-in/jeecg/HmBaiduMap",
+        "imgUrl": "built-in/jeecg/img/HmBaiduMap.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/地图-hmbaidumap--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntCounter",
+        "title": "计数器",
+        "importPath": "built-in/jeecg/HmAntCounter",
+        "imgUrl": "built-in/jeecg/img/HmAntCounter.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/地图-hmbaidumap--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmIframe",
+        "title": "iframe",
+        "importPath": "built-in/jeecg/HmIframe",
+        "imgUrl": "built-in/jeecg/img/HmIframe.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmiframe--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "其他组件",
+    "componentList": [
+      {
+        "name": "HmIDcard",
+        "title": "身份证",
+        "importPath": "built-in/jeecg/HmIDcard",
+        "imgUrl": "built-in/jeecg/img/HmIDcard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他组件-hmidcard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmTinyMce",
+        "title": "TinyMce编辑器",
+        "importPath": "built-in/jeecg/HmTinyMce",
+        "imgUrl": "built-in/jeecg/img/HmTinyMce.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他组件-hmtinymce--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmImageHover",
+        "title": "ImageHover动画",
+        "importPath": "built-in/jeecg/HmImageHover/HmImageHover",
+        "imgUrl": "built-in/jeecg/HmImageHover/img/HmImageHover.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他组件-hmimagehover--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmStarSky",
+        "title": "星空背景动画",
+        "importPath": "built-in/jeecg/HmStarSky",
+        "imgUrl": "built-in/jeecg/img/HmStarSky.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他组件-hmstarsky--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmMarkdownEditor",
+        "title": "Markdown编辑器",
+        "importPath": "built-in/jeecg/HmMarkdownEditor",
+        "imgUrl": "built-in/jeecg/img/HmMarkdownEditor.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他组件-hmmarkdowneditor--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmAntVideo",
+        "title": "视频列表播放器",
+        "importPath": "built-in/jeecg/HmAntVideo",
+        "imgUrl": "built-in/jeecg/img/HmAntVideo.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他组件-hmantvideo--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmSkeyeWebPlayer",
+        "title": "SkeyeWebPlayer视频播放器",
+        "importPath": "built-in/jeecg/skeye-web-player/HmSkeyeWebPlayer",
+        "imgUrl": "built-in/jeecg/img/HmSkeyeWebPlayer.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他组件-hmskeyewebplayer--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmJessibucaPlayer",
+        "title": "HmJessibuca视频播放器",
+        "importPath": "built-in/jeecg/hm-jessibuca/HmJessibucaPlayer",
+        "imgUrl": "built-in/jeecg/img/HmJessibuca.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他组件-hmjessibucaplayer--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "教育类",
+    "componentList": [
+      {
+        "name": "HmReviewPapers",
+        "title": "批阅试卷",
+        "importPath": "built-in/jeecg/HmReviewPapers",
+        "imgUrl": "built-in/jeecg/img/HmReviewPapers.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/教育类-hmreviewpapers--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmOnlineExamination",
+        "title": "在线考试",
+        "importPath": "built-in/jeecg/HmOnlineExamination",
+        "imgUrl": "built-in/jeecg/img/HmOnlineExamination.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/教育类-hmonlineexamination--docs",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "大屏",
+    "componentList": [
+      {
+        "name": "HmAntCard",
+        "title": "在线考试",
+        "importPath": "built-in/big-screen-vue3/HmAntCard",
+        "imgUrl": "built-in/big-screen-vue3/img/HmAntCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantcard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmBgScreenCard",
+        "title": "大背景卡片",
+        "importPath": "built-in/big-screen-vue3/HmBgScreenCard",
+        "imgUrl": "built-in/big-screen-vue3/img/HmBgScreenCard.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmCard",
+        "title": "标题卡片",
+        "importPath": "built-in/big-screen-vue3/HmCard",
+        "imgUrl": "built-in/big-screen-vue3/img/HmCard.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmCounter",
+        "title": "计数器",
+        "importPath": "built-in/big-screen-vue3/HmCounter",
+        "imgUrl": "built-in/big-screen-vue3/img/HmCounter.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmDataCard",
+        "title": "数据卡片",
+        "importPath": "built-in/big-screen-vue3/HmDataCard",
+        "imgUrl": "built-in/big-screen-vue3/img/HmDataCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/其他-hmantcard--docs",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmDeclineRate",
+        "title": "下降率",
+        "importPath": "built-in/big-screen-vue3/HmDeclineRate",
+        "imgUrl": "built-in/big-screen-vue3/img/HmDeclineRate.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmDoubleDealer",
+        "title": "翻牌器",
+        "importPath": "built-in/big-screen-vue3/HmDoubleDealer",
+        "imgUrl": "built-in/big-screen-vue3/img/HmDoubleDealer.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmDvBorderBox",
+        "title": "动态方框",
+        "importPath": "built-in/big-screen-vue3/HmDvBorderBox",
+        "imgUrl": "built-in/big-screen-vue3/img/HmDvBorderBox.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsAreaChart",
+        "title": "基础面积折线图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsAreaChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsAreaChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsCircularDiagram",
+        "title": "环形图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsCircularDiagram",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsCircularDiagram.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsColumnLineChart",
+        "title": "柱状折线图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsColumnLineChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsColumnLineChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsCurveChart",
+        "title": "曲线图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsCurveChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsCurveChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsDataHistogram",
+        "title": "数据柱状图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsDataHistogram",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsDataHistogram.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsFunnelChart",
+        "title": "漏斗图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsFunnelChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsFunnelChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsLine",
+        "title": "echarts无Y轴折线图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsLine",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsLine.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsMeter",
+        "title": "圆环图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsMeter",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsMeter.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsNestedRing",
+        "title": "嵌套环形图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsNestedRing",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsNestedRing.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsPersonaMap",
+        "title": "关系图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsPersonaMap",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsPersonaMap.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsPictographicColumn",
+        "title": "象形柱状图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsPictographicColumn",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsPictographicColumn.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsRiver",
+        "title": "河流图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsRiver",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsRiver.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsRoseChart",
+        "title": "玫瑰饼图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsRoseChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsRoseChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsRotatingChart",
+        "title": "多环饼图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsRotatingChart",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsRotatingChart.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsRoundColumnar",
+        "title": "图行柱状图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsRoundColumnar",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsRoundColumnar.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsScatter",
+        "title": "关系图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsScatter",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsScatter.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsScatterPlot",
+        "title": "散点图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsScatterPlot",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsScatterPlot.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsSunFigure",
+        "title": "旭日图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsSunFigure",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsSunFigure.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmEchartsTwoHistogram",
+        "title": "双向柱形图",
+        "importPath": "built-in/big-screen-vue3/HmEchartsTwoHistogram",
+        "imgUrl": "built-in/big-screen-vue3/img/HmEchartsTwoHistogram.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmList",
+        "title": "数据列表",
+        "importPath": "built-in/big-screen-vue3/HmList",
+        "imgUrl": "built-in/big-screen-vue3/img/HmList.png",
+        "type": 0,
+        "isBuiltIn": true
+      },
+      {
+        "name": "HmProgressBar",
+        "title": "多行进度条",
+        "importPath": "built-in/big-screen-vue3/HmProgressBar",
+        "imgUrl": "built-in/big-screen-vue3/img/HmProgressBar.png",
+        "type": 0,
+        "isBuiltIn": true
+      }
+    ]
+  }
+]
