@@ -323,56 +323,13 @@ export default {
         padding: "0",
         titleBlockColor: "#1890FF00",
       },
-      registrationOrdersDetailModal: {
-        visible: false,
-      },
-      registrationOrdersDetailForm: {
-        config: {
-          code: {
-            type: "Span",
-            title: "编码",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            validator: function (value) {},
-            required: false,
-            disabled: false,
-          },
-        },
-        value: {
-          span: "文字内容",
-        },
-        schema: {},
-      },
-      registrationOrdersEditModal: {
-        visible: false,
-      },
-      registrationOrdersEditForm: {
-        config: {
-          code: {
-            type: "HmAntSelect",
-            title: "编码",
-            style: {
-              width: "50%",
-            },
-            props: {
-              title: "",
-            },
-            validator: function (value) {},
-            required: false,
-            disabled: false,
-          },
-        },
-        value: {
-          span: "文字内容",
-        },
-        schema: {},
-      },
       registrationOrdersDeleteModal: {
         visible: false,
       },
       registrationOrdersAddModal: {
+        visible: false,
+      },
+      registrationOrdersEditModal: {
         visible: false,
       },
       importButton: {
@@ -406,6 +363,49 @@ export default {
           span: "文字内容",
         },
         schema: {},
+      },
+      registrationOrdersEditForm: {
+        config: {
+          code: {
+            type: "HmAntSelect",
+            title: "编码",
+            style: {
+              width: "50%",
+            },
+            props: {
+              title: "",
+            },
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+        },
+        value: {
+          span: "文字内容",
+        },
+        schema: {},
+      },
+      registrationOrdersDetailForm: {
+        config: {
+          code: {
+            type: "Span",
+            title: "编码",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+        },
+        value: {
+          span: "文字内容",
+        },
+        schema: {},
+      },
+      registrationOrdersDetailModal: {
+        visible: false,
       },
       registrationOrdersFilter: {
         config: {
@@ -547,28 +547,7 @@ export default {
         },
         actions: [
           {
-            name: "查看详情",
-            callback: function (item) {
-              self.registrationOrdersDetailModal.visible = true;
-              self.$nextTick(function () {
-                self.registrationOrdersDetailForm.value = item;
-              });
-            },
-            type: "link",
-          },
-          {
-            name: "编辑",
-            callback: function (item) {
-              self.registrationOrdersEditModal.visible = true;
-              self.currentRegistrationOrdersId = item.id;
-              self.$nextTick(function () {
-                self.registrationOrdersEditForm.value = item;
-              });
-            },
-            type: "link",
-          },
-          {
-            name: "删除",
+            name: "核销",
             callback: function (item) {
               self.registrationOrdersDeleteModal.visible = true;
               self.currentRegistrationOrdersId = item.id;
