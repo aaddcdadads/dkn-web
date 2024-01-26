@@ -244,7 +244,6 @@
               width="320px"
               :z-index="1000"
               height="80px"
-              @ok="onRegistrationOrdersDeleteModalOk"
             >
               <div class="ele-wrapper ele-wrapper-deleteUserInputCard">
                 <hm-bg-card
@@ -299,7 +298,6 @@ import {
   searchRegistrationOrders,
   addRegistrationOrders,
   editRegistrationOrders,
-  deleteRegistrationOrders,
 } from "/@/logics/RegistrationOrdersPageGroup";
 
 export default {
@@ -613,9 +611,6 @@ export default {
     },
     onRegistrationOrdersEditModalCancel() {
       this.registrationOrdersEditModal.visible = false;
-    },
-    onRegistrationOrdersDeleteModalOk() {
-      deleteRegistrationOrders(this, arguments);
     },
   },
 };
