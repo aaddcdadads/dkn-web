@@ -84,6 +84,16 @@
                 </hm-ant-button>
               </div>
               <div
+                class="ele-wrapper ele-wrapper-acb9ca38-a2dc-4615-8ff9-d19194092922"
+              >
+                <hm-panel
+                  height=""
+                  title="门店列表"
+                  class="ele-acb9ca38-a2dc-4615-8ff9-d19194092922"
+                >
+                </hm-panel>
+              </div>
+              <div
                 class="ele-wrapper ele-wrapper-invisibleImportSearchLogicBtn"
               >
                 <hm-ant-button
@@ -656,6 +666,10 @@ export default {
 
 .ele-wrapper-exportButton {
   margin: 0 0 0 1%;
+}
+
+.ele-wrapper-acb9ca38-a2dc-4615-8ff9-d19194092922 {
+  width: 100%;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
