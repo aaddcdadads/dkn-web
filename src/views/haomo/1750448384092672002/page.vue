@@ -496,12 +496,22 @@ export default {
             key: "pickUpTime",
           },
           {
+            title: "报名人数",
+            dataIndex: "a",
+            key: "a",
+          },
+          {
+            title: "核销人数",
+            dataIndex: "b",
+            key: "b",
+          },
+          {
             title: "活动地点",
             dataIndex: "address",
             key: "address",
           },
           {
-            title: "活动状态",
+            title: "启用状态",
             dataIndex: "status",
             key: "status",
           },
