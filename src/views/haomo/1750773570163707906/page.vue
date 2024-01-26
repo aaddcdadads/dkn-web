@@ -116,7 +116,7 @@
                         >
                           <hm-ant-upload
                             title=""
-                            text="导入"
+                            text="导入门店"
                             :button-type="'primary'"
                             :file-list="[]"
                             action="/api/restify/store/importExcel"
