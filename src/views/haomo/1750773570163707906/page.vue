@@ -33,26 +33,13 @@
                 >
                 </hm-ant-formily>
               </div>
-              <div class="ele-wrapper ele-wrapper-importButton">
-                <hm-ant-upload
-                  ref="importButton"
-                  title=""
-                  text="导入"
-                  :button-type="'primary'"
-                  v-model:file-list="importButton.fileList"
-                  action="/api/restify/store/importExcel"
-                  :headers="importButton.headers"
-                  :visible="importButton.visible"
-                  class="ele-importButton"
-                >
-                </hm-ant-upload>
-              </div>
               <div class="ele-wrapper ele-wrapper-downloadTemplateButton">
                 <hm-ant-button
                   ref="downloadTemplateButton"
                   text="下载模板"
                   :type="'primary'"
                   icon="fa fa-download"
+                  :visible="false"
                   @click="onDownloadTemplateButtonClick"
                   class="ele-downloadTemplateButton"
                 >
@@ -329,8 +316,8 @@ import { h } from "vue";
 import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
 import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
-import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
+import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
@@ -350,8 +337,8 @@ export default {
     HmBgCard,
     HmPanel,
     HmAntFormily,
-    HmAntUpload,
     HmAntButton,
+    HmAntUpload,
     HmAntTable,
     HmModal,
     HmAntIconText,
@@ -451,13 +438,9 @@ export default {
       storeAddModal: {
         visible: false,
       },
-      importButton: {
-        visible: true,
-        headers: null,
-        fileList: [],
-      },
+      importButton: {},
       exportButton: {
-        visible: true,
+        visible: false,
         text: "导出",
         type: "primary",
         icon: "fa fa-download",
@@ -727,14 +710,6 @@ export default {
   width: 98%;
   margin: 1%;
   margin-bottom: 0;
-}
-
-.ele-wrapper-importButton {
-  margin: 0 3% 0 1%;
-  transform: translateY(-1px);
-  /deep/ .upload-class {
-    min-width: 0;
-  }
 }
 
 .ele-wrapper-downloadTemplateButton {
