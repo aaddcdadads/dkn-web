@@ -6,7 +6,7 @@
             <div class="ele-wrapper ele-wrapper-crudPagePanel">
       <hm-panel ref="crudPagePanel" :height="crudPagePanel.height" :title="crudPagePanel.title" :padding="crudPagePanel.padding" :title-block-color="crudPagePanel.titleBlockColor" class="ele-crudPagePanel"> 
             <div class="ele-wrapper ele-wrapper-viewRegistrationOrdersFilter">
-      <hm-ant-formily ref="viewRegistrationOrdersFilter" :config="viewRegistrationOrdersFilter.config" v-model:value="viewRegistrationOrdersFilter.value" :col-num="3" :col-min-width="380" :schema="viewRegistrationOrdersFilter.schema" :label-col="7" :wrapper-col="14" class="ele-viewRegistrationOrdersFilter"> 
+      <hm-ant-formily ref="viewRegistrationOrdersFilter" :config="viewRegistrationOrdersFilter.config" v-model:value="viewRegistrationOrdersFilter.value" :col-num="4" :col-min-width="380" :schema="viewRegistrationOrdersFilter.schema" :label-col="7" :wrapper-col="14" class="ele-viewRegistrationOrdersFilter"> 
        
     </hm-ant-formily>
     </div> 
