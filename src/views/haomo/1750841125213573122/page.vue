@@ -533,12 +533,12 @@ export default {
             key: "phone",
           },
           {
-            title: "报名活动",
+            title: "报名项目",
             dataIndex: "activityId",
             key: "activityId",
           },
           {
-            title: "渠道",
+            title: "报名渠道",
             dataIndex: "channel",
             key: "channel",
           },
