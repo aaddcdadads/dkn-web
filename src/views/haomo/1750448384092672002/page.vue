@@ -272,6 +272,9 @@
           </div>
         </hm-bg-card>
       </div>
+      <div class="ele-wrapper ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1">
+        <hm-ant-switch> </hm-ant-switch>
+      </div>
     </div>
   </div>
 </template>
@@ -286,6 +289,7 @@ import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
+import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
 import {
   downloadTemplate,
@@ -307,6 +311,7 @@ export default {
     HmAntTable,
     HmModal,
     HmAntIconText,
+    HmAntSwitch,
   },
   data() {
     let self = this;
@@ -514,6 +519,13 @@ export default {
             title: "启用状态",
             dataIndex: "status",
             key: "status",
+            customRender: function (data) {
+              return h(HmAntSwitch, {
+                checked: false,
+                title: "",
+                onChange: function (e) {},
+              });
+            },
           },
           {
             slots: {
