@@ -523,7 +523,7 @@ export default {
       viewRegistrationOrdersTable: {
         columns: [
           {
-            title: "id",
+            title: "订单编号",
             dataIndex: "id",
             key: "id",
           },
