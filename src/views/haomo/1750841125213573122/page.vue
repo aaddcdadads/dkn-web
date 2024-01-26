@@ -553,7 +553,7 @@ export default {
             key: "createTime",
           },
           {
-            title: "pick_up_status_text",
+            title: "核销状态",
             dataIndex: "pickUpStatusText",
             key: "pickUpStatusText",
           },
