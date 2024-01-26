@@ -407,6 +407,17 @@ export default {
             required: false,
             disabled: false,
           },
+          pickUpTime: {
+            type: "DatePicker",
+            title: "活动核销截止时间",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
         },
         value: {
           span: "文字内容",
@@ -479,6 +490,17 @@ export default {
           closeTime: {
             type: "DatePicker",
             title: "活动报名截止时间",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+          pickUpTime: {
+            type: "DatePicker",
+            title: "活动核销截止时间",
             style: {
               width: "50%",
             },
