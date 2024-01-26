@@ -110,6 +110,7 @@
                             text="导出"
                             :type="'primary'"
                             icon="fa fa-download"
+                            @click="onEle619F67E0Ea7A4F588Bc8E8A4B70A16B3Click"
                             class="ele-619f67e0-ea7a-4f58-8bc8-e8a4b70a16b3"
                           >
                           </hm-ant-button>
@@ -632,6 +633,9 @@ export default {
       downloadTemplate(this, arguments);
     },
     onExportButtonClick() {
+      exportRegistrationOrders(this, arguments);
+    },
+    onEle619F67E0Ea7A4F588Bc8E8A4B70A16B3Click() {
       exportRegistrationOrders(this, arguments);
     },
     onInvisibleImportSearchLogicBtnClick() {
