@@ -668,6 +668,30 @@ export default {
         },
         actions: [
           {
+            name: "活动url",
+            callback: function (item) {},
+            type: "link",
+          },
+          {
+            name: "报名列表",
+            callback: function (item) {
+              self.$router.push({
+                path: "/haomo/1750728111109967873/page",
+              });
+            },
+            type: "link",
+          },
+          {
+            name: "查看详情",
+            callback: function (item) {
+              self.activityDetailModal.visible = true;
+              self.$nextTick(function () {
+                self.activityDetailForm.value = item;
+              });
+            },
+            type: "link",
+          },
+          {
             name: "查看详情",
             callback: function (item) {
               self.activityDetailModal.visible = true;
