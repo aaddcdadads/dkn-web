@@ -103,6 +103,17 @@
                         box-shadow-color="#00000000"
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
                       >
+                        <div
+                          class="ele-wrapper ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
+                        >
+                          <hm-ant-button
+                            text="新增"
+                            :type="'primary'"
+                            icon="fa fa-plus"
+                            class="ele-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
+                          >
+                          </hm-ant-button>
+                        </div>
                       </hm-bg-card>
                     </div>
                   </template>
@@ -845,6 +856,10 @@ export default {
 
 .ele-wrapper-4aad8761-7b58-4d08-b5a2-91fea232f9fe {
   width: 400px;
+}
+
+.ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1 {
+  margin: 0 3% 0 1%;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
