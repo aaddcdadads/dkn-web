@@ -103,6 +103,17 @@
                         box-shadow-color="#00000000"
                         class="ele-fed9455d-a15f-480a-a6e4-2499063d39a0"
                       >
+                        <div
+                          class="ele-wrapper ele-wrapper-619f67e0-ea7a-4f58-8bc8-e8a4b70a16b3"
+                        >
+                          <hm-ant-button
+                            text="导出"
+                            :type="'primary'"
+                            icon="fa fa-download"
+                            class="ele-619f67e0-ea7a-4f58-8bc8-e8a4b70a16b3"
+                          >
+                          </hm-ant-button>
+                        </div>
                       </hm-bg-card>
                     </div>
                   </template>
@@ -362,7 +373,7 @@ export default {
         fileList: [],
       },
       exportButton: {
-        visible: true,
+        visible: false,
         text: "导出",
         type: "primary",
         icon: "fa fa-download",
@@ -689,6 +700,10 @@ export default {
 
 .ele-wrapper-fed9455d-a15f-480a-a6e4-2499063d39a0 {
   width: 400px;
+}
+
+.ele-wrapper-619f67e0-ea7a-4f58-8bc8-e8a4b70a16b3 {
+  margin: 0 0 0 1%;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
