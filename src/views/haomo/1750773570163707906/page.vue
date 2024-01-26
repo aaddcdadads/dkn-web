@@ -308,7 +308,8 @@
         </hm-bg-card>
       </div>
       <div class="ele-wrapper ele-wrapper-ca97e822-f663-4433-9bc3-763a5a8b2fd1">
-        <hm-ant-switch> </hm-ant-switch>
+        <hm-ant-switch class="ele-ca97e822-f663-4433-9bc3-763a5a8b2fd1">
+        </hm-ant-switch>
       </div>
     </div>
   </div>
@@ -794,5 +795,9 @@ export default {
 
 .ele-wrapper-deleteUserInputText {
   width: 60%;
+}
+
+.ele-wrapper-ca97e822-f663-4433-9bc3-763a5a8b2fd1 {
+  display: none;
 }
 </style>
