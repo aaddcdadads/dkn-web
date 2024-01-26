@@ -110,6 +110,7 @@
                             text="新增"
                             :type="'primary'"
                             icon="fa fa-plus"
+                            @click="onEle128De5D58A3B40DaAbea0C30F1Be5Fe1Click"
                             class="ele-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
                           >
                           </hm-ant-button>
@@ -786,6 +787,9 @@ export default {
     },
     onExportButtonClick() {
       exportActivity(this, arguments);
+    },
+    onEle128De5D58A3B40DaAbea0C30F1Be5Fe1Click() {
+      this.activityAddModal.visible = true;
     },
     onInvisibleImportSearchLogicBtnClick() {
       searchActivity(this, arguments);
