@@ -236,10 +236,10 @@
           <div class="ele-wrapper ele-wrapper-registrationOrdersDeleteModal">
             <hm-modal
               ref="registrationOrdersDeleteModal"
-              title="删除"
+              title="核销"
               v-model:visible="registrationOrdersDeleteModal.visible"
               :closable="true"
-              ok-text="删除"
+              ok-text="确认"
               :ok-type="'danger'"
               width="320px"
               :z-index="1000"
@@ -259,7 +259,7 @@
                   <div class="ele-wrapper ele-wrapper-deleteUserInputText">
                     <hm-ant-icon-text
                       ref="deleteUserInputText"
-                      text="是否要删除?"
+                      text="是否确认核销?"
                       icon=""
                       width="200px"
                       icon-size="0px"
