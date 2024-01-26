@@ -1,0 +1,205 @@
+import _ from "lodash";
+import moment from "moment";
+
+// self对象保存页面的this对象
+let self = {};
+
+// logic对象保存当前逻辑组对象，可以通过logic.func或者self.func来调用本逻辑组内的所有逻辑单元
+let logic = {};
+
+/********************** searchRegistrationOrders 开始 *********************/
+
+/**
+ * 逻辑流 searchRegistrationOrders 入口函数
+ */
+const searchRegistrationOrders = (logic.searchRegistrationOrders = async (
+  pageVm,
+  eventData
+) => {
+  console.log(`searchRegistrationOrders: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.searchRegistrationOrdersData = eventData;
+
+  let params = {
+    ...self.registrationOrdersTable.params,
+    ...self.$getFilterValues(
+      self.$refs.registrationOrdersFilter.getFormValues(),
+      self.$refs.registrationOrdersFilter.cSchema
+    ),
+  };
+  if (_.isEqual(params, self.registrationOrdersTable.params)) {
+    self.$refs.registrationOrdersTable.getData();
+  } else {
+    self.registrationOrdersTable.params = params;
+  }
+});
+
+/********************** end searchRegistrationOrders 开始 *********************/
+
+/********************** deleteRegistrationOrders 开始 *********************/
+/**
+ * 发送删除请求
+ */
+const deleteRequest = (logic.deleteRequest = async function () {
+  let res = await self.$deleteAction(`/api/restify/registrationOrders/delete`, {
+    id: self.currentRegistrationOrdersId,
+    databaseId: "",
+  });
+  self.deleteRequestData = res;
+});
+
+/**
+ * 逻辑流 deleteRegistrationOrders 入口函数
+ */
+const deleteRegistrationOrders = (logic.deleteRegistrationOrders = async (
+  pageVm,
+  eventData
+) => {
+  console.log(`deleteRegistrationOrders: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.deleteRegistrationOrdersData = eventData;
+
+  await deleteRequest();
+  if (self.deleteRequestData.success) {
+    self.$message.success("删除成功");
+    self.$refs.registrationOrdersTable.getData();
+    self.registrationOrdersDeleteModal.visible = false;
+  } else {
+    self.$message.error("删除失败");
+  }
+});
+
+/********************** end deleteRegistrationOrders 开始 *********************/
+
+/********************** exportRegistrationOrders 开始 *********************/
+
+/**
+ * 逻辑流 exportRegistrationOrders 入口函数
+ */
+const exportRegistrationOrders = (logic.exportRegistrationOrders = async (
+  pageVm,
+  eventData
+) => {
+  console.log(`exportRegistrationOrders: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.exportRegistrationOrdersData = eventData;
+
+  let url = "/api/restify/registrationOrders/exportExcel";
+  let params = {
+    ...self.registrationOrdersTable.params,
+    ...self.$getFilterValues(
+      self.$refs.registrationOrdersFilter.getFormValues(),
+      self.$refs.registrationOrdersFilter.cSchema
+    ),
+  };
+  self.$downloadFile("报名订单列表数据.xlsx", url, params);
+});
+
+/********************** end exportRegistrationOrders 开始 *********************/
+
+/********************** addRegistrationOrders 开始 *********************/
+/**
+ * 发送添加请求
+ */
+const addRequest = (logic.addRequest = async function () {
+  let res = await self.$postAction(`/api/restify/registrationOrders/add`, {
+    ...self.$refs.registrationOrdersAddForm.getFormValues(),
+  });
+  self.addRequestData = res;
+});
+
+/**
+ * 逻辑流 addRegistrationOrders 入口函数
+ */
+const addRegistrationOrders = (logic.addRegistrationOrders = async (
+  pageVm,
+  eventData
+) => {
+  console.log(`addRegistrationOrders: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.addRegistrationOrdersData = eventData;
+
+  await self.$refs.registrationOrdersAddForm.validate();
+  await addRequest();
+  if (self.addRequestData.success) {
+    self.$message.success("添加成功");
+    self.$refs.registrationOrdersAddForm.reset();
+    self.registrationOrdersAddModal.visible = false;
+    self.$refs.registrationOrdersTable.getData();
+  } else {
+    self.$message.error("添加失败");
+  }
+});
+
+/********************** end addRegistrationOrders 开始 *********************/
+
+/********************** downloadTemplate 开始下载模板 *********************/
+
+/**
+ * 逻辑流 downloadTemplate 入口函数
+ */
+const downloadTemplate = (logic.downloadTemplate = async (
+  pageVm,
+  eventData
+) => {
+  console.log(`downloadTemplate: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.downloadTemplateData = eventData;
+
+  self.$downloadFile(
+    "报名订单列表数据模板.xlsx",
+    "/api/restify/registrationOrders/downExcelTemplate",
+    {}
+  );
+});
+
+/********************** end downloadTemplate 开始下载模板 *********************/
+
+/********************** editRegistrationOrders 开始 *********************/
+/**
+ * 发送修改请求
+ */
+const editRequest = (logic.editRequest = async function () {
+  let res = await self.$putAction(`/api/restify/registrationOrders/edit`, {
+    ...self.$refs.registrationOrdersEditForm.getFormValues(),
+    id: self.currentRegistrationOrdersId,
+  });
+  self.editRequestData = res;
+});
+
+/**
+ * 逻辑流 editRegistrationOrders 入口函数
+ */
+const editRegistrationOrders = (logic.editRegistrationOrders = async (
+  pageVm,
+  eventData
+) => {
+  console.log(`editRegistrationOrders: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.editRegistrationOrdersData = eventData;
+
+  await self.$refs.registrationOrdersEditForm.validate();
+  await editRequest();
+  if (self.editRequestData.success) {
+    self.$message.success("编辑成功");
+    self.$refs.registrationOrdersEditForm.reset();
+    self.registrationOrdersEditModal.visible = false;
+    self.$refs.registrationOrdersTable.getData();
+  } else {
+    self.$message.error("编辑失败");
+  }
+});
+
+/********************** end editRegistrationOrders 开始 *********************/
+
+export {
+  searchRegistrationOrders,
+  deleteRequest,
+  deleteRegistrationOrders,
+  exportRegistrationOrders,
+  addRequest,
+  addRegistrationOrders,
+  downloadTemplate,
+  editRequest,
+  editRegistrationOrders,
+};
