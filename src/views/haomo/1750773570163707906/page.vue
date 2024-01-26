@@ -82,6 +82,66 @@
                 </hm-ant-button>
               </div>
               <div
+                class="ele-wrapper ele-wrapper-68ec1e3a-e7db-413b-a7cc-7a386f743f83"
+              >
+                <hm-panel
+                  height=""
+                  title="门店列表"
+                  class="ele-68ec1e3a-e7db-413b-a7cc-7a386f743f83"
+                >
+                  <template v-slot:slot-title-icon>
+                    <div
+                      class="ele-wrapper ele-wrapper-b26f83d8-788d-4911-b39c-d6db12ade907"
+                    >
+                      <hm-bg-card
+                        width="100%"
+                        height=""
+                        border-radius=""
+                        padding=""
+                        box-shadow-color="#00000000"
+                        class="ele-b26f83d8-788d-4911-b39c-d6db12ade907"
+                      >
+                        <div
+                          class="ele-wrapper ele-wrapper-f087f9b5-c006-41c6-aea1-a22f650dcce6"
+                        >
+                          <hm-ant-button
+                            text="新增"
+                            :type="'primary'"
+                            icon="fa fa-plus"
+                            class="ele-f087f9b5-c006-41c6-aea1-a22f650dcce6"
+                          >
+                          </hm-ant-button>
+                        </div>
+                        <div
+                          class="ele-wrapper ele-wrapper-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5"
+                        >
+                          <hm-ant-upload
+                            title=""
+                            text="导入"
+                            :button-type="'primary'"
+                            :file-list="[]"
+                            action="/api/restify/store/importExcel"
+                            class="ele-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5"
+                          >
+                          </hm-ant-upload>
+                        </div>
+                        <div
+                          class="ele-wrapper ele-wrapper-6f9a0599-82dc-4e11-880c-d7f38d3f8892"
+                        >
+                          <hm-ant-button
+                            text="导出"
+                            :type="'primary'"
+                            icon="fa fa-download"
+                            class="ele-6f9a0599-82dc-4e11-880c-d7f38d3f8892"
+                          >
+                          </hm-ant-button>
+                        </div>
+                      </hm-bg-card>
+                    </div>
+                  </template>
+                </hm-panel>
+              </div>
+              <div
                 class="ele-wrapper ele-wrapper-invisibleImportSearchLogicBtn"
               >
                 <hm-ant-button
@@ -599,6 +659,9 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
+      "6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5": {
+        fileList: [],
+      },
     };
   },
   watch: {},
@@ -694,6 +757,30 @@ export default {
 }
 
 .ele-wrapper-exportButton {
+  margin: 0 0 0 1%;
+}
+
+.ele-wrapper-68ec1e3a-e7db-413b-a7cc-7a386f743f83 {
+  width: 100%;
+}
+
+.ele-wrapper-b26f83d8-788d-4911-b39c-d6db12ade907 {
+  width: 100%;
+}
+
+.ele-wrapper-f087f9b5-c006-41c6-aea1-a22f650dcce6 {
+  margin: 0 3% 0 1%;
+}
+
+.ele-wrapper-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5 {
+  margin: 0 3% 0 1%;
+  transform: translateY(-1px);
+  /deep/ .upload-class {
+    min-width: 0;
+  }
+}
+
+.ele-wrapper-6f9a0599-82dc-4e11-880c-d7f38d3f8892 {
   margin: 0 0 0 1%;
 }
 
