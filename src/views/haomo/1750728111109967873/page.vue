@@ -88,9 +88,24 @@
               >
                 <hm-panel
                   height=""
-                  title="门店列表"
+                  title="报名列表"
                   class="ele-acb9ca38-a2dc-4615-8ff9-d19194092922"
                 >
+                  <template v-slot:slot-title-icon>
+                    <div
+                      class="ele-wrapper ele-wrapper-fed9455d-a15f-480a-a6e4-2499063d39a0"
+                    >
+                      <hm-bg-card
+                        width="100%"
+                        height=""
+                        border-radius=""
+                        padding=""
+                        box-shadow-color="#00000000"
+                        class="ele-fed9455d-a15f-480a-a6e4-2499063d39a0"
+                      >
+                      </hm-bg-card>
+                    </div>
+                  </template>
                 </hm-panel>
               </div>
               <div
@@ -670,6 +685,10 @@ export default {
 
 .ele-wrapper-acb9ca38-a2dc-4615-8ff9-d19194092922 {
   width: 100%;
+}
+
+.ele-wrapper-fed9455d-a15f-480a-a6e4-2499063d39a0 {
+  width: 400px;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
