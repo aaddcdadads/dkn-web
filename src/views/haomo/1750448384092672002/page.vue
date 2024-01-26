@@ -543,7 +543,7 @@ export default {
           pageSize: 10,
           showSizeChanger: true,
         },
-        url: "/api/restify/activity/list",
+        url: "/api/dkn/activity/list",
         params: {
           databaseId: "",
           column: "createTime",

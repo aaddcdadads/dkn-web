@@ -61,7 +61,7 @@ const searchActivity = (logic.searchActivity = async (pageVm, eventData) => {
  * 发送修改请求
  */
 const editRequest = (logic.editRequest = async function () {
-  let res = await self.$putAction(`/api/restify/activity/edit`, {
+  let res = await self.$putAction(`/api/dkn/activity/edit`, {
     ...self.$refs.activityEditForm.getFormValues(),
     id: self.currentActivityId,
   });
