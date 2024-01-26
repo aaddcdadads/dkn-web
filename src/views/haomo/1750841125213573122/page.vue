@@ -710,6 +710,7 @@ export default {
 
 .ele-wrapper-addButton {
   margin: 0 3% 0 1%;
+  display: none;
 }
 
 .ele-wrapper-importButton {
