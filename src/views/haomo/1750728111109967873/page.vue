@@ -538,7 +538,7 @@ export default {
           pageSize: 10,
           showSizeChanger: true,
         },
-        url: "/api/restify/registrationOrders/list",
+        url: "/api/dkn/viewRegistrationOrders/list",
         params: {
           databaseId: "",
           column: "createTime",
