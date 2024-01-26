@@ -489,13 +489,13 @@ export default {
           },
           {
             title: "手机号",
-            dataIndex: "userId",
-            key: "userId",
+            dataIndex: "phone",
+            key: "phone",
           },
           {
             title: "姓名/昵称",
-            dataIndex: "userId",
-            key: "userId",
+            dataIndex: "realname",
+            key: "realname",
           },
           {
             title: "报名渠道",
@@ -504,23 +504,23 @@ export default {
           },
           {
             title: "报名项目",
-            dataIndex: "paymentStatus",
-            key: "paymentStatus",
+            dataIndex: "paymentStatusText",
+            key: "paymentStatusText",
           },
           {
             title: "报名状态",
-            dataIndex: "paymentStatus",
-            key: "paymentStatus",
+            dataIndex: "paymentStatusText",
+            key: "paymentStatusText",
           },
           {
             title: "报名付款时间",
-            dataIndex: "paymentStatus",
-            key: "paymentStatus",
+            dataIndex: "paymentTime",
+            key: "paymentTime",
           },
           {
             title: "核销状态",
-            dataIndex: "paymentStatus",
-            key: "paymentStatus",
+            dataIndex: "pickUpStatusText",
+            key: "pickUpStatusText",
           },
           {
             slots: {
