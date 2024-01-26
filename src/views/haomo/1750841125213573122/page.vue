@@ -476,6 +476,22 @@ export default {
             props: {},
             validator: function (value) {},
           },
+          pickUpStatus2: {
+            title: "原核销门店",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+          },
+          pickUpStatus3: {
+            title: "实际核销门店",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+          },
           search: {
             type: "HmAntButton",
             title: "",
