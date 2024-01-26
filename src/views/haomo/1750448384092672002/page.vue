@@ -692,16 +692,6 @@ export default {
             type: "link",
           },
           {
-            name: "查看详情",
-            callback: function (item) {
-              self.activityDetailModal.visible = true;
-              self.$nextTick(function () {
-                self.activityDetailForm.value = item;
-              });
-            },
-            type: "link",
-          },
-          {
             name: "编辑",
             callback: function (item) {
               self.activityEditModal.visible = true;
