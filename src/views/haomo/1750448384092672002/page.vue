@@ -139,6 +139,7 @@
                       :config="activityAddForm.config"
                       v-model:value="activityAddForm.value"
                       :col-num="2"
+                      :col-min-width="380"
                       :schema="activityAddForm.schema"
                       :label-col="7"
                       :wrapper-col="14"
@@ -389,6 +390,50 @@ export default {
           name: {
             type: "Input",
             title: "活动名称",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+          expense: {
+            type: "Input",
+            title: "活动费用",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+          startTime: {
+            type: "DatePicker",
+            title: "活动开始时间",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+          endTime: {
+            type: "DatePicker",
+            title: "活动结束时间",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+          closeTime: {
+            type: "DatePicker",
+            title: "活动报名截止时间",
             style: {
               width: "50%",
             },
