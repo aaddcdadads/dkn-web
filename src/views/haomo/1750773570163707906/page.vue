@@ -105,10 +105,9 @@
                           class="ele-wrapper ele-wrapper-f087f9b5-c006-41c6-aea1-a22f650dcce6"
                         >
                           <hm-ant-button
-                            text="新增"
+                            text="新增门店"
                             :type="'primary'"
                             icon="fa fa-plus"
-                            class="ele-f087f9b5-c006-41c6-aea1-a22f650dcce6"
                           >
                           </hm-ant-button>
                         </div>
@@ -765,15 +764,11 @@ export default {
 }
 
 .ele-wrapper-b26f83d8-788d-4911-b39c-d6db12ade907 {
-  width: 100%;
-}
-
-.ele-wrapper-f087f9b5-c006-41c6-aea1-a22f650dcce6 {
-  margin: 0 3% 0 1%;
+  width: 400px;
 }
 
 .ele-wrapper-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5 {
-  margin: 0 3% 0 1%;
+  margin: 0 5% 0 3%;
   transform: translateY(-1px);
   /deep/ .upload-class {
     min-width: 0;
