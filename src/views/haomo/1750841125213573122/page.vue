@@ -563,6 +563,16 @@ export default {
             key: "pickUpTime",
           },
           {
+            title: "原核销门店",
+            dataIndex: "originalPickUpName",
+            key: "originalPickUpName",
+          },
+          {
+            title: "实际核销门店",
+            dataIndex: "nowPickUpName",
+            key: "nowPickUpName",
+          },
+          {
             slots: {
               customRender: "action",
             },
