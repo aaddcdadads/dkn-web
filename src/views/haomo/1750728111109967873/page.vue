@@ -485,37 +485,42 @@ export default {
       registrationOrdersTable: {
         columns: [
           {
-            title: "编码",
+            title: "用户ID",
             dataIndex: "code",
             key: "code",
           },
           {
-            title: "用户id",
+            title: "手机号",
             dataIndex: "userId",
             key: "userId",
           },
           {
-            title: "用户id",
+            title: "姓名/昵称",
             dataIndex: "userId",
             key: "userId",
           },
           {
-            title: "渠道",
+            title: "报名渠道",
             dataIndex: "channel",
             key: "channel",
           },
           {
-            title: "支付状态",
+            title: "报名项目",
             dataIndex: "paymentStatus",
             key: "paymentStatus",
           },
           {
-            title: "支付状态",
+            title: "报名状态",
             dataIndex: "paymentStatus",
             key: "paymentStatus",
           },
           {
-            title: "支付状态",
+            title: "报名付款时间",
+            dataIndex: "paymentStatus",
+            key: "paymentStatus",
+          },
+          {
+            title: "核销状态",
             dataIndex: "paymentStatus",
             key: "paymentStatus",
           },
