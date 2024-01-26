@@ -117,7 +117,7 @@ const downloadTemplate = (logic.downloadTemplate = async (
  * 发送删除请求
  */
 const deleteRequest = (logic.deleteRequest = async function () {
-  let res = await self.$deleteAction(`/api/restify/activity/delete`, {
+  let res = await self.$deleteAction(`/api/dkn/activity/delete`, {
     id: self.currentActivityId,
     databaseId: "",
   });
@@ -149,7 +149,7 @@ const deleteActivity = (logic.deleteActivity = async (pageVm, eventData) => {
  * 发送添加请求
  */
 const addRequest = (logic.addRequest = async function () {
-  let res = await self.$postAction(`/api/restify/activity/add`, {
+  let res = await self.$postAction(`/api/dkn/activity/add`, {
     ...self.$refs.activityAddForm.getFormValues(),
   });
   self.addRequestData = res;
