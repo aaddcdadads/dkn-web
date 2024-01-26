@@ -39,6 +39,7 @@
                   text="新增"
                   :type="'primary'"
                   icon="fa fa-plus"
+                  :visible="false"
                   @click="onAddButtonClick"
                   class="ele-addButton"
                 >
