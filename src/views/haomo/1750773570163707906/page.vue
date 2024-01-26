@@ -33,17 +33,6 @@
                 >
                 </hm-ant-formily>
               </div>
-              <div class="ele-wrapper ele-wrapper-addButton">
-                <hm-ant-button
-                  ref="addButton"
-                  text="新增"
-                  :type="'primary'"
-                  icon="fa fa-plus"
-                  @click="onAddButtonClick"
-                  class="ele-addButton"
-                >
-                </hm-ant-button>
-              </div>
               <div class="ele-wrapper ele-wrapper-importButton">
                 <hm-ant-upload
                   ref="importButton"
@@ -108,6 +97,7 @@
                             text="新增门店"
                             :type="'primary'"
                             icon="fa fa-plus"
+                            @click="onElef087F9B5C00641C6Aea1A22F650Dcce6Click"
                           >
                           </hm-ant-button>
                         </div>
@@ -128,7 +118,7 @@
                           class="ele-wrapper ele-wrapper-6f9a0599-82dc-4e11-880c-d7f38d3f8892"
                         >
                           <hm-ant-button
-                            text="导出"
+                            text="导出核销码"
                             :type="'primary'"
                             icon="fa fa-download"
                             class="ele-6f9a0599-82dc-4e11-880c-d7f38d3f8892"
@@ -339,8 +329,8 @@ import { h } from "vue";
 import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
 import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
-import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
+import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
@@ -360,8 +350,8 @@ export default {
     HmBgCard,
     HmPanel,
     HmAntFormily,
-    HmAntButton,
     HmAntUpload,
+    HmAntButton,
     HmAntTable,
     HmModal,
     HmAntIconText,
@@ -687,14 +677,14 @@ export default {
       });
     },
 
-    onAddButtonClick() {
-      this.storeAddModal.visible = true;
-    },
     onDownloadTemplateButtonClick() {
       downloadTemplate(this, arguments);
     },
     onExportButtonClick() {
       exportStore(this, arguments);
+    },
+    onElef087F9B5C00641C6Aea1A22F650Dcce6Click() {
+      this.storeAddModal.visible = true;
     },
     onInvisibleImportSearchLogicBtnClick() {
       searchStore(this, arguments);
@@ -737,10 +727,6 @@ export default {
   width: 98%;
   margin: 1%;
   margin-bottom: 0;
-}
-
-.ele-wrapper-addButton {
-  margin: 0 3% 0 1%;
 }
 
 .ele-wrapper-importButton {
