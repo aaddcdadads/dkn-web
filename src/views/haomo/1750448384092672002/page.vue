@@ -26,6 +26,7 @@
                   :config="activityFilter.config"
                   v-model:value="activityFilter.value"
                   :col-num="2"
+                  :col-min-width="380"
                   :schema="activityFilter.schema"
                   :label-col="7"
                   :wrapper-col="14"
@@ -493,7 +494,7 @@ export default {
             disabled: false,
           },
           expense: {
-            type: "Input",
+            type: "InputNumber",
             title: "活动费用",
             style: {
               width: "50%",
