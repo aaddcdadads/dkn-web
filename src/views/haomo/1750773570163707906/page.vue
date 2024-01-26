@@ -598,7 +598,7 @@ export default {
         },
         actions: [
           {
-            name: "查看详情",
+            name: "门店核销码",
             callback: function (item) {
               self.storeDetailModal.visible = true;
               self.$nextTick(function () {
