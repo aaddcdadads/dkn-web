@@ -816,7 +816,8 @@ export default {
     },
     onRegistrationOrdersTableOnSelectChange(item) {
       console.log("onSelectChange----", item);
-      this.selectTempArr = item.selectedRowKeys;
+      this.selectTempArr =
+        item.selectedRowKeys.length > 0 ? item.selectedRowKeys.toString : null;
     },
     onQuanXuanBoxOnChange(item) {
       console.log("quanxuan123", item);
