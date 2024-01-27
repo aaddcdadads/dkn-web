@@ -105,14 +105,15 @@
                         class="ele-fed9455d-a15f-480a-a6e4-2499063d39a0"
                       >
                         <div
-                          class="ele-wrapper ele-wrapper-619f67e0-ea7a-4f58-8bc8-e8a4b70a16b3"
+                          class="ele-wrapper ele-wrapper-baoMingImportButton"
                         >
                           <hm-ant-button
+                            ref="baoMingImportButton"
                             text="导出"
                             :type="'primary'"
                             icon="fa fa-download"
-                            @click="onEle619F67E0Ea7A4F588Bc8E8A4B70A16B3Click"
-                            class="ele-619f67e0-ea7a-4f58-8bc8-e8a4b70a16b3"
+                            @click="onBaoMingImportButtonClick"
+                            class="ele-baoMingImportButton"
                           >
                           </hm-ant-button>
                         </div>
@@ -683,7 +684,7 @@ export default {
     onExportButtonClick() {
       exportRegistrationOrders(this, arguments);
     },
-    onEle619F67E0Ea7A4F588Bc8E8A4B70A16B3Click() {
+    onBaoMingImportButtonClick() {
       exportRegistrationOrders(this, arguments);
     },
     onInvisibleImportSearchLogicBtnClick() {
@@ -754,7 +755,7 @@ export default {
   width: 400px;
 }
 
-.ele-wrapper-619f67e0-ea7a-4f58-8bc8-e8a4b70a16b3 {
+.ele-wrapper-baoMingImportButton {
   margin: 0 0 0 1%;
 }
 
