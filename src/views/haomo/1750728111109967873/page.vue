@@ -516,9 +516,13 @@ export default {
           {
             name: "核销",
             callback: function (item) {
-              self.registrationOrdersDeleteModal.visible = true;
-              self.hexiaotype = true;
-              self.currentRegistrationOrdersId = item.id;
+              if (item.paymentStatus === 0) {
+                self.registrationOrdersDeleteModal.visible = true;
+                self.hexiaotype = true;
+                self.currentRegistrationOrdersId = item.id;
+              } else {
+                self.$meesage.error("已退款、待支付状态下不可核销");
+              }
             },
             type: "link",
           },
