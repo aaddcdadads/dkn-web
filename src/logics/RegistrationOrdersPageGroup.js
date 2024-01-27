@@ -282,12 +282,18 @@ const ajaxOrdersHeXiaoDuo = (logic.ajaxOrdersHeXiaoDuo = function () {
 /**
  * 处理
  */
-const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = function () {});
+const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = function () {
+  self.$message.success("核销成功");
+  self.registrationOrdersDeleteModal.visible = false;
+});
 
 /**
  * 处理
  */
-const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = function () {});
+const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = function () {
+  self.$message.error("核销失败");
+  self.registrationOrdersDeleteModal.visible = false;
+});
 
 /**
  * 逻辑流 startOrdersHeXiao 入口函数
