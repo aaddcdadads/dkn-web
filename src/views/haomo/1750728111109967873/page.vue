@@ -98,7 +98,7 @@
                     >
                       <hm-bg-card
                         width="100%"
-                        height=""
+                        height="30px"
                         border-radius=""
                         padding=""
                         box-shadow-color="#00000000"
@@ -119,7 +119,7 @@
                             url="/api/dkn/activity/list"
                             :params="activitySelect.params"
                             :data-map="activitySelect.dataMap"
-                            title="活动"
+                            title="  "
                             placeholder="选择活动"
                             v-model:options="activitySelect.options"
                             @change="onActivitySelectChange"
