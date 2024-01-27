@@ -207,8 +207,8 @@ const behaviorOrdersLoadPara = logic.behaviorOrdersLoadPara = function() {
  */
 const ajaxOrdersLoad = logic.ajaxOrdersLoad = async function () {
   let res = await self.$getAction(
-    ``,
-    
+    `/api/dkn/viewRegistrationOrders/list`,
+    {}
   )
   self.ajaxOrdersLoadData = res;
 }
