@@ -165,6 +165,15 @@
                 >
                 </hm-ant-table>
               </div>
+              <div
+                class="ele-wrapper ele-wrapper-0a6fba8b-c43b-4691-ad02-a62dba586095"
+              >
+                <hm-bg-card
+                  width="100%"
+                  class="ele-0a6fba8b-c43b-4691-ad02-a62dba586095"
+                >
+                </hm-bg-card>
+              </div>
             </hm-panel>
           </div>
           <div class="ele-wrapper ele-wrapper-registrationOrdersAddModal">
@@ -793,6 +802,10 @@ export default {
   }
   width: 98%;
   margin-left: 1%;
+}
+
+.ele-wrapper-0a6fba8b-c43b-4691-ad02-a62dba586095 {
+  width: 100%;
 }
 
 .ele-wrapper-addUserModalCard {
