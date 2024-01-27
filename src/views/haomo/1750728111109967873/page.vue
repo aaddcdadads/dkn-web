@@ -88,7 +88,6 @@
                 class="ele-wrapper ele-wrapper-acb9ca38-a2dc-4615-8ff9-d19194092922"
               >
                 <hm-panel
-                  width="20%"
                   height=""
                   title="报名列表"
                   class="ele-acb9ca38-a2dc-4615-8ff9-d19194092922"
