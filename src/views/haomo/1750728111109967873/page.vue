@@ -515,7 +515,7 @@ export default {
       },
       registrationOrdersFilter: {
         config: {
-          userId: {
+          code: {
             type: "Input",
             title: "搜索用户",
             style: {
