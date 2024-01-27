@@ -723,7 +723,16 @@ export default {
       },
       actionSelect: {
         value: null,
-        options: [],
+        options: [
+          {
+            label: "导出",
+            value: 0,
+          },
+          {
+            label: "核销",
+            value: 1,
+          },
+        ],
       },
     };
   },
