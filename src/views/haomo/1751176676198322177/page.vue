@@ -23,16 +23,15 @@
             >
             </hm-bg-card>
           </div>
-          <div
-            class="ele-wrapper ele-wrapper-ca1b8251-6f2b-4645-9ebe-eb22f301054a"
-          >
+          <div class="ele-wrapper ele-wrapper-message_1">
             <hm-bg-card
+              ref="message_1"
               width="100%"
               height="100%"
               border-radius=""
               box-shadow-v-shadow=""
               box-shadow-blur=""
-              class="ele-ca1b8251-6f2b-4645-9ebe-eb22f301054a"
+              class="ele-message_1"
             >
               <div
                 class="ele-wrapper ele-wrapper-011df7de-b51d-49df-8693-f8313670d460"
@@ -47,16 +46,15 @@
                 >
                 </hm-bg-card>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-3618933a-f7d9-4673-905e-d343b61c547c"
-              >
+              <div class="ele-wrapper ele-wrapper-message_2">
                 <hm-bg-card
+                  ref="message_2"
                   width="100%"
                   height="100%"
                   border-radius=""
                   box-shadow-v-shadow=""
                   box-shadow-blur=""
-                  class="ele-3618933a-f7d9-4673-905e-d343b61c547c"
+                  class="ele-message_2"
                 >
                 </hm-bg-card>
               </div>
@@ -99,7 +97,7 @@ export default {
   border-bottom: 1px solid #999999;
 }
 
-.ele-wrapper-ca1b8251-6f2b-4645-9ebe-eb22f301054a {
+.ele-wrapper-message_1 {
   width: 100%;
 }
 
@@ -107,7 +105,7 @@ export default {
   width: 50%;
 }
 
-.ele-wrapper-3618933a-f7d9-4673-905e-d343b61c547c {
+.ele-wrapper-message_2 {
   width: 50%;
 }
 </style>
