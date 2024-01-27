@@ -127,7 +127,6 @@
               >
                 <hm-ant-button
                   ref="invisibleImportSearchLogicBtn"
-                  :visible="false"
                   @click="onInvisibleImportSearchLogicBtnClick"
                   class="ele-invisibleImportSearchLogicBtn"
                 >
