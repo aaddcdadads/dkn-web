@@ -21,6 +21,16 @@
               box-shadow-blur=""
               class="ele-e3d70a59-ef42-4c89-af9c-c1b6fe4ddb0f"
             >
+              <div
+                class="ele-wrapper ele-wrapper-80d9b125-92bb-46b5-87b7-d8b4b451d860"
+              >
+                <hm-ant-icon-text icon="fa fa-tasks"> </hm-ant-icon-text>
+              </div>
+              <div
+                class="ele-wrapper ele-wrapper-230f0090-9b76-4e5d-9556-f91759f40cf8"
+              >
+                <hm-ant-bg-text> </hm-ant-bg-text>
+              </div>
             </hm-bg-card>
           </div>
           <div class="ele-wrapper ele-wrapper-message_1">
@@ -69,11 +79,15 @@
 <script>
 import { h } from "vue";
 import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
+import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
+import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 
 export default {
   name: "NewActivity",
   components: {
     HmBgCard,
+    HmAntIconText,
+    HmAntBgText,
   },
   data() {
     let self = this;
