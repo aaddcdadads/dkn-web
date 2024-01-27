@@ -259,6 +259,7 @@ const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
  */
 const behaviorOrdersHeXiaoOneSucc = (logic.behaviorOrdersHeXiaoOneSucc = function () {
   self.$message.success("核销成功");
+  self.$refs.registrationOrdersTable.getData();
   self.registrationOrdersDeleteModal.visible = false;
 });
 
@@ -267,6 +268,7 @@ const behaviorOrdersHeXiaoOneSucc = (logic.behaviorOrdersHeXiaoOneSucc = functio
  */
 const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = function () {
   self.$message.error("核销失败");
+  self.$refs.registrationOrdersTable.getData();
   self.registrationOrdersDeleteModal.visible = false;
 });
 
@@ -284,6 +286,7 @@ const ajaxOrdersHeXiaoDuo = (logic.ajaxOrdersHeXiaoDuo = function () {
  */
 const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = function () {
   self.$message.success(self.ajaxOrdersHeXiaoDuoData.message);
+  self.$refs.registrationOrdersTable.getData();
   self.registrationOrdersDeleteModal.visible = false;
 });
 
@@ -292,6 +295,7 @@ const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = functio
  */
 const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = function () {
   self.$message.error(self.ajaxOrdersHeXiaoDuoData.message);
+  self.$refs.registrationOrdersTable.getData();
   self.registrationOrdersDeleteModal.visible = false;
 });
 
