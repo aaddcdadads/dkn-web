@@ -34,7 +34,11 @@
               <div
                 class="ele-wrapper ele-wrapper-230f0090-9b76-4e5d-9556-f91759f40cf8"
               >
-                <hm-ant-bg-text text="* 为必填项" font-size="14px">
+                <hm-ant-bg-text
+                  text="* 为必填项"
+                  font-size="14px"
+                  color="#999999"
+                >
                 </hm-ant-bg-text>
               </div>
             </hm-bg-card>
