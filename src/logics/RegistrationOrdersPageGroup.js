@@ -211,7 +211,9 @@ const ajaxOrdersLoad = (logic.ajaxOrdersLoad = async function () {
 /**
  * 成功处理
  */
-const behaviorOrdersLoadSucc = (logic.behaviorOrdersLoadSucc = function () {});
+const behaviorOrdersLoadSucc = (logic.behaviorOrdersLoadSucc = function () {
+  self.userTotalText.text = "用户总数:";
+});
 
 /**
  * 失败处理
