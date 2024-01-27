@@ -274,7 +274,7 @@ const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = functio
  * 批量核销请求
  */
 const ajaxOrdersHeXiaoDuo = (logic.ajaxOrdersHeXiaoDuo = function () {
-  self.$Action(``).then((res) => {
+  self.$putAction(`/api/dkn/orderPickUp/pickBatch`, {}).then((res) => {
     self.ajaxOrdersHeXiaoDuoData = res;
   });
 });
