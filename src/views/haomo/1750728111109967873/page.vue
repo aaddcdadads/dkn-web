@@ -349,6 +349,7 @@
               width="320px"
               :z-index="1000"
               height="80px"
+              @cancel="onRegistrationOrdersDeleteModalCancel"
             >
               <div class="ele-wrapper ele-wrapper-deleteUserInputCard">
                 <hm-bg-card
@@ -840,6 +841,9 @@ export default {
     },
     onRegistrationOrdersEditModalCancel() {
       this.registrationOrdersEditModal.visible = false;
+    },
+    onRegistrationOrdersDeleteModalCancel() {
+      this.registrationOrdersDeleteModal.visible = false;
     },
   },
 };
