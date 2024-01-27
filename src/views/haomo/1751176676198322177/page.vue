@@ -170,7 +170,7 @@ export default {
 }
 
 .ele-wrapper-639c0497-f403-49a8-9af0-c2702f4de651 {
-  margin: 10px;
+  margin: 10px 10px 0 10px;
 }
 
 .ele-wrapper-message_2 {
