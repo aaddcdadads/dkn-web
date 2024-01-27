@@ -803,7 +803,7 @@ export default {
       exportRegistrationOrders(this, arguments);
     },
     onActivitySelectChange(item) {
-      console.log("aa123", item);
+      this.activityId = item;
       this.registrationOrdersTable.params = {
         activityId: item,
       };
