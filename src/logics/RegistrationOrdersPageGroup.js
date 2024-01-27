@@ -92,7 +92,7 @@ const exportRegistrationOrders = (logic.exportRegistrationOrders = async (
       self.$refs.registrationOrdersFilter.cSchema
     ),
   };
-  self.$downloadFile("报名订单列表数据.xlsx", url, params);
+  self.$downloadFile("报名用户列表.xlsx", url, params);
 });
 
 /********************** end exportRegistrationOrders 开始 *********************/
