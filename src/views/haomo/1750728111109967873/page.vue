@@ -107,7 +107,10 @@
                         <div
                           class="ele-wrapper ele-wrapper-19bf89e6-9338-4c70-aec9-0c7ec81716a5"
                         >
-                          <hm-ant-bg-text> </hm-ant-bg-text>
+                          <hm-ant-bg-text
+                            class="ele-19bf89e6-9338-4c70-aec9-0c7ec81716a5"
+                          >
+                          </hm-ant-bg-text>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-baoMingImportButton"
@@ -759,6 +762,10 @@ export default {
 
 .ele-wrapper-fed9455d-a15f-480a-a6e4-2499063d39a0 {
   width: 100%;
+}
+
+.ele-wrapper-19bf89e6-9338-4c70-aec9-0c7ec81716a5 {
+  margin-right: 10px;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
