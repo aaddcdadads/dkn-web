@@ -117,6 +117,7 @@
                         { state: false, value: '启用' },
                         { state: true, value: '禁用' },
                       ]"
+                      class="ele-b8b97a54-ee39-43be-9789-7822eae7f5f8"
                     >
                     </hm-ant-radio>
                   </div>
@@ -235,6 +236,10 @@ export default {
 .ele-wrapper-0fda3cd4-4142-42c1-b685-e00abc7558ac {
   margin: 10px 10px 0 10px;
   display: block;
+}
+
+.ele-wrapper-b8b97a54-ee39-43be-9789-7822eae7f5f8 {
+  margin: 10px 10px 0 10px;
 }
 
 .ele-wrapper-message_2 {
