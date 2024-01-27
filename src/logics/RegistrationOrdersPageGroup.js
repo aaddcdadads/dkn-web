@@ -199,14 +199,14 @@ self.registrationOrdersEditModal.visible = false;
  * 参数处理
  */
 const behaviorOrdersLoadPara = logic.behaviorOrdersLoadPara = function() {
-  
+  console.log("加载")
 }
 
 /**
  * 数据请求
  */
 const ajaxOrdersLoad = logic.ajaxOrdersLoad = async function () {
-  let res = await self.$Action(
+  let res = await self.$getAction(
     ``,
     
   )
