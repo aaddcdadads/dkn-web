@@ -780,7 +780,7 @@ export default {
 }
 
 .ele-wrapper-userTotalText {
-  margin-right: 1000px;
+  margin-right: 20px;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
