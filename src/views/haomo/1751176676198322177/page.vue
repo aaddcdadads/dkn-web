@@ -66,20 +66,22 @@
                     <hm-ant-input value=""> </hm-ant-input>
                   </div>
                   <div
-                    class="ele-wrapper ele-wrapper-4be8b30d-3d60-4d2d-a163-eca7204c88d0"
+                    class="ele-wrapper ele-wrapper-40fb2133-1fe9-4649-a1ad-0b1548ce893b"
                   >
-                    <hm-ant-input value=""> </hm-ant-input>
+                    <hm-ant-date-picker value="undefined" :is-range="false">
+                    </hm-ant-date-picker>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-f7592ab1-717b-4609-b229-eff4f560e4d1"
+                  >
+                    <hm-ant-date-picker value="undefined" :is-range="false">
+                    </hm-ant-date-picker>
                   </div>
                   <div
                     class="ele-wrapper ele-wrapper-0fda3cd4-4142-42c1-b685-e00abc7558ac"
                   >
                     <hm-ant-date-picker value="undefined" :is-range="false">
                     </hm-ant-date-picker>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-3522775b-9241-4dbb-afa1-c05268f25c1a"
-                  >
-                    <hm-ant-input value=""> </hm-ant-input>
                   </div>
                 </hm-bg-card>
               </div>
@@ -126,14 +128,14 @@ export default {
       "639c0497-f403-49a8-9af0-c2702f4de651": {
         value: "",
       },
-      "4be8b30d-3d60-4d2d-a163-eca7204c88d0": {
-        value: "",
+      "40fb2133-1fe9-4649-a1ad-0b1548ce893b": {
+        value: null,
+      },
+      "f7592ab1-717b-4609-b229-eff4f560e4d1": {
+        value: null,
       },
       "0fda3cd4-4142-42c1-b685-e00abc7558ac": {
         value: null,
-      },
-      "3522775b-9241-4dbb-afa1-c05268f25c1a": {
-        value: "",
       },
     };
   },
