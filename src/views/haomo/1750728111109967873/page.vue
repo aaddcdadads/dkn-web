@@ -208,6 +208,7 @@
                     <hm-ant-button
                       ref="actionQueRenBuntton"
                       text="确认"
+                      @click="onActionQueRenBunttonClick"
                       class="ele-actionQueRenBuntton"
                     >
                     </hm-ant-button>
@@ -408,6 +409,7 @@ import {
   addRegistrationOrders,
   editRegistrationOrders,
   startOrdersLoad,
+  startOrdersHeXiao,
 } from "/@/logics/RegistrationOrdersPageGroup";
 
 export default {
@@ -833,7 +835,23 @@ export default {
       this.quanxuan = item.checked;
     },
     onActionSelectChange(item) {
-      console.log("quan123", item);
+      this.actionType = item;
+    },
+    onActionQueRenBunttonClick() {
+      //钩上 为 true ;
+      if (this.quanxuan) {
+        if (this.actionType === 0) {
+          //导出
+          console.log("aa");
+        }
+        if (this.actionType === 1) {
+          //批量核销核销
+          this.hexiaotype = false;
+          startOrdersHeXiao(this, null);
+        }
+      } else {
+        this.$meesage.success("请勾选全选");
+      }
     },
     onRegistrationOrdersAddModalOk() {
       addRegistrationOrders(this, arguments);
