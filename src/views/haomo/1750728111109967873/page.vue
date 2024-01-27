@@ -87,7 +87,11 @@
               <div
                 class="ele-wrapper ele-wrapper-acb9ca38-a2dc-4615-8ff9-d19194092922"
               >
-                <hm-panel height="" title="报名列表">
+                <hm-panel
+                  height=""
+                  title="报名列表"
+                  class="ele-acb9ca38-a2dc-4615-8ff9-d19194092922"
+                >
                   <template v-slot:slot-title-icon>
                     <div
                       class="ele-wrapper ele-wrapper-fed9455d-a15f-480a-a6e4-2499063d39a0"
@@ -741,6 +745,10 @@ export default {
 
 .ele-wrapper-exportButton {
   margin: 0 0 0 1%;
+}
+
+.ele-wrapper-acb9ca38-a2dc-4615-8ff9-d19194092922 {
+  width: 100%;
 }
 
 .ele-wrapper-fed9455d-a15f-480a-a6e4-2499063d39a0 {
