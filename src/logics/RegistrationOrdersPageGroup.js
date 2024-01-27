@@ -298,14 +298,14 @@ const ajaxOrdersHeXiaoDuo = logic.ajaxOrdersHeXiaoDuo = function () {
 /**
  * 处理
  */
-const behavior = logic.behavior = function() {
+const behaviorOrdersHeXiaoDuoSucc = logic.behaviorOrdersHeXiaoDuoSucc = function() {
   
 }
 
 /**
  * 处理
  */
-const behavior = logic.behavior = function() {
+const behaviorOrdersHeXiaoDuoFual = logic.behaviorOrdersHeXiaoDuoFual = function() {
   
 }
 
@@ -332,10 +332,10 @@ const startOrdersHeXiao = logic.startOrdersHeXiao = async (pageVm, eventData) =>
 }else{
     ajaxOrdersHeXiaoDuo();
   if(){
-    behavior();
+    behaviorOrdersHeXiaoDuoSucc();
 
 }else{
-    behavior();
+    behaviorOrdersHeXiaoDuoFual();
 
 }
 
@@ -365,7 +365,7 @@ export {
   behaviorOrdersHeXiaoOneSucc,
   behaviorOrdersHeXiaoOneFaul,
   ajaxOrdersHeXiaoDuo,
-  behavior,
-  behavior,
+  behaviorOrdersHeXiaoDuoSucc,
+  behaviorOrdersHeXiaoDuoFual,
   startOrdersHeXiao,
 }
