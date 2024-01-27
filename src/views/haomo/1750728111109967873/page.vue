@@ -104,13 +104,19 @@
                         box-shadow-color="#00000000"
                         class="ele-fed9455d-a15f-480a-a6e4-2499063d39a0"
                       >
-                        <div
-                          class="ele-wrapper ele-wrapper-19bf89e6-9338-4c70-aec9-0c7ec81716a5"
-                        >
+                        <div class="ele-wrapper ele-wrapper-userTotalText">
                           <hm-ant-bg-text
-                            class="ele-19bf89e6-9338-4c70-aec9-0c7ec81716a5"
+                            ref="userTotalText"
+                            text="(用户总数:9999)"
+                            class="ele-userTotalText"
                           >
                           </hm-ant-bg-text>
+                        </div>
+                        <div
+                          class="ele-wrapper ele-wrapper-07e77102-a7ca-49f8-ae1e-8e390dcf55a4"
+                        >
+                          <hm-ant-select value="undefined" :options="[]">
+                          </hm-ant-select>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-baoMingImportButton"
@@ -336,6 +342,7 @@ import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
+import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
@@ -357,6 +364,7 @@ export default {
     HmAntButton,
     HmAntUpload,
     HmAntBgText,
+    HmAntSelect,
     HmAntTable,
     HmModal,
     HmAntIconText,
@@ -658,6 +666,10 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
+      "07e77102-a7ca-49f8-ae1e-8e390dcf55a4": {
+        value: null,
+        options: [],
+      },
     };
   },
   watch: {},
@@ -764,8 +776,8 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-19bf89e6-9338-4c70-aec9-0c7ec81716a5 {
-  margin-right: 1600px;
+.ele-wrapper-userTotalText {
+  margin-right: 1000px;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
