@@ -815,6 +815,8 @@ export default {
     },
     onQuanXuanBoxOnChange(item) {
       console.log("quanxuan123", item);
+      //钩上 为 true ;
+      this.quanxuan = item.checked;
     },
     onActionSelectChange(item) {
       console.log("quan123", item);
