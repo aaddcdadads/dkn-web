@@ -651,6 +651,10 @@ export default {
             title: "姓名/昵称",
             dataIndex: "name",
             key: "name",
+            customRender: function (item) {
+              console.log("aa123", item);
+              return "aa";
+            },
           },
           {
             title: "报名渠道",
