@@ -765,7 +765,7 @@ export default {
 }
 
 .ele-wrapper-19bf89e6-9338-4c70-aec9-0c7ec81716a5 {
-  margin-right: 10px;
+  margin-right: 2000px;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
