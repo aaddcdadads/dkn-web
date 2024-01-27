@@ -649,8 +649,8 @@ export default {
           },
           {
             title: "姓名/昵称",
-            dataIndex: "realname",
-            key: "realname",
+            dataIndex: "name",
+            key: "name",
           },
           {
             title: "报名渠道",
