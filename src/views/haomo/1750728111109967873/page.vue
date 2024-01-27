@@ -118,6 +118,7 @@
                             v-model:value="activitySelect.value"
                             url="/api/dkn/activity/list"
                             :params="activitySelect.params"
+                            :data-map="activitySelect.dataMap"
                             title=""
                             v-model:options="activitySelect.options"
                           >
@@ -719,6 +720,10 @@ export default {
         params: {
           pageNo: 1,
           pageSize: -1,
+        },
+        dataMap: {
+          label: "name",
+          value: "id",
         },
         options: [],
       },
