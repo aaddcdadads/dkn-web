@@ -100,7 +100,6 @@
                         width="100%"
                         height=""
                         border-radius=""
-                        :text-align="'right'"
                         padding=""
                         box-shadow-color="#00000000"
                       >
