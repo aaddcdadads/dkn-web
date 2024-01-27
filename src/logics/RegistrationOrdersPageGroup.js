@@ -194,6 +194,63 @@ self.registrationOrdersEditModal.visible = false;
 
 /********************** end editRegistrationOrders 开始 *********************/
 
+/********************** startOrdersLoad 开始 *********************/
+/**
+ * 参数处理
+ */
+const behaviorOrdersLoadPara = logic.behaviorOrdersLoadPara = function() {
+  
+}
+
+/**
+ * 数据请求
+ */
+const ajaxOrdersLoad = logic.ajaxOrdersLoad = async function () {
+  let res = await self.$Action(
+    ``,
+    
+  )
+  self.ajaxOrdersLoadData = res;
+}
+
+/**
+ * 成功处理
+ */
+const behaviorOrdersLoadSucc = logic.behaviorOrdersLoadSucc = function() {
+  
+}
+
+/**
+ * 失败处理
+ */
+const behaviorOrdersLoadFaul = logic.behaviorOrdersLoadFaul = function() {
+  
+}
+
+
+/**
+ * 逻辑流 startOrdersLoad 入口函数
+ */
+const startOrdersLoad = logic.startOrdersLoad = async (pageVm, eventData) => {
+  console.log(`startOrdersLoad: `, pageVm, eventData)
+  self = Object.assign(pageVm, logic);
+  self.startOrdersLoadData = eventData;
+
+  
+  behaviorOrdersLoadPara();
+  await ajaxOrdersLoad();
+  if(){
+    behaviorOrdersLoadSucc();
+
+}else{
+    behaviorOrdersLoadFaul();
+
+}
+
+}
+
+/********************** end startOrdersLoad 开始 *********************/
+
 
 export {
   searchRegistrationOrders,
@@ -205,4 +262,9 @@ export {
   downloadTemplate,
   editRequest,
   editRegistrationOrders,
+  behaviorOrdersLoadPara,
+  ajaxOrdersLoad,
+  behaviorOrdersLoadSucc,
+  behaviorOrdersLoadFaul,
+  startOrdersLoad,
 }
