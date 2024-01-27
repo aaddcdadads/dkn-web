@@ -121,6 +121,7 @@
                             :data-map="activitySelect.dataMap"
                             title=""
                             v-model:options="activitySelect.options"
+                            @change="onActivitySelectChange"
                             class="ele-activitySelect"
                           >
                           </hm-ant-select>
@@ -134,6 +135,7 @@
                             :type="'primary'"
                             icon="fa fa-download"
                             @click="onBaoMingImportButtonClick"
+                            class="ele-baoMingImportButton"
                           >
                           </hm-ant-button>
                         </div>
@@ -194,6 +196,7 @@
                       v-model:value="actionSelect.value"
                       title=""
                       v-model:options="actionSelect.options"
+                      @change="onActionSelectChange"
                       class="ele-actionSelect"
                     >
                     </hm-ant-select>
@@ -796,6 +799,9 @@ export default {
     onExportButtonClick() {
       exportRegistrationOrders(this, arguments);
     },
+    onActivitySelectChange(item) {
+      console.log("aa123", item);
+    },
     onBaoMingImportButtonClick() {
       exportRegistrationOrders(this, arguments);
     },
@@ -805,6 +811,9 @@ export default {
     onRegistrationOrdersTableOnSelectChange(item) {
       console.log("onSelectChange----", item);
       this.selectTempArr = item.selectedRowKeys;
+    },
+    onActionSelectChange(item) {
+      console.log("quan123", item);
     },
     onRegistrationOrdersAddModalOk() {
       addRegistrationOrders(this, arguments);
@@ -876,6 +885,10 @@ export default {
 }
 
 .ele-wrapper-activitySelect {
+  margin-right: 20px;
+}
+
+.ele-wrapper-baoMingImportButton {
   margin-right: 20px;
 }
 
