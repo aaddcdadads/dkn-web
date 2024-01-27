@@ -523,7 +523,7 @@ export default {
                 self.hexiaotype = true;
                 self.currentRegistrationOrdersId = item.id;
               } else {
-                self.$meesage.error("已退款、待支付状态下不可核销");
+                self.$message.error("已退款、待支付状态下不可核销");
               }
             },
             type: "link",
