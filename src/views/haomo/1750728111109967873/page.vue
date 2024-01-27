@@ -107,7 +107,7 @@
                         <div class="ele-wrapper ele-wrapper-userTotalText">
                           <hm-ant-bg-text
                             ref="userTotalText"
-                            text="(用户总数:9999)"
+                            :text="userTotalText.text"
                             class="ele-userTotalText"
                           >
                           </hm-ant-bg-text>
@@ -502,6 +502,9 @@ export default {
         },
         schema: {},
       },
+      userTotalText: {
+        text: "(用户总数:9999)",
+      },
       registrationOrdersDetailModal: {
         visible: false,
       },
@@ -748,7 +751,10 @@ export default {
       console.log("this.crudPagePanel.title");
       console.log("this.registrationOrdersAddForm.config");
       console.log("this.registrationOrdersEditForm.config");
-      console.log("this.registrationOrdersDetailForm.config");
+      console.log(
+        "this.registrationOrdersDetailForm.config",
+        "this.userTotalText.text"
+      );
 
       //设置上传请求头
       this.$nextTick(() => {
