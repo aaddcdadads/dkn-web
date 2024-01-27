@@ -350,6 +350,7 @@
               width="320px"
               :z-index="1000"
               height="80px"
+              @ok="onRegistrationOrdersDeleteModalOk"
               @cancel="onRegistrationOrdersDeleteModalCancel"
             >
               <div class="ele-wrapper ele-wrapper-deleteUserInputCard">
@@ -408,8 +409,8 @@ import {
   searchRegistrationOrders,
   addRegistrationOrders,
   editRegistrationOrders,
-  startOrdersLoad,
   startOrdersHeXiao,
+  startOrdersLoad,
 } from "/@/logics/RegistrationOrdersPageGroup";
 
 export default {
@@ -868,6 +869,9 @@ export default {
     },
     onRegistrationOrdersEditModalCancel() {
       this.registrationOrdersEditModal.visible = false;
+    },
+    onRegistrationOrdersDeleteModalOk() {
+      startOrdersHeXiao(this, arguments);
     },
     onRegistrationOrdersDeleteModalCancel() {
       this.registrationOrdersDeleteModal.visible = false;
