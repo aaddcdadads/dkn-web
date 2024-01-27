@@ -165,6 +165,7 @@
                   :is-flat-action="registrationOrdersTable.isFlatAction"
                   :background-color="registrationOrdersTable.backgroundColor"
                   :row-class-name="registrationOrdersTable.rowClassName"
+                  @onSelectChange="onRegistrationOrdersTableOnSelectChange"
                   class="ele-registrationOrdersTable"
                 >
                 </hm-ant-table>
@@ -796,6 +797,10 @@ export default {
     },
     onInvisibleImportSearchLogicBtnClick() {
       searchRegistrationOrders(this, arguments);
+    },
+    onRegistrationOrdersTableOnSelectChange(item) {
+      console.log("onSelectChange----", item);
+      this.selectTempArr = item.selectedRowKeys;
     },
     onRegistrationOrdersAddModalOk() {
       addRegistrationOrders(this, arguments);
