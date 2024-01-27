@@ -275,9 +275,9 @@ const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = functio
 /**
  * 批量核销请求
  */
-const ajaxOrdersHeXiaoDuo = (logic.ajaxOrdersHeXiaoDuo = function () {
+const ajaxOrdersHeDuo = (logic.ajaxOrdersHeDuo = function () {
   self.$putAction(`/api/dkn/orderPickUp/pickBatch`, {}).then((res) => {
-    self.ajaxOrdersHeXiaoDuoData = res;
+    self.ajaxOrdersHeDuoData = res;
   });
 });
 
@@ -318,8 +318,8 @@ const startOrdersHeXiao = (logic.startOrdersHeXiao = async (
       behaviorOrdersHeXiaoOneFaul();
     }
   } else {
-    ajaxOrdersHeXiaoDuo();
-    if (self.ajaxOrdersHeXiaoDuoData.success) {
+    ajaxOrdersHeDuo();
+    if (self.ajaxOrdersHeDuoData.success) {
       behaviorOrdersHeXiaoDuoSucc();
     } else {
       behaviorOrdersHeXiaoDuoFual();
@@ -347,7 +347,7 @@ export {
   ajaxOrdersHeXiaoOne,
   behaviorOrdersHeXiaoOneSucc,
   behaviorOrdersHeXiaoOneFaul,
-  ajaxOrdersHeXiaoDuo,
+  ajaxOrdersHeDuo,
   behaviorOrdersHeXiaoDuoSucc,
   behaviorOrdersHeXiaoDuoFual,
   startOrdersHeXiao,
