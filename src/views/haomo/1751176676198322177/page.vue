@@ -183,18 +183,22 @@ export default {
 
 .ele-wrapper-639c0497-f403-49a8-9af0-c2702f4de651 {
   margin: 10px 10px 0 10px;
+  display: block;
 }
 
 .ele-wrapper-40fb2133-1fe9-4649-a1ad-0b1548ce893b {
   margin: 10px 10px 0 10px;
+  display: block;
 }
 
 .ele-wrapper-f7592ab1-717b-4609-b229-eff4f560e4d1 {
   margin: 10px 10px 0 10px;
+  display: block;
 }
 
 .ele-wrapper-0fda3cd4-4142-42c1-b685-e00abc7558ac {
   margin: 10px 10px 0 10px;
+  display: block;
 }
 
 .ele-wrapper-message_2 {
