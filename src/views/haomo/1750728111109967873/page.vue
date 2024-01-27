@@ -852,7 +852,7 @@ export default {
         if (this.actionType === 1) {
           //批量核销核销
           this.hexiaotype = false;
-          startOrdersHeXiao(this, null);
+          this.registrationOrdersDeleteModal.visible = true;
         }
       } else {
         this.$message.success("请勾选全选");
