@@ -65,6 +65,7 @@
                   >
                     <hm-ant-input
                       value=""
+                      title="* 活动名称"
                       class="ele-639c0497-f403-49a8-9af0-c2702f4de651"
                     >
                     </hm-ant-input>
@@ -73,6 +74,7 @@
                     class="ele-wrapper ele-wrapper-40fb2133-1fe9-4649-a1ad-0b1548ce893b"
                   >
                     <hm-ant-date-picker
+                      title="* 活动周期"
                       value="undefined"
                       :is-range="false"
                       class="ele-40fb2133-1fe9-4649-a1ad-0b1548ce893b"
@@ -83,6 +85,7 @@
                     class="ele-wrapper ele-wrapper-f7592ab1-717b-4609-b229-eff4f560e4d1"
                   >
                     <hm-ant-date-picker
+                      title="* 报名截止"
                       value="undefined"
                       :is-range="false"
                       class="ele-f7592ab1-717b-4609-b229-eff4f560e4d1"
@@ -93,6 +96,7 @@
                     class="ele-wrapper ele-wrapper-0fda3cd4-4142-42c1-b685-e00abc7558ac"
                   >
                     <hm-ant-date-picker
+                      title="* 核销截止"
                       value="undefined"
                       :is-range="false"
                       class="ele-0fda3cd4-4142-42c1-b685-e00abc7558ac"
