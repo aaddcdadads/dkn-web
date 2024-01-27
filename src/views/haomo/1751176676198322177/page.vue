@@ -113,6 +113,7 @@
                     <hm-ant-radio
                       value="undefined"
                       title="* 活动状态"
+                      :label-width="80"
                       :craido-l-ist="[
                         { state: false, value: '启用' },
                         { state: true, value: '禁用' },
