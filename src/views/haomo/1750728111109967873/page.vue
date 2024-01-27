@@ -652,8 +652,7 @@ export default {
             dataIndex: "realname",
             key: "realname",
             customRender: function (item) {
-              console.log("aa123", item);
-              return "aa";
+              return item.text ? item.text : item.record.name;
             },
           },
           {
