@@ -855,7 +855,7 @@ export default {
           startOrdersHeXiao(this, null);
         }
       } else {
-        this.$meesage.success("请勾选全选");
+        this.$message.success("请勾选全选");
       }
     },
     onRegistrationOrdersAddModalOk() {
