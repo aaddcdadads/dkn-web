@@ -117,6 +117,7 @@
                             ref="activitySelect"
                             v-model:value="activitySelect.value"
                             url="/api/dkn/activity/list"
+                            :params="activitySelect.params"
                             title=""
                             v-model:options="activitySelect.options"
                           >
@@ -715,6 +716,10 @@ export default {
       },
       activitySelect: {
         value: null,
+        params: {
+          pageNo: 1,
+          pageSize: -1,
+        },
         options: [],
       },
       quanXuanBox: {
