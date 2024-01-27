@@ -218,7 +218,9 @@ const behaviorOrdersLoadSucc = (logic.behaviorOrdersLoadSucc = function () {
 /**
  * 失败处理
  */
-const behaviorOrdersLoadFaul = (logic.behaviorOrdersLoadFaul = function () {});
+const behaviorOrdersLoadFaul = (logic.behaviorOrdersLoadFaul = function () {
+  self.userTotalText.text = "用户总数:0";
+});
 
 /**
  * 逻辑流 startOrdersLoad 入口函数
