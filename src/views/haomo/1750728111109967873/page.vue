@@ -437,6 +437,92 @@ export default {
       registrationOrdersAddModal: {
         visible: false,
       },
+      registrationOrdersTable: {
+        params: {
+          databaseId: "",
+          column: "createTime",
+          order: "desc",
+        },
+        columns: [
+          {
+            title: "用户ID",
+            dataIndex: "code",
+            key: "code",
+          },
+          {
+            title: "手机号",
+            dataIndex: "phone",
+            key: "phone",
+          },
+          {
+            title: "姓名/昵称",
+            dataIndex: "realname",
+            key: "realname",
+            customRender: function (item) {
+              return item.text ? item.text : item.record.name;
+            },
+          },
+          {
+            title: "报名渠道",
+            dataIndex: "channel",
+            key: "channel",
+          },
+          {
+            title: "报名项目",
+            dataIndex: "activityId_dictText",
+            key: "activityId_dictText",
+          },
+          {
+            title: "报名状态",
+            dataIndex: "paymentStatusText",
+            key: "paymentStatusText",
+          },
+          {
+            title: "报名付款时间",
+            dataIndex: "paymentTime",
+            key: "paymentTime",
+          },
+          {
+            title: "核销状态",
+            dataIndex: "pickUpStatusText",
+            key: "pickUpStatusText",
+          },
+          {
+            slots: {
+              customRender: "action",
+            },
+            width: "260",
+            title: "操作",
+            key: "action",
+          },
+        ],
+        data: [{}],
+        pagination: {
+          current: 1,
+          pageSizeOptions: ["10", "20", "30", "40"],
+          pageSize: 10,
+          showSizeChanger: true,
+        },
+        url: "/api/dkn/viewRegistrationOrders/list",
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        rowSelectFlag: true,
+        actions: [
+          {
+            name: "核销",
+            callback: function (item) {
+              self.registrationOrdersDeleteModal.visible = true;
+              self.currentRegistrationOrdersId = item.id;
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        backgroundColor: "#FFFFFF",
+        rowClassName: {},
+      },
       registrationOrdersEditModal: {
         visible: false,
       },
@@ -640,92 +726,6 @@ export default {
         },
         schema: {},
       },
-      registrationOrdersTable: {
-        columns: [
-          {
-            title: "用户ID",
-            dataIndex: "code",
-            key: "code",
-          },
-          {
-            title: "手机号",
-            dataIndex: "phone",
-            key: "phone",
-          },
-          {
-            title: "姓名/昵称",
-            dataIndex: "realname",
-            key: "realname",
-            customRender: function (item) {
-              return item.text ? item.text : item.record.name;
-            },
-          },
-          {
-            title: "报名渠道",
-            dataIndex: "channel",
-            key: "channel",
-          },
-          {
-            title: "报名项目",
-            dataIndex: "activityId_dictText",
-            key: "activityId_dictText",
-          },
-          {
-            title: "报名状态",
-            dataIndex: "paymentStatusText",
-            key: "paymentStatusText",
-          },
-          {
-            title: "报名付款时间",
-            dataIndex: "paymentTime",
-            key: "paymentTime",
-          },
-          {
-            title: "核销状态",
-            dataIndex: "pickUpStatusText",
-            key: "pickUpStatusText",
-          },
-          {
-            slots: {
-              customRender: "action",
-            },
-            width: "260",
-            title: "操作",
-            key: "action",
-          },
-        ],
-        data: [{}],
-        pagination: {
-          current: 1,
-          pageSizeOptions: ["10", "20", "30", "40"],
-          pageSize: 10,
-          showSizeChanger: true,
-        },
-        url: "/api/dkn/viewRegistrationOrders/list",
-        params: {
-          databaseId: "",
-          column: "createTime",
-          order: "desc",
-        },
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        rowSelectFlag: true,
-        actions: [
-          {
-            name: "核销",
-            callback: function (item) {
-              self.registrationOrdersDeleteModal.visible = true;
-              self.currentRegistrationOrdersId = item.id;
-            },
-            type: "link",
-          },
-        ],
-        isFlatAction: true,
-        backgroundColor: "#FFFFFF",
-        rowClassName: {},
-      },
       activitySelect: {
         value: null,
         params: {
@@ -802,6 +802,9 @@ export default {
     },
     onActivitySelectChange(item) {
       console.log("aa123", item);
+      this.registrationOrdersTable.params = {
+        activityId: item,
+      };
     },
     onBaoMingImportButtonClick() {
       exportRegistrationOrders(this, arguments);
