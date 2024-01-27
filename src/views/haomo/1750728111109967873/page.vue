@@ -121,6 +121,7 @@
                             :data-map="activitySelect.dataMap"
                             title=""
                             v-model:options="activitySelect.options"
+                            class="ele-activitySelect"
                           >
                           </hm-ant-select>
                         </div>
@@ -871,6 +872,10 @@ export default {
 }
 
 .ele-wrapper-userTotalText {
+  margin-right: 20px;
+}
+
+.ele-wrapper-activitySelect {
   margin-right: 20px;
 }
 
