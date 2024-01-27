@@ -517,6 +517,7 @@ export default {
             name: "核销",
             callback: function (item) {
               self.registrationOrdersDeleteModal.visible = true;
+              self.hexiaotype = true;
               self.currentRegistrationOrdersId = item.id;
             },
             type: "link",
