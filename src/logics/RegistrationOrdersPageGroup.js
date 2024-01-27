@@ -242,6 +242,45 @@ const startOrdersLoad = (logic.startOrdersLoad = async (pageVm, eventData) => {
 
 /********************** end startOrdersLoad 开始 *********************/
 
+/********************** startOrdersHeXiao 开始 *********************/
+/**
+ * 单个请求
+ */
+const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = function () {
+  self.$Action(``).then((res) => {
+    self.ajaxOrdersHeXiaoOneData = res;
+  });
+});
+
+/**
+ * 批量核销请求
+ */
+const ajaxOrdersHeXiaoDuo = (logic.ajaxOrdersHeXiaoDuo = function () {
+  self.$Action(``).then((res) => {
+    self.ajaxOrdersHeXiaoDuoData = res;
+  });
+});
+
+/**
+ * 逻辑流 startOrdersHeXiao 入口函数
+ */
+const startOrdersHeXiao = (logic.startOrdersHeXiao = async (
+  pageVm,
+  eventData
+) => {
+  console.log(`startOrdersHeXiao: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.startOrdersHeXiaoData = eventData;
+
+  if (self.hexiaotype) {
+    ajaxOrdersHeXiaoOne();
+  } else {
+    ajaxOrdersHeXiaoDuo();
+  }
+});
+
+/********************** end startOrdersHeXiao 开始 *********************/
+
 export {
   searchRegistrationOrders,
   deleteRequest,
@@ -257,4 +296,7 @@ export {
   behaviorOrdersLoadSucc,
   behaviorOrdersLoadFaul,
   startOrdersLoad,
+  ajaxOrdersHeXiaoOne,
+  ajaxOrdersHeXiaoDuo,
+  startOrdersHeXiao,
 };
