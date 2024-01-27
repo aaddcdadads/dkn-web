@@ -105,6 +105,11 @@
                         class="ele-fed9455d-a15f-480a-a6e4-2499063d39a0"
                       >
                         <div
+                          class="ele-wrapper ele-wrapper-19bf89e6-9338-4c70-aec9-0c7ec81716a5"
+                        >
+                          <hm-ant-bg-text> </hm-ant-bg-text>
+                        </div>
+                        <div
                           class="ele-wrapper ele-wrapper-baoMingImportButton"
                         >
                           <hm-ant-button
@@ -113,7 +118,6 @@
                             :type="'primary'"
                             icon="fa fa-download"
                             @click="onBaoMingImportButtonClick"
-                            class="ele-baoMingImportButton"
                           >
                           </hm-ant-button>
                         </div>
@@ -328,6 +332,7 @@ import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
+import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
@@ -348,6 +353,7 @@ export default {
     HmAntFormily,
     HmAntButton,
     HmAntUpload,
+    HmAntBgText,
     HmAntTable,
     HmModal,
     HmAntIconText,
@@ -753,10 +759,6 @@ export default {
 
 .ele-wrapper-fed9455d-a15f-480a-a6e4-2499063d39a0 {
   width: 100%;
-}
-
-.ele-wrapper-baoMingImportButton {
-  margin: 0 0 0 1%;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
