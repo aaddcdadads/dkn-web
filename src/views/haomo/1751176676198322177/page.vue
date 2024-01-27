@@ -63,7 +63,11 @@
                   <div
                     class="ele-wrapper ele-wrapper-639c0497-f403-49a8-9af0-c2702f4de651"
                   >
-                    <hm-ant-input value=""> </hm-ant-input>
+                    <hm-ant-input
+                      value=""
+                      class="ele-639c0497-f403-49a8-9af0-c2702f4de651"
+                    >
+                    </hm-ant-input>
                   </div>
                   <div
                     class="ele-wrapper ele-wrapper-40fb2133-1fe9-4649-a1ad-0b1548ce893b"
@@ -163,6 +167,10 @@ export default {
 
 .ele-wrapper-011df7de-b51d-49df-8693-f8313670d460 {
   width: 50%;
+}
+
+.ele-wrapper-639c0497-f403-49a8-9af0-c2702f4de651 {
+  margin: 10px;
 }
 
 .ele-wrapper-message_2 {
