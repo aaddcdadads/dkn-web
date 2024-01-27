@@ -394,6 +394,7 @@ import {
   searchRegistrationOrders,
   addRegistrationOrders,
   editRegistrationOrders,
+  startOrdersLoad,
 } from "/@/logics/RegistrationOrdersPageGroup";
 
 export default {
@@ -758,6 +759,8 @@ export default {
           };
         }
       });
+      //加载
+      startOrdersLoad(this, null);
     },
 
     onAddButtonClick() {
