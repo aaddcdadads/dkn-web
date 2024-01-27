@@ -25,7 +25,8 @@
                   ref="registrationOrdersFilter"
                   :config="registrationOrdersFilter.config"
                   v-model:value="registrationOrdersFilter.value"
-                  :col-num="2"
+                  :col-num="4"
+                  :col-min-width="380"
                   :schema="registrationOrdersFilter.schema"
                   :label-col="7"
                   :wrapper-col="14"
@@ -447,7 +448,7 @@ export default {
         config: {
           userId: {
             type: "Input",
-            title: "用户id",
+            title: "搜索用户",
             style: {
               width: "50%",
             },
@@ -456,7 +457,7 @@ export default {
           },
           channel: {
             type: "Input",
-            title: "渠道",
+            title: "报名渠道",
             style: {
               width: "50%",
             },
@@ -465,7 +466,7 @@ export default {
           },
           paymentStatus: {
             type: "HmAntSelect",
-            title: "支付状态",
+            title: "核销状态",
             style: {
               width: "50%",
             },
