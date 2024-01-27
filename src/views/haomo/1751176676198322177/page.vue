@@ -107,6 +107,19 @@
                     >
                     </hm-ant-date-picker>
                   </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-b8b97a54-ee39-43be-9789-7822eae7f5f8"
+                  >
+                    <hm-ant-radio
+                      value="undefined"
+                      title="* 活动状态"
+                      :craido-l-ist="[
+                        { state: false, value: '启用' },
+                        { state: true, value: '禁用' },
+                      ]"
+                    >
+                    </hm-ant-radio>
+                  </div>
                 </hm-bg-card>
               </div>
               <div class="ele-wrapper ele-wrapper-message_2">
@@ -136,6 +149,7 @@ import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmAntDatePicker from "/@/components/built-in/jeecg/HmAntDatePicker.vue";
+import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
 
 export default {
   name: "NewActivity",
@@ -145,6 +159,7 @@ export default {
     HmAntBgText,
     HmAntInput,
     HmAntDatePicker,
+    HmAntRadio,
   },
   data() {
     let self = this;
@@ -160,6 +175,19 @@ export default {
       },
       "0fda3cd4-4142-42c1-b685-e00abc7558ac": {
         value: null,
+      },
+      "b8b97a54-ee39-43be-9789-7822eae7f5f8": {
+        value: null,
+        craidoLIst: [
+          {
+            state: false,
+            value: "启用",
+          },
+          {
+            state: true,
+            value: "禁用",
+          },
+        ],
       },
     };
   },
