@@ -25,7 +25,7 @@
                   ref="registrationOrdersFilter"
                   :config="registrationOrdersFilter.config"
                   v-model:value="registrationOrdersFilter.value"
-                  :col-num="4"
+                  :col-num="5"
                   :col-min-width="380"
                   :schema="registrationOrdersFilter.schema"
                   :label-col="7"
@@ -456,15 +456,52 @@ export default {
             validator: function (value) {},
           },
           channel: {
-            type: "Input",
+            type: "HmAntSelect",
             title: "报名渠道",
             style: {
               width: "50%",
             },
-            props: {},
+            props: {
+              title: "",
+              options: [
+                {
+                  label: "app",
+                  value: "app",
+                },
+                {
+                  label: "web",
+                  value: "web",
+                },
+              ],
+            },
             validator: function (value) {},
           },
-          paymentStatus: {
+          paymentStatusText: {
+            type: "HmAntSelect",
+            title: "报名状态",
+            style: {
+              width: "50%",
+            },
+            props: {
+              title: "",
+              options: [
+                {
+                  label: "已报名",
+                  value: 0,
+                },
+                {
+                  label: "未支付",
+                  value: 1,
+                },
+                {
+                  label: "已退款",
+                  value: 2,
+                },
+              ],
+            },
+            validator: function (value) {},
+          },
+          pickUpStatusText: {
             type: "HmAntSelect",
             title: "核销状态",
             style: {
@@ -472,6 +509,16 @@ export default {
             },
             props: {
               title: "",
+              options: [
+                {
+                  label: "已核销",
+                  value: 0,
+                },
+                {
+                  label: "未核销",
+                  value: 1,
+                },
+              ],
             },
             validator: function (value) {},
           },
