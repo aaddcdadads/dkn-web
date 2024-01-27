@@ -112,10 +112,13 @@
                           >
                           </hm-ant-bg-text>
                         </div>
-                        <div
-                          class="ele-wrapper ele-wrapper-07e77102-a7ca-49f8-ae1e-8e390dcf55a4"
-                        >
-                          <hm-ant-select value="undefined" :options="[]">
+                        <div class="ele-wrapper ele-wrapper-activitySelect">
+                          <hm-ant-select
+                            ref="activitySelect"
+                            v-model:value="activitySelect.value"
+                            title=""
+                            v-model:options="activitySelect.options"
+                          >
                           </hm-ant-select>
                         </div>
                         <div
@@ -666,7 +669,7 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "07e77102-a7ca-49f8-ae1e-8e390dcf55a4": {
+      activitySelect: {
         value: null,
         options: [],
       },
