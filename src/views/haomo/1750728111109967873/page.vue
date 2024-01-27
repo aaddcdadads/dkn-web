@@ -170,8 +170,36 @@
               >
                 <hm-bg-card
                   width="100%"
+                  height=""
                   class="ele-0a6fba8b-c43b-4691-ad02-a62dba586095"
                 >
+                  <div class="ele-wrapper ele-wrapper-quanXuanBox">
+                    <hm-ant-checkbox
+                      ref="quanXuanBox"
+                      title=""
+                      v-model:ccheckbox-list="quanXuanBox.ccheckboxList"
+                      class="ele-quanXuanBox"
+                    >
+                    </hm-ant-checkbox>
+                  </div>
+                  <div class="ele-wrapper ele-wrapper-actionSelect">
+                    <hm-ant-select
+                      ref="actionSelect"
+                      v-model:value="actionSelect.value"
+                      title=""
+                      v-model:options="actionSelect.options"
+                      class="ele-actionSelect"
+                    >
+                    </hm-ant-select>
+                  </div>
+                  <div class="ele-wrapper ele-wrapper-actionQueRenBuntton">
+                    <hm-ant-button
+                      ref="actionQueRenBuntton"
+                      text="确认"
+                      class="ele-actionQueRenBuntton"
+                    >
+                    </hm-ant-button>
+                  </div>
                 </hm-bg-card>
               </div>
             </hm-panel>
@@ -356,6 +384,7 @@ import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
+import HmAntCheckbox from "/@/components/built-in/jeecg/HmAntCheckbox.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 
@@ -378,6 +407,7 @@ export default {
     HmAntBgText,
     HmAntSelect,
     HmAntTable,
+    HmAntCheckbox,
     HmModal,
     HmAntIconText,
   },
@@ -682,6 +712,19 @@ export default {
         value: null,
         options: [],
       },
+      quanXuanBox: {
+        ccheckboxList: [
+          {
+            key: "1",
+            checked: false,
+            value: "全选",
+          },
+        ],
+      },
+      actionSelect: {
+        value: null,
+        options: [],
+      },
     };
   },
   watch: {},
@@ -806,6 +849,18 @@ export default {
 
 .ele-wrapper-0a6fba8b-c43b-4691-ad02-a62dba586095 {
   width: 100%;
+}
+
+.ele-wrapper-quanXuanBox {
+  margin-left: 10px;
+}
+
+.ele-wrapper-actionSelect {
+  margin-left: 20px;
+}
+
+.ele-wrapper-actionQueRenBuntton {
+  margin-left: 20px;
 }
 
 .ele-wrapper-addUserModalCard {
