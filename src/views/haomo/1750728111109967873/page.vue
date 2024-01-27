@@ -186,6 +186,7 @@
                       ref="quanXuanBox"
                       title=""
                       v-model:ccheckbox-list="quanXuanBox.ccheckboxList"
+                      @onChange="onQuanXuanBoxOnChange"
                       class="ele-quanXuanBox"
                     >
                     </hm-ant-checkbox>
@@ -811,6 +812,9 @@ export default {
     onRegistrationOrdersTableOnSelectChange(item) {
       console.log("onSelectChange----", item);
       this.selectTempArr = item.selectedRowKeys;
+    },
+    onQuanXuanBoxOnChange(item) {
+      console.log("quanxuan123", item);
     },
     onActionSelectChange(item) {
       console.log("quan123", item);
