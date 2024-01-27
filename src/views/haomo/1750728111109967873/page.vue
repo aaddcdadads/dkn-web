@@ -102,7 +102,6 @@
                         border-radius=""
                         padding=""
                         box-shadow-color="#00000000"
-                        class="ele-fed9455d-a15f-480a-a6e4-2499063d39a0"
                       >
                         <div
                           class="ele-wrapper ele-wrapper-baoMingImportButton"
@@ -749,10 +748,6 @@ export default {
 
 .ele-wrapper-acb9ca38-a2dc-4615-8ff9-d19194092922 {
   width: 100%;
-}
-
-.ele-wrapper-fed9455d-a15f-480a-a6e4-2499063d39a0 {
-  width: 400px;
 }
 
 .ele-wrapper-baoMingImportButton {
