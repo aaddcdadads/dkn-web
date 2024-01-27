@@ -842,7 +842,11 @@ export default {
       if (this.quanxuan) {
         if (this.actionType === 0) {
           //导出
-          console.log("aa");
+          this.$downloadFile(
+            "报名用户列表.xlsx",
+            "/api/dkn/viewRegistrationOrders/exportExcel",
+            {}
+          );
         }
         if (this.actionType === 1) {
           //批量核销核销
