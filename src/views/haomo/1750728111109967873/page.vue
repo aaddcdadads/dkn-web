@@ -116,6 +116,7 @@
                           <hm-ant-select
                             ref="activitySelect"
                             v-model:value="activitySelect.value"
+                            url="/api/dkn/activity/list"
                             title=""
                             v-model:options="activitySelect.options"
                           >
