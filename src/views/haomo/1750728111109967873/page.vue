@@ -98,7 +98,7 @@
                     >
                       <hm-bg-card
                         width="100%"
-                        height=""
+                        height="30px"
                         border-radius=""
                         padding=""
                         box-shadow-color="#00000000"
@@ -196,7 +196,7 @@
                     <hm-ant-select
                       ref="actionSelect"
                       v-model:value="actionSelect.value"
-                      title=""
+                      title="  "
                       placeholder="批量操作"
                       v-model:options="actionSelect.options"
                       @change="onActionSelectChange"
