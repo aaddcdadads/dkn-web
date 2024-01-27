@@ -98,7 +98,7 @@
                     >
                       <hm-bg-card
                         width="100%"
-                        height=""
+                        height="20px"
                         border-radius=""
                         padding=""
                         box-shadow-color="#00000000"
