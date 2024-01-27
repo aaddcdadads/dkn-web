@@ -257,12 +257,18 @@ const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
 /**
  * 成功处理
  */
-const behaviorOrdersHeXiaoOneSucc = (logic.behaviorOrdersHeXiaoOneSucc = function () {});
+const behaviorOrdersHeXiaoOneSucc = (logic.behaviorOrdersHeXiaoOneSucc = function () {
+  self.$message.success("核销成功");
+  self.registrationOrdersDeleteModal.visible = false;
+});
 
 /**
  * 失败处理
  */
-const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = function () {});
+const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = function () {
+  self.$message.error("核销失败");
+  self.registrationOrdersDeleteModal.visible = false;
+});
 
 /**
  * 批量核销请求
