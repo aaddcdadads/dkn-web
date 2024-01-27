@@ -522,7 +522,7 @@ export default {
               if (item.paymentStatus === 0) {
                 self.registrationOrdersDeleteModal.visible = true;
                 self.hexiaotype = true;
-                self.currentRegistrationOrdersId = item.id;
+                self.currentRegistrationOrdersId = item.pickId;
               } else {
                 self.$message.error("已退款、待支付状态下不可核销");
               }
