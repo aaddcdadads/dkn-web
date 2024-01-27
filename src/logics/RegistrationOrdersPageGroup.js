@@ -246,11 +246,20 @@ const startOrdersLoad = (logic.startOrdersLoad = async (pageVm, eventData) => {
 /**
  * 单个请求
  */
-const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = function () {
-  self.$Action(``).then((res) => {
-    self.ajaxOrdersHeXiaoOneData = res;
-  });
+const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
+  let res = await self.$Action(``);
+  self.ajaxOrdersHeXiaoOneData = res;
 });
+
+/**
+ * 成功处理
+ */
+const behaviorOrdersHeXiaoOneSucc = (logic.behaviorOrdersHeXiaoOneSucc = function () {});
+
+/**
+ * 失败处理
+ */
+const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = function () {});
 
 /**
  * 批量核销请求
@@ -273,7 +282,12 @@ const startOrdersHeXiao = (logic.startOrdersHeXiao = async (
   self.startOrdersHeXiaoData = eventData;
 
   if (self.hexiaotype) {
-    ajaxOrdersHeXiaoOne();
+    await ajaxOrdersHeXiaoOne();
+    if (self.ajaxOrdersHeXiaoOneData.success) {
+      behaviorOrdersHeXiaoOneSucc();
+    } else {
+      behaviorOrdersHeXiaoOneFaul();
+    }
   } else {
     ajaxOrdersHeXiaoDuo();
   }
@@ -297,6 +311,8 @@ export {
   behaviorOrdersLoadFaul,
   startOrdersLoad,
   ajaxOrdersHeXiaoOne,
+  behaviorOrdersHeXiaoOneSucc,
+  behaviorOrdersHeXiaoOneFaul,
   ajaxOrdersHeXiaoDuo,
   startOrdersHeXiao,
 };
