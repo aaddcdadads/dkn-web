@@ -545,7 +545,7 @@ export default {
             },
             validator: function (value) {},
           },
-          paymentStatusText: {
+          paymentStatus: {
             type: "HmAntSelect",
             title: "报名状态",
             style: {
@@ -570,7 +570,7 @@ export default {
             },
             validator: function (value) {},
           },
-          pickUpStatusText: {
+          pickUpStatus: {
             type: "HmAntSelect",
             title: "核销状态",
             style: {
