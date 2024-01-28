@@ -345,6 +345,7 @@
               width="320px"
               :z-index="1000"
               height="80px"
+              @ok="onAllModalOk"
             >
               <div
                 class="ele-wrapper ele-wrapper-a51e5f78-be7b-4837-96de-0d69fb368535"
@@ -960,6 +961,35 @@ export default {
     },
     onActivityDeleteModalOk() {
       deleteActivity(this, arguments);
+    },
+    async onAllModalOk() {
+      let self = this;
+      if (self.allStatus.value === 1 || self.allStatus.value === 2) {
+        let url = "/api/dkn/activity/editBatch";
+        let params = self.selectedRows.map((e) => {
+          return {
+            id: e.id,
+            status: self.allStatus.value === 1 ? 0 : 1,
+          };
+        });
+        const res = await self.$putAction(url, params);
+        if (!res.success) {
+          self.$message.error(res.message);
+          return;
+        }
+        self.$message.success("操作成功");
+      } else if (self.allStatus.value === 3) {
+        let url = "/api/dkn/activity/deleteBatch";
+        let params = self.selectedRows.map((e) => {
+          return e.id;
+        });
+        const res = await self.$deleteAction(url, params.join(","));
+        if (!res.success) {
+          self.$message.error(res.message);
+          return;
+        }
+        self.$message.success("操作成功");
+      }
     },
   },
 };
