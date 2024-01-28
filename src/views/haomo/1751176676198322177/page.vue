@@ -386,10 +386,17 @@
                                 class="ele-wrapper ele-wrapper-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
                               >
                                 <hm-ant-formily
+                                  :config="{
+                                    ' explain': {
+                                      type: 'textarea',
+                                      title: '活动说明',
+                                      width: '100px',
+                                    },
+                                  }"
                                   :value="{}"
                                   :col-num="0"
                                   :col-min-width="380"
-                                  :label-col="7"
+                                  :label-col="8"
                                   :wrapper-col="14"
                                 >
                                 </hm-ant-formily>
@@ -671,6 +678,13 @@ export default {
         ],
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
+        config: {
+          " explain": {
+            type: "textarea",
+            title: "活动说明",
+            width: "100px",
+          },
+        },
         value: {},
       },
       "27e450ac-6e1d-487c-9056-b40fd492c883": {
