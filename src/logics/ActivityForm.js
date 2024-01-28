@@ -8,6 +8,10 @@ let self = {};
 let logic = {};
 
 /********************** saveOrUpdate 开始 *********************/
+/**
+ * 处理
+ */
+const formValidate = (logic.formValidate = function () {});
 
 /**
  * 逻辑流 saveOrUpdate 入口函数
@@ -16,8 +20,10 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
   console.log(`saveOrUpdate: `, pageVm, eventData);
   self = Object.assign(pageVm, logic);
   self.saveOrUpdateData = eventData;
+
+  formValidate();
 });
 
 /********************** end saveOrUpdate 开始 *********************/
 
-export { saveOrUpdate };
+export { formValidate, saveOrUpdate };
