@@ -414,10 +414,12 @@ export default {
 
 .ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6 {
   border-left: 3px solid #0079fe;
+  margin-top: 10px;
 }
 
 .ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8 {
   margin-left: 5px;
+  margin-top: 10px;
 }
 
 .ele-wrapper-message_2 {
