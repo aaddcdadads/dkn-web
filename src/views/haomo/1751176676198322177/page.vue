@@ -383,6 +383,18 @@
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
                               <div
+                                class="ele-wrapper ele-wrapper-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
+                              >
+                                <hm-ant-formily
+                                  :value="{}"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :label-col="7"
+                                  :wrapper-col="14"
+                                >
+                                </hm-ant-formily>
+                              </div>
+                              <div
                                 class="ele-wrapper ele-wrapper-27e450ac-6e1d-487c-9056-b40fd492c883"
                               >
                                 <hm-ant-textarea
@@ -611,6 +623,7 @@ import HmAntDatePicker from "/@/components/built-in/jeecg/HmAntDatePicker.vue";
 import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
+import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntTextarea from "/@/components/built-in/jeecg/HmAntTextarea.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
@@ -625,6 +638,7 @@ export default {
     HmAntRadio,
     HmAntButton,
     HmAntTable,
+    HmAntFormily,
     HmAntTextarea,
     HmColorKit,
   },
@@ -655,6 +669,9 @@ export default {
             value: "禁用",
           },
         ],
+      },
+      "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
+        value: {},
       },
       "27e450ac-6e1d-487c-9056-b40fd492c883": {
         value: null,
