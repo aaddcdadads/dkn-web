@@ -609,6 +609,19 @@
                     >
                     </hm-ant-bg-text>
                   </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-b67ccfbf-4079-4d3b-8032-de991cbb9cf1"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      class="ele-b67ccfbf-4079-4d3b-8032-de991cbb9cf1"
+                    >
+                    </hm-bg-card>
+                  </div>
                 </hm-bg-card>
               </div>
             </hm-bg-card>
@@ -847,5 +860,9 @@ export default {
   margin-top: 15px;
   margin-left: 8px;
   padding-left: 5px;
+}
+
+.ele-wrapper-b67ccfbf-4079-4d3b-8032-de991cbb9cf1 {
+  width: 100%;
 }
 </style>
