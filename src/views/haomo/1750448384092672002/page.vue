@@ -120,6 +120,7 @@
                         >
                           <hm-ant-button
                             text="确认"
+                            @click="onElea9Bfb5Ef387749FbA1CfF095389Cbd2EClick"
                             class="ele-a9bfb5ef-3877-49fb-a1cf-f095389cbd2e"
                           >
                           </hm-ant-button>
@@ -493,6 +494,24 @@ export default {
       activityAddModal: {
         visible: false,
       },
+      selectedRows: {},
+      allStatus: {
+        value: null,
+        options: [
+          {
+            label: "启用",
+            value: 1,
+          },
+          {
+            label: "停用",
+            value: 2,
+          },
+          {
+            label: "删除",
+            value: 3,
+          },
+        ],
+      },
       importButton: {
         visible: false,
         headers: null,
@@ -577,23 +596,6 @@ export default {
           span: "文字内容",
         },
         schema: {},
-      },
-      allStatus: {
-        value: null,
-        options: [
-          {
-            label: "启用",
-            value: 1,
-          },
-          {
-            label: "停用",
-            value: 2,
-          },
-          {
-            label: "删除",
-            value: 3,
-          },
-        ],
       },
       activityFilter: {
         config: {
@@ -855,6 +857,17 @@ export default {
     },
     onExportButtonClick() {
       exportActivity(this, arguments);
+    },
+    onElea9Bfb5Ef387749FbA1CfF095389Cbd2EClick() {
+      let self = this;
+      if (self.selectedRows || !self.selectedRows.length > 0) {
+        self.$message.error("请选择活动");
+        return;
+      }
+      if (!self.allStatus.value) {
+        self.$message.error("请选择批量操作");
+        return;
+      }
     },
     onEle128De5D58A3B40DaAbea0C30F1Be5Fe1Click() {
       this.activityAddModal.visible = true;
