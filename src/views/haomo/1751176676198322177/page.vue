@@ -202,7 +202,6 @@
                                 },
                                 {
                                   title: '操作',
-                                  dataIndex: '',
                                   key: 'action',
                                   slots: { customRender: 'action' },
                                   width: 100,
