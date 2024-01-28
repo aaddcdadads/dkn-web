@@ -119,6 +119,7 @@
                             ref="bacthHeImportButton"
                             text="批量核销"
                             :type="'primary'"
+                            @click="onBacthHeImportButtonClick"
                             class="ele-bacthHeImportButton"
                           >
                           </hm-ant-button>
@@ -841,6 +842,11 @@ export default {
     },
     onExportButtonClick() {
       exportRegistrationOrders(this, arguments);
+    },
+    onBacthHeImportButtonClick() {
+      //批量核销核销
+      this.hexiaotype = false;
+      this.registrationOrdersDeleteModal.visible = true;
     },
     onActivitySelectChange(item) {
       this.activityId = item;
