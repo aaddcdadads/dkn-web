@@ -7,6 +7,19 @@ let self = {};
 // logic对象保存当前逻辑组对象，可以通过logic.func或者self.func来调用本逻辑组内的所有逻辑单元
 let logic = {};
 
+/********************** detail 开始 *********************/
+
+/**
+ * 逻辑流 detail 入口函数
+ */
+const detail = (logic.detail = async (pageVm, eventData) => {
+  console.log(`detail: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.detailData = eventData;
+});
+
+/********************** end detail 开始 *********************/
+
 /********************** saveOrUpdate 开始 *********************/
 /**
  * 发送添加请求
@@ -97,4 +110,4 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
 
 /********************** end saveOrUpdate 开始 *********************/
 
-export { addRequest, editRequest, saveOrUpdate };
+export { detail, addRequest, editRequest, saveOrUpdate };
