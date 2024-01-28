@@ -8,6 +8,8 @@
     ></HmTldraw>
     <button @click="setCode1">Set Code1</button>
     <button @click="setCode2">Set Code2</button>
+    <button @click="setReactCode1">Set React Code1</button>
+    <button @click="setReactCode2">Set React Code2</button>
     <button @click="getExportImage">Export Image</button>
     <button @click="getExportSfcImage">Export Sfc Image</button>
     <button @click="getExportJson">Export JSON</button>
@@ -23,6 +25,33 @@
 </template>
 
 <script>
+const reactCode1 = `
+import React from 'react';
+import { Button} from 'antd';
+
+const App: React.FC = () => (
+  <div>
+    <Button type="primary">Primary Button</Button>
+    <Button>Default Button</Button>
+    <Button type="dashed">Dashed Button</Button>
+    <Button type="text">Text Button</Button>
+    <Button type="link">Link Button</Button>
+  </div>
+);
+
+export default App;
+`
+
+const reactCode2 = `
+import React from 'react';
+import { Button} from 'antd';
+
+const App: React.FC = () => (
+);
+
+export default App;
+`
+
 const code1 = `<template>
   <div>111</div>
 </template>
@@ -98,6 +127,12 @@ export default {
     },
     setCode2() {
       this.$refs.tldraw.setCode(code2);
+    },
+    setReactCode1(){
+      this.$refs.tldraw.setCode(reactCode1);
+    },
+    setReactCode2(){
+      this.$refs.tldraw.setCode(reactCode2);
     },
     clear() {
       this.$refs.tldraw.clear();

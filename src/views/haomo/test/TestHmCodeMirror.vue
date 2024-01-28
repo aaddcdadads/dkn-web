@@ -9,7 +9,7 @@
       :tab-size="4"
       :autoDestroy="true"
       theme="dark"
-      language="vue"
+      language="jsx"
       mode="default"
     ></hm-code-mirror>
     <button @click="changeValue">changeValue</button>

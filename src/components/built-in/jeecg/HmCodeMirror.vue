@@ -88,7 +88,7 @@ export default {
     /**
      * 语法
      * @type Enum
-     * @options ["javascript", "vue", "json"]
+     * @options ["javascript", "vue", "json", "jsx"]
      */
     language: {
       type: String,
@@ -310,6 +310,10 @@ export default {
 
         case "json":
           extensions.push(json())
+          break;
+        
+        case "jsx":
+          extensions.push(javascript({jsx: true}))
           break;
       
         default:
