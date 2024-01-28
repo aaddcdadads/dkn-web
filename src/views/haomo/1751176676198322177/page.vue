@@ -76,6 +76,41 @@
                     </hm-ant-bg-text>
                   </div>
                   <div
+                    class="ele-wrapper ele-wrapper-7714511a-00ae-4c70-afd4-04b3e388c348"
+                  >
+                    <hm-ant-formily
+                      :config="{
+                        ' name': {
+                          type: 'Input',
+                          title: '活动规则',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {},
+                        },
+                        cycle: {
+                          type: 'RangePicker',
+                          title: '活动周期',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {},
+                        },
+                        EntryClose: {
+                          type: 'DatePicker',
+                          title: '活动周期',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {},
+                        },
+                      }"
+                      :value="{}"
+                      :col-num="0"
+                      :col-min-width="380"
+                      :label-col="7"
+                      :wrapper-col="14"
+                    >
+                    </hm-ant-formily>
+                  </div>
+                  <div
                     class="ele-wrapper ele-wrapper-639c0497-f403-49a8-9af0-c2702f4de651"
                   >
                     <hm-ant-input
@@ -389,7 +424,7 @@
                                 <hm-ant-formily
                                   :config="{
                                     ' rule': {
-                                      type: 'textarea',
+                                      type: 'TextArea',
                                       title: '活动规则',
                                       style: { width: '100%' },
                                       props: {
@@ -398,12 +433,12 @@
                                       },
                                     },
                                     agreement: {
-                                      type: 'textarea',
+                                      type: 'TextArea',
                                       title: '协议与承诺书',
                                       style: { width: '100%' },
                                     },
                                     customerService: {
-                                      type: 'input',
+                                      type: 'Input',
                                       title: '活动咨询与客服',
                                       style: { width: '100%' },
                                     },
@@ -638,12 +673,12 @@ import { h } from "vue";
 import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
+import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmAntDatePicker from "/@/components/built-in/jeecg/HmAntDatePicker.vue";
 import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
-import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 export default {
@@ -652,17 +687,49 @@ export default {
     HmBgCard,
     HmAntIconText,
     HmAntBgText,
+    HmAntFormily,
     HmAntInput,
     HmAntDatePicker,
     HmAntRadio,
     HmAntButton,
     HmAntTable,
-    HmAntFormily,
     HmColorKit,
   },
   data() {
     let self = this;
     return {
+      "7714511a-00ae-4c70-afd4-04b3e388c348": {
+        config: {
+          " name": {
+            type: "Input",
+            title: "活动规则",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+          cycle: {
+            type: "RangePicker",
+            title: "活动周期",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+          EntryClose: {
+            type: "DatePicker",
+            title: "活动周期",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+        },
+        value: {},
+      },
       "639c0497-f403-49a8-9af0-c2702f4de651": {
         value: "",
       },
@@ -691,7 +758,7 @@ export default {
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
         config: {
           " rule": {
-            type: "textarea",
+            type: "TextArea",
             title: "活动规则",
             style: {
               width: "100%",
@@ -702,14 +769,14 @@ export default {
             },
           },
           agreement: {
-            type: "textarea",
+            type: "TextArea",
             title: "协议与承诺书",
             style: {
               width: "100%",
             },
           },
           customerService: {
-            type: "input",
+            type: "Input",
             title: "活动咨询与客服",
             style: {
               width: "100%",
