@@ -590,6 +590,42 @@
               </div>
             </hm-bg-card>
           </div>
+          <div
+            class="ele-wrapper ele-wrapper-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6"
+          >
+            <hm-bg-card
+              width="100%"
+              height="100%"
+              border-radius=""
+              :text-align="'center'"
+              class="ele-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6"
+            >
+              <div
+                class="ele-wrapper ele-wrapper-78fb2568-9250-4a78-987d-c766b916f771"
+              >
+                <hm-ant-button
+                  text="创建活动"
+                  :type="'primary'"
+                  :size="'large'"
+                  icon="fa fa-check-circle"
+                  class="ele-78fb2568-9250-4a78-987d-c766b916f771"
+                >
+                </hm-ant-button>
+              </div>
+              <div
+                class="ele-wrapper ele-wrapper-b0a42962-4301-4b4d-9525-05bfef232b34"
+              >
+                <hm-ant-button
+                  text="重置"
+                  :type="''"
+                  :size="'large'"
+                  icon="fa fa-repeat"
+                  class="ele-b0a42962-4301-4b4d-9525-05bfef232b34"
+                >
+                </hm-ant-button>
+              </div>
+            </hm-bg-card>
+          </div>
         </hm-bg-card>
       </div>
     </div>
@@ -829,5 +865,18 @@ export default {
 
 .ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc {
   width: 100%;
+}
+
+.ele-wrapper-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6 {
+  width: 100%;
+  border-top: 1px solid #f2f2f2;
+}
+
+.ele-wrapper-78fb2568-9250-4a78-987d-c766b916f771 {
+  margin-right: 5px;
+}
+
+.ele-wrapper-b0a42962-4301-4b4d-9525-05bfef232b34 {
+  margin-left: 5px;
 }
 </style>
