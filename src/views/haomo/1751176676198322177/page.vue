@@ -245,6 +245,27 @@
                             >
                             </hm-ant-table>
                           </div>
+                          <div
+                            class="ele-wrapper ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6"
+                          >
+                            <hm-ant-bg-text
+                              text="活动奖品设置（可为空）"
+                              font-size="14px"
+                              class="ele-2030f92c-96b3-41e7-8403-353b98f5e6a6"
+                            >
+                            </hm-ant-bg-text>
+                          </div>
+                          <div
+                            class="ele-wrapper ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8"
+                          >
+                            <hm-ant-button
+                              text="添加"
+                              :type="'primary'"
+                              icon="fa fa-plus"
+                              class="ele-5e707249-6d32-4c85-ac9b-b51a1a4e56c8"
+                            >
+                            </hm-ant-button>
+                          </div>
                         </hm-bg-card>
                       </div>
                     </hm-bg-card>
@@ -389,6 +410,14 @@ export default {
 
 .ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f {
   width: 100%;
+}
+
+.ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6 {
+  border-left: 3px solid #0079fe;
+}
+
+.ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8 {
+  margin-left: 5px;
 }
 
 .ele-wrapper-message_2 {
