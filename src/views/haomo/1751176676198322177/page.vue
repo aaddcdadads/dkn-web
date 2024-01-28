@@ -169,6 +169,26 @@
                           box-shadow-blur=""
                           class="ele-678d6f52-6548-4f95-b813-d079ff38bb6f"
                         >
+                          <div
+                            class="ele-wrapper ele-wrapper-25b5309c-c34c-4da3-a7c0-afa25d079608"
+                          >
+                            <hm-ant-table
+                              :actions="[
+                                {
+                                  name: '编辑',
+                                  callback:
+                                    'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                                },
+                                {
+                                  name: '删除',
+                                  callback:
+                                    'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                                },
+                              ]"
+                              :row-class-name="{}"
+                            >
+                            </hm-ant-table>
+                          </div>
                         </hm-bg-card>
                       </div>
                     </hm-bg-card>
@@ -204,6 +224,7 @@ import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmAntDatePicker from "/@/components/built-in/jeecg/HmAntDatePicker.vue";
 import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
+import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 
 export default {
   name: "NewActivity",
@@ -215,6 +236,7 @@ export default {
     HmAntDatePicker,
     HmAntRadio,
     HmAntButton,
+    HmAntTable,
   },
   data() {
     let self = this;
