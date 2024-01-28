@@ -385,13 +385,13 @@
                                       type: 'Textarea',
                                       title: '活动规则',
                                       style: { width: '100%' },
-                                      props: {},
-                                      'x-component-props': { showCount: true },
+                                      props: { showCount: true },
                                     },
                                     agreement: {
                                       type: 'Textarea',
                                       title: '协议与承诺书',
                                       style: { width: '100%' },
+                                      props: { showCount: true },
                                     },
                                     customerService: {
                                       type: 'Input',
@@ -717,8 +717,7 @@ export default {
             style: {
               width: "100%",
             },
-            props: {},
-            "x-component-props": {
+            props: {
               showCount: true,
             },
           },
@@ -727,6 +726,9 @@ export default {
             title: "协议与承诺书",
             style: {
               width: "100%",
+            },
+            props: {
+              showCount: true,
             },
           },
           customerService: {
