@@ -632,6 +632,11 @@ export default {
 .ele-wrapper-titleCard {
   width: 100%;
   border-bottom: 1px solid #f2f2f2;
+  .ele-titleCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .ele-wrapper-message_1 {
