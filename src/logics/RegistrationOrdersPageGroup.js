@@ -273,7 +273,7 @@ const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = functio
  * 单个请求
  */
 const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
-  let res = await self.$putAction(
+  let res = await self.$postAction(
     `/api/dkn/orderPickUp/addHe`,
     self.hexiaoItem
   );
