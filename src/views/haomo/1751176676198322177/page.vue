@@ -96,7 +96,14 @@
                         },
                         EntryClose: {
                           type: 'DatePicker',
-                          title: '活动周期',
+                          title: '* 报名截止',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {},
+                        },
+                        VerificationDeadline: {
+                          type: 'DatePicker',
+                          title: '* 核销截止',
                           style: { width: '100%' },
                           required: true,
                           props: {},
@@ -105,8 +112,8 @@
                       :value="{}"
                       :col-num="0"
                       :col-min-width="380"
-                      :label-col="7"
-                      :wrapper-col="14"
+                      :label-col="4"
+                      :wrapper-col="16"
                     >
                     </hm-ant-formily>
                   </div>
@@ -445,7 +452,7 @@
                                   :col-num="0"
                                   :col-min-width="380"
                                   :label-col="4"
-                                  :wrapper-col="20"
+                                  :wrapper-col="18"
                                   class="ele-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
                                 >
                                 </hm-ant-formily>
@@ -718,7 +725,16 @@ export default {
           },
           EntryClose: {
             type: "DatePicker",
-            title: "活动周期",
+            title: "* 报名截止",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+          VerificationDeadline: {
+            type: "DatePicker",
+            title: "* 核销截止",
             style: {
               width: "100%",
             },
