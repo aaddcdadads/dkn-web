@@ -159,7 +159,7 @@
                         <hm-ant-button
                           text="添加"
                           :type="'primary'"
-                          icon="fa fa-plus"
+                          icon="fa fa-pencil"
                           class="ele-192a1e25-4895-4501-971d-69ddf1ae5a12"
                         >
                         </hm-ant-button>
@@ -239,6 +239,7 @@
                                   callback:
                                     'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
                                   type: 'link',
+                                  icon: 'fa fa-plus',
                                 },
                                 {
                                   name: '删除',
