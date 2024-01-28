@@ -48,6 +48,7 @@
               width="100%"
               height="100%"
               border-radius=""
+              padding=""
               box-shadow-v-shadow=""
               box-shadow-blur=""
               class="ele-message_1"
@@ -75,66 +76,59 @@
                     </hm-ant-bg-text>
                   </div>
                   <div
-                    class="ele-wrapper ele-wrapper-639c0497-f403-49a8-9af0-c2702f4de651"
+                    class="ele-wrapper ele-wrapper-a5a25330-2967-46c6-912c-e469e87e6474"
                   >
-                    <hm-ant-input
-                      value=""
-                      title="* 活动名称"
-                      :label-width="80"
-                      class="ele-639c0497-f403-49a8-9af0-c2702f4de651"
+                    <hm-ant-formily
+                      :config="{
+                        ' name': {
+                          type: 'Input',
+                          title: '活动规则',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {},
+                        },
+                        cycle: {
+                          type: 'RangePicker',
+                          title: '活动周期',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {},
+                        },
+                        EntryClose: {
+                          type: 'DatePicker',
+                          title: '报名截止',
+                          style: { width: '100%' },
+                          required: true,
+                          props: { showTime: true },
+                        },
+                        VerificationDeadline: {
+                          type: 'DatePicker',
+                          title: '核销截止',
+                          style: { width: '100%' },
+                          required: true,
+                          props: { showTime: true },
+                        },
+                        ActivityStatus: {
+                          type: 'RadioGroup',
+                          title: '核销截止',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {
+                            options: [
+                              { label: '启用', value: 0 },
+                              { label: '禁用', value: 1 },
+                            ],
+                          },
+                        },
+                      }"
+                      :value="{}"
+                      :col-num="0"
+                      :col-min-width="380"
+                      :label-col="3"
+                      :wrapper-col="16"
+                      class="ele-a5a25330-2967-46c6-912c-e469e87e6474"
                     >
-                    </hm-ant-input>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-40fb2133-1fe9-4649-a1ad-0b1548ce893b"
-                  >
-                    <hm-ant-date-picker
-                      title="* 活动周期"
-                      value="undefined"
-                      :is-range="false"
-                      :label-width="80"
-                      class="ele-40fb2133-1fe9-4649-a1ad-0b1548ce893b"
-                    >
-                    </hm-ant-date-picker>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-f7592ab1-717b-4609-b229-eff4f560e4d1"
-                  >
-                    <hm-ant-date-picker
-                      title="* 报名截止"
-                      value="undefined"
-                      :is-range="false"
-                      :label-width="80"
-                      class="ele-f7592ab1-717b-4609-b229-eff4f560e4d1"
-                    >
-                    </hm-ant-date-picker>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-0fda3cd4-4142-42c1-b685-e00abc7558ac"
-                  >
-                    <hm-ant-date-picker
-                      title="* 核销截止"
-                      value="undefined"
-                      :is-range="false"
-                      :label-width="80"
-                      class="ele-0fda3cd4-4142-42c1-b685-e00abc7558ac"
-                    >
-                    </hm-ant-date-picker>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-b8b97a54-ee39-43be-9789-7822eae7f5f8"
-                  >
-                    <hm-ant-radio
-                      value="undefined"
-                      title="* 活动状态"
-                      :label-width="80"
-                      :craido-l-ist="[
-                        { state: false, value: '启用' },
-                        { state: true, value: '禁用' },
-                      ]"
-                      class="ele-b8b97a54-ee39-43be-9789-7822eae7f5f8"
-                    >
-                    </hm-ant-radio>
+                    </hm-ant-formily>
                   </div>
                   <div
                     class="ele-wrapper ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180"
@@ -383,51 +377,43 @@
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
                               <div
-                                class="ele-wrapper ele-wrapper-27e450ac-6e1d-487c-9056-b40fd492c883"
+                                class="ele-wrapper ele-wrapper-51f6df44-dc34-48ee-9fb2-44caba78bf6f"
                               >
-                                <hm-ant-textarea
-                                  value="undefined"
-                                  title="活动规则"
-                                  :row="5"
-                                  placeholder="请输入活动规则"
-                                  :show-count="true"
-                                  width="500"
-                                  :label-width="65"
-                                  class="ele-27e450ac-6e1d-487c-9056-b40fd492c883"
+                                <hm-ant-formily
+                                  :config="{
+                                    ' rule': {
+                                      type: 'Textarea',
+                                      title: '活动规则',
+                                      style: { width: '100%' },
+                                      props: {
+                                        showCount: true,
+                                        placeholder: '请输入活动规则',
+                                      },
+                                    },
+                                    agreement: {
+                                      type: 'Textarea',
+                                      title: '协议与承诺书',
+                                      style: { width: '100%' },
+                                      props: {
+                                        showCount: true,
+                                        placeholder:
+                                          '请输入《活动报名用户协议及承诺书》',
+                                      },
+                                    },
+                                    customerService: {
+                                      type: 'Input',
+                                      title: '活动咨询与客服',
+                                      style: { width: '100%' },
+                                    },
+                                  }"
+                                  :value="{}"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :label-col="3"
+                                  :wrapper-col="18"
+                                  class="ele-51f6df44-dc34-48ee-9fb2-44caba78bf6f"
                                 >
-                                </hm-ant-textarea>
-                              </div>
-                              <div
-                                class="ele-wrapper ele-wrapper-59114955-33f9-46b9-a0d6-b457a8719c71"
-                              >
-                                <hm-ant-bg-text
-                                  text="协议与承诺书："
-                                  font-size="14px"
-                                >
-                                </hm-ant-bg-text>
-                              </div>
-                              <div
-                                class="ele-wrapper ele-wrapper-356b70ea-220b-42ce-abe3-5bc434ab112a"
-                              >
-                                <hm-wang-editor
-                                  value=""
-                                  :max-content-length="2"
-                                  class="ele-356b70ea-220b-42ce-abe3-5bc434ab112a"
-                                >
-                                </hm-wang-editor>
-                              </div>
-                              <div
-                                class="ele-wrapper ele-wrapper-75d6efd4-b60c-4454-8b50-f6de5e604ddc"
-                              >
-                                <hm-ant-input
-                                  value=""
-                                  title="活动咨询客服"
-                                  placeholder=""
-                                  width="365"
-                                  :label-width="90"
-                                  class="ele-75d6efd4-b60c-4454-8b50-f6de5e604ddc"
-                                >
-                                </hm-ant-input>
+                                </hm-ant-formily>
                               </div>
                             </hm-bg-card>
                           </div>
@@ -660,14 +646,12 @@ import { h } from "vue";
 import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
-import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
-import HmAntDatePicker from "/@/components/built-in/jeecg/HmAntDatePicker.vue";
-import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
+import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
-import HmAntTextarea from "/@/components/built-in/jeecg/HmAntTextarea.vue";
-import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
+import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
+import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 
 export default {
   name: "ActivityEditingAndModification",
@@ -675,51 +659,114 @@ export default {
     HmBgCard,
     HmAntIconText,
     HmAntBgText,
-    HmAntInput,
-    HmAntDatePicker,
-    HmAntRadio,
+    HmAntFormily,
     HmAntButton,
     HmAntTable,
-    HmAntTextarea,
-    HmWangEditor,
     HmColorKit,
+    HmAntRadio,
+    HmAntInput,
   },
   data() {
     let self = this;
     return {
-      "639c0497-f403-49a8-9af0-c2702f4de651": {
-        value: "",
-      },
-      "40fb2133-1fe9-4649-a1ad-0b1548ce893b": {
-        value: null,
-      },
-      "f7592ab1-717b-4609-b229-eff4f560e4d1": {
-        value: null,
-      },
-      "0fda3cd4-4142-42c1-b685-e00abc7558ac": {
-        value: null,
-      },
-      "b8b97a54-ee39-43be-9789-7822eae7f5f8": {
-        value: null,
-        craidoLIst: [
-          {
-            state: false,
-            value: "启用",
+      "a5a25330-2967-46c6-912c-e469e87e6474": {
+        config: {
+          " name": {
+            type: "Input",
+            title: "活动规则",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
           },
-          {
-            state: true,
-            value: "禁用",
+          cycle: {
+            type: "RangePicker",
+            title: "活动周期",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
           },
-        ],
+          EntryClose: {
+            type: "DatePicker",
+            title: "报名截止",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {
+              showTime: true,
+            },
+          },
+          VerificationDeadline: {
+            type: "DatePicker",
+            title: "核销截止",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {
+              showTime: true,
+            },
+          },
+          ActivityStatus: {
+            type: "RadioGroup",
+            title: "核销截止",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "启用",
+                  value: 0,
+                },
+                {
+                  label: "禁用",
+                  value: 1,
+                },
+              ],
+            },
+          },
+        },
+        value: {},
       },
-      "27e450ac-6e1d-487c-9056-b40fd492c883": {
-        value: null,
-      },
-      "356b70ea-220b-42ce-abe3-5bc434ab112a": {
-        value: "",
-      },
-      "75d6efd4-b60c-4454-8b50-f6de5e604ddc": {
-        value: "",
+      "51f6df44-dc34-48ee-9fb2-44caba78bf6f": {
+        config: {
+          " rule": {
+            type: "Textarea",
+            title: "活动规则",
+            style: {
+              width: "100%",
+            },
+            props: {
+              showCount: true,
+              placeholder: "请输入活动规则",
+            },
+          },
+          agreement: {
+            type: "Textarea",
+            title: "协议与承诺书",
+            style: {
+              width: "100%",
+            },
+            props: {
+              showCount: true,
+              placeholder: "请输入《活动报名用户协议及承诺书》",
+            },
+          },
+          customerService: {
+            type: "Input",
+            title: "活动咨询与客服",
+            style: {
+              width: "100%",
+            },
+          },
+        },
+        value: {},
       },
       "88a18c12-ceef-48d2-802a-aaccaf15f262": {
         value: null,
@@ -779,28 +826,8 @@ export default {
   padding-left: 5px;
 }
 
-.ele-wrapper-639c0497-f403-49a8-9af0-c2702f4de651 {
-  margin: 10px 10px 0 10px;
-  display: block;
-}
-
-.ele-wrapper-40fb2133-1fe9-4649-a1ad-0b1548ce893b {
-  margin: 10px 10px 0 10px;
-  display: block;
-}
-
-.ele-wrapper-f7592ab1-717b-4609-b229-eff4f560e4d1 {
-  margin: 10px 10px 0 10px;
-  display: block;
-}
-
-.ele-wrapper-0fda3cd4-4142-42c1-b685-e00abc7558ac {
-  margin: 10px 10px 0 10px;
-  display: block;
-}
-
-.ele-wrapper-b8b97a54-ee39-43be-9789-7822eae7f5f8 {
-  margin: 10px 10px 0 10px;
+.ele-wrapper-a5a25330-2967-46c6-912c-e469e87e6474 {
+  margin-top: 15px;
 }
 
 .ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180 {
@@ -846,16 +873,9 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-27e450ac-6e1d-487c-9056-b40fd492c883 {
+.ele-wrapper-51f6df44-dc34-48ee-9fb2-44caba78bf6f {
   width: 100%;
-}
-
-.ele-wrapper-356b70ea-220b-42ce-abe3-5bc434ab112a {
-  width: 500px;
-}
-
-.ele-wrapper-75d6efd4-b60c-4454-8b50-f6de5e604ddc {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .ele-wrapper-message_2 {
