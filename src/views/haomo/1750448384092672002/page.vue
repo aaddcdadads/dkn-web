@@ -777,7 +777,8 @@ export default {
       });
       let self = this;
       self.copyUrl = function (id) {
-        let url = `${self.$accessAddress}?id=${id}`;
+        let u = self.$accessAddress;
+        let url = `${u}?id=${id}`;
         let self = this;
         if (!navigator.clipboard) {
           var ele = document.createElement("input");
