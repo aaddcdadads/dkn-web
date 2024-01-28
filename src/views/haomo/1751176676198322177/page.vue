@@ -143,6 +143,7 @@
                         <hm-ant-bg-text
                           text="活动项目设置（至少一个）"
                           font-size="14px"
+                          class="ele-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
                         >
                         </hm-ant-bg-text>
                       </div>
@@ -284,6 +285,10 @@ export default {
 
 .ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180 {
   width: 100%;
+}
+
+.ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17 {
+  border-left: 1px solid #0079fe;
 }
 
 .ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12 {
