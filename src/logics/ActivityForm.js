@@ -8,6 +8,62 @@ let self = {};
 let logic = {};
 
 /********************** detail 开始 *********************/
+/**
+ * 处理
+ */
+const behavior = (logic.behavior = function () {});
+
+/**
+ * 获取活动
+ */
+const activityRequest = (logic.activityRequest = async function () {
+  let res = await self.$Action(``);
+  self.activityRequestData = res;
+});
+
+/**
+ * 处理
+ */
+const setActivity = (logic.setActivity = function () {});
+
+/**
+ * 活动拓展
+ */
+const activityExtRequest = (logic.activityExtRequest = async function () {
+  let res = await self.$Action(``);
+  self.activityExtRequestData = res;
+});
+
+/**
+ * 处理
+ */
+const setActivityExt = (logic.setActivityExt = function () {});
+
+/**
+ * 活动项目
+ */
+const activityProjectRequest = (logic.activityProjectRequest = async function () {
+  let res = await self.$Action(``);
+  self.activityProjectRequestData = res;
+});
+
+/**
+ * 处理
+ */
+const setActivityProject = (logic.setActivityProject = function () {});
+
+/**
+ * 活动图片
+ */
+const activityImgRequest = (logic.activityImgRequest = async function () {
+  let res = await self.$Action(``);
+  self.activityImgRequestData = res;
+});
+
+/**
+ * 处理
+ */
+const setActivityImg = (logic.setActivityImg = function () {});
 
 /**
  * 逻辑流 detail 入口函数
@@ -16,6 +72,16 @@ const detail = (logic.detail = async (pageVm, eventData) => {
   console.log(`detail: `, pageVm, eventData);
   self = Object.assign(pageVm, logic);
   self.detailData = eventData;
+
+  behavior();
+  await activityRequest();
+  setActivity();
+  await activityExtRequest();
+  setActivityExt();
+  await activityProjectRequest();
+  setActivityProject();
+  await activityImgRequest();
+  setActivityImg();
 });
 
 /********************** end detail 开始 *********************/
@@ -110,4 +176,18 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
 
 /********************** end saveOrUpdate 开始 *********************/
 
-export { detail, addRequest, editRequest, saveOrUpdate };
+export {
+  behavior,
+  activityRequest,
+  setActivity,
+  activityExtRequest,
+  setActivityExt,
+  activityProjectRequest,
+  setActivityProject,
+  activityImgRequest,
+  setActivityImg,
+  detail,
+  addRequest,
+  editRequest,
+  saveOrUpdate,
+};
