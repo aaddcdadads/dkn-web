@@ -191,7 +191,7 @@
                                   dataIndex: 'address',
                                   key: 'address',
                                   ellipsis: true,
-                                  width: 100,
+                                  width: 80,
                                 },
                                 {
                                   title: '排序',
