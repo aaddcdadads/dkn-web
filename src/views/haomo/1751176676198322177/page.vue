@@ -96,14 +96,14 @@
                         },
                         EntryClose: {
                           type: 'DatePicker',
-                          title: '* 报名截止',
+                          title: '报名截止',
                           style: { width: '100%' },
                           required: true,
                           props: { showTime: true },
                         },
                         VerificationDeadline: {
                           type: 'DatePicker',
-                          title: '* 核销截止',
+                          title: '核销截止',
                           style: { width: '100%' },
                           required: true,
                           props: { showTime: true },
@@ -677,7 +677,7 @@ export default {
           },
           EntryClose: {
             type: "DatePicker",
-            title: "* 报名截止",
+            title: "报名截止",
             style: {
               width: "100%",
             },
@@ -688,7 +688,7 @@ export default {
           },
           VerificationDeadline: {
             type: "DatePicker",
-            title: "* 核销截止",
+            title: "核销截止",
             style: {
               width: "100%",
             },
