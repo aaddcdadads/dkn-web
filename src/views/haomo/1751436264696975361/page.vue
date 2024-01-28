@@ -906,7 +906,7 @@ export default {
 
 .ele-wrapper-a5a25330-2967-46c6-912c-e469e87e6474 {
   margin-top: 15px;
-  /deep/#cycle {
+  /deep/.ant-calendar-picker {
     width: 100%;
   }
 }
