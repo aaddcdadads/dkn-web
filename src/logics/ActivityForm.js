@@ -70,10 +70,11 @@ const detail = (logic.detail = async (pageVm, eventData) => {
 
   self.id = self.$route.query.id;
   self.type = self.$route.query.type;
-  if (!self.id || self.type === "1") {
+  self.type = parseInt(self.type);
+  if (!self.id || self.type === 1) {
     return;
   }
-  if (self.type === "3") {
+  if (self.type === 3) {
     for (let item in self.activityForm.config) {
       self.activityForm.config[key].props.disabled = true;
     }
