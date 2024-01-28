@@ -382,14 +382,14 @@
                                 <hm-ant-formily
                                   :config="{
                                     ' rule': {
-                                      type: 'TextArea',
+                                      type: 'Textarea',
                                       title: '活动规则',
                                       style: { width: '100%' },
                                       props: {},
                                       'x-component-props': { showCount: true },
                                     },
                                     agreement: {
-                                      type: 'TextArea',
+                                      type: 'Textarea',
                                       title: '协议与承诺书',
                                       style: { width: '100%' },
                                     },
@@ -712,7 +712,7 @@ export default {
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
         config: {
           " rule": {
-            type: "TextArea",
+            type: "Textarea",
             title: "活动规则",
             style: {
               width: "100%",
@@ -723,7 +723,7 @@ export default {
             },
           },
           agreement: {
-            type: "TextArea",
+            type: "Textarea",
             title: "协议与承诺书",
             style: {
               width: "100%",
