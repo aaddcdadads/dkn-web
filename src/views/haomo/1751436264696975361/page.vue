@@ -380,37 +380,16 @@
                       box-shadow-blur=""
                       class="ele-messageRenedit"
                     >
-                      <div
-                        class="ele-wrapper ele-wrapper-5f05a8f7-ad2e-4f53-a4a7-fa48d9846d76"
-                      >
+                      <div class="ele-wrapper ele-wrapper-activityTwoForm">
                         <hm-ant-formily
-                          :config="{
-                            'VirtualNumberPeople:': {
-                              type: 'RadioGroup',
-                              title: '核销截止',
-                              style: { width: '100%' },
-                              required: true,
-                              props: {
-                                options: [
-                                  { label: '启用', value: 0 },
-                                  { label: '禁用', value: 1 },
-                                ],
-                              },
-                            },
-                            ' name': {
-                              type: 'Input',
-                              title: '活动人数',
-                              style: { width: '100%' },
-                              required: true,
-                              props: {},
-                            },
-                          }"
-                          :value="{}"
+                          ref="activityTwoForm"
+                          :config="activityTwoForm.config"
+                          v-model:value="activityTwoForm.value"
                           :col-num="0"
                           :col-min-width="380"
                           :label-col="3"
                           :wrapper-col="16"
-                          class="ele-5f05a8f7-ad2e-4f53-a4a7-fa48d9846d76"
+                          class="ele-activityTwoForm"
                         >
                         </hm-ant-formily>
                       </div>
@@ -474,6 +453,8 @@ import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
+
+import { detail } from "/@/logics/ActivityForm";
 
 export default {
   name: "ActivityEditingAndModification",
@@ -806,7 +787,7 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      "5f05a8f7-ad2e-4f53-a4a7-fa48d9846d76": {
+      activityTwoForm: {
         config: {
           "VirtualNumberPeople:": {
             type: "RadioGroup",
@@ -843,6 +824,9 @@ export default {
     };
   },
   watch: {},
+  mounted(e) {
+    detail(this, arguments);
+  },
   methods: {},
 };
 </script>
@@ -995,7 +979,7 @@ export default {
   }
 }
 
-.ele-wrapper-5f05a8f7-ad2e-4f53-a4a7-fa48d9846d76 {
+.ele-wrapper-activityTwoForm {
   width: 100%;
 }
 
