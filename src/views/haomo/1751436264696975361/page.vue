@@ -635,7 +635,12 @@
                       <div
                         class="ele-wrapper ele-wrapper-74a974b1-b1f2-484d-98b5-1b8a379ff26b"
                       >
-                        <hm-ant-input value="" title="* 活动人数">
+                        <hm-ant-input
+                          value=""
+                          title="* 活动人数"
+                          width="400"
+                          class="ele-74a974b1-b1f2-484d-98b5-1b8a379ff26b"
+                        >
                         </hm-ant-input>
                       </div>
                     </hm-bg-card>
@@ -902,5 +907,10 @@ export default {
     display: flex;
     flex-direction: column;
   }
+}
+
+.ele-wrapper-74a974b1-b1f2-484d-98b5-1b8a379ff26b {
+  width: 100%;
+  margin-top: 15px;
 }
 </style>

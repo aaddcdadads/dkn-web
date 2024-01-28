@@ -105,17 +105,12 @@
                         box-shadow-color="#00000000"
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
                       >
-                        <div
-                          class="ele-wrapper ele-wrapper-b261be1f-05fb-43ab-97cf-5f80060da543"
-                        >
+                        <div class="ele-wrapper ele-wrapper-allStatus">
                           <hm-ant-select
-                            value="undefined"
+                            ref="allStatus"
+                            v-model:value="allStatus.value"
                             title=""
-                            :options="[
-                              { label: '启用', value: 1 },
-                              { label: '停用', value: 2 },
-                              { label: '删除', value: 3 },
-                            ]"
+                            v-model:options="allStatus.options"
                           >
                           </hm-ant-select>
                         </div>
@@ -772,7 +767,7 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "b261be1f-05fb-43ab-97cf-5f80060da543": {
+      allStatus: {
         value: null,
         options: [
           {
