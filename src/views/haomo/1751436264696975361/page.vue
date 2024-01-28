@@ -898,5 +898,9 @@ export default {
 
 .ele-wrapper-messageRenedit {
   width: 100%;
+  .ele-messageRenedit {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>

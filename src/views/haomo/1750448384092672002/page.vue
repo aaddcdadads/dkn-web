@@ -105,47 +105,16 @@
                         box-shadow-color="#00000000"
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
                       >
-                        <div
-                          class="ele-wrapper ele-wrapper-ef6acbd4-668c-4f2e-a883-67ce884a8791"
-                        >
+                        <div class="ele-wrapper ele-wrapper-allStatus">
                           <hm-ant-formily
-                            :config="{
-                              channel: {
-                                type: 'HmAntSelect',
-                                title: '',
-                                style: { width: '50%' },
-                                props: {
-                                  title: '',
-                                  options: [
-                                    { label: '启用', value: 1 },
-                                    { label: '停用', value: 2 },
-                                    { label: '删除', value: 3 },
-                                  ],
-                                },
-                                validator: 'function(value) {}',
-                              },
-                              search: {
-                                type: 'HmAntButton',
-                                title: '',
-                                style: { width: '80px', marginLeft: '10px' },
-                                props: {
-                                  text: '查询',
-                                  type: 'primary',
-                                  icon: 'fa fa-search',
-                                },
-                                events: {
-                                  '@click':
-                                    'function(e) {searchRegistrationOrders(self, null);}',
-                                },
-                                validator: 'function(value) {}',
-                              },
-                            }"
-                            :value="{}"
+                            ref="allStatus"
+                            :config="allStatus.config"
+                            v-model:value="allStatus.value"
                             :col-num="0"
                             :col-min-width="380"
                             :label-col="7"
                             :wrapper-col="14"
-                            class="ele-ef6acbd4-668c-4f2e-a883-67ce884a8791"
+                            class="ele-allStatus"
                           >
                           </hm-ant-formily>
                         </div>
@@ -598,7 +567,6 @@ export default {
         },
         schema: {},
       },
-      allStatus: {},
       activityFilter: {
         config: {
           name: {
@@ -796,7 +764,7 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "ef6acbd4-668c-4f2e-a883-67ce884a8791": {
+      allStatus: {
         config: {
           channel: {
             type: "HmAntSelect",
@@ -870,7 +838,6 @@ export default {
         }
       });
       let self = this;
-      self.allStatus.value = null;
       self.copyUrl = function (id) {
         let url = `${this.$accessAddress}?id=${id}`;
         let self = this;
@@ -982,7 +949,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-ef6acbd4-668c-4f2e-a883-67ce884a8791 {
+.ele-wrapper-allStatus {
   width: 70%;
   margin: 1%;
   margin-bottom: 0;
