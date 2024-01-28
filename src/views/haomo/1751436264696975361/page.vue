@@ -627,9 +627,8 @@
                           value="undefined"
                           title="* 虚拟人数"
                           :craido-l-ist="[
-                            { state: false, value: 'raido1' },
-                            { state: true, value: 'raido2' },
-                            { state: false, value: 'raido3' },
+                            { state: true, value: '启用' },
+                            { state: false, value: '禁用' },
                           ]"
                         >
                         </hm-ant-radio>
@@ -722,16 +721,12 @@ export default {
         value: null,
         craidoLIst: [
           {
-            state: false,
-            value: "raido1",
-          },
-          {
             state: true,
-            value: "raido2",
+            value: "启用",
           },
           {
             state: false,
-            value: "raido3",
+            value: "禁用",
           },
         ],
       },
