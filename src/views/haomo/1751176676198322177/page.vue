@@ -275,7 +275,83 @@
                               border-radius=""
                               box-shadow-v-shadow=""
                               box-shadow-blur=""
+                              class="ele-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                             >
+                              <div
+                                class="ele-wrapper ele-wrapper-1359321a-c729-4bf8-b227-caa6f12e788f"
+                              >
+                                <hm-ant-table
+                                  :columns="[
+                                    {
+                                      title: '项目费用',
+                                      dataIndex: 'name',
+                                      key: 'name',
+                                      width: 50,
+                                    },
+                                    {
+                                      title: '活动项目名称',
+                                      dataIndex: 'age',
+                                      key: 'age',
+                                      width: 90,
+                                    },
+                                    {
+                                      title: '项目简历',
+                                      dataIndex: 'address',
+                                      key: 'address',
+                                      ellipsis: true,
+                                      width: 80,
+                                    },
+                                    {
+                                      title: '排序',
+                                      dataIndex: 'sexual',
+                                      key: 'sexual',
+                                      ellipsis: true,
+                                      width: 50,
+                                    },
+                                    {
+                                      title: '操作',
+                                      key: 'action',
+                                      slots: { customRender: 'action' },
+                                      width: 80,
+                                    },
+                                  ]"
+                                  :data="[
+                                    {
+                                      key: '1',
+                                      name: '¥0',
+                                      age: '',
+                                      address: '',
+                                      sexual: '',
+                                      school: '',
+                                    },
+                                    {
+                                      key: '2',
+                                      name: '¥ 29.9',
+                                      age: '',
+                                      address: '',
+                                      sexual: '',
+                                      school: '',
+                                    },
+                                  ]"
+                                  :actions="[
+                                    {
+                                      name: '编辑',
+                                      callback:
+                                        'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                                      type: 'link',
+                                    },
+                                    {
+                                      name: '删除',
+                                      callback:
+                                        'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                                      type: 'link',
+                                    },
+                                  ]"
+                                  :is-flat-action="true"
+                                  :row-class-name="{}"
+                                >
+                                </hm-ant-table>
+                              </div>
                             </hm-bg-card>
                           </div>
                         </hm-bg-card>
@@ -432,6 +508,10 @@ export default {
 .ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8 {
   margin-left: 5px;
   margin-top: 10px;
+}
+
+.ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c {
+  width: 100%;
 }
 
 .ele-wrapper-message_2 {
