@@ -572,7 +572,7 @@ export default {
 
 .ele-wrapper-e3d70a59-ef42-4c89-af9c-c1b6fe4ddb0f {
   width: 100%;
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 .ele-wrapper-message_1 {
@@ -661,7 +661,6 @@ export default {
 
 .ele-wrapper-fa713d7b-511f-4b6c-9f7a-37b66d33842e {
   border-left: 4px solid #0079fe;
-  margin-top: 15px;
 }
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
