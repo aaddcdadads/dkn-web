@@ -959,6 +959,7 @@ export default {
       //this.activityAddModal.visible = true;
       this.$router.push({
         path: `/haomo/1751176953324376065/page`,
+        query: { type: 1 },
       });
     },
     onInvisibleImportSearchLogicBtnClick() {
