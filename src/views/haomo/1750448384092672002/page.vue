@@ -773,6 +773,8 @@ export default {
           };
         }
       });
+      let self = this;
+      self.copyUrl = function (id) {};
     },
 
     onAddButtonClick() {
