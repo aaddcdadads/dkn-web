@@ -27,7 +27,9 @@ const setActivity = (logic.setActivity = function () {});
  * 活动拓展
  */
 const activityExtRequest = (logic.activityExtRequest = async function () {
-  let res = await self.$Action(``);
+  let res = await self.$getAction(`/api/dkn/activityExt/list`, {
+    activityId: self.activityId,
+  });
   self.activityExtRequestData = res;
 });
 
