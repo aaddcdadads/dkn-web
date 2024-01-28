@@ -11,7 +11,7 @@ let logic = {};
 /**
  * 处理
  */
-const behavior = (logic.behavior = function () {});
+const isType = (logic.isType = function () {});
 
 /**
  * 获取活动
@@ -73,7 +73,7 @@ const detail = (logic.detail = async (pageVm, eventData) => {
   self = Object.assign(pageVm, logic);
   self.detailData = eventData;
 
-  behavior();
+  isType();
   await activityRequest();
   setActivity();
   await activityExtRequest();
@@ -177,7 +177,7 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
 /********************** end saveOrUpdate 开始 *********************/
 
 export {
-  behavior,
+  isType,
   activityRequest,
   setActivity,
   activityExtRequest,
