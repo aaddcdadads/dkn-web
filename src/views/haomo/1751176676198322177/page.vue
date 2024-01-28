@@ -112,7 +112,7 @@
                       :value="{}"
                       :col-num="0"
                       :col-min-width="380"
-                      :label-col="4"
+                      :label-col="3"
                       :wrapper-col="16"
                     >
                     </hm-ant-formily>
