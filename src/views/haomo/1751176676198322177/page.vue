@@ -515,6 +515,11 @@
                       box-shadow-blur=""
                       class="ele-3fb31f2b-4a48-499a-ba2a-8181388283b9"
                     >
+                      <div
+                        class="ele-wrapper ele-wrapper-79de068d-0a6b-4f11-8574-d654a6df22b7"
+                      >
+                        <hm-color-kit> </hm-color-kit>
+                      </div>
                     </hm-bg-card>
                   </div>
                 </hm-bg-card>
@@ -537,6 +542,7 @@ import HmAntDatePicker from "/@/components/built-in/jeecg/HmAntDatePicker.vue";
 import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
+import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 export default {
   name: "NewActivity",
@@ -549,6 +555,7 @@ export default {
     HmAntRadio,
     HmAntButton,
     HmAntTable,
+    HmColorKit,
   },
   data() {
     let self = this;
