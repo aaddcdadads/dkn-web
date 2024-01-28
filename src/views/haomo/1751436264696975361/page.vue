@@ -620,6 +620,26 @@
                       box-shadow-blur=""
                       class="ele-b67ccfbf-4079-4d3b-8032-de991cbb9cf1"
                     >
+                      <div
+                        class="ele-wrapper ele-wrapper-88a18c12-ceef-48d2-802a-aaccaf15f262"
+                      >
+                        <hm-ant-radio
+                          value="undefined"
+                          title="* 虚拟人数"
+                          :craido-l-ist="[
+                            { state: false, value: 'raido1' },
+                            { state: true, value: 'raido2' },
+                            { state: false, value: 'raido3' },
+                          ]"
+                        >
+                        </hm-ant-radio>
+                      </div>
+                      <div
+                        class="ele-wrapper ele-wrapper-74a974b1-b1f2-484d-98b5-1b8a379ff26b"
+                      >
+                        <hm-ant-input value="" title="* 活动人数">
+                        </hm-ant-input>
+                      </div>
                     </hm-bg-card>
                   </div>
                 </hm-bg-card>
@@ -696,6 +716,26 @@ export default {
         value: "",
       },
       "75d6efd4-b60c-4454-8b50-f6de5e604ddc": {
+        value: "",
+      },
+      "88a18c12-ceef-48d2-802a-aaccaf15f262": {
+        value: null,
+        craidoLIst: [
+          {
+            state: false,
+            value: "raido1",
+          },
+          {
+            state: true,
+            value: "raido2",
+          },
+          {
+            state: false,
+            value: "raido3",
+          },
+        ],
+      },
+      "74a974b1-b1f2-484d-98b5-1b8a379ff26b": {
         value: "",
       },
     };
