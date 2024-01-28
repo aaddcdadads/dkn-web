@@ -647,6 +647,22 @@ export default {
             },
             validator: function (value) {},
           },
+          activityId: {
+            type: "HmAntSelect",
+            title: "选择活动",
+            style: {
+              width: "50%",
+            },
+            props: {
+              title: "",
+              url: "/api/sys/dict/getDictItems/property_attribute",
+              dataMap: {
+                label: "name",
+                value: "id",
+              },
+            },
+            validator: function (value) {},
+          },
           paymentStatus: {
             type: "HmAntSelect",
             title: "报名状态",
