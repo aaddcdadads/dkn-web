@@ -116,20 +116,15 @@
                             box-shadow-color="#00000000"
                             class="ele-f3b16497-2ffc-45a3-97c8-f05703170de0"
                           >
-                            <div
-                              class="ele-wrapper ele-wrapper-fbc97e53-c2e7-4ff3-bb21-46569fccae5c"
-                            >
+                            <div class="ele-wrapper ele-wrapper-allStatus">
                               <hm-ant-select
-                                value="undefined"
+                                ref="allStatus"
+                                v-model:value="allStatus.value"
                                 title=""
                                 placeholder="批量操作"
-                                :options="[
-                                  { label: '启用', value: 1 },
-                                  { label: '停用', value: 2 },
-                                  { label: '删除', value: 3 },
-                                ]"
+                                v-model:options="allStatus.options"
                                 :label-width="0"
-                                class="ele-fbc97e53-c2e7-4ff3-bb21-46569fccae5c"
+                                class="ele-allStatus"
                               >
                               </hm-ant-select>
                             </div>
@@ -793,7 +788,7 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "fbc97e53-c2e7-4ff3-bb21-46569fccae5c": {
+      allStatus: {
         value: null,
         options: [
           {
@@ -950,7 +945,7 @@ export default {
   width: 400px;
 }
 
-.ele-wrapper-fbc97e53-c2e7-4ff3-bb21-46569fccae5c {
+.ele-wrapper-allStatus {
   margin-left: 20px;
 }
 
