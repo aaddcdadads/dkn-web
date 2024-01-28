@@ -959,8 +959,10 @@ export default {
     onEle128De5D58A3B40DaAbea0C30F1Be5Fe1Click() {
       //this.activityAddModal.visible = true;
       this.$router.push({
-        path: `/haomo/1751176953324376065/page`,
-        query: { type: 1 },
+        path: `/haomo/1751436264696975361/page`,
+        query: {
+          type: 1,
+        },
       });
     },
     onInvisibleImportSearchLogicBtnClick() {
