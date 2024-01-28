@@ -204,7 +204,7 @@
                                   title: '操作',
                                   key: 'action',
                                   slots: { customRender: 'action' },
-                                  width: 100,
+                                  width: 80,
                                 },
                               ]"
                               :data="[
