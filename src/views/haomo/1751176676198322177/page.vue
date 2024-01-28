@@ -114,6 +114,10 @@
                           style: { width: '100%' },
                           required: true,
                           props: {},
+                          enum: [
+                            { label: 'Option 1', value: 1 },
+                            { label: 'Option 2', value: 2 },
+                          ],
                         },
                       }"
                       :value="{}"
@@ -706,6 +710,16 @@ export default {
             },
             required: true,
             props: {},
+            enum: [
+              {
+                label: "Option 1",
+                value: 1,
+              },
+              {
+                label: "Option 2",
+                value: 2,
+              },
+            ],
           },
         },
         value: {},
