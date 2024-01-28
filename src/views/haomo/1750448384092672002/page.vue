@@ -818,7 +818,7 @@ export default {
             name: "查看详情",
             callback: function (item) {
               self.$router.push({
-                path: `/haomo/1751176953324376065/page`,
+                path: `/haomo/1751436264696975361/page`,
                 query: { type: 3, id: item.id },
               });
             },
@@ -828,7 +828,7 @@ export default {
             name: "编辑",
             callback: function (item) {
               self.$router.push({
-                path: `/haomo/1751176953324376065/page`,
+                path: `/haomo/1751436264696975361/page`,
                 query: { type: 2, id: item.id },
               });
               //self.activityEditModal.visible=true;
