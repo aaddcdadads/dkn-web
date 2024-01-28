@@ -27,6 +27,7 @@
                   text="创建活动"
                   icon="fa fa-tasks"
                   font-size="14px"
+                  class="ele-80d9b125-92bb-46b5-87b7-d8b4b451d860"
                 >
                 </hm-ant-icon-text>
               </div>
@@ -870,6 +871,13 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+}
+
+.ele-wrapper-80d9b125-92bb-46b5-87b7-d8b4b451d860 {
+  .hm-bg-text {
+    display: flex;
+    align-items: center;
   }
 }
 
