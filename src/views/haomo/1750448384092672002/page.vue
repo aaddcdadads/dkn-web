@@ -160,6 +160,7 @@
                   :background-color="activityTable.backgroundColor"
                   :row-class-name="activityTable.rowClassName"
                   @onSelect="onActivityTableOnSelect"
+                  @onSelectAll="onActivityTableOnSelectAll"
                   class="ele-activityTable"
                 >
                 </hm-ant-table>
@@ -857,7 +858,10 @@ export default {
       searchActivity(this, arguments);
     },
     onActivityTableOnSelect(e) {
-      console.log("===", e);
+      this.selectedRows = e.selectedRows;
+    },
+    onActivityTableOnSelectAll(e) {
+      this.selectedRows = e.selectedRows;
     },
     onActivityAddModalOk() {
       addActivity(this, arguments);
