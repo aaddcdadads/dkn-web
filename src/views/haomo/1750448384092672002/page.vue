@@ -927,8 +927,8 @@ export default {
         self.allModal.title = "启用";
         self.allText.text = "确定全部启用吗";
       } else if (self.allStatus.value === 2) {
-        self.allModal.title = "禁用";
-        self.allText.text = "确定全部禁用吗";
+        self.allModal.title = "停用";
+        self.allText.text = "确定全部停用吗";
       } else if (self.allStatus.value === 3) {
         self.allModal.title = "删除";
         self.allText.text = "确定全部删除吗";
