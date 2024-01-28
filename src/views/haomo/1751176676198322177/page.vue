@@ -390,12 +390,18 @@
                                     ' rule': {
                                       type: 'textarea',
                                       title: '活动规则',
-                                      style: { width: '100%' },
+                                      style: {
+                                        width: '100%',
+                                        borderColor: '#f2f2f2',
+                                      },
                                     },
                                     agreement: {
                                       type: 'textarea',
                                       title: '协议与承诺书',
-                                      style: { width: '100%' },
+                                      style: {
+                                        width: '100%',
+                                        borderColor: '#f2f2f2',
+                                      },
                                     },
                                   }"
                                   :value="{}"
@@ -690,6 +696,7 @@ export default {
             title: "活动规则",
             style: {
               width: "100%",
+              borderColor: "#f2f2f2",
             },
           },
           agreement: {
@@ -697,6 +704,7 @@ export default {
             title: "协议与承诺书",
             style: {
               width: "100%",
+              borderColor: "#f2f2f2",
             },
           },
         },
