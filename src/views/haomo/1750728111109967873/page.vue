@@ -734,7 +734,7 @@ export default {
                   value: 0,
                 },
                 {
-                  label: "未核销",
+                  label: "待核销",
                   value: 1,
                 },
               ],
