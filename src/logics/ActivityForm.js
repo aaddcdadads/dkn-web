@@ -12,9 +12,7 @@ let logic = {};
  * 发送添加请求
  */
 const addRequest = (logic.addRequest = async function () {
-  let res = await self.$postAction(`/api/dkn/activity/adds`, {
-    ...self.$refs.activityAddForm.getFormValues(),
-  });
+  let res = await self.$postAction(`/api/dkn/activity/adds`, self.item);
   self.addRequestData = res;
 });
 
@@ -23,7 +21,8 @@ const addRequest = (logic.addRequest = async function () {
  */
 const editRequest = (logic.editRequest = async function () {
   let res = await self.$postAction(`/api/dkn/activity/edits`, {
-    ...self.$refs.activityAddForm.getFormValues(),
+    ...self.item,
+    id: self.id,
   });
   self.editRequestData = res;
 });
