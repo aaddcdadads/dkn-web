@@ -748,13 +748,13 @@ export default {
           },
           {
             title: "报名人数",
-            dataIndex: "a",
-            key: "a",
+            dataIndex: "orders",
+            key: "orders",
           },
           {
             title: "核销人数",
-            dataIndex: "b",
-            key: "b",
+            dataIndex: "pickUps",
+            key: "pickUps",
           },
           {
             title: "启用状态",
