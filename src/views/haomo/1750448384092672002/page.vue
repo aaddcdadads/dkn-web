@@ -85,6 +85,37 @@
                 </hm-ant-button>
               </div>
               <div
+                class="ele-wrapper ele-wrapper-d14945f9-df7d-4dea-8143-5dba84132fcb"
+              >
+                <hm-bg-card
+                  width="100%"
+                  height=""
+                  border-radius=""
+                  padding=""
+                  box-shadow-color="#00000000"
+                  class="ele-d14945f9-df7d-4dea-8143-5dba84132fcb"
+                >
+                  <div
+                    class="ele-wrapper ele-wrapper-8984a56b-35a3-4433-a625-0b4ec5c21ad9"
+                  >
+                    <hm-ant-select
+                      value="undefined"
+                      :options="[
+                        { label: '启用', value: 1 },
+                        { label: '停用', value: 2 },
+                        { label: '删除', value: 3 },
+                      ]"
+                    >
+                    </hm-ant-select>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-89eabe54-3a5d-47b3-b646-8b1ae268d74c"
+                  >
+                    <hm-ant-button> </hm-ant-button>
+                  </div>
+                </hm-bg-card>
+              </div>
+              <div
                 class="ele-wrapper ele-wrapper-d305a01c-2a94-4341-899d-5e2787dbfd8b"
               >
                 <hm-panel
@@ -111,7 +142,7 @@
                           <hm-ant-formily
                             :config="{
                               channel: {
-                                type: 'Select',
+                                type: 'HmAntSelect',
                                 title: '',
                                 style: { width: '50%' },
                                 props: {
@@ -372,6 +403,7 @@ import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
+import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
@@ -394,6 +426,7 @@ export default {
     HmAntFormily,
     HmAntButton,
     HmAntUpload,
+    HmAntSelect,
     HmAntTable,
     HmModal,
     HmAntIconText,
@@ -796,10 +829,27 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
+      "8984a56b-35a3-4433-a625-0b4ec5c21ad9": {
+        value: null,
+        options: [
+          {
+            label: "启用",
+            value: 1,
+          },
+          {
+            label: "停用",
+            value: 2,
+          },
+          {
+            label: "删除",
+            value: 3,
+          },
+        ],
+      },
       "ef6acbd4-668c-4f2e-a883-67ce884a8791": {
         config: {
           channel: {
-            type: "Select",
+            type: "HmAntSelect",
             title: "",
             style: {
               width: "50%",
@@ -972,6 +1022,10 @@ export default {
 
 .ele-wrapper-exportButton {
   margin: 0 0 0 1%;
+}
+
+.ele-wrapper-d14945f9-df7d-4dea-8143-5dba84132fcb {
+  width: 100%;
 }
 
 .ele-wrapper-d305a01c-2a94-4341-899d-5e2787dbfd8b {
