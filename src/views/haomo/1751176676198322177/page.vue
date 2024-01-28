@@ -205,6 +205,7 @@
                                   dataIndex: '',
                                   key: 'action',
                                   slots: { customRender: 'action' },
+                                  width: 100,
                                 },
                               ]"
                               :pagination-hidden="true"
