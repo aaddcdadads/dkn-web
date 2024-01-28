@@ -76,16 +76,16 @@
                     >
                     </hm-ant-bg-text>
                   </div>
-                  <div class="ele-wrapper ele-wrapper-add">
+                  <div class="ele-wrapper ele-wrapper-activityForm">
                     <hm-ant-formily
-                      ref="add"
-                      :config="add.config"
-                      v-model:value="add.value"
+                      ref="activityForm"
+                      :config="activityForm.config"
+                      v-model:value="activityForm.value"
                       :col-num="0"
                       :col-min-width="380"
                       :label-col="3"
                       :wrapper-col="16"
-                      class="ele-add"
+                      class="ele-activityForm"
                     >
                     </hm-ant-formily>
                   </div>
@@ -680,7 +680,7 @@ export default {
   data() {
     let self = this;
     return {
-      add: {
+      activityForm: {
         config: {
           " name": {
             type: "Input",
@@ -862,7 +862,7 @@ export default {
   padding-left: 5px;
 }
 
-.ele-wrapper-add {
+.ele-wrapper-activityForm {
   margin-top: 15px;
   /deep/.ant-calendar-picker {
     width: 100%;
