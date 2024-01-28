@@ -178,7 +178,7 @@
                                   title: '项目费用',
                                   dataIndex: 'name',
                                   key: 'name',
-                                  width: 100,
+                                  width: 50,
                                 },
                                 {
                                   title: '活动项目名称',
