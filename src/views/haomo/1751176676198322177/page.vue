@@ -387,11 +387,11 @@
                               >
                                 <hm-ant-textarea
                                   value="undefined"
-                                  title="活动规则："
+                                  title="活动规则"
                                   :row="5"
                                   placeholder="请输入活动规则"
                                   :show-count="true"
-                                  :label-width="50"
+                                  :label-width="65"
                                 >
                                 </hm-ant-textarea>
                               </div>
