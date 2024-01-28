@@ -276,8 +276,16 @@ const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = functio
  * 参数处理
  */
 const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {
+  self.heXiaoDuo = [];
   self.selectTempArr.forEach((e) => {
-    console.log("aa123", e);
+    let par = {
+      orderId: e.id,
+      activityId: e.activityId,
+      storeId: e.storeId,
+      pickUpStatus: 0,
+      pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
+    };
+    self.heXiaoDuo.push(par);
   });
 });
 
