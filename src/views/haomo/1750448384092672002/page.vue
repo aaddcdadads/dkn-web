@@ -117,7 +117,7 @@
                         <div
                           class="ele-wrapper ele-wrapper-a9bfb5ef-3877-49fb-a1cf-f095389cbd2e"
                         >
-                          <hm-ant-button> </hm-ant-button>
+                          <hm-ant-button text="确认"> </hm-ant-button>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
@@ -154,6 +154,7 @@
                   :url="activityTable.url"
                   :params="activityTable.params"
                   :get-data-map="activityTable.getDataMap"
+                  :row-select-flag="activityTable.rowSelectFlag"
                   :actions="activityTable.actions"
                   :is-flat-action="activityTable.isFlatAction"
                   :background-color="activityTable.backgroundColor"
@@ -733,6 +734,7 @@ export default {
           total: "",
           list: "",
         },
+        rowSelectFlag: true,
         actions: [
           {
             name: "活动url",
