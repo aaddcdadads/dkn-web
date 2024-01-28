@@ -341,7 +341,6 @@
               title="删除"
               v-model:visible="allModal.visible"
               :closable="true"
-              ok-text="删除"
               :ok-type="'danger'"
               width="320px"
               :z-index="1000"
@@ -358,15 +357,14 @@
                   box-shadow-color="#00000000"
                   class="ele-a51e5f78-be7b-4837-96de-0d69fb368535"
                 >
-                  <div
-                    class="ele-wrapper ele-wrapper-d88dc3f4-0b7f-435f-b057-dc6379f45da1"
-                  >
+                  <div class="ele-wrapper ele-wrapper-allText">
                     <hm-ant-bg-text
+                      ref="allText"
                       text="是否要删除?"
                       color="#CF2323"
                       :text-align="'left'"
                       padding="0"
-                      class="ele-d88dc3f4-0b7f-435f-b057-dc6379f45da1"
+                      class="ele-allText"
                     >
                     </hm-ant-bg-text>
                   </div>
@@ -1050,7 +1048,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-d88dc3f4-0b7f-435f-b057-dc6379f45da1 {
+.ele-wrapper-allText {
   width: 60%;
 }
 
