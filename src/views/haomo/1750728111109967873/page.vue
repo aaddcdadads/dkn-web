@@ -113,9 +113,10 @@
                           </hm-ant-bg-text>
                         </div>
                         <div
-                          class="ele-wrapper ele-wrapper-a7cc528c-0520-403f-8561-d248a2175c3a"
+                          class="ele-wrapper ele-wrapper-bacthHeImportButton"
                         >
-                          <hm-ant-button> </hm-ant-button>
+                          <hm-ant-button ref="bacthHeImportButton">
+                          </hm-ant-button>
                         </div>
                         <div class="ele-wrapper ele-wrapper-activitySelect">
                           <hm-ant-select
@@ -960,6 +961,7 @@ export default {
 
 .ele-wrapper-activitySelect {
   margin-right: 20px;
+  display: none;
 }
 
 .ele-wrapper-baoMingImportButton {
