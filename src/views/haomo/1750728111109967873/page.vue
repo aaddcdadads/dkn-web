@@ -655,7 +655,7 @@ export default {
             },
             props: {
               title: "",
-              url: "/api/sys/dict/getDictItems/property_attribute",
+              url: "/api/dkn/activity/list",
               dataMap: {
                 label: "name",
                 value: "id",
