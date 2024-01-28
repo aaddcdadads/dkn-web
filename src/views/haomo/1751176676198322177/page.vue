@@ -108,6 +108,13 @@
                           required: true,
                           props: {},
                         },
+                        ActivityStatus: {
+                          type: 'RadioGroup',
+                          title: '核销截止',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {},
+                        },
                       }"
                       :value="{}"
                       :col-num="0"
@@ -117,53 +124,6 @@
                       class="ele-7714511a-00ae-4c70-afd4-04b3e388c348"
                     >
                     </hm-ant-formily>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-639c0497-f403-49a8-9af0-c2702f4de651"
-                  >
-                    <hm-ant-input
-                      value=""
-                      title="* 活动名称"
-                      :label-width="80"
-                      class="ele-639c0497-f403-49a8-9af0-c2702f4de651"
-                    >
-                    </hm-ant-input>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-40fb2133-1fe9-4649-a1ad-0b1548ce893b"
-                  >
-                    <hm-ant-date-picker
-                      title="* 活动周期"
-                      value="undefined"
-                      :is-range="false"
-                      :label-width="80"
-                      class="ele-40fb2133-1fe9-4649-a1ad-0b1548ce893b"
-                    >
-                    </hm-ant-date-picker>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-f7592ab1-717b-4609-b229-eff4f560e4d1"
-                  >
-                    <hm-ant-date-picker
-                      title="* 报名截止"
-                      value="undefined"
-                      :is-range="false"
-                      :label-width="80"
-                      class="ele-f7592ab1-717b-4609-b229-eff4f560e4d1"
-                    >
-                    </hm-ant-date-picker>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-0fda3cd4-4142-42c1-b685-e00abc7558ac"
-                  >
-                    <hm-ant-date-picker
-                      title="* 核销截止"
-                      value="undefined"
-                      :is-range="false"
-                      :label-width="80"
-                      class="ele-0fda3cd4-4142-42c1-b685-e00abc7558ac"
-                    >
-                    </hm-ant-date-picker>
                   </div>
                   <div
                     class="ele-wrapper ele-wrapper-b8b97a54-ee39-43be-9789-7822eae7f5f8"
@@ -680,8 +640,6 @@ import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
-import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
-import HmAntDatePicker from "/@/components/built-in/jeecg/HmAntDatePicker.vue";
 import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
@@ -694,8 +652,6 @@ export default {
     HmAntIconText,
     HmAntBgText,
     HmAntFormily,
-    HmAntInput,
-    HmAntDatePicker,
     HmAntRadio,
     HmAntButton,
     HmAntTable,
@@ -742,20 +698,17 @@ export default {
             required: true,
             props: {},
           },
+          ActivityStatus: {
+            type: "RadioGroup",
+            title: "核销截止",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
         },
         value: {},
-      },
-      "639c0497-f403-49a8-9af0-c2702f4de651": {
-        value: "",
-      },
-      "40fb2133-1fe9-4649-a1ad-0b1548ce893b": {
-        value: null,
-      },
-      "f7592ab1-717b-4609-b229-eff4f560e4d1": {
-        value: null,
-      },
-      "0fda3cd4-4142-42c1-b685-e00abc7558ac": {
-        value: null,
       },
       "b8b97a54-ee39-43be-9789-7822eae7f5f8": {
         value: null,
@@ -844,26 +797,6 @@ export default {
 
 .ele-wrapper-7714511a-00ae-4c70-afd4-04b3e388c348 {
   margin-top: 15px;
-}
-
-.ele-wrapper-639c0497-f403-49a8-9af0-c2702f4de651 {
-  margin: 10px 10px 0 10px;
-  display: block;
-}
-
-.ele-wrapper-40fb2133-1fe9-4649-a1ad-0b1548ce893b {
-  margin: 10px 10px 0 10px;
-  display: block;
-}
-
-.ele-wrapper-f7592ab1-717b-4609-b229-eff4f560e4d1 {
-  margin: 10px 10px 0 10px;
-  display: block;
-}
-
-.ele-wrapper-0fda3cd4-4142-42c1-b685-e00abc7558ac {
-  margin: 10px 10px 0 10px;
-  display: block;
 }
 
 .ele-wrapper-b8b97a54-ee39-43be-9789-7822eae7f5f8 {
