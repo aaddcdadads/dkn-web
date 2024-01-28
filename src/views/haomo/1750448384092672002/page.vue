@@ -106,6 +106,24 @@
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
                       >
                         <div
+                          class="ele-wrapper ele-wrapper-d57b023a-9d32-47d2-bbdb-36193875bc55"
+                        >
+                          <hm-ant-select
+                            value="undefined"
+                            :options="[
+                              { label: '启用', value: 1 },
+                              { label: '停用', value: 2 },
+                              { label: '删除', value: 3 },
+                            ]"
+                          >
+                          </hm-ant-select>
+                        </div>
+                        <div
+                          class="ele-wrapper ele-wrapper-47ff9558-5bd3-466c-8aac-4895903ffdc1"
+                        >
+                          <hm-ant-button> </hm-ant-button>
+                        </div>
+                        <div
                           class="ele-wrapper ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
                         >
                           <hm-ant-button
@@ -113,7 +131,6 @@
                             :type="'primary'"
                             icon="fa fa-plus"
                             @click="onEle128De5D58A3B40DaAbea0C30F1Be5Fe1Click"
-                            class="ele-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
                           >
                           </hm-ant-button>
                         </div>
@@ -329,6 +346,7 @@ import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
+import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
@@ -351,6 +369,7 @@ export default {
     HmAntFormily,
     HmAntButton,
     HmAntUpload,
+    HmAntSelect,
     HmAntTable,
     HmModal,
     HmAntIconText,
@@ -753,6 +772,23 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
+      "d57b023a-9d32-47d2-bbdb-36193875bc55": {
+        value: null,
+        options: [
+          {
+            label: "启用",
+            value: 1,
+          },
+          {
+            label: "停用",
+            value: 2,
+          },
+          {
+            label: "删除",
+            value: 3,
+          },
+        ],
+      },
     };
   },
   watch: {},
@@ -888,10 +924,6 @@ export default {
 
 .ele-wrapper-4aad8761-7b58-4d08-b5a2-91fea232f9fe {
   width: 100%;
-}
-
-.ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1 {
-  margin: 0 3% 0 1%;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
