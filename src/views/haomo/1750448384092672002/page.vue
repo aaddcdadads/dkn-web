@@ -335,12 +335,11 @@
               </div>
             </hm-modal>
           </div>
-          <div
-            class="ele-wrapper ele-wrapper-c1ad0f8b-7e68-43e2-a6da-0f774909a23c"
-          >
+          <div class="ele-wrapper ele-wrapper-allModal">
             <hm-modal
+              ref="allModal"
               title="删除"
-              :visible="false"
+              v-model:visible="allModal.visible"
               :closable="true"
               ok-text="删除"
               :ok-type="'danger'"
@@ -640,7 +639,7 @@ export default {
         },
         schema: {},
       },
-      "c1ad0f8b-7e68-43e2-a6da-0f774909a23c": {
+      allModal: {
         visible: false,
       },
       activityFilter: {
