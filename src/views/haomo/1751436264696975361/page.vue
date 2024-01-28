@@ -606,28 +606,38 @@
                       class="ele-messageRenedit"
                     >
                       <div
-                        class="ele-wrapper ele-wrapper-88a18c12-ceef-48d2-802a-aaccaf15f262"
+                        class="ele-wrapper ele-wrapper-5f05a8f7-ad2e-4f53-a4a7-fa48d9846d76"
                       >
-                        <hm-ant-radio
-                          value="undefined"
-                          title="* 虚拟人数"
-                          :craido-l-ist="[
-                            { state: true, value: '启用' },
-                            { state: false, value: '禁用' },
-                          ]"
+                        <hm-ant-formily
+                          :config="{
+                            'VirtualNumberPeople:': {
+                              type: 'RadioGroup',
+                              title: '核销截止',
+                              style: { width: '100%' },
+                              required: true,
+                              props: {
+                                options: [
+                                  { label: '启用', value: 0 },
+                                  { label: '禁用', value: 1 },
+                                ],
+                              },
+                            },
+                            ' name': {
+                              type: 'Input',
+                              title: '活动人数',
+                              style: { width: '100%' },
+                              required: true,
+                              props: {},
+                            },
+                          }"
+                          :value="{}"
+                          :col-num="0"
+                          :col-min-width="380"
+                          :label-col="3"
+                          :wrapper-col="16"
+                          class="ele-5f05a8f7-ad2e-4f53-a4a7-fa48d9846d76"
                         >
-                        </hm-ant-radio>
-                      </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-74a974b1-b1f2-484d-98b5-1b8a379ff26b"
-                      >
-                        <hm-ant-input
-                          value=""
-                          title="* 活动人数"
-                          width="400"
-                          class="ele-74a974b1-b1f2-484d-98b5-1b8a379ff26b"
-                        >
-                        </hm-ant-input>
+                        </hm-ant-formily>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -650,8 +660,6 @@ import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
-import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
-import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 
 export default {
   name: "ActivityEditingAndModification",
@@ -663,8 +671,6 @@ export default {
     HmAntButton,
     HmAntTable,
     HmColorKit,
-    HmAntRadio,
-    HmAntInput,
   },
   data() {
     let self = this;
@@ -768,21 +774,39 @@ export default {
         },
         value: {},
       },
-      "88a18c12-ceef-48d2-802a-aaccaf15f262": {
-        value: null,
-        craidoLIst: [
-          {
-            state: true,
-            value: "启用",
+      "5f05a8f7-ad2e-4f53-a4a7-fa48d9846d76": {
+        config: {
+          "VirtualNumberPeople:": {
+            type: "RadioGroup",
+            title: "核销截止",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "启用",
+                  value: 0,
+                },
+                {
+                  label: "禁用",
+                  value: 1,
+                },
+              ],
+            },
           },
-          {
-            state: false,
-            value: "禁用",
+          " name": {
+            type: "Input",
+            title: "活动人数",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
           },
-        ],
-      },
-      "74a974b1-b1f2-484d-98b5-1b8a379ff26b": {
-        value: "",
+        },
+        value: {},
       },
     };
   },
@@ -929,8 +953,7 @@ export default {
   }
 }
 
-.ele-wrapper-74a974b1-b1f2-484d-98b5-1b8a379ff26b {
+.ele-wrapper-5f05a8f7-ad2e-4f53-a4a7-fa48d9846d76 {
   width: 100%;
-  margin-top: 15px;
 }
 </style>
