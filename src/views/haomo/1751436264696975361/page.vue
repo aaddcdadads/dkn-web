@@ -609,16 +609,15 @@
                     >
                     </hm-ant-bg-text>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-b67ccfbf-4079-4d3b-8032-de991cbb9cf1"
-                  >
+                  <div class="ele-wrapper ele-wrapper-messageRenedit">
                     <hm-bg-card
+                      ref="messageRenedit"
                       width="100%"
                       height="100%"
                       border-radius=""
                       box-shadow-v-shadow=""
                       box-shadow-blur=""
-                      class="ele-b67ccfbf-4079-4d3b-8032-de991cbb9cf1"
+                      class="ele-messageRenedit"
                     >
                       <div
                         class="ele-wrapper ele-wrapper-88a18c12-ceef-48d2-802a-aaccaf15f262"
@@ -897,7 +896,7 @@ export default {
   padding-left: 5px;
 }
 
-.ele-wrapper-b67ccfbf-4079-4d3b-8032-de991cbb9cf1 {
+.ele-wrapper-messageRenedit {
   width: 100%;
 }
 </style>
