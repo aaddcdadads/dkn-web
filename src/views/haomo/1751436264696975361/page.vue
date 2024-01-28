@@ -302,7 +302,7 @@
                                       title: '奖品名称',
                                       dataIndex: 'age',
                                       key: 'age',
-                                      width: 50,
+                                      width: 80,
                                     },
                                     {
                                       title: '奖品排序',
