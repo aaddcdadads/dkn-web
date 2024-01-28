@@ -423,7 +423,8 @@
                                   value=""
                                   title="活动咨询客服"
                                   placeholder=""
-                                  width="350"
+                                  width="365"
+                                  :label-width="90"
                                   class="ele-75d6efd4-b60c-4454-8b50-f6de5e604ddc"
                                 >
                                 </hm-ant-input>
