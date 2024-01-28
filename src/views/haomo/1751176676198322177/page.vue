@@ -424,6 +424,7 @@
                                   title="活动咨询客服："
                                   placeholder=""
                                   width="350"
+                                  class="ele-75d6efd4-b60c-4454-8b50-f6de5e604ddc"
                                 >
                                 </hm-ant-input>
                               </div>
@@ -787,6 +788,10 @@ export default {
 
 .ele-wrapper-356b70ea-220b-42ce-abe3-5bc434ab112a {
   width: 500px;
+}
+
+.ele-wrapper-75d6efd4-b60c-4454-8b50-f6de5e604ddc {
+  margin-top: 15px;
 }
 
 .ele-wrapper-message_2 {
