@@ -115,8 +115,8 @@
                           required: true,
                           props: {
                             options: [
-                              { label: '节日前', value: 0 },
-                              { label: '节日当天', value: 1 },
+                              { label: '启用', value: 0 },
+                              { label: '禁用', value: 1 },
                             ],
                           },
                         },
@@ -713,11 +713,11 @@ export default {
             props: {
               options: [
                 {
-                  label: "节日前",
+                  label: "启用",
                   value: 0,
                 },
                 {
-                  label: "节日当天",
+                  label: "禁用",
                   value: 1,
                 },
               ],
