@@ -244,6 +244,37 @@ const startOrdersLoad = (logic.startOrdersLoad = async (pageVm, eventData) => {
 
 /********************** startOrdersHeXiao 开始 *********************/
 /**
+ * 批量核销请求
+ */
+const ajaxOrdersHeDuo = (logic.ajaxOrdersHeDuo = async function () {
+  let res = await self.$putAction(`/api/dkn/orderPickUp/pickBatch`, {});
+  self.ajaxOrdersHeDuoData = res;
+});
+
+/**
+ * 处理
+ */
+const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = function () {
+  self.$message.success(self.ajaxOrdersHeDuoData.message);
+  self.$refs.registrationOrdersTable.getData();
+  self.registrationOrdersDeleteModal.visible = false;
+});
+
+/**
+ * 处理
+ */
+const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = function () {
+  self.$message.error(self.ajaxOrdersHeDuoData.message);
+  self.$refs.registrationOrdersTable.getData();
+  self.registrationOrdersDeleteModal.visible = false;
+});
+
+/**
+ * 参数处理
+ */
+const behaviorOrdersHeXiaoOnePar = (logic.behaviorOrdersHeXiaoOnePar = function () {});
+
+/**
  * 单个请求
  */
 const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
@@ -273,32 +304,6 @@ const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = functio
 });
 
 /**
- * 批量核销请求
- */
-const ajaxOrdersHeDuo = (logic.ajaxOrdersHeDuo = async function () {
-  let res = await self.$putAction(`/api/dkn/orderPickUp/pickBatch`, {});
-  self.ajaxOrdersHeDuoData = res;
-});
-
-/**
- * 处理
- */
-const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = function () {
-  self.$message.success(self.ajaxOrdersHeDuoData.message);
-  self.$refs.registrationOrdersTable.getData();
-  self.registrationOrdersDeleteModal.visible = false;
-});
-
-/**
- * 处理
- */
-const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = function () {
-  self.$message.error(self.ajaxOrdersHeDuoData.message);
-  self.$refs.registrationOrdersTable.getData();
-  self.registrationOrdersDeleteModal.visible = false;
-});
-
-/**
  * 逻辑流 startOrdersHeXiao 入口函数
  */
 const startOrdersHeXiao = (logic.startOrdersHeXiao = async (
@@ -310,6 +315,7 @@ const startOrdersHeXiao = (logic.startOrdersHeXiao = async (
   self.startOrdersHeXiaoData = eventData;
 
   if (self.hexiaotype) {
+    behaviorOrdersHeXiaoOnePar();
     await ajaxOrdersHeXiaoOne();
     if (self.ajaxOrdersHeXiaoOneData.success) {
       behaviorOrdersHeXiaoOneSucc();
@@ -343,11 +349,12 @@ export {
   behaviorOrdersLoadSucc,
   behaviorOrdersLoadFaul,
   startOrdersLoad,
-  ajaxOrdersHeXiaoOne,
-  behaviorOrdersHeXiaoOneSucc,
-  behaviorOrdersHeXiaoOneFaul,
   ajaxOrdersHeDuo,
   behaviorOrdersHeXiaoDuoSucc,
   behaviorOrdersHeXiaoDuoFual,
+  behaviorOrdersHeXiaoOnePar,
+  ajaxOrdersHeXiaoOne,
+  behaviorOrdersHeXiaoOneSucc,
+  behaviorOrdersHeXiaoOneFaul,
   startOrdersHeXiao,
 };
