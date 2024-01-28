@@ -402,9 +402,10 @@
                               >
                                 <hm-ant-textarea
                                   value="undefined"
+                                  title="协议与承诺书"
                                   :row="5"
                                   width="500"
-                                  :label-width="65"
+                                  :label-width="95"
                                 >
                                 </hm-ant-textarea>
                               </div>
