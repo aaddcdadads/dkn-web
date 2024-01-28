@@ -791,6 +791,7 @@ export default {
 
 .ele-wrapper-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870 {
   width: 100%;
+  margin-top: 20px;
 }
 
 .ele-wrapper-message_2 {
