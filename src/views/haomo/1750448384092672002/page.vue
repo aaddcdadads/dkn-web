@@ -903,7 +903,19 @@ export default {
         }
       };
 
-      self.updateStatus = async function (id, status) {};
+      self.updateStatus = async function (id, status) {
+        let url = "/api/dkn/activity/edit";
+        let params = {
+          id,
+          status,
+        };
+        const res = await self.$putAction(url, params);
+        if (!res.success) {
+          self.$message.error(res.message);
+          return;
+        }
+        self.$message.success("操作成功");
+      };
     },
 
     onAddButtonClick() {
