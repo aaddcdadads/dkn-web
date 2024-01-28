@@ -270,11 +270,6 @@ const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = functio
 });
 
 /**
- * 参数处理
- */
-const behaviorOrdersHeXiaoOneParm = (logic.behaviorOrdersHeXiaoOneParm = function () {});
-
-/**
  * 单个请求
  */
 const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
@@ -315,7 +310,6 @@ const startOrdersHeXiao = (logic.startOrdersHeXiao = async (
   self.startOrdersHeXiaoData = eventData;
 
   if (self.hexiaotype) {
-    behaviorOrdersHeXiaoOneParm();
     await ajaxOrdersHeXiaoOne();
     if (self.ajaxOrdersHeXiaoOneData.success) {
       behaviorOrdersHeXiaoOneSucc();
@@ -352,7 +346,6 @@ export {
   ajaxOrdersHeDuo,
   behaviorOrdersHeXiaoDuoSucc,
   behaviorOrdersHeXiaoDuoFual,
-  behaviorOrdersHeXiaoOneParm,
   ajaxOrdersHeXiaoOne,
   behaviorOrdersHeXiaoOneSucc,
   behaviorOrdersHeXiaoOneFaul,
