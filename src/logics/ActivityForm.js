@@ -9,11 +9,6 @@ let logic = {};
 
 /********************** saveOrUpdate 开始 *********************/
 /**
- * 处理
- */
-const formValidate = (logic.formValidate = function () {});
-
-/**
  * 发送添加请求
  */
 const addRequest = (logic.addRequest = async function () {
@@ -41,7 +36,43 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
   self = Object.assign(pageVm, logic);
   self.saveOrUpdateData = eventData;
 
-  formValidate();
+  await self.$refs.activityForm.validate();
+  await self.$refs.activityExtForm.validate();
+  await self.$refs.activityTwoForm.validate();
+
+  let activityProjects = [],
+    activityImgs = [],
+    activityExts = [];
+  activityExts = [{ ...self.$refs.activityExtForm.getFormValues() }];
+  if (self.$refs.activityProjectTable.cData.length > 0) {
+    activityProjects = self.$refs.activityProjectTable.cData.map((x) => {
+      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
+      return x;
+    });
+  }
+  if (self.$refs.activityImgTableOne.cData.length > 0) {
+    activityProjects = self.$refs.activityImgTableOne.cData.map((x) => {
+      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
+      x.type = 0;
+      return x;
+    });
+  }
+  if (self.$refs.activityImgTableTwo.cData.length > 0) {
+    let list = self.$refs.activityImgTableTwo.cData.map((x) => {
+      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
+      x.type = 1;
+      return x;
+    });
+    activityProjects = [...activityProjects, ...list];
+  }
+  self.item = {
+    ...self.$refs.activityForm.getFormValues(),
+    ...self.$refs.activityExtForm.getFormValues(),
+    ...self.$refs.activityTwoForm.getFormValues(),
+    activityExts,
+    activityImgs,
+    activityExts,
+  };
   if (self.type === 1) {
     await addRequest();
     if (self.addRequestData.success) {
@@ -67,4 +98,4 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
 
 /********************** end saveOrUpdate 开始 *********************/
 
-export { formValidate, addRequest, editRequest, saveOrUpdate };
+export { addRequest, editRequest, saveOrUpdate };
