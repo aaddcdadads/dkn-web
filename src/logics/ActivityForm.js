@@ -52,7 +52,9 @@ const setActivityExt = (logic.setActivityExt = function () {
   }
   let item = self.activityExtRequestData.result.records[0];
   let activity = self.activityRequestData.result;
-  item.customerService = activity.customerService;
+  if (activity.customerService) {
+    item.customerService = activity.customerService;
+  }
   self.$refs.activityExtForm.setFormValues(item);
 });
 
