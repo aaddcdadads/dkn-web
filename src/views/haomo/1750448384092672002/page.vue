@@ -849,7 +849,7 @@ export default {
     };
   },
   watch: {},
-  mounted(e) {
+  async mounted(e) {
     this.onMounted(e);
   },
   methods: {
@@ -902,6 +902,8 @@ export default {
             });
         }
       };
+
+      self.updateStatus = async function (id, status) {};
     },
 
     onAddButtonClick() {
