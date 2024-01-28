@@ -713,6 +713,7 @@ export default {
             style: {
               width: "100%",
             },
+            props: {},
           },
         },
         value: {},
