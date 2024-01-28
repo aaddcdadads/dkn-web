@@ -136,7 +136,11 @@
                             <div
                               class="ele-wrapper ele-wrapper-bfbb7504-2d5c-4ab0-9c69-520665109534"
                             >
-                              <hm-ant-button> </hm-ant-button>
+                              <hm-ant-button
+                                text="确认"
+                                class="ele-bfbb7504-2d5c-4ab0-9c69-520665109534"
+                              >
+                              </hm-ant-button>
                             </div>
                           </hm-bg-card>
                         </div>
@@ -947,6 +951,10 @@ export default {
 }
 
 .ele-wrapper-fbc97e53-c2e7-4ff3-bb21-46569fccae5c {
+  margin-left: 20px;
+}
+
+.ele-wrapper-bfbb7504-2d5c-4ab0-9c69-520665109534 {
   margin-left: 20px;
 }
 
