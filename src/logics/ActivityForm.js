@@ -21,7 +21,14 @@ const activityRequest = (logic.activityRequest = async function () {
 /**
  * 处理
  */
-const setActivity = (logic.setActivity = function () {});
+const setActivity = (logic.setActivity = function () {
+  if (!self.activityRequestData.success || !self.activityRequestData.result) {
+    return;
+  }
+  let item = self.activityRequestData.result;
+  self.$refs.activityForm.setFormValues(item);
+  self.$refs.activityTwoForm.setFormValues(item);
+});
 
 /**
  * 活动拓展
