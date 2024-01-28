@@ -292,6 +292,7 @@
         "vite-plugin-theme/es/client",
         "vite-plugin-theme/es/colorUtils",
         "vue",
+        "vue-color-kit",
         "vue-cookie-next",
         "vue-i18n",
         "vue-json-pretty",

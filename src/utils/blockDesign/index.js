@@ -15,6 +15,7 @@ import { getFilterValues } from '/@/utils/util';
 import './index.css';
 
 export function registerBlockDesign(app) {
+  app.config.globalProperties.$accessAddress = import.meta.env.VITE_ACCESS_ADDRESS;
   app.config.globalProperties.$moment = moment;
   app.config.globalProperties.$axios = axios;
   app.config.globalProperties.$getAction = getAction;
