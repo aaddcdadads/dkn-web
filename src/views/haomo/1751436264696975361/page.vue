@@ -1003,6 +1003,7 @@ export default {
 
 .ele-wrapper-be6a0959-060d-4277-9590-2d5ddd2ab12e {
   margin-right: 5px;
+  margin-top: 10px;
   .ant-btn-lg {
     width: 140px;
   }
@@ -1010,6 +1011,7 @@ export default {
 
 .ele-wrapper-902e40e8-285f-4e3c-943d-eeafce2cbf7b {
   margin-left: 5px;
+  margin-top: 10px;
   .ant-btn-lg {
     width: 140px;
   }
