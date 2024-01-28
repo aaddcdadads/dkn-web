@@ -984,11 +984,14 @@ export default {
         let params = self.selectedRows.map((e) => {
           return e.id;
         });
-        const res = await self.$deleteAction(url, { ids: params.join(",") });
+        const res = await self.$deleteAction(url, {
+          ids: params.join(","),
+        });
         if (!res.success) {
           self.$message.error(res.message);
           return;
         }
+        self.selectedRows = [];
         self.$message.success("操作成功");
       }
       self.$refs.activityTable.getData();
