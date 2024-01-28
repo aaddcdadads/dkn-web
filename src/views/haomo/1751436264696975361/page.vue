@@ -285,74 +285,17 @@
                       box-shadow-blur=""
                       class="ele-89ea97da-357c-4295-9803-b1d0b63db0a2"
                     >
-                      <div
-                        class="ele-wrapper ele-wrapper-811f6987-6418-493f-8668-8d1795fc22e0"
-                      >
+                      <div class="ele-wrapper ele-wrapper-activityImgTableOne">
                         <hm-ant-table
-                          :columns="[
-                            {
-                              title: '奖品图片',
-                              dataIndex: 'name',
-                              key: 'name',
-                              width: 50,
-                            },
-                            {
-                              title: '奖品名称',
-                              dataIndex: 'age',
-                              key: 'age',
-                              width: 90,
-                            },
-                            {
-                              title: '奖品排序',
-                              dataIndex: 'address',
-                              key: 'address',
-                              ellipsis: true,
-                              width: 50,
-                            },
-                            {
-                              title: '操作',
-                              key: 'action',
-                              slots: { customRender: 'action' },
-                              width: 80,
-                            },
-                          ]"
-                          :data="[
-                            {
-                              key: '1',
-                              name: '¥0',
-                              age: '',
-                              address: '',
-                              sexual: '',
-                              school: '',
-                            },
-                            {
-                              key: '2',
-                              name: '¥ 29.9',
-                              age: '',
-                              address: '',
-                              sexual: '',
-                              school: '',
-                            },
-                          ]"
-                          :pagination-hidden="true"
-                          :actions="[
-                            {
-                              name: '编辑',
-                              callback:
-                                'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
-                              type: 'link',
-                              icon: 'fa fa-pencil',
-                            },
-                            {
-                              name: '删除',
-                              callback:
-                                'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
-                              type: 'link',
-                              icon: 'fa fa-trash',
-                            },
-                          ]"
-                          :is-flat-action="true"
-                          :row-class-name="{}"
+                          ref="activityImgTableOne"
+                          :columns="activityImgTableOne.columns"
+                          :data="activityImgTableOne.data"
+                          :pagination-hidden="
+                            activityImgTableOne.paginationHidden
+                          "
+                          :actions="activityImgTableOne.actions"
+                          :is-flat-action="activityImgTableOne.isFlatAction"
+                          :row-class-name="activityImgTableOne.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -792,6 +735,76 @@ export default {
           },
         },
         value: {},
+      },
+      activityImgTableOne: {
+        columns: [
+          {
+            title: "奖品图片",
+            dataIndex: "name",
+            key: "name",
+            width: 50,
+          },
+          {
+            title: "奖品名称",
+            dataIndex: "age",
+            key: "age",
+            width: 90,
+          },
+          {
+            title: "奖品排序",
+            dataIndex: "address",
+            key: "address",
+            ellipsis: true,
+            width: 50,
+          },
+          {
+            title: "操作",
+            key: "action",
+            slots: {
+              customRender: "action",
+            },
+            width: 80,
+          },
+        ],
+        data: [
+          {
+            key: "1",
+            name: "¥0",
+            age: "",
+            address: "",
+            sexual: "",
+            school: "",
+          },
+          {
+            key: "2",
+            name: "¥ 29.9",
+            age: "",
+            address: "",
+            sexual: "",
+            school: "",
+          },
+        ],
+        paginationHidden: true,
+        actions: [
+          {
+            name: "编辑",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+            },
+            type: "link",
+            icon: "fa fa-pencil",
+          },
+          {
+            name: "删除",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+            },
+            type: "link",
+            icon: "fa fa-trash",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       "5f05a8f7-ad2e-4f53-a4a7-fa48d9846d76": {
         config: {
