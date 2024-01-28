@@ -876,12 +876,12 @@ export default {
     onRegistrationOrdersTableOnSelectChange(item) {
       console.log("onSelectChange----", item);
       //this.selectTempArr = item.selectedRowKeys.length > 0 ? item.selectedRowKeys.toString() : null;
-      //      this.selectTempArr = item.selectedRows;
+      this.selectTempArr = item.selectedRows;
 
-      this.selectTempArr = item.selectedRows.filter(
+      let selectPropertyArr = this.selectTempArr.filter(
         (item) => item.paymentStatus === 1 || item.paymentStatus === 2
       );
-      if (this.selectTempArr.length == 0) {
+      if (selectPropertyArr.length == 0) {
         this.bacthHeImportButton.disabled = false;
       } else {
         this.$message.error("数据中存在已退款、待支付状态下不可核销");
