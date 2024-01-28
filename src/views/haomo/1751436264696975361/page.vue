@@ -645,6 +645,43 @@
               </div>
             </hm-bg-card>
           </div>
+          <div
+            class="ele-wrapper ele-wrapper-31135d90-70d1-42a3-b004-f8a7878760f4"
+          >
+            <hm-bg-card
+              width="100%"
+              height="100%"
+              border-radius=""
+              :text-align="'center'"
+              box-shadow-v-shadow=""
+              box-shadow-blur=""
+              class="ele-31135d90-70d1-42a3-b004-f8a7878760f4"
+            >
+              <div
+                class="ele-wrapper ele-wrapper-be6a0959-060d-4277-9590-2d5ddd2ab12e"
+              >
+                <hm-ant-button
+                  text="创建活动"
+                  :type="'primary'"
+                  :size="'large'"
+                  icon="fa fa-check-circle"
+                >
+                </hm-ant-button>
+              </div>
+              <div
+                class="ele-wrapper ele-wrapper-902e40e8-285f-4e3c-943d-eeafce2cbf7b"
+              >
+                <hm-ant-button
+                  text="重置"
+                  :type="'primary'"
+                  :size="'large'"
+                  :ghost="true"
+                  icon="fa fa-repeat"
+                >
+                </hm-ant-button>
+              </div>
+            </hm-bg-card>
+          </div>
         </hm-bg-card>
       </div>
     </div>
@@ -954,6 +991,10 @@ export default {
 }
 
 .ele-wrapper-5f05a8f7-ad2e-4f53-a4a7-fa48d9846d76 {
+  width: 100%;
+}
+
+.ele-wrapper-31135d90-70d1-42a3-b004-f8a7878760f4 {
   width: 100%;
 }
 </style>
