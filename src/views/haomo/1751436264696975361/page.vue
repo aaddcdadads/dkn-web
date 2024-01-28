@@ -998,6 +998,7 @@ export default {
 
 .ele-wrapper-31135d90-70d1-42a3-b004-f8a7878760f4 {
   width: 100%;
+  border-top: 1px solid #f2f2f2;
 }
 
 .ele-wrapper-be6a0959-060d-4277-9590-2d5ddd2ab12e {
