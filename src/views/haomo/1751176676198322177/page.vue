@@ -412,6 +412,88 @@
                     >
                     </hm-ant-bg-text>
                   </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      class="ele-89ea97da-357c-4295-9803-b1d0b63db0a2"
+                    >
+                      <div
+                        class="ele-wrapper ele-wrapper-811f6987-6418-493f-8668-8d1795fc22e0"
+                      >
+                        <hm-ant-table
+                          :columns="[
+                            {
+                              title: '奖品图片',
+                              dataIndex: 'name',
+                              key: 'name',
+                              width: 50,
+                            },
+                            {
+                              title: '奖品名称',
+                              dataIndex: 'age',
+                              key: 'age',
+                              width: 90,
+                            },
+                            {
+                              title: '奖品排序',
+                              dataIndex: 'address',
+                              key: 'address',
+                              ellipsis: true,
+                              width: 50,
+                            },
+                            {
+                              title: '操作',
+                              key: 'action',
+                              slots: { customRender: 'action' },
+                              width: 80,
+                            },
+                          ]"
+                          :data="[
+                            {
+                              key: '1',
+                              name: '¥0',
+                              age: '',
+                              address: '',
+                              sexual: '',
+                              school: '',
+                            },
+                            {
+                              key: '2',
+                              name: '¥ 29.9',
+                              age: '',
+                              address: '',
+                              sexual: '',
+                              school: '',
+                            },
+                          ]"
+                          :pagination-hidden="true"
+                          :actions="[
+                            {
+                              name: '编辑',
+                              callback:
+                                'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                              type: 'link',
+                            },
+                            {
+                              name: '删除',
+                              callback:
+                                'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                              type: 'link',
+                            },
+                          ]"
+                          :is-flat-action="true"
+                          :row-class-name="{}"
+                        >
+                        </hm-ant-table>
+                      </div>
+                    </hm-bg-card>
+                  </div>
                 </hm-bg-card>
               </div>
             </hm-bg-card>
@@ -580,5 +662,9 @@ export default {
 .ele-wrapper-fa713d7b-511f-4b6c-9f7a-37b66d33842e {
   border-left: 4px solid #0079fe;
   margin-top: 15px;
+}
+
+.ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
+  width: 100%;
 }
 </style>
