@@ -178,24 +178,27 @@
                                   title: '项目费用',
                                   dataIndex: 'name',
                                   key: 'name',
+                                  width: 100,
                                 },
                                 {
                                   title: '活动项目名称',
                                   dataIndex: 'age',
                                   key: 'age',
-                                  width: 80,
+                                  width: 100,
                                 },
                                 {
                                   title: '项目简历',
                                   dataIndex: 'address',
                                   key: 'address',
                                   ellipsis: true,
+                                  width: 100,
                                 },
                                 {
                                   title: '排序',
                                   dataIndex: 'sexual',
                                   key: 'sexual',
                                   ellipsis: true,
+                                  width: 50,
                                 },
                                 {
                                   title: '操作',
