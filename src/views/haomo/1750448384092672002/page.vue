@@ -106,40 +106,6 @@
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
                       >
                         <div
-                          class="ele-wrapper ele-wrapper-f3b16497-2ffc-45a3-97c8-f05703170de0"
-                        >
-                          <hm-bg-card
-                            width="100%"
-                            height=""
-                            border-radius=""
-                            padding=""
-                            box-shadow-color="#00000000"
-                            class="ele-f3b16497-2ffc-45a3-97c8-f05703170de0"
-                          >
-                            <div class="ele-wrapper ele-wrapper-allStatus">
-                              <hm-ant-select
-                                ref="allStatus"
-                                v-model:value="allStatus.value"
-                                title=""
-                                placeholder="批量操作"
-                                v-model:options="allStatus.options"
-                                :label-width="0"
-                                class="ele-allStatus"
-                              >
-                              </hm-ant-select>
-                            </div>
-                            <div
-                              class="ele-wrapper ele-wrapper-bfbb7504-2d5c-4ab0-9c69-520665109534"
-                            >
-                              <hm-ant-button
-                                text="确认"
-                                class="ele-bfbb7504-2d5c-4ab0-9c69-520665109534"
-                              >
-                              </hm-ant-button>
-                            </div>
-                          </hm-bg-card>
-                        </div>
-                        <div
                           class="ele-wrapper ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
                         >
                           <hm-ant-button
@@ -363,7 +329,6 @@ import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
-import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
@@ -386,7 +351,6 @@ export default {
     HmAntFormily,
     HmAntButton,
     HmAntUpload,
-    HmAntSelect,
     HmAntTable,
     HmModal,
     HmAntIconText,
@@ -591,23 +555,7 @@ export default {
         },
         schema: {},
       },
-      allStatus: {
-        value: null,
-        options: [
-          {
-            label: "启用",
-            value: 1,
-          },
-          {
-            label: "停用",
-            value: 2,
-          },
-          {
-            label: "删除",
-            value: 3,
-          },
-        ],
-      },
+      allStatus: {},
       activityFilter: {
         config: {
           name: {
@@ -939,19 +887,7 @@ export default {
 }
 
 .ele-wrapper-4aad8761-7b58-4d08-b5a2-91fea232f9fe {
-  width: 700px;
-}
-
-.ele-wrapper-f3b16497-2ffc-45a3-97c8-f05703170de0 {
-  width: 400px;
-}
-
-.ele-wrapper-allStatus {
-  margin-left: 20px;
-}
-
-.ele-wrapper-bfbb7504-2d5c-4ab0-9c69-520665109534 {
-  margin-left: 20px;
+  width: 100%;
 }
 
 .ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1 {
