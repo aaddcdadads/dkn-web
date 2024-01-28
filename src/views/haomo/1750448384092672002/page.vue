@@ -111,9 +111,9 @@
                           <hm-ant-formily
                             :config="{
                               channel: {
-                                type: 'HmAntSelect',
+                                type: 'Select',
                                 title: '',
-                                style: { width: '50%' },
+                                style: { width: '100%' },
                                 props: {
                                   title: '',
                                   options: [
@@ -799,10 +799,10 @@ export default {
       "ef6acbd4-668c-4f2e-a883-67ce884a8791": {
         config: {
           channel: {
-            type: "HmAntSelect",
+            type: "Select",
             title: "",
             style: {
-              width: "50%",
+              width: "100%",
             },
             props: {
               title: "",
