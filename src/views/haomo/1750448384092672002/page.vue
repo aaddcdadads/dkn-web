@@ -703,7 +703,9 @@ export default {
         actions: [
           {
             name: "活动url",
-            callback: function (item) {},
+            callback: function (item) {
+              self.copyUrl(item.id);
+            },
             type: "link",
           },
           {

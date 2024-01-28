@@ -494,6 +494,16 @@
                       </div>
                     </hm-bg-card>
                   </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-56aec4a5-4b22-4f3e-9572-bd54033fe687"
+                  >
+                    <hm-ant-bg-text
+                      text="报名页信息框颜色设置"
+                      font-size="14px"
+                      class="ele-56aec4a5-4b22-4f3e-9572-bd54033fe687"
+                    >
+                    </hm-ant-bg-text>
+                  </div>
                 </hm-bg-card>
               </div>
             </hm-bg-card>
@@ -665,5 +675,10 @@ export default {
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
   width: 100%;
+}
+
+.ele-wrapper-56aec4a5-4b22-4f3e-9572-bd54033fe687 {
+  border-left: 4px solid #0079fe;
+  margin-top: 15px;
 }
 </style>
