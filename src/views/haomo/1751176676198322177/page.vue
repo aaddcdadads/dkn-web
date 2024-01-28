@@ -398,23 +398,15 @@
                                 </hm-ant-textarea>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-59114955-33f9-46b9-a0d6-b457a8719c71"
+                                class="ele-wrapper ele-wrapper-ca4ac50f-a548-409e-84c1-a0e0272f0bc6"
                               >
-                                <hm-ant-bg-text
-                                  text="协议与承诺书："
-                                  font-size="14px"
+                                <hm-ant-textarea
+                                  value="undefined"
+                                  :row="5"
+                                  width="500"
+                                  :label-width="65"
                                 >
-                                </hm-ant-bg-text>
-                              </div>
-                              <div
-                                class="ele-wrapper ele-wrapper-356b70ea-220b-42ce-abe3-5bc434ab112a"
-                              >
-                                <hm-wang-editor
-                                  value=""
-                                  :max-content-length="2"
-                                  class="ele-356b70ea-220b-42ce-abe3-5bc434ab112a"
-                                >
-                                </hm-wang-editor>
+                                </hm-ant-textarea>
                               </div>
                               <div
                                 class="ele-wrapper ele-wrapper-75d6efd4-b60c-4454-8b50-f6de5e604ddc"
@@ -619,7 +611,6 @@ import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmAntTextarea from "/@/components/built-in/jeecg/HmAntTextarea.vue";
-import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 export default {
@@ -634,7 +625,6 @@ export default {
     HmAntButton,
     HmAntTable,
     HmAntTextarea,
-    HmWangEditor,
     HmColorKit,
   },
   data() {
@@ -668,8 +658,8 @@ export default {
       "27e450ac-6e1d-487c-9056-b40fd492c883": {
         value: null,
       },
-      "356b70ea-220b-42ce-abe3-5bc434ab112a": {
-        value: "",
+      "ca4ac50f-a548-409e-84c1-a0e0272f0bc6": {
+        value: null,
       },
       "75d6efd4-b60c-4454-8b50-f6de5e604ddc": {
         value: "",
@@ -785,10 +775,6 @@ export default {
 
 .ele-wrapper-27e450ac-6e1d-487c-9056-b40fd492c883 {
   width: 100%;
-}
-
-.ele-wrapper-356b70ea-220b-42ce-abe3-5bc434ab112a {
-  width: 500px;
 }
 
 .ele-wrapper-75d6efd4-b60c-4454-8b50-f6de5e604ddc {
