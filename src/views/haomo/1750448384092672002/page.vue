@@ -145,6 +145,7 @@
                             :col-min-width="380"
                             :label-col="7"
                             :wrapper-col="14"
+                            class="ele-ef6acbd4-668c-4f2e-a883-67ce884a8791"
                           >
                           </hm-ant-formily>
                         </div>
@@ -979,6 +980,12 @@ export default {
 
 .ele-wrapper-4aad8761-7b58-4d08-b5a2-91fea232f9fe {
   width: 100%;
+}
+
+.ele-wrapper-ef6acbd4-668c-4f2e-a883-67ce884a8791 {
+  width: 70%;
+  margin: 1%;
+  margin-bottom: 0;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
