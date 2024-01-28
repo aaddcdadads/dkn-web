@@ -401,6 +401,11 @@
                                       title: '协议与承诺书',
                                       style: { width: '100%' },
                                     },
+                                    customerService: {
+                                      type: 'input',
+                                      title: '活动咨询与客服',
+                                      style: { width: '100%' },
+                                    },
                                   }"
                                   :value="{}"
                                   :col-num="0"
@@ -410,33 +415,6 @@
                                   class="ele-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
                                 >
                                 </hm-ant-formily>
-                              </div>
-                              <div
-                                class="ele-wrapper ele-wrapper-27e450ac-6e1d-487c-9056-b40fd492c883"
-                              >
-                                <hm-ant-textarea
-                                  value="undefined"
-                                  title="活动规则"
-                                  :row="5"
-                                  placeholder="请输入活动规则"
-                                  :show-count="true"
-                                  width="500"
-                                  :label-width="65"
-                                  class="ele-27e450ac-6e1d-487c-9056-b40fd492c883"
-                                >
-                                </hm-ant-textarea>
-                              </div>
-                              <div
-                                class="ele-wrapper ele-wrapper-ca4ac50f-a548-409e-84c1-a0e0272f0bc6"
-                              >
-                                <hm-ant-textarea
-                                  value="undefined"
-                                  title="协议与承诺书"
-                                  :row="5"
-                                  width="500"
-                                  :label-width="95"
-                                >
-                                </hm-ant-textarea>
                               </div>
                               <div
                                 class="ele-wrapper ele-wrapper-75d6efd4-b60c-4454-8b50-f6de5e604ddc"
@@ -641,7 +619,6 @@ import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
-import HmAntTextarea from "/@/components/built-in/jeecg/HmAntTextarea.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 export default {
@@ -656,7 +633,6 @@ export default {
     HmAntButton,
     HmAntTable,
     HmAntFormily,
-    HmAntTextarea,
     HmColorKit,
   },
   data() {
@@ -707,14 +683,15 @@ export default {
               width: "100%",
             },
           },
+          customerService: {
+            type: "input",
+            title: "活动咨询与客服",
+            style: {
+              width: "100%",
+            },
+          },
         },
         value: {},
-      },
-      "27e450ac-6e1d-487c-9056-b40fd492c883": {
-        value: null,
-      },
-      "ca4ac50f-a548-409e-84c1-a0e0272f0bc6": {
-        value: null,
       },
       "75d6efd4-b60c-4454-8b50-f6de5e604ddc": {
         value: "",
@@ -829,10 +806,6 @@ export default {
 }
 
 .ele-wrapper-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870 {
-  width: 100%;
-}
-
-.ele-wrapper-27e450ac-6e1d-487c-9056-b40fd492c883 {
   width: 100%;
 }
 
