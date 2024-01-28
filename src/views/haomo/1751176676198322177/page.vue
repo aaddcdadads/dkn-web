@@ -701,6 +701,7 @@ export default {
 
 .ele-wrapper-fa713d7b-511f-4b6c-9f7a-37b66d33842e {
   border-left: 4px solid #0079fe;
+  margin-left: 8px;
 }
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
@@ -710,6 +711,7 @@ export default {
 .ele-wrapper-56aec4a5-4b22-4f3e-9572-bd54033fe687 {
   border-left: 4px solid #0079fe;
   margin-top: 15px;
+  margin-left: 8px;
 }
 
 .ele-wrapper-3fb31f2b-4a48-499a-ba2a-8181388283b9 {
@@ -719,5 +721,6 @@ export default {
 .ele-wrapper-c9bf9691-385d-414d-864e-a07073520b33 {
   border-left: 4px solid #0079fe;
   margin-top: 15px;
+  margin-left: 8px;
 }
 </style>
