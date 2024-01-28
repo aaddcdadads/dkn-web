@@ -208,6 +208,26 @@
                                   width: 100,
                                 },
                               ]"
+                              :data="[
+                                {
+                                  key: '1',
+                                  name: '¥0',
+                                  age: 32,
+                                  address:
+                                    'New York No. 1 Lake Park, New York No. 1 Lake Park',
+                                  sexual: '男',
+                                  school: '加里敦大学',
+                                },
+                                {
+                                  key: '2',
+                                  name: '¥ 29.9',
+                                  age: 42,
+                                  address:
+                                    'London No. 2 Lake Park, London No. 2 Lake Park',
+                                  sexual: '男',
+                                  school: '加里敦大学',
+                                },
+                              ]"
                               :pagination-hidden="true"
                               :actions="[
                                 {
