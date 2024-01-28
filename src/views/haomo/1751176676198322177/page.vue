@@ -348,6 +348,16 @@
                               </div>
                             </hm-bg-card>
                           </div>
+                          <div
+                            class="ele-wrapper ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48"
+                          >
+                            <hm-ant-bg-text
+                              text="活动信息"
+                              font-size="14px"
+                              class="ele-633b539d-81dc-4e94-af68-dfba9182db48"
+                            >
+                            </hm-ant-bg-text>
+                          </div>
                         </hm-bg-card>
                       </div>
                     </hm-bg-card>
@@ -506,6 +516,11 @@ export default {
 
 .ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c {
   width: 100%;
+}
+
+.ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
+  border-left: 3px solid #0079fe;
+  margin-top: 15px;
 }
 
 .ele-wrapper-message_2 {
