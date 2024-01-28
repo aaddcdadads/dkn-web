@@ -161,7 +161,15 @@
                       <div
                         class="ele-wrapper ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f"
                       >
-                        <hm-bg-card> </hm-bg-card>
+                        <hm-bg-card
+                          width="100%"
+                          height="100%"
+                          border-radius=""
+                          box-shadow-v-shadow=""
+                          box-shadow-blur=""
+                          class="ele-678d6f52-6548-4f95-b813-d079ff38bb6f"
+                        >
+                        </hm-bg-card>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -298,6 +306,10 @@ export default {
 
 .ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12 {
   margin-left: 5px;
+}
+
+.ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f {
+  width: 100%;
 }
 
 .ele-wrapper-message_2 {
