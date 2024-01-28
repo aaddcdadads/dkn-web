@@ -874,9 +874,15 @@ export default {
 
 .ele-wrapper-78fb2568-9250-4a78-987d-c766b916f771 {
   margin-right: 5px;
+  .ant-btn-lg {
+    width: 140px;
+  }
 }
 
 .ele-wrapper-b0a42962-4301-4b4d-9525-05bfef232b34 {
   margin-left: 5px;
+  .ant-btn-lg {
+    width: 140px;
+  }
 }
 </style>
