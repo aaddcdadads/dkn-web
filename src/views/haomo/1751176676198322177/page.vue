@@ -398,6 +398,7 @@
                                   :col-min-width="380"
                                   :label-col="8"
                                   :wrapper-col="14"
+                                  class="ele-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -804,6 +805,10 @@ export default {
 }
 
 .ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41 {
+  width: 100%;
+}
+
+.ele-wrapper-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870 {
   width: 100%;
 }
 
