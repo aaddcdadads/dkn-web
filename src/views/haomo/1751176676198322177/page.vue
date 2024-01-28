@@ -113,11 +113,12 @@
                           title: '核销截止',
                           style: { width: '100%' },
                           required: true,
-                          props: {},
-                          enum: [
-                            { label: 'Option 1', value: 1 },
-                            { label: 'Option 2', value: 2 },
-                          ],
+                          props: {
+                            options: [
+                              { label: '节日前', value: 0 },
+                              { label: '节日当天', value: 1 },
+                            ],
+                          },
                         },
                       }"
                       :value="{}"
@@ -709,17 +710,18 @@ export default {
               width: "100%",
             },
             required: true,
-            props: {},
-            enum: [
-              {
-                label: "Option 1",
-                value: 1,
-              },
-              {
-                label: "Option 2",
-                value: 2,
-              },
-            ],
+            props: {
+              options: [
+                {
+                  label: "节日前",
+                  value: 0,
+                },
+                {
+                  label: "节日当天",
+                  value: 1,
+                },
+              ],
+            },
           },
         },
         value: {},
