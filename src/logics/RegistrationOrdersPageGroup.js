@@ -247,7 +247,7 @@ const startOrdersLoad = (logic.startOrdersLoad = async (pageVm, eventData) => {
  * 单个请求
  */
 const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
-  let res = await self.$putAction(`/api/dkn/orderPickUp/edit`, {
+  let res = await self.$putAction(`/api/dkn/orderPickUp/addHe`, {
     id: self.currentRegistrationOrdersId,
     pickUpStatus: 0,
   });
