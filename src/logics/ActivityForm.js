@@ -44,10 +44,24 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
   formValidate();
   if (self.type === 1) {
     await addRequest();
-    self.$refs.activityTable.getData();
+    if (self.addRequestData.success) {
+      self.$message.error(self.addRequestData.message);
+      return;
+    }
+    self.$message.success("操作成功");
+    self.$router.push({
+      path: `/haomo/1750448384092672002/page`,
+    });
   } else {
     await editRequest();
-    self.$message.success("添加成功");
+    if (self.editRequestData.success) {
+      self.$message.error(self.editRequestData.message);
+      return;
+    }
+    self.$message.success("操作成功");
+    self.$router.push({
+      path: `/haomo/1750448384092672002/page`,
+    });
   }
 });
 
