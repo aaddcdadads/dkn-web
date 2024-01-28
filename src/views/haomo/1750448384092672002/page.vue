@@ -874,6 +874,7 @@ export default {
       self.allStatus.value = null;
       self.allModal.title = null;
       self.allText.text = null;
+      self.selectedRows = [];
 
       self.copyUrl = function (id) {
         let url = `${this.$accessAddress}?id=${id}`;
