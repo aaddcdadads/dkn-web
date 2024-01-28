@@ -9,11 +9,6 @@ let logic = {};
 
 /********************** detail 开始 *********************/
 /**
- * 处理
- */
-const isType = (logic.isType = function () {});
-
-/**
  * 获取活动
  */
 const activityRequest = (logic.activityRequest = async function () {
@@ -73,7 +68,34 @@ const detail = (logic.detail = async (pageVm, eventData) => {
   self = Object.assign(pageVm, logic);
   self.detailData = eventData;
 
-  isType();
+  self.id = self.$route.query.id;
+  self.type = self.$route.query.type;
+  if (!self.id || self.type === 1) {
+    return;
+  }
+  if (self.type === 3) {
+    for (let item in self.activityForm.config) {
+      self.activityForm.config[key].props.disabled = true;
+    }
+    for (let item in self.activityExtForm.config) {
+      self.activityExtForm.config[key].props.disabled = true;
+    }
+    for (let item in self.activityTwoForm.config) {
+      self.activityTwoForm.config[key].props.disabled = true;
+    }
+    self.activityProjectTable.columns.splice(
+      self.activityProjectTable.columns.length - 1,
+      1
+    );
+    self.activityImgTableOne.columns.splice(
+      self.activityImgTableOne.columns.length - 1,
+      1
+    );
+    self.activityImgTableTwo.columns.splice(
+      self.activityImgTableTwo.columns.length - 1,
+      1
+    );
+  }
   await activityRequest();
   setActivity();
   await activityExtRequest();
@@ -177,7 +199,6 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
 /********************** end saveOrUpdate 开始 *********************/
 
 export {
-  isType,
   activityRequest,
   setActivity,
   activityExtRequest,
