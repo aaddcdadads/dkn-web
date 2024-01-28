@@ -92,21 +92,21 @@
                           title: '活动周期',
                           style: { width: '100%' },
                           required: true,
-                          props: { showTime: true },
+                          props: {},
                         },
                         EntryClose: {
                           type: 'DatePicker',
                           title: '* 报名截止',
                           style: { width: '100%' },
                           required: true,
-                          props: {},
+                          props: { showTime: true },
                         },
                         VerificationDeadline: {
                           type: 'DatePicker',
                           title: '* 核销截止',
                           style: { width: '100%' },
                           required: true,
-                          props: {},
+                          props: { showTime: true },
                         },
                         ActivityStatus: {
                           type: 'RadioGroup',
@@ -673,9 +673,7 @@ export default {
               width: "100%",
             },
             required: true,
-            props: {
-              showTime: true,
-            },
+            props: {},
           },
           EntryClose: {
             type: "DatePicker",
@@ -684,7 +682,9 @@ export default {
               width: "100%",
             },
             required: true,
-            props: {},
+            props: {
+              showTime: true,
+            },
           },
           VerificationDeadline: {
             type: "DatePicker",
@@ -693,7 +693,9 @@ export default {
               width: "100%",
             },
             required: true,
-            props: {},
+            props: {
+              showTime: true,
+            },
           },
           ActivityStatus: {
             type: "RadioGroup",
