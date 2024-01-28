@@ -326,6 +326,7 @@
                                       school: '',
                                     },
                                   ]"
+                                  :pagination-hidden="true"
                                   :actions="[
                                     {
                                       name: '编辑',
