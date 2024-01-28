@@ -393,8 +393,14 @@
                                   :show-count="true"
                                   width="500"
                                   :label-width="65"
+                                  class="ele-27e450ac-6e1d-487c-9056-b40fd492c883"
                                 >
                                 </hm-ant-textarea>
+                              </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-59114955-33f9-46b9-a0d6-b457a8719c71"
+                              >
+                                <hm-ant-bg-text> </hm-ant-bg-text>
                               </div>
                               <div
                                 class="ele-wrapper ele-wrapper-356b70ea-220b-42ce-abe3-5bc434ab112a"
@@ -402,6 +408,7 @@
                                 <hm-wang-editor
                                   value=""
                                   :max-content-length="2"
+                                  class="ele-356b70ea-220b-42ce-abe3-5bc434ab112a"
                                 >
                                 </hm-wang-editor>
                               </div>
@@ -754,6 +761,14 @@ export default {
 
 .ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41 {
   width: 100%;
+}
+
+.ele-wrapper-27e450ac-6e1d-487c-9056-b40fd492c883 {
+  width: 100%;
+}
+
+.ele-wrapper-356b70ea-220b-42ce-abe3-5bc434ab112a {
+  width: 500px;
 }
 
 .ele-wrapper-message_2 {
