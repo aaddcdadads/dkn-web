@@ -617,8 +617,9 @@
               >
                 <hm-ant-button
                   text="重置"
-                  :type="''"
+                  :type="'primary'"
                   :size="'large'"
+                  :ghost="false"
                   icon="fa fa-repeat"
                   class="ele-b0a42962-4301-4b4d-9525-05bfef232b34"
                 >
