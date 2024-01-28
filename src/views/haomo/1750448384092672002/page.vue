@@ -984,7 +984,7 @@ export default {
         let params = self.selectedRows.map((e) => {
           return e.id;
         });
-        const res = await self.$deleteAction(url, params.join(","));
+        const res = await self.$deleteAction(url, { ids: params.join(",") });
         if (!res.success) {
           self.$message.error(res.message);
           return;
