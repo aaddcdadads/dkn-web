@@ -991,6 +991,7 @@ export default {
         }
         self.$message.success("操作成功");
       }
+      self.$refs.activityTable.getData();
     },
   },
 };
