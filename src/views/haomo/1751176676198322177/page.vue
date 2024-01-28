@@ -427,10 +427,8 @@
                                       type: 'TextArea',
                                       title: '活动规则',
                                       style: { width: '100%' },
-                                      props: {
-                                        'show-count': true,
-                                        width: '700px',
-                                      },
+                                      props: {},
+                                      'x-component-props': { showCount: true },
                                     },
                                     agreement: {
                                       type: 'TextArea',
@@ -763,9 +761,9 @@ export default {
             style: {
               width: "100%",
             },
-            props: {
-              "show-count": true,
-              width: "700px",
+            props: {},
+            "x-component-props": {
+              showCount: true,
             },
           },
           agreement: {
