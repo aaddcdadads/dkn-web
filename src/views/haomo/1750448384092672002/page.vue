@@ -338,7 +338,7 @@
           <div class="ele-wrapper ele-wrapper-allModal">
             <hm-modal
               ref="allModal"
-              title="删除"
+              :title="allModal.title"
               v-model:visible="allModal.visible"
               :closable="true"
               :ok-type="'danger'"
@@ -360,10 +360,10 @@
                   <div class="ele-wrapper ele-wrapper-allText">
                     <hm-ant-bg-text
                       ref="allText"
-                      text="是否要删除?"
-                      color="#CF2323"
-                      :text-align="'left'"
-                      padding="0"
+                      :text="allText.text"
+                      :color="allText.color"
+                      :text-align="allText.textAlign"
+                      :padding="allText.padding"
                       class="ele-allText"
                     >
                     </hm-ant-bg-text>
@@ -638,7 +638,14 @@ export default {
         schema: {},
       },
       allModal: {
+        title: "删除",
         visible: false,
+      },
+      allText: {
+        text: "是否要删除?",
+        color: "#CF2323",
+        textAlign: "left",
+        padding: "0",
       },
       activityFilter: {
         config: {
@@ -864,6 +871,9 @@ export default {
       });
       let self = this;
       self.allStatus.value = null;
+      self.allModal.title = null;
+      self.allText.text = null;
+
       self.copyUrl = function (id) {
         let url = `${this.$accessAddress}?id=${id}`;
         let self = this;
