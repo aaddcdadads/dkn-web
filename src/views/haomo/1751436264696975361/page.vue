@@ -134,81 +134,22 @@
                           class="ele-678d6f52-6548-4f95-b813-d079ff38bb6f"
                         >
                           <div
-                            class="ele-wrapper ele-wrapper-25b5309c-c34c-4da3-a7c0-afa25d079608"
+                            class="ele-wrapper ele-wrapper-activityProjectTable"
                           >
                             <hm-ant-table
-                              :columns="[
-                                {
-                                  title: '项目费用',
-                                  dataIndex: 'name',
-                                  key: 'name',
-                                  width: 50,
-                                },
-                                {
-                                  title: '活动项目名称',
-                                  dataIndex: 'age',
-                                  key: 'age',
-                                  ellipsis: true,
-                                  width: 90,
-                                },
-                                {
-                                  title: '项目简历',
-                                  dataIndex: 'address',
-                                  key: 'address',
-                                  ellipsis: true,
-                                  width: 80,
-                                },
-                                {
-                                  title: '排序',
-                                  dataIndex: 'sexual',
-                                  key: 'sexual',
-                                  ellipsis: true,
-                                  width: 50,
-                                },
-                                {
-                                  title: '操作',
-                                  key: 'action',
-                                  slots: { customRender: 'action' },
-                                  width: 100,
-                                },
-                              ]"
-                              :data="[
-                                {
-                                  key: '1',
-                                  name: '¥0',
-                                  age: '',
-                                  address: '',
-                                  sexual: '',
-                                  school: '',
-                                },
-                                {
-                                  key: '2',
-                                  name: '¥ 29.9',
-                                  age: '',
-                                  address: '',
-                                  sexual: '',
-                                  school: '',
-                                },
-                              ]"
-                              :pagination-hidden="true"
-                              :actions="[
-                                {
-                                  name: '编辑',
-                                  callback:
-                                    'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
-                                  type: 'link',
-                                  icon: 'fa fa-pencil',
-                                },
-                                {
-                                  name: '删除',
-                                  callback:
-                                    'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
-                                  type: 'link',
-                                  icon: 'fa fa-trash',
-                                },
-                              ]"
-                              :is-flat-action="true"
-                              :row-class-name="{}"
+                              ref="activityProjectTable"
+                              :columns="activityProjectTable.columns"
+                              :data="activityProjectTable.data"
+                              :pagination-hidden="
+                                activityProjectTable.paginationHidden
+                              "
+                              :actions="activityProjectTable.actions"
+                              :is-flat-action="
+                                activityProjectTable.isFlatAction
+                              "
+                              :row-class-name="
+                                activityProjectTable.rowClassName
+                              "
                             >
                             </hm-ant-table>
                           </div>
@@ -341,41 +282,17 @@
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
                               <div
-                                class="ele-wrapper ele-wrapper-51f6df44-dc34-48ee-9fb2-44caba78bf6f"
+                                class="ele-wrapper ele-wrapper-activityExtForm"
                               >
                                 <hm-ant-formily
-                                  :config="{
-                                    ' rule': {
-                                      type: 'Textarea',
-                                      title: '活动规则',
-                                      style: { width: '100%' },
-                                      props: {
-                                        showCount: true,
-                                        placeholder: '请输入活动规则',
-                                      },
-                                    },
-                                    agreement: {
-                                      type: 'Textarea',
-                                      title: '协议与承诺书',
-                                      style: { width: '100%' },
-                                      props: {
-                                        showCount: true,
-                                        placeholder:
-                                          '请输入《活动报名用户协议及承诺书》',
-                                      },
-                                    },
-                                    customerService: {
-                                      type: 'Input',
-                                      title: '活动咨询与客服',
-                                      style: { width: '100%' },
-                                    },
-                                  }"
-                                  :value="{}"
+                                  ref="activityExtForm"
+                                  :config="activityExtForm.config"
+                                  v-model:value="activityExtForm.value"
                                   :col-num="0"
                                   :col-min-width="380"
                                   :label-col="4"
                                   :wrapper-col="18"
-                                  class="ele-51f6df44-dc34-48ee-9fb2-44caba78bf6f"
+                                  class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -745,7 +662,85 @@ export default {
         },
         value: {},
       },
-      "51f6df44-dc34-48ee-9fb2-44caba78bf6f": {
+      activityProjectTable: {
+        columns: [
+          {
+            title: "项目费用",
+            dataIndex: "name",
+            key: "name",
+            width: 50,
+          },
+          {
+            title: "活动项目名称",
+            dataIndex: "age",
+            key: "age",
+            ellipsis: true,
+            width: 90,
+          },
+          {
+            title: "项目简历",
+            dataIndex: "address",
+            key: "address",
+            ellipsis: true,
+            width: 80,
+          },
+          {
+            title: "排序",
+            dataIndex: "sexual",
+            key: "sexual",
+            ellipsis: true,
+            width: 50,
+          },
+          {
+            title: "操作",
+            key: "action",
+            slots: {
+              customRender: "action",
+            },
+            width: 100,
+          },
+        ],
+        data: [
+          {
+            key: "1",
+            name: "¥0",
+            age: "",
+            address: "",
+            sexual: "",
+            school: "",
+          },
+          {
+            key: "2",
+            name: "¥ 29.9",
+            age: "",
+            address: "",
+            sexual: "",
+            school: "",
+          },
+        ],
+        paginationHidden: true,
+        actions: [
+          {
+            name: "编辑",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+            },
+            type: "link",
+            icon: "fa fa-pencil",
+          },
+          {
+            name: "删除",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+            },
+            type: "link",
+            icon: "fa fa-trash",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
+      },
+      activityExtForm: {
         config: {
           " rule": {
             type: "Textarea",
@@ -912,7 +907,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-51f6df44-dc34-48ee-9fb2-44caba78bf6f {
+.ele-wrapper-activityExtForm {
   width: 100%;
   margin-top: 20px;
 }
