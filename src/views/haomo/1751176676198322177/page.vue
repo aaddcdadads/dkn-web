@@ -385,13 +385,20 @@
                                       type: 'Textarea',
                                       title: '活动规则',
                                       style: { width: '100%' },
-                                      props: { showCount: true },
+                                      props: {
+                                        showCount: true,
+                                        placeholder: '请输入活动规则',
+                                      },
                                     },
                                     agreement: {
                                       type: 'Textarea',
                                       title: '协议与承诺书',
                                       style: { width: '100%' },
-                                      props: { showCount: true },
+                                      props: {
+                                        showCount: true,
+                                        placeholder:
+                                          '请输入《活动报名用户协议及承诺书》',
+                                      },
                                     },
                                     customerService: {
                                       type: 'Input',
@@ -719,6 +726,7 @@ export default {
             },
             props: {
               showCount: true,
+              placeholder: "请输入活动规则",
             },
           },
           agreement: {
@@ -729,6 +737,7 @@ export default {
             },
             props: {
               showCount: true,
+              placeholder: "请输入《活动报名用户协议及承诺书》",
             },
           },
           customerService: {
