@@ -523,7 +523,7 @@ export default {
 }
 
 .ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17 {
-  border-left: 3px solid #0079fe;
+  border-left: 4px solid #0079fe;
 }
 
 .ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12 {
@@ -535,7 +535,7 @@ export default {
 }
 
 .ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6 {
-  border-left: 3px solid #0079fe;
+  border-left: 4px solid #0079fe;
   margin-top: 15px;
 }
 
@@ -549,7 +549,7 @@ export default {
 }
 
 .ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
-  border-left: 3px solid #0079fe;
+  border-left: 5px solid #0079fe;
   margin-top: 15px;
 }
 
@@ -562,7 +562,7 @@ export default {
 }
 
 .ele-wrapper-fa713d7b-511f-4b6c-9f7a-37b66d33842e {
-  border-left: 3px solid #0079fe;
+  border-left: 4px solid #0079fe;
   margin-top: 15px;
 }
 </style>
