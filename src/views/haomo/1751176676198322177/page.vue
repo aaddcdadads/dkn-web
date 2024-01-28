@@ -69,7 +69,7 @@
                     <hm-ant-bg-text
                       text="基本信息"
                       font-size="14px"
-                      padding="3"
+                      padding="2"
                       class="ele-bf252f1b-c63f-43d8-b3da-2dc087a9f832"
                     >
                     </hm-ant-bg-text>
@@ -153,7 +153,7 @@
                         <hm-ant-bg-text
                           text="活动项目设置（至少一个）"
                           font-size="14px"
-                          padding="3"
+                          padding="2"
                           class="ele-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
                         >
                         </hm-ant-bg-text>
@@ -262,7 +262,7 @@
                             <hm-ant-bg-text
                               text="活动奖品设置（可为空）"
                               font-size="14px"
-                              padding="3"
+                              padding="2"
                               class="ele-2030f92c-96b3-41e7-8403-353b98f5e6a6"
                             >
                             </hm-ant-bg-text>
@@ -366,7 +366,7 @@
                             <hm-ant-bg-text
                               text="活动信息"
                               font-size="14px"
-                              padding="3"
+                              padding="2"
                               class="ele-633b539d-81dc-4e94-af68-dfba9182db48"
                             >
                             </hm-ant-bg-text>
@@ -406,7 +406,7 @@
                     <hm-ant-bg-text
                       text="报名页背景设置"
                       font-size="14px"
-                      padding="3"
+                      padding="2"
                       class="ele-fa713d7b-511f-4b6c-9f7a-37b66d33842e"
                     >
                     </hm-ant-bg-text>
@@ -499,7 +499,7 @@
                     <hm-ant-bg-text
                       text="报名页信息框颜色设置"
                       font-size="14px"
-                      padding="3"
+                      padding="2"
                       class="ele-56aec4a5-4b22-4f3e-9572-bd54033fe687"
                     >
                     </hm-ant-bg-text>
@@ -528,7 +528,7 @@
                     <hm-ant-bg-text
                       text="报名页信息框字体颜色设置"
                       font-size="14px"
-                      padding="3"
+                      padding="2"
                       class="ele-c9bf9691-385d-414d-864e-a07073520b33"
                     >
                     </hm-ant-bg-text>
