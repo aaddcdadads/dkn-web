@@ -915,7 +915,7 @@ export default {
     },
     onElea9Bfb5Ef387749FbA1CfF095389Cbd2EClick() {
       let self = this;
-      if (self.selectedRows || !self.selectedRows.length > 0) {
+      if (!self.selectedRows || !self.selectedRows.length > 0) {
         self.$message.error("请选择活动");
         return;
       }
