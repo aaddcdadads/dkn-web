@@ -390,25 +390,19 @@
                                     ' rule': {
                                       type: 'textarea',
                                       title: '活动规则',
-                                      style: {
-                                        width: '100%',
-                                        borderColor: '#f2f2f2',
-                                      },
+                                      style: { width: '100%' },
                                     },
                                     agreement: {
                                       type: 'textarea',
                                       title: '协议与承诺书',
-                                      style: {
-                                        width: '100%',
-                                        borderColor: '#f2f2f2',
-                                      },
+                                      style: { width: '100%' },
                                     },
                                   }"
                                   :value="{}"
                                   :col-num="0"
                                   :col-min-width="380"
-                                  :label-col="3"
-                                  :wrapper-col="14"
+                                  :label-col="4"
+                                  :wrapper-col="18"
                                   class="ele-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
                                 >
                                 </hm-ant-formily>
@@ -696,7 +690,6 @@ export default {
             title: "活动规则",
             style: {
               width: "100%",
-              borderColor: "#f2f2f2",
             },
           },
           agreement: {
@@ -704,7 +697,6 @@ export default {
             title: "协议与承诺书",
             style: {
               width: "100%",
-              borderColor: "#f2f2f2",
             },
           },
         },
