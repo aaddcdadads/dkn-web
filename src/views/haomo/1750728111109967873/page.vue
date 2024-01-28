@@ -115,7 +115,12 @@
                         <div
                           class="ele-wrapper ele-wrapper-bacthHeImportButton"
                         >
-                          <hm-ant-button ref="bacthHeImportButton">
+                          <hm-ant-button
+                            ref="bacthHeImportButton"
+                            text="批量核销"
+                            :type="'primary'"
+                            class="ele-bacthHeImportButton"
+                          >
                           </hm-ant-button>
                         </div>
                         <div class="ele-wrapper ele-wrapper-activitySelect">
@@ -956,6 +961,10 @@ export default {
 }
 
 .ele-wrapper-userTotalText {
+  margin-right: 20px;
+}
+
+.ele-wrapper-bacthHeImportButton {
   margin-right: 20px;
 }
 
