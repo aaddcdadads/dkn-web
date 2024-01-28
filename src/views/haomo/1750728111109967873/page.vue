@@ -505,6 +505,9 @@ export default {
             title: "核销状态",
             dataIndex: "pickUpStatusText",
             key: "pickUpStatusText",
+            customRender: function (item) {
+              return item.text ? item.text : "待核销";
+            },
           },
           {
             slots: {
