@@ -619,7 +619,7 @@
                   text="重置"
                   :type="'primary'"
                   :size="'large'"
-                  :ghost="false"
+                  :ghost="true"
                   icon="fa fa-repeat"
                   class="ele-b0a42962-4301-4b4d-9525-05bfef232b34"
                 >
