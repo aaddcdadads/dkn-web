@@ -409,7 +409,7 @@
                                   :value="{}"
                                   :col-num="0"
                                   :col-min-width="380"
-                                  :label-col="3"
+                                  :label-col="4"
                                   :wrapper-col="18"
                                   class="ele-51f6df44-dc34-48ee-9fb2-44caba78bf6f"
                                 >
