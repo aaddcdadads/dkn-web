@@ -827,11 +827,14 @@ export default {
           {
             name: "编辑",
             callback: function (item) {
-              self.activityEditModal.visible = true;
-              self.currentActivityId = item.id;
-              self.$nextTick(function () {
-                self.activityEditForm.value = item;
+              self.$router.push({
+                path: `/haomo/1751176953324376065/page?id=${item.id}`,
               });
+              //self.activityEditModal.visible=true;
+              //self.currentActivityId = item.id;
+              //self.$nextTick(function() {
+              //  self.activityEditForm.value = item;;
+              //});
             },
             type: "link",
           },
