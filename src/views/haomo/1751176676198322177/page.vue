@@ -390,6 +390,17 @@
                   box-shadow-blur=""
                   class="ele-message_2"
                 >
+                  <div
+                    class="ele-wrapper ele-wrapper-fa713d7b-511f-4b6c-9f7a-37b66d33842e"
+                  >
+                    <hm-ant-bg-text
+                      text="报名页背景设置"
+                      font-size="14px"
+                      padding="3"
+                      class="ele-fa713d7b-511f-4b6c-9f7a-37b66d33842e"
+                    >
+                    </hm-ant-bg-text>
+                  </div>
                 </hm-bg-card>
               </div>
             </hm-bg-card>
@@ -545,5 +556,10 @@ export default {
 
 .ele-wrapper-message_2 {
   width: 50%;
+}
+
+.ele-wrapper-fa713d7b-511f-4b6c-9f7a-37b66d33842e {
+  border-left: 3px solid #0079fe;
+  margin-top: 15px;
 }
 </style>
