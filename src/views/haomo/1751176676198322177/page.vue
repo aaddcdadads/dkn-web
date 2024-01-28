@@ -143,6 +143,7 @@
                         <hm-ant-bg-text
                           text="活动项目设置（至少一个）"
                           font-size="14px"
+                          padding="3"
                           class="ele-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
                         >
                         </hm-ant-bg-text>
@@ -251,6 +252,7 @@
                             <hm-ant-bg-text
                               text="活动奖品设置（可为空）"
                               font-size="14px"
+                              padding="3"
                               class="ele-2030f92c-96b3-41e7-8403-353b98f5e6a6"
                             >
                             </hm-ant-bg-text>
@@ -354,9 +356,23 @@
                             <hm-ant-bg-text
                               text="活动信息"
                               font-size="14px"
+                              padding="3"
                               class="ele-633b539d-81dc-4e94-af68-dfba9182db48"
                             >
                             </hm-ant-bg-text>
+                          </div>
+                          <div
+                            class="ele-wrapper ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41"
+                          >
+                            <hm-bg-card
+                              width="100%"
+                              height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
+                              class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
+                            >
+                            </hm-bg-card>
                           </div>
                         </hm-bg-card>
                       </div>
@@ -521,6 +537,10 @@ export default {
 .ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
   border-left: 3px solid #0079fe;
   margin-top: 15px;
+}
+
+.ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41 {
+  width: 100%;
 }
 
 .ele-wrapper-message_2 {
