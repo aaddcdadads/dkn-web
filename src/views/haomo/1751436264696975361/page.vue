@@ -598,6 +598,17 @@
                       </div>
                     </hm-bg-card>
                   </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-610ad32f-244d-4af7-aad8-a7d343ac7d36"
+                  >
+                    <hm-ant-bg-text
+                      text="活动参与人数信息修改"
+                      font-size="14px"
+                      padding="3"
+                      class="ele-610ad32f-244d-4af7-aad8-a7d343ac7d36"
+                    >
+                    </hm-ant-bg-text>
+                  </div>
                 </hm-bg-card>
               </div>
             </hm-bg-card>
@@ -829,5 +840,12 @@ export default {
 
 .ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc {
   width: 100%;
+}
+
+.ele-wrapper-610ad32f-244d-4af7-aad8-a7d343ac7d36 {
+  border-left: 4px solid #0079fe;
+  margin-top: 15px;
+  margin-left: 8px;
+  padding-left: 5px;
 }
 </style>

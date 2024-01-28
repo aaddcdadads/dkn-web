@@ -105,24 +105,23 @@
                         box-shadow-color="#00000000"
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
                       >
-                        <div
-                          class="ele-wrapper ele-wrapper-d57b023a-9d32-47d2-bbdb-36193875bc55"
-                        >
+                        <div class="ele-wrapper ele-wrapper-allStatus">
                           <hm-ant-select
-                            value="undefined"
+                            ref="allStatus"
+                            v-model:value="allStatus.value"
                             title=""
-                            :options="[
-                              { label: '启用', value: 1 },
-                              { label: '停用', value: 2 },
-                              { label: '删除', value: 3 },
-                            ]"
+                            v-model:options="allStatus.options"
                           >
                           </hm-ant-select>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-47ff9558-5bd3-466c-8aac-4895903ffdc1"
                         >
-                          <hm-ant-button> </hm-ant-button>
+                          <hm-ant-button
+                            text="确认"
+                            class="ele-47ff9558-5bd3-466c-8aac-4895903ffdc1"
+                          >
+                          </hm-ant-button>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
@@ -575,7 +574,23 @@ export default {
         },
         schema: {},
       },
-      allStatus: {},
+      allStatus: {
+        value: null,
+        options: [
+          {
+            label: "启用",
+            value: 1,
+          },
+          {
+            label: "停用",
+            value: 2,
+          },
+          {
+            label: "删除",
+            value: 3,
+          },
+        ],
+      },
       activityFilter: {
         config: {
           name: {
@@ -773,23 +788,6 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "d57b023a-9d32-47d2-bbdb-36193875bc55": {
-        value: null,
-        options: [
-          {
-            label: "启用",
-            value: 1,
-          },
-          {
-            label: "停用",
-            value: 2,
-          },
-          {
-            label: "删除",
-            value: 3,
-          },
-        ],
-      },
     };
   },
   watch: {},
@@ -925,6 +923,10 @@ export default {
 
 .ele-wrapper-4aad8761-7b58-4d08-b5a2-91fea232f9fe {
   width: 100%;
+}
+
+.ele-wrapper-47ff9558-5bd3-466c-8aac-4895903ffdc1 {
+  margin-left: 20px;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
