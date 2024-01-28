@@ -117,8 +117,9 @@
                         >
                           <hm-ant-button
                             ref="bacthHeImportButton"
-                            text="批量核销"
-                            :type="'primary'"
+                            :text="bacthHeImportButton.text"
+                            :type="bacthHeImportButton.type"
+                            :disabled="bacthHeImportButton.disabled"
                             @click="onBacthHeImportButtonClick"
                             class="ele-bacthHeImportButton"
                           >
@@ -552,7 +553,12 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      dropdownBtn: {},
+      selectTempArr: {},
+      bacthHeImportButton: {
+        disabled: false,
+        text: "批量核销",
+        type: "primary",
+      },
       registrationOrdersEditModal: {
         visible: false,
       },
@@ -870,16 +876,16 @@ export default {
     onRegistrationOrdersTableOnSelectChange(item) {
       console.log("onSelectChange----", item);
       //this.selectTempArr = item.selectedRowKeys.length > 0 ? item.selectedRowKeys.toString() : null;
-      //  this.selectTempArr = item.selectedRows;
+      //      this.selectTempArr = item.selectedRows;
 
-      let selectPropertyArr = item.selectedRows.filter(
-        (item) => item.paymentStatus === 0 || item.paymentStatus === 2
+      this.selectTempArr = item.selectedRows.filter(
+        (item) => item.paymentStatus === 1 || item.paymentStatus === 2
       );
-      if (selectPropertyArr.length == 0) {
-        this.dropdownBtn.disabled = false;
+      if (this.selectTempArr.length == 0) {
+        this.bacthHeImportButton.disabled = false;
       } else {
         this.$message.error("数据中存在已退款、待支付状态下不可核销");
-        this.dropdownBtn.disabled = true;
+        this.bacthHeImportButton.disabled = true;
       }
     },
     onQuanXuanBoxOnChange(item) {
