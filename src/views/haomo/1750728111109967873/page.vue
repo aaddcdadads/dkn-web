@@ -971,6 +971,7 @@ export default {
 
 .ele-wrapper-0a6fba8b-c43b-4691-ad02-a62dba586095 {
   width: 100%;
+  display: none;
 }
 
 .ele-wrapper-quanXuanBox {
