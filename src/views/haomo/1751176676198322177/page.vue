@@ -10,16 +10,15 @@
           box-shadow-blur=""
           class="ele-e37fdb24-4953-4f7d-af46-b1aa9d4f1737"
         >
-          <div
-            class="ele-wrapper ele-wrapper-e3d70a59-ef42-4c89-af9c-c1b6fe4ddb0f"
-          >
+          <div class="ele-wrapper ele-wrapper-titleCard">
             <hm-bg-card
+              ref="titleCard"
               width="100%"
               height="100%"
               border-radius=""
               box-shadow-v-shadow=""
               box-shadow-blur=""
-              class="ele-e3d70a59-ef42-4c89-af9c-c1b6fe4ddb0f"
+              class="ele-titleCard"
             >
               <div
                 class="ele-wrapper ele-wrapper-80d9b125-92bb-46b5-87b7-d8b4b451d860"
@@ -630,7 +629,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-e3d70a59-ef42-4c89-af9c-c1b6fe4ddb0f {
+.ele-wrapper-titleCard {
   width: 100%;
   border-bottom: 1px solid #f2f2f2;
 }
