@@ -204,6 +204,7 @@
                                   slots: { customRender: 'action' },
                                 },
                               ]"
+                              :pagination-hidden="true"
                               :actions="[
                                 {
                                   name: '编辑',
