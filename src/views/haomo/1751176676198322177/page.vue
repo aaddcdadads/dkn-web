@@ -390,7 +390,7 @@
                                     ' explain': {
                                       type: 'textarea',
                                       title: '活动说明',
-                                      width: '100px',
+                                      style: { width: '100%' },
                                     },
                                   }"
                                   :value="{}"
@@ -682,7 +682,9 @@ export default {
           " explain": {
             type: "textarea",
             title: "活动说明",
-            width: "100px",
+            style: {
+              width: "100%",
+            },
           },
         },
         value: {},
