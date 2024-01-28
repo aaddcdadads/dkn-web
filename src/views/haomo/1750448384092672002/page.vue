@@ -105,18 +105,24 @@
                         box-shadow-color="#00000000"
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
                       >
-                        <div class="ele-wrapper ele-wrapper-allStatus">
-                          <hm-ant-formily
-                            ref="allStatus"
-                            :config="allStatus.config"
-                            v-model:value="allStatus.value"
-                            :col-num="0"
-                            :col-min-width="380"
-                            :label-col="7"
-                            :wrapper-col="14"
-                            class="ele-allStatus"
+                        <div
+                          class="ele-wrapper ele-wrapper-b261be1f-05fb-43ab-97cf-5f80060da543"
+                        >
+                          <hm-ant-select
+                            value="undefined"
+                            title=""
+                            :options="[
+                              { label: '启用', value: 1 },
+                              { label: '停用', value: 2 },
+                              { label: '删除', value: 3 },
+                            ]"
                           >
-                          </hm-ant-formily>
+                          </hm-ant-select>
+                        </div>
+                        <div
+                          class="ele-wrapper ele-wrapper-a9bfb5ef-3877-49fb-a1cf-f095389cbd2e"
+                        >
+                          <hm-ant-button> </hm-ant-button>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
@@ -341,6 +347,7 @@ import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
+import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
@@ -363,6 +370,7 @@ export default {
     HmAntFormily,
     HmAntButton,
     HmAntUpload,
+    HmAntSelect,
     HmAntTable,
     HmModal,
     HmAntIconText,
@@ -764,54 +772,22 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      allStatus: {
-        config: {
-          channel: {
-            type: "HmAntSelect",
-            title: "",
-            style: {
-              width: "50%",
-            },
-            props: {
-              title: "",
-              options: [
-                {
-                  label: "启用",
-                  value: 1,
-                },
-                {
-                  label: "停用",
-                  value: 2,
-                },
-                {
-                  label: "删除",
-                  value: 3,
-                },
-              ],
-            },
-            validator: function (value) {},
+      "b261be1f-05fb-43ab-97cf-5f80060da543": {
+        value: null,
+        options: [
+          {
+            label: "启用",
+            value: 1,
           },
-          search: {
-            type: "HmAntButton",
-            title: "",
-            style: {
-              width: "80px",
-              marginLeft: "10px",
-            },
-            props: {
-              text: "查询",
-              type: "primary",
-              icon: "fa fa-search",
-            },
-            events: {
-              "@click": function (e) {
-                searchRegistrationOrders(self, null);
-              },
-            },
-            validator: function (value) {},
+          {
+            label: "停用",
+            value: 2,
           },
-        },
-        value: {},
+          {
+            label: "删除",
+            value: 3,
+          },
+        ],
       },
     };
   },
@@ -947,12 +923,6 @@ export default {
 
 .ele-wrapper-4aad8761-7b58-4d08-b5a2-91fea232f9fe {
   width: 100%;
-}
-
-.ele-wrapper-allStatus {
-  width: 70%;
-  margin: 1%;
-  margin-bottom: 0;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
