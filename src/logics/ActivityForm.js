@@ -69,7 +69,16 @@ const activityProjectRequest = (logic.activityProjectRequest = async function ()
 /**
  * 处理
  */
-const setActivityProject = (logic.setActivityProject = function () {});
+const setActivityProject = (logic.setActivityProject = function () {
+  if (
+    !self.activityProjectRequestData.success ||
+    !self.activityProjectRequestData.result.records.length === 0
+  ) {
+    return;
+  }
+  self.$refs.activityProjectTable.cData =
+    self.activityProjectRequestData.result.records;
+});
 
 /**
  * 活动图片
@@ -84,7 +93,25 @@ const activityImgRequest = (logic.activityImgRequest = async function () {
 /**
  * 处理
  */
-const setActivityImg = (logic.setActivityImg = function () {});
+const setActivityImg = (logic.setActivityImg = function () {
+  if (
+    !self.activityImgRequestData.success ||
+    !self.activityImgRequestData.result.records.length === 0
+  ) {
+    return;
+  }
+  let activityImgTableOneData = [],
+    activityImgTableTwoData = [];
+  self.activityImgRequestData.result.records.forEach((e) => {
+    if (e.type === 0) {
+      activityImgTableOneData.push(e);
+    } else if (e.type === 1) {
+      activityImgTableTwoData.push(e);
+    }
+  });
+  self.$refs.activityImgTableOne.cData = activityImgTableOneData;
+  self.$refs.activityImgTableTwo.cData = activityImgTableTwoData;
+});
 
 /**
  * 逻辑流 detail 入口函数
