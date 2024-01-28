@@ -500,6 +500,7 @@
                     <hm-ant-bg-text
                       text="报名页信息框颜色设置"
                       font-size="14px"
+                      padding="3"
                       class="ele-56aec4a5-4b22-4f3e-9572-bd54033fe687"
                     >
                     </hm-ant-bg-text>
@@ -528,9 +529,28 @@
                     <hm-ant-bg-text
                       text="报名页信息框字体颜色设置"
                       font-size="14px"
+                      padding="3"
                       class="ele-c9bf9691-385d-414d-864e-a07073520b33"
                     >
                     </hm-ant-bg-text>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      class="ele-8e197d87-c68a-402f-90a7-400dc9c35edc"
+                    >
+                      <div
+                        class="ele-wrapper ele-wrapper-b661ec59-8ff2-4a70-ba98-06e70d33bc68"
+                      >
+                        <hm-color-kit> </hm-color-kit>
+                      </div>
+                    </hm-bg-card>
                   </div>
                 </hm-bg-card>
               </div>
@@ -722,5 +742,9 @@ export default {
   border-left: 4px solid #0079fe;
   margin-top: 15px;
   margin-left: 8px;
+}
+
+.ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc {
+  width: 100%;
 }
 </style>
