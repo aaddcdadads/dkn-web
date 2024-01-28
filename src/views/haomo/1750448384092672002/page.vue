@@ -335,6 +335,46 @@
               </div>
             </hm-modal>
           </div>
+          <div
+            class="ele-wrapper ele-wrapper-c1ad0f8b-7e68-43e2-a6da-0f774909a23c"
+          >
+            <hm-modal
+              title="删除"
+              :visible="false"
+              :closable="true"
+              ok-text="删除"
+              :ok-type="'danger'"
+              width="320px"
+              :z-index="1000"
+              height="80px"
+            >
+              <div
+                class="ele-wrapper ele-wrapper-a51e5f78-be7b-4837-96de-0d69fb368535"
+              >
+                <hm-bg-card
+                  width="100%"
+                  height=""
+                  border-radius=""
+                  padding=""
+                  box-shadow-color="#00000000"
+                  class="ele-a51e5f78-be7b-4837-96de-0d69fb368535"
+                >
+                  <div
+                    class="ele-wrapper ele-wrapper-d88dc3f4-0b7f-435f-b057-dc6379f45da1"
+                  >
+                    <hm-ant-bg-text
+                      text="是否要删除?"
+                      color="#CF2323"
+                      :text-align="'left'"
+                      padding="0"
+                      class="ele-d88dc3f4-0b7f-435f-b057-dc6379f45da1"
+                    >
+                    </hm-ant-bg-text>
+                  </div>
+                </hm-bg-card>
+              </div>
+            </hm-modal>
+          </div>
         </hm-bg-card>
       </div>
       <div class="ele-wrapper ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1">
@@ -356,6 +396,7 @@ import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
+import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
 import {
@@ -379,6 +420,7 @@ export default {
     HmAntTable,
     HmModal,
     HmAntIconText,
+    HmAntBgText,
     HmAntSwitch,
   },
   data() {
@@ -597,6 +639,9 @@ export default {
           span: "文字内容",
         },
         schema: {},
+      },
+      "c1ad0f8b-7e68-43e2-a6da-0f774909a23c": {
+        visible: false,
       },
       activityFilter: {
         config: {
@@ -999,6 +1044,14 @@ export default {
 }
 
 .ele-wrapper-deleteUserInputText {
+  width: 60%;
+}
+
+.ele-wrapper-a51e5f78-be7b-4837-96de-0d69fb368535 {
+  width: 100%;
+}
+
+.ele-wrapper-d88dc3f4-0b7f-435f-b057-dc6379f45da1 {
   width: 60%;
 }
 
