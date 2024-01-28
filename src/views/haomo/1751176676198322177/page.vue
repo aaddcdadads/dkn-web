@@ -288,7 +288,7 @@ export default {
 }
 
 .ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17 {
-  border-left: 1px solid #0079fe;
+  border-left: 3px solid #0079fe;
 }
 
 .ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12 {
