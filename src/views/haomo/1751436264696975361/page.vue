@@ -159,7 +159,7 @@
                         <hm-ant-button
                           text="添加"
                           :type="'primary'"
-                          icon="fa fa-trash"
+                          icon="fa fa-plus"
                           class="ele-192a1e25-4895-4501-971d-69ddf1ae5a12"
                         >
                         </hm-ant-button>
@@ -246,6 +246,7 @@
                                   callback:
                                     'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
                                   type: 'link',
+                                  icon: 'fa fa-trash',
                                 },
                               ]"
                               :is-flat-action="true"
