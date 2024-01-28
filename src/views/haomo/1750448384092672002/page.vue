@@ -110,6 +110,7 @@
                             ref="allStatus"
                             v-model:value="allStatus.value"
                             title=""
+                            placeholder="请选择批量操作"
                             v-model:options="allStatus.options"
                             class="ele-allStatus"
                           >
