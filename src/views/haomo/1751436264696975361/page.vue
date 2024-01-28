@@ -76,58 +76,16 @@
                     >
                     </hm-ant-bg-text>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-a5a25330-2967-46c6-912c-e469e87e6474"
-                  >
+                  <div class="ele-wrapper ele-wrapper-add">
                     <hm-ant-formily
-                      :config="{
-                        ' name': {
-                          type: 'Input',
-                          title: '活动规则',
-                          style: { width: '100%' },
-                          required: true,
-                          props: {},
-                        },
-                        cycle: {
-                          type: 'RangePicker',
-                          title: '活动周期',
-                          style: { width: '100%' },
-                          required: true,
-                          props: {},
-                        },
-                        EntryClose: {
-                          type: 'DatePicker',
-                          title: '报名截止',
-                          style: { width: '100%' },
-                          required: true,
-                          props: { showTime: true },
-                        },
-                        VerificationDeadline: {
-                          type: 'DatePicker',
-                          title: '核销截止',
-                          style: { width: '100%' },
-                          required: true,
-                          props: { showTime: true },
-                        },
-                        ActivityStatus: {
-                          type: 'RadioGroup',
-                          title: '核销截止',
-                          style: { width: '100%' },
-                          required: true,
-                          props: {
-                            options: [
-                              { label: '启用', value: 0 },
-                              { label: '禁用', value: 1 },
-                            ],
-                          },
-                        },
-                      }"
-                      :value="{}"
+                      ref="add"
+                      :config="add.config"
+                      v-model:value="add.value"
                       :col-num="0"
                       :col-min-width="380"
                       :label-col="3"
                       :wrapper-col="16"
-                      class="ele-a5a25330-2967-46c6-912c-e469e87e6474"
+                      class="ele-add"
                     >
                     </hm-ant-formily>
                   </div>
@@ -598,7 +556,7 @@
                     <hm-ant-bg-text
                       text="活动参与人数信息修改"
                       font-size="14px"
-                      padding="3"
+                      padding="2"
                       class="ele-610ad32f-244d-4af7-aad8-a7d343ac7d36"
                     >
                     </hm-ant-bg-text>
@@ -722,7 +680,7 @@ export default {
   data() {
     let self = this;
     return {
-      "a5a25330-2967-46c6-912c-e469e87e6474": {
+      add: {
         config: {
           " name": {
             type: "Input",
@@ -904,7 +862,7 @@ export default {
   padding-left: 5px;
 }
 
-.ele-wrapper-a5a25330-2967-46c6-912c-e469e87e6474 {
+.ele-wrapper-add {
   margin-top: 15px;
   /deep/.ant-calendar-picker {
     width: 100%;
