@@ -591,6 +591,23 @@ export default {
         },
         schema: {},
       },
+      allStatus: {
+        value: null,
+        options: [
+          {
+            label: "启用",
+            value: 1,
+          },
+          {
+            label: "停用",
+            value: 2,
+          },
+          {
+            label: "删除",
+            value: 3,
+          },
+        ],
+      },
       activityFilter: {
         config: {
           name: {
@@ -788,23 +805,6 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      allStatus: {
-        value: null,
-        options: [
-          {
-            label: "启用",
-            value: 1,
-          },
-          {
-            label: "停用",
-            value: 2,
-          },
-          {
-            label: "删除",
-            value: 3,
-          },
-        ],
-      },
     };
   },
   watch: {},
@@ -830,6 +830,7 @@ export default {
         }
       });
       let self = this;
+      self.allStatus.value = null;
       self.copyUrl = function (id) {
         let url = `${this.$accessAddress}?id=${id}`;
         let self = this;
