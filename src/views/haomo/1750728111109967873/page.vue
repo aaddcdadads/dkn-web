@@ -555,7 +555,7 @@ export default {
       },
       selectTempArr: {},
       bacthHeImportButton: {
-        disabled: false,
+        disabled: true,
         text: "批量核销",
         type: "primary",
       },
