@@ -23,9 +23,9 @@
               <div class="ele-wrapper ele-wrapper-title">
                 <hm-ant-icon-text
                   ref="title"
-                  text="创建活动"
-                  icon="fa fa-tasks"
-                  font-size="14px"
+                  :text="title.text"
+                  :icon="title.icon"
+                  :font-size="title.fontSize"
                   class="ele-title"
                 >
                 </hm-ant-icon-text>
@@ -397,17 +397,17 @@
               </div>
             </hm-bg-card>
           </div>
-          <div
-            class="ele-wrapper ele-wrapper-31135d90-70d1-42a3-b004-f8a7878760f4"
-          >
+          <div class="ele-wrapper ele-wrapper-isSaveOrUpdate">
             <hm-bg-card
-              width="100%"
-              height="100%"
-              border-radius=""
-              :text-align="'center'"
-              box-shadow-v-shadow=""
-              box-shadow-blur=""
-              class="ele-31135d90-70d1-42a3-b004-f8a7878760f4"
+              ref="isSaveOrUpdate"
+              :width="isSaveOrUpdate.width"
+              :height="isSaveOrUpdate.height"
+              :border-radius="isSaveOrUpdate.borderRadius"
+              :text-align="isSaveOrUpdate.textAlign"
+              :box-shadow-v-shadow="isSaveOrUpdate.boxShadowVShadow"
+              :box-shadow-blur="isSaveOrUpdate.boxShadowBlur"
+              :hidden="isSaveOrUpdate.hidden"
+              class="ele-isSaveOrUpdate"
             >
               <div
                 class="ele-wrapper ele-wrapper-be6a0959-060d-4277-9590-2d5ddd2ab12e"
@@ -468,6 +468,20 @@ export default {
   data() {
     let self = this;
     return {
+      isSaveOrUpdate: {
+        width: "100%",
+        height: "100%",
+        borderRadius: "",
+        textAlign: "center",
+        boxShadowVShadow: "",
+        boxShadowBlur: "",
+        hidden: false,
+      },
+      title: {
+        text: "创建活动",
+        icon: "fa fa-tasks",
+        fontSize: "14px",
+      },
       activityForm: {
         config: {
           " name": {
@@ -823,10 +837,20 @@ export default {
     };
   },
   watch: {},
+  created(e) {
+    this.onCreated(e);
+  },
   mounted(e) {
     detail(this, arguments);
   },
-  methods: {},
+  methods: {
+    onCreated() {
+      let self = this;
+      self.title.text = "创建活动";
+      self.isTitle = "* 为必填项";
+      self.isSaveOrUpdate.hidden = false;
+    },
+  },
 };
 </script>
 
@@ -982,7 +1006,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-31135d90-70d1-42a3-b004-f8a7878760f4 {
+.ele-wrapper-isSaveOrUpdate {
   width: 100%;
   border-top: 1px solid #f2f2f2;
 }
