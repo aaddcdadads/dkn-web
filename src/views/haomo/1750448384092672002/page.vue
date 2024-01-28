@@ -159,6 +159,7 @@
                   :is-flat-action="activityTable.isFlatAction"
                   :background-color="activityTable.backgroundColor"
                   :row-class-name="activityTable.rowClassName"
+                  @onSelect="onActivityTableOnSelect"
                   class="ele-activityTable"
                 >
                 </hm-ant-table>
@@ -854,6 +855,9 @@ export default {
     },
     onInvisibleImportSearchLogicBtnClick() {
       searchActivity(this, arguments);
+    },
+    onActivityTableOnSelect(e) {
+      console.log("===", e);
     },
     onActivityAddModalOk() {
       addActivity(this, arguments);
