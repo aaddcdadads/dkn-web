@@ -909,7 +909,7 @@ export default {
         let url = "/api/dkn/activity/edit";
         let params = {
           id,
-          status,
+          status: status ? 0 : 1,
         };
         const res = await self.$putAction(url, params);
         if (!res.success) {
