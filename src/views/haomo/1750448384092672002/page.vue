@@ -764,7 +764,9 @@ export default {
               return h(HmAntSwitch, {
                 checked: data.record.status === 0,
                 title: "",
-                onChange: function (e) {},
+                onChange: function (e) {
+                  self.updateStatus(data.record.id, e);
+                },
               });
             },
           },
