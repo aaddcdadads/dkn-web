@@ -910,7 +910,7 @@ export default {
 
 .ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180 {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17 {
