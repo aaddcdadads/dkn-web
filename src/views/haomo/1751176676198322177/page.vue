@@ -391,7 +391,10 @@
                                       type: 'textarea',
                                       title: '活动规则',
                                       style: { width: '100%' },
-                                      props: { showCount: true },
+                                      props: {
+                                        'show-count': true,
+                                        width: '400px',
+                                      },
                                     },
                                     agreement: {
                                       type: 'textarea',
@@ -693,7 +696,8 @@ export default {
               width: "100%",
             },
             props: {
-              showCount: true,
+              "show-count": true,
+              width: "400px",
             },
           },
           agreement: {
