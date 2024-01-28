@@ -129,7 +129,11 @@ const detail = (logic.detail = async (pageVm, eventData) => {
   if (!self.id || self.type === 1) {
     return;
   }
+
   if (self.type === 3) {
+    self.title.text = "活动详情";
+    self.isSaveOrUpdate.hidden = true;
+    self.isTitle = "";
     for (let key in self.activityForm.config) {
       self.activityForm.config[key].props.disabled = true;
     }
@@ -151,6 +155,8 @@ const detail = (logic.detail = async (pageVm, eventData) => {
       self.activityImgTableTwo.columns.length - 1,
       1
     );
+  } else {
+    self.title.text = "编辑活动";
   }
   await activityRequest();
   setActivity();
