@@ -411,7 +411,7 @@
                                   :col-num="0"
                                   :col-min-width="380"
                                   :label-col="4"
-                                  :wrapper-col="18"
+                                  :wrapper-col="20"
                                   class="ele-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
                                 >
                                 </hm-ant-formily>
