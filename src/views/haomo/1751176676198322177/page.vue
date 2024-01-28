@@ -416,6 +416,17 @@
                                 >
                                 </hm-wang-editor>
                               </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-75d6efd4-b60c-4454-8b50-f6de5e604ddc"
+                              >
+                                <hm-ant-input
+                                  value=""
+                                  title="活动咨询客服："
+                                  placeholder=""
+                                  width="350"
+                                >
+                                </hm-ant-input>
+                              </div>
                             </hm-bg-card>
                           </div>
                         </hm-bg-card>
@@ -656,6 +667,9 @@ export default {
         value: null,
       },
       "356b70ea-220b-42ce-abe3-5bc434ab112a": {
+        value: "",
+      },
+      "75d6efd4-b60c-4454-8b50-f6de5e604ddc": {
         value: "",
       },
     };
