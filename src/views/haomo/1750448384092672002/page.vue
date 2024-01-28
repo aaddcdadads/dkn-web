@@ -430,28 +430,6 @@ export default {
         padding: "0",
         titleBlockColor: "#1890FF00",
       },
-      activityDetailModal: {
-        visible: false,
-      },
-      activityDetailForm: {
-        config: {
-          name: {
-            type: "Span",
-            title: "活动名称",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            validator: function (value) {},
-            required: false,
-            disabled: false,
-          },
-        },
-        value: {
-          span: "文字内容",
-        },
-        schema: {},
-      },
       activityEditModal: {
         visible: false,
       },
@@ -648,6 +626,28 @@ export default {
         },
         schema: {},
       },
+      activityDetailForm: {
+        config: {
+          name: {
+            type: "Span",
+            title: "活动名称",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+        },
+        value: {
+          span: "文字内容",
+        },
+        schema: {},
+      },
+      activityDetailModal: {
+        visible: false,
+      },
       activityFilter: {
         config: {
           name: {
@@ -817,9 +817,9 @@ export default {
           {
             name: "查看详情",
             callback: function (item) {
-              self.activityDetailModal.visible = true;
-              self.$nextTick(function () {
-                self.activityDetailForm.value = item;
+              self.$router.push({
+                path: `/haomo/1751176953324376065/page`,
+                query: { type: 3, id: item.id },
               });
             },
             type: "link",
@@ -828,7 +828,8 @@ export default {
             name: "编辑",
             callback: function (item) {
               self.$router.push({
-                path: `/haomo/1751176953324376065/page?id=${item.id}`,
+                path: `/haomo/1751176953324376065/page`,
+                query: { type: 2, id: item.id },
               });
               //self.activityEditModal.visible=true;
               //self.currentActivityId = item.id;
