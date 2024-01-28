@@ -240,6 +240,7 @@
                                   type: 'link',
                                 },
                               ]"
+                              :is-flat-action="true"
                               :row-class-name="{}"
                             >
                             </hm-ant-table>
