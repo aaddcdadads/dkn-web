@@ -906,6 +906,9 @@ export default {
 
 .ele-wrapper-a5a25330-2967-46c6-912c-e469e87e6474 {
   margin-top: 15px;
+  /deep/.cycle {
+    width: 100%;
+  }
 }
 
 .ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180 {
