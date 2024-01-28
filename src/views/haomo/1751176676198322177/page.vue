@@ -173,6 +173,37 @@
                             class="ele-wrapper ele-wrapper-25b5309c-c34c-4da3-a7c0-afa25d079608"
                           >
                             <hm-ant-table
+                              :columns="[
+                                {
+                                  title: '项目费用',
+                                  dataIndex: 'name',
+                                  key: 'name',
+                                },
+                                {
+                                  title: '活动项目名称',
+                                  dataIndex: 'age',
+                                  key: 'age',
+                                  width: 80,
+                                },
+                                {
+                                  title: '项目简历',
+                                  dataIndex: 'address',
+                                  key: 'address',
+                                  ellipsis: true,
+                                },
+                                {
+                                  title: '排序',
+                                  dataIndex: 'sexual',
+                                  key: 'sexual',
+                                  ellipsis: true,
+                                },
+                                {
+                                  title: '操作',
+                                  dataIndex: '',
+                                  key: 'action',
+                                  slots: { customRender: 'action' },
+                                },
+                              ]"
                               :actions="[
                                 {
                                   name: '编辑',
