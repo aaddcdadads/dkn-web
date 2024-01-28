@@ -184,7 +184,7 @@
                                   title: '活动项目名称',
                                   dataIndex: 'age',
                                   key: 'age',
-                                  width: 100,
+                                  width: 90,
                                 },
                                 {
                                   title: '项目简历',
