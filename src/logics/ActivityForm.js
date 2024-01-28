@@ -43,7 +43,18 @@ const activityExtRequest = (logic.activityExtRequest = async function () {
 /**
  * 处理
  */
-const setActivityExt = (logic.setActivityExt = function () {});
+const setActivityExt = (logic.setActivityExt = function () {
+  if (
+    !self.activityExtRequestData.success ||
+    !self.activityExtRequestData.result.records.length === 0
+  ) {
+    return;
+  }
+  let item = self.activityExtRequestData.result.records[0];
+  let activity = self.activityRequestData.result;
+  item.customerService = activity.customerService;
+  self.$refs.activityExtForm.setFormValues(item);
+});
 
 /**
  * 活动项目
