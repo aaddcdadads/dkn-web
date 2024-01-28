@@ -663,11 +663,6 @@ export default {
             key: "b",
           },
           {
-            title: "活动地点",
-            dataIndex: "address",
-            key: "address",
-          },
-          {
             title: "启用状态",
             dataIndex: "status",
             key: "status",
