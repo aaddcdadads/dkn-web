@@ -387,9 +387,14 @@
                               >
                                 <hm-ant-formily
                                   :config="{
-                                    ' explain': {
+                                    ' rule': {
                                       type: 'textarea',
-                                      title: '活动说明',
+                                      title: '活动规则',
+                                      style: { width: '100%' },
+                                    },
+                                    agreement: {
+                                      type: 'textarea',
+                                      title: '协议与承诺书',
                                       style: { width: '100%' },
                                     },
                                   }"
@@ -680,9 +685,16 @@ export default {
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
         config: {
-          " explain": {
+          " rule": {
             type: "textarea",
-            title: "活动说明",
+            title: "活动规则",
+            style: {
+              width: "100%",
+            },
+          },
+          agreement: {
+            type: "textarea",
+            title: "协议与承诺书",
             style: {
               width: "100%",
             },
