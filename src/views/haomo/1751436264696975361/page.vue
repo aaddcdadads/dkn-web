@@ -343,12 +343,14 @@
                                       callback:
                                         'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
                                       type: 'link',
+                                      icon: 'fa fa-pencil',
                                     },
                                     {
                                       name: '删除',
                                       callback:
                                         'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
                                       type: 'link',
+                                      icon: 'fa fa-trash',
                                     },
                                   ]"
                                   :is-flat-action="true"
@@ -515,12 +517,14 @@
                               callback:
                                 'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
                               type: 'link',
+                              icon: 'fa fa-pencil',
                             },
                             {
                               name: '删除',
                               callback:
                                 'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
                               type: 'link',
+                              icon: 'fa fa-trash',
                             },
                           ]"
                           :is-flat-action="true"
