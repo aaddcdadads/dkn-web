@@ -92,7 +92,7 @@
                           title: '活动周期',
                           style: { width: '100%' },
                           required: true,
-                          props: {},
+                          props: { showTime: true },
                         },
                         EntryClose: {
                           type: 'DatePicker',
@@ -673,7 +673,9 @@ export default {
               width: "100%",
             },
             required: true,
-            props: {},
+            props: {
+              showTime: true,
+            },
           },
           EntryClose: {
             type: "DatePicker",
