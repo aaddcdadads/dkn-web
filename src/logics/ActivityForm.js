@@ -42,7 +42,9 @@ const setActivityExt = (logic.setActivityExt = function () {});
  * 活动项目
  */
 const activityProjectRequest = (logic.activityProjectRequest = async function () {
-  let res = await self.$Action(``);
+  let res = await self.$getAction(`/api/dkn/activityProject/list`, {
+    activityId: self.activityId,
+  });
   self.activityProjectRequestData = res;
 });
 
@@ -55,7 +57,9 @@ const setActivityProject = (logic.setActivityProject = function () {});
  * 活动图片
  */
 const activityImgRequest = (logic.activityImgRequest = async function () {
-  let res = await self.$Action(``);
+  let res = await self.$getAction(`/api/dkn/activityImg/list`, {
+    activityId: self.activityId,
+  });
   self.activityImgRequestData = res;
 });
 
