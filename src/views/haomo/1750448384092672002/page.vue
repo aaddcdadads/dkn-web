@@ -111,13 +111,18 @@
                             v-model:value="allStatus.value"
                             title=""
                             v-model:options="allStatus.options"
+                            class="ele-allStatus"
                           >
                           </hm-ant-select>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-a9bfb5ef-3877-49fb-a1cf-f095389cbd2e"
                         >
-                          <hm-ant-button text="确认"> </hm-ant-button>
+                          <hm-ant-button
+                            text="确认"
+                            class="ele-a9bfb5ef-3877-49fb-a1cf-f095389cbd2e"
+                          >
+                          </hm-ant-button>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
@@ -929,6 +934,14 @@ export default {
 
 .ele-wrapper-4aad8761-7b58-4d08-b5a2-91fea232f9fe {
   width: 100%;
+}
+
+.ele-wrapper-allStatus {
+  margin-right: 20px;
+}
+
+.ele-wrapper-a9bfb5ef-3877-49fb-a1cf-f095389cbd2e {
+  margin-right: 120px;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
