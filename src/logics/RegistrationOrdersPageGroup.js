@@ -275,7 +275,9 @@ const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = functio
 /**
  * 参数处理
  */
-const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {});
+const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {
+  console.log("aa123", self.selectTempArr);
+});
 
 /**
  * 批量核销请求
