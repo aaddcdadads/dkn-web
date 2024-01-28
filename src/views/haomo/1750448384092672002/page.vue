@@ -552,6 +552,16 @@ export default {
           },
         ],
       },
+      allModal: {
+        title: "删除",
+        visible: false,
+      },
+      allText: {
+        text: "是否要删除?",
+        color: "#CF2323",
+        textAlign: "left",
+        padding: "0",
+      },
       importButton: {
         visible: false,
         headers: null,
@@ -636,16 +646,6 @@ export default {
           span: "文字内容",
         },
         schema: {},
-      },
-      allModal: {
-        title: "删除",
-        visible: false,
-      },
-      allText: {
-        text: "是否要删除?",
-        color: "#CF2323",
-        textAlign: "left",
-        padding: "0",
       },
       activityFilter: {
         config: {
@@ -920,6 +920,18 @@ export default {
       if (!self.allStatus.value) {
         self.$message.error("请选择批量操作");
         return;
+      }
+
+      self.allModal.visible = true;
+      if (self.allStatus.value === 1) {
+        self.allModal.title = "启用";
+        self.allText.text = "确定全部启用吗";
+      } else if (self.allStatus.value === 2) {
+        self.allModal.title = "禁用";
+        self.allText.text = "确定全部禁用吗";
+      } else if (self.allStatus.value === 3) {
+        self.allModal.title = "删除";
+        self.allText.text = "确定全部删除吗";
       }
     },
     onEle128De5D58A3B40DaAbea0C30F1Be5Fe1Click() {
