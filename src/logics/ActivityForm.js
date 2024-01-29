@@ -28,6 +28,7 @@ const setActivity = (logic.setActivity = function () {
   let item = self.activityRequestData.result;
   self.$refs.activityForm.setFormValues(item);
   self.$refs.activityTwoForm.setFormValues(item);
+  self.$refs.activityExtForm.setFormValues(item);
 });
 
 /**
