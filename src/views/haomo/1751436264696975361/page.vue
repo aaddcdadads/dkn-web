@@ -380,6 +380,22 @@
                         class="ele-wrapper ele-wrapper-04ce007d-e1c2-4f4d-ac07-44b7718beacf"
                       >
                         <hm-ant-formily
+                          :config="{
+                            ' name': {
+                              type: 'Upload',
+                              title: '背景图片图片',
+                              style: { width: '100%' },
+                              required: true,
+                              props: {},
+                            },
+                            cycle: {
+                              type: 'Input',
+                              title: '参考尺寸',
+                              style: { width: '100%' },
+                              required: true,
+                              props: {},
+                            },
+                          }"
                           :value="{}"
                           :col-num="0"
                           :col-min-width="380"
@@ -976,6 +992,26 @@ export default {
         },
       },
       "04ce007d-e1c2-4f4d-ac07-44b7718beacf": {
+        config: {
+          " name": {
+            type: "Upload",
+            title: "背景图片图片",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+          cycle: {
+            type: "Input",
+            title: "参考尺寸",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+        },
         value: {},
       },
       activityImgTableOne: {
