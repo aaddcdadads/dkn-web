@@ -831,6 +831,28 @@ export default {
             width: 50,
             title: "项目费用",
             key: "name",
+            customRender: function (data) {
+              return h(HmAntIconText, {
+                fontSize: "14px",
+                iconSize: "16px",
+                bgColorText: "transparent",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                text: data.record.name || "微应用名称-1",
+                placement: "top",
+                img: self.getImg(data.record.imgPath),
+                color: "black",
+                imgStyle: {
+                  height: "16px",
+                  marginRight: "4px",
+                  marginTop: "-4px",
+                },
+                onClick: function () {
+                  console.log("data1", data);
+                },
+              });
+            },
           },
           {
             dataIndex: "age",
