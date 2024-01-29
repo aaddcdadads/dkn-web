@@ -1222,8 +1222,8 @@ export default {
     onAddBtn1Click() {
       this.addproject.visible = true;
     },
-    onAddprojectOk() {
-      this.addActivityProject();
+    async onAddprojectOk() {
+      await this.addActivityProject();
     },
     onAddBtn2Click() {
       this.addprize.visible = true;
