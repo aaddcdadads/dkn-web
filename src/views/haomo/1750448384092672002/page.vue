@@ -389,6 +389,7 @@
           <div class="ele-wrapper ele-wrapper-batchEdit">
             <hm-modal
               ref="batchEdit"
+              title="批量操作"
               v-model:visible="batchEdit.visible"
               width="320px"
               :z-index="1000"
