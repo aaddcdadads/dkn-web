@@ -1282,7 +1282,7 @@ export default {
 }
 
 .ele-wrapper-deleteproject {
-  /deep/.ant-modal-body {
+  .ant-modal-body {
     display: flex;
     justify-content: center;
   }
