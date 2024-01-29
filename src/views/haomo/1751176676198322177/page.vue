@@ -115,9 +115,9 @@
                       <div class="ele-wrapper ele-wrapper-addBtn1">
                         <hm-ant-button
                           ref="addBtn1"
+                          icon="fa fa-plus"
                           text="添加"
                           :type="'primary'"
-                          icon="fa fa-plus"
                           @click="onAddBtn1Click"
                           class="ele-addBtn1"
                         >
@@ -126,9 +126,9 @@
                       <div class="ele-wrapper ele-wrapper-addproject">
                         <hm-modal
                           ref="addproject"
-                          title="添加项目"
-                          v-model:visible="addproject.visible"
                           :z-index="1000"
+                          v-model:visible="addproject.visible"
+                          title="添加项目"
                           height=""
                           @ok="onAddprojectOk"
                           class="ele-addproject"
@@ -154,10 +154,10 @@
                       <div class="ele-wrapper ele-wrapper-deleteproject">
                         <hm-modal
                           ref="deleteproject"
-                          title="删除"
-                          v-model:visible="deleteproject.visible"
-                          width="320px"
                           :z-index="1000"
+                          v-model:visible="deleteproject.visible"
+                          title="删除"
+                          width="320px"
                           height=""
                           class="ele-deleteproject"
                         >
@@ -229,8 +229,8 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              v-model:visible="addprize.visible"
                               :z-index="1000"
+                              v-model:visible="addprize.visible"
                               height="250px"
                               class="ele-addprize"
                             >
@@ -300,19 +300,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :columns="activityImgTableTwo.columns"
-                                  :data="activityImgTableTwo.data"
-                                  :pagination-hidden="
-                                    activityImgTableTwo.paginationHidden
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :actions="activityImgTableTwo.actions"
                                   :is-flat-action="
                                     activityImgTableTwo.isFlatAction
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
+                                  :data="activityImgTableTwo.data"
+                                  :columns="activityImgTableTwo.columns"
                                   :row-class-name="
                                     activityImgTableTwo.rowClassName
                                   "
+                                  :pagination-hidden="
+                                    activityImgTableTwo.paginationHidden
+                                  "
+                                  :actions="activityImgTableTwo.actions"
                                 >
                                 </hm-ant-table>
                               </div>
@@ -399,8 +399,8 @@
                   <div class="ele-wrapper ele-wrapper-addBackground">
                     <hm-modal
                       ref="addBackground"
-                      v-model:visible="addBackground.visible"
                       :z-index="1000"
+                      v-model:visible="addBackground.visible"
                       height="250px"
                       class="ele-addBackground"
                     >
@@ -465,15 +465,15 @@
                       <div class="ele-wrapper ele-wrapper-activityImgTableOne">
                         <hm-ant-table
                           ref="activityImgTableOne"
-                          :columns="activityImgTableOne.columns"
+                          :is-flat-action="activityImgTableOne.isFlatAction"
+                          :get-data-map="activityImgTableOne.getDataMap"
                           :data="activityImgTableOne.data"
+                          :columns="activityImgTableOne.columns"
+                          :row-class-name="activityImgTableOne.rowClassName"
                           :pagination-hidden="
                             activityImgTableOne.paginationHidden
                           "
-                          :get-data-map="activityImgTableOne.getDataMap"
                           :actions="activityImgTableOne.actions"
-                          :is-flat-action="activityImgTableOne.isFlatAction"
-                          :row-class-name="activityImgTableOne.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -555,10 +555,10 @@
                 class="ele-wrapper ele-wrapper-78fb2568-9250-4a78-987d-c766b916f771"
               >
                 <hm-ant-button
-                  text="创建活动"
-                  :type="'primary'"
                   :size="'large'"
                   icon="fa fa-check-circle"
+                  text="创建活动"
+                  :type="'primary'"
                   class="ele-78fb2568-9250-4a78-987d-c766b916f771"
                 >
                 </hm-ant-button>
@@ -881,7 +881,7 @@ export default {
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
-              self.addproject.visible = true;
+              //      self.addproject.visible = true;
             },
             type: "link",
           },
@@ -890,7 +890,7 @@ export default {
             icon: "fa fa-trash",
             callback: function (item) {
               console.log("点击删除: ", item);
-              self.deleteproject.visible = true;
+              //  self.deleteproject.visible = true;
             },
             type: "link",
           },
@@ -948,6 +948,37 @@ export default {
         value: {},
       },
       activityImgTableTwo: {
+        isFlatAction: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        data: [
+          {
+            address: "1",
+            school: "",
+            name: "",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "2",
+            school: "",
+            name: "",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "3",
+            school: "",
+            name: "",
+            key: "3",
+            age: "",
+            sexual: "",
+          },
+        ],
         columns: [
           {
             dataIndex: "name",
@@ -977,37 +1008,8 @@ export default {
             key: "action",
           },
         ],
-        data: [
-          {
-            address: "1",
-            school: "",
-            name: "",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "2",
-            school: "",
-            name: "",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "3",
-            school: "",
-            name: "",
-            key: "3",
-            age: "",
-            sexual: "",
-          },
-        ],
+        rowClassName: {},
         paginationHidden: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
         actions: [
           {
             name: "编辑",
@@ -1028,8 +1030,6 @@ export default {
             type: "link",
           },
         ],
-        isFlatAction: true,
-        rowClassName: {},
       },
       activityExtForm: {
         schema: {
@@ -1138,6 +1138,29 @@ export default {
         value: {},
       },
       activityImgTableOne: {
+        isFlatAction: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        data: [
+          {
+            address: "",
+            school: "",
+            name: "¥0",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "",
+            school: "",
+            name: "¥ 29.9",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+        ],
         columns: [
           {
             dataIndex: "name",
@@ -1167,29 +1190,8 @@ export default {
             key: "action",
           },
         ],
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
+        rowClassName: {},
         paginationHidden: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
         actions: [
           {
             name: "编辑",
@@ -1210,8 +1212,6 @@ export default {
             type: "link",
           },
         ],
-        isFlatAction: true,
-        rowClassName: {},
       },
     };
   },
