@@ -386,6 +386,21 @@
               </div>
             </hm-modal>
           </div>
+          <div class="ele-wrapper ele-wrapper-batchEdit">
+            <hm-modal
+              ref="batchEdit"
+              v-model:visible="batchEdit.visible"
+              width="320px"
+              :z-index="1000"
+              height=""
+            >
+              <div
+                class="ele-wrapper ele-wrapper-fb73e497-49b9-43b8-948c-369909ec4a3b"
+              >
+                <hm-ant-bg-text> </hm-ant-bg-text>
+              </div>
+            </hm-modal>
+          </div>
         </hm-bg-card>
       </div>
       <div class="ele-wrapper ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1">
@@ -642,6 +657,9 @@ export default {
       },
       activityDetailModal: {
         visible: false,
+      },
+      batchEdit: {
+        visible: true,
       },
       activityFilter: {
         config: {
