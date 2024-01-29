@@ -23,9 +23,9 @@
               <div class="ele-wrapper ele-wrapper-title">
                 <hm-ant-icon-text
                   ref="title"
-                  text="创建活动"
-                  icon="fa fa-tasks"
-                  font-size="14px"
+                  :text="title.text"
+                  :icon="title.icon"
+                  :font-size="title.fontSize"
                   class="ele-title"
                 >
                 </hm-ant-icon-text>
@@ -468,6 +468,12 @@ export default {
   data() {
     let self = this;
     return {
+      title: {
+        text: "创建活动",
+        icon: "fa fa-tasks",
+        fontSize: "14px",
+      },
+      isSaveOrUpdate: {},
       activityForm: {
         config: {
           " name": {
@@ -816,10 +822,20 @@ export default {
     };
   },
   watch: {},
+  created(e) {
+    this.onCreated(e);
+  },
   mounted(e) {
     detail(this, arguments);
   },
-  methods: {},
+  methods: {
+    onCreated() {
+      let self = this;
+      self.title.text = "创建活动";
+      self.isSaveOrUpdate.hidden = false;
+      self.isTitle = "";
+    },
+  },
 };
 </script>
 
