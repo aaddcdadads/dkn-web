@@ -129,6 +129,7 @@
                           v-model:visible="addproject.visible"
                           :z-index="1000"
                           height="240px"
+                          @ok="onAddprojectOk"
                           class="ele-addproject"
                         >
                           <div
@@ -1134,6 +1135,9 @@ export default {
 
     onAddBtn1Click() {
       this.addproject.visible = true;
+    },
+    onAddprojectOk() {
+      this.addActivityProject();
     },
     onAddBtn2Click() {
       this.addprize.visible = true;
