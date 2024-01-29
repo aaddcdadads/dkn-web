@@ -714,19 +714,19 @@ export default {
       activityImgTableOne: {
         columns: [
           {
-            title: "奖品图片",
+            title: "图片",
             dataIndex: "name",
             key: "name",
             width: 50,
           },
           {
-            title: "奖品名称",
+            title: "参考尺寸（或使用二倍图）",
             dataIndex: "age",
             key: "age",
             width: 90,
           },
           {
-            title: "奖品排序",
+            title: "图片排序",
             dataIndex: "address",
             key: "address",
             ellipsis: true,
