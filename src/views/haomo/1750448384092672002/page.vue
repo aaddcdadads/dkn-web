@@ -738,20 +738,19 @@ export default {
             title: "活动开始时间",
             dataIndex: "startTime",
             key: "startTime",
-            fixed: "left",
-            width: 250,
+            width: 220,
           },
           {
             title: "活动报名截止时间",
             dataIndex: "closeTime",
             key: "closeTime",
-            width: 250,
+            width: 220,
           },
           {
             title: "活动核销截止时间",
             dataIndex: "pickUpTime",
             key: "pickUpTime",
-            width: 250,
+            width: 220,
           },
           {
             title: "报名人数",
