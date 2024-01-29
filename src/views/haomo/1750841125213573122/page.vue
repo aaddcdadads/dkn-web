@@ -689,7 +689,7 @@ export default {
               return h(
                 "div",
                 {
-                  class: "applyNoSpan",
+                  class: "applyNoDiv",
                   style: {
                     width: 188,
                     display: "flex",
