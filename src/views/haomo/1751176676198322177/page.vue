@@ -709,7 +709,7 @@ export default {
                   value: 1,
                 },
               ],
-              label: 0,
+              default: 0,
             },
           },
         },
