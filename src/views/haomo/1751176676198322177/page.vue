@@ -459,7 +459,7 @@
                         <hm-ant-formily
                           :config="{
                             ' name': {
-                              type: 'upload',
+                              type: 'UploadImage',
                               title: '背景图片',
                               style: { width: '100%' },
                               required: true,
@@ -715,7 +715,7 @@ export default {
         visible: false,
       },
       addprize: {
-        visible: true,
+        visible: false,
       },
       addBackground: {
         visible: false,
@@ -975,7 +975,7 @@ export default {
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         config: {
           " name": {
-            type: "upload",
+            type: "UploadImage",
             title: "背景图片",
             style: {
               width: "100%",
