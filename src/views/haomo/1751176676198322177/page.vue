@@ -282,7 +282,7 @@
                               ref="addprize"
                               v-model:visible="addprize.visible"
                               :z-index="1000"
-                              height="200px"
+                              height="250px"
                               class="ele-addprize"
                             >
                               <div
