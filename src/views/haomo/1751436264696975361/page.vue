@@ -130,6 +130,18 @@
                           :z-index="1000"
                           class="ele-addprice"
                         >
+                          <div
+                            class="ele-wrapper ele-wrapper-8529c1db-0480-471c-8c06-e2f336b223f2"
+                          >
+                            <hm-ant-formily
+                              :value="{}"
+                              :col-num="0"
+                              :col-min-width="380"
+                              :label-col="7"
+                              :wrapper-col="14"
+                            >
+                            </hm-ant-formily>
+                          </div>
                         </hm-modal>
                       </div>
                       <div
@@ -652,6 +664,9 @@ export default {
             },
           },
         },
+      },
+      "8529c1db-0480-471c-8c06-e2f336b223f2": {
+        value: {},
       },
       activityProjectTable: {
         isFlatAction: true,
