@@ -1096,7 +1096,7 @@ export default {
     background: #fafafa;
   }
   .table-div {
-    background-color: none;
+    background-color: transparent !important;
   }
   width: 98%;
   margin-left: 1%;
