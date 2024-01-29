@@ -164,6 +164,7 @@
                       <div class="ele-wrapper ele-wrapper-deleteproject">
                         <hm-modal
                           ref="deleteproject"
+                          title=""
                           v-model:visible="deleteproject.visible"
                           width="320px"
                           :z-index="1000"
