@@ -219,6 +219,7 @@
                           width="320px"
                           :z-index="1000"
                           height=""
+                          class="ele-delete"
                         >
                           <div
                             class="ele-wrapper ele-wrapper-cecf2e80-2c21-4fc8-961b-3288baaf61ed"
@@ -1122,6 +1123,12 @@ export default {
 
 .ele-wrapper-7c1be11a-b36f-498c-ba73-bcabfe46ade4 {
   height: 100%;
+}
+
+.ele-wrapper-delete {
+  /deep/.hm-modal {
+    min-height: 0px;
+  }
 }
 
 .ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f {
