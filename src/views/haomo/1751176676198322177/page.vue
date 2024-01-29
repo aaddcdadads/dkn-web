@@ -827,10 +827,10 @@ export default {
       activityProjectTable: {
         columns: [
           {
-            dataIndex: "name",
+            dataIndex: "imgPath",
             width: 50,
             title: "项目图片",
-            key: "name",
+            key: "imgPath",
             customRender: function (data) {
               return h(HmAntIconText, {
                 fontSize: "14px",
@@ -853,23 +853,44 @@ export default {
             },
           },
           {
-            dataIndex: "age",
+            dataIndex: "expense",
             width: 90,
-            title: "活动项目名称",
-            key: "age",
+            title: "项目费用",
+            key: "expense",
           },
           {
-            dataIndex: "address",
+            dataIndex: "free",
             width: 70,
-            title: "项目简历",
-            key: "address",
+            title: "是否免费",
+            key: "free",
             ellipsis: true,
           },
           {
-            dataIndex: "sexual",
+            dataIndex: "multipleOrder",
+            width: 30,
+            title: "可多人报名",
+            key: "multipleOrder",
+            ellipsis: true,
+          },
+          {
+            dataIndex: "name",
+            width: 30,
+            title: "活动项目名称",
+            key: "name",
+            ellipsis: true,
+          },
+          {
+            dataIndex: "synopsis",
+            width: 30,
+            title: "项目简介",
+            key: "synopsis",
+            ellipsis: true,
+          },
+          {
+            dataIndex: "sortNo",
             width: 30,
             title: "排序",
-            key: "sexual",
+            key: "sortNo",
             ellipsis: true,
           },
           {
