@@ -268,6 +268,7 @@ const editActivty = (logic.editActivty = async (pageVm, eventData) => {
 
   await self.$refs.activityForm.validate();
   await self.$refs.activityExtForm.validate();
+  await self.$refs.activityTwoForm.validate();
 
   let activityProjects = [],
     activityImgs = [],
@@ -297,18 +298,13 @@ const editActivty = (logic.editActivty = async (pageVm, eventData) => {
   self.item = {
     ...self.$refs.activityForm.getFormValues(),
     ...self.$refs.activityExtForm.getFormValues(),
+    ...self.$refs.activityTwoForm.getFormValues(),
     activityExts,
     activityImgs,
     activityExts,
+    id: self.id,
   };
-  if (self.type === 2) {
-    await self.$refs.activityTwoForm.validate();
-    self.item = {
-      ...self.item,
-      ...self.$refs.activityTwoForm.getFormValues(),
-      id: self.id,
-    };
-  }
+
   await editRequest();
   if (self.editRequestData.success) {
     self.$message.error(self.editRequestData.message);
