@@ -651,7 +651,9 @@ export default {
             style: {
               width: "20%",
             },
-            props: {},
+            props: {
+              placeholder: "活动ID/活动名称",
+            },
             validator: function (value) {},
           },
           status: {
