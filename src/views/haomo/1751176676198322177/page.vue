@@ -333,24 +333,23 @@
                               box-shadow-blur=""
                               class="ele-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                             >
-                              <div class="ele-wrapper ele-wrapper-projectimage">
+                              <div
+                                class="ele-wrapper ele-wrapper-activityImgTableTwo"
+                              >
                                 <hm-ant-table
-                                  ref="projectimage"
-                                  :columns="projectimage.columns"
-                                  :data="projectimage.data"
+                                  ref="activityImgTableTwo"
+                                  :columns="activityImgTableTwo.columns"
+                                  :data="activityImgTableTwo.data"
                                   :pagination-hidden="
-                                    projectimage.paginationHidden
+                                    activityImgTableTwo.paginationHidden
                                   "
-                                  :pagination="projectimage.pagination"
-                                  :params="projectimage.params"
-                                  :get-data-map="projectimage.getDataMap"
-                                  :pagination-map="projectimage.paginationMap"
-                                  :row-selection="projectimage.rowSelection"
-                                  :actions="projectimage.actions"
-                                  :is-flat-action="projectimage.isFlatAction"
-                                  :scroll="projectimage.scroll"
-                                  :combined="projectimage.combined"
-                                  :row-class-name="projectimage.rowClassName"
+                                  :actions="activityImgTableTwo.actions"
+                                  :is-flat-action="
+                                    activityImgTableTwo.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityImgTableTwo.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -959,7 +958,7 @@ export default {
           },
         },
       },
-      projectimage: {
+      activityImgTableTwo: {
         columns: [
           {
             title: "奖品图片",
@@ -1016,20 +1015,6 @@ export default {
           },
         ],
         paginationHidden: true,
-        pagination: {
-          current: 1,
-          pageSize: 10,
-        },
-        params: {},
-        getDataMap: {
-          list: "",
-          total: "",
-        },
-        paginationMap: {
-          pageNo: "pageNo",
-          pageSize: "pageSize",
-        },
-        rowSelection: {},
         actions: [
           {
             name: "编辑",
@@ -1043,10 +1028,6 @@ export default {
           },
         ],
         isFlatAction: true,
-        scroll: {
-          x: "100%",
-        },
-        combined: [],
         rowClassName: {},
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
