@@ -998,13 +998,11 @@ export default {
           },
           {
             dataIndex: "name",
-            width: 90,
             title: "奖品名称",
             key: "name",
           },
           {
             dataIndex: "sortNo",
-            width: 30,
             title: "奖品排序",
             key: "sortNo",
             ellipsis: true,
