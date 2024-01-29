@@ -881,7 +881,7 @@ export default {
           },
           {
             dataIndex: "synopsis",
-            width: 90,
+            width: 70,
             title: "项目简介",
             key: "synopsis",
             ellipsis: true,
