@@ -168,7 +168,7 @@
                         class="ele-wrapper ele-wrapper-01501a3e-6280-438e-a352-e3472d9e8490"
                       >
                         <hm-modal
-                          title=""
+                          title="添加项目"
                           :visible="true"
                           :z-index="1000"
                           height="270px"
