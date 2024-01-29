@@ -919,17 +919,25 @@ export default {
         ],
         data: [
           {
-            address: "",
+            address: "1",
             school: "",
-            name: "¥0",
+            name: "",
             key: "1",
             age: "",
             sexual: "",
           },
           {
-            address: "",
+            address: "2",
             school: "",
-            name: "¥ 29.9",
+            name: "",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "3",
+            school: "",
+            name: "",
             key: "2",
             age: "",
             sexual: "",
@@ -1075,9 +1083,9 @@ export default {
         ],
         data: [
           {
-            address: "",
+            address: "1",
             school: "",
-            name: "¥0",
+            name: "",
             key: "1",
             age: "",
             sexual: "",
@@ -1085,7 +1093,7 @@ export default {
           {
             address: "",
             school: "",
-            name: "¥ 29.9",
+            name: "2",
             key: "2",
             age: "",
             sexual: "",
