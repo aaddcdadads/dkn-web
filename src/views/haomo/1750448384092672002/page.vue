@@ -718,6 +718,7 @@ export default {
             dataIndex: "code",
             key: "code",
             fixed: true,
+            width: 100,
           },
           {
             title: "活动名称",
@@ -731,6 +732,7 @@ export default {
             dataIndex: "expense",
             key: "expense",
             fixed: true,
+            width: 100,
           },
           {
             title: "活动开始时间",
