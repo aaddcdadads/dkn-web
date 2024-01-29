@@ -132,69 +132,17 @@
                           class="ele-addproject"
                         >
                           <div
-                            class="ele-wrapper ele-wrapper-7c1be11a-b36f-498c-ba73-bcabfe46ade4"
+                            class="ele-wrapper ele-wrapper-activityProjectForm"
                           >
                             <hm-ant-formily
-                              :config="{
-                                name: {
-                                  style: { width: '100%' },
-                                  type: 'Input',
-                                  title: '活动项目名称',
-                                  required: true,
-                                  props: {},
-                                },
-                                expense: {
-                                  style: { width: '100%' },
-                                  type: 'Input',
-                                  title: '项目费用',
-                                  required: true,
-                                  props: {},
-                                },
-                                synopsis: {
-                                  style: { width: '100%' },
-                                  type: 'Textarea',
-                                  title: '项目简介',
-                                  required: true,
-                                  props: {},
-                                },
-                                free: {
-                                  style: { width: '100%' },
-                                  type: 'RadioGroup',
-                                  title: '是否免费',
-                                  required: true,
-                                  props: {
-                                    options: [
-                                      { label: '是', value: 0 },
-                                      { label: '否', value: 1 },
-                                    ],
-                                  },
-                                },
-                                multipleOrder: {
-                                  style: { width: '100%' },
-                                  type: 'RadioGroup',
-                                  title: '是否多人报名',
-                                  required: true,
-                                  props: {
-                                    options: [
-                                      { label: '是', value: 0 },
-                                      { label: '否', value: 1 },
-                                    ],
-                                  },
-                                },
-                                imgPath: {
-                                  type: 'UploadImage',
-                                  title: '活动图片',
-                                  style: { width: '100%' },
-                                  required: true,
-                                  props: {},
-                                },
-                              }"
-                              :value="{}"
+                              ref="activityProjectForm"
+                              :config="activityProjectForm.config"
+                              v-model:value="activityProjectForm.value"
                               :col-num="0"
                               :col-min-width="380"
                               :label-col="6"
                               :wrapper-col="16"
-                              class="ele-7c1be11a-b36f-498c-ba73-bcabfe46ade4"
+                              class="ele-activityProjectForm"
                             >
                             </hm-ant-formily>
                           </div>
@@ -748,7 +696,7 @@ export default {
           top: "100px",
         },
       },
-      "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
+      activityProjectForm: {
         config: {
           name: {
             style: {
@@ -1172,13 +1120,16 @@ export default {
     };
   },
   watch: {},
-  mounted(e) {
+  async mounted(e) {
     this.onMounted(e);
   },
   methods: {
     onMounted() {
       let self = this;
       self.type = parseInt(self.$route.query.type);
+      self.addActivityProject = async function () {
+        await self.$refs.activityExtForm.validate();
+      };
     },
 
     onAddBtn1Click() {
@@ -1272,7 +1223,7 @@ export default {
   }
 }
 
-.ele-wrapper-7c1be11a-b36f-498c-ba73-bcabfe46ade4 {
+.ele-wrapper-activityProjectForm {
   height: 100%;
 }
 
