@@ -128,7 +128,7 @@
                           title="活动费用"
                           v-model:visible="addprice.visible"
                           :z-index="1000"
-                          height="200px"
+                          height=""
                           class="ele-addprice"
                         >
                           <div
