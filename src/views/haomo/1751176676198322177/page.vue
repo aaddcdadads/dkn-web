@@ -632,7 +632,7 @@ import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
-import { saveOrUpdate } from "/@/logics/ActivityForm";
+import { addActivty } from "/@/logics/ActivityForm";
 
 export default {
   name: "NewActivity",
@@ -1153,7 +1153,7 @@ export default {
       this.addBackground.visible = true;
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
-      saveOrUpdate(this, arguments);
+      addActivty(this, arguments);
     },
   },
 };
