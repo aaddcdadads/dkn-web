@@ -768,6 +768,17 @@ export default {
               ],
             },
           },
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "排序",
+            required: true,
+            props: {
+              placeholder: "请输入排序",
+            },
+          },
         },
         value: {},
         schema: {
