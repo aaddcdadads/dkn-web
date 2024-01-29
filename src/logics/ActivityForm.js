@@ -203,7 +203,6 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
 
   await self.$refs.activityForm.validate();
   await self.$refs.activityExtForm.validate();
-  await self.$refs.activityTwoForm.validate();
 
   let activityProjects = [],
     activityImgs = [],
@@ -233,11 +232,18 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
   self.item = {
     ...self.$refs.activityForm.getFormValues(),
     ...self.$refs.activityExtForm.getFormValues(),
-    ...self.$refs.activityTwoForm.getFormValues(),
     activityExts,
     activityImgs,
     activityExts,
   };
+  if (self.type === 2) {
+    await self.$refs.activityTwoForm.validate();
+    self.item = {
+      ...self.item,
+      ...self.$refs.activityTwoForm.getFormValues(),
+      id: self.id,
+    };
+  }
   if (self.type === 1) {
     await addRequest();
     if (self.addRequestData.success) {
