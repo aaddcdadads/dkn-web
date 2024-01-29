@@ -243,81 +243,15 @@
                           box-shadow-blur=""
                           class="ele-678d6f52-6548-4f95-b813-d079ff38bb6f"
                         >
-                          <div
-                            class="ele-wrapper ele-wrapper-25b5309c-c34c-4da3-a7c0-afa25d079608"
-                          >
+                          <div class="ele-wrapper ele-wrapper-projectcost">
                             <hm-ant-table
-                              :columns="[
-                                {
-                                  title: '项目费用',
-                                  dataIndex: 'name',
-                                  key: 'name',
-                                  width: 50,
-                                },
-                                {
-                                  title: '活动项目名称',
-                                  dataIndex: 'age',
-                                  key: 'age',
-                                  width: 90,
-                                },
-                                {
-                                  title: '项目简历',
-                                  dataIndex: 'address',
-                                  key: 'address',
-                                  ellipsis: true,
-                                  width: 70,
-                                },
-                                {
-                                  title: '排序',
-                                  dataIndex: 'sexual',
-                                  key: 'sexual',
-                                  ellipsis: true,
-                                  width: 30,
-                                },
-                                {
-                                  title: '操作',
-                                  key: 'action',
-                                  slots: { customRender: 'action' },
-                                  width: 100,
-                                },
-                              ]"
-                              :data="[
-                                {
-                                  key: '1',
-                                  name: '¥0',
-                                  age: '',
-                                  address: '',
-                                  sexual: '',
-                                  school: '',
-                                },
-                                {
-                                  key: '2',
-                                  name: '¥ 29.9',
-                                  age: '',
-                                  address: '',
-                                  sexual: '',
-                                  school: '',
-                                },
-                              ]"
-                              :pagination-hidden="true"
-                              :actions="[
-                                {
-                                  name: '编辑',
-                                  callback:
-                                    'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n       self.addproject.visible = true;\n                        }',
-                                  type: 'link',
-                                  icon: 'fa fa-pencil',
-                                },
-                                {
-                                  name: '删除',
-                                  callback:
-                                    'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n      this.$refs.deleteproject.visible = true;\n                        }',
-                                  type: 'link',
-                                  icon: 'fa fa-trash',
-                                },
-                              ]"
-                              :is-flat-action="true"
-                              :row-class-name="{}"
+                              ref="projectcost"
+                              :columns="projectcost.columns"
+                              :data="projectcost.data"
+                              :pagination-hidden="projectcost.paginationHidden"
+                              :actions="projectcost.actions"
+                              :is-flat-action="projectcost.isFlatAction"
+                              :row-class-name="projectcost.rowClassName"
                             >
                             </hm-ant-table>
                           </div>
@@ -394,82 +328,17 @@
                               box-shadow-blur=""
                               class="ele-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                             >
-                              <div
-                                class="ele-wrapper ele-wrapper-1359321a-c729-4bf8-b227-caa6f12e788f"
-                              >
+                              <div class="ele-wrapper ele-wrapper-projectimage">
                                 <hm-ant-table
-                                  :columns="[
-                                    {
-                                      title: '奖品图片',
-                                      dataIndex: 'name',
-                                      key: 'name',
-                                      width: 50,
-                                    },
-                                    {
-                                      title: '奖品名称',
-                                      dataIndex: 'age',
-                                      key: 'age',
-                                      width: 90,
-                                    },
-                                    {
-                                      title: '奖品排序',
-                                      dataIndex: 'address',
-                                      key: 'address',
-                                      ellipsis: true,
-                                      width: 30,
-                                    },
-                                    {
-                                      title: '操作',
-                                      key: 'action',
-                                      slots: { customRender: 'action' },
-                                      width: 80,
-                                    },
-                                  ]"
-                                  :data="[
-                                    {
-                                      key: '1',
-                                      name: '',
-                                      age: '',
-                                      address: '1',
-                                      sexual: '',
-                                      school: '',
-                                    },
-                                    {
-                                      key: '2',
-                                      name: '',
-                                      age: '',
-                                      address: '2',
-                                      sexual: '',
-                                      school: '',
-                                    },
-                                    {
-                                      key: '3',
-                                      name: '',
-                                      age: '',
-                                      address: '3',
-                                      sexual: '',
-                                      school: '',
-                                    },
-                                  ]"
-                                  :pagination-hidden="true"
-                                  :actions="[
-                                    {
-                                      name: '编辑',
-                                      callback:
-                                        'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n        self.addprize.visible = true;\n                        }',
-                                      type: 'link',
-                                      icon: 'fa fa-pencil',
-                                    },
-                                    {
-                                      name: '删除',
-                                      callback:
-                                        'function (item) {\n                            console.log(&quot;点击删除: &quot;, self.deleteproject.visible);\n    \n                        }',
-                                      type: 'link',
-                                      icon: 'fa fa-trash',
-                                    },
-                                  ]"
-                                  :is-flat-action="true"
-                                  :row-class-name="{}"
+                                  ref="projectimage"
+                                  :columns="projectimage.columns"
+                                  :data="projectimage.data"
+                                  :pagination-hidden="
+                                    projectimage.paginationHidden
+                                  "
+                                  :actions="projectimage.actions"
+                                  :is-flat-action="projectimage.isFlatAction"
+                                  :row-class-name="projectimage.rowClassName"
                                 >
                                 </hm-ant-table>
                               </div>
@@ -627,74 +496,17 @@
                       box-shadow-blur=""
                       class="ele-89ea97da-357c-4295-9803-b1d0b63db0a2"
                     >
-                      <div
-                        class="ele-wrapper ele-wrapper-811f6987-6418-493f-8668-8d1795fc22e0"
-                      >
+                      <div class="ele-wrapper ele-wrapper-projectbackground">
                         <hm-ant-table
-                          :columns="[
-                            {
-                              title: '图片',
-                              dataIndex: 'name',
-                              key: 'name',
-                              width: 50,
-                            },
-                            {
-                              title: '参考尺寸（或使用二倍图）',
-                              dataIndex: 'age',
-                              key: 'age',
-                              width: 90,
-                            },
-                            {
-                              title: '图片排序',
-                              dataIndex: 'address',
-                              key: 'address',
-                              ellipsis: true,
-                              width: 40,
-                            },
-                            {
-                              title: '操作',
-                              key: 'action',
-                              slots: { customRender: 'action' },
-                              width: 80,
-                            },
-                          ]"
-                          :data="[
-                            {
-                              key: '1',
-                              name: '¥0',
-                              age: '',
-                              address: '',
-                              sexual: '',
-                              school: '',
-                            },
-                            {
-                              key: '2',
-                              name: '¥ 29.9',
-                              age: '',
-                              address: '',
-                              sexual: '',
-                              school: '',
-                            },
-                          ]"
-                          :pagination-hidden="true"
-                          :actions="[
-                            {
-                              name: '编辑',
-                              callback:
-                                'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n        self.addBackground.visible = true;\n                        }',
-                              type: 'link',
-                              icon: 'fa fa-pencil',
-                            },
-                            {
-                              name: '删除',
-                              callback:
-                                'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n        self.deleteproject.visible = true;\n                        }',
-                              type: 'link',
-                              icon: 'fa fa-trash',
-                            },
-                          ]"
-                          :is-flat-action="true"
-                          :row-class-name="{}"
+                          ref="projectbackground"
+                          :columns="projectbackground.columns"
+                          :data="projectbackground.data"
+                          :pagination-hidden="
+                            projectbackground.paginationHidden
+                          "
+                          :actions="projectbackground.actions"
+                          :is-flat-action="projectbackground.isFlatAction"
+                          :row-class-name="projectbackground.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -902,10 +714,10 @@ export default {
       addprize: {
         visible: false,
       },
-      addBackground: {
+      deleteproject: {
         visible: false,
       },
-      deleteproject: {
+      addBackground: {
         visible: false,
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
@@ -940,6 +752,85 @@ export default {
         },
         value: {},
       },
+      projectcost: {
+        columns: [
+          {
+            title: "项目费用",
+            dataIndex: "name",
+            key: "name",
+            width: 50,
+          },
+          {
+            title: "活动项目名称",
+            dataIndex: "age",
+            key: "age",
+            width: 90,
+          },
+          {
+            title: "项目简历",
+            dataIndex: "address",
+            key: "address",
+            ellipsis: true,
+            width: 70,
+          },
+          {
+            title: "排序",
+            dataIndex: "sexual",
+            key: "sexual",
+            ellipsis: true,
+            width: 30,
+          },
+          {
+            title: "操作",
+            key: "action",
+            slots: {
+              customRender: "action",
+            },
+            width: 100,
+          },
+        ],
+        data: [
+          {
+            key: "1",
+            name: "¥0",
+            age: "",
+            address: "",
+            sexual: "",
+            school: "",
+          },
+          {
+            key: "2",
+            name: "¥ 29.9",
+            age: "",
+            address: "",
+            sexual: "",
+            school: "",
+          },
+        ],
+        paginationHidden: true,
+        actions: [
+          {
+            name: "编辑",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.addproject.visible = true;
+            },
+            type: "link",
+            icon: "fa fa-pencil",
+          },
+          {
+            name: "删除",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+              this.$refs.deleteproject.visible = true;
+            },
+            type: "link",
+            icon: "fa fa-trash",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
+      },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
         config: {
           " name": {
@@ -966,6 +857,85 @@ export default {
           },
         },
         value: {},
+      },
+      projectimage: {
+        columns: [
+          {
+            title: "奖品图片",
+            dataIndex: "name",
+            key: "name",
+            width: 50,
+          },
+          {
+            title: "奖品名称",
+            dataIndex: "age",
+            key: "age",
+            width: 90,
+          },
+          {
+            title: "奖品排序",
+            dataIndex: "address",
+            key: "address",
+            ellipsis: true,
+            width: 30,
+          },
+          {
+            title: "操作",
+            key: "action",
+            slots: {
+              customRender: "action",
+            },
+            width: 80,
+          },
+        ],
+        data: [
+          {
+            key: "1",
+            name: "",
+            age: "",
+            address: "1",
+            sexual: "",
+            school: "",
+          },
+          {
+            key: "2",
+            name: "",
+            age: "",
+            address: "2",
+            sexual: "",
+            school: "",
+          },
+          {
+            key: "3",
+            name: "",
+            age: "",
+            address: "3",
+            sexual: "",
+            school: "",
+          },
+        ],
+        paginationHidden: true,
+        actions: [
+          {
+            name: "编辑",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.addprize.visible = true;
+            },
+            type: "link",
+            icon: "fa fa-pencil",
+          },
+          {
+            name: "删除",
+            callback: function (item) {
+              console.log("点击删除: ", self.deleteproject.visible);
+            },
+            type: "link",
+            icon: "fa fa-trash",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
         config: {
@@ -1027,6 +997,78 @@ export default {
           },
         },
         value: {},
+      },
+      projectbackground: {
+        columns: [
+          {
+            title: "图片",
+            dataIndex: "name",
+            key: "name",
+            width: 50,
+          },
+          {
+            title: "参考尺寸（或使用二倍图）",
+            dataIndex: "age",
+            key: "age",
+            width: 90,
+          },
+          {
+            title: "图片排序",
+            dataIndex: "address",
+            key: "address",
+            ellipsis: true,
+            width: 40,
+          },
+          {
+            title: "操作",
+            key: "action",
+            slots: {
+              customRender: "action",
+            },
+            width: 80,
+          },
+        ],
+        data: [
+          {
+            key: "1",
+            name: "¥0",
+            age: "",
+            address: "",
+            sexual: "",
+            school: "",
+          },
+          {
+            key: "2",
+            name: "¥ 29.9",
+            age: "",
+            address: "",
+            sexual: "",
+            school: "",
+          },
+        ],
+        paginationHidden: true,
+        actions: [
+          {
+            name: "编辑",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.addBackground.visible = true;
+            },
+            type: "link",
+            icon: "fa fa-pencil",
+          },
+          {
+            name: "删除",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+              self.deleteproject.visible = true;
+            },
+            type: "link",
+            icon: "fa fa-trash",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
       },
     };
   },
