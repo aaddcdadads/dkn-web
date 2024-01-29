@@ -833,7 +833,7 @@ export default {
       let self = this;
       self.title.text = "创建活动";
       self.isSaveOrUpdate.hidden = false;
-      self.isTitle = "";
+      self.isTitle = "* 为必填项";
     },
   },
 };
