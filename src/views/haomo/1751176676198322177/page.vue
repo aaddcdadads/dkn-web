@@ -711,10 +711,10 @@ export default {
       addproject: {
         visible: false,
       },
-      addprize: {
+      deleteproject: {
         visible: false,
       },
-      deleteproject: {
+      addprize: {
         visible: false,
       },
       addBackground: {
@@ -822,7 +822,7 @@ export default {
             name: "删除",
             callback: function (item) {
               console.log("点击删除: ", item);
-              this.$refs.deleteproject.visible = true;
+              self.deleteproject.visible = true;
             },
             type: "link",
             icon: "fa fa-trash",
@@ -929,6 +929,7 @@ export default {
             name: "删除",
             callback: function (item) {
               console.log("点击删除: ", self.deleteproject.visible);
+              self.deleteproject.visible = true;
             },
             type: "link",
             icon: "fa fa-trash",
