@@ -666,6 +666,7 @@ export default {
             title: "活动状态",
             required: true,
             props: {
+              default: 0,
               options: [
                 {
                   label: "启用",
@@ -676,7 +677,6 @@ export default {
                   value: 1,
                 },
               ],
-              value: 0,
             },
           },
         },
