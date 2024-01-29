@@ -8,6 +8,8 @@
           height=""
           border-radius=""
           padding=""
+          box-shadow-v-shadow=""
+          box-shadow-blur=""
           box-shadow-color="#00000000"
           class="ele-crudPageCard"
         >
