@@ -160,6 +160,7 @@
                           text="添加"
                           :type="'primary'"
                           icon="fa fa-plus"
+                          @click="onEle192A1E2548954501971D69Ddf1Ae5A12Click"
                           class="ele-192a1e25-4895-4501-971d-69ddf1ae5a12"
                         >
                         </hm-ant-button>
@@ -867,7 +868,11 @@ export default {
     };
   },
   watch: {},
-  methods: {},
+  methods: {
+    onEle192A1E2548954501971D69Ddf1Ae5A12Click() {
+      this.addproject.visible = true;
+    },
+  },
 };
 </script>
 
