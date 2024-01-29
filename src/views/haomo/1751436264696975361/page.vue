@@ -121,10 +121,13 @@
                         >
                         </hm-ant-button>
                       </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-5ca2a433-6d19-404e-8769-592e1a5dea36"
-                      >
-                        <hm-modal :visible="true" :z-index="1000"> </hm-modal>
+                      <div class="ele-wrapper ele-wrapper-editprice">
+                        <hm-modal
+                          ref="editprice"
+                          v-model:visible="editprice.visible"
+                          :z-index="1000"
+                        >
+                        </hm-modal>
                       </div>
                       <div
                         class="ele-wrapper ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f"
@@ -182,10 +185,12 @@
                             >
                             </hm-ant-button>
                           </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-bf3f8485-9012-4733-b7bf-bb672ac369d6"
-                          >
-                            <hm-modal :visible="true" :z-index="1000">
+                          <div class="ele-wrapper ele-wrapper-addprize">
+                            <hm-modal
+                              ref="addprize"
+                              v-model:visible="addprize.visible"
+                              :z-index="1000"
+                            >
                             </hm-modal>
                           </div>
                           <div
@@ -629,8 +634,8 @@ export default {
           },
         },
       },
-      "5ca2a433-6d19-404e-8769-592e1a5dea36": {
-        visible: true,
+      editprice: {
+        visible: false,
       },
       activityProjectTable: {
         isFlatAction: true,
@@ -707,7 +712,7 @@ export default {
           },
         ],
       },
-      "bf3f8485-9012-4733-b7bf-bb672ac369d6": {
+      addprize: {
         visible: true,
       },
       activityImgTableTwo: {
