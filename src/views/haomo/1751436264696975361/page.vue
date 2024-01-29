@@ -114,9 +114,9 @@
                         class="ele-wrapper ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12"
                       >
                         <hm-ant-button
-                          icon="fa fa-plus"
                           text="添加"
                           :type="'primary'"
+                          icon="fa fa-plus"
                           class="ele-192a1e25-4895-4501-971d-69ddf1ae5a12"
                         >
                         </hm-ant-button>
