@@ -567,7 +567,7 @@
                           :config="{
                             ' name': {
                               type: 'upload',
-                              title: '项目费用',
+                              title: '背景图片',
                               style: { width: '100%' },
                               required: true,
                               maxCount: 1,
@@ -576,10 +576,10 @@
                             },
                             cycle: {
                               type: 'Input',
-                              title: '活动项目名称',
+                              title: '参考尺寸',
                               style: { width: '100%' },
                               required: true,
-                              props: { placeholder: '请输入活动名称' },
+                              props: { placeholder: '请输入' },
                             },
                           }"
                           :value="{}"
@@ -978,7 +978,7 @@ export default {
         config: {
           " name": {
             type: "upload",
-            title: "项目费用",
+            title: "背景图片",
             style: {
               width: "100%",
             },
@@ -989,13 +989,13 @@ export default {
           },
           cycle: {
             type: "Input",
-            title: "活动项目名称",
+            title: "参考尺寸",
             style: {
               width: "100%",
             },
             required: true,
             props: {
-              placeholder: "请输入活动名称",
+              placeholder: "请输入",
             },
           },
         },
