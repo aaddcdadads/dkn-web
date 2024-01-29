@@ -1,466 +1,183 @@
 <template>
   <div class="page card">
     <div class="page-wrapper">
-      <div class="ele-wrapper ele-wrapper-e37fdb24-4953-4f7d-af46-b1aa9d4f1737">
-        <hm-bg-card
-          box-shadow-blur=""
-          box-shadow-v-shadow=""
-          border-radius=""
-          width="100%"
-          height="100%"
-          class="ele-e37fdb24-4953-4f7d-af46-b1aa9d4f1737"
-        >
-          <div class="ele-wrapper ele-wrapper-titleCard">
-            <hm-bg-card
-              ref="titleCard"
-              box-shadow-blur=""
-              box-shadow-v-shadow=""
-              border-radius=""
-              width="100%"
-              height="100%"
-              class="ele-titleCard"
-            >
-              <div class="ele-wrapper ele-wrapper-title">
-                <hm-ant-icon-text
-                  ref="title"
-                  :icon="title.icon"
-                  :font-size="title.fontSize"
-                  :text="title.text"
-                  class="ele-title"
-                >
-                </hm-ant-icon-text>
-              </div>
-              <div class="ele-wrapper ele-wrapper-isTitle">
-                <hm-ant-bg-text
-                  ref="isTitle"
-                  color="#999999"
-                  font-size="14px"
-                  text="* 为必填项"
-                >
-                </hm-ant-bg-text>
-              </div>
-            </hm-bg-card>
-          </div>
-          <div class="ele-wrapper ele-wrapper-message_1">
-            <hm-bg-card
-              ref="message_1"
-              padding=""
-              box-shadow-blur=""
-              box-shadow-v-shadow=""
-              border-radius=""
-              width="100%"
-              height="100%"
-              class="ele-message_1"
-            >
-              <div
-                class="ele-wrapper ele-wrapper-011df7de-b51d-49df-8693-f8313670d460"
-              >
-                <hm-bg-card
-                  box-shadow-blur=""
-                  box-shadow-v-shadow=""
-                  border-radius=""
-                  width="100%"
-                  height="100%"
-                  class="ele-011df7de-b51d-49df-8693-f8313670d460"
-                >
-                  <div
-                    class="ele-wrapper ele-wrapper-bf252f1b-c63f-43d8-b3da-2dc087a9f832"
-                  >
-                    <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
-                      text="基本信息"
-                      class="ele-bf252f1b-c63f-43d8-b3da-2dc087a9f832"
-                    >
-                    </hm-ant-bg-text>
-                  </div>
-                  <div class="ele-wrapper ele-wrapper-activityForm">
-                    <hm-ant-formily
-                      ref="activityForm"
-                      :config="activityForm.config"
-                      v-model:value="activityForm.value"
-                      :col-num="0"
-                      :col-min-width="380"
-                      :schema="activityForm.schema"
-                      :label-col="3"
-                      :wrapper-col="16"
-                      class="ele-activityForm"
-                    >
-                    </hm-ant-formily>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180"
-                  >
-                    <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
-                      width="100%"
-                      height="100%"
-                      class="ele-824a7f59-7158-4b84-a954-01cbeb3c4180"
-                    >
-                      <div
-                        class="ele-wrapper ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
-                      >
-                        <hm-ant-bg-text
-                          padding="2"
-                          font-size="14px"
-                          text="活动费用设置（至少一个）"
-                          class="ele-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
-                        >
-                        </hm-ant-bg-text>
-                      </div>
-                      <div class="ele-wrapper ele-wrapper-addActivityProject">
-                        <hm-ant-button
-                          ref="addActivityProject"
-                          text="添加"
-                          :type="'primary'"
-                          icon="fa fa-plus"
-                          class="ele-addActivityProject"
-                        >
-                        </hm-ant-button>
-                      </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f"
-                      >
-                        <hm-bg-card
-                          box-shadow-blur=""
-                          box-shadow-v-shadow=""
-                          border-radius=""
-                          width="100%"
-                          height="100%"
-                          class="ele-678d6f52-6548-4f95-b813-d079ff38bb6f"
-                        >
-                          <div
-                            class="ele-wrapper ele-wrapper-activityProjectTable"
-                          >
-                            <hm-ant-table
-                              ref="activityProjectTable"
-                              :is-flat-action="
-                                activityProjectTable.isFlatAction
-                              "
-                              :get-data-map="activityProjectTable.getDataMap"
-                              :data="activityProjectTable.data"
-                              :columns="activityProjectTable.columns"
-                              :row-class-name="
-                                activityProjectTable.rowClassName
-                              "
-                              :pagination-hidden="
-                                activityProjectTable.paginationHidden
-                              "
-                              :actions="activityProjectTable.actions"
-                            >
-                            </hm-ant-table>
-                          </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6"
-                          >
-                            <hm-ant-bg-text
-                              padding="2"
-                              font-size="14px"
-                              text="活动奖品设置（可为空）"
-                              class="ele-2030f92c-96b3-41e7-8403-353b98f5e6a6"
-                            >
-                            </hm-ant-bg-text>
-                          </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-addActivityImgTableTwo"
-                          >
-                            <hm-ant-button
-                              ref="addActivityImgTableTwo"
-                              text="添加"
-                              :type="'primary'"
-                              icon="fa fa-plus"
-                              class="ele-addActivityImgTableTwo"
-                            >
-                            </hm-ant-button>
-                          </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
-                          >
-                            <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
-                              width="100%"
-                              height="100%"
-                              class="ele-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
-                            >
-                              <div
-                                class="ele-wrapper ele-wrapper-activityImgTableTwo"
-                              >
-                                <hm-ant-table
-                                  ref="activityImgTableTwo"
-                                  :is-flat-action="
-                                    activityImgTableTwo.isFlatAction
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :data="activityImgTableTwo.data"
-                                  :columns="activityImgTableTwo.columns"
-                                  :row-class-name="
-                                    activityImgTableTwo.rowClassName
-                                  "
-                                  :pagination-hidden="
-                                    activityImgTableTwo.paginationHidden
-                                  "
-                                  :actions="activityImgTableTwo.actions"
-                                >
-                                </hm-ant-table>
-                              </div>
-                            </hm-bg-card>
-                          </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48"
-                          >
-                            <hm-ant-bg-text
-                              padding="2"
-                              font-size="14px"
-                              text="活动信息"
-                              class="ele-633b539d-81dc-4e94-af68-dfba9182db48"
-                            >
-                            </hm-ant-bg-text>
-                          </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41"
-                          >
-                            <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
-                              width="100%"
-                              height="100%"
-                              class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
-                            >
-                              <div
-                                class="ele-wrapper ele-wrapper-activityExtForm"
-                              >
-                                <hm-ant-formily
-                                  ref="activityExtForm"
-                                  :schema="activityExtForm.schema"
-                                  :wrapper-col="18"
-                                  :col-num="0"
-                                  :label-col="4"
-                                  :col-min-width="380"
-                                  :config="activityExtForm.config"
-                                  v-model:value="activityExtForm.value"
-                                  class="ele-activityExtForm"
-                                >
-                                </hm-ant-formily>
-                              </div>
-                            </hm-bg-card>
-                          </div>
-                        </hm-bg-card>
-                      </div>
-                    </hm-bg-card>
-                  </div>
-                </hm-bg-card>
-              </div>
-              <div class="ele-wrapper ele-wrapper-message_2">
-                <hm-bg-card
-                  ref="message_2"
-                  box-shadow-blur=""
-                  box-shadow-v-shadow=""
-                  border-radius=""
-                  width="100%"
-                  height="100%"
-                  class="ele-message_2"
-                >
-                  <div
-                    class="ele-wrapper ele-wrapper-fa713d7b-511f-4b6c-9f7a-37b66d33842e"
-                  >
-                    <hm-ant-bg-text
-                      text="报名页背景设置"
-                      font-size="14px"
-                      padding="2"
-                      class="ele-fa713d7b-511f-4b6c-9f7a-37b66d33842e"
-                    >
-                    </hm-ant-bg-text>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-275c3b23-7230-452b-b726-72dfb54f34a8"
-                  >
-                    <hm-ant-button
-                      text="添加"
-                      :type="'primary'"
-                      icon="fa fa-plus"
-                      class="ele-275c3b23-7230-452b-b726-72dfb54f34a8"
-                    >
-                    </hm-ant-button>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2"
-                  >
-                    <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
-                      width="100%"
-                      height="100%"
-                      class="ele-89ea97da-357c-4295-9803-b1d0b63db0a2"
-                    >
-                      <div class="ele-wrapper ele-wrapper-activityImgTableOne">
-                        <hm-ant-table
-                          ref="activityImgTableOne"
-                          :columns="activityImgTableOne.columns"
-                          :data="activityImgTableOne.data"
-                          :pagination-hidden="
-                            activityImgTableOne.paginationHidden
-                          "
-                          :get-data-map="activityImgTableOne.getDataMap"
-                          :actions="activityImgTableOne.actions"
-                          :is-flat-action="activityImgTableOne.isFlatAction"
-                          :row-class-name="activityImgTableOne.rowClassName"
-                        >
-                        </hm-ant-table>
-                      </div>
-                    </hm-bg-card>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-56aec4a5-4b22-4f3e-9572-bd54033fe687"
-                  >
-                    <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
-                      text="报名页信息框颜色设置"
-                      class="ele-56aec4a5-4b22-4f3e-9572-bd54033fe687"
-                    >
-                    </hm-ant-bg-text>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-3fb31f2b-4a48-499a-ba2a-8181388283b9"
-                  >
-                    <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
-                      width="100%"
-                      height="100%"
-                      class="ele-3fb31f2b-4a48-499a-ba2a-8181388283b9"
-                    >
-                      <div
-                        class="ele-wrapper ele-wrapper-79de068d-0a6b-4f11-8574-d654a6df22b7"
-                      >
-                        <hm-color-kit> </hm-color-kit>
-                      </div>
-                    </hm-bg-card>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-c9bf9691-385d-414d-864e-a07073520b33"
-                  >
-                    <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
-                      text="报名页信息框字体颜色设置"
-                      class="ele-c9bf9691-385d-414d-864e-a07073520b33"
-                    >
-                    </hm-ant-bg-text>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc"
-                  >
-                    <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
-                      width="100%"
-                      height="100%"
-                      class="ele-8e197d87-c68a-402f-90a7-400dc9c35edc"
-                    >
-                      <div
-                        class="ele-wrapper ele-wrapper-b661ec59-8ff2-4a70-ba98-06e70d33bc68"
-                      >
-                        <hm-color-kit> </hm-color-kit>
-                      </div>
-                    </hm-bg-card>
-                  </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-610ad32f-244d-4af7-aad8-a7d343ac7d36"
-                  >
-                    <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
-                      text="活动参与人数信息修改"
-                      class="ele-610ad32f-244d-4af7-aad8-a7d343ac7d36"
-                    >
-                    </hm-ant-bg-text>
-                  </div>
-                  <div class="ele-wrapper ele-wrapper-messageRenedit">
-                    <hm-bg-card
-                      ref="messageRenedit"
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
-                      width="100%"
-                      height="100%"
-                      class="ele-messageRenedit"
-                    >
-                      <div class="ele-wrapper ele-wrapper-activityTwoForm">
-                        <hm-ant-formily
-                          ref="activityTwoForm"
-                          :schema="activityTwoForm.schema"
-                          :wrapper-col="16"
-                          :col-num="0"
-                          :label-col="3"
-                          :col-min-width="380"
-                          :config="activityTwoForm.config"
-                          v-model:value="activityTwoForm.value"
-                          class="ele-activityTwoForm"
-                        >
-                        </hm-ant-formily>
-                      </div>
-                    </hm-bg-card>
-                  </div>
-                </hm-bg-card>
-              </div>
-            </hm-bg-card>
-          </div>
-          <div class="ele-wrapper ele-wrapper-isSaveOrUpdate">
-            <hm-bg-card
-              ref="isSaveOrUpdate"
-              :box-shadow-blur="isSaveOrUpdate.boxShadowBlur"
-              :hidden="isSaveOrUpdate.hidden"
-              :box-shadow-v-shadow="isSaveOrUpdate.boxShadowVShadow"
-              :border-radius="isSaveOrUpdate.borderRadius"
-              :width="isSaveOrUpdate.width"
-              :height="isSaveOrUpdate.height"
-              :text-align="isSaveOrUpdate.textAlign"
-              class="ele-isSaveOrUpdate"
-            >
-              <div
-                class="ele-wrapper ele-wrapper-be6a0959-060d-4277-9590-2d5ddd2ab12e"
-              >
-                <hm-ant-button
-                  :size="'large'"
-                  icon="fa fa-check-circle"
-                  text="创建活动"
-                  :type="'primary'"
-                  class="ele-be6a0959-060d-4277-9590-2d5ddd2ab12e"
-                >
-                </hm-ant-button>
-              </div>
-              <div
-                class="ele-wrapper ele-wrapper-902e40e8-285f-4e3c-943d-eeafce2cbf7b"
-              >
-                <hm-ant-button
-                  :ghost="true"
-                  :size="'large'"
-                  icon="fa fa-repeat"
-                  text="重置"
-                  :type="'primary'"
-                  class="ele-902e40e8-285f-4e3c-943d-eeafce2cbf7b"
-                >
-                </hm-ant-button>
-              </div>
-            </hm-bg-card>
-          </div>
-        </hm-bg-card>
-      </div>
+        <div class="ele-wrapper ele-wrapper-e37fdb24-4953-4f7d-af46-b1aa9d4f1737">
+      <hm-bg-card box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-e37fdb24-4953-4f7d-af46-b1aa9d4f1737"> 
+            <div class="ele-wrapper ele-wrapper-titleCard">
+      <hm-bg-card ref="titleCard" box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-titleCard"> 
+            <div class="ele-wrapper ele-wrapper-title">
+      <hm-ant-icon-text ref="title" :icon="title.icon" :font-size="title.fontSize" :text="title.text" class="ele-title"> 
+       
+    </hm-ant-icon-text>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-isTitle">
+      <hm-ant-bg-text ref="isTitle" color="#999999" font-size="14px" text="* 为必填项"> 
+       
+    </hm-ant-bg-text>
+    </div> 
+    </hm-bg-card>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-message_1">
+      <hm-bg-card ref="message_1" padding="" box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-message_1"> 
+            <div class="ele-wrapper ele-wrapper-011df7de-b51d-49df-8693-f8313670d460">
+      <hm-bg-card box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-011df7de-b51d-49df-8693-f8313670d460"> 
+            <div class="ele-wrapper ele-wrapper-bf252f1b-c63f-43d8-b3da-2dc087a9f832">
+      <hm-ant-bg-text padding="2" font-size="14px" text="基本信息" class="ele-bf252f1b-c63f-43d8-b3da-2dc087a9f832"> 
+       
+    </hm-ant-bg-text>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-activityForm">
+      <hm-ant-formily ref="activityForm" :config="activityForm.config" v-model:value="activityForm.value" :col-num="0" :col-min-width="380" :schema="activityForm.schema" :label-col="3" :wrapper-col="16" class="ele-activityForm"> 
+       
+    </hm-ant-formily>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180">
+      <hm-bg-card box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-824a7f59-7158-4b84-a954-01cbeb3c4180"> 
+            <div class="ele-wrapper ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17">
+      <hm-ant-bg-text padding="2" font-size="14px" text="活动费用设置（至少一个）" class="ele-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"> 
+       
+    </hm-ant-bg-text>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-addActivityProject">
+      <hm-ant-button ref="addActivityProject" text="添加" :type="'primary'" icon="fa fa-plus" class="ele-addActivityProject"> 
+       
+    </hm-ant-button>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f">
+      <hm-bg-card box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-678d6f52-6548-4f95-b813-d079ff38bb6f"> 
+            <div class="ele-wrapper ele-wrapper-activityProjectTable">
+      <hm-ant-table ref="activityProjectTable" :is-flat-action="activityProjectTable.isFlatAction" :get-data-map="activityProjectTable.getDataMap" :data="activityProjectTable.data" :columns="activityProjectTable.columns" :row-class-name="activityProjectTable.rowClassName" :pagination-hidden="activityProjectTable.paginationHidden" :actions="activityProjectTable.actions"> 
+       
+    </hm-ant-table>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6">
+      <hm-ant-bg-text padding="2" font-size="14px" text="活动奖品设置（可为空）" class="ele-2030f92c-96b3-41e7-8403-353b98f5e6a6"> 
+       
+    </hm-ant-bg-text>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-addActivityImgTableTwo">
+      <hm-ant-button ref="addActivityImgTableTwo" text="添加" :type="'primary'" icon="fa fa-plus" class="ele-addActivityImgTableTwo"> 
+       
+    </hm-ant-button>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c">
+      <hm-bg-card box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"> 
+            <div class="ele-wrapper ele-wrapper-activityImgTableTwo">
+      <hm-ant-table ref="activityImgTableTwo" :is-flat-action="activityImgTableTwo.isFlatAction" :get-data-map="activityImgTableTwo.getDataMap" :data="activityImgTableTwo.data" :columns="activityImgTableTwo.columns" :row-class-name="activityImgTableTwo.rowClassName" :pagination-hidden="activityImgTableTwo.paginationHidden" :actions="activityImgTableTwo.actions"> 
+       
+    </hm-ant-table>
+    </div> 
+    </hm-bg-card>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48">
+      <hm-ant-bg-text padding="2" font-size="14px" text="活动信息" class="ele-633b539d-81dc-4e94-af68-dfba9182db48"> 
+       
+    </hm-ant-bg-text>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41">
+      <hm-bg-card box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"> 
+            <div class="ele-wrapper ele-wrapper-activityExtForm">
+      <hm-ant-formily ref="activityExtForm" :schema="activityExtForm.schema" :wrapper-col="18" :col-num="0" :label-col="4" :col-min-width="380" :config="activityExtForm.config" v-model:value="activityExtForm.value" class="ele-activityExtForm"> 
+       
+    </hm-ant-formily>
+    </div> 
+    </hm-bg-card>
+    </div> 
+    </hm-bg-card>
+    </div> 
+    </hm-bg-card>
+    </div> 
+    </hm-bg-card>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-message_2">
+      <hm-bg-card ref="message_2" box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-message_2"> 
+            <div class="ele-wrapper ele-wrapper-fa713d7b-511f-4b6c-9f7a-37b66d33842e">
+      <hm-ant-bg-text text="报名页背景设置" font-size="14px" padding="2" class="ele-fa713d7b-511f-4b6c-9f7a-37b66d33842e"> 
+       
+    </hm-ant-bg-text>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-{&quot;key&quot;:&quot;addActivityImgTableTwo&quot;,&quot;title&quot;:&quot;按钮&quot;,&quot;note&quot;:{&quot;directives&quot;:{&quot;v-if&quot;:{&quot;type&quot;:&quot;code&quot;},&quot;v-html&quot;:{&quot;type&quot;:&quot;code&quot;},&quot;v-for&quot;:{&quot;type&quot;:&quot;code&quot;},&quot;v-show&quot;:{&quot;type&quot;:&quot;code&quot;},&quot;v-model&quot;:{&quot;type&quot;:&quot;code&quot;}},&quot;style&quot;:{&quot;css&quot;:&quot;margin-left:5px;\nmargin-top:15px;&quot;},&quot;slot&quot;:{&quot;name&quot;:&quot;default&quot;},&quot;events&quot;:{&quot;click&quot;:{&quot;kind&quot;:&quot;event&quot;,&quot;description&quot;:&quot;点击事件&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;params&quot;,&quot;description&quot;:&quot;e&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;click&quot;,&quot;arguments&quot;:[{&quot;name&quot;:&quot;e&quot;,&quot;type&quot;:&quot;any&quot;,&quot;rest&quot;:false}],&quot;value&quot;:[]}},&quot;props&quot;:{&quot;text&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮文字&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;text&quot;,&quot;type&quot;:&quot;String&quot;,&quot;default&quot;:&quot;\&quot;按钮\&quot;&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;添加&quot;}},&quot;type&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮类型&quot;,&quot;keywords&quot;:{&quot;options&quot;:&quot;[\&quot;\&quot;,\&quot;primary\&quot;,\&quot;dashed\&quot;,\&quot;danger\&quot;,\&quot;link\&quot;]&quot;},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;type&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;primary&quot;}},&quot;shape&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮形状&quot;,&quot;keywords&quot;:{&quot;options&quot;:&quot;[\&quot;\&quot;,\&quot;circle\&quot;,\&quot;round\&quot;]&quot;},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;shape&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;}},&quot;size&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮大小&quot;,&quot;keywords&quot;:{&quot;options&quot;:&quot;[\&quot;\&quot;,\&quot;small\&quot;,\&quot;large\&quot;]&quot;},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;size&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;}},&quot;disabled&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;是否禁用&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;disabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;default&quot;:&quot;false&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:false}},&quot;ghost&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;背景透明&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;ghost&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;}},&quot;icon&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;图标&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;icon&quot;,&quot;type&quot;:&quot;Icon&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;fafa-plus&quot;}},&quot;visible&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;是否显示&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;visible&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;default&quot;:&quot;true&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:true}},&quot;auth&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;授权标识&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;auth&quot;,&quot;type&quot;:&quot;String&quot;,&quot;default&quot;:&quot;\&quot;\&quot;&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;&quot;}}}},&quot;component&quot;:{&quot;importPath&quot;:&quot;built-in/jeecg/HmAntButton&quot;,&quot;imgUrl&quot;:&quot;built-in/jeecg/img/HmAntButton.png&quot;,&quot;name&quot;:&quot;HmAntButton&quot;,&quot;docUrl&quot;:&quot;/storybook/block-design-jeecg/?path&#x3D;/docs/表单-hmantbutton--docs&quot;,&quot;id&quot;:&quot;c238e6de-3936-4cce-aa21-05ee25035cc6&quot;,&quot;title&quot;:&quot;按钮&quot;,&quot;type&quot;:0,&quot;isBuiltIn&quot;:true,&quot;key&quot;:&quot;addActivityImgTableTwo&quot;,&quot;isShow&quot;:true},&quot;doc&quot;:{&quot;inheritAttrs&quot;:true,&quot;errors&quot;:[],&quot;warnings&quot;:[],&quot;keywords&quot;:[],&quot;slots&quot;:[],&quot;props&quot;:[{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮文字&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;text&quot;,&quot;type&quot;:&quot;String&quot;,&quot;default&quot;:&quot;\&quot;按钮\&quot;&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮类型&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;options&quot;,&quot;description&quot;:&quot;[\&quot;\&quot;,\&quot;primary\&quot;,\&quot;dashed\&quot;,\&quot;danger\&quot;,\&quot;link\&quot;]&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;type&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮形状&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;options&quot;,&quot;description&quot;:&quot;[\&quot;\&quot;,\&quot;circle\&quot;,\&quot;round\&quot;]&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;shape&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮大小&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;options&quot;,&quot;description&quot;:&quot;[\&quot;\&quot;,\&quot;small\&quot;,\&quot;large\&quot;]&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;size&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;是否禁用&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;disabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;default&quot;:&quot;false&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;背景透明&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;ghost&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;图标&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;icon&quot;,&quot;type&quot;:&quot;Icon&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;是否显示&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;boolean&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;visible&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;default&quot;:&quot;true&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;授权标识&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;auth&quot;,&quot;type&quot;:&quot;String&quot;,&quot;default&quot;:&quot;\&quot;\&quot;&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false}],&quot;data&quot;:[{&quot;kind&quot;:&quot;data&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;hasPermission&quot;,&quot;type&quot;:&quot;Identifier&quot;,&quot;initialValue&quot;:&quot;hasPermission&quot;}],&quot;computed&quot;:[],&quot;events&quot;:[{&quot;kind&quot;:&quot;event&quot;,&quot;description&quot;:&quot;点击事件&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;params&quot;,&quot;description&quot;:&quot;e&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;click&quot;,&quot;arguments&quot;:[{&quot;name&quot;:&quot;e&quot;,&quot;type&quot;:&quot;any&quot;,&quot;rest&quot;:false}]}],&quot;methods&quot;:[{&quot;kind&quot;:&quot;method&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;onClick&quot;,&quot;params&quot;:[{&quot;name&quot;:&quot;e&quot;,&quot;type&quot;:&quot;unknow&quot;,&quot;rest&quot;:false}],&quot;syntax&quot;:[&quot;onClick(e:unknow):void&quot;],&quot;returns&quot;:{&quot;type&quot;:&quot;void&quot;}}],&quot;name&quot;:&quot;HmAntButton&quot;},&quot;topics&quot;:[]}">
+      <hm-ant-button text="添加" :type="'primary'" icon="fa fa-plus" class="ele-{"key":"addActivityImgTableTwo","title":"按钮","note":{"directives":{"v-if":{"type":"code"},"v-html":{"type":"code"},"v-for":{"type":"code"},"v-show":{"type":"code"},"v-model":{"type":"code"}},"style":{"css":"margin-left:5px;\nmargin-top:15px;"},"slot":{"name":"default"},"events":{"click":{"kind":"event","description":"点击事件","keywords":[{"name":"params","description":"e"}],"visibility":"public","name":"click","arguments":[{"name":"e","type":"any","rest":false}],"value":[]}},"props":{"text":{"kind":"prop","description":"按钮文字","keywords":{},"visibility":"public","name":"text","type":"String","default":"\"按钮\"","required":false,"describeModel":false,"value":{"type":"string","value":"添加"}},"type":{"kind":"prop","description":"按钮类型","keywords":{"options":"[\"\",\"primary\",\"dashed\",\"danger\",\"link\"]"},"visibility":"public","name":"type","type":"Enum","required":false,"describeModel":false,"value":{"type":"string","value":"primary"}},"shape":{"kind":"prop","description":"按钮形状","keywords":{"options":"[\"\",\"circle\",\"round\"]"},"visibility":"public","name":"shape","type":"Enum","required":false,"describeModel":false,"value":{"type":"string"}},"size":{"kind":"prop","description":"按钮大小","keywords":{"options":"[\"\",\"small\",\"large\"]"},"visibility":"public","name":"size","type":"Enum","required":false,"describeModel":false,"value":{"type":"string"}},"disabled":{"kind":"prop","description":"是否禁用","keywords":{},"visibility":"public","name":"disabled","type":"Boolean","default":"false","required":false,"describeModel":false,"value":{"type":"string","value":false}},"ghost":{"kind":"prop","description":"背景透明","keywords":{},"visibility":"public","name":"ghost","type":"Boolean","required":false,"describeModel":false,"value":{"type":"string"}},"icon":{"kind":"prop","description":"图标","keywords":{},"visibility":"public","name":"icon","type":"Icon","required":false,"describeModel":false,"value":{"type":"string","value":"fafa-plus"}},"visible":{"kind":"prop","description":"是否显示","keywords":{},"visibility":"public","name":"visible","type":"Boolean","default":"true","required":false,"describeModel":false,"value":{"type":"string","value":true}},"auth":{"kind":"prop","description":"授权标识","keywords":{},"visibility":"public","name":"auth","type":"String","default":"\"\"","required":false,"describeModel":false,"value":{"type":"string","value":""}}}},"component":{"importPath":"built-in/jeecg/HmAntButton","imgUrl":"built-in/jeecg/img/HmAntButton.png","name":"HmAntButton","docUrl":"/storybook/block-design-jeecg/?path=/docs/表单-hmantbutton--docs","id":"c238e6de-3936-4cce-aa21-05ee25035cc6","title":"按钮","type":0,"isBuiltIn":true,"key":"addActivityImgTableTwo","isShow":true},"doc":{"inheritAttrs":true,"errors":[],"warnings":[],"keywords":[],"slots":[],"props":[{"kind":"prop","description":"按钮文字","keywords":[],"visibility":"public","name":"text","type":"String","default":"\"按钮\"","required":false,"describeModel":false},{"kind":"prop","description":"按钮类型","keywords":[{"name":"options","description":"[\"\",\"primary\",\"dashed\",\"danger\",\"link\"]"}],"visibility":"public","name":"type","type":"Enum","required":false,"describeModel":false},{"kind":"prop","description":"按钮形状","keywords":[{"name":"options","description":"[\"\",\"circle\",\"round\"]"}],"visibility":"public","name":"shape","type":"Enum","required":false,"describeModel":false},{"kind":"prop","description":"按钮大小","keywords":[{"name":"options","description":"[\"\",\"small\",\"large\"]"}],"visibility":"public","name":"size","type":"Enum","required":false,"describeModel":false},{"kind":"prop","description":"是否禁用","keywords":[],"visibility":"public","name":"disabled","type":"Boolean","default":"false","required":false,"describeModel":false},{"kind":"prop","description":"背景透明","keywords":[],"visibility":"public","name":"ghost","type":"Boolean","required":false,"describeModel":false},{"kind":"prop","description":"图标","keywords":[],"visibility":"public","name":"icon","type":"Icon","required":false,"describeModel":false},{"kind":"prop","description":"是否显示","keywords":[{"name":"boolean"}],"visibility":"public","name":"visible","type":"Boolean","default":"true","required":false,"describeModel":false},{"kind":"prop","description":"授权标识","keywords":[],"visibility":"public","name":"auth","type":"String","default":"\"\"","required":false,"describeModel":false}],"data":[{"kind":"data","keywords":[],"visibility":"public","name":"hasPermission","type":"Identifier","initialValue":"hasPermission"}],"computed":[],"events":[{"kind":"event","description":"点击事件","keywords":[{"name":"params","description":"e"}],"visibility":"public","name":"click","arguments":[{"name":"e","type":"any","rest":false}]}],"methods":[{"kind":"method","keywords":[],"visibility":"public","name":"onClick","params":[{"name":"e","type":"unknow","rest":false}],"syntax":["onClick(e:unknow):void"],"returns":{"type":"void"}}],"name":"HmAntButton"},"topics":[]}"> 
+       
+    </hm-ant-button>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2">
+      <hm-bg-card box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-89ea97da-357c-4295-9803-b1d0b63db0a2"> 
+            <div class="ele-wrapper ele-wrapper-activityImgTableOne">
+      <hm-ant-table ref="activityImgTableOne" :columns="activityImgTableOne.columns" :data="activityImgTableOne.data" :pagination-hidden="activityImgTableOne.paginationHidden" :get-data-map="activityImgTableOne.getDataMap" :actions="activityImgTableOne.actions" :is-flat-action="activityImgTableOne.isFlatAction" :row-class-name="activityImgTableOne.rowClassName"> 
+       
+    </hm-ant-table>
+    </div> 
+    </hm-bg-card>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-56aec4a5-4b22-4f3e-9572-bd54033fe687">
+      <hm-ant-bg-text padding="2" font-size="14px" text="报名页信息框颜色设置" class="ele-56aec4a5-4b22-4f3e-9572-bd54033fe687"> 
+       
+    </hm-ant-bg-text>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-3fb31f2b-4a48-499a-ba2a-8181388283b9">
+      <hm-bg-card box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-3fb31f2b-4a48-499a-ba2a-8181388283b9"> 
+            <div class="ele-wrapper ele-wrapper-79de068d-0a6b-4f11-8574-d654a6df22b7">
+      <hm-color-kit> 
+       
+    </hm-color-kit>
+    </div> 
+    </hm-bg-card>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-c9bf9691-385d-414d-864e-a07073520b33">
+      <hm-ant-bg-text padding="2" font-size="14px" text="报名页信息框字体颜色设置" class="ele-c9bf9691-385d-414d-864e-a07073520b33"> 
+       
+    </hm-ant-bg-text>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc">
+      <hm-bg-card box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-8e197d87-c68a-402f-90a7-400dc9c35edc"> 
+            <div class="ele-wrapper ele-wrapper-b661ec59-8ff2-4a70-ba98-06e70d33bc68">
+      <hm-color-kit> 
+       
+    </hm-color-kit>
+    </div> 
+    </hm-bg-card>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-610ad32f-244d-4af7-aad8-a7d343ac7d36">
+      <hm-ant-bg-text padding="2" font-size="14px" text="活动参与人数信息修改" class="ele-610ad32f-244d-4af7-aad8-a7d343ac7d36"> 
+       
+    </hm-ant-bg-text>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-messageRenedit">
+      <hm-bg-card ref="messageRenedit" box-shadow-blur="" box-shadow-v-shadow="" border-radius="" width="100%" height="100%" class="ele-messageRenedit"> 
+            <div class="ele-wrapper ele-wrapper-activityTwoForm">
+      <hm-ant-formily ref="activityTwoForm" :schema="activityTwoForm.schema" :wrapper-col="16" :col-num="0" :label-col="3" :col-min-width="380" :config="activityTwoForm.config" v-model:value="activityTwoForm.value" class="ele-activityTwoForm"> 
+       
+    </hm-ant-formily>
+    </div> 
+    </hm-bg-card>
+    </div> 
+    </hm-bg-card>
+    </div> 
+    </hm-bg-card>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-isSaveOrUpdate">
+      <hm-bg-card ref="isSaveOrUpdate" :box-shadow-blur="isSaveOrUpdate.boxShadowBlur" :hidden="isSaveOrUpdate.hidden" :box-shadow-v-shadow="isSaveOrUpdate.boxShadowVShadow" :border-radius="isSaveOrUpdate.borderRadius" :width="isSaveOrUpdate.width" :height="isSaveOrUpdate.height" :text-align="isSaveOrUpdate.textAlign" class="ele-isSaveOrUpdate"> 
+            <div class="ele-wrapper ele-wrapper-be6a0959-060d-4277-9590-2d5ddd2ab12e">
+      <hm-ant-button :size="'large'" icon="fa fa-check-circle" text="创建活动" :type="'primary'" class="ele-be6a0959-060d-4277-9590-2d5ddd2ab12e"> 
+       
+    </hm-ant-button>
+    </div> 
+            <div class="ele-wrapper ele-wrapper-902e40e8-285f-4e3c-943d-eeafce2cbf7b">
+      <hm-ant-button :ghost="true" :size="'large'" icon="fa fa-repeat" text="重置" :type="'primary'" class="ele-902e40e8-285f-4e3c-943d-eeafce2cbf7b"> 
+       
+    </hm-ant-button>
+    </div> 
+    </hm-bg-card>
+    </div> 
+    </hm-bg-card>
+    </div>
     </div>
   </div>
 </template>
 
 <script>
-import { h } from "vue";
+import { h } from 'vue';
 import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
@@ -469,7 +186,9 @@ import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
-import { detail } from "/@/logics/ActivityForm";
+import {
+  detail
+} from '/@/logics/ActivityForm';
 
 export default {
   name: "ActivityEditingAndModification",
@@ -485,638 +204,642 @@ export default {
   data() {
     let self = this;
     return {
-      isSaveOrUpdate: {
-        boxShadowBlur: "",
-        boxShadowVShadow: "",
-        borderRadius: "",
-        width: "100%",
-        height: "100%",
-        textAlign: "center",
-        hidden: false,
-      },
-      title: {
-        text: "创建活动",
-        icon: "fa fa-tasks",
-        fontSize: "14px",
-      },
-      activityForm: {
-        config: {
-          name: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动名称",
-            required: true,
-            props: {},
-          },
-          closeTime: {
-            style: {
-              width: "100%",
-            },
-            type: "DatePicker",
-            title: "报名截止",
-            required: true,
-            props: {
-              showTime: true,
-            },
-          },
-          pickUpTime: {
-            style: {
-              width: "100%",
-            },
-            type: "DatePicker",
-            title: "核销截止",
-            required: true,
-            props: {
-              showTime: true,
-            },
-          },
-          cycle: {
-            style: {
-              width: "100%",
-            },
-            type: "RangePicker",
-            title: "活动周期",
-            required: true,
-            props: {},
-          },
-          status: {
-            style: {
-              width: "100%",
-            },
-            type: "RadioGroup",
-            title: "活动状态",
-            required: true,
-            props: {
-              options: [
-                {
-                  label: "启用",
-                  value: 0,
-                },
-                {
-                  label: "禁用",
-                  value: 1,
-                },
-              ],
-            },
-          },
-        },
-        value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-      },
-      activityProjectTable: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
-        columns: [
-          {
-            dataIndex: "name",
-            width: 50,
-            title: "活动费用",
-            key: "name",
-          },
-          {
-            dataIndex: "age",
-            width: 90,
-            title: "费用名称",
-            key: "age",
-            ellipsis: true,
-          },
-          {
-            dataIndex: "sexual",
-            width: 30,
-            title: "排序",
-            key: "sexual",
-            ellipsis: true,
-          },
-          {
-            slots: {
-              customRender: "action",
-            },
-            width: 100,
-            title: "操作",
-            key: "action",
-          },
-        ],
-        rowClassName: {},
-        paginationHidden: true,
-        actions: [
-          {
-            name: "编辑",
-            icon: "fa fa-pencil",
-            callback: function (item) {
-              console.log("点击编辑: ", item);
-            },
-            type: "link",
-          },
-          {
-            name: "删除",
-            icon: "fa fa-trash",
-            callback: function (item) {
-              console.log("点击删除: ", item);
-            },
-            type: "link",
-          },
-        ],
-      },
-      activityImgTableTwo: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
-        columns: [
-          {
-            dataIndex: "name",
-            width: 50,
-            title: "奖品图片",
-            key: "name",
-          },
-          {
-            dataIndex: "age",
-            width: 80,
-            title: "奖品名称",
-            key: "age",
-          },
-          {
-            dataIndex: "address",
-            width: 30,
-            title: "奖品排序",
-            key: "address",
-            ellipsis: true,
-          },
-          {
-            slots: {
-              customRender: "action",
-            },
-            width: 80,
-            title: "操作",
-            key: "action",
-          },
-        ],
-        rowClassName: {},
-        paginationHidden: true,
-        actions: [
-          {
-            name: "编辑",
-            icon: "fa fa-pencil",
-            callback: function (item) {
-              console.log("点击编辑: ", item);
-            },
-            type: "link",
-          },
-          {
-            name: "删除",
-            icon: "fa fa-trash",
-            callback: function (item) {
-              console.log("点击删除: ", item);
-            },
-            type: "link",
-          },
-        ],
-      },
-      activityExtForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-        config: {
-          protocol: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "协议与承诺书",
-            props: {
-              showCount: true,
-              placeholder: "请输入《活动报名用户协议及承诺书》",
-            },
-          },
-          customerService: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动咨询与客服",
-            props: {},
-          },
-          activityRules: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "活动规则",
-            props: {
-              showCount: true,
-              placeholder: "请输入活动规则",
-            },
-          },
-        },
-        value: {},
-      },
-      activityImgTableOne: {
-        columns: [
-          {
-            dataIndex: "name",
-            width: 50,
-            title: "图片",
-            key: "name",
-          },
-          {
-            dataIndex: "age",
-            width: 90,
-            title: "参考尺寸（或使用二倍图）",
-            key: "age",
-          },
-          {
-            dataIndex: "address",
-            width: 30,
-            title: "图片排序",
-            key: "address",
-            ellipsis: true,
-          },
-          {
-            slots: {
-              customRender: "action",
-            },
-            width: 80,
-            title: "操作",
-            key: "action",
-          },
-        ],
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
-        paginationHidden: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        actions: [
-          {
-            name: "编辑",
-            icon: "fa fa-pencil",
-            callback: function (item) {
-              console.log("点击编辑: ", item);
-            },
-            type: "link",
-          },
-          {
-            name: "删除",
-            icon: "fa fa-trash",
-            callback: function (item) {
-              console.log("点击删除: ", item);
-            },
-            type: "link",
-          },
-        ],
-        isFlatAction: true,
-        rowClassName: {},
-      },
-      activityTwoForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-        config: {
-          unrealCount: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动人数",
-            required: true,
-            props: {},
-          },
-          "unrealStatus:": {
-            style: {
-              width: "100%",
-            },
-            type: "RadioGroup",
-            title: "虚拟人数",
-            required: true,
-            props: {
-              options: [
-                {
-                  label: "启用",
-                  value: 0,
-                },
-                {
-                  label: "禁用",
-                  value: 1,
-                },
-              ],
-            },
-          },
-        },
-        value: {},
-      },
-    };
+  "isSaveOrUpdate": {
+    "boxShadowBlur": "",
+    "boxShadowVShadow": "",
+    "borderRadius": "",
+    "width": "100%",
+    "height": "100%",
+    "textAlign": "center",
+    "hidden": false
   },
-  watch: {},
-  created(e) {
-    this.onCreated(e);
+  "title": {
+    "text": "创建活动",
+    "icon": "fa fa-tasks",
+    "fontSize": "14px"
   },
-  mounted(e) {
-    detail(this, arguments);
-  },
-  methods: {
-    onCreated() {
-      let self = this;
-      self.title.text = "创建活动";
-      self.isSaveOrUpdate.hidden = false;
-      self.isTitle = "* 为必填项";
+  "activityForm": {
+    "config": {
+      "name": {
+        "style": {
+          "width": "100%"
+        },
+        "type": "Input",
+        "title": "活动名称",
+        "required": true,
+        "props": {}
+      },
+      "closeTime": {
+        "style": {
+          "width": "100%"
+        },
+        "type": "DatePicker",
+        "title": "报名截止",
+        "required": true,
+        "props": {
+          "showTime": true
+        }
+      },
+      "pickUpTime": {
+        "style": {
+          "width": "100%"
+        },
+        "type": "DatePicker",
+        "title": "核销截止",
+        "required": true,
+        "props": {
+          "showTime": true
+        }
+      },
+      "cycle": {
+        "style": {
+          "width": "100%"
+        },
+        "type": "RangePicker",
+        "title": "活动周期",
+        "required": true,
+        "props": {}
+      },
+      "status": {
+        "style": {
+          "width": "100%"
+        },
+        "type": "RadioGroup",
+        "title": "活动状态",
+        "required": true,
+        "props": {
+          "options": [
+            {
+              "label": "启用",
+              "value": 0
+            },
+            {
+              "label": "禁用",
+              "value": 1
+            }
+          ]
+        }
+      }
     },
+    "value": {},
+    "schema": {
+      "type": "object",
+      "properties": {
+        "form": {
+          "x-component": "Form",
+          "x-component-props": {
+            "wrapper-col": {
+              "span": 14
+            },
+            "label-col": {
+              "span": 7
+            },
+            "style": {
+              "flexWrap": "wrap",
+              "display": "flex"
+            }
+          },
+          "type": "void",
+          "properties": {}
+        }
+      }
+    }
   },
+  "activityProjectTable": {
+    "isFlatAction": true,
+    "getDataMap": {
+      "total": "",
+      "list": ""
+    },
+    "data": [
+      {
+        "address": "",
+        "school": "",
+        "name": "¥0",
+        "key": "1",
+        "age": "",
+        "sexual": ""
+      },
+      {
+        "address": "",
+        "school": "",
+        "name": "¥ 29.9",
+        "key": "2",
+        "age": "",
+        "sexual": ""
+      }
+    ],
+    "columns": [
+      {
+        "dataIndex": "name",
+        "width": 50,
+        "title": "活动费用",
+        "key": "name"
+      },
+      {
+        "dataIndex": "age",
+        "width": 90,
+        "title": "费用名称",
+        "key": "age",
+        "ellipsis": true
+      },
+      {
+        "dataIndex": "sexual",
+        "width": 30,
+        "title": "排序",
+        "key": "sexual",
+        "ellipsis": true
+      },
+      {
+        "slots": {
+          "customRender": "action"
+        },
+        "width": 100,
+        "title": "操作",
+        "key": "action"
+      }
+    ],
+    "rowClassName": {},
+    "paginationHidden": true,
+    "actions": [
+      {
+        "name": "编辑",
+        "icon": "fa fa-pencil",
+        "callback": function (item) {
+                            console.log("点击编辑: ", item);
+                        },
+        "type": "link"
+      },
+      {
+        "name": "删除",
+        "icon": "fa fa-trash",
+        "callback": function (item) {
+                            console.log("点击删除: ", item);
+                        },
+        "type": "link"
+      }
+    ]
+  },
+  "activityImgTableTwo": {
+    "isFlatAction": true,
+    "getDataMap": {
+      "total": "",
+      "list": ""
+    },
+    "data": [
+      {
+        "address": "",
+        "school": "",
+        "name": "¥0",
+        "key": "1",
+        "age": "",
+        "sexual": ""
+      },
+      {
+        "address": "",
+        "school": "",
+        "name": "¥ 29.9",
+        "key": "2",
+        "age": "",
+        "sexual": ""
+      }
+    ],
+    "columns": [
+      {
+        "dataIndex": "name",
+        "width": 50,
+        "title": "奖品图片",
+        "key": "name"
+      },
+      {
+        "dataIndex": "age",
+        "width": 80,
+        "title": "奖品名称",
+        "key": "age"
+      },
+      {
+        "dataIndex": "address",
+        "width": 30,
+        "title": "奖品排序",
+        "key": "address",
+        "ellipsis": true
+      },
+      {
+        "slots": {
+          "customRender": "action"
+        },
+        "width": 80,
+        "title": "操作",
+        "key": "action"
+      }
+    ],
+    "rowClassName": {},
+    "paginationHidden": true,
+    "actions": [
+      {
+        "name": "编辑",
+        "icon": "fa fa-pencil",
+        "callback": function (item) {
+                            console.log("点击编辑: ", item);
+                        },
+        "type": "link"
+      },
+      {
+        "name": "删除",
+        "icon": "fa fa-trash",
+        "callback": function (item) {
+                            console.log("点击删除: ", item);
+                        },
+        "type": "link"
+      }
+    ]
+  },
+  "activityExtForm": {
+    "schema": {
+      "type": "object",
+      "properties": {
+        "form": {
+          "x-component": "Form",
+          "x-component-props": {
+            "wrapper-col": {
+              "span": 14
+            },
+            "label-col": {
+              "span": 7
+            },
+            "style": {
+              "flexWrap": "wrap",
+              "display": "flex"
+            }
+          },
+          "type": "void",
+          "properties": {}
+        }
+      }
+    },
+    "config": {
+      "protocol": {
+        "style": {
+          "width": "100%"
+        },
+        "type": "Textarea",
+        "title": "协议与承诺书",
+        "props": {
+          "showCount": true,
+          "placeholder": "请输入《活动报名用户协议及承诺书》"
+        }
+      },
+      "customerService": {
+        "style": {
+          "width": "100%"
+        },
+        "type": "Input",
+        "title": "活动咨询与客服",
+        "props": {}
+      },
+      "activityRules": {
+        "style": {
+          "width": "100%"
+        },
+        "type": "Textarea",
+        "title": "活动规则",
+        "props": {
+          "showCount": true,
+          "placeholder": "请输入活动规则"
+        }
+      }
+    },
+    "value": {}
+  },
+  "activityImgTableOne": {
+    "columns": [
+      {
+        "dataIndex": "name",
+        "width": 50,
+        "title": "图片",
+        "key": "name"
+      },
+      {
+        "dataIndex": "age",
+        "width": 90,
+        "title": "参考尺寸（或使用二倍图）",
+        "key": "age"
+      },
+      {
+        "dataIndex": "address",
+        "width": 30,
+        "title": "图片排序",
+        "key": "address",
+        "ellipsis": true
+      },
+      {
+        "slots": {
+          "customRender": "action"
+        },
+        "width": 80,
+        "title": "操作",
+        "key": "action"
+      }
+    ],
+    "data": [
+      {
+        "address": "",
+        "school": "",
+        "name": "¥0",
+        "key": "1",
+        "age": "",
+        "sexual": ""
+      },
+      {
+        "address": "",
+        "school": "",
+        "name": "¥ 29.9",
+        "key": "2",
+        "age": "",
+        "sexual": ""
+      }
+    ],
+    "paginationHidden": true,
+    "getDataMap": {
+      "total": "",
+      "list": ""
+    },
+    "actions": [
+      {
+        "name": "编辑",
+        "icon": "fa fa-pencil",
+        "callback": function (item) {
+                            console.log("点击编辑: ", item);
+                        },
+        "type": "link"
+      },
+      {
+        "name": "删除",
+        "icon": "fa fa-trash",
+        "callback": function (item) {
+                            console.log("点击删除: ", item);
+                        },
+        "type": "link"
+      }
+    ],
+    "isFlatAction": true,
+    "rowClassName": {}
+  },
+  "activityTwoForm": {
+    "schema": {
+      "type": "object",
+      "properties": {
+        "form": {
+          "x-component": "Form",
+          "x-component-props": {
+            "wrapper-col": {
+              "span": 14
+            },
+            "label-col": {
+              "span": 7
+            },
+            "style": {
+              "flexWrap": "wrap",
+              "display": "flex"
+            }
+          },
+          "type": "void",
+          "properties": {}
+        }
+      }
+    },
+    "config": {
+      "unrealCount": {
+        "style": {
+          "width": "100%"
+        },
+        "type": "Input",
+        "title": "活动人数",
+        "required": true,
+        "props": {}
+      },
+      "unrealStatus:": {
+        "style": {
+          "width": "100%"
+        },
+        "type": "RadioGroup",
+        "title": "虚拟人数",
+        "required": true,
+        "props": {
+          "options": [
+            {
+              "label": "启用",
+              "value": 0
+            },
+            {
+              "label": "禁用",
+              "value": 1
+            }
+          ]
+        }
+      }
+    },
+    "value": {}
+  }
+};
+  },
+  watch: {
+  },
+    created(e) {
+      this.onCreated(e);
+    },
+    mounted(e) {
+      detail(this, arguments);
+    },
+  methods:{
+    onCreated() {
+  let self = this
+  self.title.text = "创建活动"
+  self.isSaveOrUpdate.hidden = false
+  self.isTitle = "* 为必填项"
+},
+
+  }
 };
 </script>
 
 <style lang="less" scoped>
 .page {
+  
 }
 
 .ele-wrapper-e37fdb24-4953-4f7d-af46-b1aa9d4f1737 {
-  width: 100%;
+  width:100%;
 }
 
 .ele-wrapper-titleCard {
-  width: 100%;
-  border-bottom: 1px solid #f2f2f2;
-  .ele-titleCard {
-    display: flex;
+  width:100%;
+border-bottom:1px solid #f2f2f2;
+.ele-titleCard{
+display: flex;
     align-items: center;
     justify-content: space-between;
-  }
+}
 }
 
 .ele-wrapper-title {
-  .hm-bg-text {
+  .hm-bg-text{
     display: flex;
     align-items: center;
-  }
+}
 }
 
 .ele-wrapper-message_1 {
-  width: 100%;
-  .ele-message_1 {
-    display: flex;
-  }
+  width:100%;
+.ele-message_1{
+display: flex;
+}
 }
 
 .ele-wrapper-011df7de-b51d-49df-8693-f8313670d460 {
-  width: 50%;
-  border-right: 1px solid #f2f2f2;
+  width:50%;
+border-right:1px solid #f2f2f2;
 }
 
 .ele-wrapper-bf252f1b-c63f-43d8-b3da-2dc087a9f832 {
-  border-left: 4px solid #0079fe;
-  padding-left: 5px;
+  border-left:4px solid #0079fe;
+padding-left: 5px;
 }
 
 .ele-wrapper-activityForm {
-  margin-top: 15px;
-  /deep/.ant-calendar-picker {
-    width: 100%;
-  }
+  margin-top:15px;
+/deep/.ant-calendar-picker{
+width:100%;
+}
 }
 
 .ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180 {
-  width: 100%;
-  margin-top: 5px;
+  width:100%;
+margin-top:5px;
 }
 
 .ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17 {
-  border-left: 4px solid #0079fe;
-  padding-left: 5px;
+  border-left:4px solid #0079fe;
+padding-left: 5px;
 }
 
 .ele-wrapper-addActivityProject {
-  margin-left: 5px;
+  margin-left:5px;
 }
 
 .ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f {
-  width: 100%;
+  width:100%;
 }
 
 .ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6 {
-  border-left: 4px solid #0079fe;
-  margin-top: 15px;
-  padding-left: 5px;
+  border-left:4px solid #0079fe;
+margin-top:15px;
+padding-left: 5px;
 }
 
 .ele-wrapper-addActivityImgTableTwo {
-  margin-left: 5px;
-  margin-top: 15px;
+  margin-left:5px;
+margin-top:15px;
 }
 
 .ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c {
-  width: 100%;
+  width:100%;
 }
 
 .ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
-  border-left: 5px solid #0079fe;
-  margin-top: 15px;
-  padding-left: 5px;
+  border-left:5px solid #0079fe;
+margin-top:15px;
+padding-left: 5px;
 }
 
 .ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41 {
-  width: 100%;
+  width:100%;
 }
 
 .ele-wrapper-activityExtForm {
-  width: 100%;
-  margin-top: 20px;
+  width:100%;
+margin-top:20px;
 }
 
 .ele-wrapper-message_2 {
-  width: 50%;
+  width:50%;
 }
 
 .ele-wrapper-fa713d7b-511f-4b6c-9f7a-37b66d33842e {
-  border-left: 4px solid #0079fe;
-  margin-left: 8px;
-  padding-left: 5px;
+  border-left:4px solid #0079fe;
+margin-left:8px;
+padding-left: 5px;
 }
 
-.ele-wrapper-275c3b23-7230-452b-b726-72dfb54f34a8 {
-  margin-left: 5px;
-  margin-top: 15px;
+.ele-wrapper-{&quot;key&quot;:&quot;addActivityImgTableTwo&quot;,&quot;title&quot;:&quot;按钮&quot;,&quot;note&quot;:{&quot;directives&quot;:{&quot;v-if&quot;:{&quot;type&quot;:&quot;code&quot;},&quot;v-html&quot;:{&quot;type&quot;:&quot;code&quot;},&quot;v-for&quot;:{&quot;type&quot;:&quot;code&quot;},&quot;v-show&quot;:{&quot;type&quot;:&quot;code&quot;},&quot;v-model&quot;:{&quot;type&quot;:&quot;code&quot;}},&quot;style&quot;:{&quot;css&quot;:&quot;margin-left:5px;\nmargin-top:15px;&quot;},&quot;slot&quot;:{&quot;name&quot;:&quot;default&quot;},&quot;events&quot;:{&quot;click&quot;:{&quot;kind&quot;:&quot;event&quot;,&quot;description&quot;:&quot;点击事件&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;params&quot;,&quot;description&quot;:&quot;e&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;click&quot;,&quot;arguments&quot;:[{&quot;name&quot;:&quot;e&quot;,&quot;type&quot;:&quot;any&quot;,&quot;rest&quot;:false}],&quot;value&quot;:[]}},&quot;props&quot;:{&quot;text&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮文字&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;text&quot;,&quot;type&quot;:&quot;String&quot;,&quot;default&quot;:&quot;\&quot;按钮\&quot;&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;添加&quot;}},&quot;type&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮类型&quot;,&quot;keywords&quot;:{&quot;options&quot;:&quot;[\&quot;\&quot;,\&quot;primary\&quot;,\&quot;dashed\&quot;,\&quot;danger\&quot;,\&quot;link\&quot;]&quot;},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;type&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;primary&quot;}},&quot;shape&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮形状&quot;,&quot;keywords&quot;:{&quot;options&quot;:&quot;[\&quot;\&quot;,\&quot;circle\&quot;,\&quot;round\&quot;]&quot;},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;shape&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;}},&quot;size&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮大小&quot;,&quot;keywords&quot;:{&quot;options&quot;:&quot;[\&quot;\&quot;,\&quot;small\&quot;,\&quot;large\&quot;]&quot;},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;size&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;}},&quot;disabled&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;是否禁用&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;disabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;default&quot;:&quot;false&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:false}},&quot;ghost&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;背景透明&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;ghost&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;}},&quot;icon&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;图标&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;icon&quot;,&quot;type&quot;:&quot;Icon&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;fafa-plus&quot;}},&quot;visible&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;是否显示&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;visible&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;default&quot;:&quot;true&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:true}},&quot;auth&quot;:{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;授权标识&quot;,&quot;keywords&quot;:{},&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;auth&quot;,&quot;type&quot;:&quot;String&quot;,&quot;default&quot;:&quot;\&quot;\&quot;&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false,&quot;value&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;&quot;}}}},&quot;component&quot;:{&quot;importPath&quot;:&quot;built-in/jeecg/HmAntButton&quot;,&quot;imgUrl&quot;:&quot;built-in/jeecg/img/HmAntButton.png&quot;,&quot;name&quot;:&quot;HmAntButton&quot;,&quot;docUrl&quot;:&quot;/storybook/block-design-jeecg/?path&#x3D;/docs/表单-hmantbutton--docs&quot;,&quot;id&quot;:&quot;c238e6de-3936-4cce-aa21-05ee25035cc6&quot;,&quot;title&quot;:&quot;按钮&quot;,&quot;type&quot;:0,&quot;isBuiltIn&quot;:true,&quot;key&quot;:&quot;addActivityImgTableTwo&quot;,&quot;isShow&quot;:true},&quot;doc&quot;:{&quot;inheritAttrs&quot;:true,&quot;errors&quot;:[],&quot;warnings&quot;:[],&quot;keywords&quot;:[],&quot;slots&quot;:[],&quot;props&quot;:[{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮文字&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;text&quot;,&quot;type&quot;:&quot;String&quot;,&quot;default&quot;:&quot;\&quot;按钮\&quot;&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮类型&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;options&quot;,&quot;description&quot;:&quot;[\&quot;\&quot;,\&quot;primary\&quot;,\&quot;dashed\&quot;,\&quot;danger\&quot;,\&quot;link\&quot;]&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;type&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮形状&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;options&quot;,&quot;description&quot;:&quot;[\&quot;\&quot;,\&quot;circle\&quot;,\&quot;round\&quot;]&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;shape&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;按钮大小&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;options&quot;,&quot;description&quot;:&quot;[\&quot;\&quot;,\&quot;small\&quot;,\&quot;large\&quot;]&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;size&quot;,&quot;type&quot;:&quot;Enum&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;是否禁用&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;disabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;default&quot;:&quot;false&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;背景透明&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;ghost&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;图标&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;icon&quot;,&quot;type&quot;:&quot;Icon&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;是否显示&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;boolean&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;visible&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;default&quot;:&quot;true&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false},{&quot;kind&quot;:&quot;prop&quot;,&quot;description&quot;:&quot;授权标识&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;auth&quot;,&quot;type&quot;:&quot;String&quot;,&quot;default&quot;:&quot;\&quot;\&quot;&quot;,&quot;required&quot;:false,&quot;describeModel&quot;:false}],&quot;data&quot;:[{&quot;kind&quot;:&quot;data&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;hasPermission&quot;,&quot;type&quot;:&quot;Identifier&quot;,&quot;initialValue&quot;:&quot;hasPermission&quot;}],&quot;computed&quot;:[],&quot;events&quot;:[{&quot;kind&quot;:&quot;event&quot;,&quot;description&quot;:&quot;点击事件&quot;,&quot;keywords&quot;:[{&quot;name&quot;:&quot;params&quot;,&quot;description&quot;:&quot;e&quot;}],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;click&quot;,&quot;arguments&quot;:[{&quot;name&quot;:&quot;e&quot;,&quot;type&quot;:&quot;any&quot;,&quot;rest&quot;:false}]}],&quot;methods&quot;:[{&quot;kind&quot;:&quot;method&quot;,&quot;keywords&quot;:[],&quot;visibility&quot;:&quot;public&quot;,&quot;name&quot;:&quot;onClick&quot;,&quot;params&quot;:[{&quot;name&quot;:&quot;e&quot;,&quot;type&quot;:&quot;unknow&quot;,&quot;rest&quot;:false}],&quot;syntax&quot;:[&quot;onClick(e:unknow):void&quot;],&quot;returns&quot;:{&quot;type&quot;:&quot;void&quot;}}],&quot;name&quot;:&quot;HmAntButton&quot;},&quot;topics&quot;:[]} {
+  margin-left:5px;
+margin-top:15px;
 }
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
-  width: 100%;
+  width:100%;
 }
 
 .ele-wrapper-56aec4a5-4b22-4f3e-9572-bd54033fe687 {
-  border-left: 4px solid #0079fe;
-  margin-top: 15px;
-  margin-left: 8px;
-  padding-left: 5px;
+  border-left:4px solid #0079fe;
+margin-top:15px;
+margin-left:8px;
+padding-left: 5px;
 }
 
 .ele-wrapper-3fb31f2b-4a48-499a-ba2a-8181388283b9 {
-  width: 100%;
+  width:100%;
 }
 
 .ele-wrapper-c9bf9691-385d-414d-864e-a07073520b33 {
-  border-left: 4px solid #0079fe;
-  margin-top: 15px;
-  margin-left: 8px;
-  padding-left: 5px;
+  border-left:4px solid #0079fe;
+margin-top:15px;
+margin-left:8px;
+padding-left: 5px;
 }
 
 .ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc {
-  width: 100%;
+  width:100%;
 }
 
 .ele-wrapper-610ad32f-244d-4af7-aad8-a7d343ac7d36 {
-  border-left: 4px solid #0079fe;
-  margin-top: 15px;
-  margin-left: 8px;
-  padding-left: 5px;
+  border-left:4px solid #0079fe;
+margin-top:15px;
+margin-left:8px;
+padding-left: 5px;
 }
 
 .ele-wrapper-messageRenedit {
-  width: 100%;
-  .ele-messageRenedit {
+  width:100%;
+.ele-messageRenedit{
     display: flex;
     flex-direction: column;
-  }
+}
 }
 
 .ele-wrapper-activityTwoForm {
-  width: 100%;
+  width:100%;
 }
 
 .ele-wrapper-isSaveOrUpdate {
-  width: 100%;
-  border-top: 1px solid #f2f2f2;
+  width:100%;
+border-top:1px solid #f2f2f2;
 }
 
 .ele-wrapper-be6a0959-060d-4277-9590-2d5ddd2ab12e {
-  margin-right: 5px;
-  margin-top: 10px;
-  .ant-btn-lg {
-    width: 140px;
-  }
+  margin-right:5px;
+margin-top:10px;
+.ant-btn-lg{
+width:140px;
+}
 }
 
 .ele-wrapper-902e40e8-285f-4e3c-943d-eeafce2cbf7b {
-  margin-left: 5px;
-  margin-top: 10px;
-  .ant-btn-lg {
-    width: 140px;
-  }
+  margin-left:5px;
+margin-top:10px;
+.ant-btn-lg{
+width:140px;
 }
+}
+
 </style>
