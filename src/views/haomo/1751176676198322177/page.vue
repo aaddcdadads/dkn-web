@@ -850,6 +850,7 @@ export default {
             dataIndex: "name",
             title: "活动项目名称",
             key: "name",
+            width: 130,
             ellipsis: true,
           },
           {
