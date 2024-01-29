@@ -229,9 +229,8 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              :z-index="1000"
                               v-model:visible="addprize.visible"
-                              :style="addprize.style"
+                              :z-index="1000"
                               height="250px"
                               class="ele-addprize"
                             >
@@ -713,9 +712,6 @@ export default {
       },
       addprize: {
         visible: false,
-        style: {
-          top: "100px",
-        },
       },
       addBackground: {
         visible: false,
@@ -1023,11 +1019,19 @@ export default {
           {
             name: "编辑",
             icon: "fa fa-pencil",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.addprize.visible = true;
+            },
             type: "link",
           },
           {
             name: "删除",
             icon: "fa fa-trash",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+              self.deleteproject.visible = true;
+            },
             type: "link",
           },
         ],
