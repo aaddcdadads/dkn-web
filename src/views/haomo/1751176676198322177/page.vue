@@ -501,7 +501,7 @@
                               dataIndex: 'address',
                               key: 'address',
                               ellipsis: true,
-                              width: 30,
+                              width: 40,
                             },
                             {
                               title: '操作',
