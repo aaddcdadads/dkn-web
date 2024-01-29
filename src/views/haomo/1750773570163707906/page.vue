@@ -26,6 +26,7 @@
                   :config="storeFilter.config"
                   v-model:value="storeFilter.value"
                   :col-num="2"
+                  :col-min-width="380"
                   :schema="storeFilter.schema"
                   :label-col="7"
                   :wrapper-col="14"
@@ -494,7 +495,7 @@ export default {
             type: "Input",
             title: "门店名称",
             style: {
-              width: "50%",
+              width: "30%",
             },
             props: {},
             validator: function (value) {},
@@ -503,7 +504,7 @@ export default {
             type: "HmAntSelect",
             title: "启用状态",
             style: {
-              width: "50%",
+              width: "30%",
             },
             props: {
               title: "",
