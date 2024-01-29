@@ -495,7 +495,7 @@ export default {
             type: "Input",
             title: "门店名称",
             style: {
-              width: "30%",
+              width: "25%",
             },
             props: {},
             validator: function (value) {},
@@ -504,7 +504,7 @@ export default {
             type: "HmAntSelect",
             title: "启用状态",
             style: {
-              width: "30%",
+              width: "25%",
             },
             props: {
               title: "",
