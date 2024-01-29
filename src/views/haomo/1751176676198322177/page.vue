@@ -221,10 +221,9 @@
                           height=""
                           class="ele-deleteproject"
                         >
-                          <div
-                            class="ele-wrapper ele-wrapper-cecf2e80-2c21-4fc8-961b-3288baaf61ed"
-                          >
+                          <div class="ele-wrapper ele-wrapper-delText">
                             <hm-ant-icon-text
+                              ref="delText"
                               text="确认删除"
                               icon=""
                               width="270px"
