@@ -762,6 +762,10 @@ export default {
   .table-div /deep/ .ant-table-thead > tr > th {
     background: #fafafa;
   }
+  /deep/.switch-div,
+  /deep/.switch-class {
+    background-color: transparent !important;
+  }
   width: 98%;
   margin-left: 1%;
 }
