@@ -238,13 +238,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtForm"
-                                  :schema="activityExtForm.schema"
-                                  :wrapper-col="18"
-                                  :col-num="0"
-                                  :label-col="4"
-                                  :col-min-width="380"
                                   :config="activityExtForm.config"
                                   v-model:value="activityExtForm.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="activityExtForm.schema"
+                                  :label-col="4"
+                                  :wrapper-col="18"
                                   class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
@@ -761,6 +761,39 @@ export default {
         ],
       },
       activityExtForm: {
+        config: {
+          protocol: {
+            style: {
+              width: "100%",
+            },
+            type: "Textarea",
+            title: "协议与承诺书",
+            props: {
+              showCount: true,
+              placeholder: "请输入《活动报名用户协议及承诺书》",
+            },
+          },
+          activityRules: {
+            style: {
+              width: "100%",
+            },
+            type: "Textarea",
+            title: "活动规则",
+            props: {
+              showCount: true,
+              placeholder: "请输入活动规则",
+            },
+          },
+          customerService: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动咨询与客服",
+            props: {},
+          },
+        },
+        value: {},
         schema: {
           type: "object",
           properties: {
@@ -783,39 +816,6 @@ export default {
             },
           },
         },
-        config: {
-          protocol: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "协议与承诺书",
-            props: {
-              showCount: true,
-              placeholder: "请输入《活动报名用户协议及承诺书》",
-            },
-          },
-          customerService: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动咨询与客服",
-            props: {},
-          },
-          activityRules: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "活动规则",
-            props: {
-              showCount: true,
-              placeholder: "请输入活动规则",
-            },
-          },
-        },
-        value: {},
       },
       activityImgTableOne: {
         columns: [
