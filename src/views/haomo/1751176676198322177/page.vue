@@ -212,6 +212,23 @@
                         </hm-modal>
                       </div>
                       <div
+                        class="ele-wrapper ele-wrapper-b53ef691-8b6b-4242-9901-a42d07512518"
+                      >
+                        <hm-modal
+                          :visible="true"
+                          width="320px"
+                          :z-index="1000"
+                          height=""
+                        >
+                          <div
+                            class="ele-wrapper ele-wrapper-cecf2e80-2c21-4fc8-961b-3288baaf61ed"
+                          >
+                            <hm-ant-icon-text icon="" width="272px">
+                            </hm-ant-icon-text>
+                          </div>
+                        </hm-modal>
+                      </div>
+                      <div
                         class="ele-wrapper ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f"
                       >
                         <hm-bg-card
@@ -283,7 +300,7 @@
                                 {
                                   name: '编辑',
                                   callback:
-                                    'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                                    'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n       self.addproject.visible = true;\n                        }',
                                   type: 'link',
                                   icon: 'fa fa-pencil',
                                 },
@@ -435,7 +452,7 @@
                                     {
                                       name: '编辑',
                                       callback:
-                                        'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                                        'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n        self.addprize.visible = true;\n                        }',
                                       type: 'link',
                                       icon: 'fa fa-pencil',
                                     },
@@ -660,7 +677,7 @@
                             {
                               name: '编辑',
                               callback:
-                                'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                                'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n        self.addBackground.visible = true;\n                        }',
                               type: 'link',
                               icon: 'fa fa-pencil',
                             },
@@ -883,6 +900,9 @@ export default {
       },
       addBackground: {
         visible: false,
+      },
+      "b53ef691-8b6b-4242-9901-a42d07512518": {
+        visible: true,
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
         config: {
