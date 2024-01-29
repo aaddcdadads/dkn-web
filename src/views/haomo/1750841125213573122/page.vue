@@ -476,7 +476,7 @@ export default {
               title: "",
               params: {
                 pageNo: 1,
-                pageSize: -1,
+                pageSize: 100,
               },
               showSearch: true,
               url: "/api/sys/user/list",
