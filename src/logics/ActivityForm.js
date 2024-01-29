@@ -124,6 +124,7 @@ const detail = (logic.detail = async (pageVm, eventData) => {
   self.detailData = eventData;
 
   self.id = self.$route.query.id;
+  self.activityId = self.id;
   self.type = self.$route.query.type;
   self.type = parseInt(self.type);
   if (!self.id || self.type === 1) {
