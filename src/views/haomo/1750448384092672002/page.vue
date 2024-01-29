@@ -717,21 +717,25 @@ export default {
             title: "活动ID",
             dataIndex: "code",
             key: "code",
+            fixed: true,
           },
           {
             title: "活动名称",
             dataIndex: "name",
             key: "name",
+            fixed: true,
           },
           {
             title: "活动费用",
             dataIndex: "expense",
             key: "expense",
+            fixed: true,
           },
           {
             title: "活动开始时间",
             dataIndex: "startTime",
             key: "startTime",
+            fixed: true,
           },
           {
             title: "活动报名截止时间",
