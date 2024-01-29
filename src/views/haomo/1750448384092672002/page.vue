@@ -1045,6 +1045,9 @@ export default {
 
 .ele-wrapper-4aad8761-7b58-4d08-b5a2-91fea232f9fe {
   width: 100%;
+  .hm-bg-card {
+    display: flex;
+  }
 }
 
 .ele-wrapper-357d4d6e-b124-47f2-a52e-fe3e70eceaf1 {
