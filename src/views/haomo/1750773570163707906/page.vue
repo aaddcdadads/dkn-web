@@ -499,11 +499,13 @@ export default {
         config: {
           name: {
             type: "Input",
-            title: "门店名称",
+            title: "搜索门店",
             style: {
               width: "25%",
             },
-            props: {},
+            props: {
+              placeholder: "门店名称",
+            },
             validator: function (value) {},
           },
           status: {
