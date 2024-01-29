@@ -476,9 +476,9 @@ export default {
       isSaveOrUpdate: {},
       activityForm: {
         config: {
-          " name": {
+          name: {
             type: "Input",
-            title: "活动规则",
+            title: "活动名称",
             style: {
               width: "100%",
             },
@@ -494,7 +494,7 @@ export default {
             required: true,
             props: {},
           },
-          EntryClose: {
+          closeTime: {
             type: "DatePicker",
             title: "报名截止",
             style: {
@@ -505,7 +505,7 @@ export default {
               showTime: true,
             },
           },
-          VerificationDeadline: {
+          pickUpTime: {
             type: "DatePicker",
             title: "核销截止",
             style: {
@@ -516,9 +516,9 @@ export default {
               showTime: true,
             },
           },
-          ActivityStatus: {
+          status: {
             type: "RadioGroup",
-            title: "核销截止",
+            title: "活动状态",
             style: {
               width: "100%",
             },
