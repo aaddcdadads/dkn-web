@@ -907,6 +907,9 @@ export default {
   margin-top: 15px;
   margin-left: 8px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-3fb31f2b-4a48-499a-ba2a-8181388283b9 {
