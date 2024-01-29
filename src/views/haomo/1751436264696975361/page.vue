@@ -161,6 +161,18 @@
                           </div>
                         </hm-modal>
                       </div>
+                      <div class="ele-wrapper ele-wrapper-deleteproject">
+                        <hm-modal
+                          ref="deleteproject"
+                          v-model:visible="deleteproject.visible"
+                          :z-index="1000"
+                        >
+                          <div class="ele-wrapper ele-wrapper-deleteText">
+                            <hm-ant-icon-text ref="deleteText" text="确认删除">
+                            </hm-ant-icon-text>
+                          </div>
+                        </hm-modal>
+                      </div>
                       <div
                         class="ele-wrapper ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f"
                       >
@@ -619,6 +631,9 @@ export default {
       addprice: {
         visible: false,
       },
+      deleteproject: {
+        visible: false,
+      },
       addprize: {
         visible: false,
       },
@@ -832,6 +847,7 @@ export default {
             icon: "fa fa-trash",
             callback: function (item) {
               console.log("点击删除: ", item);
+              self.deleteproject.visible = true;
             },
             type: "link",
           },
@@ -930,6 +946,7 @@ export default {
             icon: "fa fa-trash",
             callback: function (item) {
               console.log("点击删除: ", item);
+              self.deleteproject.visible = true;
             },
             type: "link",
           },
@@ -1085,6 +1102,7 @@ export default {
             icon: "fa fa-trash",
             callback: function (item) {
               console.log("点击删除: ", item);
+              self.deleteproject.visible = true;
             },
             type: "link",
           },
