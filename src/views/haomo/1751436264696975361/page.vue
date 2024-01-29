@@ -165,8 +165,10 @@
                         <hm-modal
                           ref="deleteproject"
                           v-model:visible="deleteproject.visible"
+                          width="320px"
                           :z-index="1000"
                           height=""
+                          class="ele-deleteproject"
                         >
                           <div class="ele-wrapper ele-wrapper-deleteText">
                             <hm-ant-icon-text
@@ -1276,6 +1278,13 @@ export default {
 .ele-wrapper-addprice {
   /deep/.hm-modal {
     min-height: 0px;
+  }
+}
+
+.ele-wrapper-deleteproject {
+  /deep/.ant-modal-body {
+    display: flex;
+    justify-content: center;
   }
 }
 
