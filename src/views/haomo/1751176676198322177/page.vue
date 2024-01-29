@@ -597,6 +597,8 @@ import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
+import { addActivityProject } from "/@/logics/AddActivityForm";
+
 export default {
   name: "NewActivity",
   components: {
@@ -1233,8 +1235,8 @@ export default {
     onAddBtn1Click() {
       this.addproject.visible = true;
     },
-    async onAddprojectOk() {
-      await this.addActivityProject();
+    onAddprojectOk() {
+      addActivityProject(this, arguments);
     },
     onAddBtn2Click() {
       this.addprize.visible = true;
