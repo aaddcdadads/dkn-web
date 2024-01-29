@@ -1290,7 +1290,7 @@ export default {
 }
 
 .ele-wrapper-deleteText {
-  .ele-wrapper-deleteText {
+  /deep/.ele-wrapper-deleteText {
     width: 100%;
   }
 }
