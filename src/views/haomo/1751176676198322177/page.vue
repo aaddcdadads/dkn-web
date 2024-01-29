@@ -221,22 +221,23 @@
                           box-shadow-blur=""
                           class="ele-678d6f52-6548-4f95-b813-d079ff38bb6f"
                         >
-                          <div class="ele-wrapper ele-wrapper-projectcost">
+                          <div
+                            class="ele-wrapper ele-wrapper-activityProjectTable"
+                          >
                             <hm-ant-table
-                              ref="projectcost"
-                              :columns="projectcost.columns"
-                              :data="projectcost.data"
-                              :pagination-hidden="projectcost.paginationHidden"
-                              :pagination="projectcost.pagination"
-                              :params="projectcost.params"
-                              :get-data-map="projectcost.getDataMap"
-                              :pagination-map="projectcost.paginationMap"
-                              :row-selection="projectcost.rowSelection"
-                              :actions="projectcost.actions"
-                              :is-flat-action="projectcost.isFlatAction"
-                              :scroll="projectcost.scroll"
-                              :combined="projectcost.combined"
-                              :row-class-name="projectcost.rowClassName"
+                              ref="activityProjectTable"
+                              :columns="activityProjectTable.columns"
+                              :data="activityProjectTable.data"
+                              :pagination-hidden="
+                                activityProjectTable.paginationHidden
+                              "
+                              :actions="activityProjectTable.actions"
+                              :is-flat-action="
+                                activityProjectTable.isFlatAction
+                              "
+                              :row-class-name="
+                                activityProjectTable.rowClassName
+                              "
                             >
                             </hm-ant-table>
                           </div>
@@ -838,7 +839,7 @@ export default {
           },
         },
       },
-      projectcost: {
+      activityProjectTable: {
         columns: [
           {
             title: "项目费用",
@@ -894,20 +895,6 @@ export default {
           },
         ],
         paginationHidden: true,
-        pagination: {
-          current: 1,
-          pageSize: 10,
-        },
-        params: {},
-        getDataMap: {
-          list: "",
-          total: "",
-        },
-        paginationMap: {
-          pageNo: "pageNo",
-          pageSize: "pageSize",
-        },
-        rowSelection: {},
         actions: [
           {
             name: "编辑",
@@ -921,10 +908,6 @@ export default {
           },
         ],
         isFlatAction: true,
-        scroll: {
-          x: "100%",
-        },
-        combined: [],
         rowClassName: {},
       },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
