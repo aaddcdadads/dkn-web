@@ -680,7 +680,9 @@ export default {
             },
           },
         },
-        value: {},
+        value: {
+          status: 0,
+        },
         schema: {
           type: "object",
           properties: {
