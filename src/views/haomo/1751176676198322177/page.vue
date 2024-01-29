@@ -828,7 +828,7 @@ export default {
         columns: [
           {
             dataIndex: "imgPath",
-            width: 50,
+            width: 90,
             title: "项目图片",
             key: "imgPath",
             customRender: function (data) {
