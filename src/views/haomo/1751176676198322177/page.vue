@@ -76,73 +76,16 @@
                     >
                     </hm-ant-bg-text>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-7714511a-00ae-4c70-afd4-04b3e388c348"
-                  >
+                  <div class="ele-wrapper ele-wrapper-activityForm">
                     <hm-ant-formily
-                      :config="{
-                        ' name': {
-                          type: 'Input',
-                          title: '活动名称',
-                          style: { width: '100%' },
-                          required: true,
-                          props: {},
-                        },
-                        cycle: {
-                          type: 'RangePicker',
-                          title: '活动周期',
-                          style: { width: '100%' },
-                          required: true,
-                          props: {},
-                        },
-                        EntryClose: {
-                          type: 'DatePicker',
-                          title: '报名截止',
-                          style: { width: '100%' },
-                          required: true,
-                          props: { showTime: true },
-                        },
-                        VerificationDeadline: {
-                          type: 'DatePicker',
-                          title: '核销截止',
-                          style: { width: '100%' },
-                          required: true,
-                          props: { showTime: true },
-                        },
-                        ActivityStatus: {
-                          type: 'RadioGroup',
-                          title: '活动状态',
-                          style: { width: '100%' },
-                          required: true,
-                          props: {
-                            options: [
-                              { label: '启用', value: 0 },
-                              { label: '禁用', value: 1 },
-                            ],
-                          },
-                        },
-                      }"
-                      :value="{}"
+                      ref="activityForm"
+                      :config="activityForm.config"
+                      v-model:value="activityForm.value"
                       :col-num="0"
                       :col-min-width="380"
-                      :schema="{
-                        type: 'object',
-                        properties: {
-                          form: {
-                            type: 'void',
-                            'x-component': 'Form',
-                            'x-component-props': {
-                              style: { display: 'flex', flexWrap: 'wrap' },
-                              'label-col': { span: 7 },
-                              'wrapper-col': { span: 14 },
-                            },
-                            properties: {},
-                          },
-                        },
-                      }"
                       :label-col="3"
                       :wrapper-col="16"
-                      class="ele-7714511a-00ae-4c70-afd4-04b3e388c348"
+                      class="ele-activityForm"
                     >
                     </hm-ant-formily>
                   </div>
@@ -752,7 +695,7 @@ export default {
   data() {
     let self = this;
     return {
-      "7714511a-00ae-4c70-afd4-04b3e388c348": {
+      activityForm: {
         config: {
           " name": {
             type: "Input",
@@ -816,28 +759,6 @@ export default {
           },
         },
         value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              type: "void",
-              "x-component": "Form",
-              "x-component-props": {
-                style: {
-                  display: "flex",
-                  flexWrap: "wrap",
-                },
-                "label-col": {
-                  span: 7,
-                },
-                "wrapper-col": {
-                  span: 14,
-                },
-              },
-              properties: {},
-            },
-          },
-        },
       },
       addproject: {
         visible: false,
@@ -1394,7 +1315,7 @@ export default {
   }
 }
 
-.ele-wrapper-7714511a-00ae-4c70-afd4-04b3e388c348 {
+.ele-wrapper-activityForm {
   margin-top: 15px;
   /deep/.ant-calendar-picker {
     width: 100%;
