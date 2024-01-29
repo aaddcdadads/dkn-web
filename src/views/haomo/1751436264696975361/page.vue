@@ -104,7 +104,7 @@
                         class="ele-wrapper ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
                       >
                         <hm-ant-bg-text
-                          text="活动项目设置（至少一个）"
+                          text="活动费用设置（至少一个）"
                           font-size="14px"
                           padding="2"
                           class="ele-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
