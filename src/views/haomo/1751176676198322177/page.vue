@@ -317,6 +317,7 @@
                               text="添加"
                               :type="'primary'"
                               icon="fa fa-plus"
+                              @click="onAddBtn2Click"
                               class="ele-addBtn2"
                             >
                             </hm-ant-button>
@@ -357,11 +358,6 @@
                                   :wrapper-col="14"
                                 >
                                 </hm-ant-formily>
-                              </div>
-                              <div
-                                class="ele-wrapper ele-wrapper-a79eba8f-4d0c-4995-b38d-4d88690b8adf"
-                              >
-                                <hm-ant-upload :file-list="[]"> </hm-ant-upload>
                               </div>
                             </hm-modal>
                           </div>
@@ -756,7 +752,6 @@ import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
-import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 export default {
@@ -769,7 +764,6 @@ export default {
     HmAntButton,
     HmModal,
     HmAntTable,
-    HmAntUpload,
     HmColorKit,
   },
   data() {
@@ -843,6 +837,9 @@ export default {
       addproject: {
         visible: false,
       },
+      addprize: {
+        visible: true,
+      },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
         config: {
           " name": {
@@ -875,9 +872,6 @@ export default {
         },
         value: {},
       },
-      addprize: {
-        visible: true,
-      },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
         config: {
           " name": {
@@ -904,9 +898,6 @@ export default {
           },
         },
         value: {},
-      },
-      "a79eba8f-4d0c-4995-b38d-4d88690b8adf": {
-        fileList: [],
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
         config: {
@@ -948,6 +939,9 @@ export default {
   methods: {
     onAddBtn1Click() {
       this.addproject.visible = true;
+    },
+    onAddBtn2Click() {
+      this.addprize.visible = true;
     },
   },
 };
