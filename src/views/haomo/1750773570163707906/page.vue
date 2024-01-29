@@ -25,10 +25,10 @@
                   ref="storeFilter"
                   :config="storeFilter.config"
                   v-model:value="storeFilter.value"
-                  :col-num="2"
+                  :col-num="0"
                   :col-min-width="380"
                   :schema="storeFilter.schema"
-                  :label-col="7"
+                  :label-col="5"
                   :wrapper-col="14"
                   class="ele-storeFilter"
                 >
