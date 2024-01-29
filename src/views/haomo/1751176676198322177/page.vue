@@ -214,6 +214,7 @@
                       <div class="ele-wrapper ele-wrapper-delete">
                         <hm-modal
                           ref="delete"
+                          title="删除"
                           v-model:visible="delete.visible"
                           width="320px"
                           :z-index="1000"
