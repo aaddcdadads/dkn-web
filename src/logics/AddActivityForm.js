@@ -89,6 +89,7 @@ const addActivityProject = (logic.addActivityProject = async (
   await self.$refs.activityProjectForm.validate();
   let item = self.$refs.activityProjectForm.getFormValues();
   (item.index = Math.floor(Math.random() * 10000)),
+    //处理图片
     self.$refs.activityProjectTable.cData.push(item);
 
   self.addproject.visible = false;
