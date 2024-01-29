@@ -90,6 +90,8 @@
                 <hm-panel
                   height=""
                   title=""
+                  box-shadow-v-shadow=""
+                  box-shadow-blur=""
                   class="ele-d305a01c-2a94-4341-899d-5e2787dbfd8b"
                 >
                   <template v-slot:slot-title-icon>
