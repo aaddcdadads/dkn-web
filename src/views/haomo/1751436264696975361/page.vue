@@ -641,7 +641,7 @@ export default {
         visible: false,
       },
       deleteproject: {
-        visible: true,
+        visible: false,
       },
       addprize: {
         visible: false,
