@@ -172,6 +172,29 @@
                             class="ele-wrapper ele-wrapper-7c1be11a-b36f-498c-ba73-bcabfe46ade4"
                           >
                             <hm-ant-formily
+                              :config="{
+                                ' name': {
+                                  type: 'Input',
+                                  title: '活动名称',
+                                  style: { width: '100%' },
+                                  required: true,
+                                  props: {},
+                                },
+                                cycle: {
+                                  type: 'RangePicker',
+                                  title: '活动周期',
+                                  style: { width: '100%' },
+                                  required: true,
+                                  props: {},
+                                },
+                                EntryClose: {
+                                  type: 'DatePicker',
+                                  title: '报名截止',
+                                  style: { width: '100%' },
+                                  required: true,
+                                  props: { showTime: true },
+                                },
+                              }"
                               :value="{}"
                               :col-num="0"
                               :col-min-width="380"
@@ -770,6 +793,37 @@ export default {
         visible: true,
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
+        config: {
+          " name": {
+            type: "Input",
+            title: "活动名称",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+          cycle: {
+            type: "RangePicker",
+            title: "活动周期",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+          EntryClose: {
+            type: "DatePicker",
+            title: "报名截止",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {
+              showTime: true,
+            },
+          },
+        },
         value: {},
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
