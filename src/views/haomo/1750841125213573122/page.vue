@@ -684,6 +684,32 @@ export default {
             title: "实际核销门店",
             dataIndex: "nowPickUpName",
             key: "nowPickUpName",
+            customRender: function (data) {
+              console.log("item数据啊啊", data);
+              return h(
+                "div",
+                {
+                  style: {
+                    width: 188,
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "left",
+                    alignItems: "left",
+                    marginLeft: "-15px",
+                  },
+                },
+                [
+                  h(
+                    "span",
+                    {
+                      class: "applyNoSpan",
+                      style: { color: "#1890ff", cursor: "pointer" },
+                    },
+                    data.text
+                  ),
+                ]
+              );
+            },
           },
           {
             slots: {
