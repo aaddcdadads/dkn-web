@@ -211,15 +211,15 @@
                           </div>
                         </hm-modal>
                       </div>
-                      <div class="ele-wrapper ele-wrapper-delete">
+                      <div class="ele-wrapper ele-wrapper-deleteproject">
                         <hm-modal
-                          ref="delete"
+                          ref="deleteproject"
                           title="删除"
-                          v-model:visible="delete.visible"
+                          v-model:visible="deleteproject.visible"
                           width="320px"
                           :z-index="1000"
                           height=""
-                          class="ele-delete"
+                          class="ele-deleteproject"
                         >
                           <div
                             class="ele-wrapper ele-wrapper-cecf2e80-2c21-4fc8-961b-3288baaf61ed"
@@ -906,7 +906,7 @@ export default {
       addBackground: {
         visible: false,
       },
-      delete: {
+      deleteproject: {
         visible: true,
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
@@ -1125,7 +1125,7 @@ export default {
   height: 100%;
 }
 
-.ele-wrapper-delete {
+.ele-wrapper-deleteproject {
   /deep/.hm-modal {
     min-height: 0px;
   }
