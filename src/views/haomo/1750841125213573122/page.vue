@@ -689,6 +689,7 @@ export default {
               return h(
                 "div",
                 {
+                  class: "applyNoSpan",
                   style: {
                     width: 188,
                     display: "flex",
@@ -702,7 +703,6 @@ export default {
                   h(
                     "span",
                     {
-                      class: "applyNoSpan",
                       style: { color: "#1890ff", cursor: "pointer" },
                     },
                     data.text
