@@ -725,7 +725,7 @@ export default {
             dataIndex: "name",
             key: "name",
             fixed: "left",
-            width: 300,
+            width: 250,
           },
           {
             title: "活动费用",
