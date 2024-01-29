@@ -128,12 +128,29 @@
                           title="活动费用"
                           v-model:visible="addprice.visible"
                           :z-index="1000"
+                          height="200px"
                           class="ele-addprice"
                         >
                           <div
                             class="ele-wrapper ele-wrapper-8529c1db-0480-471c-8c06-e2f336b223f2"
                           >
                             <hm-ant-formily
+                              :config="{
+                                ' name': {
+                                  type: 'Input',
+                                  title: '活动费用',
+                                  style: { width: '100%' },
+                                  required: true,
+                                  props: {},
+                                },
+                                cycle: {
+                                  type: 'Input',
+                                  title: '费用名称',
+                                  style: { width: '100%' },
+                                  required: true,
+                                  props: {},
+                                },
+                              }"
                               :value="{}"
                               :col-num="0"
                               :col-min-width="380"
@@ -666,6 +683,26 @@ export default {
         },
       },
       "8529c1db-0480-471c-8c06-e2f336b223f2": {
+        config: {
+          " name": {
+            type: "Input",
+            title: "活动费用",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+          cycle: {
+            type: "Input",
+            title: "费用名称",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+        },
         value: {},
       },
       activityProjectTable: {
