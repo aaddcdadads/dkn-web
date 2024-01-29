@@ -338,10 +338,9 @@
                                       title: '项目费用',
                                       style: { width: '100%' },
                                       required: true,
-                                      props: {
-                                        maxCount: 1,
-                                        listType: 'picture-card',
-                                      },
+                                      maxCount: 1,
+                                      listType: 'picture-card',
+                                      props: {},
                                     },
                                     cycle: {
                                       type: 'Input',
@@ -358,6 +357,11 @@
                                   :wrapper-col="14"
                                 >
                                 </hm-ant-formily>
+                              </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-a79eba8f-4d0c-4995-b38d-4d88690b8adf"
+                              >
+                                <hm-ant-upload :file-list="[]"> </hm-ant-upload>
                               </div>
                             </hm-modal>
                           </div>
@@ -752,6 +756,7 @@ import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
+import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 export default {
@@ -764,6 +769,7 @@ export default {
     HmAntButton,
     HmModal,
     HmAntTable,
+    HmAntUpload,
     HmColorKit,
   },
   data() {
@@ -881,10 +887,9 @@ export default {
               width: "100%",
             },
             required: true,
-            props: {
-              maxCount: 1,
-              listType: "picture-card",
-            },
+            maxCount: 1,
+            listType: "picture-card",
+            props: {},
           },
           cycle: {
             type: "Input",
@@ -899,6 +904,9 @@ export default {
           },
         },
         value: {},
+      },
+      "a79eba8f-4d0c-4995-b38d-4d88690b8adf": {
+        fileList: [],
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
         config: {
