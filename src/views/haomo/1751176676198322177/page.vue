@@ -378,59 +378,17 @@
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
                               <div
-                                class="ele-wrapper ele-wrapper-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
+                                class="ele-wrapper ele-wrapper-activityExtForm"
                               >
                                 <hm-ant-formily
-                                  :config="{
-                                    ' rule': {
-                                      type: 'Textarea',
-                                      title: '活动规则',
-                                      style: { width: '100%' },
-                                      props: {
-                                        showCount: true,
-                                        placeholder: '请输入活动规则',
-                                      },
-                                    },
-                                    agreement: {
-                                      type: 'Textarea',
-                                      title: '协议与承诺书',
-                                      style: { width: '100%' },
-                                      props: {
-                                        showCount: true,
-                                        placeholder:
-                                          '请输入《活动报名用户协议及承诺书》',
-                                      },
-                                    },
-                                    customerService: {
-                                      type: 'Input',
-                                      title: '活动咨询与客服',
-                                      style: { width: '100%' },
-                                    },
-                                  }"
-                                  :value="{}"
+                                  ref="activityExtForm"
+                                  :config="activityExtForm.config"
+                                  v-model:value="activityExtForm.value"
                                   :col-num="0"
                                   :col-min-width="380"
-                                  :schema="{
-                                    type: 'object',
-                                    properties: {
-                                      form: {
-                                        type: 'void',
-                                        'x-component': 'Form',
-                                        'x-component-props': {
-                                          style: {
-                                            display: 'flex',
-                                            flexWrap: 'wrap',
-                                          },
-                                          'label-col': { span: 7 },
-                                          'wrapper-col': { span: 14 },
-                                        },
-                                        properties: {},
-                                      },
-                                    },
-                                  }"
                                   :label-col="5"
                                   :wrapper-col="18"
-                                  class="ele-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
+                                  class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -1030,7 +988,7 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
+      activityExtForm: {
         config: {
           " rule": {
             type: "Textarea",
@@ -1063,28 +1021,6 @@ export default {
           },
         },
         value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              type: "void",
-              "x-component": "Form",
-              "x-component-props": {
-                style: {
-                  display: "flex",
-                  flexWrap: "wrap",
-                },
-                "label-col": {
-                  span: 7,
-                },
-                "wrapper-col": {
-                  span: 14,
-                },
-              },
-              properties: {},
-            },
-          },
-        },
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         config: {
@@ -1360,7 +1296,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870 {
+.ele-wrapper-activityExtForm {
   width: 100%;
   margin-top: 20px;
 }
