@@ -92,11 +92,11 @@
                     class="ele-wrapper ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180"
                   >
                     <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
                       width="100%"
                       height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
                       class="ele-824a7f59-7158-4b84-a954-01cbeb3c4180"
                     >
                       <div
@@ -177,19 +177,19 @@
                           >
                             <hm-ant-table
                               ref="activityProjectTable"
-                              :is-flat-action="
-                                activityProjectTable.isFlatAction
-                              "
-                              :get-data-map="activityProjectTable.getDataMap"
-                              :data="activityProjectTable.data"
                               :columns="activityProjectTable.columns"
-                              :row-class-name="
-                                activityProjectTable.rowClassName
-                              "
+                              :data="activityProjectTable.data"
                               :pagination-hidden="
                                 activityProjectTable.paginationHidden
                               "
+                              :get-data-map="activityProjectTable.getDataMap"
                               :actions="activityProjectTable.actions"
+                              :is-flat-action="
+                                activityProjectTable.isFlatAction
+                              "
+                              :row-class-name="
+                                activityProjectTable.rowClassName
+                              "
                             >
                             </hm-ant-table>
                           </div>
@@ -272,19 +272,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :is-flat-action="
-                                    activityImgTableTwo.isFlatAction
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :data="activityImgTableTwo.data"
                                   :columns="activityImgTableTwo.columns"
-                                  :row-class-name="
-                                    activityImgTableTwo.rowClassName
-                                  "
+                                  :data="activityImgTableTwo.data"
                                   :pagination-hidden="
                                     activityImgTableTwo.paginationHidden
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
                                   :actions="activityImgTableTwo.actions"
+                                  :is-flat-action="
+                                    activityImgTableTwo.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityImgTableTwo.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -374,6 +374,7 @@
                       ref="addimage"
                       v-model:visible="addimage.visible"
                       :z-index="1000"
+                      height="200px"
                       class="ele-addimage"
                     >
                       <div
@@ -763,29 +764,6 @@ export default {
         value: {},
       },
       activityProjectTable: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
         columns: [
           {
             dataIndex: "name",
@@ -816,14 +794,36 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [
+          {
+            address: "",
+            school: "",
+            name: "¥0",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "",
+            school: "",
+            name: "¥ 29.9",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+        ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
+              this.$refs.addprice.visible = true;
             },
             type: "link",
           },
@@ -836,6 +836,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       "d6c85f5d-e546-49ce-802d-fe0a03aa2546": {
         config: {
@@ -861,29 +863,6 @@ export default {
         value: {},
       },
       activityImgTableTwo: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
         columns: [
           {
             dataIndex: "name",
@@ -913,14 +892,36 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [
+          {
+            address: "",
+            school: "",
+            name: "¥0",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "",
+            school: "",
+            name: "¥ 29.9",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+        ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
+              this.$refs.addprize.visible = true;
             },
             type: "link",
           },
@@ -933,6 +934,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityExtForm: {
         config: {
@@ -1073,6 +1076,7 @@ export default {
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
+              this.$refs.addimage.visible = true;
             },
             type: "link",
           },
