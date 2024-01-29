@@ -546,7 +546,7 @@ export default {
         visible: false,
       },
       batchEdit: {
-        visible: true,
+        visible: false,
       },
       prompt: {
         text: "文字",
