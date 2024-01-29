@@ -682,7 +682,7 @@ export default {
       },
       activityExtForm: {
         config: {
-          " rule": {
+          activityRules: {
             type: "Textarea",
             title: "活动规则",
             style: {
@@ -693,7 +693,7 @@ export default {
               placeholder: "请输入活动规则",
             },
           },
-          agreement: {
+          protocol: {
             type: "Textarea",
             title: "协议与承诺书",
             style: {
