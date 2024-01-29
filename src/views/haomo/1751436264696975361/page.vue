@@ -1131,7 +1131,7 @@ export default {
       },
       activityTwoForm: {
         config: {
-          "unrealStatus:": {
+          unrealStatus: {
             style: {
               width: "100%",
             },
