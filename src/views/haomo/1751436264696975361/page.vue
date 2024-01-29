@@ -110,14 +110,13 @@
                         >
                         </hm-ant-bg-text>
                       </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12"
-                      >
+                      <div class="ele-wrapper ele-wrapper-addActivityProject">
                         <hm-ant-button
+                          ref="addActivityProject"
+                          icon="fa fa-plus"
                           text="添加"
                           :type="'primary'"
-                          icon="fa fa-plus"
-                          class="ele-192a1e25-4895-4501-971d-69ddf1ae5a12"
+                          class="ele-addActivityProject"
                         >
                         </hm-ant-button>
                       </div>
@@ -191,19 +190,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :columns="activityImgTableTwo.columns"
-                                  :data="activityImgTableTwo.data"
-                                  :pagination-hidden="
-                                    activityImgTableTwo.paginationHidden
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :actions="activityImgTableTwo.actions"
                                   :is-flat-action="
                                     activityImgTableTwo.isFlatAction
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
+                                  :data="activityImgTableTwo.data"
+                                  :columns="activityImgTableTwo.columns"
                                   :row-class-name="
                                     activityImgTableTwo.rowClassName
                                   "
+                                  :pagination-hidden="
+                                    activityImgTableTwo.paginationHidden
+                                  "
+                                  :actions="activityImgTableTwo.actions"
                                 >
                                 </hm-ant-table>
                               </div>
@@ -290,15 +289,15 @@
                       <div class="ele-wrapper ele-wrapper-activityImgTableOne">
                         <hm-ant-table
                           ref="activityImgTableOne"
-                          :is-flat-action="activityImgTableOne.isFlatAction"
-                          :get-data-map="activityImgTableOne.getDataMap"
-                          :data="activityImgTableOne.data"
                           :columns="activityImgTableOne.columns"
-                          :row-class-name="activityImgTableOne.rowClassName"
+                          :data="activityImgTableOne.data"
                           :pagination-hidden="
                             activityImgTableOne.paginationHidden
                           "
+                          :get-data-map="activityImgTableOne.getDataMap"
                           :actions="activityImgTableOne.actions"
+                          :is-flat-action="activityImgTableOne.isFlatAction"
+                          :row-class-name="activityImgTableOne.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -651,6 +650,29 @@ export default {
         ],
       },
       activityImgTableTwo: {
+        isFlatAction: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        data: [
+          {
+            address: "",
+            school: "",
+            name: "¥0",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "",
+            school: "",
+            name: "¥ 29.9",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+        ],
         columns: [
           {
             dataIndex: "name",
@@ -680,29 +702,8 @@ export default {
             key: "action",
           },
         ],
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
+        rowClassName: {},
         paginationHidden: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
         actions: [
           {
             name: "编辑",
@@ -721,8 +722,6 @@ export default {
             type: "link",
           },
         ],
-        isFlatAction: true,
-        rowClassName: {},
       },
       activityExtForm: {
         schema: {
@@ -782,11 +781,35 @@ export default {
         value: {},
       },
       activityImgTableOne: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
+        columns: [
+          {
+            dataIndex: "name",
+            width: 50,
+            title: "图片",
+            key: "name",
+          },
+          {
+            dataIndex: "age",
+            width: 90,
+            title: "参考尺寸（或使用二倍图）",
+            key: "age",
+          },
+          {
+            dataIndex: "address",
+            width: 30,
+            title: "图片排序",
+            key: "address",
+            ellipsis: true,
+          },
+          {
+            slots: {
+              customRender: "action",
+            },
+            width: 80,
+            title: "操作",
+            key: "action",
+          },
+        ],
         data: [
           {
             address: "",
@@ -805,37 +828,11 @@ export default {
             sexual: "",
           },
         ],
-        columns: [
-          {
-            dataIndex: "name",
-            width: 50,
-            title: "图片",
-            key: "name",
-          },
-          {
-            dataIndex: "age",
-            width: 90,
-            title: "参考尺寸（或使用二倍图）",
-            key: "age",
-          },
-          {
-            dataIndex: "address",
-            width: 50,
-            title: "图片排序",
-            key: "address",
-            ellipsis: true,
-          },
-          {
-            slots: {
-              customRender: "action",
-            },
-            width: 80,
-            title: "操作",
-            key: "action",
-          },
-        ],
-        rowClassName: {},
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -854,6 +851,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityTwoForm: {
         schema: {
@@ -990,7 +989,7 @@ export default {
   padding-left: 5px;
 }
 
-.ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12 {
+.ele-wrapper-addActivityProject {
   margin-left: 5px;
 }
 
