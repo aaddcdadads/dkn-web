@@ -230,6 +230,22 @@
                                 class="ele-wrapper ele-wrapper-d6c85f5d-e546-49ce-802d-fe0a03aa2546"
                               >
                                 <hm-ant-formily
+                                  :config="{
+                                    ' name': {
+                                      type: 'Input',
+                                      title: '奖品图片',
+                                      style: { width: '100%' },
+                                      required: true,
+                                      props: {},
+                                    },
+                                    cycle: {
+                                      type: 'Input',
+                                      title: '奖品名称',
+                                      style: { width: '100%' },
+                                      required: true,
+                                      props: {},
+                                    },
+                                  }"
                                   :value="{}"
                                   :col-num="0"
                                   :col-min-width="380"
@@ -794,6 +810,26 @@ export default {
         ],
       },
       "d6c85f5d-e546-49ce-802d-fe0a03aa2546": {
+        config: {
+          " name": {
+            type: "Input",
+            title: "奖品图片",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+          cycle: {
+            type: "Input",
+            title: "奖品名称",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+        },
         value: {},
       },
       activityImgTableTwo: {
