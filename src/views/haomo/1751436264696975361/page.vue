@@ -164,7 +164,7 @@
                       <div class="ele-wrapper ele-wrapper-deleteproject">
                         <hm-modal
                           ref="deleteproject"
-                          title=""
+                          title="删除"
                           v-model:visible="deleteproject.visible"
                           width="320px"
                           :z-index="1000"
@@ -175,6 +175,7 @@
                             <hm-ant-icon-text
                               ref="deleteText"
                               text="确认删除"
+                              icon=""
                               width=""
                               class="ele-deleteText"
                             >
