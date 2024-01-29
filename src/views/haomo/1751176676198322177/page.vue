@@ -188,19 +188,19 @@
                           >
                             <hm-ant-table
                               ref="activityProjectTable"
-                              :columns="activityProjectTable.columns"
-                              :data="activityProjectTable.data"
-                              :pagination-hidden="
-                                activityProjectTable.paginationHidden
-                              "
-                              :get-data-map="activityProjectTable.getDataMap"
-                              :actions="activityProjectTable.actions"
                               :is-flat-action="
                                 activityProjectTable.isFlatAction
                               "
+                              :get-data-map="activityProjectTable.getDataMap"
+                              :data="activityProjectTable.data"
+                              :columns="activityProjectTable.columns"
                               :row-class-name="
                                 activityProjectTable.rowClassName
                               "
+                              :pagination-hidden="
+                                activityProjectTable.paginationHidden
+                              "
+                              :actions="activityProjectTable.actions"
                             >
                             </hm-ant-table>
                           </div>
@@ -345,13 +345,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtForm"
-                                  :schema="activityExtForm.schema"
-                                  :wrapper-col="18"
-                                  :col-num="0"
-                                  :label-col="5"
-                                  :col-min-width="380"
                                   :config="activityExtForm.config"
                                   v-model:value="activityExtForm.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="activityExtForm.schema"
+                                  :label-col="5"
+                                  :wrapper-col="18"
                                   class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
@@ -816,6 +816,29 @@ export default {
         value: {},
       },
       activityProjectTable: {
+        isFlatAction: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        data: [
+          {
+            address: "",
+            school: "",
+            name: "¥0",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "",
+            school: "",
+            name: "¥ 29.9",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+        ],
         columns: [
           {
             dataIndex: "name",
@@ -852,29 +875,8 @@ export default {
             key: "action",
           },
         ],
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
+        rowClassName: {},
         paginationHidden: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
         actions: [
           {
             name: "编辑",
@@ -895,8 +897,6 @@ export default {
             type: "link",
           },
         ],
-        isFlatAction: true,
-        rowClassName: {},
       },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
         schema: {
@@ -1032,6 +1032,39 @@ export default {
         ],
       },
       activityExtForm: {
+        config: {
+          activityRules: {
+            style: {
+              width: "100%",
+            },
+            type: "Textarea",
+            title: "活动规则",
+            props: {
+              showCount: true,
+              placeholder: "请输入活动规则",
+            },
+          },
+          protocol: {
+            style: {
+              width: "100%",
+            },
+            type: "Textarea",
+            title: "协议与承诺书",
+            props: {
+              showCount: true,
+              placeholder: "请输入《活动报名用户协议及承诺书》",
+            },
+          },
+          customerService: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动咨询与客服",
+            props: {},
+          },
+        },
+        value: {},
         schema: {
           type: "object",
           properties: {
@@ -1054,39 +1087,6 @@ export default {
             },
           },
         },
-        config: {
-          protocol: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "协议与承诺书",
-            props: {
-              showCount: true,
-              placeholder: "请输入《活动报名用户协议及承诺书》",
-            },
-          },
-          customerService: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动咨询与客服",
-            props: {},
-          },
-          activityRules: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "活动规则",
-            props: {
-              showCount: true,
-              placeholder: "请输入活动规则",
-            },
-          },
-        },
-        value: {},
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         schema: {
