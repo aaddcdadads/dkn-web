@@ -684,7 +684,7 @@ export default {
             type: "HmAntSelect",
             title: "活动状态",
             style: {
-              width: "40%",
+              width: "25%",
             },
             props: {
               title: "",
