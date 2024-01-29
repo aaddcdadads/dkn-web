@@ -330,6 +330,18 @@
                               :z-index="1000"
                               class="ele-07bd7f02-4212-4eb2-8e70-aaa3a6ec53e7"
                             >
+                              <div
+                                class="ele-wrapper ele-wrapper-ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b"
+                              >
+                                <hm-ant-formily
+                                  :value="{}"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :label-col="7"
+                                  :wrapper-col="14"
+                                >
+                                </hm-ant-formily>
+                              </div>
                             </hm-modal>
                           </div>
                           <div
@@ -842,6 +854,9 @@ export default {
       },
       "07bd7f02-4212-4eb2-8e70-aaa3a6ec53e7": {
         visible: true,
+      },
+      "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
+        value: {},
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
         config: {
