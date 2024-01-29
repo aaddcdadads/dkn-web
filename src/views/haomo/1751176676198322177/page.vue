@@ -543,29 +543,45 @@
                     >
                     </hm-ant-bg-text>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-d2a6a855-78d0-49b8-894e-a65162e803d6"
-                  >
+                  <div class="ele-wrapper ele-wrapper-addBtn3">
                     <hm-ant-button
+                      ref="addBtn3"
                       text="添加"
                       :type="'primary'"
                       icon="fa fa-plus"
-                      class="ele-d2a6a855-78d0-49b8-894e-a65162e803d6"
+                      class="ele-addBtn3"
                     >
                     </hm-ant-button>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-b85177ff-b746-4670-a612-927e0959a0ee"
-                  >
+                  <div class="ele-wrapper ele-wrapper-addBackground">
                     <hm-modal
-                      :visible="true"
+                      ref="addBackground"
+                      v-model:visible="addBackground.visible"
                       :z-index="1000"
-                      class="ele-b85177ff-b746-4670-a612-927e0959a0ee"
+                      class="ele-addBackground"
                     >
                       <div
                         class="ele-wrapper ele-wrapper-c55fbae6-544d-46d6-a83a-73b92291b38d"
                       >
                         <hm-ant-formily
+                          :config="{
+                            ' name': {
+                              type: 'upload',
+                              title: '项目费用',
+                              style: { width: '100%' },
+                              required: true,
+                              maxCount: 1,
+                              listType: 'picture-card',
+                              props: {},
+                            },
+                            cycle: {
+                              type: 'Input',
+                              title: '活动项目名称',
+                              style: { width: '100%' },
+                              required: true,
+                              props: { placeholder: '请输入活动名称' },
+                            },
+                          }"
                           :value="{}"
                           :col-num="0"
                           :col-min-width="380"
@@ -955,10 +971,34 @@ export default {
         },
         value: {},
       },
-      "b85177ff-b746-4670-a612-927e0959a0ee": {
+      addBackground: {
         visible: true,
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
+        config: {
+          " name": {
+            type: "upload",
+            title: "项目费用",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            maxCount: 1,
+            listType: "picture-card",
+            props: {},
+          },
+          cycle: {
+            type: "Input",
+            title: "活动项目名称",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {
+              placeholder: "请输入活动名称",
+            },
+          },
+        },
         value: {},
       },
     };
@@ -1113,11 +1153,11 @@ export default {
   }
 }
 
-.ele-wrapper-d2a6a855-78d0-49b8-894e-a65162e803d6 {
+.ele-wrapper-addBtn3 {
   margin-left: 5px;
 }
 
-.ele-wrapper-b85177ff-b746-4670-a612-927e0959a0ee {
+.ele-wrapper-addBackground {
   /deep/.hm-modal {
     min-height: 0px;
   }
