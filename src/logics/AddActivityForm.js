@@ -7,4 +7,17 @@ let self = {};
 // logic对象保存当前逻辑组对象，可以通过logic.func或者self.func来调用本逻辑组内的所有逻辑单元
 let logic = {};
 
-export {};
+/********************** ActivityProject 开始 *********************/
+
+/**
+ * 逻辑流 ActivityProject 入口函数
+ */
+const ActivityProject = (logic.ActivityProject = async (pageVm, eventData) => {
+  console.log(`ActivityProject: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.ActivityProjectData = eventData;
+});
+
+/********************** end ActivityProject 开始 *********************/
+
+export { ActivityProject };
