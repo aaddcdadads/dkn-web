@@ -464,7 +464,7 @@ export default {
         config: {
           userId: {
             type: "Input",
-            title: "用户id",
+            title: "用户",
             style: {
               width: "50%",
             },
