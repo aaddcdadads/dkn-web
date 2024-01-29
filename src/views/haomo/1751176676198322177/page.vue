@@ -235,51 +235,19 @@
                               v-model:visible="addprize.visible"
                               :z-index="1000"
                               height="250px"
+                              :auto-close="false"
                               class="ele-addprize"
                             >
                               <div
-                                class="ele-wrapper ele-wrapper-ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b"
+                                class="ele-wrapper ele-wrapper-addActivityImgFormTwo"
                               >
                                 <hm-ant-formily
-                                  :config="{
-                                    cycle: {
-                                      style: { width: '100%' },
-                                      type: 'Input',
-                                      title: '活动项目名称',
-                                      required: true,
-                                      props: { placeholder: '请输入活动名称' },
-                                    },
-                                    ' name': {
-                                      style: { width: '100%' },
-                                      type: 'UploadImage',
-                                      title: '项目费用',
-                                      maxCount: 1,
-                                      listType: 'picture-card',
-                                      required: true,
-                                      props: {},
-                                    },
-                                  }"
-                                  :value="{}"
+                                  ref="addActivityImgFormTwo"
+                                  :config="addActivityImgFormTwo.config"
+                                  v-model:value="addActivityImgFormTwo.value"
                                   :col-num="0"
                                   :col-min-width="380"
-                                  :schema="{
-                                    type: 'object',
-                                    properties: {
-                                      form: {
-                                        'x-component': 'Form',
-                                        'x-component-props': {
-                                          'wrapper-col': { span: 14 },
-                                          'label-col': { span: 7 },
-                                          style: {
-                                            flexWrap: 'wrap',
-                                            display: 'flex',
-                                          },
-                                        },
-                                        type: 'void',
-                                        properties: {},
-                                      },
-                                    },
-                                  }"
+                                  :schema="addActivityImgFormTwo.schema"
                                   :label-col="7"
                                   :wrapper-col="14"
                                 >
@@ -291,11 +259,11 @@
                             class="ele-wrapper ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                           >
                             <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
                               width="100%"
                               height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
                               class="ele-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                             >
                               <div
@@ -920,7 +888,7 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
+      addActivityImgFormTwo: {
         config: {
           cycle: {
             style: {
