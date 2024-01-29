@@ -186,7 +186,7 @@
                                   props: {},
                                 },
                                 cycle: {
-                                  type: 'RangePicker',
+                                  type: 'Input',
                                   title: '活动项目名称',
                                   style: { width: '100%' },
                                   required: true,
@@ -732,7 +732,7 @@ export default {
             props: {},
           },
           cycle: {
-            type: "RangePicker",
+            type: "Input",
             title: "活动项目名称",
             style: {
               width: "100%",
