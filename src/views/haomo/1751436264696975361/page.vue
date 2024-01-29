@@ -305,6 +305,7 @@
                       :type="addActivityImgTableOne.type"
                       :icon="addActivityImgTableOne.icon"
                       :visible="addActivityImgTableOne.visible"
+                      @click="onAddActivityImgTableOneClick"
                       class="ele-addActivityImgTableOne"
                     >
                     </hm-ant-button>
@@ -531,6 +532,9 @@ export default {
         visible: false,
       },
       addprize: {
+        visible: false,
+      },
+      addimage: {
         visible: false,
       },
       title: {
@@ -854,9 +858,6 @@ export default {
           },
         },
       },
-      addimage: {
-        visible: false,
-      },
       activityImgTableOne: {
         columns: [
           {
@@ -1012,6 +1013,9 @@ export default {
     },
     onAddActivityImgTableTwoClick() {
       this.addprize.visible = true;
+    },
+    onAddActivityImgTableOneClick() {
+      this.addimage.visible = true;
     },
   },
 };
