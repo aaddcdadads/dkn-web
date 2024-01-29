@@ -169,8 +169,7 @@
                       >
                         <hm-modal
                           title="添加项目"
-                          :mask="false"
-                          :visible="true"
+                          :visible="false"
                           :z-index="1000"
                           height="240px"
                         >
@@ -797,7 +796,7 @@ export default {
         value: {},
       },
       "01501a3e-6280-438e-a352-e3472d9e8490": {
-        visible: true,
+        visible: false,
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
         config: {
