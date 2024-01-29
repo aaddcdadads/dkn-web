@@ -656,7 +656,7 @@ export default {
         config: {
           name: {
             type: "Input",
-            title: "活动名称",
+            title: "搜索活动",
             style: {
               width: "40%",
             },
