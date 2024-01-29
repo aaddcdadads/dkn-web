@@ -164,13 +164,14 @@
                             </hm-ant-bg-text>
                           </div>
                           <div
-                            class="ele-wrapper ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8"
+                            class="ele-wrapper ele-wrapper-addActivityImgTableTwo"
                           >
                             <hm-ant-button
+                              ref="addActivityImgTableTwo"
                               text="添加"
                               :type="'primary'"
                               icon="fa fa-plus"
-                              class="ele-5e707249-6d32-4c85-ac9b-b51a1a4e56c8"
+                              class="ele-addActivityImgTableTwo"
                             >
                             </hm-ant-button>
                           </div>
@@ -1003,7 +1004,7 @@ export default {
   padding-left: 5px;
 }
 
-.ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8 {
+.ele-wrapper-addActivityImgTableTwo {
   margin-left: 5px;
   margin-top: 15px;
 }
