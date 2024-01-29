@@ -689,38 +689,6 @@ export default {
       },
       activityProjectForm: {
         config: {
-          multipleOrder: {
-            style: {
-              width: "100%",
-            },
-            type: "RadioGroup",
-            title: "是否多人报名",
-            required: true,
-            props: {
-              options: [
-                {
-                  label: "是",
-                  value: 0,
-                },
-                {
-                  label: "否",
-                  value: 1,
-                },
-              ],
-            },
-          },
-          imgPath: {
-            style: {
-              width: "100%",
-            },
-            type: "UploadImage",
-            title: "活动图片",
-            required: true,
-            props: {
-              action: "/api/sys/common/upload",
-              accept: ".jpg,.png",
-            },
-          },
           name: {
             style: {
               width: "100%",
@@ -747,6 +715,38 @@ export default {
             title: "项目费用",
             required: true,
             props: {},
+          },
+          imgPath: {
+            style: {
+              width: "100%",
+            },
+            type: "UploadImage",
+            title: "活动图片",
+            required: true,
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+          multipleOrder: {
+            style: {
+              width: "100%",
+            },
+            type: "RadioGroup",
+            title: "是否多人报名",
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "是",
+                  value: 0,
+                },
+                {
+                  label: "否",
+                  value: 1,
+                },
+              ],
+            },
           },
           free: {
             style: {
