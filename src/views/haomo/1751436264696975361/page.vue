@@ -740,7 +740,9 @@ export default {
             },
           },
         },
-        value: {},
+        value: {
+          status: 0,
+        },
         schema: {
           type: "object",
           properties: {
@@ -1159,7 +1161,9 @@ export default {
             props: {},
           },
         },
-        value: {},
+        value: {
+          unrealStatus: 0,
+        },
         schema: {
           type: "object",
           properties: {
