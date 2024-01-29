@@ -175,24 +175,24 @@
                               :config="{
                                 ' name': {
                                   type: 'Input',
-                                  title: '活动名称',
+                                  title: '项目费用',
                                   style: { width: '100%' },
                                   required: true,
                                   props: {},
                                 },
                                 cycle: {
                                   type: 'RangePicker',
-                                  title: '活动周期',
+                                  title: '活动项目名称',
                                   style: { width: '100%' },
                                   required: true,
                                   props: {},
                                 },
                                 EntryClose: {
-                                  type: 'DatePicker',
-                                  title: '报名截止',
+                                  type: 'Textarea',
+                                  title: '项目简介',
                                   style: { width: '100%' },
                                   required: true,
-                                  props: { showTime: true },
+                                  props: {},
                                 },
                               }"
                               :value="{}"
@@ -796,7 +796,7 @@ export default {
         config: {
           " name": {
             type: "Input",
-            title: "活动名称",
+            title: "项目费用",
             style: {
               width: "100%",
             },
@@ -805,7 +805,7 @@ export default {
           },
           cycle: {
             type: "RangePicker",
-            title: "活动周期",
+            title: "活动项目名称",
             style: {
               width: "100%",
             },
@@ -813,15 +813,13 @@ export default {
             props: {},
           },
           EntryClose: {
-            type: "DatePicker",
-            title: "报名截止",
+            type: "Textarea",
+            title: "项目简介",
             style: {
               width: "100%",
             },
             required: true,
-            props: {
-              showTime: true,
-            },
+            props: {},
           },
         },
         value: {},
