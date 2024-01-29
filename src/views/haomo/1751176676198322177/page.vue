@@ -79,13 +79,13 @@
                   <div class="ele-wrapper ele-wrapper-activityForm">
                     <hm-ant-formily
                       ref="activityForm"
+                      :schema="activityForm.schema"
+                      :wrapper-col="16"
+                      :col-num="0"
+                      :label-col="3"
+                      :col-min-width="380"
                       :config="activityForm.config"
                       v-model:value="activityForm.value"
-                      :col-num="0"
-                      :col-min-width="380"
-                      :schema="activityForm.schema"
-                      :label-col="3"
-                      :wrapper-col="16"
                       class="ele-activityForm"
                     >
                     </hm-ant-formily>
@@ -126,10 +126,10 @@
                       <div class="ele-wrapper ele-wrapper-addproject">
                         <hm-modal
                           ref="addproject"
-                          :z-index="1000"
-                          v-model:visible="addproject.visible"
                           title="添加项目"
-                          height="240px"
+                          v-model:visible="addproject.visible"
+                          :z-index="1000"
+                          height=""
                           @ok="onAddprojectOk"
                           class="ele-addproject"
                         >
@@ -617,6 +617,28 @@ export default {
     let self = this;
     return {
       activityForm: {
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
         config: {
           name: {
             style: {
@@ -659,13 +681,13 @@ export default {
             props: {},
           },
           status: {
+            default: 0,
             style: {
               width: "100%",
             },
             type: "RadioGroup",
             title: "活动状态",
             required: true,
-            default: 0,
             props: {
               options: [
                 {
@@ -682,28 +704,6 @@ export default {
         },
         value: {
           status: 0,
-        },
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
         },
       },
       addproject: {
