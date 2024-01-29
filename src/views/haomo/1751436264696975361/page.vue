@@ -308,7 +308,7 @@
                   <div
                     class="ele-wrapper ele-wrapper-c0ff8328-d039-4f8a-9041-01e5e385bb58"
                   >
-                    <hm-modal :visible="true" :z-index="1000"> </hm-modal>
+                    <hm-modal :visible="false" :z-index="1000"> </hm-modal>
                   </div>
                   <div
                     class="ele-wrapper ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2"
@@ -713,7 +713,7 @@ export default {
         ],
       },
       addprize: {
-        visible: true,
+        visible: false,
       },
       activityImgTableTwo: {
         isFlatAction: true,
@@ -847,7 +847,7 @@ export default {
         },
       },
       "c0ff8328-d039-4f8a-9041-01e5e385bb58": {
-        visible: true,
+        visible: false,
       },
       activityImgTableOne: {
         columns: [
