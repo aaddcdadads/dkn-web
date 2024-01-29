@@ -20,14 +20,13 @@
               box-shadow-blur=""
               class="ele-titleCard"
             >
-              <div
-                class="ele-wrapper ele-wrapper-80d9b125-92bb-46b5-87b7-d8b4b451d860"
-              >
+              <div class="ele-wrapper ele-wrapper-title">
                 <hm-ant-icon-text
+                  ref="title"
                   text="创建活动"
                   icon="fa fa-tasks"
                   font-size="14px"
-                  class="ele-80d9b125-92bb-46b5-87b7-d8b4b451d860"
+                  class="ele-title"
                 >
                 </hm-ant-icon-text>
               </div>
@@ -843,7 +842,7 @@ export default {
   }
 }
 
-.ele-wrapper-80d9b125-92bb-46b5-87b7-d8b4b451d860 {
+.ele-wrapper-title {
   .hm-bg-text {
     display: flex;
     align-items: center;
