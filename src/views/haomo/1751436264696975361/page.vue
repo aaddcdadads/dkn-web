@@ -642,7 +642,7 @@ export default {
         visible: false,
       },
       deleteproject: {
-        visible: false,
+        visible: true,
       },
       addprize: {
         visible: false,
