@@ -229,8 +229,9 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              :z-index="1000"
+                              title="奖品图片"
                               v-model:visible="addprize.visible"
+                              :z-index="1000"
                               height="250px"
                               class="ele-addprize"
                             >
@@ -345,13 +346,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtForm"
+                                  :schema="activityExtForm.schema"
+                                  :wrapper-col="18"
+                                  :col-num="0"
+                                  :label-col="5"
+                                  :col-min-width="380"
                                   :config="activityExtForm.config"
                                   v-model:value="activityExtForm.value"
-                                  :col-num="0"
-                                  :col-min-width="380"
-                                  :schema="activityExtForm.schema"
-                                  :label-col="5"
-                                  :wrapper-col="18"
                                   class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
@@ -399,8 +400,9 @@
                   <div class="ele-wrapper ele-wrapper-addBackground">
                     <hm-modal
                       ref="addBackground"
-                      :z-index="1000"
+                      title="项目背景图"
                       v-model:visible="addBackground.visible"
+                      :z-index="1000"
                       height="250px"
                       class="ele-addBackground"
                     >
@@ -1032,39 +1034,6 @@ export default {
         ],
       },
       activityExtForm: {
-        config: {
-          activityRules: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "活动规则",
-            props: {
-              showCount: true,
-              placeholder: "请输入活动规则",
-            },
-          },
-          protocol: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "协议与承诺书",
-            props: {
-              showCount: true,
-              placeholder: "请输入《活动报名用户协议及承诺书》",
-            },
-          },
-          customerService: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动咨询与客服",
-            props: {},
-          },
-        },
-        value: {},
         schema: {
           type: "object",
           properties: {
@@ -1087,6 +1056,39 @@ export default {
             },
           },
         },
+        config: {
+          protocol: {
+            style: {
+              width: "100%",
+            },
+            type: "Textarea",
+            title: "协议与承诺书",
+            props: {
+              showCount: true,
+              placeholder: "请输入《活动报名用户协议及承诺书》",
+            },
+          },
+          customerService: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动咨询与客服",
+            props: {},
+          },
+          activityRules: {
+            style: {
+              width: "100%",
+            },
+            type: "Textarea",
+            title: "活动规则",
+            props: {
+              showCount: true,
+              placeholder: "请输入活动规则",
+            },
+          },
+        },
+        value: {},
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         schema: {
