@@ -505,12 +505,28 @@ export default {
             validator: function (value) {},
           },
           paymentStatus: {
-            type: "Input",
+            type: "HmAntSelect",
             title: "支付状态",
             style: {
               width: "50%",
             },
-            props: {},
+            props: {
+              title: "",
+              options: [
+                {
+                  label: "已支付",
+                  value: 0,
+                },
+                {
+                  label: "未支付",
+                  value: 1,
+                },
+                {
+                  label: "已退款",
+                  value: 2,
+                },
+              ],
+            },
             validator: function (value) {},
           },
           pickUpStatus: {
