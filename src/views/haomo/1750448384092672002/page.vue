@@ -724,7 +724,7 @@ export default {
             dataIndex: "name",
             key: "name",
             fixed: true,
-            width: 200,
+            width: 300,
           },
           {
             title: "活动费用",
@@ -737,16 +737,19 @@ export default {
             dataIndex: "startTime",
             key: "startTime",
             fixed: true,
+            width: 250,
           },
           {
             title: "活动报名截止时间",
             dataIndex: "closeTime",
             key: "closeTime",
+            width: 250,
           },
           {
             title: "活动核销截止时间",
             dataIndex: "pickUpTime",
             key: "pickUpTime",
+            width: 250,
           },
           {
             title: "报名人数",
