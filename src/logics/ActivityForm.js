@@ -246,15 +246,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
 
 /********************** end addActivty 开始 *********************/
 
-/********************** saveOrUpdate 开始 *********************/
-/**
- * 发送添加请求
- */
-const addRequest = (logic.addRequest = async function () {
-  let res = await self.$postAction(`/api/dkn/activity/adds`, self.item);
-  self.addRequestData = res;
-});
-
+/********************** editActivty 开始 *********************/
 /**
  * 发送编辑请求
  */
@@ -267,12 +259,12 @@ const editRequest = (logic.editRequest = async function () {
 });
 
 /**
- * 逻辑流 saveOrUpdate 入口函数
+ * 逻辑流 editActivty 入口函数
  */
-const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
-  console.log(`saveOrUpdate: `, pageVm, eventData);
+const editActivty = (logic.editActivty = async (pageVm, eventData) => {
+  console.log(`editActivty: `, pageVm, eventData);
   self = Object.assign(pageVm, logic);
-  self.saveOrUpdateData = eventData;
+  self.editActivtyData = eventData;
 
   await self.$refs.activityForm.validate();
   await self.$refs.activityExtForm.validate();
@@ -317,30 +309,18 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
       id: self.id,
     };
   }
-  if (self.type === 1) {
-    await addRequest();
-    if (self.addRequestData.success) {
-      self.$message.error(self.addRequestData.message);
-      return;
-    }
-    self.$message.success("操作成功");
-    self.$router.push({
-      path: `/haomo/1750448384092672002/page`,
-    });
-  } else {
-    await editRequest();
-    if (self.editRequestData.success) {
-      self.$message.error(self.editRequestData.message);
-      return;
-    }
-    self.$message.success("操作成功");
-    self.$router.push({
-      path: `/haomo/1750448384092672002/page`,
-    });
+  await editRequest();
+  if (self.editRequestData.success) {
+    self.$message.error(self.editRequestData.message);
+    return;
   }
+  self.$message.success("操作成功");
+  self.$router.push({
+    path: `/haomo/1750448384092672002/page`,
+  });
 });
 
-/********************** end saveOrUpdate 开始 *********************/
+/********************** end editActivty 开始 *********************/
 
 export {
   activityRequest,
@@ -354,7 +334,6 @@ export {
   detail,
   addRequest,
   addActivty,
-  addRequest,
   editRequest,
-  saveOrUpdate,
+  editActivty,
 };
