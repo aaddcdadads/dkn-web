@@ -169,6 +169,7 @@
                       >
                         <hm-modal
                           title="添加项目"
+                          :mask="false"
                           :visible="true"
                           :z-index="1000"
                           height="240px"
