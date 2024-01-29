@@ -86,41 +86,13 @@ const addActivityProject = (logic.addActivityProject = async (
   self = Object.assign(pageVm, logic);
   self.addActivityProjectData = eventData;
 
-  await self.$refs.activityForm.validate();
-  await self.$refs.activityExtForm.validate();
+  await self.$refs.activityProjectForm.validate();
+  let item = self.$refs.activityProjectForm.getFormValues();
+  (item.index = Math.floor(Math.random() * 10000)),
+    self.$refs.activityProjectTable.cData.push(item);
 
-  let activityProjects = [],
-    activityImgs = [],
-    activityExts = [];
-  activityExts = [{ ...self.$refs.activityExtForm.getFormValues() }];
-  if (self.$refs.activityProjectTable.cData.length > 0) {
-    activityProjects = self.$refs.activityProjectTable.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      return x;
-    });
-  }
-  if (self.$refs.activityImgTableOne.cData.length > 0) {
-    activityProjects = self.$refs.activityImgTableOne.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      x.type = 0;
-      return x;
-    });
-  }
-  if (self.$refs.activityImgTableTwo.cData.length > 0) {
-    let list = self.$refs.activityImgTableTwo.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      x.type = 1;
-      return x;
-    });
-    activityProjects = [...activityProjects, ...list];
-  }
-  self.item = {
-    ...self.$refs.activityForm.getFormValues(),
-    ...self.$refs.activityExtForm.getFormValues(),
-    activityExts,
-    activityImgs,
-    activityExts,
-  };
+  self.addproject.visible = false;
+  self.$refs.activityProjectForm.reset();
 });
 
 /********************** end addActivityProject 开始 *********************/
