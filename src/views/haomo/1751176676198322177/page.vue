@@ -115,9 +115,9 @@
                       <div class="ele-wrapper ele-wrapper-addBtn1">
                         <hm-ant-button
                           ref="addBtn1"
-                          icon="fa fa-plus"
                           text="添加"
                           :type="'primary'"
+                          icon="fa fa-plus"
                           @click="onAddBtn1Click"
                           class="ele-addBtn1"
                         >
@@ -154,11 +154,10 @@
                       <div class="ele-wrapper ele-wrapper-deleteproject">
                         <hm-modal
                           ref="deleteproject"
-                          :z-index="1000"
-                          v-model:visible="deleteproject.visible"
                           title="删除"
+                          v-model:visible="deleteproject.visible"
                           width="320px"
-                          :style="deleteproject.style"
+                          :z-index="1000"
                           height=""
                           class="ele-deleteproject"
                         >
@@ -706,14 +705,10 @@ export default {
           status: 0,
         },
       },
-      addprice: {},
-      deleteproject: {
-        visible: false,
-        style: {
-          top: "100px",
-        },
-      },
       addproject: {
+        visible: false,
+      },
+      deleteproject: {
         visible: false,
       },
       addprize: {
@@ -897,7 +892,7 @@ export default {
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
-              self.addprice.visible = true;
+              self.addproject.visible = true;
             },
             type: "link",
           },
