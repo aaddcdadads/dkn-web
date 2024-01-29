@@ -136,6 +136,9 @@ const detail = (logic.detail = async (pageVm, eventData) => {
     self.title.text = "活动详情";
     self.isSaveOrUpdate.hidden = true;
     self.isTitle = "";
+    self.addActivityProject.visible = false;
+    self.addActivityImgTableOne.visible = false;
+    self.addActivityImgTableTwo.visible = false;
     setTimeout(() => {
       for (let key in self.activityForm.config) {
         self.activityForm.config[key].props.disabled = true;
