@@ -122,6 +122,11 @@
                         </hm-ant-button>
                       </div>
                       <div
+                        class="ele-wrapper ele-wrapper-5ca2a433-6d19-404e-8769-592e1a5dea36"
+                      >
+                        <hm-modal :visible="true" :z-index="1000"> </hm-modal>
+                      </div>
+                      <div
                         class="ele-wrapper ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f"
                       >
                         <hm-bg-card
@@ -176,6 +181,12 @@
                               class="ele-addActivityImgTableTwo"
                             >
                             </hm-ant-button>
+                          </div>
+                          <div
+                            class="ele-wrapper ele-wrapper-bf3f8485-9012-4733-b7bf-bb672ac369d6"
+                          >
+                            <hm-modal :visible="true" :z-index="1000">
+                            </hm-modal>
                           </div>
                           <div
                             class="ele-wrapper ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
@@ -288,6 +299,11 @@
                       class="ele-addActivityImgTableOne"
                     >
                     </hm-ant-button>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-c0ff8328-d039-4f8a-9041-01e5e385bb58"
+                  >
+                    <hm-modal :visible="true" :z-index="1000"> </hm-modal>
                   </div>
                   <div
                     class="ele-wrapper ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2"
@@ -468,6 +484,7 @@ import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
+import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
@@ -481,6 +498,7 @@ export default {
     HmAntBgText,
     HmAntFormily,
     HmAntButton,
+    HmModal,
     HmAntTable,
     HmColorKit,
   },
@@ -611,6 +629,9 @@ export default {
           },
         },
       },
+      "5ca2a433-6d19-404e-8769-592e1a5dea36": {
+        visible: true,
+      },
       activityProjectTable: {
         isFlatAction: true,
         getDataMap: {
@@ -685,6 +706,9 @@ export default {
             type: "link",
           },
         ],
+      },
+      "bf3f8485-9012-4733-b7bf-bb672ac369d6": {
+        visible: true,
       },
       activityImgTableTwo: {
         isFlatAction: true,
@@ -816,6 +840,9 @@ export default {
             },
           },
         },
+      },
+      "c0ff8328-d039-4f8a-9041-01e5e385bb58": {
+        visible: true,
       },
       activityImgTableOne: {
         columns: [
