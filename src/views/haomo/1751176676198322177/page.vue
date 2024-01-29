@@ -132,6 +132,7 @@
                           height=""
                           :auto-close="false"
                           @ok="onAddprojectOk"
+                          @cancel="onAddprojectCancel"
                           class="ele-addproject"
                         >
                           <div
@@ -1263,6 +1264,9 @@ export default {
     },
     onAddprojectOk() {
       addActivityProject(this, arguments);
+    },
+    onAddprojectCancel() {
+      this.addproject.visible = false;
     },
     onAddBtn2Click() {
       this.addprize.visible = true;
