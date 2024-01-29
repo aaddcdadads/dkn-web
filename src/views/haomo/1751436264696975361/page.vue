@@ -77,13 +77,13 @@
                   <div class="ele-wrapper ele-wrapper-activityForm">
                     <hm-ant-formily
                       ref="activityForm"
-                      :schema="activityForm.schema"
-                      :wrapper-col="16"
-                      :col-num="0"
-                      :label-col="3"
-                      :col-min-width="380"
                       :config="activityForm.config"
                       v-model:value="activityForm.value"
+                      :col-num="0"
+                      :col-min-width="380"
+                      :schema="activityForm.schema"
+                      :label-col="3"
+                      :wrapper-col="16"
                       class="ele-activityForm"
                     >
                     </hm-ant-formily>
@@ -113,9 +113,9 @@
                       <div class="ele-wrapper ele-wrapper-addActivityProject">
                         <hm-ant-button
                           ref="addActivityProject"
-                          icon="fa fa-plus"
                           text="添加"
                           :type="'primary'"
+                          icon="fa fa-plus"
                           class="ele-addActivityProject"
                         >
                         </hm-ant-button>
@@ -164,13 +164,14 @@
                             </hm-ant-bg-text>
                           </div>
                           <div
-                            class="ele-wrapper ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8"
+                            class="ele-wrapper ele-wrapper-addActivityImgTableTwo"
                           >
                             <hm-ant-button
-                              icon="fa fa-plus"
+                              ref="addActivityImgTableTwo"
                               text="添加"
                               :type="'primary'"
-                              class="ele-5e707249-6d32-4c85-ac9b-b51a1a4e56c8"
+                              icon="fa fa-plus"
+                              class="ele-addActivityImgTableTwo"
                             >
                             </hm-ant-button>
                           </div>
@@ -268,12 +269,23 @@
                     class="ele-wrapper ele-wrapper-fa713d7b-511f-4b6c-9f7a-37b66d33842e"
                   >
                     <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
                       text="报名页背景设置"
+                      font-size="14px"
+                      padding="2"
                       class="ele-fa713d7b-511f-4b6c-9f7a-37b66d33842e"
                     >
                     </hm-ant-bg-text>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-275c3b23-7230-452b-b726-72dfb54f34a8"
+                  >
+                    <hm-ant-button
+                      text="添加"
+                      :type="'primary'"
+                      icon="fa fa-plus"
+                      class="ele-275c3b23-7230-452b-b726-72dfb54f34a8"
+                    >
+                    </hm-ant-button>
                   </div>
                   <div
                     class="ele-wrapper ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2"
@@ -488,28 +500,6 @@ export default {
         fontSize: "14px",
       },
       activityForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           name: {
             style: {
@@ -573,6 +563,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityProjectTable: {
         isFlatAction: true,
@@ -1003,7 +1015,7 @@ export default {
   padding-left: 5px;
 }
 
-.ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8 {
+.ele-wrapper-addActivityImgTableTwo {
   margin-left: 5px;
   margin-top: 15px;
 }
@@ -1035,6 +1047,11 @@ export default {
   border-left: 4px solid #0079fe;
   margin-left: 8px;
   padding-left: 5px;
+}
+
+.ele-wrapper-275c3b23-7230-452b-b726-72dfb54f34a8 {
+  margin-left: 5px;
+  margin-top: 15px;
 }
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
