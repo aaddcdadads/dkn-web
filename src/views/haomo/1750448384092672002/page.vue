@@ -104,7 +104,6 @@
                         width="100%"
                         height=""
                         border-radius=""
-                        :text-align="'right'"
                         padding=""
                         box-shadow-color="#00000000"
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
