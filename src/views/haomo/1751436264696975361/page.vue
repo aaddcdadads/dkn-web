@@ -20,19 +20,21 @@
               box-shadow-blur=""
               class="ele-titleCard"
             >
-              <div class="ele-wrapper ele-wrapper-title">
+              <div
+                class="ele-wrapper ele-wrapper-80d9b125-92bb-46b5-87b7-d8b4b451d860"
+              >
                 <hm-ant-icon-text
-                  ref="title"
-                  :text="title.text"
-                  :icon="title.icon"
-                  :font-size="title.fontSize"
-                  class="ele-title"
+                  text="创建活动"
+                  icon="fa fa-tasks"
+                  font-size="14px"
+                  class="ele-80d9b125-92bb-46b5-87b7-d8b4b451d860"
                 >
                 </hm-ant-icon-text>
               </div>
-              <div class="ele-wrapper ele-wrapper-isTitle">
+              <div
+                class="ele-wrapper ele-wrapper-230f0090-9b76-4e5d-9556-f91759f40cf8"
+              >
                 <hm-ant-bg-text
-                  ref="isTitle"
                   text="* 为必填项"
                   font-size="14px"
                   color="#999999"
@@ -397,17 +399,17 @@
               </div>
             </hm-bg-card>
           </div>
-          <div class="ele-wrapper ele-wrapper-isSaveOrUpdate">
+          <div
+            class="ele-wrapper ele-wrapper-31135d90-70d1-42a3-b004-f8a7878760f4"
+          >
             <hm-bg-card
-              ref="isSaveOrUpdate"
-              :width="isSaveOrUpdate.width"
-              :height="isSaveOrUpdate.height"
-              :border-radius="isSaveOrUpdate.borderRadius"
-              :text-align="isSaveOrUpdate.textAlign"
-              :box-shadow-v-shadow="isSaveOrUpdate.boxShadowVShadow"
-              :box-shadow-blur="isSaveOrUpdate.boxShadowBlur"
-              :hidden="isSaveOrUpdate.hidden"
-              class="ele-isSaveOrUpdate"
+              width="100%"
+              height="100%"
+              border-radius=""
+              :text-align="'center'"
+              box-shadow-v-shadow=""
+              box-shadow-blur=""
+              class="ele-31135d90-70d1-42a3-b004-f8a7878760f4"
             >
               <div
                 class="ele-wrapper ele-wrapper-be6a0959-060d-4277-9590-2d5ddd2ab12e"
@@ -468,20 +470,6 @@ export default {
   data() {
     let self = this;
     return {
-      isSaveOrUpdate: {
-        width: "100%",
-        height: "100%",
-        borderRadius: "",
-        textAlign: "center",
-        boxShadowVShadow: "",
-        boxShadowBlur: "",
-        hidden: false,
-      },
-      title: {
-        text: "创建活动",
-        icon: "fa fa-tasks",
-        fontSize: "14px",
-      },
       activityForm: {
         config: {
           " name": {
@@ -550,24 +538,17 @@ export default {
       activityProjectTable: {
         columns: [
           {
-            title: "项目费用",
+            title: "活动费用",
             dataIndex: "name",
             key: "name",
             width: 50,
           },
           {
-            title: "活动项目名称",
+            title: "费用名称",
             dataIndex: "age",
             key: "age",
             ellipsis: true,
             width: 90,
-          },
-          {
-            title: "项目简历",
-            dataIndex: "address",
-            key: "address",
-            ellipsis: true,
-            width: 80,
           },
           {
             title: "排序",
@@ -837,20 +818,10 @@ export default {
     };
   },
   watch: {},
-  created(e) {
-    this.onCreated(e);
-  },
   mounted(e) {
     detail(this, arguments);
   },
-  methods: {
-    onCreated() {
-      let self = this;
-      self.title.text = "创建活动";
-      self.isTitle = "* 为必填项";
-      self.isSaveOrUpdate.hidden = false;
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -872,7 +843,7 @@ export default {
   }
 }
 
-.ele-wrapper-title {
+.ele-wrapper-80d9b125-92bb-46b5-87b7-d8b4b451d860 {
   .hm-bg-text {
     display: flex;
     align-items: center;
@@ -1006,7 +977,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-isSaveOrUpdate {
+.ele-wrapper-31135d90-70d1-42a3-b004-f8a7878760f4 {
   width: 100%;
   border-top: 1px solid #f2f2f2;
 }
