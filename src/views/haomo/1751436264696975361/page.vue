@@ -103,7 +103,7 @@
                         class="ele-wrapper ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
                       >
                         <hm-ant-bg-text
-                          text="活动费用设置（至少一个）"
+                          text="活动费用设置(至少一个)"
                           font-size="14px"
                           padding="2"
                           class="ele-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
@@ -157,7 +157,7 @@
                             class="ele-wrapper ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6"
                           >
                             <hm-ant-bg-text
-                              text="活动奖品设置（可为空）"
+                              text="活动奖品设置(可为空)"
                               font-size="14px"
                               padding="2"
                               class="ele-2030f92c-96b3-41e7-8403-353b98f5e6a6"
