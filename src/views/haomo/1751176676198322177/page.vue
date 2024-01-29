@@ -311,24 +311,22 @@
                             >
                             </hm-ant-bg-text>
                           </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8"
-                          >
+                          <div class="ele-wrapper ele-wrapper-addBtn2">
                             <hm-ant-button
+                              ref="addBtn2"
                               text="添加"
                               :type="'primary'"
                               icon="fa fa-plus"
-                              class="ele-5e707249-6d32-4c85-ac9b-b51a1a4e56c8"
+                              class="ele-addBtn2"
                             >
                             </hm-ant-button>
                           </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-07bd7f02-4212-4eb2-8e70-aaa3a6ec53e7"
-                          >
+                          <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
-                              :visible="true"
+                              ref="addprize"
+                              v-model:visible="addprize.visible"
                               :z-index="1000"
-                              class="ele-07bd7f02-4212-4eb2-8e70-aaa3a6ec53e7"
+                              class="ele-addprize"
                             >
                               <div
                                 class="ele-wrapper ele-wrapper-ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b"
@@ -852,7 +850,7 @@ export default {
         },
         value: {},
       },
-      "07bd7f02-4212-4eb2-8e70-aaa3a6ec53e7": {
+      addprize: {
         visible: true,
       },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
@@ -995,12 +993,12 @@ export default {
   }
 }
 
-.ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8 {
+.ele-wrapper-addBtn2 {
   margin-left: 5px;
   margin-top: 15px;
 }
 
-.ele-wrapper-07bd7f02-4212-4eb2-8e70-aaa3a6ec53e7 {
+.ele-wrapper-addprize {
   /deep/.hm-modal {
     min-height: 0px;
   }
