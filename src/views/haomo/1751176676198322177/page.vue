@@ -907,7 +907,7 @@ export default {
         visible: false,
       },
       delete: {
-        visible: false,
+        visible: true,
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
         config: {
