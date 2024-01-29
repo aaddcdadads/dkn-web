@@ -717,7 +717,7 @@ export default {
             title: "活动ID",
             dataIndex: "code",
             key: "code",
-            fixed: true,
+            fixed: "left",
             width: 100,
           },
           {
