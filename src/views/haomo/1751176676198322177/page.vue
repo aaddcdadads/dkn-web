@@ -399,9 +399,8 @@
                   <div class="ele-wrapper ele-wrapper-addBackground">
                     <hm-modal
                       ref="addBackground"
-                      :z-index="1000"
                       v-model:visible="addBackground.visible"
-                      :style="addBackground.style"
+                      :z-index="1000"
                       height="250px"
                       class="ele-addBackground"
                     >
@@ -715,9 +714,6 @@ export default {
       },
       addBackground: {
         visible: false,
-        style: {
-          top: "100px",
-        },
       },
       activityProjectForm: {
         schema: {
@@ -1201,11 +1197,19 @@ export default {
           {
             name: "编辑",
             icon: "fa fa-pencil",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.addBackground.visible = true;
+            },
             type: "link",
           },
           {
             name: "删除",
             icon: "fa fa-trash",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+              self.deleteproject.visible = true;
+            },
             type: "link",
           },
         ],
