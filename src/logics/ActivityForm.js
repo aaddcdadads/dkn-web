@@ -239,7 +239,15 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
 
 /********************** end addActivty 开始 *********************/
 
-/********************** editActivty 开始 *********************/
+/********************** saveOrUpdate 开始 *********************/
+/**
+ * 发送添加请求
+ */
+const addRequest = (logic.addRequest = async function () {
+  let res = await self.$postAction(`/api/dkn/activity/adds`, self.item);
+  self.addRequestData = res;
+});
+
 /**
  * 发送编辑请求
  */
@@ -252,16 +260,15 @@ const editRequest = (logic.editRequest = async function () {
 });
 
 /**
- * 逻辑流 editActivty 入口函数
+ * 逻辑流 saveOrUpdate 入口函数
  */
-const editActivty = (logic.editActivty = async (pageVm, eventData) => {
-  console.log(`editActivty: `, pageVm, eventData);
+const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
+  console.log(`saveOrUpdate: `, pageVm, eventData);
   self = Object.assign(pageVm, logic);
-  self.editActivtyData = eventData;
+  self.saveOrUpdateData = eventData;
 
   await self.$refs.activityForm.validate();
   await self.$refs.activityExtForm.validate();
-  await self.$refs.activityTwoForm.validate();
 
   let activityProjects = [],
     activityImgs = [],
@@ -291,25 +298,42 @@ const editActivty = (logic.editActivty = async (pageVm, eventData) => {
   self.item = {
     ...self.$refs.activityForm.getFormValues(),
     ...self.$refs.activityExtForm.getFormValues(),
-    ...self.$refs.activityTwoForm.getFormValues(),
     activityExts,
     activityImgs,
     activityExts,
-    id: self.id,
   };
-
-  await editRequest();
-  if (self.editRequestData.success) {
-    self.$message.error(self.editRequestData.message);
-    return;
+  if (self.type === 2) {
+    await self.$refs.activityTwoForm.validate();
+    self.item = {
+      ...self.item,
+      ...self.$refs.activityTwoForm.getFormValues(),
+      id: self.id,
+    };
   }
-  self.$message.success("操作成功");
-  self.$router.push({
-    path: `/haomo/1750448384092672002/page`,
-  });
+  if (self.type === 1) {
+    await addRequest();
+    if (self.addRequestData.success) {
+      self.$message.error(self.addRequestData.message);
+      return;
+    }
+    self.$message.success("操作成功");
+    self.$router.push({
+      path: `/haomo/1750448384092672002/page`,
+    });
+  } else {
+    await editRequest();
+    if (self.editRequestData.success) {
+      self.$message.error(self.editRequestData.message);
+      return;
+    }
+    self.$message.success("操作成功");
+    self.$router.push({
+      path: `/haomo/1750448384092672002/page`,
+    });
+  }
 });
 
-/********************** end editActivty 开始 *********************/
+/********************** end saveOrUpdate 开始 *********************/
 
 export {
   activityRequest,
@@ -323,6 +347,7 @@ export {
   detail,
   addRequest,
   addActivty,
+  addRequest,
   editRequest,
-  editActivty,
+  saveOrUpdate,
 };
