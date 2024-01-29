@@ -890,27 +890,39 @@ export default {
       },
       addActivityImgFormTwo: {
         config: {
-          cycle: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动项目名称",
-            required: true,
-            props: {
-              placeholder: "请输入活动名称",
-            },
-          },
-          " name": {
+          imgPath: {
             style: {
               width: "100%",
             },
             type: "UploadImage",
-            title: "项目费用",
-            maxCount: 1,
-            listType: "picture-card",
+            title: "奖品图片",
             required: true,
-            props: {},
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+          name: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "奖品名称",
+            required: true,
+            props: {
+              placeholder: "请输入奖品名称",
+            },
+          },
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "奖品排序",
+            required: true,
+            props: {
+              placeholder: "请输入奖品排序",
+            },
           },
         },
         value: {},
