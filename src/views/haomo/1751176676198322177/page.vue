@@ -986,34 +986,35 @@ export default {
       },
       activityExtForm: {
         config: {
-          " rule": {
-            type: "Textarea",
-            title: "活动规则",
+          activityRules: {
             style: {
               width: "100%",
             },
+            type: "Textarea",
+            title: "活动规则",
             props: {
               showCount: true,
               placeholder: "请输入活动规则",
             },
           },
-          agreement: {
-            type: "Textarea",
-            title: "协议与承诺书",
+          protocol: {
             style: {
               width: "100%",
             },
+            type: "Textarea",
+            title: "协议与承诺书",
             props: {
               showCount: true,
               placeholder: "请输入《活动报名用户协议及承诺书》",
             },
           },
           customerService: {
-            type: "Input",
-            title: "活动咨询与客服",
             style: {
               width: "100%",
             },
+            type: "Input",
+            title: "活动咨询与客服",
+            props: {},
           },
         },
         value: {},
