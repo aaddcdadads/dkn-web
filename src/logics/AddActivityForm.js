@@ -87,7 +87,7 @@ const setData = logic.setData = function() {
     item.index=Math.floor(Math.random()*10000),
 
     //处理图片
-    if(item?.imgPath?.file?.response?.message){
+    if (item.imgPath?.file?.response?.message){
         item.imgPath=item.imgPath?.file?.response?.message
     }
     self.$refs.activityProjectTable.cData.push(item)
