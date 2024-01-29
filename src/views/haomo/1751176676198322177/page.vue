@@ -171,6 +171,7 @@
                           v-model:visible="addproject.visible"
                           :z-index="1000"
                           height="240px"
+                          class="ele-addproject"
                         >
                           <div
                             class="ele-wrapper ele-wrapper-7c1be11a-b36f-498c-ba73-bcabfe46ade4"
@@ -937,6 +938,12 @@ export default {
 
 .ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12 {
   margin-left: 5px;
+}
+
+.ele-wrapper-addproject {
+  /deep/.hm-modal {
+    min-height: 0px;
+  }
 }
 
 .ele-wrapper-7c1be11a-b36f-498c-ba73-bcabfe46ade4 {
