@@ -881,13 +881,18 @@ export default {
       //this.selectTempArr = item.selectedRowKeys.length > 0 ? item.selectedRowKeys.toString() : null;
       this.selectTempArr = item.selectedRows;
 
-      let selectPropertyArr = this.selectTempArr.filter(
-        (item) => item.paymentStatus === 1 || item.paymentStatus === 2
-      );
-      if (selectPropertyArr.length == 0) {
-        this.bacthHeImportButton.disabled = false;
+      if (this.selectTempArr.length > 0) {
+        let selectPropertyArr = this.selectTempArr.filter(
+          (item) => item.paymentStatus === 1 || item.paymentStatus === 2
+        );
+
+        if (selectPropertyArr.length == 0) {
+          this.bacthHeImportButton.disabled = false;
+        } else {
+          this.$message.error("数据中存在已退款、待支付状态下不可核销");
+          this.bacthHeImportButton.disabled = true;
+        }
       } else {
-        this.$message.error("数据中存在已退款、待支付状态下不可核销");
         this.bacthHeImportButton.disabled = true;
       }
     },
@@ -960,6 +965,9 @@ export default {
   width: 98%;
   margin: 1%;
   margin-bottom: 0;
+  /deep/ .select-class {
+    width: 242px;
+  }
 }
 
 .ele-wrapper-addButton {
