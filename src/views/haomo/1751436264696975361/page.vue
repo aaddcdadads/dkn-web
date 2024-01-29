@@ -798,17 +798,6 @@ export default {
       },
       activityExtForm: {
         config: {
-          protocol: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "协议与承诺书",
-            props: {
-              showCount: true,
-              placeholder: "请输入《活动报名用户协议及承诺书》",
-            },
-          },
           activityRules: {
             style: {
               width: "100%",
@@ -818,6 +807,17 @@ export default {
             props: {
               showCount: true,
               placeholder: "请输入活动规则",
+            },
+          },
+          protocol: {
+            style: {
+              width: "100%",
+            },
+            type: "Textarea",
+            title: "协议与承诺书",
+            props: {
+              showCount: true,
+              placeholder: "请输入《活动报名用户协议及承诺书》",
             },
           },
           customerService: {
