@@ -223,7 +223,11 @@
                           <div
                             class="ele-wrapper ele-wrapper-cecf2e80-2c21-4fc8-961b-3288baaf61ed"
                           >
-                            <hm-ant-icon-text icon="" width="272px">
+                            <hm-ant-icon-text
+                              text="确认删除"
+                              icon=""
+                              width="272px"
+                            >
                             </hm-ant-icon-text>
                           </div>
                         </hm-modal>
