@@ -252,16 +252,16 @@
                               >
                                 <hm-ant-formily
                                   :config="{
-                                    ' name': {
-                                      type: 'UploadImage',
-                                      title: '奖品图片',
+                                    cycle: {
+                                      type: 'Input',
+                                      title: '奖品名称',
                                       style: { width: '100%' },
                                       required: true,
                                       props: {},
                                     },
-                                    cycle: {
-                                      type: 'Input',
-                                      title: '奖品名称',
+                                    ' name': {
+                                      type: 'UploadImage',
+                                      title: '奖品图片',
                                       style: { width: '100%' },
                                       required: true,
                                       props: {},
@@ -403,16 +403,16 @@
                       >
                         <hm-ant-formily
                           :config="{
-                            ' name': {
-                              type: 'UploadImage',
-                              title: '背景图片图片',
+                            cycle: {
+                              type: 'Input',
+                              title: '参考尺寸',
                               style: { width: '100%' },
                               required: true,
                               props: {},
                             },
-                            cycle: {
-                              type: 'Input',
-                              title: '参考尺寸',
+                            ' name': {
+                              type: 'UploadImage',
+                              title: '背景图片图片',
                               style: { width: '100%' },
                               required: true,
                               props: {},
@@ -866,18 +866,18 @@ export default {
       },
       "d6c85f5d-e546-49ce-802d-fe0a03aa2546": {
         config: {
-          " name": {
-            type: "UploadImage",
-            title: "奖品图片",
+          cycle: {
+            type: "Input",
+            title: "奖品名称",
             style: {
               width: "100%",
             },
             required: true,
             props: {},
           },
-          cycle: {
-            type: "Input",
-            title: "奖品名称",
+          " name": {
+            type: "UploadImage",
+            title: "奖品图片",
             style: {
               width: "100%",
             },
@@ -1022,18 +1022,18 @@ export default {
       },
       "04ce007d-e1c2-4f4d-ac07-44b7718beacf": {
         config: {
-          " name": {
-            type: "UploadImage",
-            title: "背景图片图片",
+          cycle: {
+            type: "Input",
+            title: "参考尺寸",
             style: {
               width: "100%",
             },
             required: true,
             props: {},
           },
-          cycle: {
-            type: "Input",
-            title: "参考尺寸",
+          " name": {
+            type: "UploadImage",
+            title: "背景图片图片",
             style: {
               width: "100%",
             },
