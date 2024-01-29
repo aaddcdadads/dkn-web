@@ -530,11 +530,25 @@ export default {
             validator: function (value) {},
           },
           pickUpStatus: {
+            type: "HmAntSelect",
             title: "核销状态",
             style: {
               width: "50%",
             },
-            props: {},
+            props: {
+              title: "",
+              width: "242px",
+              options: [
+                {
+                  label: "已核销",
+                  value: 0,
+                },
+                {
+                  label: "待核销",
+                  value: 1,
+                },
+              ],
+            },
             validator: function (value) {},
           },
           pickUpStatus2: {
