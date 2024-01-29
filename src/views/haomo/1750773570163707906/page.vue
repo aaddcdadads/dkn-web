@@ -215,6 +215,7 @@
                       :config="storeEditForm.config"
                       v-model:value="storeEditForm.value"
                       :col-num="2"
+                      :col-min-width="380"
                       :schema="storeEditForm.schema"
                       :label-col="7"
                       :wrapper-col="14"
@@ -413,7 +414,7 @@ export default {
             },
             props: {},
             validator: function (value) {},
-            required: false,
+            required: true,
             disabled: false,
           },
           urbanArea: {
@@ -423,6 +424,7 @@ export default {
               width: "50%",
             },
             props: {},
+            required: true,
             validator: function (value) {},
           },
           address: {
@@ -432,6 +434,7 @@ export default {
               width: "50%",
             },
             props: {},
+            required: true,
             validator: function (value) {},
           },
         },
@@ -444,7 +447,7 @@ export default {
         visible: false,
       },
       storeAddModal: {
-        visible: true,
+        visible: false,
       },
       importButton: {},
       exportButton: {
