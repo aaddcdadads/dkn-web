@@ -136,15 +136,17 @@ const detail = (logic.detail = async (pageVm, eventData) => {
     self.title.text = "活动详情";
     self.isSaveOrUpdate.hidden = true;
     self.isTitle = "";
-    for (let key in self.activityForm.config) {
-      self.activityForm.config[key].props.disabled = true;
-    }
-    for (let key in self.activityExtForm.config) {
-      self.activityExtForm.config[key].props.disabled = true;
-    }
-    for (let key in self.activityTwoForm.config) {
-      self.activityTwoForm.config[key].props.disabled = true;
-    }
+    setTimeout(() => {
+      for (let key in self.activityForm.config) {
+        self.activityForm.config[key].props.disabled = true;
+      }
+      for (let key in self.activityExtForm.config) {
+        self.activityExtForm.config[key].props.disabled = true;
+      }
+      for (let key in self.activityTwoForm.config) {
+        self.activityTwoForm.config[key].props.disabled = true;
+      }
+    });
     self.activityProjectTable.columns.splice(
       self.activityProjectTable.columns.length - 1,
       1
