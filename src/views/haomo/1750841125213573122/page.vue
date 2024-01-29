@@ -463,12 +463,24 @@ export default {
       viewRegistrationOrdersFilter: {
         config: {
           userId: {
-            type: "Input",
+            type: "HmAntSelect",
             title: "用户",
             style: {
               width: "50%",
             },
-            props: {},
+            props: {
+              dataMap: {
+                label: "realname",
+                value: "realname",
+              },
+              title: "",
+              params: {
+                pageNo: 1,
+                pageSize: -1,
+              },
+              showSearch: true,
+              url: "/api/sys/user/list",
+            },
             validator: function (value) {},
           },
           channel: {
