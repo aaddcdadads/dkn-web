@@ -110,6 +110,36 @@
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
                       >
                         <div
+                          class="ele-wrapper ele-wrapper-357d4d6e-b124-47f2-a52e-fe3e70eceaf1"
+                        >
+                          <hm-ant-button
+                            text="批量启用"
+                            :type="'primary'"
+                            class="ele-357d4d6e-b124-47f2-a52e-fe3e70eceaf1"
+                          >
+                          </hm-ant-button>
+                        </div>
+                        <div
+                          class="ele-wrapper ele-wrapper-1fe6f16d-9651-4a19-aefd-adf4f60782dc"
+                        >
+                          <hm-ant-button
+                            text="批量禁用"
+                            :type="'primary'"
+                            class="ele-1fe6f16d-9651-4a19-aefd-adf4f60782dc"
+                          >
+                          </hm-ant-button>
+                        </div>
+                        <div
+                          class="ele-wrapper ele-wrapper-c6152b57-61b3-46a7-8557-26437d83e072"
+                        >
+                          <hm-ant-button
+                            text="批量删除"
+                            :type="'primary'"
+                            class="ele-c6152b57-61b3-46a7-8557-26437d83e072"
+                          >
+                          </hm-ant-button>
+                        </div>
+                        <div
                           class="ele-wrapper ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
                         >
                           <hm-ant-button
@@ -1015,6 +1045,18 @@ export default {
 
 .ele-wrapper-4aad8761-7b58-4d08-b5a2-91fea232f9fe {
   width: 100%;
+}
+
+.ele-wrapper-357d4d6e-b124-47f2-a52e-fe3e70eceaf1 {
+  margin-right: 8px;
+}
+
+.ele-wrapper-1fe6f16d-9651-4a19-aefd-adf4f60782dc {
+  margin-right: 8px;
+}
+
+.ele-wrapper-c6152b57-61b3-46a7-8557-26437d83e072 {
+  margin-right: 8px;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
