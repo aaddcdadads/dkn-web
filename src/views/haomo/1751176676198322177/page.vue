@@ -323,6 +323,16 @@
                             </hm-ant-button>
                           </div>
                           <div
+                            class="ele-wrapper ele-wrapper-07bd7f02-4212-4eb2-8e70-aaa3a6ec53e7"
+                          >
+                            <hm-modal
+                              :visible="true"
+                              :z-index="1000"
+                              class="ele-07bd7f02-4212-4eb2-8e70-aaa3a6ec53e7"
+                            >
+                            </hm-modal>
+                          </div>
+                          <div
                             class="ele-wrapper ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                           >
                             <hm-bg-card
@@ -830,6 +840,9 @@ export default {
         },
         value: {},
       },
+      "07bd7f02-4212-4eb2-8e70-aaa3a6ec53e7": {
+        visible: true,
+      },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
         config: {
           " rule": {
@@ -970,6 +983,12 @@ export default {
 .ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8 {
   margin-left: 5px;
   margin-top: 15px;
+}
+
+.ele-wrapper-07bd7f02-4212-4eb2-8e70-aaa3a6ec53e7 {
+  /deep/.hm-modal {
+    min-height: 0px;
+  }
 }
 
 .ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c {
