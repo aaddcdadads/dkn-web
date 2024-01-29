@@ -450,7 +450,7 @@
                       ref="addBackground"
                       v-model:visible="addBackground.visible"
                       :z-index="1000"
-                      height="200px"
+                      height="250px"
                       class="ele-addBackground"
                     >
                       <div
