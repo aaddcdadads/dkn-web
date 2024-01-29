@@ -334,7 +334,7 @@
                                 <hm-ant-formily
                                   :config="{
                                     ' name': {
-                                      type: 'Upload',
+                                      type: 'upload',
                                       title: '项目费用',
                                       style: { width: '100%' },
                                       required: true,
@@ -881,7 +881,7 @@ export default {
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
         config: {
           " name": {
-            type: "Upload",
+            type: "upload",
             title: "项目费用",
             style: {
               width: "100%",
