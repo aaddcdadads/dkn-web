@@ -312,7 +312,7 @@
                                 {
                                   name: '删除',
                                   callback:
-                                    'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                                    'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n      self.deleteproject.visible = true;\n                        }',
                                   type: 'link',
                                   icon: 'fa fa-trash',
                                 },
@@ -689,7 +689,7 @@
                             {
                               name: '删除',
                               callback:
-                                'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n    \n                        }',
+                                'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n    self.deleteproject.visible = true;\n                        }',
                               type: 'link',
                               icon: 'fa fa-trash',
                             },
@@ -907,7 +907,7 @@ export default {
         visible: false,
       },
       deleteproject: {
-        visible: true,
+        visible: false,
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
         config: {
