@@ -724,7 +724,7 @@ export default {
             dataIndex: "name",
             key: "name",
             fixed: true,
-            width: 150,
+            width: 200,
           },
           {
             title: "活动费用",
@@ -752,13 +752,13 @@ export default {
             title: "报名人数",
             dataIndex: "orders",
             key: "orders",
-            width: 30,
+            width: 100,
           },
           {
             title: "核销人数",
             dataIndex: "pickUps",
             key: "pickUps",
-            width: 30,
+            width: 100,
           },
           {
             title: "启用状态",
