@@ -472,7 +472,7 @@
                               width: 50,
                             },
                             {
-                              title: '奖品名称',
+                              title: '参考尺寸（或使用二倍图）',
                               dataIndex: 'age',
                               key: 'age',
                               width: 90,
