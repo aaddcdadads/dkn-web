@@ -138,13 +138,13 @@
                           >
                             <hm-ant-formily
                               ref="activityProjectForm"
-                              :schema="activityProjectForm.schema"
-                              :wrapper-col="16"
-                              :col-num="0"
-                              :label-col="6"
-                              :col-min-width="380"
                               :config="activityProjectForm.config"
                               v-model:value="activityProjectForm.value"
+                              :col-num="0"
+                              :col-min-width="380"
+                              :schema="activityProjectForm.schema"
+                              :label-col="6"
+                              :wrapper-col="16"
                               class="ele-activityProjectForm"
                             >
                             </hm-ant-formily>
@@ -728,28 +728,6 @@ export default {
         },
       },
       activityProjectForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           multipleOrder: {
             style: {
@@ -829,6 +807,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityProjectTable: {
         isFlatAction: true,
@@ -1207,16 +1207,13 @@ export default {
     };
   },
   watch: {},
-  async mounted(e) {
+  mounted(e) {
     this.onMounted(e);
   },
   methods: {
     onMounted() {
       let self = this;
       self.type = parseInt(self.$route.query.type);
-      self.addActivityProject = async function () {
-        await self.$refs.activityProjectForm.validate();
-      };
     },
 
     onAddBtn1Click() {
