@@ -376,6 +376,18 @@
                       :z-index="1000"
                       class="ele-addimage"
                     >
+                      <div
+                        class="ele-wrapper ele-wrapper-04ce007d-e1c2-4f4d-ac07-44b7718beacf"
+                      >
+                        <hm-ant-formily
+                          :value="{}"
+                          :col-num="0"
+                          :col-min-width="380"
+                          :label-col="7"
+                          :wrapper-col="14"
+                        >
+                        </hm-ant-formily>
+                      </div>
                     </hm-modal>
                   </div>
                   <div
@@ -962,6 +974,9 @@ export default {
             },
           },
         },
+      },
+      "04ce007d-e1c2-4f4d-ac07-44b7718beacf": {
+        value: {},
       },
       activityImgTableOne: {
         columns: [
