@@ -311,7 +311,7 @@
                                 {
                                   name: '删除',
                                   callback:
-                                    'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n      self.deleteproject.visible = true;\n                        }',
+                                    'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n      this.$refs.deleteproject.visible = true;\n                        }',
                                   type: 'link',
                                   icon: 'fa fa-trash',
                                 },
