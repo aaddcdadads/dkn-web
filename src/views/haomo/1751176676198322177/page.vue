@@ -136,17 +136,17 @@
                           >
                             <hm-ant-formily
                               :config="{
-                                expense: {
-                                  style: { width: '100%' },
-                                  type: 'Input',
-                                  title: '项目费用',
-                                  required: true,
-                                  props: {},
-                                },
                                 name: {
                                   style: { width: '100%' },
                                   type: 'Input',
                                   title: '活动项目名称',
+                                  required: true,
+                                  props: {},
+                                },
+                                expense: {
+                                  style: { width: '100%' },
+                                  type: 'Input',
+                                  title: '项目费用',
                                   required: true,
                                   props: {},
                                 },
@@ -750,21 +750,21 @@ export default {
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
         config: {
-          expense: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "项目费用",
-            required: true,
-            props: {},
-          },
           name: {
             style: {
               width: "100%",
             },
             type: "Input",
             title: "活动项目名称",
+            required: true,
+            props: {},
+          },
+          expense: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "项目费用",
             required: true,
             props: {},
           },
