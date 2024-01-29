@@ -109,36 +109,33 @@
                         box-shadow-color="#00000000"
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
                       >
-                        <div
-                          class="ele-wrapper ele-wrapper-357d4d6e-b124-47f2-a52e-fe3e70eceaf1"
-                        >
+                        <div class="ele-wrapper ele-wrapper-bathqiyong">
                           <hm-ant-button
+                            ref="bathqiyong"
                             text="批量启用"
                             :type="'primary'"
-                            @click="onEle357D4D6EB12447F2A52EFe3E70Eceaf1Click"
-                            class="ele-357d4d6e-b124-47f2-a52e-fe3e70eceaf1"
+                            @click="onBathqiyongClick"
+                            class="ele-bathqiyong"
                           >
                           </hm-ant-button>
                         </div>
-                        <div
-                          class="ele-wrapper ele-wrapper-1fe6f16d-9651-4a19-aefd-adf4f60782dc"
-                        >
+                        <div class="ele-wrapper ele-wrapper-batchBisabled">
                           <hm-ant-button
+                            ref="batchBisabled"
                             text="批量禁用"
                             :type="'primary'"
-                            @click="onEle1Fe6F16D96514A19AefdAdf4F60782DcClick"
-                            class="ele-1fe6f16d-9651-4a19-aefd-adf4f60782dc"
+                            @click="onBatchBisabledClick"
+                            class="ele-batchBisabled"
                           >
                           </hm-ant-button>
                         </div>
-                        <div
-                          class="ele-wrapper ele-wrapper-c6152b57-61b3-46a7-8557-26437d83e072"
-                        >
+                        <div class="ele-wrapper ele-wrapper-batchDelete">
                           <hm-ant-button
+                            ref="batchDelete"
                             text="批量删除"
                             :type="'primary'"
-                            @click="onElec6152B5761B346A7855726437D83E072Click"
-                            class="ele-c6152b57-61b3-46a7-8557-26437d83e072"
+                            @click="onBatchDeleteClick"
+                            class="ele-batchDelete"
                           >
                           </hm-ant-button>
                         </div>
@@ -969,19 +966,19 @@ export default {
     onExportButtonClick() {
       exportActivity(this, arguments);
     },
-    onEle357D4D6EB12447F2A52EFe3E70Eceaf1Click() {
+    onBathqiyongClick() {
       this.$nextTicj(() => {
         this.batchEdit.visible = true;
         this.prompt.text = "确认批量启用";
       });
     },
-    onEle1Fe6F16D96514A19AefdAdf4F60782DcClick() {
+    onBatchBisabledClick() {
       this.$nextTicj(() => {
         this.batchEdit.visible = true;
         this.prompt.text = "确认批量禁用";
       });
     },
-    onElec6152B5761B346A7855726437D83E072Click() {
+    onBatchDeleteClick() {
       this.$nextTicj(() => {
         this.batchEdit.visible = true;
         this.prompt.text = "确认批量删除";
@@ -1109,15 +1106,15 @@ export default {
   }
 }
 
-.ele-wrapper-357d4d6e-b124-47f2-a52e-fe3e70eceaf1 {
+.ele-wrapper-bathqiyong {
   margin-right: 8px;
 }
 
-.ele-wrapper-1fe6f16d-9651-4a19-aefd-adf4f60782dc {
+.ele-wrapper-batchBisabled {
   margin-right: 8px;
 }
 
-.ele-wrapper-c6152b57-61b3-46a7-8557-26437d83e072 {
+.ele-wrapper-batchDelete {
   margin-right: 8px;
 }
 
