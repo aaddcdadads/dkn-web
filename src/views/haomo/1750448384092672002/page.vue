@@ -1095,6 +1095,9 @@ export default {
   .table-div /deep/ .ant-table-thead > tr > th {
     background: #fafafa;
   }
+  .table-div {
+    background-color: none;
+  }
   width: 98%;
   margin-left: 1%;
 }
