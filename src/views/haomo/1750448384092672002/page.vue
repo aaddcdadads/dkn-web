@@ -1095,7 +1095,7 @@ export default {
   .table-div /deep/ .ant-table-thead > tr > th {
     background: #fafafa;
   }
-  /deep/.table-div {
+  /deep/.ant-table-header-column > div {
     background-color: transparent !important;
   }
   width: 98%;
