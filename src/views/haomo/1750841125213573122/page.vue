@@ -551,7 +551,7 @@ export default {
             },
             validator: function (value) {},
           },
-          pickUpStatus2: {
+          originalPickUpName: {
             title: "原核销门店",
             style: {
               width: "50%",
@@ -559,12 +559,34 @@ export default {
             props: {},
             validator: function (value) {},
           },
-          pickUpStatus3: {
+          nowPickUpName: {
             title: "实际核销门店",
             style: {
               width: "50%",
             },
             props: {},
+            validator: function (value) {},
+          },
+          verificationStores: {
+            type: "HmAntSelect",
+            title: "核销门店差异",
+            style: {
+              width: "50%",
+            },
+            props: {
+              title: "",
+              width: "242px",
+              options: [
+                {
+                  label: "有",
+                  value: 0,
+                },
+                {
+                  label: "无",
+                  value: 1,
+                },
+              ],
+            },
             validator: function (value) {},
           },
           search: {
