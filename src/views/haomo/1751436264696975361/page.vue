@@ -166,9 +166,14 @@
                           ref="deleteproject"
                           v-model:visible="deleteproject.visible"
                           :z-index="1000"
+                          height=""
                         >
                           <div class="ele-wrapper ele-wrapper-deleteText">
-                            <hm-ant-icon-text ref="deleteText" text="确认删除">
+                            <hm-ant-icon-text
+                              ref="deleteText"
+                              text="确认删除"
+                              width="200px"
+                            >
                             </hm-ant-icon-text>
                           </div>
                         </hm-modal>
