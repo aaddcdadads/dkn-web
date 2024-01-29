@@ -176,8 +176,7 @@
                               ref="deleteText"
                               text="确认删除"
                               icon=""
-                              width=""
-                              class="ele-deleteText"
+                              width="272px"
                             >
                             </hm-ant-icon-text>
                           </div>
@@ -1288,12 +1287,6 @@ export default {
   .ant-modal-body {
     display: flex;
     justify-content: center;
-  }
-}
-
-.ele-wrapper-deleteText {
-  /deep/.ele-wrapper-deleteText {
-    width: 100% !important;
   }
 }
 
