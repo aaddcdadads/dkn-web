@@ -303,19 +303,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :is-flat-action="
-                                    activityImgTableTwo.isFlatAction
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :data="activityImgTableTwo.data"
                                   :columns="activityImgTableTwo.columns"
-                                  :row-class-name="
-                                    activityImgTableTwo.rowClassName
-                                  "
+                                  :data="activityImgTableTwo.data"
                                   :pagination-hidden="
                                     activityImgTableTwo.paginationHidden
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
                                   :actions="activityImgTableTwo.actions"
+                                  :is-flat-action="
+                                    activityImgTableTwo.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityImgTableTwo.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -970,11 +970,54 @@ export default {
         value: {},
       },
       activityImgTableTwo: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
+        columns: [
+          {
+            dataIndex: "path",
+            title: "奖品图片",
+            key: "path",
+            customRender: function (data) {
+              return h(HmAntIconText, {
+                fontSize: "14px",
+                iconSize: "16px",
+                bgColorText: "transparent",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                text: "",
+                placement: "top",
+                img: self.getImg(data.record.path),
+                color: "black",
+                imgStyle: {
+                  height: "32px",
+                  marginRight: "4px",
+                  marginTop: "-4px",
+                },
+                onClick: function () {},
+              });
+            },
+          },
+          {
+            dataIndex: "name",
+            width: 90,
+            title: "奖品名称",
+            key: "name",
+          },
+          {
+            dataIndex: "sortNo",
+            width: 30,
+            title: "奖品排序",
+            key: "sortNo",
+            ellipsis: true,
+          },
+          {
+            slots: {
+              customRender: "action",
+            },
+            width: 80,
+            title: "操作",
+            key: "action",
+          },
+        ],
         data: [
           {
             address: "1",
@@ -1001,37 +1044,11 @@ export default {
             sexual: "",
           },
         ],
-        columns: [
-          {
-            dataIndex: "name",
-            width: 50,
-            title: "奖品图片",
-            key: "name",
-          },
-          {
-            dataIndex: "age",
-            width: 90,
-            title: "奖品名称",
-            key: "age",
-          },
-          {
-            dataIndex: "address",
-            width: 30,
-            title: "奖品排序",
-            key: "address",
-            ellipsis: true,
-          },
-          {
-            slots: {
-              customRender: "action",
-            },
-            width: 80,
-            title: "操作",
-            key: "action",
-          },
-        ],
-        rowClassName: {},
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1052,6 +1069,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityExtForm: {
         schema: {
