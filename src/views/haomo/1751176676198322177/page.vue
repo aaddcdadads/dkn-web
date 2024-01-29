@@ -828,7 +828,6 @@ export default {
         columns: [
           {
             dataIndex: "imgPath",
-            width: 90,
             title: "项目图片",
             key: "imgPath",
             customRender: function (data) {
@@ -854,44 +853,33 @@ export default {
           },
           {
             dataIndex: "expense",
-            width: 90,
             title: "项目费用",
             key: "expense",
           },
           {
             dataIndex: "free",
-            width: 90,
             title: "是否免费",
             key: "free",
-            ellipsis: true,
           },
           {
             dataIndex: "multipleOrder",
-            width: 90,
             title: "可多人报名",
             key: "multipleOrder",
-            ellipsis: true,
           },
           {
             dataIndex: "name",
-            width: 90,
             title: "活动项目名称",
             key: "name",
-            ellipsis: true,
           },
           {
             dataIndex: "synopsis",
-            width: 70,
             title: "项目简介",
             key: "synopsis",
-            ellipsis: true,
           },
           {
             dataIndex: "sortNo",
-            width: 30,
             title: "排序",
             key: "sortNo",
-            ellipsis: true,
           },
           {
             slots: {
