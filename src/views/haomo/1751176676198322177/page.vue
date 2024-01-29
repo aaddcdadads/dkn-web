@@ -138,13 +138,13 @@
                           >
                             <hm-ant-formily
                               ref="activityProjectForm"
+                              :schema="activityProjectForm.schema"
+                              :wrapper-col="16"
+                              :col-num="0"
+                              :label-col="6"
+                              :col-min-width="380"
                               :config="activityProjectForm.config"
                               v-model:value="activityProjectForm.value"
-                              :col-num="0"
-                              :col-min-width="380"
-                              :schema="activityProjectForm.schema"
-                              :label-col="6"
-                              :wrapper-col="16"
                               class="ele-activityProjectForm"
                             >
                             </hm-ant-formily>
@@ -189,19 +189,19 @@
                           >
                             <hm-ant-table
                               ref="activityProjectTable"
-                              :is-flat-action="
-                                activityProjectTable.isFlatAction
-                              "
-                              :get-data-map="activityProjectTable.getDataMap"
-                              :data="activityProjectTable.data"
                               :columns="activityProjectTable.columns"
-                              :row-class-name="
-                                activityProjectTable.rowClassName
-                              "
+                              :data="activityProjectTable.data"
                               :pagination-hidden="
                                 activityProjectTable.paginationHidden
                               "
+                              :get-data-map="activityProjectTable.getDataMap"
                               :actions="activityProjectTable.actions"
+                              :is-flat-action="
+                                activityProjectTable.isFlatAction
+                              "
+                              :row-class-name="
+                                activityProjectTable.rowClassName
+                              "
                             >
                             </hm-ant-table>
                           </div>
@@ -302,19 +302,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :is-flat-action="
-                                    activityImgTableTwo.isFlatAction
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :data="activityImgTableTwo.data"
                                   :columns="activityImgTableTwo.columns"
-                                  :row-class-name="
-                                    activityImgTableTwo.rowClassName
-                                  "
+                                  :data="activityImgTableTwo.data"
                                   :pagination-hidden="
                                     activityImgTableTwo.paginationHidden
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
                                   :actions="activityImgTableTwo.actions"
+                                  :is-flat-action="
+                                    activityImgTableTwo.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityImgTableTwo.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -468,15 +468,15 @@
                       <div class="ele-wrapper ele-wrapper-activityImgTableOne">
                         <hm-ant-table
                           ref="activityImgTableOne"
-                          :is-flat-action="activityImgTableOne.isFlatAction"
-                          :get-data-map="activityImgTableOne.getDataMap"
-                          :data="activityImgTableOne.data"
                           :columns="activityImgTableOne.columns"
-                          :row-class-name="activityImgTableOne.rowClassName"
+                          :data="activityImgTableOne.data"
                           :pagination-hidden="
                             activityImgTableOne.paginationHidden
                           "
+                          :get-data-map="activityImgTableOne.getDataMap"
                           :actions="activityImgTableOne.actions"
+                          :is-flat-action="activityImgTableOne.isFlatAction"
+                          :row-class-name="activityImgTableOne.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -706,6 +706,13 @@ export default {
           status: 0,
         },
       },
+      addprice: {},
+      deleteproject: {
+        visible: false,
+        style: {
+          top: "100px",
+        },
+      },
       addproject: {
         visible: false,
       },
@@ -721,13 +728,29 @@ export default {
           top: "100px",
         },
       },
-      deleteproject: {
-        visible: false,
-        style: {
-          top: "100px",
-        },
-      },
       activityProjectForm: {
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
         config: {
           multipleOrder: {
             style: {
@@ -807,53 +830,8 @@ export default {
           },
         },
         value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
       },
       activityProjectTable: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
         columns: [
           {
             dataIndex: "name",
@@ -890,20 +868,51 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [
+          {
+            address: "",
+            school: "",
+            name: "¥0",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "",
+            school: "",
+            name: "¥ 29.9",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+        ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
             icon: "fa fa-pencil",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.addprice.visible = true;
+            },
             type: "link",
           },
           {
             name: "删除",
             icon: "fa fa-trash",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+              self.deleteproject.visible = true;
+            },
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
         schema: {
@@ -955,37 +964,6 @@ export default {
         value: {},
       },
       activityImgTableTwo: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "1",
-            school: "",
-            name: "",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "2",
-            school: "",
-            name: "",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "3",
-            school: "",
-            name: "",
-            key: "3",
-            age: "",
-            sexual: "",
-          },
-        ],
         columns: [
           {
             dataIndex: "name",
@@ -1015,8 +993,37 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [
+          {
+            address: "1",
+            school: "",
+            name: "",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "2",
+            school: "",
+            name: "",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "3",
+            school: "",
+            name: "",
+            key: "3",
+            age: "",
+            sexual: "",
+          },
+        ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1029,6 +1036,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityExtForm: {
         schema: {
@@ -1137,29 +1146,6 @@ export default {
         value: {},
       },
       activityImgTableOne: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
         columns: [
           {
             dataIndex: "name",
@@ -1189,8 +1175,29 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [
+          {
+            address: "",
+            school: "",
+            name: "¥0",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "",
+            school: "",
+            name: "¥ 29.9",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+        ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1203,6 +1210,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
     };
   },
