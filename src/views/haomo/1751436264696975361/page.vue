@@ -174,7 +174,7 @@
                             <hm-ant-icon-text
                               ref="deleteText"
                               text="确认删除"
-                              width="100%"
+                              width="320px"
                               class="ele-deleteText"
                             >
                             </hm-ant-icon-text>
