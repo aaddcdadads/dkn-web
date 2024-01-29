@@ -113,9 +113,9 @@
                       <div class="ele-wrapper ele-wrapper-addActivityProject">
                         <hm-ant-button
                           ref="addActivityProject"
-                          icon="fa fa-plus"
                           text="添加"
                           :type="'primary'"
+                          icon="fa fa-plus"
                           class="ele-addActivityProject"
                         >
                         </hm-ant-button>
@@ -167,9 +167,9 @@
                             class="ele-wrapper ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8"
                           >
                             <hm-ant-button
-                              icon="fa fa-plus"
                               text="添加"
                               :type="'primary'"
+                              icon="fa fa-plus"
                               class="ele-5e707249-6d32-4c85-ac9b-b51a1a4e56c8"
                             >
                             </hm-ant-button>
@@ -190,19 +190,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :is-flat-action="
-                                    activityImgTableTwo.isFlatAction
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :data="activityImgTableTwo.data"
                                   :columns="activityImgTableTwo.columns"
-                                  :row-class-name="
-                                    activityImgTableTwo.rowClassName
-                                  "
+                                  :data="activityImgTableTwo.data"
                                   :pagination-hidden="
                                     activityImgTableTwo.paginationHidden
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
                                   :actions="activityImgTableTwo.actions"
+                                  :is-flat-action="
+                                    activityImgTableTwo.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityImgTableTwo.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -650,29 +650,6 @@ export default {
         ],
       },
       activityImgTableTwo: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
         columns: [
           {
             dataIndex: "name",
@@ -702,8 +679,29 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [
+          {
+            address: "",
+            school: "",
+            name: "¥0",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "",
+            school: "",
+            name: "¥ 29.9",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+        ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -722,6 +720,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityExtForm: {
         schema: {
