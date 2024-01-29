@@ -125,6 +125,7 @@
                       <div class="ele-wrapper ele-wrapper-addprice">
                         <hm-modal
                           ref="addprice"
+                          title="活动费用"
                           v-model:visible="addprice.visible"
                           :z-index="1000"
                           class="ele-addprice"
@@ -529,7 +530,7 @@ export default {
         hidden: false,
       },
       addprice: {
-        visible: false,
+        visible: true,
       },
       addprize: {
         visible: false,
