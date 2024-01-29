@@ -223,8 +223,21 @@
                               ref="addprize"
                               v-model:visible="addprize.visible"
                               :z-index="1000"
+                              height="200px"
                               class="ele-addprize"
                             >
+                              <div
+                                class="ele-wrapper ele-wrapper-d6c85f5d-e546-49ce-802d-fe0a03aa2546"
+                              >
+                                <hm-ant-formily
+                                  :value="{}"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :label-col="7"
+                                  :wrapper-col="14"
+                                >
+                                </hm-ant-formily>
+                              </div>
                             </hm-modal>
                           </div>
                           <div
@@ -559,7 +572,7 @@ export default {
         hidden: false,
       },
       addprice: {
-        visible: true,
+        visible: false,
       },
       addprize: {
         visible: false,
@@ -779,6 +792,9 @@ export default {
             type: "link",
           },
         ],
+      },
+      "d6c85f5d-e546-49ce-802d-fe0a03aa2546": {
+        value: {},
       },
       activityImgTableTwo: {
         isFlatAction: true,
