@@ -117,16 +117,17 @@
                           :type="addActivityProject.type"
                           :icon="addActivityProject.icon"
                           :visible="addActivityProject.visible"
+                          @click="onAddActivityProjectClick"
                           class="ele-addActivityProject"
                         >
                         </hm-ant-button>
                       </div>
-                      <div class="ele-wrapper ele-wrapper-editprice">
+                      <div class="ele-wrapper ele-wrapper-addprice">
                         <hm-modal
-                          ref="editprice"
-                          v-model:visible="editprice.visible"
+                          ref="addprice"
+                          v-model:visible="addprice.visible"
                           :z-index="1000"
-                          class="ele-editprice"
+                          class="ele-addprice"
                         >
                         </hm-modal>
                       </div>
@@ -134,11 +135,11 @@
                         class="ele-wrapper ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f"
                       >
                         <hm-bg-card
-                          box-shadow-blur=""
-                          box-shadow-v-shadow=""
-                          border-radius=""
                           width="100%"
                           height="100%"
+                          border-radius=""
+                          box-shadow-v-shadow=""
+                          box-shadow-blur=""
                           class="ele-678d6f52-6548-4f95-b813-d079ff38bb6f"
                         >
                           <div
@@ -182,6 +183,7 @@
                               :type="addActivityImgTableTwo.type"
                               :icon="addActivityImgTableTwo.icon"
                               :visible="addActivityImgTableTwo.visible"
+                              @click="onAddActivityImgTableTwoClick"
                               class="ele-addActivityImgTableTwo"
                             >
                             </hm-ant-button>
@@ -278,11 +280,11 @@
               <div class="ele-wrapper ele-wrapper-message_2">
                 <hm-bg-card
                   ref="message_2"
-                  box-shadow-blur=""
-                  box-shadow-v-shadow=""
-                  border-radius=""
                   width="100%"
                   height="100%"
+                  border-radius=""
+                  box-shadow-v-shadow=""
+                  box-shadow-blur=""
                   class="ele-message_2"
                 >
                   <div
@@ -307,13 +309,12 @@
                     >
                     </hm-ant-button>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-c0ff8328-d039-4f8a-9041-01e5e385bb58"
-                  >
+                  <div class="ele-wrapper ele-wrapper-addimage">
                     <hm-modal
-                      :visible="false"
+                      ref="addimage"
+                      v-model:visible="addimage.visible"
                       :z-index="1000"
-                      class="ele-c0ff8328-d039-4f8a-9041-01e5e385bb58"
+                      class="ele-addimage"
                     >
                     </hm-modal>
                   </div>
@@ -526,6 +527,12 @@ export default {
         textAlign: "center",
         hidden: false,
       },
+      addprice: {
+        visible: false,
+      },
+      addprize: {
+        visible: false,
+      },
       title: {
         text: "创建活动",
         icon: "fa fa-tasks",
@@ -641,9 +648,6 @@ export default {
           },
         },
       },
-      editprice: {
-        visible: false,
-      },
       activityProjectTable: {
         isFlatAction: true,
         getDataMap: {
@@ -718,9 +722,6 @@ export default {
             type: "link",
           },
         ],
-      },
-      addprize: {
-        visible: false,
       },
       activityImgTableTwo: {
         isFlatAction: true,
@@ -853,7 +854,7 @@ export default {
           },
         },
       },
-      "c0ff8328-d039-4f8a-9041-01e5e385bb58": {
+      addimage: {
         visible: false,
       },
       activityImgTableOne: {
@@ -1005,6 +1006,13 @@ export default {
       self.addActivityImgTableOne.visible = true;
       self.addActivityImgTableTwo.visible = true;
     },
+
+    onAddActivityProjectClick() {
+      this.addprice.visible = true;
+    },
+    onAddActivityImgTableTwoClick() {
+      this.addprize.visible = true;
+    },
   },
 };
 </script>
@@ -1078,7 +1086,7 @@ export default {
   margin-left: 5px;
 }
 
-.ele-wrapper-editprice {
+.ele-wrapper-addprice {
   /deep/.hm-modal {
     min-height: 0px;
   }
@@ -1148,7 +1156,7 @@ export default {
   margin-top: 15px;
 }
 
-.ele-wrapper-c0ff8328-d039-4f8a-9041-01e5e385bb58 {
+.ele-wrapper-addimage {
   /deep/.hm-modal {
     min-height: 0px;
   }
