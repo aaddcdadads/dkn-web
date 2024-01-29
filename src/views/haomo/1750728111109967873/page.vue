@@ -536,17 +536,21 @@ export default {
                     type: "link",
                     icon: "",
                     onClick: function () {
-                      self.registrationOrdersDeleteModal.visible = true;
-                      self.hexiaotype = true;
-                      self.hexiaoItem = {
-                        orderId: item.id,
-                        activityId: item.activityId,
-                        storeId: item.storeId,
-                        pickUpStatus: 0,
-                        pickUpTime: self
-                          .$moment()
-                          .format("YYYY-MM-DD HH:mm:ss"),
-                      };
+                      if (item.record.paymentStatus === 0) {
+                        self.registrationOrdersDeleteModal.visible = true;
+                        self.hexiaotype = true;
+                        self.hexiaoItem = {
+                          orderId: item.record.id,
+                          activityId: item.record.activityId,
+                          storeId: item.record.storeId,
+                          pickUpStatus: 0,
+                          pickUpTime: self
+                            .$moment()
+                            .format("YYYY-MM-DD HH:mm:ss"),
+                        };
+                      } else {
+                        self.$message.error("已退款、待支付状态下不可核销");
+                      }
                     },
                   }),
                 ]
