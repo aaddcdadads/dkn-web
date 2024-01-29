@@ -1128,7 +1128,7 @@ export default {
       let self = this;
       self.type = parseInt(self.$route.query.type);
       self.addActivityProject = async function () {
-        await self.$refs.activityExtForm.validate();
+        await self.$refs.activityProjectForm.validate();
       };
     },
 
