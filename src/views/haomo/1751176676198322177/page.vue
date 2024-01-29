@@ -165,6 +165,24 @@
                         </hm-ant-button>
                       </div>
                       <div
+                        class="ele-wrapper ele-wrapper-01501a3e-6280-438e-a352-e3472d9e8490"
+                      >
+                        <hm-modal :visible="true" :z-index="1000">
+                          <div
+                            class="ele-wrapper ele-wrapper-7c1be11a-b36f-498c-ba73-bcabfe46ade4"
+                          >
+                            <hm-ant-formily
+                              :value="{}"
+                              :col-num="0"
+                              :col-min-width="380"
+                              :label-col="7"
+                              :wrapper-col="14"
+                            >
+                            </hm-ant-formily>
+                          </div>
+                        </hm-modal>
+                      </div>
+                      <div
                         class="ele-wrapper ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f"
                       >
                         <hm-bg-card
@@ -664,6 +682,7 @@ import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
+import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
@@ -675,6 +694,7 @@ export default {
     HmAntBgText,
     HmAntFormily,
     HmAntButton,
+    HmModal,
     HmAntTable,
     HmColorKit,
   },
@@ -744,6 +764,12 @@ export default {
             },
           },
         },
+        value: {},
+      },
+      "01501a3e-6280-438e-a352-e3472d9e8490": {
+        visible: true,
+      },
+      "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
         value: {},
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
