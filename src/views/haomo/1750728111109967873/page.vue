@@ -513,9 +513,45 @@ export default {
             slots: {
               customRender: "action",
             },
-            width: "260",
+            width: 260,
             title: "操作",
             key: "action",
+            customRender: function (item) {
+              return h(
+                "div",
+                {
+                  style: {
+                    width: 200,
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "left",
+                    alignItems: "left",
+                  },
+                },
+                [
+                  h(HmAntButton, {
+                    disabled: item.record.pickUpStatus == 0 ? true : false,
+                    text: "核销",
+                    fontSize: 14,
+                    type: "link",
+                    icon: "",
+                    onClick: function () {
+                      self.registrationOrdersDeleteModal.visible = true;
+                      self.hexiaotype = true;
+                      self.hexiaoItem = {
+                        orderId: item.id,
+                        activityId: item.activityId,
+                        storeId: item.storeId,
+                        pickUpStatus: 0,
+                        pickUpTime: self
+                          .$moment()
+                          .format("YYYY-MM-DD HH:mm:ss"),
+                      };
+                    },
+                  }),
+                ]
+              );
+            },
           },
         ],
         data: [{}],
