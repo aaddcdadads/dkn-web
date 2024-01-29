@@ -499,24 +499,17 @@
                       box-shadow-blur=""
                       class="ele-89ea97da-357c-4295-9803-b1d0b63db0a2"
                     >
-                      <div class="ele-wrapper ele-wrapper-projectbackground">
+                      <div class="ele-wrapper ele-wrapper-activityImgTableOne">
                         <hm-ant-table
-                          ref="projectbackground"
-                          :columns="projectbackground.columns"
-                          :data="projectbackground.data"
+                          ref="activityImgTableOne"
+                          :columns="activityImgTableOne.columns"
+                          :data="activityImgTableOne.data"
                           :pagination-hidden="
-                            projectbackground.paginationHidden
+                            activityImgTableOne.paginationHidden
                           "
-                          :pagination="projectbackground.pagination"
-                          :params="projectbackground.params"
-                          :get-data-map="projectbackground.getDataMap"
-                          :pagination-map="projectbackground.paginationMap"
-                          :row-selection="projectbackground.rowSelection"
-                          :actions="projectbackground.actions"
-                          :is-flat-action="projectbackground.isFlatAction"
-                          :scroll="projectbackground.scroll"
-                          :combined="projectbackground.combined"
-                          :row-class-name="projectbackground.rowClassName"
+                          :actions="activityImgTableOne.actions"
+                          :is-flat-action="activityImgTableOne.isFlatAction"
+                          :row-class-name="activityImgTableOne.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -1071,7 +1064,7 @@ export default {
           },
         },
       },
-      projectbackground: {
+      activityImgTableOne: {
         columns: [
           {
             title: "图片",
@@ -1120,20 +1113,6 @@ export default {
           },
         ],
         paginationHidden: true,
-        pagination: {
-          current: 1,
-          pageSize: 10,
-        },
-        params: {},
-        getDataMap: {
-          list: "",
-          total: "",
-        },
-        paginationMap: {
-          pageNo: "pageNo",
-          pageSize: "pageSize",
-        },
-        rowSelection: {},
         actions: [
           {
             name: "编辑",
@@ -1147,16 +1126,20 @@ export default {
           },
         ],
         isFlatAction: true,
-        scroll: {
-          x: "100%",
-        },
-        combined: [],
         rowClassName: {},
       },
     };
   },
   watch: {},
+  mounted(e) {
+    this.onMounted(e);
+  },
   methods: {
+    onMounted() {
+      let self = this;
+      self.type = parseInt(self.$route.query.type);
+    },
+
     onAddBtn1Click() {
       this.addproject.visible = true;
     },
