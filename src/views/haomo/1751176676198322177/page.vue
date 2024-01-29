@@ -698,6 +698,7 @@ export default {
             type: "RadioGroup",
             title: "活动状态",
             required: true,
+            value: 0,
             props: {
               options: [
                 {
