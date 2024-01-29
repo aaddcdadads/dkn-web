@@ -1092,6 +1092,9 @@ export default {
 }
 
 .ele-wrapper-activityTable {
+  .table-div /deep/ .ant-table-thead > tr > th {
+    background: #fafafa;
+  }
   width: 98%;
   margin-left: 1%;
 }
