@@ -338,7 +338,10 @@
                                       title: '项目费用',
                                       style: { width: '100%' },
                                       required: true,
-                                      props: { limt: 1 },
+                                      props: {
+                                        maxCount: 1,
+                                        listType: 'picture-card',
+                                      },
                                     },
                                     cycle: {
                                       type: 'Input',
@@ -879,7 +882,8 @@ export default {
             },
             required: true,
             props: {
-              limt: 1,
+              maxCount: 1,
+              listType: "picture-card",
             },
           },
           cycle: {
