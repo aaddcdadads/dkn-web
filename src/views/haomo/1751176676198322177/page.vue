@@ -844,6 +844,9 @@ export default {
 .ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17 {
   border-left: 4px solid #0079fe;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12 {
@@ -858,6 +861,9 @@ export default {
   border-left: 4px solid #0079fe;
   margin-top: 15px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-5e707249-6d32-4c85-ac9b-b51a1a4e56c8 {
@@ -873,6 +879,9 @@ export default {
   border-left: 5px solid #0079fe;
   margin-top: 15px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41 {
@@ -892,6 +901,9 @@ export default {
   border-left: 4px solid #0079fe;
   margin-left: 8px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-d2a6a855-78d0-49b8-894e-a65162e803d6 {
@@ -921,6 +933,9 @@ export default {
   margin-top: 15px;
   margin-left: 8px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc {
