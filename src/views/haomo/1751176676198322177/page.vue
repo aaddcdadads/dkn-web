@@ -400,9 +400,9 @@
                   <div class="ele-wrapper ele-wrapper-addBackground">
                     <hm-modal
                       ref="addBackground"
-                      :z-index="1000"
+                      title="报名页背景图"
                       v-model:visible="addBackground.visible"
-                      title="项目背景图"
+                      :z-index="1000"
                       height="250px"
                       class="ele-addBackground"
                     >
