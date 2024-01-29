@@ -327,6 +327,7 @@
                               ref="addprize"
                               v-model:visible="addprize.visible"
                               :z-index="1000"
+                              height="200px"
                               class="ele-addprize"
                             >
                               <div
@@ -559,6 +560,7 @@
                       ref="addBackground"
                       v-model:visible="addBackground.visible"
                       :z-index="1000"
+                      height="200px"
                       class="ele-addBackground"
                     >
                       <div
