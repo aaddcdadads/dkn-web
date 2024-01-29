@@ -175,6 +175,7 @@
                       :config="storeAddForm.config"
                       v-model:value="storeAddForm.value"
                       :col-num="2"
+                      :col-min-width="380"
                       :schema="storeAddForm.schema"
                       :label-col="7"
                       :wrapper-col="14"
@@ -443,7 +444,7 @@ export default {
         visible: false,
       },
       storeAddModal: {
-        visible: false,
+        visible: true,
       },
       importButton: {},
       exportButton: {
@@ -462,7 +463,7 @@ export default {
             },
             props: {},
             validator: function (value) {},
-            required: false,
+            required: true,
             disabled: false,
           },
           urbanArea: {
@@ -472,6 +473,7 @@ export default {
               width: "50%",
             },
             props: {},
+            required: true,
             validator: function (value) {},
           },
           address: {
@@ -481,6 +483,7 @@ export default {
               width: "50%",
             },
             props: {},
+            required: true,
             validator: function (value) {},
           },
         },
