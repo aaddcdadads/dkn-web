@@ -665,8 +665,8 @@ export default {
             type: "RadioGroup",
             title: "活动状态",
             required: true,
+            default: 0,
             props: {
-              default: 0,
               options: [
                 {
                   label: "启用",
