@@ -13,11 +13,11 @@
           <div class="ele-wrapper ele-wrapper-titleCard">
             <hm-bg-card
               ref="titleCard"
-              box-shadow-blur=""
-              box-shadow-v-shadow=""
-              border-radius=""
               width="100%"
               height="100%"
+              border-radius=""
+              box-shadow-v-shadow=""
+              box-shadow-blur=""
               class="ele-titleCard"
             >
               <div class="ele-wrapper ele-wrapper-title">
@@ -33,9 +33,9 @@
               <div class="ele-wrapper ele-wrapper-isTitle">
                 <hm-ant-bg-text
                   ref="isTitle"
-                  color="#999999"
-                  font-size="14px"
-                  text="* 为必填项"
+                  :text="isTitle.text"
+                  :font-size="isTitle.fontSize"
+                  :color="isTitle.color"
                 >
                 </hm-ant-bg-text>
               </div>
@@ -399,13 +399,13 @@
                       <div class="ele-wrapper ele-wrapper-activityTwoForm">
                         <hm-ant-formily
                           ref="activityTwoForm"
-                          :schema="activityTwoForm.schema"
-                          :wrapper-col="16"
-                          :col-num="0"
-                          :label-col="3"
-                          :col-min-width="380"
                           :config="activityTwoForm.config"
                           v-model:value="activityTwoForm.value"
+                          :col-num="0"
+                          :col-min-width="380"
+                          :schema="activityTwoForm.schema"
+                          :label-col="3"
+                          :wrapper-col="16"
                           class="ele-activityTwoForm"
                         >
                         </hm-ant-formily>
@@ -500,6 +500,11 @@ export default {
         text: "创建活动",
         icon: "fa fa-tasks",
         fontSize: "14px",
+      },
+      isTitle: {
+        text: "* 为必填项",
+        fontSize: "14px",
+        color: "#999999",
       },
       addActivityProject: {
         visible: true,
@@ -887,28 +892,6 @@ export default {
         rowClassName: {},
       },
       activityTwoForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           unrealCount: {
             style: {
@@ -941,6 +924,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
     };
   },
@@ -956,7 +961,7 @@ export default {
       let self = this;
       self.title.text = "创建活动";
       self.isSaveOrUpdate.hidden = false;
-      self.isTitle = "* 为必填项";
+      self.isTitle.text = "* 为必填项";
       self.addActivityProject.visible = true;
       self.addActivityImgTableOne.visible = true;
       self.addActivityImgTableTwo.visible = true;
