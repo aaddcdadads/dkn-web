@@ -73,17 +73,20 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
 
 /********************** end addActivty 开始 *********************/
 
-/********************** ActivityProject 开始 *********************/
+/********************** addActivityProject 开始 *********************/
 
 /**
- * 逻辑流 ActivityProject 入口函数
+ * 逻辑流 addActivityProject 入口函数
  */
-const ActivityProject = (logic.ActivityProject = async (pageVm, eventData) => {
-  console.log(`ActivityProject: `, pageVm, eventData);
+const addActivityProject = (logic.addActivityProject = async (
+  pageVm,
+  eventData
+) => {
+  console.log(`addActivityProject: `, pageVm, eventData);
   self = Object.assign(pageVm, logic);
-  self.ActivityProjectData = eventData;
+  self.addActivityProjectData = eventData;
 });
 
-/********************** end ActivityProject 开始 *********************/
+/********************** end addActivityProject 开始 *********************/
 
-export { editRequest, addActivty, ActivityProject };
+export { editRequest, addActivty, addActivityProject };
