@@ -651,52 +651,52 @@ export default {
     return {
       activityForm: {
         config: {
-          " name": {
-            type: "Input",
-            title: "活动名称",
+          name: {
             style: {
               width: "100%",
             },
+            type: "Input",
+            title: "活动名称",
             required: true,
             props: {},
           },
           cycle: {
-            type: "RangePicker",
-            title: "活动周期",
             style: {
               width: "100%",
             },
+            type: "RangePicker",
+            title: "活动周期",
             required: true,
             props: {},
           },
-          EntryClose: {
+          closeTime: {
+            style: {
+              width: "100%",
+            },
             type: "DatePicker",
             title: "报名截止",
-            style: {
-              width: "100%",
-            },
             required: true,
             props: {
               showTime: true,
             },
           },
-          VerificationDeadline: {
+          pickUpTime: {
+            style: {
+              width: "100%",
+            },
             type: "DatePicker",
             title: "核销截止",
-            style: {
-              width: "100%",
-            },
             required: true,
             props: {
               showTime: true,
             },
           },
-          ActivityStatus: {
-            type: "RadioGroup",
-            title: "活动状态",
+          status: {
             style: {
               width: "100%",
             },
+            type: "RadioGroup",
+            title: "活动状态",
             required: true,
             props: {
               options: [
