@@ -67,9 +67,9 @@
                     class="ele-wrapper ele-wrapper-bf252f1b-c63f-43d8-b3da-2dc087a9f832"
                   >
                     <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
                       text="基本信息"
+                      font-size="14px"
+                      padding="2"
                       class="ele-bf252f1b-c63f-43d8-b3da-2dc087a9f832"
                     >
                     </hm-ant-bg-text>
@@ -103,9 +103,9 @@
                         class="ele-wrapper ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
                       >
                         <hm-ant-bg-text
-                          padding="2"
-                          font-size="14px"
                           text="活动费用设置（至少一个）"
+                          font-size="14px"
+                          padding="2"
                           class="ele-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
                         >
                         </hm-ant-bg-text>
@@ -157,9 +157,9 @@
                             class="ele-wrapper ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6"
                           >
                             <hm-ant-bg-text
-                              padding="2"
-                              font-size="14px"
                               text="活动奖品设置（可为空）"
+                              font-size="14px"
+                              padding="2"
                               class="ele-2030f92c-96b3-41e7-8403-353b98f5e6a6"
                             >
                             </hm-ant-bg-text>
@@ -215,9 +215,9 @@
                             class="ele-wrapper ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48"
                           >
                             <hm-ant-bg-text
-                              padding="2"
-                              font-size="14px"
                               text="活动信息"
+                              font-size="14px"
+                              padding="2"
                               class="ele-633b539d-81dc-4e94-af68-dfba9182db48"
                             >
                             </hm-ant-bg-text>
@@ -321,9 +321,9 @@
                     class="ele-wrapper ele-wrapper-56aec4a5-4b22-4f3e-9572-bd54033fe687"
                   >
                     <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
                       text="报名页信息框颜色设置"
+                      font-size="14px"
+                      padding="2"
                       class="ele-56aec4a5-4b22-4f3e-9572-bd54033fe687"
                     >
                     </hm-ant-bg-text>
@@ -350,9 +350,9 @@
                     class="ele-wrapper ele-wrapper-c9bf9691-385d-414d-864e-a07073520b33"
                   >
                     <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
                       text="报名页信息框字体颜色设置"
+                      font-size="14px"
+                      padding="2"
                       class="ele-c9bf9691-385d-414d-864e-a07073520b33"
                     >
                     </hm-ant-bg-text>
@@ -379,9 +379,9 @@
                     class="ele-wrapper ele-wrapper-610ad32f-244d-4af7-aad8-a7d343ac7d36"
                   >
                     <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
                       text="活动参与人数信息修改"
+                      font-size="14px"
+                      padding="2"
                       class="ele-610ad32f-244d-4af7-aad8-a7d343ac7d36"
                     >
                     </hm-ant-bg-text>
@@ -1010,6 +1010,9 @@ export default {
 .ele-wrapper-bf252f1b-c63f-43d8-b3da-2dc087a9f832 {
   border-left: 4px solid #0079fe;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-activityForm {
@@ -1027,6 +1030,9 @@ export default {
 .ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17 {
   border-left: 4px solid #0079fe;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-addActivityProject {
@@ -1041,6 +1047,9 @@ export default {
   border-left: 4px solid #0079fe;
   margin-top: 15px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-addActivityImgTableTwo {
@@ -1056,6 +1065,9 @@ export default {
   border-left: 5px solid #0079fe;
   margin-top: 15px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41 {
@@ -1075,6 +1087,9 @@ export default {
   border-left: 4px solid #0079fe;
   margin-left: 8px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-addActivityImgTableOne {
@@ -1091,6 +1106,9 @@ export default {
   margin-top: 15px;
   margin-left: 8px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-3fb31f2b-4a48-499a-ba2a-8181388283b9 {
@@ -1102,6 +1120,9 @@ export default {
   margin-top: 15px;
   margin-left: 8px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc {
@@ -1113,6 +1134,9 @@ export default {
   margin-top: 15px;
   margin-left: 8px;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-messageRenedit {
