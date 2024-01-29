@@ -211,11 +211,10 @@
                           </div>
                         </hm-modal>
                       </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-b53ef691-8b6b-4242-9901-a42d07512518"
-                      >
+                      <div class="ele-wrapper ele-wrapper-delete">
                         <hm-modal
-                          :visible="true"
+                          ref="delete"
+                          v-model:visible="delete.visible"
                           width="320px"
                           :z-index="1000"
                           height=""
@@ -311,7 +310,7 @@
                                 {
                                   name: '删除',
                                   callback:
-                                    'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                                    'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n      self.delete.visible = true;\n                        }',
                                   type: 'link',
                                   icon: 'fa fa-trash',
                                 },
@@ -463,7 +462,7 @@
                                     {
                                       name: '删除',
                                       callback:
-                                        'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                                        'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n       self.delete.visible = true;\n                        }',
                                       type: 'link',
                                       icon: 'fa fa-trash',
                                     },
@@ -688,7 +687,7 @@
                             {
                               name: '删除',
                               callback:
-                                'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                                'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n       self.delete.visible = true;\n                        }',
                               type: 'link',
                               icon: 'fa fa-trash',
                             },
@@ -905,7 +904,7 @@ export default {
       addBackground: {
         visible: false,
       },
-      "b53ef691-8b6b-4242-9901-a42d07512518": {
+      delete: {
         visible: true,
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
