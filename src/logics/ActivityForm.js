@@ -26,6 +26,7 @@ const setActivity = (logic.setActivity = function () {
     return;
   }
   let item = self.activityRequestData.result;
+  item.cycle = [item.startTime, item.endTime];
   self.$refs.activityForm.setFormValues(item);
   self.$refs.activityTwoForm.setFormValues(item);
 });
