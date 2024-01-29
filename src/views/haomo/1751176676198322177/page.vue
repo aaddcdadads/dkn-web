@@ -549,6 +549,7 @@
                       text="添加"
                       :type="'primary'"
                       icon="fa fa-plus"
+                      @click="onAddBtn3Click"
                       class="ele-addBtn3"
                     >
                     </hm-ant-button>
@@ -878,6 +879,9 @@ export default {
       addprize: {
         visible: false,
       },
+      addBackground: {
+        visible: false,
+      },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
         config: {
           " name": {
@@ -971,9 +975,6 @@ export default {
         },
         value: {},
       },
-      addBackground: {
-        visible: false,
-      },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         config: {
           " name": {
@@ -1010,6 +1011,9 @@ export default {
     },
     onAddBtn2Click() {
       this.addprize.visible = true;
+    },
+    onAddBtn3Click() {
+      this.addBackground.visible = true;
     },
   },
 };
