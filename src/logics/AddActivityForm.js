@@ -79,6 +79,13 @@ self.$router.push({
 /********************** end addActivty 开始 *********************/
 
 /********************** addActivityProject 开始 *********************/
+/**
+ * 处理
+ */
+const setData = logic.setData = function() {
+  
+}
+
 
 /**
  * 逻辑流 addActivityProject 入口函数
@@ -101,6 +108,7 @@ self.$refs.activityProjectTable.cData.push(item)
 
 self.addproject.visible=false
 self.$refs.activityProjectForm.reset()
+  setData();
 
 }
 
@@ -110,5 +118,6 @@ self.$refs.activityProjectForm.reset()
 export {
   editRequest,
   addActivty,
+  setData,
   addActivityProject,
 }
