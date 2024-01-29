@@ -688,15 +688,6 @@ export default {
             required: true,
             props: {},
           },
-          cycle: {
-            style: {
-              width: "100%",
-            },
-            type: "RangePicker",
-            title: "活动周期",
-            required: true,
-            props: {},
-          },
           closeTime: {
             style: {
               width: "100%",
@@ -718,6 +709,15 @@ export default {
             props: {
               showTime: true,
             },
+          },
+          cycle: {
+            style: {
+              width: "100%",
+            },
+            type: "RangePicker",
+            title: "活动周期",
+            required: true,
+            props: {},
           },
           status: {
             style: {

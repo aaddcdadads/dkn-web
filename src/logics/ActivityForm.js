@@ -173,7 +173,7 @@ const detail = (logic.detail = async (pageVm, eventData) => {
 
 /********************** end detail 开始 *********************/
 
-/********************** addActivty 开始 *********************/
+/********************** saveOrUpdate 开始 *********************/
 /**
  * 发送添加请求
  */
@@ -182,64 +182,6 @@ const addRequest = (logic.addRequest = async function () {
   self.addRequestData = res;
 });
 
-/**
- * 逻辑流 addActivty 入口函数
- */
-const addActivty = (logic.addActivty = async (pageVm, eventData) => {
-  console.log(`addActivty: `, pageVm, eventData);
-  self = Object.assign(pageVm, logic);
-  self.addActivtyData = eventData;
-
-  await self.$refs.activityForm.validate();
-  await self.$refs.activityExtForm.validate();
-
-  let activityProjects = [],
-    activityImgs = [],
-    activityExts = [];
-  activityExts = [{ ...self.$refs.activityExtForm.getFormValues() }];
-  if (self.$refs.activityProjectTable.cData.length > 0) {
-    activityProjects = self.$refs.activityProjectTable.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      return x;
-    });
-  }
-  if (self.$refs.activityImgTableOne.cData.length > 0) {
-    activityProjects = self.$refs.activityImgTableOne.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      x.type = 0;
-      return x;
-    });
-  }
-  if (self.$refs.activityImgTableTwo.cData.length > 0) {
-    let list = self.$refs.activityImgTableTwo.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      x.type = 1;
-      return x;
-    });
-    activityProjects = [...activityProjects, ...list];
-  }
-  self.item = {
-    ...self.$refs.activityForm.getFormValues(),
-    ...self.$refs.activityExtForm.getFormValues(),
-    activityExts,
-    activityImgs,
-    activityExts,
-  };
-
-  await addRequest();
-  if (self.addRequestData.success) {
-    self.$message.error(self.addRequestData.message);
-    return;
-  }
-  self.$message.success("操作成功");
-  self.$router.push({
-    path: `/haomo/1750448384092672002/page`,
-  });
-});
-
-/********************** end addActivty 开始 *********************/
-
-/********************** saveOrUpdate 开始 *********************/
 /**
  * 发送编辑请求
  */
@@ -295,18 +237,28 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
     activityExts,
     activityImgs,
     activityExts,
-    id: self.id,
   };
-
-  await editRequest();
-  if (self.editRequestData.success) {
-    self.$message.error(self.editRequestData.message);
-    return;
+  if (self.type === 1) {
+    await addRequest();
+    if (self.addRequestData.success) {
+      self.$message.error(self.addRequestData.message);
+      return;
+    }
+    self.$message.success("操作成功");
+    self.$router.push({
+      path: `/haomo/1750448384092672002/page`,
+    });
+  } else {
+    await editRequest();
+    if (self.editRequestData.success) {
+      self.$message.error(self.editRequestData.message);
+      return;
+    }
+    self.$message.success("操作成功");
+    self.$router.push({
+      path: `/haomo/1750448384092672002/page`,
+    });
   }
-  self.$message.success("操作成功");
-  self.$router.push({
-    path: `/haomo/1750448384092672002/page`,
-  });
 });
 
 /********************** end saveOrUpdate 开始 *********************/
@@ -322,7 +274,6 @@ export {
   setActivityImg,
   detail,
   addRequest,
-  addActivty,
   editRequest,
   saveOrUpdate,
 };

@@ -76,16 +76,58 @@
                     >
                     </hm-ant-bg-text>
                   </div>
-                  <div class="ele-wrapper ele-wrapper-activityForm">
+                  <div
+                    class="ele-wrapper ele-wrapper-7714511a-00ae-4c70-afd4-04b3e388c348"
+                  >
                     <hm-ant-formily
-                      ref="activityForm"
-                      :config="activityForm.config"
-                      v-model:value="activityForm.value"
+                      :config="{
+                        ' name': {
+                          type: 'Input',
+                          title: '活动名称',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {},
+                        },
+                        cycle: {
+                          type: 'RangePicker',
+                          title: '活动周期',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {},
+                        },
+                        EntryClose: {
+                          type: 'DatePicker',
+                          title: '报名截止',
+                          style: { width: '100%' },
+                          required: true,
+                          props: { showTime: true },
+                        },
+                        VerificationDeadline: {
+                          type: 'DatePicker',
+                          title: '核销截止',
+                          style: { width: '100%' },
+                          required: true,
+                          props: { showTime: true },
+                        },
+                        ActivityStatus: {
+                          type: 'RadioGroup',
+                          title: '活动状态',
+                          style: { width: '100%' },
+                          required: true,
+                          props: {
+                            options: [
+                              { label: '启用', value: 0 },
+                              { label: '禁用', value: 1 },
+                            ],
+                          },
+                        },
+                      }"
+                      :value="{}"
                       :col-num="0"
                       :col-min-width="380"
                       :label-col="3"
                       :wrapper-col="16"
-                      class="ele-activityForm"
+                      class="ele-7714511a-00ae-4c70-afd4-04b3e388c348"
                     >
                     </hm-ant-formily>
                   </div>
@@ -129,7 +171,6 @@
                           v-model:visible="addproject.visible"
                           :z-index="1000"
                           height="240px"
-                          :style="addproject.style"
                           class="ele-addproject"
                         >
                           <div
@@ -162,24 +203,6 @@
                               :value="{}"
                               :col-num="0"
                               :col-min-width="380"
-                              :schema="{
-                                type: 'object',
-                                properties: {
-                                  form: {
-                                    type: 'void',
-                                    'x-component': 'Form',
-                                    'x-component-props': {
-                                      style: {
-                                        display: 'flex',
-                                        flexWrap: 'wrap',
-                                      },
-                                      'label-col': { span: 7 },
-                                      'wrapper-col': { span: 14 },
-                                    },
-                                    properties: {},
-                                  },
-                                },
-                              }"
                               :label-col="6"
                               :wrapper-col="16"
                               class="ele-7c1be11a-b36f-498c-ba73-bcabfe46ade4"
@@ -196,7 +219,6 @@
                           width="320px"
                           :z-index="1000"
                           height=""
-                          :style="deleteproject.style"
                           class="ele-deleteproject"
                         >
                           <div class="ele-wrapper ele-wrapper-delText">
@@ -221,23 +243,15 @@
                           box-shadow-blur=""
                           class="ele-678d6f52-6548-4f95-b813-d079ff38bb6f"
                         >
-                          <div
-                            class="ele-wrapper ele-wrapper-activityProjectTable"
-                          >
+                          <div class="ele-wrapper ele-wrapper-projectcost">
                             <hm-ant-table
-                              ref="activityProjectTable"
-                              :columns="activityProjectTable.columns"
-                              :data="activityProjectTable.data"
-                              :pagination-hidden="
-                                activityProjectTable.paginationHidden
-                              "
-                              :actions="activityProjectTable.actions"
-                              :is-flat-action="
-                                activityProjectTable.isFlatAction
-                              "
-                              :row-class-name="
-                                activityProjectTable.rowClassName
-                              "
+                              ref="projectcost"
+                              :columns="projectcost.columns"
+                              :data="projectcost.data"
+                              :pagination-hidden="projectcost.paginationHidden"
+                              :actions="projectcost.actions"
+                              :is-flat-action="projectcost.isFlatAction"
+                              :row-class-name="projectcost.rowClassName"
                             >
                             </hm-ant-table>
                           </div>
@@ -269,7 +283,6 @@
                               v-model:visible="addprize.visible"
                               :z-index="1000"
                               height="250px"
-                              :style="addprize.style"
                               class="ele-addprize"
                             >
                               <div
@@ -297,24 +310,6 @@
                                   :value="{}"
                                   :col-num="0"
                                   :col-min-width="380"
-                                  :schema="{
-                                    type: 'object',
-                                    properties: {
-                                      form: {
-                                        type: 'void',
-                                        'x-component': 'Form',
-                                        'x-component-props': {
-                                          style: {
-                                            display: 'flex',
-                                            flexWrap: 'wrap',
-                                          },
-                                          'label-col': { span: 7 },
-                                          'wrapper-col': { span: 14 },
-                                        },
-                                        properties: {},
-                                      },
-                                    },
-                                  }"
                                   :label-col="7"
                                   :wrapper-col="14"
                                 >
@@ -333,23 +328,17 @@
                               box-shadow-blur=""
                               class="ele-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                             >
-                              <div
-                                class="ele-wrapper ele-wrapper-activityImgTableTwo"
-                              >
+                              <div class="ele-wrapper ele-wrapper-projectimage">
                                 <hm-ant-table
-                                  ref="activityImgTableTwo"
-                                  :columns="activityImgTableTwo.columns"
-                                  :data="activityImgTableTwo.data"
+                                  ref="projectimage"
+                                  :columns="projectimage.columns"
+                                  :data="projectimage.data"
                                   :pagination-hidden="
-                                    activityImgTableTwo.paginationHidden
+                                    projectimage.paginationHidden
                                   "
-                                  :actions="activityImgTableTwo.actions"
-                                  :is-flat-action="
-                                    activityImgTableTwo.isFlatAction
-                                  "
-                                  :row-class-name="
-                                    activityImgTableTwo.rowClassName
-                                  "
+                                  :actions="projectimage.actions"
+                                  :is-flat-action="projectimage.isFlatAction"
+                                  :row-class-name="projectimage.rowClassName"
                                 >
                                 </hm-ant-table>
                               </div>
@@ -378,17 +367,41 @@
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
                               <div
-                                class="ele-wrapper ele-wrapper-activityExtForm"
+                                class="ele-wrapper ele-wrapper-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
                               >
                                 <hm-ant-formily
-                                  ref="activityExtForm"
-                                  :config="activityExtForm.config"
-                                  v-model:value="activityExtForm.value"
+                                  :config="{
+                                    ' rule': {
+                                      type: 'Textarea',
+                                      title: '活动规则',
+                                      style: { width: '100%' },
+                                      props: {
+                                        showCount: true,
+                                        placeholder: '请输入活动规则',
+                                      },
+                                    },
+                                    agreement: {
+                                      type: 'Textarea',
+                                      title: '协议与承诺书',
+                                      style: { width: '100%' },
+                                      props: {
+                                        showCount: true,
+                                        placeholder:
+                                          '请输入《活动报名用户协议及承诺书》',
+                                      },
+                                    },
+                                    customerService: {
+                                      type: 'Input',
+                                      title: '活动咨询与客服',
+                                      style: { width: '100%' },
+                                    },
+                                  }"
+                                  :value="{}"
                                   :col-num="0"
                                   :col-min-width="380"
                                   :label-col="5"
                                   :wrapper-col="18"
-                                  class="ele-activityExtForm"
+                                  class="ele-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -438,7 +451,6 @@
                       v-model:visible="addBackground.visible"
                       :z-index="1000"
                       height="250px"
-                      :style="addBackground.style"
                       class="ele-addBackground"
                     >
                       <div
@@ -466,21 +478,6 @@
                           :value="{}"
                           :col-num="0"
                           :col-min-width="380"
-                          :schema="{
-                            type: 'object',
-                            properties: {
-                              form: {
-                                type: 'void',
-                                'x-component': 'Form',
-                                'x-component-props': {
-                                  style: { display: 'flex', flexWrap: 'wrap' },
-                                  'label-col': { span: 7 },
-                                  'wrapper-col': { span: 14 },
-                                },
-                                properties: {},
-                              },
-                            },
-                          }"
                           :label-col="7"
                           :wrapper-col="14"
                         >
@@ -499,17 +496,17 @@
                       box-shadow-blur=""
                       class="ele-89ea97da-357c-4295-9803-b1d0b63db0a2"
                     >
-                      <div class="ele-wrapper ele-wrapper-activityImgTableOne">
+                      <div class="ele-wrapper ele-wrapper-projectbackground">
                         <hm-ant-table
-                          ref="activityImgTableOne"
-                          :columns="activityImgTableOne.columns"
-                          :data="activityImgTableOne.data"
+                          ref="projectbackground"
+                          :columns="projectbackground.columns"
+                          :data="projectbackground.data"
                           :pagination-hidden="
-                            activityImgTableOne.paginationHidden
+                            projectbackground.paginationHidden
                           "
-                          :actions="activityImgTableOne.actions"
-                          :is-flat-action="activityImgTableOne.isFlatAction"
-                          :row-class-name="activityImgTableOne.rowClassName"
+                          :actions="projectbackground.actions"
+                          :is-flat-action="projectbackground.isFlatAction"
+                          :row-class-name="projectbackground.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -595,7 +592,6 @@
                   :type="'primary'"
                   :size="'large'"
                   icon="fa fa-check-circle"
-                  @click="onEle78Fb256892504A78987DC766B916F771Click"
                   class="ele-78fb2568-9250-4a78-987d-c766b916f771"
                 >
                 </hm-ant-button>
@@ -632,8 +628,6 @@ import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
-import { addActivty } from "/@/logics/ActivityForm";
-
 export default {
   name: "NewActivity",
   components: {
@@ -649,54 +643,54 @@ export default {
   data() {
     let self = this;
     return {
-      activityForm: {
+      "7714511a-00ae-4c70-afd4-04b3e388c348": {
         config: {
-          name: {
+          " name": {
+            type: "Input",
+            title: "活动名称",
             style: {
               width: "100%",
             },
-            type: "Input",
-            title: "活动名称",
             required: true,
             props: {},
           },
           cycle: {
+            type: "RangePicker",
+            title: "活动周期",
             style: {
               width: "100%",
             },
-            type: "RangePicker",
-            title: "活动周期",
             required: true,
             props: {},
           },
-          closeTime: {
-            style: {
-              width: "100%",
-            },
+          EntryClose: {
             type: "DatePicker",
             title: "报名截止",
+            style: {
+              width: "100%",
+            },
             required: true,
             props: {
               showTime: true,
             },
           },
-          pickUpTime: {
-            style: {
-              width: "100%",
-            },
+          VerificationDeadline: {
             type: "DatePicker",
             title: "核销截止",
+            style: {
+              width: "100%",
+            },
             required: true,
             props: {
               showTime: true,
             },
           },
-          status: {
+          ActivityStatus: {
+            type: "RadioGroup",
+            title: "活动状态",
             style: {
               width: "100%",
             },
-            type: "RadioGroup",
-            title: "活动状态",
             required: true,
             value: 0,
             props: {
@@ -717,27 +711,15 @@ export default {
       },
       addproject: {
         visible: false,
-        style: {
-          top: "100px",
-        },
-      },
-      addprize: {
-        visible: false,
-        style: {
-          top: "100px",
-        },
-      },
-      addBackground: {
-        visible: false,
-        style: {
-          top: "100px",
-        },
       },
       deleteproject: {
         visible: false,
-        style: {
-          top: "100px",
-        },
+      },
+      addprize: {
+        visible: false,
+      },
+      addBackground: {
+        visible: false,
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
         config: {
@@ -770,30 +752,8 @@ export default {
           },
         },
         value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              type: "void",
-              "x-component": "Form",
-              "x-component-props": {
-                style: {
-                  display: "flex",
-                  flexWrap: "wrap",
-                },
-                "label-col": {
-                  span: 7,
-                },
-                "wrapper-col": {
-                  span: 14,
-                },
-              },
-              properties: {},
-            },
-          },
-        },
       },
-      activityProjectTable: {
+      projectcost: {
         columns: [
           {
             title: "项目费用",
@@ -852,11 +812,19 @@ export default {
         actions: [
           {
             name: "编辑",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.addproject.visible = true;
+            },
             type: "link",
             icon: "fa fa-pencil",
           },
           {
             name: "删除",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+              self.deleteproject.visible = true;
+            },
             type: "link",
             icon: "fa fa-trash",
           },
@@ -890,30 +858,8 @@ export default {
           },
         },
         value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              type: "void",
-              "x-component": "Form",
-              "x-component-props": {
-                style: {
-                  display: "flex",
-                  flexWrap: "wrap",
-                },
-                "label-col": {
-                  span: 7,
-                },
-                "wrapper-col": {
-                  span: 14,
-                },
-              },
-              properties: {},
-            },
-          },
-        },
       },
-      activityImgTableTwo: {
+      projectimage: {
         columns: [
           {
             title: "奖品图片",
@@ -973,11 +919,19 @@ export default {
         actions: [
           {
             name: "编辑",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.addprize.visible = true;
+            },
             type: "link",
             icon: "fa fa-pencil",
           },
           {
             name: "删除",
+            callback: function (item) {
+              console.log("点击删除: ", self.deleteproject.visible);
+              self.deleteproject.visible = true;
+            },
             type: "link",
             icon: "fa fa-trash",
           },
@@ -985,37 +939,36 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      activityExtForm: {
+      "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
         config: {
-          activityRules: {
+          " rule": {
+            type: "Textarea",
+            title: "活动规则",
             style: {
               width: "100%",
             },
-            type: "Textarea",
-            title: "活动规则",
             props: {
               showCount: true,
               placeholder: "请输入活动规则",
             },
           },
-          protocol: {
+          agreement: {
+            type: "Textarea",
+            title: "协议与承诺书",
             style: {
               width: "100%",
             },
-            type: "Textarea",
-            title: "协议与承诺书",
             props: {
               showCount: true,
               placeholder: "请输入《活动报名用户协议及承诺书》",
             },
           },
           customerService: {
+            type: "Input",
+            title: "活动咨询与客服",
             style: {
               width: "100%",
             },
-            type: "Input",
-            title: "活动咨询与客服",
-            props: {},
           },
         },
         value: {},
@@ -1046,30 +999,8 @@ export default {
           },
         },
         value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              type: "void",
-              "x-component": "Form",
-              "x-component-props": {
-                style: {
-                  display: "flex",
-                  flexWrap: "wrap",
-                },
-                "label-col": {
-                  span: 7,
-                },
-                "wrapper-col": {
-                  span: 14,
-                },
-              },
-              properties: {},
-            },
-          },
-        },
       },
-      activityImgTableOne: {
+      projectbackground: {
         columns: [
           {
             title: "图片",
@@ -1121,11 +1052,19 @@ export default {
         actions: [
           {
             name: "编辑",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.addBackground.visible = true;
+            },
             type: "link",
             icon: "fa fa-pencil",
           },
           {
             name: "删除",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+              self.deleteproject.visible = true;
+            },
             type: "link",
             icon: "fa fa-trash",
           },
@@ -1136,15 +1075,7 @@ export default {
     };
   },
   watch: {},
-  mounted(e) {
-    this.onMounted(e);
-  },
   methods: {
-    onMounted() {
-      let self = this;
-      self.type = parseInt(self.$route.query.type);
-    },
-
     onAddBtn1Click() {
       this.addproject.visible = true;
     },
@@ -1153,9 +1084,6 @@ export default {
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
-    },
-    onEle78Fb256892504A78987DC766B916F771Click() {
-      addActivty(this, arguments);
     },
   },
 };
@@ -1206,7 +1134,7 @@ export default {
   }
 }
 
-.ele-wrapper-activityForm {
+.ele-wrapper-7714511a-00ae-4c70-afd4-04b3e388c348 {
   margin-top: 15px;
   /deep/.ant-calendar-picker {
     width: 100%;
@@ -1287,7 +1215,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-activityExtForm {
+.ele-wrapper-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870 {
   width: 100%;
   margin-top: 20px;
 }
