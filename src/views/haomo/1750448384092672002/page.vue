@@ -115,6 +115,7 @@
                           <hm-ant-button
                             text="批量启用"
                             :type="'primary'"
+                            @click="onEle357D4D6EB12447F2A52EFe3E70Eceaf1Click"
                             class="ele-357d4d6e-b124-47f2-a52e-fe3e70eceaf1"
                           >
                           </hm-ant-button>
@@ -125,6 +126,7 @@
                           <hm-ant-button
                             text="批量禁用"
                             :type="'primary'"
+                            @click="onEle1Fe6F16D96514A19AefdAdf4F60782DcClick"
                             class="ele-1fe6f16d-9651-4a19-aefd-adf4f60782dc"
                           >
                           </hm-ant-button>
@@ -135,6 +137,7 @@
                           <hm-ant-button
                             text="批量删除"
                             :type="'primary'"
+                            @click="onElec6152B5761B346A7855726437D83E072Click"
                             class="ele-c6152b57-61b3-46a7-8557-26437d83e072"
                           >
                           </hm-ant-button>
@@ -395,7 +398,8 @@
               height=""
             >
               <div class="ele-wrapper ele-wrapper-prompt">
-                <hm-ant-bg-text ref="prompt"> </hm-ant-bg-text>
+                <hm-ant-bg-text ref="prompt" :text="prompt.text">
+                </hm-ant-bg-text>
               </div>
             </hm-modal>
           </div>
@@ -537,6 +541,12 @@ export default {
       activityAddModal: {
         visible: false,
       },
+      batchEdit: {
+        visible: true,
+      },
+      prompt: {
+        text: "文字",
+      },
       allStatus: {},
       selectedRows: {},
       importButton: {
@@ -655,9 +665,6 @@ export default {
       },
       activityDetailModal: {
         visible: false,
-      },
-      batchEdit: {
-        visible: true,
       },
       activityFilter: {
         config: {
@@ -957,6 +964,24 @@ export default {
     },
     onExportButtonClick() {
       exportActivity(this, arguments);
+    },
+    onEle357D4D6EB12447F2A52EFe3E70Eceaf1Click() {
+      this.$nextTicj(() => {
+        this.batchEdit.visible = true;
+        this.prompt.text = "确认批量启用";
+      });
+    },
+    onEle1Fe6F16D96514A19AefdAdf4F60782DcClick() {
+      this.$nextTicj(() => {
+        this.batchEdit.visible = true;
+        this.prompt.text = "确认批量禁用";
+      });
+    },
+    onElec6152B5761B346A7855726437D83E072Click() {
+      this.$nextTicj(() => {
+        this.batchEdit.visible = true;
+        this.prompt.text = "确认批量删除";
+      });
     },
     onEle128De5D58A3B40DaAbea0C30F1Be5Fe1Click() {
       //this.activityAddModal.visible = true;
