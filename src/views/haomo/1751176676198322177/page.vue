@@ -557,10 +557,11 @@
                 class="ele-wrapper ele-wrapper-78fb2568-9250-4a78-987d-c766b916f771"
               >
                 <hm-ant-button
-                  :size="'large'"
-                  icon="fa fa-check-circle"
                   text="创建活动"
                   :type="'primary'"
+                  :size="'large'"
+                  icon="fa fa-check-circle"
+                  @click="onEle78Fb256892504A78987DC766B916F771Click"
                   class="ele-78fb2568-9250-4a78-987d-c766b916f771"
                 >
                 </hm-ant-button>
@@ -597,7 +598,7 @@ import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
-import { addActivityProject } from "/@/logics/AddActivityForm";
+import { addActivityProject, addActivty } from "/@/logics/AddActivityForm";
 
 export default {
   name: "NewActivity",
@@ -1243,6 +1244,9 @@ export default {
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
+    },
+    onEle78Fb256892504A78987DC766B916F771Click() {
+      addActivty(this, arguments);
     },
   },
 };
