@@ -713,7 +713,6 @@ export default {
           reset: {
             type: "HmAntButton",
             title: "",
-            width: 100,
             style: {
               width: "80px",
               marginLeft: "20px",
