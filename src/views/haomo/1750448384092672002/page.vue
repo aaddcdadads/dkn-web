@@ -658,7 +658,7 @@ export default {
             type: "Input",
             title: "搜索活动",
             style: {
-              width: "40%",
+              width: "30%",
             },
             props: {},
             validator: function (value) {},
@@ -667,7 +667,7 @@ export default {
             type: "HmAntSelect",
             title: "活动状态",
             style: {
-              width: "40%",
+              width: "30%",
             },
             props: {
               title: "",
