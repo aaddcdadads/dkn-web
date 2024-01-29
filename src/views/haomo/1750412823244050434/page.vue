@@ -16,6 +16,9 @@
       <div class="ele-wrapper ele-wrapper-b887353f-cf53-4f8c-82e6-bb5ac781fdc2">
         <hm-bg-card> </hm-bg-card>
       </div>
+      <div class="ele-wrapper ele-wrapper-121cc922-b1eb-439a-b418-860f53e4bc9f">
+        <hm-color-kit> </hm-color-kit>
+      </div>
     </div>
   </div>
 </template>
@@ -23,11 +26,13 @@
 <script>
 import { h } from "vue";
 import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
+import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 export default {
   name: "Test",
   components: {
     HmBgCard,
+    HmColorKit,
   },
   data() {
     let self = this;
