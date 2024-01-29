@@ -715,7 +715,7 @@ export default {
         visible: false,
       },
       addprize: {
-        visible: false,
+        visible: true,
       },
       addBackground: {
         visible: false,
