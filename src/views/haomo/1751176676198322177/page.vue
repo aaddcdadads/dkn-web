@@ -844,7 +844,7 @@ export default {
                 img: self.getImg(data.record.imgPath),
                 color: "black",
                 imgStyle: {
-                  height: "16px",
+                  height: "32px",
                   marginRight: "4px",
                   marginTop: "-4px",
                 },
