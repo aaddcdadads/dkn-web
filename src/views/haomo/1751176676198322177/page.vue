@@ -126,9 +126,9 @@
                       <div class="ele-wrapper ele-wrapper-addproject">
                         <hm-modal
                           ref="addproject"
-                          :z-index="1000"
-                          v-model:visible="addproject.visible"
                           title="添加项目"
+                          v-model:visible="addproject.visible"
+                          :z-index="1000"
                           height=""
                           @ok="onAddprojectOk"
                           class="ele-addproject"
@@ -229,9 +229,9 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              title="奖品图片"
-                              v-model:visible="addprize.visible"
                               :z-index="1000"
+                              v-model:visible="addprize.visible"
+                              title="奖品图片"
                               height="250px"
                               class="ele-addprize"
                             >
@@ -400,9 +400,9 @@
                   <div class="ele-wrapper ele-wrapper-addBackground">
                     <hm-modal
                       ref="addBackground"
-                      title="项目背景图"
-                      v-model:visible="addBackground.visible"
                       :z-index="1000"
+                      v-model:visible="addBackground.visible"
+                      title="项目背景图"
                       height="250px"
                       class="ele-addBackground"
                     >
