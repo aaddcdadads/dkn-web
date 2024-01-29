@@ -823,7 +823,7 @@ export default {
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
-              this.$refs.addprice.visible = true;
+              self.addprice.visible = true;
             },
             type: "link",
           },
@@ -921,7 +921,7 @@ export default {
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
-              this.$refs.addprize.visible = true;
+              self.addprize.visible = true;
             },
             type: "link",
           },
@@ -1076,7 +1076,7 @@ export default {
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
-              this.$refs.addimage.visible = true;
+              self.addimage.visible = true;
             },
             type: "link",
           },
