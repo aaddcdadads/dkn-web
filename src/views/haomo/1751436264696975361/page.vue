@@ -232,7 +232,7 @@
                                 <hm-ant-formily
                                   :config="{
                                     ' name': {
-                                      type: 'Input',
+                                      type: 'Upload',
                                       title: '奖品图片',
                                       style: { width: '100%' },
                                       required: true,
@@ -840,7 +840,7 @@ export default {
       "d6c85f5d-e546-49ce-802d-fe0a03aa2546": {
         config: {
           " name": {
-            type: "Input",
+            type: "Upload",
             title: "奖品图片",
             style: {
               width: "100%",
