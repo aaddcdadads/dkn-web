@@ -1018,32 +1018,7 @@ export default {
             key: "action",
           },
         ],
-        data: [
-          {
-            address: "1",
-            school: "",
-            name: "",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "2",
-            school: "",
-            name: "",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "3",
-            school: "",
-            name: "",
-            key: "3",
-            age: "",
-            sexual: "",
-          },
-        ],
+        data: [],
         paginationHidden: true,
         getDataMap: {
           total: "",
