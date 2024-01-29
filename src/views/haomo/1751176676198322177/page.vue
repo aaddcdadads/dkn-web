@@ -111,7 +111,7 @@
                         },
                         ActivityStatus: {
                           type: 'RadioGroup',
-                          title: '核销截止',
+                          title: '活动状态',
                           style: { width: '100%' },
                           required: true,
                           props: {
@@ -716,7 +716,7 @@ export default {
           },
           ActivityStatus: {
             type: "RadioGroup",
-            title: "核销截止",
+            title: "活动状态",
             style: {
               width: "100%",
             },
