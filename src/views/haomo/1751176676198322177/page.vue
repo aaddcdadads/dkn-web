@@ -130,6 +130,7 @@
                           v-model:visible="addproject.visible"
                           :z-index="1000"
                           height=""
+                          :auto-close="false"
                           @ok="onAddprojectOk"
                           class="ele-addproject"
                         >
