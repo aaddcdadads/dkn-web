@@ -967,19 +967,19 @@ export default {
       exportActivity(this, arguments);
     },
     onBathqiyongClick() {
-      this.$nextTicj(() => {
+      this.$nextTick(() => {
         this.batchEdit.visible = true;
         this.prompt.text = "确认批量启用";
       });
     },
     onBatchBisabledClick() {
-      this.$nextTicj(() => {
+      this.$nextTick(() => {
         this.batchEdit.visible = true;
         this.prompt.text = "确认批量禁用";
       });
     },
     onBatchDeleteClick() {
-      this.$nextTicj(() => {
+      this.$nextTick(() => {
         this.batchEdit.visible = true;
         this.prompt.text = "确认批量删除";
       });
