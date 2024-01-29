@@ -109,27 +109,6 @@
                         box-shadow-color="#00000000"
                         class="ele-4aad8761-7b58-4d08-b5a2-91fea232f9fe"
                       >
-                        <div class="ele-wrapper ele-wrapper-allStatus">
-                          <hm-ant-select
-                            ref="allStatus"
-                            v-model:value="allStatus.value"
-                            title=""
-                            placeholder="请选择批量操作"
-                            v-model:options="allStatus.options"
-                            class="ele-allStatus"
-                          >
-                          </hm-ant-select>
-                        </div>
-                        <div
-                          class="ele-wrapper ele-wrapper-a9bfb5ef-3877-49fb-a1cf-f095389cbd2e"
-                        >
-                          <hm-ant-button
-                            text="确认"
-                            @click="onElea9Bfb5Ef387749FbA1CfF095389Cbd2EClick"
-                            class="ele-a9bfb5ef-3877-49fb-a1cf-f095389cbd2e"
-                          >
-                          </hm-ant-button>
-                        </div>
                         <div
                           class="ele-wrapper ele-wrapper-128de5d5-8a3b-40da-abea-0c30f1be5fe1"
                         >
@@ -394,7 +373,6 @@ import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
-import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
@@ -418,7 +396,6 @@ export default {
     HmAntFormily,
     HmAntButton,
     HmAntUpload,
-    HmAntSelect,
     HmAntTable,
     HmModal,
     HmAntIconText,
@@ -517,34 +494,8 @@ export default {
       activityAddModal: {
         visible: false,
       },
+      allStatus: {},
       selectedRows: {},
-      allStatus: {
-        value: null,
-        options: [
-          {
-            label: "启用",
-            value: 1,
-          },
-          {
-            label: "停用",
-            value: 2,
-          },
-          {
-            label: "删除",
-            value: 3,
-          },
-        ],
-      },
-      allModal: {
-        title: "删除",
-        visible: false,
-      },
-      allText: {
-        text: "是否要删除?",
-        color: "#CF2323",
-        textAlign: "left",
-        padding: "0",
-      },
       importButton: {
         visible: false,
         headers: null,
@@ -648,6 +599,16 @@ export default {
           span: "文字内容",
         },
         schema: {},
+      },
+      allModal: {
+        title: "删除",
+        visible: false,
+      },
+      allText: {
+        text: "是否要删除?",
+        color: "#CF2323",
+        textAlign: "left",
+        padding: "0",
       },
       activityDetailModal: {
         visible: false,
@@ -937,29 +898,6 @@ export default {
     onExportButtonClick() {
       exportActivity(this, arguments);
     },
-    onElea9Bfb5Ef387749FbA1CfF095389Cbd2EClick() {
-      let self = this;
-      if (!self.selectedRows || !self.selectedRows.length > 0) {
-        self.$message.error("请选择活动");
-        return;
-      }
-      if (!self.allStatus.value) {
-        self.$message.error("请选择批量操作");
-        return;
-      }
-
-      self.allModal.visible = true;
-      if (self.allStatus.value === 1) {
-        self.allModal.title = "启用";
-        self.allText.text = "确定全部启用吗";
-      } else if (self.allStatus.value === 2) {
-        self.allModal.title = "停用";
-        self.allText.text = "确定全部停用吗";
-      } else if (self.allStatus.value === 3) {
-        self.allModal.title = "删除";
-        self.allText.text = "确定全部删除吗";
-      }
-    },
     onEle128De5D58A3B40DaAbea0C30F1Be5Fe1Click() {
       //this.activityAddModal.visible = true;
       this.$router.push({
@@ -1077,14 +1015,6 @@ export default {
 
 .ele-wrapper-4aad8761-7b58-4d08-b5a2-91fea232f9fe {
   width: 100%;
-}
-
-.ele-wrapper-allStatus {
-  margin-right: 20px;
-}
-
-.ele-wrapper-a9bfb5ef-3877-49fb-a1cf-f095389cbd2e {
-  margin-right: 120px;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
