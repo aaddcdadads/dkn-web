@@ -332,6 +332,22 @@
                                 class="ele-wrapper ele-wrapper-ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b"
                               >
                                 <hm-ant-formily
+                                  :config="{
+                                    ' name': {
+                                      type: 'Upload',
+                                      title: '项目费用',
+                                      style: { width: '100%' },
+                                      required: true,
+                                      props: { limt: 1 },
+                                    },
+                                    cycle: {
+                                      type: 'Input',
+                                      title: '活动项目名称',
+                                      style: { width: '100%' },
+                                      required: true,
+                                      props: { placeholder: '请输入活动名称' },
+                                    },
+                                  }"
                                   :value="{}"
                                   :col-num="0"
                                   :col-min-width="380"
@@ -854,6 +870,30 @@ export default {
         visible: true,
       },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
+        config: {
+          " name": {
+            type: "Upload",
+            title: "项目费用",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {
+              limt: 1,
+            },
+          },
+          cycle: {
+            type: "Input",
+            title: "活动项目名称",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {
+              placeholder: "请输入活动名称",
+            },
+          },
+        },
         value: {},
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
