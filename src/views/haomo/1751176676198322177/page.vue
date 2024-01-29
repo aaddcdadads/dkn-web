@@ -241,28 +241,6 @@
                                 class="ele-wrapper ele-wrapper-ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b"
                               >
                                 <hm-ant-formily
-                                  :schema="{
-                                    type: 'object',
-                                    properties: {
-                                      form: {
-                                        'x-component': 'Form',
-                                        'x-component-props': {
-                                          'wrapper-col': { span: 14 },
-                                          'label-col': { span: 7 },
-                                          style: {
-                                            flexWrap: 'wrap',
-                                            display: 'flex',
-                                          },
-                                        },
-                                        type: 'void',
-                                        properties: {},
-                                      },
-                                    },
-                                  }"
-                                  :wrapper-col="14"
-                                  :col-num="0"
-                                  :label-col="7"
-                                  :col-min-width="380"
                                   :config="{
                                     cycle: {
                                       style: { width: '100%' },
@@ -282,6 +260,28 @@
                                     },
                                   }"
                                   :value="{}"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="{
+                                    type: 'object',
+                                    properties: {
+                                      form: {
+                                        'x-component': 'Form',
+                                        'x-component-props': {
+                                          'wrapper-col': { span: 14 },
+                                          'label-col': { span: 7 },
+                                          style: {
+                                            flexWrap: 'wrap',
+                                            display: 'flex',
+                                          },
+                                        },
+                                        type: 'void',
+                                        properties: {},
+                                      },
+                                    },
+                                  }"
+                                  :label-col="7"
+                                  :wrapper-col="14"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -921,28 +921,6 @@ export default {
         rowClassName: {},
       },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           cycle: {
             style: {
@@ -968,6 +946,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityImgTableTwo: {
         columns: [
