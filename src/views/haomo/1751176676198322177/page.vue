@@ -827,6 +827,9 @@ export default {
 .ele-wrapper-bf252f1b-c63f-43d8-b3da-2dc087a9f832 {
   border-left: 4px solid #0079fe;
   padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-7714511a-00ae-4c70-afd4-04b3e388c348 {
