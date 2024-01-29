@@ -154,10 +154,10 @@
                       <div class="ele-wrapper ele-wrapper-deleteproject">
                         <hm-modal
                           ref="deleteproject"
-                          :z-index="1000"
-                          v-model:visible="deleteproject.visible"
                           title="删除"
+                          v-model:visible="deleteproject.visible"
                           width="320px"
+                          :z-index="1000"
                           height=""
                           class="ele-deleteproject"
                         >
@@ -188,19 +188,19 @@
                           >
                             <hm-ant-table
                               ref="activityProjectTable"
-                              :is-flat-action="
-                                activityProjectTable.isFlatAction
-                              "
-                              :get-data-map="activityProjectTable.getDataMap"
-                              :data="activityProjectTable.data"
                               :columns="activityProjectTable.columns"
-                              :row-class-name="
-                                activityProjectTable.rowClassName
-                              "
+                              :data="activityProjectTable.data"
                               :pagination-hidden="
                                 activityProjectTable.paginationHidden
                               "
+                              :get-data-map="activityProjectTable.getDataMap"
                               :actions="activityProjectTable.actions"
+                              :is-flat-action="
+                                activityProjectTable.isFlatAction
+                              "
+                              :row-class-name="
+                                activityProjectTable.rowClassName
+                              "
                             >
                             </hm-ant-table>
                           </div>
@@ -229,9 +229,9 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              :z-index="1000"
-                              v-model:visible="addprize.visible"
                               title="奖品图片"
+                              v-model:visible="addprize.visible"
+                              :z-index="1000"
                               height="250px"
                               class="ele-addprize"
                             >
@@ -818,29 +818,6 @@ export default {
         value: {},
       },
       activityProjectTable: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
         columns: [
           {
             dataIndex: "name",
@@ -877,15 +854,36 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [
+          {
+            address: "",
+            school: "",
+            name: "¥0",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "",
+            school: "",
+            name: "¥ 29.9",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+        ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
-              //      self.addproject.visible = true;
+              self.addproject.visible = true;
             },
             type: "link",
           },
@@ -894,11 +892,13 @@ export default {
             icon: "fa fa-trash",
             callback: function (item) {
               console.log("点击删除: ", item);
-              //  self.deleteproject.visible = true;
+              self.deleteproject.visible = true;
             },
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
         schema: {
