@@ -153,15 +153,14 @@
                         >
                         </hm-ant-bg-text>
                       </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12"
-                      >
+                      <div class="ele-wrapper ele-wrapper-addBtn1">
                         <hm-ant-button
+                          ref="addBtn1"
                           text="添加"
                           :type="'primary'"
                           icon="fa fa-plus"
-                          @click="onEle192A1E2548954501971D69Ddf1Ae5A12Click"
-                          class="ele-192a1e25-4895-4501-971d-69ddf1ae5a12"
+                          @click="onAddBtn1Click"
+                          class="ele-addBtn1"
                         >
                         </hm-ant-button>
                       </div>
@@ -869,7 +868,7 @@ export default {
   },
   watch: {},
   methods: {
-    onEle192A1E2548954501971D69Ddf1Ae5A12Click() {
+    onAddBtn1Click() {
       this.addproject.visible = true;
     },
   },
@@ -941,7 +940,7 @@ export default {
   }
 }
 
-.ele-wrapper-192a1e25-4895-4501-971d-69ddf1ae5a12 {
+.ele-wrapper-addBtn1 {
   margin-left: 5px;
 }
 
