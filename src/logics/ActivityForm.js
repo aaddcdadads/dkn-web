@@ -46,7 +46,7 @@ const activityExtRequest = (logic.activityExtRequest = async function () {
 const setActivityExt = (logic.setActivityExt = function () {
   if (
     !self.activityExtRequestData.success ||
-    !self.activityExtRequestData.result.records.length === 0
+    self.activityExtRequestData.result.records.length === 0
   ) {
     return;
   }
@@ -74,7 +74,7 @@ const activityProjectRequest = (logic.activityProjectRequest = async function ()
 const setActivityProject = (logic.setActivityProject = function () {
   if (
     !self.activityProjectRequestData.success ||
-    !self.activityProjectRequestData.result.records.length === 0
+    self.activityProjectRequestData.result.records.length === 0
   ) {
     return;
   }
@@ -98,7 +98,7 @@ const activityImgRequest = (logic.activityImgRequest = async function () {
 const setActivityImg = (logic.setActivityImg = function () {
   if (
     !self.activityImgRequestData.success ||
-    !self.activityImgRequestData.result.records.length === 0
+    self.activityImgRequestData.result.records.length === 0
   ) {
     return;
   }
