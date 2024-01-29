@@ -31,7 +31,7 @@
                   :col-min-width="280"
                   :schema="activityFilter.schema"
                   :label-col="5"
-                  :wrapper-col="14"
+                  :wrapper-col="10"
                   class="ele-activityFilter"
                 >
                 </hm-ant-formily>
