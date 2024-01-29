@@ -595,6 +595,7 @@
                   :type="'primary'"
                   :size="'large'"
                   icon="fa fa-check-circle"
+                  @click="onEle78Fb256892504A78987DC766B916F771Click"
                   class="ele-78fb2568-9250-4a78-987d-c766b916f771"
                 >
                 </hm-ant-button>
@@ -630,6 +631,8 @@ import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
+
+import { saveOrUpdate } from "/@/logics/ActivityForm";
 
 export default {
   name: "NewActivity",
@@ -1148,6 +1151,9 @@ export default {
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
+    },
+    onEle78Fb256892504A78987DC766B916F771Click() {
+      saveOrUpdate(this, arguments);
     },
   },
 };
