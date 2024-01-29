@@ -225,14 +225,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
     activityImgs,
     activityExts,
   };
-  if (self.type === 2) {
-    await self.$refs.activityTwoForm.validate();
-    self.item = {
-      ...self.item,
-      ...self.$refs.activityTwoForm.getFormValues(),
-      id: self.id,
-    };
-  }
+
   await addRequest();
   if (self.addRequestData.success) {
     self.$message.error(self.addRequestData.message);
