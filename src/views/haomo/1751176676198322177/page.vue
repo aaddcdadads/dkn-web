@@ -125,6 +125,21 @@
                       :value="{}"
                       :col-num="0"
                       :col-min-width="380"
+                      :schema="{
+                        type: 'object',
+                        properties: {
+                          form: {
+                            type: 'void',
+                            'x-component': 'Form',
+                            'x-component-props': {
+                              style: { display: 'flex', flexWrap: 'wrap' },
+                              'label-col': { span: 7 },
+                              'wrapper-col': { span: 14 },
+                            },
+                            properties: {},
+                          },
+                        },
+                      }"
                       :label-col="3"
                       :wrapper-col="16"
                       class="ele-7714511a-00ae-4c70-afd4-04b3e388c348"
@@ -171,6 +186,7 @@
                           v-model:visible="addproject.visible"
                           :z-index="1000"
                           height="240px"
+                          :style="addproject.style"
                           class="ele-addproject"
                         >
                           <div
@@ -203,6 +219,24 @@
                               :value="{}"
                               :col-num="0"
                               :col-min-width="380"
+                              :schema="{
+                                type: 'object',
+                                properties: {
+                                  form: {
+                                    type: 'void',
+                                    'x-component': 'Form',
+                                    'x-component-props': {
+                                      style: {
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                      },
+                                      'label-col': { span: 7 },
+                                      'wrapper-col': { span: 14 },
+                                    },
+                                    properties: {},
+                                  },
+                                },
+                              }"
                               :label-col="6"
                               :wrapper-col="16"
                               class="ele-7c1be11a-b36f-498c-ba73-bcabfe46ade4"
@@ -219,6 +253,7 @@
                           width="320px"
                           :z-index="1000"
                           height=""
+                          :style="deleteproject.style"
                           class="ele-deleteproject"
                         >
                           <div class="ele-wrapper ele-wrapper-delText">
@@ -249,8 +284,15 @@
                               :columns="projectcost.columns"
                               :data="projectcost.data"
                               :pagination-hidden="projectcost.paginationHidden"
+                              :pagination="projectcost.pagination"
+                              :params="projectcost.params"
+                              :get-data-map="projectcost.getDataMap"
+                              :pagination-map="projectcost.paginationMap"
+                              :row-selection="projectcost.rowSelection"
                               :actions="projectcost.actions"
                               :is-flat-action="projectcost.isFlatAction"
+                              :scroll="projectcost.scroll"
+                              :combined="projectcost.combined"
                               :row-class-name="projectcost.rowClassName"
                             >
                             </hm-ant-table>
@@ -283,6 +325,7 @@
                               v-model:visible="addprize.visible"
                               :z-index="1000"
                               height="250px"
+                              :style="addprize.style"
                               class="ele-addprize"
                             >
                               <div
@@ -310,6 +353,24 @@
                                   :value="{}"
                                   :col-num="0"
                                   :col-min-width="380"
+                                  :schema="{
+                                    type: 'object',
+                                    properties: {
+                                      form: {
+                                        type: 'void',
+                                        'x-component': 'Form',
+                                        'x-component-props': {
+                                          style: {
+                                            display: 'flex',
+                                            flexWrap: 'wrap',
+                                          },
+                                          'label-col': { span: 7 },
+                                          'wrapper-col': { span: 14 },
+                                        },
+                                        properties: {},
+                                      },
+                                    },
+                                  }"
                                   :label-col="7"
                                   :wrapper-col="14"
                                 >
@@ -336,8 +397,15 @@
                                   :pagination-hidden="
                                     projectimage.paginationHidden
                                   "
+                                  :pagination="projectimage.pagination"
+                                  :params="projectimage.params"
+                                  :get-data-map="projectimage.getDataMap"
+                                  :pagination-map="projectimage.paginationMap"
+                                  :row-selection="projectimage.rowSelection"
                                   :actions="projectimage.actions"
                                   :is-flat-action="projectimage.isFlatAction"
+                                  :scroll="projectimage.scroll"
+                                  :combined="projectimage.combined"
                                   :row-class-name="projectimage.rowClassName"
                                 >
                                 </hm-ant-table>
@@ -399,6 +467,24 @@
                                   :value="{}"
                                   :col-num="0"
                                   :col-min-width="380"
+                                  :schema="{
+                                    type: 'object',
+                                    properties: {
+                                      form: {
+                                        type: 'void',
+                                        'x-component': 'Form',
+                                        'x-component-props': {
+                                          style: {
+                                            display: 'flex',
+                                            flexWrap: 'wrap',
+                                          },
+                                          'label-col': { span: 7 },
+                                          'wrapper-col': { span: 14 },
+                                        },
+                                        properties: {},
+                                      },
+                                    },
+                                  }"
                                   :label-col="5"
                                   :wrapper-col="18"
                                   class="ele-b50b9617-5edc-4bbf-bf83-1ee3a0cbc870"
@@ -451,6 +537,7 @@
                       v-model:visible="addBackground.visible"
                       :z-index="1000"
                       height="250px"
+                      :style="addBackground.style"
                       class="ele-addBackground"
                     >
                       <div
@@ -478,6 +565,21 @@
                           :value="{}"
                           :col-num="0"
                           :col-min-width="380"
+                          :schema="{
+                            type: 'object',
+                            properties: {
+                              form: {
+                                type: 'void',
+                                'x-component': 'Form',
+                                'x-component-props': {
+                                  style: { display: 'flex', flexWrap: 'wrap' },
+                                  'label-col': { span: 7 },
+                                  'wrapper-col': { span: 14 },
+                                },
+                                properties: {},
+                              },
+                            },
+                          }"
                           :label-col="7"
                           :wrapper-col="14"
                         >
@@ -504,8 +606,15 @@
                           :pagination-hidden="
                             projectbackground.paginationHidden
                           "
+                          :pagination="projectbackground.pagination"
+                          :params="projectbackground.params"
+                          :get-data-map="projectbackground.getDataMap"
+                          :pagination-map="projectbackground.paginationMap"
+                          :row-selection="projectbackground.rowSelection"
                           :actions="projectbackground.actions"
                           :is-flat-action="projectbackground.isFlatAction"
+                          :scroll="projectbackground.scroll"
+                          :combined="projectbackground.combined"
                           :row-class-name="projectbackground.rowClassName"
                         >
                         </hm-ant-table>
@@ -707,18 +816,52 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              type: "void",
+              "x-component": "Form",
+              "x-component-props": {
+                style: {
+                  display: "flex",
+                  flexWrap: "wrap",
+                },
+                "label-col": {
+                  span: 7,
+                },
+                "wrapper-col": {
+                  span: 14,
+                },
+              },
+              properties: {},
+            },
+          },
+        },
       },
       addproject: {
         visible: false,
-      },
-      deleteproject: {
-        visible: false,
+        style: {
+          top: "100px",
+        },
       },
       addprize: {
         visible: false,
+        style: {
+          top: "100px",
+        },
       },
       addBackground: {
         visible: false,
+        style: {
+          top: "100px",
+        },
+      },
+      deleteproject: {
+        visible: false,
+        style: {
+          top: "100px",
+        },
       },
       "7c1be11a-b36f-498c-ba73-bcabfe46ade4": {
         config: {
@@ -751,6 +894,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              type: "void",
+              "x-component": "Form",
+              "x-component-props": {
+                style: {
+                  display: "flex",
+                  flexWrap: "wrap",
+                },
+                "label-col": {
+                  span: 7,
+                },
+                "wrapper-col": {
+                  span: 14,
+                },
+              },
+              properties: {},
+            },
+          },
+        },
       },
       projectcost: {
         columns: [
@@ -808,27 +973,37 @@ export default {
           },
         ],
         paginationHidden: true,
+        pagination: {
+          current: 1,
+          pageSize: 10,
+        },
+        params: {},
+        getDataMap: {
+          list: "",
+          total: "",
+        },
+        paginationMap: {
+          pageNo: "pageNo",
+          pageSize: "pageSize",
+        },
+        rowSelection: {},
         actions: [
           {
             name: "编辑",
-            callback: function (item) {
-              console.log("点击编辑: ", item);
-              self.addproject.visible = true;
-            },
             type: "link",
             icon: "fa fa-pencil",
           },
           {
             name: "删除",
-            callback: function (item) {
-              console.log("点击删除: ", item);
-              self.deleteproject.visible = true;
-            },
             type: "link",
             icon: "fa fa-trash",
           },
         ],
         isFlatAction: true,
+        scroll: {
+          x: "100%",
+        },
+        combined: [],
         rowClassName: {},
       },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
@@ -857,6 +1032,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              type: "void",
+              "x-component": "Form",
+              "x-component-props": {
+                style: {
+                  display: "flex",
+                  flexWrap: "wrap",
+                },
+                "label-col": {
+                  span: 7,
+                },
+                "wrapper-col": {
+                  span: 14,
+                },
+              },
+              properties: {},
+            },
+          },
+        },
       },
       projectimage: {
         columns: [
@@ -915,27 +1112,37 @@ export default {
           },
         ],
         paginationHidden: true,
+        pagination: {
+          current: 1,
+          pageSize: 10,
+        },
+        params: {},
+        getDataMap: {
+          list: "",
+          total: "",
+        },
+        paginationMap: {
+          pageNo: "pageNo",
+          pageSize: "pageSize",
+        },
+        rowSelection: {},
         actions: [
           {
             name: "编辑",
-            callback: function (item) {
-              console.log("点击编辑: ", item);
-              self.addprize.visible = true;
-            },
             type: "link",
             icon: "fa fa-pencil",
           },
           {
             name: "删除",
-            callback: function (item) {
-              console.log("点击删除: ", self.deleteproject.visible);
-              self.deleteproject.visible = true;
-            },
             type: "link",
             icon: "fa fa-trash",
           },
         ],
         isFlatAction: true,
+        scroll: {
+          x: "100%",
+        },
+        combined: [],
         rowClassName: {},
       },
       "b50b9617-5edc-4bbf-bf83-1ee3a0cbc870": {
@@ -971,6 +1178,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              type: "void",
+              "x-component": "Form",
+              "x-component-props": {
+                style: {
+                  display: "flex",
+                  flexWrap: "wrap",
+                },
+                "label-col": {
+                  span: 7,
+                },
+                "wrapper-col": {
+                  span: 14,
+                },
+              },
+              properties: {},
+            },
+          },
+        },
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         config: {
@@ -998,6 +1227,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              type: "void",
+              "x-component": "Form",
+              "x-component-props": {
+                style: {
+                  display: "flex",
+                  flexWrap: "wrap",
+                },
+                "label-col": {
+                  span: 7,
+                },
+                "wrapper-col": {
+                  span: 14,
+                },
+              },
+              properties: {},
+            },
+          },
+        },
       },
       projectbackground: {
         columns: [
@@ -1048,27 +1299,37 @@ export default {
           },
         ],
         paginationHidden: true,
+        pagination: {
+          current: 1,
+          pageSize: 10,
+        },
+        params: {},
+        getDataMap: {
+          list: "",
+          total: "",
+        },
+        paginationMap: {
+          pageNo: "pageNo",
+          pageSize: "pageSize",
+        },
+        rowSelection: {},
         actions: [
           {
             name: "编辑",
-            callback: function (item) {
-              console.log("点击编辑: ", item);
-              self.addBackground.visible = true;
-            },
             type: "link",
             icon: "fa fa-pencil",
           },
           {
             name: "删除",
-            callback: function (item) {
-              console.log("点击删除: ", item);
-              self.deleteproject.visible = true;
-            },
             type: "link",
             icon: "fa fa-trash",
           },
         ],
         isFlatAction: true,
+        scroll: {
+          x: "100%",
+        },
+        combined: [],
         rowClassName: {},
       },
     };
