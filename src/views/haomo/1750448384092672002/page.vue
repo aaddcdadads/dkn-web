@@ -398,7 +398,11 @@
               height=""
             >
               <div class="ele-wrapper ele-wrapper-prompt">
-                <hm-ant-bg-text ref="prompt" :text="prompt.text">
+                <hm-ant-bg-text
+                  ref="prompt"
+                  :text="prompt.text"
+                  class="ele-prompt"
+                >
                 </hm-ant-bg-text>
               </div>
             </hm-modal>
@@ -1174,6 +1178,10 @@ export default {
 
 .ele-wrapper-allText {
   width: 60%;
+}
+
+.ele-wrapper-prompt {
+  width: 272px;
 }
 
 .ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1 {
