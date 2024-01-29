@@ -290,6 +290,13 @@
                               >
                                 <hm-ant-formily
                                   :config="{
+                                    cycle: {
+                                      type: 'Input',
+                                      title: '活动项目名称',
+                                      style: { width: '100%' },
+                                      required: true,
+                                      props: { placeholder: '请输入活动名称' },
+                                    },
                                     ' name': {
                                       type: 'UploadImage',
                                       title: '项目费用',
@@ -298,13 +305,6 @@
                                       maxCount: 1,
                                       listType: 'picture-card',
                                       props: {},
-                                    },
-                                    cycle: {
-                                      type: 'Input',
-                                      title: '活动项目名称',
-                                      style: { width: '100%' },
-                                      required: true,
-                                      props: { placeholder: '请输入活动名称' },
                                     },
                                   }"
                                   :value="{}"
@@ -458,6 +458,13 @@
                       >
                         <hm-ant-formily
                           :config="{
+                            cycle: {
+                              type: 'Input',
+                              title: '参考尺寸',
+                              style: { width: '100%' },
+                              required: true,
+                              props: { placeholder: '请输入' },
+                            },
                             ' name': {
                               type: 'UploadImage',
                               title: '背景图片',
@@ -466,13 +473,6 @@
                               maxCount: 1,
                               listType: 'picture-card',
                               props: {},
-                            },
-                            cycle: {
-                              type: 'Input',
-                              title: '参考尺寸',
-                              style: { width: '100%' },
-                              required: true,
-                              props: { placeholder: '请输入' },
                             },
                           }"
                           :value="{}"
@@ -833,17 +833,6 @@ export default {
       },
       "ce088f7d-9e0e-4dd9-9a1a-ad56ec58b79b": {
         config: {
-          " name": {
-            type: "UploadImage",
-            title: "项目费用",
-            style: {
-              width: "100%",
-            },
-            required: true,
-            maxCount: 1,
-            listType: "picture-card",
-            props: {},
-          },
           cycle: {
             type: "Input",
             title: "活动项目名称",
@@ -854,6 +843,17 @@ export default {
             props: {
               placeholder: "请输入活动名称",
             },
+          },
+          " name": {
+            type: "UploadImage",
+            title: "项目费用",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            maxCount: 1,
+            listType: "picture-card",
+            props: {},
           },
         },
         value: {},
@@ -974,17 +974,6 @@ export default {
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         config: {
-          " name": {
-            type: "UploadImage",
-            title: "背景图片",
-            style: {
-              width: "100%",
-            },
-            required: true,
-            maxCount: 1,
-            listType: "picture-card",
-            props: {},
-          },
           cycle: {
             type: "Input",
             title: "参考尺寸",
@@ -995,6 +984,17 @@ export default {
             props: {
               placeholder: "请输入",
             },
+          },
+          " name": {
+            type: "UploadImage",
+            title: "背景图片",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            maxCount: 1,
+            listType: "picture-card",
+            props: {},
           },
         },
         value: {},
