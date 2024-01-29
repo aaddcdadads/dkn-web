@@ -464,6 +464,7 @@
                       text="添加"
                       :type="'primary'"
                       icon="fa fa-plus"
+                      class="ele-d2a6a855-78d0-49b8-894e-a65162e803d6"
                     >
                     </hm-ant-button>
                   </div>
@@ -891,6 +892,10 @@ export default {
   border-left: 4px solid #0079fe;
   margin-left: 8px;
   padding-left: 5px;
+}
+
+.ele-wrapper-d2a6a855-78d0-49b8-894e-a65162e803d6 {
+  margin-left: 5px;
 }
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
