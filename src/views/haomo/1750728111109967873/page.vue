@@ -960,6 +960,9 @@ export default {
   width: 98%;
   margin: 1%;
   margin-bottom: 0;
+  /deep/ .select-class {
+    width: 242px;
+  }
 }
 
 .ele-wrapper-addButton {
