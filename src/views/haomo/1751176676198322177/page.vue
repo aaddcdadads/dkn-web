@@ -850,11 +850,13 @@ export default {
             dataIndex: "name",
             title: "活动项目名称",
             key: "name",
+            ellipsis: true,
           },
           {
             dataIndex: "synopsis",
             title: "项目简介",
             key: "synopsis",
+            ellipsis: true,
           },
           {
             dataIndex: "sortNo",
