@@ -12,7 +12,7 @@ let logic = {};
  * 发送添加请求
  */
 const editRequest = (logic.editRequest = async function () {
-  let res = await self.$postAction(`/api/dkn/activity/edits`, self.item);
+  let res = await self.$postAction(`/api/dkn/activity/adds`, self.item);
   self.editRequestData = res;
 });
 
