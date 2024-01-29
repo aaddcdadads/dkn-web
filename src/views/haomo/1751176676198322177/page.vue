@@ -450,6 +450,16 @@
                     </hm-ant-bg-text>
                   </div>
                   <div
+                    class="ele-wrapper ele-wrapper-d2a6a855-78d0-49b8-894e-a65162e803d6"
+                  >
+                    <hm-ant-button
+                      text="添加"
+                      :type="'primary'"
+                      icon="fa fa-plus"
+                    >
+                    </hm-ant-button>
+                  </div>
+                  <div
                     class="ele-wrapper ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2"
                   >
                     <hm-bg-card
