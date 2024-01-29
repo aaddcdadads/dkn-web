@@ -197,14 +197,14 @@
                                   dataIndex: 'address',
                                   key: 'address',
                                   ellipsis: true,
-                                  width: 80,
+                                  width: 70,
                                 },
                                 {
                                   title: '排序',
                                   dataIndex: 'sexual',
                                   key: 'sexual',
                                   ellipsis: true,
-                                  width: 50,
+                                  width: 30,
                                 },
                                 {
                                   title: '操作',
@@ -308,7 +308,7 @@
                                       dataIndex: 'address',
                                       key: 'address',
                                       ellipsis: true,
-                                      width: 50,
+                                      width: 30,
                                     },
                                     {
                                       title: '操作',
@@ -482,7 +482,7 @@
                               dataIndex: 'address',
                               key: 'address',
                               ellipsis: true,
-                              width: 50,
+                              width: 30,
                             },
                             {
                               title: '操作',
