@@ -743,7 +743,7 @@ export default {
 }
 
 .ele-wrapper-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5 {
-  margin: 0 5% 0 3%;
+  margin: 0 5% 0 5%;
   transform: translateY(-1px);
   /deep/ .upload-class {
     min-width: 0;
