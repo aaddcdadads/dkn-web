@@ -131,7 +131,7 @@ const detail = (logic.detail = async (pageVm, eventData) => {
   if (self.type === 3) {
     self.title.text = "活动详情";
     self.isSaveOrUpdate.hidden = true;
-    self.isTitle = "";
+    self.isTitle.text = "";
     self.addActivityProject.visible = false;
     self.addActivityImgTableOne.visible = false;
     self.addActivityImgTableTwo.visible = false;
