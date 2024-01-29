@@ -1207,13 +1207,16 @@ export default {
     };
   },
   watch: {},
-  mounted(e) {
+  async mounted(e) {
     this.onMounted(e);
   },
   methods: {
     onMounted() {
       let self = this;
       self.type = parseInt(self.$route.query.type);
+      self.addActivityProject = async function () {
+        await self.$refs.activityProjectForm.validate();
+      };
     },
 
     onAddBtn1Click() {
