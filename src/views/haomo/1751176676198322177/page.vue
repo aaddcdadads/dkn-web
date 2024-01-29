@@ -227,7 +227,7 @@
                             <hm-ant-icon-text
                               text="确认删除"
                               icon=""
-                              width="272px"
+                              width="270px"
                             >
                             </hm-ant-icon-text>
                           </div>
