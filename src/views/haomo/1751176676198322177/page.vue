@@ -171,7 +171,7 @@
                           title="添加项目"
                           :visible="true"
                           :z-index="1000"
-                          height="270px"
+                          height="240px"
                         >
                           <div
                             class="ele-wrapper ele-wrapper-7c1be11a-b36f-498c-ba73-bcabfe46ade4"
