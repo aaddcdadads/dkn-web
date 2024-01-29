@@ -931,7 +931,7 @@ export default {
     onEle128De5D58A3B40DaAbea0C30F1Be5Fe1Click() {
       //this.activityAddModal.visible = true;
       this.$router.push({
-        path: `/haomo/1751436264696975361/page`,
+        path: `/haomo/1751176676198322177/page`,
         query: {
           type: 1,
         },
