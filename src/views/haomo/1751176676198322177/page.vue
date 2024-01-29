@@ -1257,6 +1257,15 @@ export default {
       self.addActivityProject = async function () {
         await self.$refs.activityProjectForm.validate();
       };
+      self.getImg = function (url) {
+        if (!url) {
+          return self.$logImage || "";
+        }
+        if (url.substring(0, 4) === "http") {
+          return url;
+        }
+        return `/api/sys/common/static/${url}`;
+      };
     },
 
     onAddBtn1Click() {
