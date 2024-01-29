@@ -11,71 +11,70 @@ let logic = {};
 /**
  * 发送添加请求
  */
-const editRequest = (logic.editRequest = async function () {
-  let res = await self.$postAction(`/api/dkn/activity/edits`, {
-    ...self.item,
-    id: self.id,
-  });
+const editRequest = logic.editRequest = async function () {
+  let res = await self.$postAction(
+    `/api/dkn/activity/edits`,
+    self.item
+  )
   self.editRequestData = res;
-});
+}
+
 
 /**
  * 逻辑流 addActivty 入口函数
  */
-const addActivty = (logic.addActivty = async (pageVm, eventData) => {
-  console.log(`addActivty: `, pageVm, eventData);
+const addActivty = logic.addActivty = async (pageVm, eventData) => {
+  console.log(`addActivty: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.addActivtyData = eventData;
 
-  await self.$refs.activityForm.validate();
-  await self.$refs.activityExtForm.validate();
-  await self.$refs.activityTwoForm.validate();
+  
+  await self.$refs.activityForm.validate()
+await self.$refs.activityExtForm.validate()
 
-  let activityProjects = [],
-    activityImgs = [],
-    activityExts = [];
-  activityExts = [{ ...self.$refs.activityExtForm.getFormValues() }];
-  if (self.$refs.activityProjectTable.cData.length > 0) {
-    activityProjects = self.$refs.activityProjectTable.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      return x;
-    });
-  }
-  if (self.$refs.activityImgTableOne.cData.length > 0) {
-    activityProjects = self.$refs.activityImgTableOne.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      x.type = 0;
-      return x;
-    });
-  }
-  if (self.$refs.activityImgTableTwo.cData.length > 0) {
-    let list = self.$refs.activityImgTableTwo.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      x.type = 1;
-      return x;
-    });
-    activityProjects = [...activityProjects, ...list];
-  }
-  self.item = {
+
+let activityProjects=[],activityImgs=[],activityExts=[]
+activityExts=[{...self.$refs.activityExtForm.getFormValues()}]
+if(self.$refs.activityProjectTable.cData.length > 0){
+    activityProjects = self.$refs.activityProjectTable.cData.map((x)=>{
+        delete x.id,x.createTime,x.createBy,x.updateTime,x.updateBy
+        return x
+    })
+}
+if(self.$refs.activityImgTableOne.cData.length > 0){
+    activityProjects = self.$refs.activityImgTableOne.cData.map((x)=>{
+        delete x.id,x.createTime,x.createBy,x.updateTime,x.updateBy
+        x.type=0
+        return x
+    })
+}
+if(self.$refs.activityImgTableTwo.cData.length > 0){
+     let list = self.$refs.activityImgTableTwo.cData.map((x)=>{
+        delete x.id,x.createTime,x.createBy,x.updateTime,x.updateBy
+        x.type=1
+        return x
+    })
+    activityProjects =[...activityProjects,...list]
+}
+self.item={
     ...self.$refs.activityForm.getFormValues(),
     ...self.$refs.activityExtForm.getFormValues(),
-    ...self.$refs.activityTwoForm.getFormValues(),
     activityExts,
     activityImgs,
     activityExts,
-    id: self.id,
-  };
+}
 
   await editRequest();
-  if (self.editRequestData.success) {
-    self.$message.error(self.editRequestData.message);
-    return;
-  }
-  self.$message.success("操作成功");
-  self.$router.push({
+  if(self.editRequestData.success){
+    self.$message.error(self.editRequestData.message)
+    return
+}
+self.$message.success("操作成功")
+self.$router.push({
     path: `/haomo/1750448384092672002/page`,
   });
-});
+
+}
 
 /********************** end addActivty 开始 *********************/
 
@@ -84,12 +83,20 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
 /**
  * 逻辑流 ActivityProject 入口函数
  */
-const ActivityProject = (logic.ActivityProject = async (pageVm, eventData) => {
-  console.log(`ActivityProject: `, pageVm, eventData);
+const ActivityProject = logic.ActivityProject = async (pageVm, eventData) => {
+  console.log(`ActivityProject: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.ActivityProjectData = eventData;
-});
+
+  
+
+}
 
 /********************** end ActivityProject 开始 *********************/
 
-export { editRequest, addActivty, ActivityProject };
+
+export {
+  editRequest,
+  addActivty,
+  ActivityProject,
+}
