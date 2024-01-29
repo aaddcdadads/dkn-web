@@ -139,13 +139,13 @@
                           >
                             <hm-ant-formily
                               ref="activityProjectForm"
-                              :schema="activityProjectForm.schema"
-                              :wrapper-col="16"
-                              :col-num="0"
-                              :label-col="6"
-                              :col-min-width="380"
                               :config="activityProjectForm.config"
                               v-model:value="activityProjectForm.value"
+                              :col-num="0"
+                              :col-min-width="380"
+                              :schema="activityProjectForm.schema"
+                              :label-col="6"
+                              :wrapper-col="16"
                               class="ele-activityProjectForm"
                             >
                             </hm-ant-formily>
@@ -719,28 +719,6 @@ export default {
         visible: false,
       },
       activityProjectForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           multipleOrder: {
             style: {
@@ -769,7 +747,10 @@ export default {
             type: "UploadImage",
             title: "活动图片",
             required: true,
-            props: {},
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
           },
           name: {
             style: {
@@ -820,6 +801,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityProjectTable: {
         columns: [
