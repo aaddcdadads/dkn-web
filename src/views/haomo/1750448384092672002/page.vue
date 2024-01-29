@@ -1098,7 +1098,8 @@ export default {
   /deep/.ant-table-header-column > div {
     background-color: transparent !important;
   }
-  /deep/.switch-div {
+  /deep/.switch-div,
+  /deep/.switch-class {
     background-color: transparent !important;
   }
   width: 98%;
