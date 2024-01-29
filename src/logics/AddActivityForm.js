@@ -83,7 +83,17 @@ self.$router.push({
  * 处理
  */
 const setData = logic.setData = function() {
-  
+  let item =self.$refs.activityProjectForm.getFormValues()
+item.index=Math.floor(Math.random()*10000),
+
+//处理图片
+if(item?.imgPath?.file?.response?.message){
+    item.imgPath=item.imgPath?.file?.response?.message
+}
+self.$refs.activityProjectTable.cData.push(item)
+
+self.addproject.visible=false
+self.$refs.activityProjectForm.reset()
 }
 
 
@@ -97,17 +107,7 @@ const addActivityProject = logic.addActivityProject = async (pageVm, eventData) 
 
   
   await self.$refs.activityProjectForm.validate()
-let item =self.$refs.activityProjectForm.getFormValues()
-item.index=Math.floor(Math.random()*10000),
 
-//处理图片
-if(item?.imgPath?.file?.response?.message){
-    item.imgPath=item.imgPath?.file?.response?.message
-}
-self.$refs.activityProjectTable.cData.push(item)
-
-self.addproject.visible=false
-self.$refs.activityProjectForm.reset()
   setData();
 
 }
