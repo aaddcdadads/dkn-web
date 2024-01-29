@@ -786,6 +786,7 @@ export default {
             width: "260",
             title: "操作",
             key: "action",
+            fixed: "right",
           },
         ],
         data: [{}],
