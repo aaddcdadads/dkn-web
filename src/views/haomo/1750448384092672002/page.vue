@@ -1179,6 +1179,8 @@ export default {
 
 .ele-wrapper-prompt {
   width: 272px;
+  display: flex;
+  justify-content: center;
 }
 
 .ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1 {
