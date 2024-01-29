@@ -90,8 +90,6 @@ const exportRegistrationOrders = (logic.exportRegistrationOrders = async (
       self.$refs.registrationOrdersFilter.getFormValues(),
       self.$refs.registrationOrdersFilter.cSchema
     ),
-    activityId: self.activityId,
-    ids: self.selectTempArr,
   };
   self.$downloadFile("报名用户列表.xlsx", url, params);
 });
