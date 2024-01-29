@@ -1121,15 +1121,6 @@ export default {
       },
       activityTwoForm: {
         config: {
-          unrealCount: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动人数",
-            required: true,
-            props: {},
-          },
           "unrealStatus:": {
             style: {
               width: "100%",
@@ -1149,6 +1140,15 @@ export default {
                 },
               ],
             },
+          },
+          unrealCount: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动人数",
+            required: true,
+            props: {},
           },
         },
         value: {},
