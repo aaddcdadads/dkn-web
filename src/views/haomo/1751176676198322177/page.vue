@@ -2020,6 +2020,9 @@ export default {
 
 .ele-wrapper-92a3011a-fa3f-40cc-b9ca-0a8958382ca4 {
   width: 72%;
+  /deep/.w-e-scroll {
+    height: 120px;
+  }
 }
 
 .ele-wrapper-f97dd639-1f58-44cc-99e6-def3ddf58363 {
@@ -2032,6 +2035,9 @@ export default {
 
 .ele-wrapper-0303a115-4a17-41e3-b32a-c1d017db3f97 {
   width: 72%;
+  /deep/.w-e-scroll {
+    height: 120px;
+  }
 }
 
 .ele-wrapper-848e318a-9213-4805-a8d8-7f9b336b01d5 {
