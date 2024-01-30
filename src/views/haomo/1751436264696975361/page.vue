@@ -136,19 +136,67 @@
                           >
                             <hm-ant-formily
                               :config="{
-                                ' name': {
-                                  type: 'Input',
-                                  title: '活动费用',
+                                sortNo: {
                                   style: { width: '100%' },
+                                  type: 'InputNumber',
+                                  title: '排序',
+                                  required: true,
+                                  props: { placeholder: '请输入排序' },
+                                },
+                                multipleOrder: {
+                                  style: { width: '100%' },
+                                  type: 'RadioGroup',
+                                  title: '是否多人报名',
+                                  required: true,
+                                  props: {
+                                    options: [
+                                      { label: '是', value: 0 },
+                                      { label: '否', value: 1 },
+                                    ],
+                                  },
+                                },
+                                imgPath: {
+                                  style: { width: '100%' },
+                                  type: 'UploadImage',
+                                  title: '活动图片',
+                                  required: true,
+                                  props: {
+                                    action: '/api/sys/common/upload',
+                                    accept: '.jpg,.png',
+                                  },
+                                },
+                                name: {
+                                  style: { width: '100%' },
+                                  type: 'Input',
+                                  title: '活动项目名称',
                                   required: true,
                                   props: {},
                                 },
-                                cycle: {
-                                  type: 'Input',
-                                  title: '费用名称',
+                                synopsis: {
                                   style: { width: '100%' },
+                                  type: 'Textarea',
+                                  title: '项目简介',
                                   required: true,
                                   props: {},
+                                },
+                                expense: {
+                                  style: { width: '100%' },
+                                  type: 'Input',
+                                  title: '项目费用',
+                                  required: true,
+                                  props: {},
+                                },
+                                free: {
+                                  style: { width: '100%' },
+                                  type: 'RadioGroup',
+                                  title: '是否免费',
+                                  required: true,
+                                  props: {
+                                    options: [
+                                      { label: '是', value: 0 },
+                                      { label: '否', value: 1 },
+                                    ],
+                                  },
                                 },
                               }"
                               :value="{}"
@@ -245,7 +293,7 @@
                               title="奖品图片"
                               v-model:visible="addprize.visible"
                               :z-index="1000"
-                              height="250px"
+                              height="300px"
                               class="ele-addprize"
                             >
                               <div
@@ -253,6 +301,13 @@
                               >
                                 <hm-ant-formily
                                   :config="{
+                                    sortNo: {
+                                      style: { width: '100%' },
+                                      type: 'InputNumber',
+                                      title: '奖品排序',
+                                      required: true,
+                                      props: { placeholder: '奖品序号' },
+                                    },
                                     cycle: {
                                       type: 'Input',
                                       title: '奖品名称',
@@ -436,7 +491,7 @@
                       title="背景图片"
                       v-model:visible="addimage.visible"
                       :z-index="1000"
-                      height="250px"
+                      height="300px"
                       class="ele-addimage"
                     >
                       <div
@@ -444,6 +499,13 @@
                       >
                         <hm-ant-formily
                           :config="{
+                            sortNo: {
+                              style: { width: '100%' },
+                              type: 'InputNumber',
+                              title: '图片排序',
+                              required: true,
+                              props: { placeholder: '图片序号' },
+                            },
                             cycle: {
                               type: 'Input',
                               title: '参考尺寸',
@@ -888,23 +950,95 @@ export default {
       },
       "8529c1db-0480-471c-8c06-e2f336b223f2": {
         config: {
-          " name": {
-            type: "Input",
-            title: "活动费用",
+          sortNo: {
             style: {
               width: "100%",
             },
+            type: "InputNumber",
+            title: "排序",
+            required: true,
+            props: {
+              placeholder: "请输入排序",
+            },
+          },
+          multipleOrder: {
+            style: {
+              width: "100%",
+            },
+            type: "RadioGroup",
+            title: "是否多人报名",
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "是",
+                  value: 0,
+                },
+                {
+                  label: "否",
+                  value: 1,
+                },
+              ],
+            },
+          },
+          imgPath: {
+            style: {
+              width: "100%",
+            },
+            type: "UploadImage",
+            title: "活动图片",
+            required: true,
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+          name: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动项目名称",
             required: true,
             props: {},
           },
-          cycle: {
-            type: "Input",
-            title: "费用名称",
+          synopsis: {
             style: {
               width: "100%",
             },
+            type: "Textarea",
+            title: "项目简介",
             required: true,
             props: {},
+          },
+          expense: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "项目费用",
+            required: true,
+            props: {},
+          },
+          free: {
+            style: {
+              width: "100%",
+            },
+            type: "RadioGroup",
+            title: "是否免费",
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "是",
+                  value: 0,
+                },
+                {
+                  label: "否",
+                  value: 1,
+                },
+              ],
+            },
           },
         },
         value: {},
@@ -912,52 +1046,73 @@ export default {
       activityProjectTable: {
         columns: [
           {
+            customRender: function (data) {
+              return h(HmAntIconText, {
+                fontSize: "14px",
+                iconSize: "16px",
+                bgColorText: "transparent",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                text: "",
+                placement: "top",
+                img: self.getImg(data.record.imgPath),
+                color: "black",
+                imgStyle: {
+                  height: "32px",
+                  marginRight: "4px",
+                  marginTop: "-4px",
+                },
+                onClick: function () {},
+              });
+            },
+            dataIndex: "imgPath",
+            title: "项目图片",
+            key: "imgPath",
+          },
+          {
+            dataIndex: "expense",
+            title: "项目费用",
+            key: "expense",
+          },
+          {
+            dataIndex: "free",
+            title: "是否免费",
+            key: "free",
+          },
+          {
+            dataIndex: "multipleOrder",
+            width: 60,
+            title: "可多人报名",
+            key: "multipleOrder",
+          },
+          {
             dataIndex: "name",
-            width: 50,
-            title: "活动费用",
+            width: 130,
+            title: "活动项目名称",
             key: "name",
-          },
-          {
-            dataIndex: "age",
-            width: 90,
-            title: "费用名称",
-            key: "age",
             ellipsis: true,
           },
           {
-            dataIndex: "sexual",
-            width: 30,
+            dataIndex: "synopsis",
+            title: "项目简介",
+            key: "synopsis",
+            ellipsis: true,
+          },
+          {
+            dataIndex: "sortNo",
             title: "排序",
-            key: "sexual",
-            ellipsis: true,
+            key: "sortNo",
           },
           {
             slots: {
               customRender: "action",
             },
-            width: 100,
             title: "操作",
             key: "action",
           },
         ],
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
+        data: [],
         paginationHidden: true,
         getDataMap: {
           total: "",
@@ -988,6 +1143,17 @@ export default {
       },
       "d6c85f5d-e546-49ce-802d-fe0a03aa2546": {
         config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "奖品排序",
+            required: true,
+            props: {
+              placeholder: "奖品序号",
+            },
+          },
           cycle: {
             type: "Input",
             title: "奖品名称",
@@ -1179,6 +1345,17 @@ export default {
       },
       "04ce007d-e1c2-4f4d-ac07-44b7718beacf": {
         config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "图片排序",
+            required: true,
+            props: {
+              placeholder: "图片序号",
+            },
+          },
           cycle: {
             type: "Input",
             title: "参考尺寸",
