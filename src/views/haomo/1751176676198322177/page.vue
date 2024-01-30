@@ -336,8 +336,8 @@
                                   :value="{}"
                                   :col-num="0"
                                   :col-min-width="380"
-                                  :label-col="7"
-                                  :wrapper-col="14"
+                                  :label-col="3"
+                                  :wrapper-col="16"
                                   class="ele-fdc826af-3716-45fc-bda6-52dfe0e1524a"
                                 >
                                 </hm-ant-formily>
