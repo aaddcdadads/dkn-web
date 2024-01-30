@@ -236,6 +236,7 @@
                               :z-index="1000"
                               :auto-close="false"
                               @ok="onAddprizeOk"
+                              @cancel="onAddprizeCancel"
                               class="ele-addprize"
                             >
                               <div
@@ -1272,6 +1273,9 @@ export default {
 
       self.addprize.visible = false;
       self.$refs.addActivityImgFormTwo.reset();
+    },
+    onAddprizeCancel() {
+      this.addprize.visible = false;
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
