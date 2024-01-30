@@ -353,14 +353,10 @@
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
                               <div
-                                class="ele-wrapper ele-wrapper-298f6a4b-2730-4b34-b128-84c23c59c2bb"
-                              >
-                                <hm-markdown> </hm-markdown>
-                              </div>
-                              <div
                                 class="ele-wrapper ele-wrapper-92a3011a-fa3f-40cc-b9ca-0a8958382ca4"
                               >
                                 <hm-wang-editor
+                                  :mode="'simple'"
                                   value=""
                                   :max-content-length="2"
                                 >
@@ -727,7 +723,6 @@ import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
-import HmMarkdown from "/@/components/built-in/jeecg/HmMarkdown.vue";
 import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
@@ -743,7 +738,6 @@ export default {
     HmAntButton,
     HmModal,
     HmAntTable,
-    HmMarkdown,
     HmWangEditor,
     HmColorKit,
   },
