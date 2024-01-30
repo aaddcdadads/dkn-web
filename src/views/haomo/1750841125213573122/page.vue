@@ -418,6 +418,18 @@ export default {
         padding: "0",
         titleBlockColor: "#1890FF00",
       },
+      activitySelect: {
+        value: "",
+        params: {
+          pageNo: 1,
+          pageSize: -1,
+        },
+        dataMap: {
+          label: "name",
+          value: "id",
+        },
+        options: [],
+      },
       viewRegistrationOrdersDeleteModal: {
         visible: false,
       },
@@ -722,6 +734,8 @@ export default {
             },
             events: {
               "@click": function (e) {
+                self.activitySelect.value = "";
+                self.selectActivityId = "";
                 self.$refs.viewRegistrationOrdersFilter.reset();
                 searchViewRegistrationOrders(self, null);
               },
@@ -733,18 +747,6 @@ export default {
           span: "文字内容",
         },
         schema: {},
-      },
-      activitySelect: {
-        value: "",
-        params: {
-          pageNo: 1,
-          pageSize: -1,
-        },
-        dataMap: {
-          label: "name",
-          value: "id",
-        },
-        options: [],
       },
       viewRegistrationOrdersTable: {
         columns: [
