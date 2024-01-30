@@ -231,9 +231,8 @@
               ref="storeDetailModal"
               title="查看详情"
               v-model:visible="storeDetailModal.visible"
-              :ok-button-boole="false"
               cancel-text="关闭"
-              width="810px"
+              width="600px"
               :z-index="1000"
               height="100%"
             >
@@ -250,7 +249,25 @@
                   <div
                     class="ele-wrapper ele-wrapper-6a427e0a-e088-4f10-8f90-062dff49940b"
                   >
-                    <hm-ant-bg-text text="二维码"> </hm-ant-bg-text>
+                    <hm-ant-bg-text
+                      text="二维码："
+                      class="ele-6a427e0a-e088-4f10-8f90-062dff49940b"
+                    >
+                    </hm-ant-bg-text>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-216245a7-7953-4399-b2b2-43033411ee88"
+                  >
+                    <hm-image> </hm-image>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-9babf229-dc69-4618-aee1-3b697b5baf99"
+                  >
+                    <hm-ant-bg-text
+                      text="门店名称"
+                      class="ele-9babf229-dc69-4618-aee1-3b697b5baf99"
+                    >
+                    </hm-ant-bg-text>
                   </div>
                   <div class="ele-wrapper ele-wrapper-storeDetailForm">
                     <hm-ant-formily
@@ -333,6 +350,7 @@ import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
+import HmImage from "/@/components/built-in/jeecg/HmImage.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
@@ -356,6 +374,7 @@ export default {
     HmAntTable,
     HmModal,
     HmAntBgText,
+    HmImage,
     HmAntIconText,
     HmAntSwitch,
   },
@@ -799,6 +818,16 @@ export default {
 
 .ele-wrapper-detailsUserModalCard {
   width: 100%;
+}
+
+.ele-wrapper-6a427e0a-e088-4f10-8f90-062dff49940b {
+  float: left;
+}
+
+.ele-wrapper-9babf229-dc69-4618-aee1-3b697b5baf99 {
+  width: 300px;
+  margin-left: 90px;
+  text-align: center;
 }
 
 .ele-wrapper-storeDetailForm {
