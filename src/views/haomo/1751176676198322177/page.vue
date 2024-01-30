@@ -372,7 +372,6 @@
                                   :mode="'simple'"
                                   v-model:value="activityRules.value"
                                   :toolbar-config="activityRules.toolbarConfig"
-                                  :editor-config="activityRules.editorConfig"
                                   :max-content-length="2"
                                   class="ele-activityRules"
                                 >
@@ -1391,25 +1390,6 @@ export default {
             "insertTable",
           ],
           excludeKeys: [],
-        },
-        editorConfig: {
-          placeholder: "请输入...",
-          readOnly: false,
-          autoFocus: true,
-          scroll: true,
-          height: "300px",
-          MENU_CONF: {
-            uploadImage: {
-              server: "/api/upload",
-              fieldName: "file",
-              headers: {},
-            },
-            uploadVideo: {
-              server: "/api/upload",
-              fieldName: "file",
-              headers: {},
-            },
-          },
         },
       },
       agreementCommitmentletter: {
