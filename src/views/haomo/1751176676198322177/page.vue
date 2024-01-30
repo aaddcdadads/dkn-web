@@ -370,10 +370,10 @@
                                 <hm-wang-editor
                                   ref="activityRules"
                                   :mode="'simple'"
-                                  :max-content-length="2"
-                                  :editor-config="activityRules.editorConfig"
                                   v-model:value="activityRules.value"
                                   :toolbar-config="activityRules.toolbarConfig"
+                                  :editor-config="activityRules.editorConfig"
+                                  :max-content-length="2"
                                   class="ele-activityRules"
                                 >
                                 </hm-wang-editor>
@@ -904,6 +904,154 @@ export default {
       sharingImageSettings: {
         visible: false,
       },
+      activityRules: {
+        value: "",
+        toolbarConfig: {
+          excludeKeys: [],
+          toolbarKeys: [
+            "blockquote",
+            "bold",
+            "underline",
+            "italic",
+            "color",
+            "bgColor",
+            "undo",
+            "redo",
+            "emotion",
+            "insertLink",
+            "fullScreen",
+            {
+              iconSvg:
+                '<svg viewBox="0 0 1024 1024"><path d="M959.877 128l0.123 0.123v767.775l-0.123 0.122H64.102l-0.122-0.122V128.123l0.122-0.123h895.775zM960 64H64C28.795 64 0 92.795 0 128v768c0 35.205 28.795 64 64 64h896c35.205 0 64-28.795 64-64V128c0-35.205-28.795-64-64-64zM832 288.01c0 53.023-42.988 96.01-96.01 96.01s-96.01-42.987-96.01-96.01S682.967 192 735.99 192 832 234.988 832 288.01zM896 832H128V704l224.01-384 256 320h64l224.01-192z"></path></svg>',
+              title: "图片",
+              menuKeys: ["insertImage", "uploadImage"],
+              key: "group-image",
+            },
+            "fontSize",
+            "fontFamily",
+            "lineHeight",
+            {
+              title: "更多",
+              menuKeys: ["through", "code", "sup", "sub", "clearStyle"],
+              key: "group-more-style",
+            },
+            "bulletedList",
+            "numberedList",
+            "headerSelect",
+            {
+              title: "对齐",
+              menuKeys: [
+                "justifyLeft",
+                "justifyRight",
+                "justifyCenter",
+                "justifyJustify",
+              ],
+              key: "group-justify",
+            },
+            {
+              title: "缩进",
+              menuKeys: ["indent", "delIndent"],
+              key: "group-indent",
+            },
+            "todo",
+            "divider",
+            "codeBlock",
+            "insertTable",
+          ],
+        },
+        editorConfig: {
+          MENU_CONF: {
+            uploadImage: {
+              server: "/api/upload",
+              headers: {},
+              fieldName: "file",
+            },
+            uploadVideo: {
+              server: "/api/upload",
+              headers: {},
+              fieldName: "file",
+            },
+          },
+          scroll: true,
+          readOnly: false,
+          placeholder: "请输入...",
+          autoFocus: true,
+        },
+      },
+      agreementCommitmentletter: {
+        value: "",
+        editorConfig: {
+          MENU_CONF: {
+            uploadImage: {
+              server: "/api/upload",
+              headers: {},
+              fieldName: "file",
+            },
+            uploadVideo: {
+              server: "/api/upload",
+              headers: {},
+              fieldName: "file",
+            },
+          },
+          scroll: true,
+          readOnly: false,
+          placeholder: "请输入...",
+          autoFocus: true,
+        },
+        toolbarConfig: {
+          excludeKeys: [],
+          toolbarKeys: [
+            "blockquote",
+            "bold",
+            "underline",
+            "italic",
+            "color",
+            "bgColor",
+            "undo",
+            "redo",
+            "emotion",
+            "insertLink",
+            "fullScreen",
+            {
+              iconSvg:
+                '<svg viewBox="0 0 1024 1024"><path d="M959.877 128l0.123 0.123v767.775l-0.123 0.122H64.102l-0.122-0.122V128.123l0.122-0.123h895.775zM960 64H64C28.795 64 0 92.795 0 128v768c0 35.205 28.795 64 64 64h896c35.205 0 64-28.795 64-64V128c0-35.205-28.795-64-64-64zM832 288.01c0 53.023-42.988 96.01-96.01 96.01s-96.01-42.987-96.01-96.01S682.967 192 735.99 192 832 234.988 832 288.01zM896 832H128V704l224.01-384 256 320h64l224.01-192z"></path></svg>',
+              title: "图片",
+              menuKeys: ["insertImage", "uploadImage"],
+              key: "group-image",
+            },
+            "fontSize",
+            "fontFamily",
+            "lineHeight",
+            {
+              title: "更多",
+              menuKeys: ["through", "code", "sup", "sub", "clearStyle"],
+              key: "group-more-style",
+            },
+            "bulletedList",
+            "numberedList",
+            "headerSelect",
+            {
+              title: "对齐",
+              menuKeys: [
+                "justifyLeft",
+                "justifyRight",
+                "justifyCenter",
+                "justifyJustify",
+              ],
+              key: "group-justify",
+            },
+            {
+              title: "缩进",
+              menuKeys: ["indent", "delIndent"],
+              key: "group-indent",
+            },
+            "todo",
+            "divider",
+            "codeBlock",
+            "insertTable",
+          ],
+        },
+      },
       activityProjectForm: {
         schema: {
           type: "object",
@@ -1309,154 +1457,6 @@ export default {
           },
         },
       },
-      activityRules: {
-        editorConfig: {
-          MENU_CONF: {
-            uploadImage: {
-              server: "/api/upload",
-              headers: {},
-              fieldName: "file",
-            },
-            uploadVideo: {
-              server: "/api/upload",
-              headers: {},
-              fieldName: "file",
-            },
-          },
-          scroll: true,
-          readOnly: false,
-          placeholder: "请输入...",
-          autoFocus: true,
-        },
-        value: "",
-        toolbarConfig: {
-          excludeKeys: [],
-          toolbarKeys: [
-            "blockquote",
-            "bold",
-            "underline",
-            "italic",
-            "color",
-            "bgColor",
-            "undo",
-            "redo",
-            "emotion",
-            "insertLink",
-            "fullScreen",
-            {
-              iconSvg:
-                '<svg viewBox="0 0 1024 1024"><path d="M959.877 128l0.123 0.123v767.775l-0.123 0.122H64.102l-0.122-0.122V128.123l0.122-0.123h895.775zM960 64H64C28.795 64 0 92.795 0 128v768c0 35.205 28.795 64 64 64h896c35.205 0 64-28.795 64-64V128c0-35.205-28.795-64-64-64zM832 288.01c0 53.023-42.988 96.01-96.01 96.01s-96.01-42.987-96.01-96.01S682.967 192 735.99 192 832 234.988 832 288.01zM896 832H128V704l224.01-384 256 320h64l224.01-192z"></path></svg>',
-              title: "图片",
-              menuKeys: ["insertImage", "uploadImage"],
-              key: "group-image",
-            },
-            "fontSize",
-            "fontFamily",
-            "lineHeight",
-            {
-              title: "更多",
-              menuKeys: ["through", "code", "sup", "sub", "clearStyle"],
-              key: "group-more-style",
-            },
-            "bulletedList",
-            "numberedList",
-            "headerSelect",
-            {
-              title: "对齐",
-              menuKeys: [
-                "justifyLeft",
-                "justifyRight",
-                "justifyCenter",
-                "justifyJustify",
-              ],
-              key: "group-justify",
-            },
-            {
-              title: "缩进",
-              menuKeys: ["indent", "delIndent"],
-              key: "group-indent",
-            },
-            "todo",
-            "divider",
-            "codeBlock",
-            "insertTable",
-          ],
-        },
-      },
-      agreementCommitmentletter: {
-        editorConfig: {
-          MENU_CONF: {
-            uploadImage: {
-              server: "/api/upload",
-              headers: {},
-              fieldName: "file",
-            },
-            uploadVideo: {
-              server: "/api/upload",
-              headers: {},
-              fieldName: "file",
-            },
-          },
-          scroll: true,
-          readOnly: false,
-          placeholder: "请输入...",
-          autoFocus: true,
-        },
-        value: "",
-        toolbarConfig: {
-          excludeKeys: [],
-          toolbarKeys: [
-            "blockquote",
-            "bold",
-            "underline",
-            "italic",
-            "color",
-            "bgColor",
-            "undo",
-            "redo",
-            "emotion",
-            "insertLink",
-            "fullScreen",
-            {
-              iconSvg:
-                '<svg viewBox="0 0 1024 1024"><path d="M959.877 128l0.123 0.123v767.775l-0.123 0.122H64.102l-0.122-0.122V128.123l0.122-0.123h895.775zM960 64H64C28.795 64 0 92.795 0 128v768c0 35.205 28.795 64 64 64h896c35.205 0 64-28.795 64-64V128c0-35.205-28.795-64-64-64zM832 288.01c0 53.023-42.988 96.01-96.01 96.01s-96.01-42.987-96.01-96.01S682.967 192 735.99 192 832 234.988 832 288.01zM896 832H128V704l224.01-384 256 320h64l224.01-192z"></path></svg>',
-              title: "图片",
-              menuKeys: ["insertImage", "uploadImage"],
-              key: "group-image",
-            },
-            "fontSize",
-            "fontFamily",
-            "lineHeight",
-            {
-              title: "更多",
-              menuKeys: ["through", "code", "sup", "sub", "clearStyle"],
-              key: "group-more-style",
-            },
-            "bulletedList",
-            "numberedList",
-            "headerSelect",
-            {
-              title: "对齐",
-              menuKeys: [
-                "justifyLeft",
-                "justifyRight",
-                "justifyCenter",
-                "justifyJustify",
-              ],
-              key: "group-justify",
-            },
-            {
-              title: "缩进",
-              menuKeys: ["indent", "delIndent"],
-              key: "group-indent",
-            },
-            "todo",
-            "divider",
-            "codeBlock",
-            "insertTable",
-          ],
-        },
-      },
       activityImgFormOne: {
         config: {
           sortNo: {
@@ -1681,16 +1681,15 @@ export default {
     };
   },
   watch: {},
-  async mounted(e) {
+  mounted(e) {
     this.onMounted(e);
   },
   methods: {
     onMounted() {
       let self = this;
       self.type = parseInt(self.$route.query.type);
-      self.addActivityProject = async function () {
-        await self.$refs.activityProjectForm.validate();
-      };
+      self.activityRules.value = "";
+      self.agreementCommitmentletter.value = "";
       self.getImg = function (url) {
         if (!url) {
           return self.$logImage || "";
