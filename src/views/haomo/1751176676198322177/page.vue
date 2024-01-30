@@ -652,6 +652,8 @@
                           :z-index="1000"
                           height=""
                           :auto-close="false"
+                          @ok="onSharingImageSettingsOk"
+                          @cancel="onSharingImageSettingsCancel"
                           class="ele-sharingImageSettings"
                         >
                           <div
@@ -708,15 +710,15 @@
                       <div class="ele-wrapper ele-wrapper-sharingImageTable">
                         <hm-ant-table
                           ref="sharingImageTable"
-                          :is-flat-action="sharingImageTable.isFlatAction"
-                          :get-data-map="sharingImageTable.getDataMap"
-                          :data="sharingImageTable.data"
                           :columns="sharingImageTable.columns"
-                          :row-class-name="sharingImageTable.rowClassName"
+                          :data="sharingImageTable.data"
                           :pagination-hidden="
                             sharingImageTable.paginationHidden
                           "
+                          :get-data-map="sharingImageTable.getDataMap"
                           :actions="sharingImageTable.actions"
+                          :is-flat-action="sharingImageTable.isFlatAction"
+                          :row-class-name="sharingImageTable.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -1587,17 +1589,6 @@ export default {
         rowClassName: {},
       },
       sharingImageTable: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            image: "",
-            size: "375 * 667",
-          },
-        ],
         columns: [
           {
             dataIndex: "image",
@@ -1619,8 +1610,17 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [
+          {
+            image: "",
+            size: "375 * 667",
+          },
+        ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1632,6 +1632,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       "89787e21-f9a9-487d-b055-c327bec09efd": {
         schema: {
@@ -1784,6 +1786,26 @@ export default {
     },
     onTextColourKitChangecolorkit(e) {
       this.textColour = e;
+    },
+    async onSharingImageSettingsOk() {
+      let self = this;
+      await self.$refs.activityImgFormOne.validate();
+      let item = self.$refs.activityImgFormOne.getFormValues();
+      item.index = Math.floor(Math.random() * 10000);
+
+      //处理图片
+      if (item.imgPath?.file?.response?.message) {
+        item.path = item.imgPath?.file?.response?.message;
+      }
+      delete item.imgPath;
+      item.imgSize = "375 * 667";
+      self.$refs.activityImgTableOne.cData.push(item);
+
+      self.sharingImageSettings.visible = false;
+      self.$refs.activityImgFormOne.reset();
+    },
+    onSharingImageSettingsCancel() {
+      this.sharingImageSettings.visible = false;
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
       addActivty(this, arguments);
