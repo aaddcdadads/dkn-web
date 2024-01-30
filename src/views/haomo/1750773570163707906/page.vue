@@ -109,7 +109,6 @@
                             text="导出核销码"
                             :type="'primary'"
                             icon="fa fa-download"
-                            class="ele-6f9a0599-82dc-4e11-880c-d7f38d3f8892"
                           >
                           </hm-ant-button>
                         </div>
@@ -756,10 +755,6 @@ export default {
   /deep/ .upload-class {
     min-width: 0;
   }
-}
-
-.ele-wrapper-6f9a0599-82dc-4e11-880c-d7f38d3f8892 {
-  margin: 0 0 0 1%;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
