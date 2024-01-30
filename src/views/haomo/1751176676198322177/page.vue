@@ -604,7 +604,11 @@
                       class="ele-8e197d87-c68a-402f-90a7-400dc9c35edc"
                     >
                       <div class="ele-wrapper ele-wrapper-textColourKit">
-                        <hm-color-kit ref="textColourKit"> </hm-color-kit>
+                        <hm-color-kit
+                          ref="textColourKit"
+                          @changecolorkit="onTextColourKitChangecolorkit"
+                        >
+                        </hm-color-kit>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -1741,6 +1745,9 @@ export default {
     },
     onAddBackgroundCancel() {
       this.addBackground.visible = false;
+    },
+    onTextColourKitChangecolorkit(e) {
+      console.log("e", e);
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
       addActivty(this, arguments);
