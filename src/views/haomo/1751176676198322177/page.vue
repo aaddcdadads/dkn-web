@@ -550,7 +550,11 @@
                       class="ele-6cde1a8d-1302-438c-b680-233060f55136"
                     >
                       <div class="ele-wrapper ele-wrapper-bgColourKit">
-                        <hm-color-kit ref="bgColourKit"> </hm-color-kit>
+                        <hm-color-kit
+                          ref="bgColourKit"
+                          @changecolorkit="onBgColourKitChangecolorkit"
+                        >
+                        </hm-color-kit>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -1749,6 +1753,9 @@ export default {
     },
     onAddBackgroundCancel() {
       this.addBackground.visible = false;
+    },
+    onBgColourKitChangecolorkit(e) {
+      this.bgColour = e;
     },
     onColourkitChangecolorkit(e) {
       this.colour = e;

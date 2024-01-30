@@ -307,6 +307,20 @@
               </div>
             </hm-modal>
           </div>
+          <div
+            class="ele-wrapper ele-wrapper-fdc2bb86-cb83-4e03-95ac-05fbce04c46f"
+          >
+            <hm-modal
+              title="退款"
+              :visible="false"
+              :closable="true"
+              :ok-type="'danger'"
+              width="320px"
+              :z-index="1000"
+              height="80px"
+            >
+            </hm-modal>
+          </div>
         </hm-bg-card>
       </div>
     </div>
@@ -465,6 +479,9 @@ export default {
         schema: {},
       },
       viewRegistrationOrdersDetailModal: {
+        visible: false,
+      },
+      "fdc2bb86-cb83-4e03-95ac-05fbce04c46f": {
         visible: false,
       },
       viewRegistrationOrdersFilter: {
