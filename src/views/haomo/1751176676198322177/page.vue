@@ -231,12 +231,12 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              :z-index="1000"
-                              v-model:visible="addprize.visible"
                               title="奖品图片"
+                              v-model:visible="addprize.visible"
+                              :z-index="1000"
                               :auto-close="false"
-                              @cancel="onAddprizeCancel"
                               @ok="onAddprizeOk"
+                              @cancel="onAddprizeCancel"
                               class="ele-addprize"
                             >
                               <div
@@ -475,10 +475,11 @@
                   <div class="ele-wrapper ele-wrapper-addBackground">
                     <hm-modal
                       ref="addBackground"
-                      :z-index="1000"
-                      v-model:visible="addBackground.visible"
                       title="报名页背景图"
+                      v-model:visible="addBackground.visible"
+                      :z-index="1000"
                       height="300px"
+                      :auto-close="false"
                       class="ele-addBackground"
                     >
                       <div
@@ -1738,9 +1739,6 @@ export default {
     onAddBtn2Click() {
       this.addprize.visible = true;
     },
-    onAddprizeCancel() {
-      this.addprize.visible = false;
-    },
     async onAddprizeOk() {
       let self = this;
       await self.$refs.addActivityImgFormTwo.validate();
@@ -1755,6 +1753,9 @@ export default {
 
       self.addprize.visible = false;
       self.$refs.addActivityImgFormTwo.reset();
+    },
+    onAddprizeCancel() {
+      this.addprize.visible = false;
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
