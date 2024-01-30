@@ -281,11 +281,11 @@
                             class="ele-wrapper ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                           >
                             <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
                               width="100%"
                               height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
                               class="ele-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                             >
                               <div
@@ -308,6 +308,61 @@
                                   "
                                 >
                                 </hm-ant-table>
+                              </div>
+                            </hm-bg-card>
+                          </div>
+                          <div
+                            class="ele-wrapper ele-wrapper-b20c5e06-5a57-4774-a563-47501fbdd9f4"
+                          >
+                            <hm-bg-card
+                              width="100%"
+                              height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
+                              class="ele-b20c5e06-5a57-4774-a563-47501fbdd9f4"
+                            >
+                              <div
+                                class="ele-wrapper ele-wrapper-1be11cc1-938f-4e91-ba2e-bf92a3fbf648"
+                              >
+                                <hm-ant-bg-text
+                                  text="活动运动信息"
+                                  font-size="14px"
+                                  padding="2"
+                                  class="ele-1be11cc1-938f-4e91-ba2e-bf92a3fbf648"
+                                >
+                                </hm-ant-bg-text>
+                              </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-fbf3e63a-7c3d-4444-92ba-1876dc07ae1d"
+                              >
+                                <hm-ant-formily
+                                  :config="{
+                                    ActivityRequirements: {
+                                      style: { width: '100%' },
+                                      type: 'Input',
+                                      title: '活动需求',
+                                      required: false,
+                                      props: {
+                                        placeholder: '例子：2km/5km/10km',
+                                      },
+                                    },
+                                    activityType: {
+                                      style: { width: '100%' },
+                                      type: 'Input',
+                                      title: '活动类型',
+                                      required: false,
+                                      props: { placeholder: '例子：跑步' },
+                                    },
+                                  }"
+                                  :value="{}"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :label-col="5"
+                                  :wrapper-col="16"
+                                  class="ele-fbf3e63a-7c3d-4444-92ba-1876dc07ae1d"
+                                >
+                                </hm-ant-formily>
                               </div>
                             </hm-bg-card>
                           </div>
@@ -973,6 +1028,33 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
+      "fbf3e63a-7c3d-4444-92ba-1876dc07ae1d": {
+        config: {
+          ActivityRequirements: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动需求",
+            required: false,
+            props: {
+              placeholder: "例子：2km/5km/10km",
+            },
+          },
+          activityType: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动类型",
+            required: false,
+            props: {
+              placeholder: "例子：跑步",
+            },
+          },
+        },
+        value: {},
+      },
       activityExtForm: {
         config: {
           activityRules: {
@@ -1327,6 +1409,24 @@ export default {
 
 .ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c {
   width: 100%;
+}
+
+.ele-wrapper-b20c5e06-5a57-4774-a563-47501fbdd9f4 {
+  width: 100%;
+}
+
+.ele-wrapper-1be11cc1-938f-4e91-ba2e-bf92a3fbf648 {
+  border-left: 5px solid #0079fe;
+  margin-top: 15px;
+  padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
+}
+
+.ele-wrapper-fbf3e63a-7c3d-4444-92ba-1876dc07ae1d {
+  width: 100%;
+  margin-top: 20px;
 }
 
 .ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
