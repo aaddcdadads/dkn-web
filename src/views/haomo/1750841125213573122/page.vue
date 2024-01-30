@@ -266,9 +266,10 @@
           >
             <hm-modal
               ref="viewRegistrationOrdersDeleteModal"
-              title="退款"
+              title="删除"
               v-model:visible="viewRegistrationOrdersDeleteModal.visible"
               :closable="true"
+              ok-text="删除"
               :ok-type="'danger'"
               width="320px"
               :z-index="1000"
@@ -288,12 +289,12 @@
                   <div class="ele-wrapper ele-wrapper-deleteUserInputText">
                     <hm-ant-icon-text
                       ref="deleteUserInputText"
-                      text="是否要退款?"
+                      text="是否要删除?"
                       icon=""
                       width="200px"
                       icon-size="0px"
                       color="#CF2323"
-                      color-text="#CF2323"
+                      color-text="#1F1E1E"
                       :text-align="'left'"
                       padding="0"
                       icon-padding="0"
@@ -328,6 +329,7 @@ import {
   searchViewRegistrationOrders,
   addViewRegistrationOrders,
   editViewRegistrationOrders,
+  deleteViewRegistrationOrders,
 } from "/@/logics/OrderListGroup";
 
 export default {
@@ -505,11 +507,11 @@ export default {
               title: "",
               options: [
                 {
-                  label: "已报名",
+                  label: "已支付",
                   value: 0,
                 },
                 {
-                  label: "待支付",
+                  label: "未支付",
                   value: 1,
                 },
                 {
@@ -550,17 +552,7 @@ export default {
             },
             props: {
               width: "242px",
-              dataMap: {
-                label: "name",
-                value: "name",
-              },
               title: "",
-              params: {
-                pageNo: 1,
-                pageSize: -1,
-              },
-              showSearch: true,
-              url: "/api/restify/store/list",
             },
             validator: function (value) {},
           },
@@ -572,17 +564,7 @@ export default {
             },
             props: {
               width: "242px",
-              dataMap: {
-                label: "name",
-                value: "name",
-              },
               title: "",
-              params: {
-                pageNo: 1,
-                pageSize: -1,
-              },
-              showSearch: true,
-              url: "/api/restify/store/list",
             },
             validator: function (value) {},
           },
@@ -681,8 +663,8 @@ export default {
           },
           {
             title: "支付状态",
-            dataIndex: "paymentStatusText",
-            key: "paymentStatusText",
+            dataIndex: "paymentStatus",
+            key: "paymentStatus",
           },
           {
             title: "创建时间",
@@ -834,7 +816,7 @@ export default {
       this.viewRegistrationOrdersEditModal.visible = false;
     },
     onViewRegistrationOrdersDeleteModalOk() {
-      this.viewRegistrationOrdersDeleteModal.visible = false;
+      deleteViewRegistrationOrders(this, arguments);
     },
   },
 };
