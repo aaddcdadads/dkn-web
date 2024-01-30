@@ -39,20 +39,17 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
   ];
   if (self.$refs.activityProjectTable.cData.length > 0) {
     activityProjects = self.$refs.activityProjectTable.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
       return x;
     });
   }
   if (self.$refs.activityImgTableOne.cData.length > 0) {
     activityProjects = self.$refs.activityImgTableOne.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
       x.type = 0;
       return x;
     });
   }
   if (self.$refs.activityImgTableTwo.cData.length > 0) {
     let list = self.$refs.activityImgTableTwo.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
       x.type = 1;
       return x;
     });
