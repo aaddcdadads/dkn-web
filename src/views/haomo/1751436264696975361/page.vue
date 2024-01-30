@@ -1681,7 +1681,6 @@ export default {
 
 .ele-wrapper-acb7b7e7-e364-4d1b-b80c-c68eb0426c4a {
   border-left: 4px solid #0079fe;
-  margin-top: 10px;
   margin-left: 8px;
   padding-left: 5px;
   .hm-bg-text {
