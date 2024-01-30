@@ -1739,6 +1739,7 @@ export default {
       if (item.imgPath?.file?.response?.message) {
         item.imgPath = item.imgPath?.file?.response?.message;
       }
+      item.imgSize = "375 * 667";
       self.$refs.activityImgTableOne.cData.push(item);
 
       self.addBackground.visible = false;
