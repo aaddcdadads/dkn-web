@@ -662,6 +662,9 @@
                           ref="sharingImageTable"
                           :columns="sharingImageTable.columns"
                           :data="sharingImageTable.data"
+                          :pagination-hidden="
+                            sharingImageTable.paginationHidden
+                          "
                           :actions="sharingImageTable.actions"
                           :is-flat-action="sharingImageTable.isFlatAction"
                           :row-class-name="sharingImageTable.rowClassName"
@@ -1368,6 +1371,7 @@ export default {
             size: "375 * 667",
           },
         ],
+        paginationHidden: true,
         actions: [
           {
             name: "编辑",
