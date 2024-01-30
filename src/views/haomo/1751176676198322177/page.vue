@@ -1775,7 +1775,7 @@ export default {
       }
       delete item.imgPath;
       item.imgSize = "375 * 667";
-      self.$refs.activityImgTableOne.cData.push(item);
+      self.$refs.sharingImageTable.cData.push(item);
 
       self.sharingImageSettings.visible = false;
       self.$refs.activityImgFormTre.reset();
