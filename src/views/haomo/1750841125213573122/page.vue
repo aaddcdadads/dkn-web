@@ -291,7 +291,7 @@
                   <div class="ele-wrapper ele-wrapper-deleteUserInputText">
                     <hm-ant-icon-text
                       ref="deleteUserInputText"
-                      text="是否要退款?"
+                      text="是否需要退款?"
                       icon=""
                       width="200px"
                       icon-size="0px"
