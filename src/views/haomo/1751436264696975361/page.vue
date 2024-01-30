@@ -1932,7 +1932,7 @@ export default {
 }
 
 .ele-wrapper-3e907204-ffc2-4af7-9c91-d488f3bbe726 {
-  margin-left: 34px;
+  margin-left: 23px;
   width: 120px;
 }
 
