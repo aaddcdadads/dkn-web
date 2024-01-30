@@ -67,7 +67,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
   };
 
   await editRequest();
-  if (self.editRequestData.success) {
+  if (!self.editRequestData.success) {
     self.$message.error(self.editRequestData.message);
     return;
   }
@@ -79,33 +79,4 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
 
 /********************** end addActivty 开始 *********************/
 
-/********************** addActivityProject 开始 *********************/
-
-/**
- * 逻辑流 addActivityProject 入口函数
- */
-const addActivityProject = (logic.addActivityProject = async (
-  pageVm,
-  eventData
-) => {
-  console.log(`addActivityProject: `, pageVm, eventData);
-  self = Object.assign(pageVm, logic);
-  self.addActivityProjectData = eventData;
-
-  await self.$refs.activityProjectForm.validate();
-  let item = self.$refs.activityProjectForm.getFormValues();
-  item.index = Math.floor(Math.random() * 10000);
-
-  //处理图片
-  if (item.imgPath?.file?.response?.message) {
-    item.imgPath = item.imgPath?.file?.response?.message;
-  }
-  self.$refs.activityProjectTable.cData.push(item);
-
-  self.addproject.visible = false;
-  self.$refs.activityProjectForm.reset();
-});
-
-/********************** end addActivityProject 开始 *********************/
-
-export { editRequest, addActivty, addActivityProject };
+export { editRequest, addActivty };
