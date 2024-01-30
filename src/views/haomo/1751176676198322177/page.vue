@@ -576,10 +576,8 @@
                       height="100%"
                       class="ele-3fb31f2b-4a48-499a-ba2a-8181388283b9"
                     >
-                      <div
-                        class="ele-wrapper ele-wrapper-79de068d-0a6b-4f11-8574-d654a6df22b7"
-                      >
-                        <hm-color-kit> </hm-color-kit>
+                      <div class="ele-wrapper ele-wrapper-colourkit">
+                        <hm-color-kit ref="colourkit"> </hm-color-kit>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -605,10 +603,8 @@
                       height="100%"
                       class="ele-8e197d87-c68a-402f-90a7-400dc9c35edc"
                     >
-                      <div
-                        class="ele-wrapper ele-wrapper-b661ec59-8ff2-4a70-ba98-06e70d33bc68"
-                      >
-                        <hm-color-kit> </hm-color-kit>
+                      <div class="ele-wrapper ele-wrapper-textColourKit">
+                        <hm-color-kit ref="textColourKit"> </hm-color-kit>
                       </div>
                     </hm-bg-card>
                   </div>
