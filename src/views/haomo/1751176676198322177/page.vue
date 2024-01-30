@@ -358,6 +358,7 @@
                                 <hm-ant-bg-text
                                   text="协议与承诺："
                                   font-size="14px"
+                                  class="ele-e422be72-923b-42ad-bef4-7e886c910422"
                                 >
                                 </hm-ant-bg-text>
                               </div>
@@ -445,22 +446,6 @@
                                   class="ele-92a3011a-fa3f-40cc-b9ca-0a8958382ca4"
                                 >
                                 </hm-wang-editor>
-                              </div>
-                              <div
-                                class="ele-wrapper ele-wrapper-activityExtForm"
-                              >
-                                <hm-ant-formily
-                                  ref="activityExtForm"
-                                  :config="activityExtForm.config"
-                                  v-model:value="activityExtForm.value"
-                                  :col-num="0"
-                                  :col-min-width="380"
-                                  :schema="activityExtForm.schema"
-                                  :label-col="5"
-                                  :wrapper-col="18"
-                                  class="ele-activityExtForm"
-                                >
-                                </hm-ant-formily>
                               </div>
                             </hm-bg-card>
                           </div>
@@ -1403,63 +1388,6 @@ export default {
           excludeKeys: [],
         },
       },
-      activityExtForm: {
-        config: {
-          protocol: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "协议与承诺书",
-            props: {
-              showCount: true,
-              placeholder: "请输入《活动报名用户协议及承诺书》",
-            },
-          },
-          customerService: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动咨询与客服",
-            props: {},
-          },
-          activityRules: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "活动规则",
-            props: {
-              showCount: true,
-              placeholder: "请输入活动规则",
-            },
-          },
-        },
-        value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-      },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         schema: {
           type: "object",
@@ -1903,13 +1831,12 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-92a3011a-fa3f-40cc-b9ca-0a8958382ca4 {
-  width: 80%;
+.ele-wrapper-e422be72-923b-42ad-bef4-7e886c910422 {
+  margin-left: 20px;
 }
 
-.ele-wrapper-activityExtForm {
-  width: 100%;
-  margin-top: 20px;
+.ele-wrapper-92a3011a-fa3f-40cc-b9ca-0a8958382ca4 {
+  width: 80%;
 }
 
 .ele-wrapper-message_2 {
