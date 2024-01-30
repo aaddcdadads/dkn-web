@@ -490,6 +490,10 @@ export default {
                   label: "支付宝",
                   value: "支付宝",
                 },
+                {
+                  label: "app",
+                  value: "app",
+                },
               ],
             },
             validator: function (value) {},
