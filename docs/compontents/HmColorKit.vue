@@ -2,7 +2,7 @@
   <div class="show-color-div">
     <div class="show-color-content">
       <div>
-        <span>{{ title }}:</span>
+        <span :class="{'must':required}">{{ title }}:</span>
       </div>
       <div class="color-picker-box">
         <div class="show-color-picker" :style="{ background: cColor }"></div>
@@ -46,6 +46,13 @@ export default {
     title: {
       type: String,
       default: "颜色设置"
+    },
+    /**
+     * 必填
+     */
+    required:{
+      type:Boolean,
+      default:true
     },
     /**
      * 展示
@@ -187,4 +194,9 @@ export default {
 .color-picker-icon {
   height: 26px;
   margin-left: 15px;
-}</style>
+}
+.must::before{
+color: #ff9ea1;
+content: " * ";
+}
+</style>
