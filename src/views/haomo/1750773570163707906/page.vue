@@ -259,7 +259,7 @@
                   <div
                     class="ele-wrapper ele-wrapper-216245a7-7953-4399-b2b2-43033411ee88"
                   >
-                    <hm-image> </hm-image>
+                    <hm-image width="260" height="260"> </hm-image>
                   </div>
                   <div
                     class="ele-wrapper ele-wrapper-9babf229-dc69-4618-aee1-3b697b5baf99"
