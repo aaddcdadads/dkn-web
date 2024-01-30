@@ -443,6 +443,50 @@
                               </div>
                             </hm-bg-card>
                           </div>
+                          <div
+                            class="ele-wrapper ele-wrapper-f97dd639-1f58-44cc-99e6-def3ddf58363"
+                          >
+                            <hm-bg-card
+                              width="100%"
+                              height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
+                              class="ele-f97dd639-1f58-44cc-99e6-def3ddf58363"
+                            >
+                              <div
+                                class="ele-wrapper ele-wrapper-04dfcec4-d289-4d3c-a977-7ed5a6ce3822"
+                              >
+                                <hm-ant-bg-text
+                                  text="协议与承诺书："
+                                  font-size="14px"
+                                  class="ele-04dfcec4-d289-4d3c-a977-7ed5a6ce3822"
+                                >
+                                </hm-ant-bg-text>
+                              </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-0303a115-4a17-41e3-b32a-c1d017db3f97"
+                              >
+                                <hm-wang-editor
+                                  value=""
+                                  :max-content-length="2"
+                                  class="ele-0303a115-4a17-41e3-b32a-c1d017db3f97"
+                                >
+                                </hm-wang-editor>
+                              </div>
+                            </hm-bg-card>
+                          </div>
+                          <div
+                            class="ele-wrapper ele-wrapper-848e318a-9213-4805-a8d8-7f9b336b01d5"
+                          >
+                            <hm-ant-input
+                              value=""
+                              title="活动咨询客服："
+                              width="500"
+                              class="ele-848e318a-9213-4805-a8d8-7f9b336b01d5"
+                            >
+                            </hm-ant-input>
+                          </div>
                         </hm-bg-card>
                       </div>
                     </hm-bg-card>
@@ -787,6 +831,7 @@ import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
+import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 import { addActivityProject, addActivty } from "/@/logics/AddActivityForm";
@@ -802,6 +847,7 @@ export default {
     HmModal,
     HmAntTable,
     HmWangEditor,
+    HmAntInput,
     HmColorKit,
   },
   data() {
@@ -1128,6 +1174,9 @@ export default {
           },
         ],
       },
+      "848e318a-9213-4805-a8d8-7f9b336b01d5": {
+        value: "",
+      },
       addActivityImgFormTwo: {
         schema: {
           type: "object",
@@ -1375,6 +1424,9 @@ export default {
           ],
           excludeKeys: [],
         },
+      },
+      "0303a115-4a17-41e3-b32a-c1d017db3f97": {
+        value: "",
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         schema: {
@@ -1824,7 +1876,24 @@ export default {
 }
 
 .ele-wrapper-92a3011a-fa3f-40cc-b9ca-0a8958382ca4 {
-  width: 80%;
+  width: 75%;
+}
+
+.ele-wrapper-f97dd639-1f58-44cc-99e6-def3ddf58363 {
+  width: 100%;
+}
+
+.ele-wrapper-04dfcec4-d289-4d3c-a977-7ed5a6ce3822 {
+  margin-left: 20px;
+}
+
+.ele-wrapper-0303a115-4a17-41e3-b32a-c1d017db3f97 {
+  width: 75%;
+}
+
+.ele-wrapper-848e318a-9213-4805-a8d8-7f9b336b01d5 {
+  width: 95%;
+  margin-left: 10px;
 }
 
 .ele-wrapper-message_2 {
