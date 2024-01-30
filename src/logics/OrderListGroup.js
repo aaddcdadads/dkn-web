@@ -7,6 +7,19 @@ let self = {};
 // logic对象保存当前逻辑组对象，可以通过logic.func或者self.func来调用本逻辑组内的所有逻辑单元
 let logic = {};
 
+/********************** orderRefund 开始 *********************/
+
+/**
+ * 逻辑流 orderRefund 入口函数
+ */
+const orderRefund = (logic.orderRefund = async (pageVm, eventData) => {
+  console.log(`orderRefund: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.orderRefundData = eventData;
+});
+
+/********************** end orderRefund 开始 *********************/
+
 /********************** editViewRegistrationOrders 开始 *********************/
 /**
  * 发送修改请求
@@ -196,6 +209,7 @@ const searchViewRegistrationOrders = (logic.searchViewRegistrationOrders = async
 /********************** end searchViewRegistrationOrders 开始 *********************/
 
 export {
+  orderRefund,
   editRequest,
   editViewRegistrationOrders,
   addRequest,
