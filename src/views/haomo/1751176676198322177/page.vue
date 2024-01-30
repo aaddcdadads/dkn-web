@@ -357,6 +357,7 @@
                                 <hm-ant-bg-text
                                   text="活动规则："
                                   font-size="14px"
+                                  :text-align="'right'"
                                   padding="2"
                                   class="ele-e422be72-923b-42ad-bef4-7e886c910422"
                                 >
@@ -1914,7 +1915,7 @@ export default {
 }
 
 .ele-wrapper-e422be72-923b-42ad-bef4-7e886c910422 {
-  margin-left: 62px;
+  width: 20.8%;
 }
 
 .ele-wrapper-activityRules {
