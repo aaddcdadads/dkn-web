@@ -79,13 +79,13 @@
                   <div class="ele-wrapper ele-wrapper-activityForm">
                     <hm-ant-formily
                       ref="activityForm"
-                      :schema="activityForm.schema"
-                      :wrapper-col="16"
-                      :col-num="0"
-                      :label-col="3"
-                      :col-min-width="380"
                       :config="activityForm.config"
                       v-model:value="activityForm.value"
+                      :col-num="0"
+                      :col-min-width="380"
+                      :schema="activityForm.schema"
+                      :label-col="3"
+                      :wrapper-col="16"
                       class="ele-activityForm"
                     >
                     </hm-ant-formily>
@@ -301,15 +301,56 @@
                               box-shadow-blur=""
                               class="ele-e3996ba6-7678-4de0-abea-832a2097c2c9"
                             >
+                              <div
+                                class="ele-wrapper ele-wrapper-37b100fe-30bf-47b0-9bed-b98bbfebd6f1"
+                              >
+                                <hm-ant-bg-text
+                                  text="活动运动信息"
+                                  font-size="14px"
+                                  class="ele-37b100fe-30bf-47b0-9bed-b98bbfebd6f1"
+                                >
+                                </hm-ant-bg-text>
+                              </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-fdc826af-3716-45fc-bda6-52dfe0e1524a"
+                              >
+                                <hm-ant-formily
+                                  :config="{
+                                    activityType: {
+                                      style: { width: '100%' },
+                                      type: 'Input',
+                                      title: '活动类型',
+                                      required: true,
+                                      props: { placeholder: '例子：跑步' },
+                                    },
+                                    ActivityRequirements: {
+                                      style: { width: '100%' },
+                                      type: 'Input',
+                                      title: '活动需求',
+                                      required: true,
+                                      props: {
+                                        placeholder: '例子：2km/5km/10km',
+                                      },
+                                    },
+                                  }"
+                                  :value="{}"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :label-col="7"
+                                  :wrapper-col="14"
+                                  class="ele-fdc826af-3716-45fc-bda6-52dfe0e1524a"
+                                >
+                                </hm-ant-formily>
+                              </div>
                             </hm-bg-card>
                           </div>
                           <div
                             class="ele-wrapper ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48"
                           >
                             <hm-ant-bg-text
-                              padding="2"
-                              font-size="14px"
                               text="活动信息"
+                              font-size="14px"
+                              padding="2"
                               class="ele-633b539d-81dc-4e94-af68-dfba9182db48"
                             >
                             </hm-ant-bg-text>
@@ -600,28 +641,6 @@ export default {
     let self = this;
     return {
       activityForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           name: {
             style: {
@@ -687,6 +706,28 @@ export default {
         },
         value: {
           status: 0,
+        },
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
         },
       },
       addproject: {
@@ -1054,6 +1095,33 @@ export default {
           },
         ],
       },
+      "fdc826af-3716-45fc-bda6-52dfe0e1524a": {
+        config: {
+          activityType: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动类型",
+            required: true,
+            props: {
+              placeholder: "例子：跑步",
+            },
+          },
+          ActivityRequirements: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动需求",
+            required: true,
+            props: {
+              placeholder: "例子：2km/5km/10km",
+            },
+          },
+        },
+        value: {},
+      },
       activityExtForm: {
         schema: {
           type: "object",
@@ -1414,6 +1482,19 @@ export default {
 }
 
 .ele-wrapper-e3996ba6-7678-4de0-abea-832a2097c2c9 {
+  width: 100%;
+}
+
+.ele-wrapper-37b100fe-30bf-47b0-9bed-b98bbfebd6f1 {
+  border-left: 5px solid #0079fe;
+  margin-top: 15px;
+  padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
+}
+
+.ele-wrapper-fdc826af-3716-45fc-bda6-52dfe0e1524a {
   width: 100%;
 }
 
