@@ -26,11 +26,17 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
 
   await self.$refs.activityForm.validate();
   await self.$refs.activityExtForm.validate();
+  await self.$refs.activityExtTwoForm.validate();
 
   let activityProjects = [],
     activityImgs = [],
     activityExts = [];
-  activityExts = [{ ...self.$refs.activityExtForm.getFormValues() }];
+  activityExts = [
+    {
+      ...self.$refs.activityExtForm.getFormValues(),
+      ...self.$refs.activityExtTwoForm.getFormValues(),
+    },
+  ];
   if (self.$refs.activityProjectTable.cData.length > 0) {
     activityProjects = self.$refs.activityProjectTable.cData.map((x) => {
       delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
@@ -55,7 +61,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
   self.item = {
     ...self.$refs.activityForm.getFormValues(),
     ...self.$refs.activityExtForm.getFormValues(),
-    activityExts,
+    activityProjects,
     activityImgs,
     activityExts,
   };

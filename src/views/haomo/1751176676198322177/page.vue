@@ -231,12 +231,12 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              title="奖品图片"
-                              v-model:visible="addprize.visible"
                               :z-index="1000"
+                              v-model:visible="addprize.visible"
+                              title="奖品图片"
                               :auto-close="false"
-                              @ok="onAddprizeOk"
                               @cancel="onAddprizeCancel"
+                              @ok="onAddprizeOk"
                               class="ele-addprize"
                             >
                               <div
@@ -272,19 +272,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :columns="activityImgTableTwo.columns"
-                                  :data="activityImgTableTwo.data"
-                                  :pagination-hidden="
-                                    activityImgTableTwo.paginationHidden
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :actions="activityImgTableTwo.actions"
                                   :is-flat-action="
                                     activityImgTableTwo.isFlatAction
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
+                                  :data="activityImgTableTwo.data"
+                                  :columns="activityImgTableTwo.columns"
                                   :row-class-name="
                                     activityImgTableTwo.rowClassName
                                   "
+                                  :pagination-hidden="
+                                    activityImgTableTwo.paginationHidden
+                                  "
+                                  :actions="activityImgTableTwo.actions"
                                 >
                                 </hm-ant-table>
                               </div>
@@ -312,51 +312,18 @@
                                 </hm-ant-bg-text>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-fdc826af-3716-45fc-bda6-52dfe0e1524a"
+                                class="ele-wrapper ele-wrapper-activityExtTwoForm"
                               >
                                 <hm-ant-formily
-                                  :config="{
-                                    ActivityRequirements: {
-                                      style: { width: '100%' },
-                                      type: 'Input',
-                                      title: '活动需求',
-                                      required: true,
-                                      props: {
-                                        placeholder: '例子：2km/5km/10km',
-                                      },
-                                    },
-                                    activityType: {
-                                      style: { width: '100%' },
-                                      type: 'Input',
-                                      title: '活动类型',
-                                      required: true,
-                                      props: { placeholder: '例子：跑步' },
-                                    },
-                                  }"
-                                  :value="{}"
-                                  :col-num="0"
-                                  :col-min-width="380"
-                                  :schema="{
-                                    type: 'object',
-                                    properties: {
-                                      form: {
-                                        'x-component': 'Form',
-                                        'x-component-props': {
-                                          'wrapper-col': { span: 14 },
-                                          'label-col': { span: 7 },
-                                          style: {
-                                            flexWrap: 'wrap',
-                                            display: 'flex',
-                                          },
-                                        },
-                                        type: 'void',
-                                        properties: {},
-                                      },
-                                    },
-                                  }"
-                                  :label-col="5"
+                                  ref="activityExtTwoForm"
+                                  :schema="activityExtTwoForm.schema"
                                   :wrapper-col="16"
-                                  class="ele-fdc826af-3716-45fc-bda6-52dfe0e1524a"
+                                  :col-num="0"
+                                  :label-col="5"
+                                  :col-min-width="380"
+                                  :config="activityExtTwoForm.config"
+                                  v-model:value="activityExtTwoForm.value"
+                                  class="ele-activityExtTwoForm"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -389,13 +356,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtForm"
+                                  :schema="activityExtForm.schema"
+                                  :wrapper-col="18"
+                                  :col-num="0"
+                                  :label-col="5"
+                                  :col-min-width="380"
                                   :config="activityExtForm.config"
                                   v-model:value="activityExtForm.value"
-                                  :col-num="0"
-                                  :col-min-width="380"
-                                  :schema="activityExtForm.schema"
-                                  :label-col="5"
-                                  :wrapper-col="18"
                                   class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
@@ -607,36 +574,6 @@
                         class="ele-wrapper ele-wrapper-43925a45-d2f9-4555-b0fc-9ec868b07679"
                       >
                         <hm-ant-table
-                          :get-data-map="{ total: '', list: '' }"
-                          :data="[
-                            {
-                              address:
-                                'New York No. 1 Lake Park, New York No. 1 Lake Park',
-                              school: '加里敦大学',
-                              name: 'John Brown',
-                              key: '1',
-                              age: 32,
-                              sexual: '男',
-                            },
-                            {
-                              address:
-                                'London No. 2 Lake Park, London No. 2 Lake Park',
-                              school: '加里敦大学',
-                              name: 'Jim Green',
-                              key: '2',
-                              age: 42,
-                              sexual: '男',
-                            },
-                            {
-                              address:
-                                'Sidney No. 1 Lake Park, Sidney No. 1 Lake Park',
-                              school: '加里敦大学',
-                              name: 'Joe Black',
-                              key: '3',
-                              age: 32,
-                              sexual: '男',
-                            },
-                          ]"
                           :columns="[
                             { dataIndex: 'name', title: '姓名', key: 'name' },
                             {
@@ -670,10 +607,15 @@
                               key: 'action',
                             },
                           ]"
-                          :row-class-name="{}"
+                          :data="[
+                            { image: '', size: '375 * 667' },
+                            { image: '', size: '375 * 667' },
+                          ]"
+                          :get-data-map="{ total: '', list: '' }"
                           :actions="[
                             {
                               name: '编辑',
+                              icon: 'fa fa-pencil',
                               callback:
                                 'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
                             },
@@ -683,6 +625,7 @@
                                 'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
                             },
                           ]"
+                          :row-class-name="{}"
                         >
                         </hm-ant-table>
                       </div>
@@ -1144,6 +1087,12 @@ export default {
         value: {},
       },
       activityImgTableTwo: {
+        isFlatAction: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        data: [],
         columns: [
           {
             customRender: function (data) {
@@ -1190,12 +1139,8 @@ export default {
             key: "action",
           },
         ],
-        data: [],
+        rowClassName: {},
         paginationHidden: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
         actions: [
           {
             name: "编辑",
@@ -1216,10 +1161,30 @@ export default {
             type: "link",
           },
         ],
-        isFlatAction: true,
-        rowClassName: {},
       },
-      "fdc826af-3716-45fc-bda6-52dfe0e1524a": {
+      activityExtTwoForm: {
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
         config: {
           ActivityRequirements: {
             style: {
@@ -1245,6 +1210,8 @@ export default {
           },
         },
         value: {},
+      },
+      activityExtForm: {
         schema: {
           type: "object",
           properties: {
@@ -1267,8 +1234,6 @@ export default {
             },
           },
         },
-      },
-      activityExtForm: {
         config: {
           protocol: {
             style: {
@@ -1302,28 +1267,6 @@ export default {
           },
         },
         value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         schema: {
@@ -1486,6 +1429,9 @@ export default {
     onAddBtn2Click() {
       this.addprize.visible = true;
     },
+    onAddprizeCancel() {
+      this.addprize.visible = false;
+    },
     async onAddprizeOk() {
       let self = this;
       await self.$refs.addActivityImgFormTwo.validate();
@@ -1500,9 +1446,6 @@ export default {
 
       self.addprize.visible = false;
       self.$refs.addActivityImgFormTwo.reset();
-    },
-    onAddprizeCancel() {
-      this.addprize.visible = false;
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
@@ -1640,7 +1583,7 @@ export default {
   }
 }
 
-.ele-wrapper-fdc826af-3716-45fc-bda6-52dfe0e1524a {
+.ele-wrapper-activityExtTwoForm {
   width: 100%;
   margin-top: 20px;
 }
