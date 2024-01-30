@@ -79,13 +79,13 @@
                   <div class="ele-wrapper ele-wrapper-activityForm">
                     <hm-ant-formily
                       ref="activityForm"
-                      :schema="activityForm.schema"
-                      :wrapper-col="16"
-                      :col-num="0"
-                      :label-col="5"
-                      :col-min-width="380"
                       :config="activityForm.config"
                       v-model:value="activityForm.value"
+                      :col-num="0"
+                      :col-min-width="380"
+                      :schema="activityForm.schema"
+                      :label-col="5"
+                      :wrapper-col="16"
                       class="ele-activityForm"
                     >
                     </hm-ant-formily>
@@ -231,12 +231,12 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              :z-index="1000"
-                              v-model:visible="addprize.visible"
                               title="奖品图片"
+                              v-model:visible="addprize.visible"
+                              :z-index="1000"
                               :auto-close="false"
-                              @cancel="onAddprizeCancel"
                               @ok="onAddprizeOk"
+                              @cancel="onAddprizeCancel"
                               class="ele-addprize"
                             >
                               <div
@@ -244,13 +244,13 @@
                               >
                                 <hm-ant-formily
                                   ref="addActivityImgFormTwo"
-                                  :schema="addActivityImgFormTwo.schema"
-                                  :wrapper-col="14"
-                                  :col-num="0"
-                                  :label-col="7"
-                                  :col-min-width="380"
                                   :config="addActivityImgFormTwo.config"
                                   v-model:value="addActivityImgFormTwo.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="addActivityImgFormTwo.schema"
+                                  :label-col="7"
+                                  :wrapper-col="14"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -356,13 +356,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtForm"
-                                  :schema="activityExtForm.schema"
-                                  :wrapper-col="18"
-                                  :col-num="0"
-                                  :label-col="5"
-                                  :col-min-width="380"
                                   :config="activityExtForm.config"
                                   v-model:value="activityExtForm.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="activityExtForm.schema"
+                                  :label-col="5"
+                                  :wrapper-col="18"
                                   class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
@@ -576,8 +576,40 @@
                         <hm-modal
                           :visible="false"
                           :z-index="1000"
+                          height=""
                           class="ele-8126f126-e733-461e-a935-b2e92fd062a1"
                         >
+                          <div
+                            class="ele-wrapper ele-wrapper-89787e21-f9a9-487d-b055-c327bec09efd"
+                          >
+                            <hm-ant-formily
+                              :config="{
+                                size: {
+                                  style: { width: '100%' },
+                                  type: 'Input',
+                                  title: '参考尺寸',
+                                  required: true,
+                                  props: {},
+                                },
+                                imgPath: {
+                                  style: { width: '100%' },
+                                  type: 'UploadImage',
+                                  title: '图片',
+                                  required: true,
+                                  props: {
+                                    action: '/api/sys/common/upload',
+                                    accept: '.jpg,.png',
+                                  },
+                                },
+                              }"
+                              :value="{}"
+                              :col-num="0"
+                              :col-min-width="380"
+                              :label-col="7"
+                              :wrapper-col="14"
+                            >
+                            </hm-ant-formily>
+                          </div>
                         </hm-modal>
                       </div>
                       <div
@@ -702,28 +734,6 @@ export default {
     let self = this;
     return {
       activityForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           name: {
             style: {
@@ -789,6 +799,28 @@ export default {
         },
         value: {
           status: 0,
+        },
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
         },
       },
       addproject: {
@@ -1020,28 +1052,6 @@ export default {
         ],
       },
       addActivityImgFormTwo: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           sortNo: {
             style: {
@@ -1079,6 +1089,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityImgTableTwo: {
         isFlatAction: true,
@@ -1206,6 +1238,39 @@ export default {
         value: {},
       },
       activityExtForm: {
+        config: {
+          activityRules: {
+            style: {
+              width: "100%",
+            },
+            type: "Textarea",
+            title: "活动规则",
+            props: {
+              showCount: true,
+              placeholder: "请输入活动规则",
+            },
+          },
+          protocol: {
+            style: {
+              width: "100%",
+            },
+            type: "Textarea",
+            title: "协议与承诺书",
+            props: {
+              showCount: true,
+              placeholder: "请输入《活动报名用户协议及承诺书》",
+            },
+          },
+          customerService: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动咨询与客服",
+            props: {},
+          },
+        },
+        value: {},
         schema: {
           type: "object",
           properties: {
@@ -1228,39 +1293,6 @@ export default {
             },
           },
         },
-        config: {
-          protocol: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "协议与承诺书",
-            props: {
-              showCount: true,
-              placeholder: "请输入《活动报名用户协议及承诺书》",
-            },
-          },
-          customerService: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动咨询与客服",
-            props: {},
-          },
-          activityRules: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "活动规则",
-            props: {
-              showCount: true,
-              placeholder: "请输入活动规则",
-            },
-          },
-        },
-        value: {},
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         schema: {
@@ -1390,6 +1422,32 @@ export default {
       "8126f126-e733-461e-a935-b2e92fd062a1": {
         visible: false,
       },
+      "89787e21-f9a9-487d-b055-c327bec09efd": {
+        config: {
+          size: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "参考尺寸",
+            required: true,
+            props: {},
+          },
+          imgPath: {
+            style: {
+              width: "100%",
+            },
+            type: "UploadImage",
+            title: "图片",
+            required: true,
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+        },
+        value: {},
+      },
     };
   },
   watch: {},
@@ -1426,9 +1484,6 @@ export default {
     onAddBtn2Click() {
       this.addprize.visible = true;
     },
-    onAddprizeCancel() {
-      this.addprize.visible = false;
-    },
     async onAddprizeOk() {
       let self = this;
       await self.$refs.addActivityImgFormTwo.validate();
@@ -1443,6 +1498,9 @@ export default {
 
       self.addprize.visible = false;
       self.$refs.addActivityImgFormTwo.reset();
+    },
+    onAddprizeCancel() {
+      this.addprize.visible = false;
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
