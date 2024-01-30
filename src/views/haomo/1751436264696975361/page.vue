@@ -245,7 +245,7 @@
                               title="奖品图片"
                               v-model:visible="addprize.visible"
                               :z-index="1000"
-                              height="250px"
+                              height="300px"
                               class="ele-addprize"
                             >
                               <div
@@ -443,7 +443,7 @@
                       title="背景图片"
                       v-model:visible="addimage.visible"
                       :z-index="1000"
-                      height="250px"
+                      height="300px"
                       class="ele-addimage"
                     >
                       <div
