@@ -727,6 +727,7 @@ export default {
             dataIndex: "nowPickUpName",
             key: "nowPickUpName",
             customRender: function (data) {
+              console.log("ss实际核销门店s", data);
               if (data.originalPickUpName == data.nowPickUpName) {
                 return data.text;
               }
