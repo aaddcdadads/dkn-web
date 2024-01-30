@@ -413,7 +413,7 @@
                       title="报名页背景图"
                       v-model:visible="addBackground.visible"
                       :z-index="1000"
-                      height="250px"
+                      height="300px"
                       class="ele-addBackground"
                     >
                       <div
