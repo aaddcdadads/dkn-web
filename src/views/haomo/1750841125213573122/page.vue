@@ -544,6 +544,173 @@ export default {
         },
         schema: {},
       },
+      viewRegistrationOrdersTable: {
+        params: {
+          databaseId: "",
+          column: "createTime",
+          order: "desc",
+        },
+        columns: [
+          {
+            title: "订单编号",
+            dataIndex: "id",
+            key: "id",
+          },
+          {
+            title: "手机号",
+            dataIndex: "phone",
+            key: "phone",
+          },
+          {
+            title: "姓名/昵称",
+            dataIndex: "realname",
+            key: "realname",
+          },
+          {
+            title: "报名项目",
+            dataIndex: "activityId_dictText",
+            key: "activityId_dictText",
+          },
+          {
+            title: "订单金额",
+            dataIndex: "money",
+            key: "money",
+          },
+          {
+            title: "报名渠道",
+            dataIndex: "channel",
+            key: "channel",
+          },
+          {
+            title: "支付状态",
+            dataIndex: "paymentStatusText",
+            key: "paymentStatusText",
+          },
+          {
+            title: "创建时间",
+            dataIndex: "createTime",
+            key: "createTime",
+          },
+          {
+            title: "核销状态",
+            dataIndex: "pickUpStatusText",
+            key: "pickUpStatusText",
+          },
+          {
+            title: "核销时间",
+            dataIndex: "pickUpTime",
+            key: "pickUpTime",
+          },
+          {
+            title: "原核销门店",
+            dataIndex: "originalPickUpName",
+            key: "originalPickUpName",
+          },
+          {
+            title: "实际核销门店",
+            dataIndex: "nowPickUpName",
+            key: "nowPickUpName",
+            customRender: function (data) {
+              console.log("ss实际核销门店s", data);
+              if (data.record.originalPickUpName == data.record.nowPickUpName) {
+                return data.text;
+              }
+              return h(
+                "div",
+                {
+                  class: "applyNoDiv",
+                  style: {
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    paddingLeft: "16px",
+                    marginLeft: "-16px",
+                    backgroundColor: "#fe8989",
+                  },
+                },
+                [
+                  h(
+                    "span",
+                    {
+                      style: {},
+                    },
+                    data.text
+                  ),
+                ]
+              );
+            },
+          },
+          {
+            slots: {
+              customRender: "action",
+            },
+            width: "260",
+            title: "操作",
+            key: "action",
+            customRender: function (item) {
+              return h(
+                "div",
+                {
+                  style: {
+                    width: 200,
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "left",
+                    alignItems: "left",
+                  },
+                },
+                [
+                  h(HmAntButton, {
+                    disabled: item.record.pickUpStatus == 0 ? true : false,
+                    text: "退款",
+                    fontSize: 14,
+                    type: "link",
+                    icon: "",
+                    onClick: function () {
+                      if (item.record.paymentStatus === 0) {
+                        self.registrationOrderId = item.id;
+                        self.viewRegistrationOrdersDeleteModal.visible = true;
+                      } else {
+                        self.$message.error("已退款、待支付状态下不可退款");
+                      }
+                    },
+                  }),
+                ]
+              );
+            },
+          },
+        ],
+        data: [{}],
+        pagination: {
+          current: 1,
+          pageSizeOptions: ["10", "20", "30", "40"],
+          pageSize: 10,
+          showSizeChanger: true,
+        },
+        url: "/api/dkn/viewRegistrationOrders/list",
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        rowSelectFlag: true,
+        actions: [
+          {
+            name: "退款",
+            callback: function (item) {
+              self.registrationOrderId = item.id;
+              self.viewRegistrationOrdersDeleteModal.visible = true;
+
+              /*self.$nextTick(function() {
+        self.viewRegistrationOrdersDetailForm.value = item;
+      });*/
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        backgroundColor: "#FFFFFF",
+        rowClassName: {},
+      },
       viewRegistrationOrdersDetailModal: {
         visible: false,
       },
@@ -748,173 +915,6 @@ export default {
         },
         schema: {},
       },
-      viewRegistrationOrdersTable: {
-        columns: [
-          {
-            title: "订单编号",
-            dataIndex: "id",
-            key: "id",
-          },
-          {
-            title: "手机号",
-            dataIndex: "phone",
-            key: "phone",
-          },
-          {
-            title: "姓名/昵称",
-            dataIndex: "realname",
-            key: "realname",
-          },
-          {
-            title: "报名项目",
-            dataIndex: "activityId_dictText",
-            key: "activityId_dictText",
-          },
-          {
-            title: "订单金额",
-            dataIndex: "money",
-            key: "money",
-          },
-          {
-            title: "报名渠道",
-            dataIndex: "channel",
-            key: "channel",
-          },
-          {
-            title: "支付状态",
-            dataIndex: "paymentStatusText",
-            key: "paymentStatusText",
-          },
-          {
-            title: "创建时间",
-            dataIndex: "createTime",
-            key: "createTime",
-          },
-          {
-            title: "核销状态",
-            dataIndex: "pickUpStatusText",
-            key: "pickUpStatusText",
-          },
-          {
-            title: "核销时间",
-            dataIndex: "pickUpTime",
-            key: "pickUpTime",
-          },
-          {
-            title: "原核销门店",
-            dataIndex: "originalPickUpName",
-            key: "originalPickUpName",
-          },
-          {
-            title: "实际核销门店",
-            dataIndex: "nowPickUpName",
-            key: "nowPickUpName",
-            customRender: function (data) {
-              console.log("ss实际核销门店s", data);
-              if (data.record.originalPickUpName == data.record.nowPickUpName) {
-                return data.text;
-              }
-              return h(
-                "div",
-                {
-                  class: "applyNoDiv",
-                  style: {
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    paddingLeft: "16px",
-                    marginLeft: "-16px",
-                    backgroundColor: "#fe8989",
-                  },
-                },
-                [
-                  h(
-                    "span",
-                    {
-                      style: {},
-                    },
-                    data.text
-                  ),
-                ]
-              );
-            },
-          },
-          {
-            slots: {
-              customRender: "action",
-            },
-            width: "260",
-            title: "操作",
-            key: "action",
-            customRender: function (item) {
-              return h(
-                "div",
-                {
-                  style: {
-                    width: 200,
-                    display: "flex",
-                    flexWrap: "wrap",
-                    justifyContent: "left",
-                    alignItems: "left",
-                  },
-                },
-                [
-                  h(HmAntButton, {
-                    disabled: item.record.pickUpStatus == 0 ? true : false,
-                    text: "退款",
-                    fontSize: 14,
-                    type: "link",
-                    icon: "",
-                    onClick: function () {
-                      if (item.record.paymentStatus === 0) {
-                        self.registrationOrderId = item.id;
-                        self.viewRegistrationOrdersDeleteModal.visible = true;
-                      } else {
-                        self.$message.error("已退款、待支付状态下不可退款");
-                      }
-                    },
-                  }),
-                ]
-              );
-            },
-          },
-        ],
-        data: [{}],
-        pagination: {
-          current: 1,
-          pageSizeOptions: ["10", "20", "30", "40"],
-          pageSize: 10,
-          showSizeChanger: true,
-        },
-        url: "/api/dkn/viewRegistrationOrders/list",
-        params: {
-          databaseId: "",
-          column: "createTime",
-          order: "desc",
-        },
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        rowSelectFlag: true,
-        actions: [
-          {
-            name: "退款",
-            callback: function (item) {
-              self.registrationOrderId = item.id;
-              self.viewRegistrationOrdersDeleteModal.visible = true;
-
-              /*self.$nextTick(function() {
-        self.viewRegistrationOrdersDetailForm.value = item;
-      });*/
-            },
-            type: "link",
-          },
-        ],
-        isFlatAction: true,
-        backgroundColor: "#FFFFFF",
-        rowClassName: {},
-      },
     };
   },
   watch: {},
@@ -929,7 +929,7 @@ export default {
       console.log("this.viewRegistrationOrdersAddForm.config");
       console.log("this.viewRegistrationOrdersEditForm.config");
       console.log("this.viewRegistrationOrdersDetailForm.config");
-
+      this.viewRegistrationOrdersTable.params;
       //设置上传请求头
       this.$nextTick(() => {
         let token = localStorage.getItem("pro__Access-Token");
