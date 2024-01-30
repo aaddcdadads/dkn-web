@@ -190,19 +190,19 @@
                           >
                             <hm-ant-table
                               ref="activityProjectTable"
-                              :is-flat-action="
-                                activityProjectTable.isFlatAction
-                              "
-                              :get-data-map="activityProjectTable.getDataMap"
-                              :data="activityProjectTable.data"
                               :columns="activityProjectTable.columns"
-                              :row-class-name="
-                                activityProjectTable.rowClassName
-                              "
+                              :data="activityProjectTable.data"
                               :pagination-hidden="
                                 activityProjectTable.paginationHidden
                               "
+                              :get-data-map="activityProjectTable.getDataMap"
                               :actions="activityProjectTable.actions"
+                              :is-flat-action="
+                                activityProjectTable.isFlatAction
+                              "
+                              :row-class-name="
+                                activityProjectTable.rowClassName
+                              "
                             >
                             </hm-ant-table>
                           </div>
@@ -272,19 +272,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :is-flat-action="
-                                    activityImgTableTwo.isFlatAction
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :data="activityImgTableTwo.data"
                                   :columns="activityImgTableTwo.columns"
-                                  :row-class-name="
-                                    activityImgTableTwo.rowClassName
-                                  "
+                                  :data="activityImgTableTwo.data"
                                   :pagination-hidden="
                                     activityImgTableTwo.paginationHidden
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
                                   :actions="activityImgTableTwo.actions"
+                                  :is-flat-action="
+                                    activityImgTableTwo.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityImgTableTwo.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -937,12 +937,6 @@ export default {
         },
       },
       activityProjectTable: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [],
         columns: [
           {
             customRender: function (data) {
@@ -1012,8 +1006,12 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1034,6 +1032,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       addActivityImgFormTwo: {
         config: {
@@ -1048,6 +1048,17 @@ export default {
               placeholder: "奖品序号",
             },
           },
+          name: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "奖品名称",
+            required: true,
+            props: {
+              placeholder: "请输入奖品名称",
+            },
+          },
           imgPath: {
             style: {
               width: "100%",
@@ -1058,17 +1069,6 @@ export default {
             props: {
               action: "/api/sys/common/upload",
               accept: ".jpg,.png",
-            },
-          },
-          name: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "奖品名称",
-            required: true,
-            props: {
-              placeholder: "请输入奖品名称",
             },
           },
         },
@@ -1097,12 +1097,6 @@ export default {
         },
       },
       activityImgTableTwo: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [],
         columns: [
           {
             customRender: function (data) {
@@ -1149,8 +1143,12 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1171,6 +1169,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityExtTwoForm: {
         config: {
