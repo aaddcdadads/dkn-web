@@ -88,9 +88,13 @@
               >
                 <hm-ant-select
                   value="undefined"
+                  url="/api/restify/activity/list"
+                  :params="{ pageNo: 1, pageSize: -1 }"
+                  :data-map="{ label: 'name', value: 'id' }"
                   title=""
                   placeholder="选择活动"
                   :options="[]"
+                  :show-search="true"
                   class="ele-9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c"
                 >
                 </hm-ant-select>
@@ -732,6 +736,14 @@ export default {
       },
       "9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c": {
         value: null,
+        params: {
+          pageNo: 1,
+          pageSize: -1,
+        },
+        dataMap: {
+          label: "name",
+          value: "id",
+        },
         options: [],
       },
       viewRegistrationOrdersTable: {
