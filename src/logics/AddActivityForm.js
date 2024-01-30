@@ -63,6 +63,9 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
     activityProjects,
     activityImgs,
     activityExts,
+    bgColour: self.bgColour,
+    colour: self.colour,
+    textColour: self.textColour,
   };
 
   await editRequest();
