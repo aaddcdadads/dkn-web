@@ -952,7 +952,7 @@ export default {
     },
     onActivitySelectChange(item) {
       console.log("sss--", item);
-      this.selectActivityId = item;
+      this.selectActivityId = item ?? "";
       searchViewRegistrationOrders(this, null);
     },
     onBatchRefundClick() {
