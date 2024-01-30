@@ -550,7 +550,17 @@ export default {
             },
             props: {
               width: "242px",
+              dataMap: {
+                label: "realname",
+                value: "realname",
+              },
               title: "",
+              params: {
+                pageNo: 1,
+                pageSize: -1,
+              },
+              showSearch: true,
+              url: "api/restify/store/list",
             },
             validator: function (value) {},
           },
@@ -562,7 +572,17 @@ export default {
             },
             props: {
               width: "242px",
+              dataMap: {
+                label: "realname",
+                value: "realname",
+              },
               title: "",
+              params: {
+                pageNo: 1,
+                pageSize: -1,
+              },
+              showSearch: true,
+              url: "api/restify/store/list",
             },
             validator: function (value) {},
           },
