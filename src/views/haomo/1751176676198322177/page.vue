@@ -235,6 +235,7 @@
                               v-model:visible="addprize.visible"
                               :z-index="1000"
                               :auto-close="false"
+                              @ok="onAddprizeOk"
                               class="ele-addprize"
                             >
                               <div
@@ -1256,6 +1257,21 @@ export default {
     },
     onAddBtn2Click() {
       this.addprize.visible = true;
+    },
+    async onAddprizeOk() {
+      let self = this;
+      await self.$refs.addActivityImgFormTwo.validate();
+      let item = self.$refs.addActivityImgFormTwo.getFormValues();
+      item.index = Math.floor(Math.random() * 10000);
+
+      //处理图片
+      if (item.imgPath?.file?.response?.message) {
+        item.imgPath = item.imgPath?.file?.response?.message;
+      }
+      self.$refs.activityProjectTable.cData.push(item);
+
+      self.addprize.visible = false;
+      self.$refs.addActivityImgFormTwo.reset();
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
