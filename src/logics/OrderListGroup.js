@@ -20,6 +20,22 @@ const orderRefund = (logic.orderRefund = async (pageVm, eventData) => {
 
 /********************** end orderRefund 开始 *********************/
 
+/********************** ordersBatchRefund 开始 *********************/
+
+/**
+ * 逻辑流 ordersBatchRefund 入口函数
+ */
+const ordersBatchRefund = (logic.ordersBatchRefund = async (
+  pageVm,
+  eventData
+) => {
+  console.log(`ordersBatchRefund: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.ordersBatchRefundData = eventData;
+});
+
+/********************** end ordersBatchRefund 开始 *********************/
+
 /********************** editViewRegistrationOrders 开始 *********************/
 /**
  * 发送修改请求
@@ -210,6 +226,7 @@ const searchViewRegistrationOrders = (logic.searchViewRegistrationOrders = async
 
 export {
   orderRefund,
+  ordersBatchRefund,
   editRequest,
   editViewRegistrationOrders,
   addRequest,
