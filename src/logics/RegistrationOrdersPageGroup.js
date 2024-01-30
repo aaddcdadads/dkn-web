@@ -205,8 +205,11 @@ const behaviorOrdersLoadPara = (logic.behaviorOrdersLoadPara = function () {
  */
 const ajaxOrdersLoad = (logic.ajaxOrdersLoad = async function () {
   let res = await self.$getAction(`/api/dkn/viewRegistrationOrders/list`, {
-    pageNo: 1,
-    pageSize: 10,
+    ...self.registrationOrdersTable.params,
+    ...self.$getFilterValues(
+      self.$refs.registrationOrdersFilter.getFormValues(),
+      self.$refs.registrationOrdersFilter.cSchema
+    ),
   });
   self.ajaxOrdersLoadData = res;
 });
