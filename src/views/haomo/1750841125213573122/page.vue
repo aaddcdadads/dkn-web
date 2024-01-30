@@ -269,7 +269,6 @@
               title="删除"
               v-model:visible="viewRegistrationOrdersDeleteModal.visible"
               :closable="true"
-              ok-text="删除"
               :ok-type="'danger'"
               width="320px"
               :z-index="1000"
@@ -289,7 +288,7 @@
                   <div class="ele-wrapper ele-wrapper-deleteUserInputText">
                     <hm-ant-icon-text
                       ref="deleteUserInputText"
-                      text="是否要删除?"
+                      text="是否要退款?"
                       icon=""
                       width="200px"
                       icon-size="0px"
