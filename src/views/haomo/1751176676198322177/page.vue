@@ -647,10 +647,11 @@
                       <div class="ele-wrapper ele-wrapper-sharingImageSettings">
                         <hm-modal
                           ref="sharingImageSettings"
-                          :z-index="1000"
-                          v-model:visible="sharingImageSettings.visible"
                           title="分享图片"
+                          v-model:visible="sharingImageSettings.visible"
+                          :z-index="1000"
                           height=""
+                          :auto-close="false"
                           class="ele-sharingImageSettings"
                         >
                           <div
