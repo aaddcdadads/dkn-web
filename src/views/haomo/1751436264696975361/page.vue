@@ -769,7 +769,7 @@ export default {
         visible: false,
       },
       sharingImageSettings: {
-        visible: true,
+        visible: false,
       },
       title: {
         text: "创建活动",
