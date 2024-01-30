@@ -16,6 +16,8 @@ const orderRefund = (logic.orderRefund = async (pageVm, eventData) => {
   console.log(`orderRefund: `, pageVm, eventData);
   self = Object.assign(pageVm, logic);
   self.orderRefundData = eventData;
+
+  self.viewRegistrationOrdersDeleteModal.visible = false;
 });
 
 /********************** end orderRefund 开始 *********************/
