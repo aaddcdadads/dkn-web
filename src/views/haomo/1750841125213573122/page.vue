@@ -855,11 +855,13 @@ export default {
 }
 
 .ele-wrapper-exportButton {
-  margin: 0 0 0 1%;
+  margin: 0 1% 0 0;
+  float: right;
 }
 
 .ele-wrapper-26c123e0-0165-4f7e-b933-872da959c7a3 {
-  margin: 0 0 0 1%;
+  margin: 0 1% 0 0;
+  float: right;
 }
 
 .ele-wrapper-aa116123-614b-40e3-8592-157582614f2d {
