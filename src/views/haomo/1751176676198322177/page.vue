@@ -272,19 +272,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :is-flat-action="
-                                    activityImgTableTwo.isFlatAction
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :data="activityImgTableTwo.data"
                                   :columns="activityImgTableTwo.columns"
-                                  :row-class-name="
-                                    activityImgTableTwo.rowClassName
-                                  "
+                                  :data="activityImgTableTwo.data"
                                   :pagination-hidden="
                                     activityImgTableTwo.paginationHidden
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
                                   :actions="activityImgTableTwo.actions"
+                                  :is-flat-action="
+                                    activityImgTableTwo.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityImgTableTwo.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -317,13 +317,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtTwoForm"
-                                  :schema="activityExtTwoForm.schema"
-                                  :wrapper-col="16"
-                                  :col-num="0"
-                                  :label-col="5"
-                                  :col-min-width="380"
                                   :config="activityExtTwoForm.config"
                                   v-model:value="activityExtTwoForm.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="activityExtTwoForm.schema"
+                                  :label-col="5"
+                                  :wrapper-col="16"
                                   class="ele-activityExtTwoForm"
                                 >
                                 </hm-ant-formily>
@@ -420,14 +420,13 @@
                               </div>
                             </hm-bg-card>
                           </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-848e318a-9213-4805-a8d8-7f9b336b01d5"
-                          >
+                          <div class="ele-wrapper ele-wrapper-customerService">
                             <hm-ant-input
-                              value=""
+                              ref="customerService"
+                              v-model:value="customerService.value"
                               title="活动咨询客服"
                               width="480"
-                              class="ele-848e318a-9213-4805-a8d8-7f9b336b01d5"
+                              class="ele-customerService"
                             >
                             </hm-ant-input>
                           </div>
@@ -1147,7 +1146,7 @@ export default {
           },
         ],
       },
-      "848e318a-9213-4805-a8d8-7f9b336b01d5": {
+      customerService: {
         value: "",
       },
       addActivityImgFormTwo: {
@@ -1212,12 +1211,6 @@ export default {
         value: {},
       },
       activityImgTableTwo: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [],
         columns: [
           {
             customRender: function (data) {
@@ -1264,8 +1257,12 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1286,30 +1283,10 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityExtTwoForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           ActivityRequirements: {
             style: {
@@ -1335,6 +1312,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityRules: {
         value: "",
@@ -1927,7 +1926,7 @@ export default {
   }
 }
 
-.ele-wrapper-848e318a-9213-4805-a8d8-7f9b336b01d5 {
+.ele-wrapper-customerService {
   width: 100%;
   margin-top: 20px;
   /deep/.input-title {
