@@ -272,19 +272,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :is-flat-action="
-                                    activityImgTableTwo.isFlatAction
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :data="activityImgTableTwo.data"
                                   :columns="activityImgTableTwo.columns"
-                                  :row-class-name="
-                                    activityImgTableTwo.rowClassName
-                                  "
+                                  :data="activityImgTableTwo.data"
                                   :pagination-hidden="
                                     activityImgTableTwo.paginationHidden
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
                                   :actions="activityImgTableTwo.actions"
+                                  :is-flat-action="
+                                    activityImgTableTwo.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityImgTableTwo.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -1179,12 +1179,6 @@ export default {
         value: {},
       },
       activityImgTableTwo: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [],
         columns: [
           {
             customRender: function (data) {
@@ -1231,8 +1225,12 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1253,6 +1251,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityExtTwoForm: {
         schema: {
@@ -1716,7 +1716,7 @@ export default {
 
       //处理图片
       if (item.imgPath?.file?.response?.message) {
-        item.imgPath = item.imgPath?.file?.response?.message;
+        item.path = item.imgPath?.file?.response?.message;
       }
       self.$refs.activityImgTableTwo.cData.push(item);
 
