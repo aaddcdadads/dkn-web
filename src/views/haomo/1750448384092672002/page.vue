@@ -759,7 +759,7 @@ export default {
             width: 100,
           },
           {
-            title: "活动开始时间",
+            title: "活动周期",
             dataIndex: "startTime",
             key: "startTime",
             width: 220,
