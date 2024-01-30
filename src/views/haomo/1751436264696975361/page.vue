@@ -1905,6 +1905,10 @@ export default {
 
 .ele-wrapper-activityRulesBox {
   width: 100%;
+  .ele-activityRulesBox {
+    display: flex;
+    flex-wrap: nowrap;
+  }
 }
 
 .ele-wrapper-676eaac4-2113-4104-a0d1-6c2704cf0cdb {
@@ -1920,6 +1924,10 @@ export default {
 
 .ele-wrapper-agreementCommitmentletterBox {
   width: 100%;
+  .ele-agreementCommitmentletterBox {
+    display: flex;
+    flex-wrap: nowrap;
+  }
 }
 
 .ele-wrapper-3e907204-ffc2-4af7-9c91-d488f3bbe726 {
