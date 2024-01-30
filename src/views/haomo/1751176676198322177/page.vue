@@ -480,6 +480,8 @@
                       :z-index="1000"
                       height="300px"
                       :auto-close="false"
+                      @ok="onAddBackgroundOk"
+                      @cancel="onAddBackgroundCancel"
                       class="ele-addBackground"
                     >
                       <div
@@ -1759,6 +1761,24 @@ export default {
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
+    },
+    async onAddBackgroundOk() {
+      let self = this;
+      await self.$refs.addActivityImgFormTwo.validate();
+      let item = self.$refs.addActivityImgFormTwo.getFormValues();
+      item.index = Math.floor(Math.random() * 10000);
+
+      //处理图片
+      if (item.imgPath?.file?.response?.message) {
+        item.imgPath = item.imgPath?.file?.response?.message;
+      }
+      self.$refs.activityImgTableTwo.cData.push(item);
+
+      self.addBackground.visible = false;
+      self.$refs.addActivityImgFormTwo.reset();
+    },
+    onAddBackgroundCancel() {
+      this.addBackground.visible = false;
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
       addActivty(this, arguments);
