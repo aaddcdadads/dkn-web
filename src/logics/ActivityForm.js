@@ -33,6 +33,10 @@ const setActivity = (logic.setActivity = function () {
   self.bgColour = item.bgColour;
   self.colour = item.colour;
   self.textColour = item.textColour;
+
+  self.bgColourKit.color = item.bgColour;
+  self.colourKit.color = item.colour;
+  self.textColourKit.color = item.textColour;
 });
 
 /**
