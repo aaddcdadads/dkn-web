@@ -409,16 +409,17 @@
                               >
                                 <hm-wang-editor
                                   ref="agreementCommitmentletter"
-                                  :max-content-length="2"
-                                  :editor-config="
-                                    agreementCommitmentletter.editorConfig
-                                  "
                                   v-model:value="
                                     agreementCommitmentletter.value
                                   "
                                   :toolbar-config="
                                     agreementCommitmentletter.toolbarConfig
                                   "
+                                  :editor-config="
+                                    agreementCommitmentletter.editorConfig
+                                  "
+                                  :max-content-length="2"
+                                  @change="onAgreementCommitmentletterChange"
                                   class="ele-agreementCommitmentletter"
                                 >
                                 </hm-wang-editor>
@@ -981,24 +982,6 @@ export default {
       },
       agreementCommitmentletter: {
         value: "",
-        editorConfig: {
-          MENU_CONF: {
-            uploadImage: {
-              server: "/api/upload",
-              headers: {},
-              fieldName: "file",
-            },
-            uploadVideo: {
-              server: "/api/upload",
-              headers: {},
-              fieldName: "file",
-            },
-          },
-          scroll: true,
-          readOnly: false,
-          placeholder: "请输入...",
-          autoFocus: true,
-        },
         toolbarConfig: {
           excludeKeys: [],
           toolbarKeys: [
@@ -1051,6 +1034,24 @@ export default {
             "codeBlock",
             "insertTable",
           ],
+        },
+        editorConfig: {
+          MENU_CONF: {
+            uploadImage: {
+              server: "/api/upload",
+              headers: {},
+              fieldName: "file",
+            },
+            uploadVideo: {
+              server: "/api/upload",
+              headers: {},
+              fieldName: "file",
+            },
+          },
+          scroll: true,
+          readOnly: false,
+          placeholder: "请输入...",
+          autoFocus: true,
         },
       },
       activityProjectForm: {
@@ -1747,6 +1748,9 @@ export default {
     },
     onActivityRulesChange(e) {
       this.activityRules.value = e;
+    },
+    onAgreementCommitmentletterChange(e) {
+      this.agreementCommitmentletter.value = e;
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
