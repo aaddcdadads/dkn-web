@@ -537,7 +537,11 @@
                       class="ele-6e5e70a6-798c-41bd-8624-38eb4618518a"
                     >
                       <div class="ele-wrapper ele-wrapper-bgColourKit">
-                        <hm-color-kit ref="bgColourKit"> </hm-color-kit>
+                        <hm-color-kit
+                          ref="bgColourKit"
+                          :color="bgColourKit.color"
+                        >
+                        </hm-color-kit>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -591,7 +595,11 @@
                       class="ele-8e197d87-c68a-402f-90a7-400dc9c35edc"
                     >
                       <div class="ele-wrapper ele-wrapper-textColourKit">
-                        <hm-color-kit ref="textColourKit"> </hm-color-kit>
+                        <hm-color-kit
+                          ref="textColourKit"
+                          :color="textColourKit.color"
+                        >
+                        </hm-color-kit>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -829,6 +837,13 @@ export default {
         text: "添加",
         type: "primary",
         icon: "fa fa-plus",
+      },
+      bgColourKit: {
+        color: "#59c7f9",
+      },
+      colourKit: {},
+      textColourKit: {
+        color: "#59c7f9",
       },
       activityForm: {
         config: {
@@ -1688,6 +1703,9 @@ export default {
       self.addActivityProject.visible = true;
       self.addActivityImgTableOne.visible = true;
       self.addActivityImgTableTwo.visible = true;
+      self.bgColourKit.color = "#59c7f9";
+      self.colourKit.color = "#59c7f9";
+      self.textColourKit.color = "#59c7f9";
       self.getImg = function (url) {
         if (!url) {
           return "";
