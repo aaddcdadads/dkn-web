@@ -353,6 +353,18 @@
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
                               <div
+                                class="ele-wrapper ele-wrapper-8365ca3f-8e04-4cf0-b0da-f66af737ae55"
+                              >
+                                <hm-ant-input
+                                  value=""
+                                  title="活动咨询与客服"
+                                  placeholder=""
+                                  width="500"
+                                  class="ele-8365ca3f-8e04-4cf0-b0da-f66af737ae55"
+                                >
+                                </hm-ant-input>
+                              </div>
+                              <div
                                 class="ele-wrapper ele-wrapper-activityExtForm"
                               >
                                 <hm-ant-formily
@@ -695,6 +707,7 @@ import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
+import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 import { addActivityProject, addActivty } from "/@/logics/AddActivityForm";
@@ -709,6 +722,7 @@ export default {
     HmAntButton,
     HmModal,
     HmAntTable,
+    HmAntInput,
     HmColorKit,
   },
   data() {
@@ -1221,6 +1235,9 @@ export default {
           },
         },
       },
+      "8365ca3f-8e04-4cf0-b0da-f66af737ae55": {
+        value: "",
+      },
       activityExtForm: {
         config: {
           activityRules: {
@@ -1696,6 +1713,10 @@ export default {
 }
 
 .ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41 {
+  width: 100%;
+}
+
+.ele-wrapper-8365ca3f-8e04-4cf0-b0da-f66af737ae55 {
   width: 100%;
 }
 
