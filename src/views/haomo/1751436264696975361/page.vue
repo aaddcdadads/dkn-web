@@ -992,24 +992,7 @@ export default {
             key: "action",
           },
         ],
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
+        data: [],
         paginationHidden: true,
         getDataMap: {
           total: "",
