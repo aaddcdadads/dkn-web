@@ -1746,6 +1746,7 @@ export default {
       if (item.imgPath?.file?.response?.message) {
         item.path = item.imgPath?.file?.response?.message;
       }
+      delete item.imgPath;
       item.imgSize = "375 * 667";
       self.$refs.activityImgTableOne.cData.push(item);
 

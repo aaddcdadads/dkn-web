@@ -306,6 +306,7 @@
                     <hm-ant-button
                       text="导出门店二维码"
                       :type="'primary'"
+                      :size="'large'"
                       class="ele-f9d782d6-4596-493b-8cbe-fa1187ade47e"
                     >
                     </hm-ant-button>
@@ -316,6 +317,7 @@
                     <hm-ant-button
                       text="确定"
                       :type="'primary'"
+                      :size="'large'"
                       class="ele-704ae18e-b0b5-497f-8b08-b95ffcabf7ba"
                     >
                     </hm-ant-button>
