@@ -908,9 +908,7 @@ export default {
         textAlign: "center",
         hidden: false,
       },
-      addprice: {
-        visible: false,
-      },
+      addproject: {},
       deleteproject: {
         visible: false,
       },
@@ -921,6 +919,9 @@ export default {
         visible: false,
       },
       sharingImageSettings: {
+        visible: false,
+      },
+      addprice: {
         visible: false,
       },
       title: {
@@ -1201,6 +1202,7 @@ export default {
             slots: {
               customRender: "action",
             },
+            width: 100,
             title: "操作",
             key: "action",
           },
@@ -1217,7 +1219,7 @@ export default {
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
-              self.addprice.visible = true;
+              self.addproject.visible = true;
             },
             type: "link",
           },
