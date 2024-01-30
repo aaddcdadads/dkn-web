@@ -1931,11 +1931,11 @@ export default {
   width: 100%;
   margin-top: 20px;
   /deep/.input-title {
-    width: 20.8%;
+    width: 19.8%;
     text-align: right;
   }
   /deep/.ant-input-class {
-    width: 72%;
+    width: 71%;
   }
 }
 
