@@ -1689,6 +1689,9 @@ export default {
       self.addActivityImgTableOne.visible = true;
       self.addActivityImgTableTwo.visible = true;
       self.getImg = function (url) {
+        if (!url) {
+          return "";
+        }
         if (url.substring(0, 4) === "http") {
           return url;
         }
