@@ -56,6 +56,13 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
     });
     activityImgs = [...activityImgs, ...list];
   }
+  if (self.$refs.sharingImageTable.cData.length > 0) {
+    let list = self.$refs.sharingImageTable.cData.map((x) => {
+      x.type = 2;
+      return x;
+    });
+    activityImgs = [...activityImgs, ...list];
+  }
   self.item = {
     ...self.$refs.activityForm.getFormValues(),
     activityProjects,
