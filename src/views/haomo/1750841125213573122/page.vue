@@ -307,12 +307,11 @@
               </div>
             </hm-modal>
           </div>
-          <div
-            class="ele-wrapper ele-wrapper-fdc2bb86-cb83-4e03-95ac-05fbce04c46f"
-          >
+          <div class="ele-wrapper ele-wrapper-batchRefundModal">
             <hm-modal
-              title="退款"
-              :visible="false"
+              ref="batchRefundModal"
+              title="批量退款"
+              v-model:visible="batchRefundModal.visible"
               :closable="true"
               :ok-type="'danger'"
               width="320px"
@@ -334,7 +333,7 @@
                     class="ele-wrapper ele-wrapper-2e951bad-fbd8-4287-ac2f-30edb85629ca"
                   >
                     <hm-ant-icon-text
-                      text="是否要退款?"
+                      text="是否需要批量退款?"
                       icon=""
                       width="200px"
                       icon-size="0px"
@@ -511,7 +510,7 @@ export default {
       viewRegistrationOrdersDetailModal: {
         visible: false,
       },
-      "fdc2bb86-cb83-4e03-95ac-05fbce04c46f": {
+      batchRefundModal: {
         visible: false,
       },
       viewRegistrationOrdersFilter: {
