@@ -734,7 +734,7 @@
                           :col-num="0"
                           :col-min-width="380"
                           :schema="activityTwoForm.schema"
-                          :label-col="3"
+                          :label-col="4"
                           :wrapper-col="16"
                           class="ele-activityTwoForm"
                         >
