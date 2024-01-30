@@ -1935,7 +1935,7 @@ export default {
 }
 
 .ele-wrapper-04dfcec4-d289-4d3c-a977-7ed5a6ce3822 {
-  margin-left: 34px;
+  width: 20.8%;
 }
 
 .ele-wrapper-agreementCommitmentletter {
