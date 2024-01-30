@@ -1945,6 +1945,7 @@ export default {
 
 .ele-wrapper-66d95dfc-4437-4ea7-86eb-26498a2706e5 {
   margin-top: 20px;
+  width: 100%;
   /deep/.input-title {
     width: 19.8%;
     text-align: right;
