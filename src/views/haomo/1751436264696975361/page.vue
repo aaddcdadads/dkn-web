@@ -988,7 +988,6 @@ export default {
             slots: {
               customRender: "action",
             },
-            width: 100,
             title: "操作",
             key: "action",
           },
