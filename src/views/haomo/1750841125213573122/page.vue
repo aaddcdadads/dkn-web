@@ -319,6 +319,36 @@
               :z-index="1000"
               height="80px"
             >
+              <div
+                class="ele-wrapper ele-wrapper-065940be-5461-4e36-aed7-161a8e6a8126"
+              >
+                <hm-bg-card
+                  width="100%"
+                  height=""
+                  border-radius=""
+                  padding=""
+                  box-shadow-color="#00000000"
+                  class="ele-065940be-5461-4e36-aed7-161a8e6a8126"
+                >
+                  <div
+                    class="ele-wrapper ele-wrapper-2e951bad-fbd8-4287-ac2f-30edb85629ca"
+                  >
+                    <hm-ant-icon-text
+                      text="是否要退款?"
+                      icon=""
+                      width="200px"
+                      icon-size="0px"
+                      color="#CF2323"
+                      color-text="#CF2323"
+                      :text-align="'left'"
+                      padding="0"
+                      icon-padding="0"
+                      class="ele-2e951bad-fbd8-4287-ac2f-30edb85629ca"
+                    >
+                    </hm-ant-icon-text>
+                  </div>
+                </hm-bg-card>
+              </div>
             </hm-modal>
           </div>
         </hm-bg-card>
@@ -986,6 +1016,14 @@ export default {
 }
 
 .ele-wrapper-deleteUserInputText {
+  width: 60%;
+}
+
+.ele-wrapper-065940be-5461-4e36-aed7-161a8e6a8126 {
+  width: 100%;
+}
+
+.ele-wrapper-2e951bad-fbd8-4287-ac2f-30edb85629ca {
   width: 60%;
 }
 </style>
