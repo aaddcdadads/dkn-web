@@ -379,8 +379,6 @@
                                       {
                                         key: 'group-more-style',
                                         title: '更多',
-                                        iconSvg:
-                                          '<svg viewBox=&quot;0 0 1024 1024&quot;><path d=&quot;M204.8 505.6m-76.8 0a76.8 76.8 0 1 0 153.6 0 76.8 76.8 0 1 0-153.6 0Z&quot;></path><path d=&quot;M505.6 505.6m-76.8 0a76.8 76.8 0 1 0 153.6 0 76.8 76.8 0 1 0-153.6 0Z&quot;></path><path d=&quot;M806.4 505.6m-76.8 0a76.8 76.8 0 1 0 153.6 0 76.8 76.8 0 1 0-153.6 0Z&quot;></path></svg>',
                                         menuKeys: [
                                           'through',
                                           'code',
@@ -402,8 +400,6 @@
                                       {
                                         key: 'group-justify',
                                         title: '对齐',
-                                        iconSvg:
-                                          '<svg viewBox=&quot;0 0 1024 1024&quot;><path d=&quot;M768 793.6v102.4H51.2v-102.4h716.8z m204.8-230.4v102.4H51.2v-102.4h921.6z m-204.8-230.4v102.4H51.2v-102.4h716.8zM972.8 102.4v102.4H51.2V102.4h921.6z&quot;></path></svg>',
                                         menuKeys: [
                                           'justifyLeft',
                                           'justifyRight',
@@ -414,8 +410,6 @@
                                       {
                                         key: 'group-indent',
                                         title: '缩进',
-                                        iconSvg:
-                                          '<svg viewBox=&quot;0 0 1024 1024&quot;><path d=&quot;M0 64h1024v128H0z m384 192h640v128H384z m0 192h640v128H384z m0 192h640v128H384zM0 832h1024v128H0z m0-128V320l256 192z&quot;></path></svg>',
                                         menuKeys: ['indent', 'delIndent'],
                                       },
                                       '|',
@@ -1333,8 +1327,6 @@ export default {
             {
               key: "group-more-style",
               title: "更多",
-              iconSvg:
-                '<svg viewBox="0 0 1024 1024"><path d="M204.8 505.6m-76.8 0a76.8 76.8 0 1 0 153.6 0 76.8 76.8 0 1 0-153.6 0Z"></path><path d="M505.6 505.6m-76.8 0a76.8 76.8 0 1 0 153.6 0 76.8 76.8 0 1 0-153.6 0Z"></path><path d="M806.4 505.6m-76.8 0a76.8 76.8 0 1 0 153.6 0 76.8 76.8 0 1 0-153.6 0Z"></path></svg>',
               menuKeys: ["through", "code", "sup", "sub", "clearStyle"],
             },
             "color",
@@ -1350,8 +1342,6 @@ export default {
             {
               key: "group-justify",
               title: "对齐",
-              iconSvg:
-                '<svg viewBox="0 0 1024 1024"><path d="M768 793.6v102.4H51.2v-102.4h716.8z m204.8-230.4v102.4H51.2v-102.4h921.6z m-204.8-230.4v102.4H51.2v-102.4h716.8zM972.8 102.4v102.4H51.2V102.4h921.6z"></path></svg>',
               menuKeys: [
                 "justifyLeft",
                 "justifyRight",
@@ -1362,8 +1352,6 @@ export default {
             {
               key: "group-indent",
               title: "缩进",
-              iconSvg:
-                '<svg viewBox="0 0 1024 1024"><path d="M0 64h1024v128H0z m384 192h640v128H384z m0 192h640v128H384z m0 192h640v128H384zM0 832h1024v128H0z m0-128V320l256 192z"></path></svg>',
               menuKeys: ["indent", "delIndent"],
             },
             "|",
