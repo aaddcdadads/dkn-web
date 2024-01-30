@@ -410,9 +410,9 @@
                   <div class="ele-wrapper ele-wrapper-addBackground">
                     <hm-modal
                       ref="addBackground"
-                      :z-index="1000"
-                      v-model:visible="addBackground.visible"
                       title="报名页背景图"
+                      v-model:visible="addBackground.visible"
+                      :z-index="1000"
                       height="250px"
                       class="ele-addBackground"
                     >
@@ -420,27 +420,15 @@
                         class="ele-wrapper ele-wrapper-c55fbae6-544d-46d6-a83a-73b92291b38d"
                       >
                         <hm-ant-formily
-                          :schema="{
-                            type: 'object',
-                            properties: {
-                              form: {
-                                'x-component': 'Form',
-                                'x-component-props': {
-                                  'wrapper-col': { span: 14 },
-                                  'label-col': { span: 7 },
-                                  style: { flexWrap: 'wrap', display: 'flex' },
-                                },
-                                type: 'void',
-                                properties: {},
-                              },
-                            },
-                          }"
-                          :wrapper-col="14"
-                          :col-num="0"
-                          :label-col="7"
-                          :col-min-width="380"
                           :config="{
-                            cycle: {
+                            sortNo: {
+                              style: { width: '100%' },
+                              type: 'InputNumber',
+                              title: '排序',
+                              required: true,
+                              props: { placeholder: '活动序号' },
+                            },
+                            size: {
                               style: { width: '100%' },
                               type: 'Input',
                               title: '参考尺寸',
@@ -458,6 +446,25 @@
                             },
                           }"
                           :value="{}"
+                          :col-num="0"
+                          :col-min-width="380"
+                          :schema="{
+                            type: 'object',
+                            properties: {
+                              form: {
+                                'x-component': 'Form',
+                                'x-component-props': {
+                                  'wrapper-col': { span: 14 },
+                                  'label-col': { span: 7 },
+                                  style: { flexWrap: 'wrap', display: 'flex' },
+                                },
+                                type: 'void',
+                                properties: {},
+                              },
+                            },
+                          }"
+                          :label-col="7"
+                          :wrapper-col="14"
                         >
                         </hm-ant-formily>
                       </div>
@@ -1276,30 +1283,19 @@ export default {
         },
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
+        config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "排序",
+            required: true,
+            props: {
+              placeholder: "活动序号",
             },
           },
-        },
-        config: {
-          cycle: {
+          size: {
             style: {
               width: "100%",
             },
@@ -1323,6 +1319,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityImgTableOne: {
         columns: [
