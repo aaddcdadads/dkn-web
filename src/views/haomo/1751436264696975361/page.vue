@@ -472,34 +472,11 @@
                       height="300px"
                       class="ele-addimage"
                     >
-                      <div
-                        class="ele-wrapper ele-wrapper-04ce007d-e1c2-4f4d-ac07-44b7718beacf"
-                      >
+                      <div class="ele-wrapper ele-wrapper-activityImgFormOne">
                         <hm-ant-formily
-                          :config="{
-                            sortNo: {
-                              style: { width: '100%' },
-                              type: 'InputNumber',
-                              title: '图片排序',
-                              required: true,
-                              props: { placeholder: '图片序号' },
-                            },
-                            cycle: {
-                              type: 'Input',
-                              title: '参考尺寸',
-                              style: { width: '100%' },
-                              required: true,
-                              props: {},
-                            },
-                            ' name': {
-                              type: 'UploadImage',
-                              title: '背景图片图片',
-                              style: { width: '100%' },
-                              required: true,
-                              props: {},
-                            },
-                          }"
-                          :value="{}"
+                          ref="activityImgFormOne"
+                          :config="activityImgFormOne.config"
+                          v-model:value="activityImgFormOne.value"
                           :col-num="0"
                           :col-min-width="380"
                           :label-col="7"
@@ -1447,7 +1424,7 @@ export default {
           excludeKeys: [],
         },
       },
-      "04ce007d-e1c2-4f4d-ac07-44b7718beacf": {
+      activityImgFormOne: {
         config: {
           sortNo: {
             style: {
