@@ -1276,22 +1276,39 @@ export default {
       activityImgTableTwo: {
         columns: [
           {
-            dataIndex: "name",
-            width: 50,
+            customRender: function (data) {
+              return h(HmAntIconText, {
+                fontSize: "14px",
+                iconSize: "16px",
+                bgColorText: "transparent",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                text: "",
+                placement: "top",
+                img: self.getImg(data.record.path),
+                color: "black",
+                imgStyle: {
+                  height: "32px",
+                  marginRight: "4px",
+                  marginTop: "-4px",
+                },
+                onClick: function () {},
+              });
+            },
+            dataIndex: "path",
             title: "奖品图片",
+            key: "path",
+          },
+          {
+            dataIndex: "name",
+            title: "奖品名称",
             key: "name",
           },
           {
-            dataIndex: "age",
-            width: 80,
-            title: "奖品名称",
-            key: "age",
-          },
-          {
-            dataIndex: "address",
-            width: 30,
+            dataIndex: "sortNo",
             title: "奖品排序",
-            key: "address",
+            key: "sortNo",
             ellipsis: true,
           },
           {
@@ -1303,32 +1320,7 @@ export default {
             key: "action",
           },
         ],
-        data: [
-          {
-            address: "1",
-            school: "",
-            name: "",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "2",
-            school: "",
-            name: "",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "3",
-            school: "",
-            name: "",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
+        data: [],
         paginationHidden: true,
         getDataMap: {
           total: "",
