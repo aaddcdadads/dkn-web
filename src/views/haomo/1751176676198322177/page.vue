@@ -79,13 +79,13 @@
                   <div class="ele-wrapper ele-wrapper-activityForm">
                     <hm-ant-formily
                       ref="activityForm"
+                      :schema="activityForm.schema"
+                      :wrapper-col="16"
+                      :col-num="0"
+                      :label-col="5"
+                      :col-min-width="380"
                       :config="activityForm.config"
                       v-model:value="activityForm.value"
-                      :col-num="0"
-                      :col-min-width="380"
-                      :schema="activityForm.schema"
-                      :label-col="3"
-                      :wrapper-col="16"
                       class="ele-activityForm"
                     >
                     </hm-ant-formily>
@@ -231,12 +231,12 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              :z-index="1000"
-                              v-model:visible="addprize.visible"
                               title="奖品图片"
+                              v-model:visible="addprize.visible"
+                              :z-index="1000"
                               :auto-close="false"
-                              @cancel="onAddprizeCancel"
                               @ok="onAddprizeOk"
+                              @cancel="onAddprizeCancel"
                               class="ele-addprize"
                             >
                               <div
@@ -260,11 +260,11 @@
                             class="ele-wrapper ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                           >
                             <hm-bg-card
+                              box-shadow-blur=""
+                              box-shadow-v-shadow=""
+                              border-radius=""
                               width="100%"
                               height="100%"
-                              border-radius=""
-                              box-shadow-v-shadow=""
-                              box-shadow-blur=""
                               class="ele-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                             >
                               <div
@@ -272,19 +272,19 @@
                               >
                                 <hm-ant-table
                                   ref="activityImgTableTwo"
-                                  :is-flat-action="
-                                    activityImgTableTwo.isFlatAction
-                                  "
-                                  :get-data-map="activityImgTableTwo.getDataMap"
-                                  :data="activityImgTableTwo.data"
                                   :columns="activityImgTableTwo.columns"
-                                  :row-class-name="
-                                    activityImgTableTwo.rowClassName
-                                  "
+                                  :data="activityImgTableTwo.data"
                                   :pagination-hidden="
                                     activityImgTableTwo.paginationHidden
                                   "
+                                  :get-data-map="activityImgTableTwo.getDataMap"
                                   :actions="activityImgTableTwo.actions"
+                                  :is-flat-action="
+                                    activityImgTableTwo.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityImgTableTwo.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -294,19 +294,19 @@
                             class="ele-wrapper ele-wrapper-e3996ba6-7678-4de0-abea-832a2097c2c9"
                           >
                             <hm-bg-card
+                              box-shadow-blur=""
+                              box-shadow-v-shadow=""
+                              border-radius=""
                               width="100%"
                               height="100%"
-                              border-radius=""
-                              box-shadow-v-shadow=""
-                              box-shadow-blur=""
                               class="ele-e3996ba6-7678-4de0-abea-832a2097c2c9"
                             >
                               <div
                                 class="ele-wrapper ele-wrapper-37b100fe-30bf-47b0-9bed-b98bbfebd6f1"
                               >
                                 <hm-ant-bg-text
-                                  text="活动运动信息"
                                   font-size="14px"
+                                  text="活动运动信息"
                                   class="ele-37b100fe-30bf-47b0-9bed-b98bbfebd6f1"
                                 >
                                 </hm-ant-bg-text>
@@ -315,14 +315,29 @@
                                 class="ele-wrapper ele-wrapper-fdc826af-3716-45fc-bda6-52dfe0e1524a"
                               >
                                 <hm-ant-formily
-                                  :config="{
-                                    activityType: {
-                                      style: { width: '100%' },
-                                      type: 'Input',
-                                      title: '活动类型',
-                                      required: true,
-                                      props: { placeholder: '例子：跑步' },
+                                  :schema="{
+                                    type: 'object',
+                                    properties: {
+                                      form: {
+                                        'x-component': 'Form',
+                                        'x-component-props': {
+                                          'wrapper-col': { span: 14 },
+                                          'label-col': { span: 7 },
+                                          style: {
+                                            flexWrap: 'wrap',
+                                            display: 'flex',
+                                          },
+                                        },
+                                        type: 'void',
+                                        properties: {},
+                                      },
                                     },
+                                  }"
+                                  :wrapper-col="16"
+                                  :col-num="0"
+                                  :label-col="5"
+                                  :col-min-width="380"
+                                  :config="{
                                     ActivityRequirements: {
                                       style: { width: '100%' },
                                       type: 'Input',
@@ -332,12 +347,15 @@
                                         placeholder: '例子：2km/5km/10km',
                                       },
                                     },
+                                    activityType: {
+                                      style: { width: '100%' },
+                                      type: 'Input',
+                                      title: '活动类型',
+                                      required: true,
+                                      props: { placeholder: '例子：跑步' },
+                                    },
                                   }"
                                   :value="{}"
-                                  :col-num="0"
-                                  :col-min-width="380"
-                                  :label-col="3"
-                                  :wrapper-col="16"
                                   class="ele-fdc826af-3716-45fc-bda6-52dfe0e1524a"
                                 >
                                 </hm-ant-formily>
@@ -348,9 +366,9 @@
                             class="ele-wrapper ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48"
                           >
                             <hm-ant-bg-text
-                              text="活动信息"
-                              font-size="14px"
                               padding="2"
+                              font-size="14px"
+                              text="活动信息"
                               class="ele-633b539d-81dc-4e94-af68-dfba9182db48"
                             >
                             </hm-ant-bg-text>
@@ -359,11 +377,11 @@
                             class="ele-wrapper ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41"
                           >
                             <hm-bg-card
+                              box-shadow-blur=""
+                              box-shadow-v-shadow=""
+                              border-radius=""
                               width="100%"
                               height="100%"
-                              border-radius=""
-                              box-shadow-v-shadow=""
-                              box-shadow-blur=""
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
                               <div
@@ -371,13 +389,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtForm"
+                                  :schema="activityExtForm.schema"
+                                  :wrapper-col="18"
+                                  :col-num="0"
+                                  :label-col="5"
+                                  :col-min-width="380"
                                   :config="activityExtForm.config"
                                   v-model:value="activityExtForm.value"
-                                  :col-num="0"
-                                  :col-min-width="380"
-                                  :schema="activityExtForm.schema"
-                                  :label-col="5"
-                                  :wrapper-col="18"
                                   class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
@@ -564,6 +582,112 @@
                       </div>
                     </hm-bg-card>
                   </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-cf8baab6-8c0a-4974-95ba-4c9e67749519"
+                  >
+                    <hm-bg-card
+                      box-shadow-blur=""
+                      box-shadow-v-shadow=""
+                      border-radius=""
+                      width="100%"
+                      height="100%"
+                      class="ele-cf8baab6-8c0a-4974-95ba-4c9e67749519"
+                    >
+                      <div
+                        class="ele-wrapper ele-wrapper-428bc034-6551-4c0e-b7c0-36c4e903ac9e"
+                      >
+                        <hm-ant-bg-text
+                          font-size="14px"
+                          text="报名分享图片设置"
+                          class="ele-428bc034-6551-4c0e-b7c0-36c4e903ac9e"
+                        >
+                        </hm-ant-bg-text>
+                      </div>
+                      <div
+                        class="ele-wrapper ele-wrapper-43925a45-d2f9-4555-b0fc-9ec868b07679"
+                      >
+                        <hm-ant-table
+                          :get-data-map="{ total: '', list: '' }"
+                          :data="[
+                            {
+                              address:
+                                'New York No. 1 Lake Park, New York No. 1 Lake Park',
+                              school: '加里敦大学',
+                              name: 'John Brown',
+                              key: '1',
+                              age: 32,
+                              sexual: '男',
+                            },
+                            {
+                              address:
+                                'London No. 2 Lake Park, London No. 2 Lake Park',
+                              school: '加里敦大学',
+                              name: 'Jim Green',
+                              key: '2',
+                              age: 42,
+                              sexual: '男',
+                            },
+                            {
+                              address:
+                                'Sidney No. 1 Lake Park, Sidney No. 1 Lake Park',
+                              school: '加里敦大学',
+                              name: 'Joe Black',
+                              key: '3',
+                              age: 32,
+                              sexual: '男',
+                            },
+                          ]"
+                          :columns="[
+                            { dataIndex: 'name', title: '姓名', key: 'name' },
+                            {
+                              dataIndex: 'age',
+                              width: 80,
+                              title: '年龄',
+                              key: 'age',
+                            },
+                            {
+                              dataIndex: 'address',
+                              title: '地址',
+                              key: 'address',
+                              ellipsis: true,
+                            },
+                            {
+                              dataIndex: 'sexual',
+                              title: '性别',
+                              key: 'sexual',
+                              ellipsis: true,
+                            },
+                            {
+                              dataIndex: 'school',
+                              title: '毕业院校',
+                              key: 'school',
+                              ellipsis: true,
+                            },
+                            {
+                              slots: { customRender: 'action' },
+                              dataIndex: '',
+                              title: '操作',
+                              key: 'action',
+                            },
+                          ]"
+                          :row-class-name="{}"
+                          :actions="[
+                            {
+                              name: '编辑',
+                              callback:
+                                'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                            },
+                            {
+                              name: '删除',
+                              callback:
+                                'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                            },
+                          ]"
+                        >
+                        </hm-ant-table>
+                      </div>
+                    </hm-bg-card>
+                  </div>
                 </hm-bg-card>
               </div>
             </hm-bg-card>
@@ -641,6 +765,28 @@ export default {
     let self = this;
     return {
       activityForm: {
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
         config: {
           name: {
             style: {
@@ -706,28 +852,6 @@ export default {
         },
         value: {
           status: 0,
-        },
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
         },
       },
       addproject: {
@@ -1020,12 +1144,6 @@ export default {
         value: {},
       },
       activityImgTableTwo: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [],
         columns: [
           {
             customRender: function (data) {
@@ -1072,8 +1190,12 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1094,20 +1216,33 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       "fdc826af-3716-45fc-bda6-52dfe0e1524a": {
-        config: {
-          activityType: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动类型",
-            required: true,
-            props: {
-              placeholder: "例子：跑步",
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
             },
           },
+        },
+        config: {
           ActivityRequirements: {
             style: {
               width: "100%",
@@ -1119,10 +1254,43 @@ export default {
               placeholder: "例子：2km/5km/10km",
             },
           },
+          activityType: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动类型",
+            required: true,
+            props: {
+              placeholder: "例子：跑步",
+            },
+          },
         },
         value: {},
       },
       activityExtForm: {
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
         config: {
           protocol: {
             style: {
@@ -1156,28 +1324,6 @@ export default {
           },
         },
         value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         schema: {
@@ -1340,9 +1486,6 @@ export default {
     onAddBtn2Click() {
       this.addprize.visible = true;
     },
-    onAddprizeCancel() {
-      this.addprize.visible = false;
-    },
     async onAddprizeOk() {
       let self = this;
       await self.$refs.addActivityImgFormTwo.validate();
@@ -1353,10 +1496,13 @@ export default {
       if (item.imgPath?.file?.response?.message) {
         item.imgPath = item.imgPath?.file?.response?.message;
       }
-      self.$refs.activityProjectTable.cData.push(item);
+      self.$refs.activityImgTableTwo.cData.push(item);
 
       self.addprize.visible = false;
       self.$refs.addActivityImgFormTwo.reset();
+    },
+    onAddprizeCancel() {
+      this.addprize.visible = false;
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
@@ -1570,6 +1716,20 @@ export default {
 
 .ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc {
   width: 100%;
+}
+
+.ele-wrapper-cf8baab6-8c0a-4974-95ba-4c9e67749519 {
+  width: 100%;
+}
+
+.ele-wrapper-428bc034-6551-4c0e-b7c0-36c4e903ac9e {
+  border-left: 4px solid #0079fe;
+  margin-top: 15px;
+  margin-left: 8px;
+  padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6 {
