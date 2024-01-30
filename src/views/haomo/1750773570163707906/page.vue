@@ -231,7 +231,7 @@
               ref="storeDetailModal"
               title="查看详情"
               v-model:visible="storeDetailModal.visible"
-              cancel-text="关闭"
+              cancel-text="导出门店二维码"
               width="600px"
               :z-index="1000"
               height="100%"
