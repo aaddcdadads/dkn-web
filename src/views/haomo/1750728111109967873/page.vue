@@ -1041,7 +1041,7 @@ export default {
 .ele-wrapper-numberUsers {
   width: 100%;
   .ele-numberUsers {
-    border-bottom: 15px;
+    margin-bottom: 15px;
   }
 }
 
