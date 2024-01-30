@@ -475,7 +475,7 @@ export default {
           },
           channel: {
             type: "HmAntSelect",
-            title: "渠道",
+            title: "报名渠道",
             style: {
               width: "50%",
             },
@@ -641,7 +641,7 @@ export default {
             key: "id",
           },
           {
-            title: "电话",
+            title: "手机号",
             dataIndex: "phone",
             key: "phone",
           },
@@ -649,6 +649,11 @@ export default {
             title: "报名项目",
             dataIndex: "activityId",
             key: "activityId",
+          },
+          {
+            title: "订单金额",
+            dataIndex: "money",
+            key: "money",
           },
           {
             title: "报名渠道",
