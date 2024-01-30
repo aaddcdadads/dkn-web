@@ -352,14 +352,15 @@
                               height="100%"
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
-                              <div
-                                class="ele-wrapper ele-wrapper-ce890d9c-4b0e-45bc-9c6d-308495f93280"
-                              >
+                              <div class="ele-wrapper ele-wrapper-editrule">
                                 <hm-markdown-editor
-                                  :toc-nav-position-right="true"
+                                  ref="editrule"
+                                  v-model:text="editrule.text"
                                   :tab-size="2"
-                                  text=""
-                                  class="ele-ce890d9c-4b0e-45bc-9c6d-308495f93280"
+                                  :toc-nav-position-right="true"
+                                  :default-show-toc="true"
+                                  :codemirror-style-reset="false"
+                                  class="ele-editrule"
                                 >
                                 </hm-markdown-editor>
                               </div>
@@ -1266,7 +1267,7 @@ export default {
         },
         value: {},
       },
-      "ce890d9c-4b0e-45bc-9c6d-308495f93280": {
+      editrule: {
         text: "",
       },
       "8365ca3f-8e04-4cf0-b0da-f66af737ae55": {
@@ -1772,7 +1773,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-ce890d9c-4b0e-45bc-9c6d-308495f93280 {
+.ele-wrapper-editrule {
   width: 100%;
 }
 
