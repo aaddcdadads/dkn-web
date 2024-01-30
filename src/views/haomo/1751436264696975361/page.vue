@@ -663,26 +663,12 @@
                           class="ele-sharingImageSettings"
                         >
                           <div
-                            class="ele-wrapper ele-wrapper-8ef1d3f1-249d-4427-b301-382265c07670"
+                            class="ele-wrapper ele-wrapper-activityImgFormTre"
                           >
                             <hm-ant-formily
-                              :config="{
-                                size: {
-                                  style: { width: '100%' },
-                                  type: 'Input',
-                                  title: '参考尺寸',
-                                  required: true,
-                                  props: {},
-                                },
-                                imgPath: {
-                                  style: { width: '100%' },
-                                  type: 'UploadImage',
-                                  title: '图片',
-                                  required: true,
-                                  props: { action: '', accept: '.jpg,.png' },
-                                },
-                              }"
-                              :value="{}"
+                              ref="activityImgFormTre"
+                              :config="activityImgFormTre.config"
+                              v-model:value="activityImgFormTre.value"
                               :col-num="0"
                               :col-min-width="380"
                               :label-col="7"
@@ -1658,7 +1644,7 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      "8ef1d3f1-249d-4427-b301-382265c07670": {
+      activityImgFormTre: {
         config: {
           size: {
             style: {
@@ -1702,6 +1688,12 @@ export default {
       self.addActivityProject.visible = true;
       self.addActivityImgTableOne.visible = true;
       self.addActivityImgTableTwo.visible = true;
+      self.getImg = function (url) {
+        if (url.substring(0, 4) === "http") {
+          return url;
+        }
+        return `/api/sys/common/static/${url}`;
+      };
     },
 
     onAddActivityProjectClick() {
