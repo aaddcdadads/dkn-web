@@ -657,49 +657,15 @@
                           class="ele-sharingImageSettings"
                         >
                           <div
-                            class="ele-wrapper ele-wrapper-89787e21-f9a9-487d-b055-c327bec09efd"
+                            class="ele-wrapper ele-wrapper-activityImgFormTre"
                           >
                             <hm-ant-formily
-                              :config="{
-                                size: {
-                                  style: { width: '100%' },
-                                  type: 'Input',
-                                  title: '参考尺寸',
-                                  required: true,
-                                  props: {},
-                                },
-                                imgPath: {
-                                  style: { width: '100%' },
-                                  type: 'UploadImage',
-                                  title: '图片',
-                                  required: true,
-                                  props: {
-                                    action: '/api/sys/common/upload',
-                                    accept: '.jpg,.png',
-                                  },
-                                },
-                              }"
-                              :value="{}"
+                              ref="activityImgFormTre"
+                              :config="activityImgFormTre.config"
+                              v-model:value="activityImgFormTre.value"
                               :col-num="0"
                               :col-min-width="380"
-                              :schema="{
-                                type: 'object',
-                                properties: {
-                                  form: {
-                                    'x-component': 'Form',
-                                    'x-component-props': {
-                                      'wrapper-col': { span: 14 },
-                                      'label-col': { span: 7 },
-                                      style: {
-                                        flexWrap: 'wrap',
-                                        display: 'flex',
-                                      },
-                                    },
-                                    type: 'void',
-                                    properties: {},
-                                  },
-                                },
-                              }"
+                              :schema="activityImgFormTre.schema"
                               :label-col="7"
                               :wrapper-col="14"
                             >
@@ -1654,7 +1620,7 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      "89787e21-f9a9-487d-b055-c327bec09efd": {
+      activityImgFormTre: {
         config: {
           size: {
             style: {
@@ -1808,8 +1774,8 @@ export default {
     },
     async onSharingImageSettingsOk() {
       let self = this;
-      await self.$refs.activityImgFormOne.validate();
-      let item = self.$refs.activityImgFormOne.getFormValues();
+      await self.$refs.activityImgFormTre.validate();
+      let item = self.$refs.activityImgFormTre.getFormValues();
       item.index = Math.floor(Math.random() * 10000);
 
       //处理图片
@@ -1821,7 +1787,7 @@ export default {
       self.$refs.activityImgTableOne.cData.push(item);
 
       self.sharingImageSettings.visible = false;
-      self.$refs.activityImgFormOne.reset();
+      self.$refs.activityImgFormTre.reset();
     },
     onSharingImageSettingsCancel() {
       this.sharingImageSettings.visible = false;
