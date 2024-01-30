@@ -126,13 +126,13 @@
                       <div class="ele-wrapper ele-wrapper-addproject">
                         <hm-modal
                           ref="addproject"
-                          :z-index="1000"
-                          v-model:visible="addproject.visible"
                           title="添加项目"
-                          :auto-close="false"
+                          v-model:visible="addproject.visible"
+                          :z-index="1000"
                           height=""
-                          @cancel="onAddprojectCancel"
+                          :auto-close="false"
                           @ok="onAddprojectOk"
+                          @cancel="onAddprojectCancel"
                           class="ele-addproject"
                         >
                           <div
@@ -477,15 +477,15 @@
                       <div class="ele-wrapper ele-wrapper-activityImgTableOne">
                         <hm-ant-table
                           ref="activityImgTableOne"
-                          :is-flat-action="activityImgTableOne.isFlatAction"
-                          :get-data-map="activityImgTableOne.getDataMap"
-                          :data="activityImgTableOne.data"
                           :columns="activityImgTableOne.columns"
-                          :row-class-name="activityImgTableOne.rowClassName"
+                          :data="activityImgTableOne.data"
                           :pagination-hidden="
                             activityImgTableOne.paginationHidden
                           "
+                          :get-data-map="activityImgTableOne.getDataMap"
                           :actions="activityImgTableOne.actions"
+                          :is-flat-action="activityImgTableOne.isFlatAction"
+                          :row-class-name="activityImgTableOne.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -564,11 +564,21 @@
                         class="ele-wrapper ele-wrapper-428bc034-6551-4c0e-b7c0-36c4e903ac9e"
                       >
                         <hm-ant-bg-text
-                          font-size="14px"
                           text="报名分享图片设置"
+                          font-size="14px"
                           class="ele-428bc034-6551-4c0e-b7c0-36c4e903ac9e"
                         >
                         </hm-ant-bg-text>
+                      </div>
+                      <div
+                        class="ele-wrapper ele-wrapper-8126f126-e733-461e-a935-b2e92fd062a1"
+                      >
+                        <hm-modal
+                          :visible="true"
+                          :z-index="1000"
+                          class="ele-8126f126-e733-461e-a935-b2e92fd062a1"
+                        >
+                        </hm-modal>
                       </div>
                       <div
                         class="ele-wrapper ele-wrapper-43925a45-d2f9-4555-b0fc-9ec868b07679"
@@ -616,15 +626,12 @@
                             {
                               name: '编辑',
                               icon: 'fa fa-pencil',
+                              type: 'link',
                               callback:
                                 'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
                             },
-                            {
-                              name: '删除',
-                              callback:
-                                'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
-                            },
                           ]"
+                          :is-flat-action="true"
                           :row-class-name="{}"
                         >
                         </hm-ant-table>
@@ -1318,29 +1325,6 @@ export default {
         value: {},
       },
       activityImgTableOne: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
         columns: [
           {
             dataIndex: "name",
@@ -1370,8 +1354,29 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [
+          {
+            address: "",
+            school: "",
+            name: "¥0",
+            key: "1",
+            age: "",
+            sexual: "",
+          },
+          {
+            address: "",
+            school: "",
+            name: "¥ 29.9",
+            key: "2",
+            age: "",
+            sexual: "",
+          },
+        ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1392,6 +1397,11 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
+      },
+      "8126f126-e733-461e-a935-b2e92fd062a1": {
+        visible: true,
       },
     };
   },
@@ -1420,11 +1430,11 @@ export default {
     onAddBtn1Click() {
       this.addproject.visible = true;
     },
-    onAddprojectCancel() {
-      this.addproject.visible = false;
-    },
     onAddprojectOk() {
       addActivityProject(this, arguments);
+    },
+    onAddprojectCancel() {
+      this.addproject.visible = false;
     },
     onAddBtn2Click() {
       this.addprize.visible = true;
@@ -1672,6 +1682,12 @@ export default {
   padding-left: 5px;
   .hm-bg-text {
     font-weight: 700;
+  }
+}
+
+.ele-wrapper-8126f126-e733-461e-a935-b2e92fd062a1 {
+  /deep/.hm-modal {
+    min-height: 0px;
   }
 }
 
