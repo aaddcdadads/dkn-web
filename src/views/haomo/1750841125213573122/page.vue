@@ -89,6 +89,7 @@
                   :text="batchRefund.text"
                   :type="batchRefund.type"
                   :disabled="batchRefund.disabled"
+                  @click="onBatchRefundClick"
                   class="ele-batchRefund"
                 >
                 </hm-ant-button>
@@ -430,6 +431,9 @@ export default {
       viewRegistrationOrdersAddModal: {
         visible: false,
       },
+      batchRefundModal: {
+        visible: false,
+      },
       onSelectList: {},
       batchRefund: {
         disabled: true,
@@ -508,9 +512,6 @@ export default {
         schema: {},
       },
       viewRegistrationOrdersDetailModal: {
-        visible: false,
-      },
-      batchRefundModal: {
         visible: false,
       },
       viewRegistrationOrdersFilter: {
@@ -881,6 +882,9 @@ export default {
     },
     onExportButtonClick() {
       exportViewRegistrationOrders(this, arguments);
+    },
+    onBatchRefundClick() {
+      this.batchRefundModal.visible = true;
     },
     onInvisibleImportSearchLogicBtnClick() {
       searchViewRegistrationOrders(this, arguments);
