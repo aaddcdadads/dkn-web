@@ -656,6 +656,7 @@ export default {
               width: "50%",
             },
             props: {
+              placeholder: "有/无",
               width: "242px",
               title: "",
               options: [
