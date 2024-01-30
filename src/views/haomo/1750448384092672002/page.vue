@@ -673,7 +673,7 @@ export default {
             type: "Input",
             title: "搜索活动",
             style: {
-              width: "20%",
+              width: "25%",
             },
             props: {
               placeholder: "活动ID/活动名称",
