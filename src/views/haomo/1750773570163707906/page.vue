@@ -310,14 +310,13 @@
                     >
                     </hm-ant-button>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-704ae18e-b0b5-497f-8b08-b95ffcabf7ba"
-                  >
+                  <div class="ele-wrapper ele-wrapper-sureButton">
                     <hm-ant-button
+                      ref="sureButton"
                       text="确定"
                       :type="'primary'"
                       :size="'large'"
-                      class="ele-704ae18e-b0b5-497f-8b08-b95ffcabf7ba"
+                      class="ele-sureButton"
                     >
                     </hm-ant-button>
                   </div>
@@ -888,12 +887,15 @@ export default {
 .ele-wrapper-daochuButton {
   margin: 0 12px;
   /deep/.ele-daochuButton {
-    border-radius: 8px;
+    border-radius: 4px;
   }
 }
 
-.ele-wrapper-704ae18e-b0b5-497f-8b08-b95ffcabf7ba {
+.ele-wrapper-sureButton {
   margin: 0 12px;
+  /deep/.ele-sureButton {
+    border-radius: 4px;
+  }
 }
 
 .ele-wrapper-deleteUserInputCard {
