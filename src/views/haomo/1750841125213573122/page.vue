@@ -375,6 +375,7 @@ import {
   searchViewRegistrationOrders,
   addViewRegistrationOrders,
   editViewRegistrationOrders,
+  orderRefund,
   ordersBatchRefund,
 } from "/@/logics/OrderListGroup";
 
@@ -917,7 +918,7 @@ export default {
       this.viewRegistrationOrdersEditModal.visible = false;
     },
     onViewRegistrationOrdersDeleteModalOk() {
-      this.viewRegistrationOrdersDeleteModal.visible = false;
+      orderRefund(this, arguments);
     },
     onBatchRefundModalOk() {
       ordersBatchRefund(this, arguments);
