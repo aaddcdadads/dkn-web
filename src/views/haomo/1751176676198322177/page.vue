@@ -294,11 +294,11 @@
                             class="ele-wrapper ele-wrapper-e3996ba6-7678-4de0-abea-832a2097c2c9"
                           >
                             <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
                               width="100%"
                               height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
                               class="ele-e3996ba6-7678-4de0-abea-832a2097c2c9"
                             >
                               <div
@@ -559,7 +559,7 @@
                             <hm-ant-input
                               value=""
                               title="活动咨询客服"
-                              width="400"
+                              width="480"
                               class="ele-848e318a-9213-4805-a8d8-7f9b336b01d5"
                             >
                             </hm-ant-input>
