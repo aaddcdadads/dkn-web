@@ -288,17 +288,16 @@
                   </div>
                 </hm-bg-card>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-7949a660-4484-4c26-a4e8-523103441b56"
-              >
+              <div class="ele-wrapper ele-wrapper-bottomBg">
                 <hm-bg-card
+                  ref="bottomBg"
                   width="100%"
                   height=""
                   border-radius=""
                   :text-align="'right'"
                   padding="12"
                   box-shadow-color="#00000000"
-                  class="ele-7949a660-4484-4c26-a4e8-523103441b56"
+                  class="ele-bottomBg"
                 >
                   <div class="ele-wrapper ele-wrapper-daochuButton">
                     <hm-ant-button
@@ -880,8 +879,11 @@ export default {
   display: none;
 }
 
-.ele-wrapper-7949a660-4484-4c26-a4e8-523103441b56 {
+.ele-wrapper-bottomBg {
   width: 100%;
+  /deep/.bottomBg {
+    border-top: 1px solid #f0f0f0;
+  }
 }
 
 .ele-wrapper-daochuButton {
