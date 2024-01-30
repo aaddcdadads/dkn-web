@@ -86,9 +86,9 @@
               <div class="ele-wrapper ele-wrapper-batchRefund">
                 <hm-ant-button
                   ref="batchRefund"
-                  text="批量退款"
-                  :type="'primary'"
-                  :disabled="true"
+                  :text="batchRefund.text"
+                  :type="batchRefund.type"
+                  :disabled="batchRefund.disabled"
                   class="ele-batchRefund"
                 >
                 </hm-ant-button>
@@ -388,6 +388,13 @@ export default {
       },
       viewRegistrationOrdersAddModal: {
         visible: false,
+      },
+      onSelectList: {},
+      batchRefund: {
+        disabled: true,
+        text: "批量退款",
+        type: "primary",
+        icon: "",
       },
       viewRegistrationOrdersEditModal: {
         visible: false,
@@ -835,6 +842,13 @@ export default {
     },
     onViewRegistrationOrdersTableOnSelectChange(data, index) {
       console.log("onSelectChange", data, index);
+      //保存选中数据
+      this.onSelectList = data.selectedRowKeys;
+      if (this.onSelectList.length > 0) {
+        this.batchRefund.disabled = false;
+      } else {
+        this.batchRefund.disabled = true;
+      }
     },
     onViewRegistrationOrdersTableOnSelect(data, index) {
       console.log("onSelect", data, index);
