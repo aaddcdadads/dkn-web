@@ -132,97 +132,18 @@
                           class="ele-addprice"
                         >
                           <div
-                            class="ele-wrapper ele-wrapper-8529c1db-0480-471c-8c06-e2f336b223f2"
+                            class="ele-wrapper ele-wrapper-activityProjectForm"
                           >
                             <hm-ant-formily
-                              :config="{
-                                sortNo: {
-                                  style: { width: '100%' },
-                                  type: 'InputNumber',
-                                  title: '排序',
-                                  required: true,
-                                  props: { placeholder: '请输入排序' },
-                                },
-                                multipleOrder: {
-                                  style: { width: '100%' },
-                                  type: 'RadioGroup',
-                                  title: '是否多人报名',
-                                  required: true,
-                                  props: {
-                                    options: [
-                                      { label: '是', value: 0 },
-                                      { label: '否', value: 1 },
-                                    ],
-                                  },
-                                },
-                                imgPath: {
-                                  style: { width: '100%' },
-                                  type: 'UploadImage',
-                                  title: '活动图片',
-                                  required: true,
-                                  props: {
-                                    action: '/api/sys/common/upload',
-                                    accept: '.jpg,.png',
-                                  },
-                                },
-                                name: {
-                                  style: { width: '100%' },
-                                  type: 'Input',
-                                  title: '活动项目名称',
-                                  required: true,
-                                  props: {},
-                                },
-                                synopsis: {
-                                  style: { width: '100%' },
-                                  type: 'Textarea',
-                                  title: '项目简介',
-                                  required: true,
-                                  props: {},
-                                },
-                                expense: {
-                                  style: { width: '100%' },
-                                  type: 'Input',
-                                  title: '项目费用',
-                                  required: true,
-                                  props: {},
-                                },
-                                free: {
-                                  style: { width: '100%' },
-                                  type: 'RadioGroup',
-                                  title: '是否免费',
-                                  required: true,
-                                  props: {
-                                    options: [
-                                      { label: '是', value: 0 },
-                                      { label: '否', value: 1 },
-                                    ],
-                                  },
-                                },
-                              }"
-                              :value="{}"
+                              ref="activityProjectForm"
+                              :config="activityProjectForm.config"
+                              v-model:value="activityProjectForm.value"
                               :col-num="0"
                               :col-min-width="380"
-                              :schema="{
-                                type: 'object',
-                                properties: {
-                                  form: {
-                                    'x-component': 'Form',
-                                    'x-component-props': {
-                                      'wrapper-col': { span: 14 },
-                                      'label-col': { span: 7 },
-                                      style: {
-                                        flexWrap: 'wrap',
-                                        display: 'flex',
-                                      },
-                                    },
-                                    type: 'void',
-                                    properties: {},
-                                  },
-                                },
-                              }"
+                              :schema="activityProjectForm.schema"
                               :label-col="6"
                               :wrapper-col="16"
-                              class="ele-8529c1db-0480-471c-8c06-e2f336b223f2"
+                              class="ele-activityProjectForm"
                             >
                             </hm-ant-formily>
                           </div>
@@ -316,33 +237,12 @@
                               class="ele-addprize"
                             >
                               <div
-                                class="ele-wrapper ele-wrapper-d6c85f5d-e546-49ce-802d-fe0a03aa2546"
+                                class="ele-wrapper ele-wrapper-addActivityImgFormTwo"
                               >
                                 <hm-ant-formily
-                                  :config="{
-                                    sortNo: {
-                                      style: { width: '100%' },
-                                      type: 'InputNumber',
-                                      title: '奖品排序',
-                                      required: true,
-                                      props: { placeholder: '奖品序号' },
-                                    },
-                                    cycle: {
-                                      type: 'Input',
-                                      title: '奖品名称',
-                                      style: { width: '100%' },
-                                      required: true,
-                                      props: {},
-                                    },
-                                    ' name': {
-                                      type: 'UploadImage',
-                                      title: '奖品图片',
-                                      style: { width: '100%' },
-                                      required: true,
-                                      props: {},
-                                    },
-                                  }"
-                                  :value="{}"
+                                  ref="addActivityImgFormTwo"
+                                  :config="addActivityImgFormTwo.config"
+                                  v-model:value="addActivityImgFormTwo.value"
                                   :col-num="0"
                                   :col-min-width="380"
                                   :label-col="7"
@@ -417,6 +317,7 @@
                                   v-model:value="activityExtTwoForm.value"
                                   :col-num="0"
                                   :col-min-width="380"
+                                  :schema="activityExtTwoForm.schema"
                                   :label-col="5"
                                   :wrapper-col="16"
                                   class="ele-activityExtTwoForm"
@@ -1057,7 +958,7 @@ export default {
           },
         },
       },
-      "8529c1db-0480-471c-8c06-e2f336b223f2": {
+      activityProjectForm: {
         config: {
           sortNo: {
             style: {
@@ -1276,7 +1177,7 @@ export default {
       "66d95dfc-4437-4ea7-86eb-26498a2706e5": {
         value: "",
       },
-      "d6c85f5d-e546-49ce-802d-fe0a03aa2546": {
+      addActivityImgFormTwo: {
         config: {
           sortNo: {
             style: {
@@ -1388,17 +1289,6 @@ export default {
       },
       activityExtTwoForm: {
         config: {
-          ActivityRequirements: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动需求",
-            required: false,
-            props: {
-              placeholder: "例子：2km/5km/10km",
-            },
-          },
           activityType: {
             style: {
               width: "100%",
@@ -1410,8 +1300,41 @@ export default {
               placeholder: "例子：跑步",
             },
           },
+          requirements: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动需求",
+            required: false,
+            props: {
+              placeholder: "例子：2km/5km/10km",
+            },
+          },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityRules: {
         value: "",
@@ -1893,7 +1816,7 @@ export default {
   }
 }
 
-.ele-wrapper-8529c1db-0480-471c-8c06-e2f336b223f2 {
+.ele-wrapper-activityProjectForm {
   height: 100%;
 }
 
