@@ -1928,9 +1928,15 @@ export default {
 }
 
 .ele-wrapper-848e318a-9213-4805-a8d8-7f9b336b01d5 {
-  width: 95%;
-  margin-left: 43px;
+  width: 100%;
   margin-top: 20px;
+  /deep/.input-title {
+    width: 20.8%;
+    text-align: right;
+  }
+  /deep/.ant-input-class {
+    width: 72%;
+  }
 }
 
 .ele-wrapper-message_2 {
