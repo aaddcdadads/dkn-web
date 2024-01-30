@@ -551,8 +551,8 @@ export default {
             props: {
               width: "242px",
               dataMap: {
-                label: "realname",
-                value: "realname",
+                label: "name",
+                value: "id",
               },
               title: "",
               params: {
@@ -573,8 +573,8 @@ export default {
             props: {
               width: "242px",
               dataMap: {
-                label: "realname",
-                value: "realname",
+                label: "name",
+                value: "id",
               },
               title: "",
               params: {
