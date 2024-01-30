@@ -543,15 +543,15 @@
                       <div class="ele-wrapper ele-wrapper-activityImgTableOne">
                         <hm-ant-table
                           ref="activityImgTableOne"
-                          :is-flat-action="activityImgTableOne.isFlatAction"
-                          :get-data-map="activityImgTableOne.getDataMap"
-                          :data="activityImgTableOne.data"
                           :columns="activityImgTableOne.columns"
-                          :row-class-name="activityImgTableOne.rowClassName"
+                          :data="activityImgTableOne.data"
                           :pagination-hidden="
                             activityImgTableOne.paginationHidden
                           "
+                          :get-data-map="activityImgTableOne.getDataMap"
                           :actions="activityImgTableOne.actions"
+                          :is-flat-action="activityImgTableOne.isFlatAction"
+                          :row-class-name="activityImgTableOne.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -729,15 +729,15 @@
                       <div class="ele-wrapper ele-wrapper-sharingImageTable">
                         <hm-ant-table
                           ref="sharingImageTable"
-                          :columns="sharingImageTable.columns"
+                          :is-flat-action="sharingImageTable.isFlatAction"
+                          :get-data-map="sharingImageTable.getDataMap"
                           :data="sharingImageTable.data"
+                          :columns="sharingImageTable.columns"
+                          :row-class-name="sharingImageTable.rowClassName"
                           :pagination-hidden="
                             sharingImageTable.paginationHidden
                           "
-                          :get-data-map="sharingImageTable.getDataMap"
                           :actions="sharingImageTable.actions"
-                          :is-flat-action="sharingImageTable.isFlatAction"
-                          :row-class-name="sharingImageTable.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -1532,30 +1532,41 @@ export default {
         value: {},
       },
       activityImgTableOne: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [],
         columns: [
           {
-            dataIndex: "name",
-            width: 50,
-            title: "图片",
-            key: "name",
+            customRender: function (data) {
+              return h(HmAntIconText, {
+                fontSize: "14px",
+                iconSize: "16px",
+                bgColorText: "transparent",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                text: "",
+                placement: "top",
+                img: self.getImg(data.record.path),
+                color: "black",
+                imgStyle: {
+                  height: "32px",
+                  marginRight: "4px",
+                  marginTop: "-4px",
+                },
+                onClick: function () {},
+              });
+            },
+            dataIndex: "path",
+            title: "奖品图片",
+            key: "path",
           },
           {
-            dataIndex: "age",
-            width: 90,
+            dataIndex: "imgSize",
             title: "参考尺寸（或使用二倍图）",
-            key: "age",
+            key: "imgSize",
           },
           {
-            dataIndex: "address",
-            width: 40,
+            dataIndex: "sortNo",
             title: "图片排序",
-            key: "address",
+            key: "sortNo",
             ellipsis: true,
           },
           {
@@ -1567,8 +1578,12 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1589,8 +1604,21 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       sharingImageTable: {
+        isFlatAction: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        data: [
+          {
+            image: "",
+            size: "375 * 667",
+          },
+        ],
         columns: [
           {
             dataIndex: "image",
@@ -1612,17 +1640,8 @@ export default {
             key: "action",
           },
         ],
-        data: [
-          {
-            image: "",
-            size: "375 * 667",
-          },
-        ],
+        rowClassName: {},
         paginationHidden: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
         actions: [
           {
             name: "编辑",
@@ -1634,8 +1653,6 @@ export default {
             type: "link",
           },
         ],
-        isFlatAction: true,
-        rowClassName: {},
       },
       "89787e21-f9a9-487d-b055-c327bec09efd": {
         schema: {
