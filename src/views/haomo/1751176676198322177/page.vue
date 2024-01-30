@@ -1724,6 +1724,7 @@ export default {
       if (item.imgPath?.file?.response?.message) {
         item.path = item.imgPath?.file?.response?.message;
       }
+      delete item.imgPath;
       self.$refs.activityImgTableTwo.cData.push(item);
 
       self.addprize.visible = false;
