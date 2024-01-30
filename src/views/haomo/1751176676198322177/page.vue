@@ -1765,7 +1765,7 @@ export default {
 }
 
 .ele-wrapper-92a3011a-fa3f-40cc-b9ca-0a8958382ca4 {
-  width: 85%;
+  width: 80%;
 }
 
 .ele-wrapper-activityExtForm {
