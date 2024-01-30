@@ -247,12 +247,18 @@
                   box-shadow-color="#00000000"
                   class="ele-detailsUserModalCard"
                 >
+                  <div
+                    class="ele-wrapper ele-wrapper-6a427e0a-e088-4f10-8f90-062dff49940b"
+                  >
+                    <hm-ant-bg-text text="二维码"> </hm-ant-bg-text>
+                  </div>
                   <div class="ele-wrapper ele-wrapper-storeDetailForm">
                     <hm-ant-formily
                       ref="storeDetailForm"
                       :config="storeDetailForm.config"
                       v-model:value="storeDetailForm.value"
                       :col-num="2"
+                      :col-min-width="380"
                       :schema="storeDetailForm.schema"
                       :label-col="7"
                       :wrapper-col="14"
@@ -326,6 +332,7 @@ import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
+import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
@@ -348,6 +355,7 @@ export default {
     HmAntUpload,
     HmAntTable,
     HmModal,
+    HmAntBgText,
     HmAntIconText,
     HmAntSwitch,
   },
@@ -361,7 +369,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       storeDetailModal: {
-        visible: false,
+        visible: true,
       },
       storeDetailForm: {
         config: {
@@ -795,6 +803,7 @@ export default {
 
 .ele-wrapper-storeDetailForm {
   width: 100%;
+  display: none;
 }
 
 .ele-wrapper-deleteUserInputCard {
