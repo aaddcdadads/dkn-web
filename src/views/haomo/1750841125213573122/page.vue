@@ -671,8 +671,8 @@ export default {
           },
           {
             title: "报名项目",
-            dataIndex: "activityId",
-            key: "activityId",
+            dataIndex: "activityId_dictText",
+            key: "activityId_dictText",
           },
           {
             title: "订单金额",
