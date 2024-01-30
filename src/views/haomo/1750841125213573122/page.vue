@@ -686,6 +686,9 @@ export default {
             key: "nowPickUpName",
             customRender: function (data) {
               console.log("item数据啊啊", data);
+              if (data.originalPickUpName == data.nowPickUpName) {
+                return data.text;
+              }
               return h(
                 "div",
                 {
