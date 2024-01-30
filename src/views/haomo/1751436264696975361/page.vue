@@ -627,13 +627,6 @@
                           >
                             <hm-ant-formily
                               :config="{
-                                sortNo: {
-                                  style: { width: '100%' },
-                                  type: 'InputNumber',
-                                  title: '排序',
-                                  required: true,
-                                  props: { placeholder: '图片序号' },
-                                },
                                 size: {
                                   style: { width: '100%' },
                                   type: 'Input',
@@ -1390,17 +1383,6 @@ export default {
       },
       "8ef1d3f1-249d-4427-b301-382265c07670": {
         config: {
-          sortNo: {
-            style: {
-              width: "100%",
-            },
-            type: "InputNumber",
-            title: "排序",
-            required: true,
-            props: {
-              placeholder: "图片序号",
-            },
-          },
           size: {
             style: {
               width: "100%",
