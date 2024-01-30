@@ -1881,7 +1881,7 @@ export default {
 }
 
 .ele-wrapper-e422be72-923b-42ad-bef4-7e886c910422 {
-  margin-left: 48px;
+  margin-left: 62px;
 }
 
 .ele-wrapper-activityRules {
