@@ -417,15 +417,15 @@
                             >
                             </hm-ant-bg-text>
                           </div>
-                          <div class="ele-wrapper ele-wrapper-activityRules">
+                          <div class="ele-wrapper ele-wrapper-activityRulesBox">
                             <hm-bg-card
-                              ref="activityRules"
+                              ref="activityRulesBox"
                               width="100%"
                               height="100%"
                               border-radius=""
                               box-shadow-v-shadow=""
                               box-shadow-blur=""
-                              class="ele-activityRules"
+                              class="ele-activityRulesBox"
                             >
                               <div
                                 class="ele-wrapper ele-wrapper-676eaac4-2113-4104-a0d1-6c2704cf0cdb"
@@ -452,15 +452,17 @@
                               </div>
                             </hm-bg-card>
                           </div>
-                          <div class="ele-wrapper ele-wrapper-activityRulesBox">
+                          <div
+                            class="ele-wrapper ele-wrapper-agreementCommitmentletterBox"
+                          >
                             <hm-bg-card
-                              ref="activityRulesBox"
+                              ref="agreementCommitmentletterBox"
                               width="100%"
                               height="100%"
                               border-radius=""
                               box-shadow-v-shadow=""
                               box-shadow-blur=""
-                              class="ele-activityRulesBox"
+                              class="ele-agreementCommitmentletterBox"
                             >
                               <div
                                 class="ele-wrapper ele-wrapper-3e907204-ffc2-4af7-9c91-d488f3bbe726"
@@ -1901,7 +1903,7 @@ export default {
   }
 }
 
-.ele-wrapper-activityRules {
+.ele-wrapper-activityRulesBox {
   width: 100%;
 }
 
@@ -1916,7 +1918,7 @@ export default {
   }
 }
 
-.ele-wrapper-activityRulesBox {
+.ele-wrapper-agreementCommitmentletterBox {
   width: 100%;
 }
 
