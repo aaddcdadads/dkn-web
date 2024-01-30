@@ -210,9 +210,9 @@
                             class="ele-wrapper ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6"
                           >
                             <hm-ant-bg-text
-                              padding="2"
-                              font-size="14px"
                               text="活动奖品设置（可为空）"
+                              font-size="14px"
+                              padding="2"
                               class="ele-2030f92c-96b3-41e7-8403-353b98f5e6a6"
                             >
                             </hm-ant-bg-text>
@@ -317,13 +317,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtTwoForm"
-                                  :schema="activityExtTwoForm.schema"
-                                  :wrapper-col="16"
-                                  :col-num="0"
-                                  :label-col="5"
-                                  :col-min-width="380"
                                   :config="activityExtTwoForm.config"
                                   v-model:value="activityExtTwoForm.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="activityExtTwoForm.schema"
+                                  :label-col="5"
+                                  :wrapper-col="16"
                                   class="ele-activityExtTwoForm"
                                 >
                                 </hm-ant-formily>
@@ -1179,6 +1179,31 @@ export default {
         ],
       },
       activityExtTwoForm: {
+        config: {
+          ActivityRequirements: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动需求",
+            required: false,
+            props: {
+              placeholder: "例子：2km/5km/10km",
+            },
+          },
+          activityType: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动类型",
+            required: false,
+            props: {
+              placeholder: "例子：跑步",
+            },
+          },
+        },
+        value: {},
         schema: {
           type: "object",
           properties: {
@@ -1201,31 +1226,6 @@ export default {
             },
           },
         },
-        config: {
-          ActivityRequirements: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动需求",
-            required: true,
-            props: {
-              placeholder: "例子：2km/5km/10km",
-            },
-          },
-          activityType: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动类型",
-            required: true,
-            props: {
-              placeholder: "例子：跑步",
-            },
-          },
-        },
-        value: {},
       },
       activityExtForm: {
         config: {
@@ -1690,7 +1690,7 @@ export default {
 }
 
 .ele-wrapper-37b100fe-30bf-47b0-9bed-b98bbfebd6f1 {
-  border-left: 5px solid #0079fe;
+  border-left: 4px solid #0079fe;
   margin-top: 15px;
   padding-left: 5px;
   .hm-bg-text {
@@ -1704,7 +1704,7 @@ export default {
 }
 
 .ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
-  border-left: 5px solid #0079fe;
+  border-left: 4px solid #0079fe;
   margin-top: 15px;
   padding-left: 5px;
   .hm-bg-text {
