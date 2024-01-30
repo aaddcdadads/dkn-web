@@ -11,68 +11,72 @@ let logic = {};
 /**
  * 发送添加请求
  */
-const editRequest = (logic.editRequest = async function () {
-  let res = await self.$postAction(`/api/dkn/activity/adds`, self.item);
+const editRequest = logic.editRequest = async function () {
+  let res = await self.$postAction(
+    `/api/dkn/activity/adds`,
+    self.item
+  )
   self.editRequestData = res;
-});
+}
+
 
 /**
  * 逻辑流 addActivty 入口函数
  */
-const addActivty = (logic.addActivty = async (pageVm, eventData) => {
-  console.log(`addActivty: `, pageVm, eventData);
+const addActivty = logic.addActivty = async (pageVm, eventData) => {
+  console.log(`addActivty: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.addActivtyData = eventData;
 
-  await self.$refs.activityForm.validate();
-  await self.$refs.activityExtForm.validate();
-  await self.$refs.activityExtTwoForm.validate();
+  
+  await self.$refs.activityForm.validate()
+await self.$refs.activityExtForm.validate()
+await self.$refs.activityExtTwoForm.validate()
 
-  let activityProjects = [],
-    activityImgs = [],
-    activityExts = [];
-  activityExts = [
+let activityProjects=[],activityImgs=[],activityExts=[]
+activityExts=[
     {
-      ...self.$refs.activityExtForm.getFormValues(),
-      ...self.$refs.activityExtTwoForm.getFormValues(),
-    },
-  ];
-  if (self.$refs.activityProjectTable.cData.length > 0) {
-    activityProjects = self.$refs.activityProjectTable.cData.map((x) => {
-      return x;
-    });
-  }
-  if (self.$refs.activityImgTableOne.cData.length > 0) {
-    activityProjects = self.$refs.activityImgTableOne.cData.map((x) => {
-      x.type = 0;
-      return x;
-    });
-  }
-  if (self.$refs.activityImgTableTwo.cData.length > 0) {
-    let list = self.$refs.activityImgTableTwo.cData.map((x) => {
-      x.type = 1;
-      return x;
-    });
-    activityProjects = [...activityProjects, ...list];
-  }
-  self.item = {
+        activityRules:self.activityRules.value,
+        protocol:self.agreementCommitmentletter.value,
+        customerService:self.customerService.value,
+    ...self.$refs.activityExtTwoForm.getFormValues()}]
+if(self.$refs.activityProjectTable.cData.length > 0){
+    activityProjects = self.$refs.activityProjectTable.cData.map((x)=>{
+        return x
+    })
+}
+if(self.$refs.activityImgTableOne.cData.length > 0){
+    activityProjects = self.$refs.activityImgTableOne.cData.map((x)=>{
+        x.type=0
+        return x
+    })
+}
+if(self.$refs.activityImgTableTwo.cData.length > 0){
+     let list = self.$refs.activityImgTableTwo.cData.map((x)=>{
+        x.type=1
+        return x
+    })
+    activityProjects =[...activityProjects,...list]
+}
+self.item={
     ...self.$refs.activityForm.getFormValues(),
     ...self.$refs.activityExtForm.getFormValues(),
     activityProjects,
     activityImgs,
     activityExts,
-  };
+}
 
   await editRequest();
-  if (self.editRequestData.success) {
-    self.$message.error(self.editRequestData.message);
-    return;
-  }
-  self.$message.success("操作成功");
-  self.$router.push({
+  if(self.editRequestData.success){
+    self.$message.error(self.editRequestData.message)
+    return
+}
+self.$message.success("操作成功")
+self.$router.push({
     path: `/haomo/1750448384092672002/page`,
   });
-});
+
+}
 
 /********************** end addActivty 开始 *********************/
 
@@ -81,28 +85,32 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
 /**
  * 逻辑流 addActivityProject 入口函数
  */
-const addActivityProject = (logic.addActivityProject = async (
-  pageVm,
-  eventData
-) => {
-  console.log(`addActivityProject: `, pageVm, eventData);
+const addActivityProject = logic.addActivityProject = async (pageVm, eventData) => {
+  console.log(`addActivityProject: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.addActivityProjectData = eventData;
 
-  await self.$refs.activityProjectForm.validate();
-  let item = self.$refs.activityProjectForm.getFormValues();
-  item.index = Math.floor(Math.random() * 10000);
+  
+  await self.$refs.activityProjectForm.validate()
+let item =self.$refs.activityProjectForm.getFormValues()
+    item.index=Math.floor(Math.random()*10000)
 
-  //处理图片
-  if (item.imgPath?.file?.response?.message) {
-    item.imgPath = item.imgPath?.file?.response?.message;
-  }
-  self.$refs.activityProjectTable.cData.push(item);
+    //处理图片
+    if (item.imgPath?.file?.response?.message){
+        item.imgPath=item.imgPath?.file?.response?.message
+    }
+    self.$refs.activityProjectTable.cData.push(item)
 
-  self.addproject.visible = false;
-  self.$refs.activityProjectForm.reset();
-});
+    self.addproject.visible=false
+    self.$refs.activityProjectForm.reset()
+
+}
 
 /********************** end addActivityProject 开始 *********************/
 
-export { editRequest, addActivty, addActivityProject };
+
+export {
+  editRequest,
+  addActivty,
+  addActivityProject,
+}
