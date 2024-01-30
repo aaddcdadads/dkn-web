@@ -125,7 +125,7 @@
                       <div class="ele-wrapper ele-wrapper-addprice">
                         <hm-modal
                           ref="addprice"
-                          title="活动项目"
+                          title="新增"
                           v-model:visible="addprice.visible"
                           :z-index="1000"
                           height=""
@@ -153,7 +153,7 @@
                         class="ele-wrapper ele-wrapper-62072282-5a38-4271-8533-29ced8865555"
                       >
                         <hm-modal
-                          title="活动费用"
+                          title="编辑"
                           :visible="false"
                           :z-index="1000"
                           height=""
