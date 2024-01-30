@@ -706,6 +706,7 @@ export default {
             },
             props: {
               title: "",
+              width: "242px",
               options: [
                 {
                   label: "app",
@@ -727,6 +728,7 @@ export default {
             },
             props: {
               title: "",
+              width: "242px",
               url: "/api/dkn/activity/list",
               params: {
                 pageNo: 1,
@@ -747,6 +749,7 @@ export default {
             },
             props: {
               title: "",
+              width: "242px",
               options: [
                 {
                   label: "已报名",
@@ -1064,6 +1067,9 @@ export default {
 .ele-wrapper-registrationOrdersTable {
   .table-div /deep/ .ant-table-thead > tr > th {
     background: #fafafa;
+  }
+  /deep/.ant-table-header-column > div {
+    background-color: transparent !important;
   }
   width: 98%;
   margin-left: 1%;
