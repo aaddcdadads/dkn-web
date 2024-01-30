@@ -90,7 +90,7 @@
                   url="/api/restify/activity/list"
                   :params="activitySelect.params"
                   :data-map="activitySelect.dataMap"
-                  title=""
+                  title="选择活动"
                   placeholder="选择活动"
                   v-model:options="activitySelect.options"
                   :show-search="true"
