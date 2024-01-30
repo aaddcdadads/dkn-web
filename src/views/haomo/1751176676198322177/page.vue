@@ -341,16 +341,15 @@
                             >
                             </hm-ant-bg-text>
                           </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41"
-                          >
+                          <div class="ele-wrapper ele-wrapper-activityRulesBox">
                             <hm-bg-card
+                              ref="activityRulesBox"
                               width="100%"
                               height="100%"
                               border-radius=""
                               box-shadow-v-shadow=""
                               box-shadow-blur=""
-                              class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
+                              class="ele-activityRulesBox"
                             >
                               <div
                                 class="ele-wrapper ele-wrapper-e422be72-923b-42ad-bef4-7e886c910422"
@@ -380,15 +379,16 @@
                             </hm-bg-card>
                           </div>
                           <div
-                            class="ele-wrapper ele-wrapper-f97dd639-1f58-44cc-99e6-def3ddf58363"
+                            class="ele-wrapper ele-wrapper-agreementCommitmentletterBox"
                           >
                             <hm-bg-card
+                              ref="agreementCommitmentletterBox"
                               width="100%"
                               height="100%"
                               border-radius=""
                               box-shadow-v-shadow=""
                               box-shadow-blur=""
-                              class="ele-f97dd639-1f58-44cc-99e6-def3ddf58363"
+                              class="ele-agreementCommitmentletterBox"
                             >
                               <div
                                 class="ele-wrapper ele-wrapper-04dfcec4-d289-4d3c-a977-7ed5a6ce3822"
@@ -1905,7 +1905,7 @@ export default {
   }
 }
 
-.ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41 {
+.ele-wrapper-activityRulesBox {
   width: 100%;
 }
 
@@ -1920,8 +1920,12 @@ export default {
   }
 }
 
-.ele-wrapper-f97dd639-1f58-44cc-99e6-def3ddf58363 {
+.ele-wrapper-agreementCommitmentletterBox {
   width: 100%;
+  .ele-agreementCommitmentletterBox {
+    display: flex;
+    flex-wrap: nowrap;
+  }
 }
 
 .ele-wrapper-04dfcec4-d289-4d3c-a977-7ed5a6ce3822 {
