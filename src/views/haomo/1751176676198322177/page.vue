@@ -231,12 +231,12 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              title="奖品图片"
-                              v-model:visible="addprize.visible"
                               :z-index="1000"
+                              v-model:visible="addprize.visible"
+                              title="奖品图片"
                               :auto-close="false"
-                              @ok="onAddprizeOk"
                               @cancel="onAddprizeCancel"
+                              @ok="onAddprizeOk"
                               class="ele-addprize"
                             >
                               <div
@@ -260,11 +260,11 @@
                             class="ele-wrapper ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                           >
                             <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
                               width="100%"
                               height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
                               class="ele-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c"
                             >
                               <div
@@ -291,6 +291,19 @@
                             </hm-bg-card>
                           </div>
                           <div
+                            class="ele-wrapper ele-wrapper-e3996ba6-7678-4de0-abea-832a2097c2c9"
+                          >
+                            <hm-bg-card
+                              width="100%"
+                              height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
+                              class="ele-e3996ba6-7678-4de0-abea-832a2097c2c9"
+                            >
+                            </hm-bg-card>
+                          </div>
+                          <div
                             class="ele-wrapper ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48"
                           >
                             <hm-ant-bg-text
@@ -305,11 +318,11 @@
                             class="ele-wrapper ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41"
                           >
                             <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
                               width="100%"
                               height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
                               <div
@@ -1259,6 +1272,9 @@ export default {
     onAddBtn2Click() {
       this.addprize.visible = true;
     },
+    onAddprizeCancel() {
+      this.addprize.visible = false;
+    },
     async onAddprizeOk() {
       let self = this;
       await self.$refs.addActivityImgFormTwo.validate();
@@ -1273,9 +1289,6 @@ export default {
 
       self.addprize.visible = false;
       self.$refs.addActivityImgFormTwo.reset();
-    },
-    onAddprizeCancel() {
-      this.addprize.visible = false;
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
@@ -1397,6 +1410,10 @@ export default {
 }
 
 .ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c {
+  width: 100%;
+}
+
+.ele-wrapper-e3996ba6-7678-4de0-abea-832a2097c2c9 {
   width: 100%;
 }
 
