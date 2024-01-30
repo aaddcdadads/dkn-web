@@ -460,7 +460,7 @@ export default {
       },
       viewRegistrationOrdersFilter: {
         config: {
-          code: {
+          userCode: {
             type: "Input",
             title: "搜索用户",
             style: {
