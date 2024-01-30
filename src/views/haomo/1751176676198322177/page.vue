@@ -426,7 +426,7 @@
                               type: 'InputNumber',
                               title: '排序',
                               required: true,
-                              props: { placeholder: '活动序号' },
+                              props: { placeholder: '图片序号' },
                             },
                             size: {
                               style: { width: '100%' },
@@ -595,7 +595,7 @@
                                   type: 'InputNumber',
                                   title: '排序',
                                   required: true,
-                                  props: { placeholder: '活动序号' },
+                                  props: { placeholder: '图片序号' },
                                 },
                                 size: {
                                   style: { width: '100%' },
@@ -1049,7 +1049,7 @@ export default {
             title: "奖品排序",
             required: true,
             props: {
-              placeholder: "请输入奖品排序",
+              placeholder: "奖品序号",
             },
           },
           imgPath: {
@@ -1292,7 +1292,7 @@ export default {
             title: "排序",
             required: true,
             props: {
-              placeholder: "活动序号",
+              placeholder: "图片序号",
             },
           },
           size: {
@@ -1479,7 +1479,7 @@ export default {
             title: "排序",
             required: true,
             props: {
-              placeholder: "活动序号",
+              placeholder: "图片序号",
             },
           },
           size: {
