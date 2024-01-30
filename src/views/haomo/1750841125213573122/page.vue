@@ -691,8 +691,8 @@ export default {
           },
           {
             title: "核销状态",
-            dataIndex: "paymentStatusText",
-            key: "paymentStatusText",
+            dataIndex: "pickUpStatusText",
+            key: "pickUpStatusText",
           },
           {
             title: "核销时间",
