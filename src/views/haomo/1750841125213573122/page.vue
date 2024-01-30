@@ -83,13 +83,13 @@
                 >
                 </hm-ant-button>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-26c123e0-0165-4f7e-b933-872da959c7a3"
-              >
+              <div class="ele-wrapper ele-wrapper-batchRefund">
                 <hm-ant-button
+                  ref="batchRefund"
                   text="批量退款"
                   :type="'primary'"
-                  class="ele-26c123e0-0165-4f7e-b933-872da959c7a3"
+                  :disabled="true"
+                  class="ele-batchRefund"
                 >
                 </hm-ant-button>
               </div>
@@ -894,7 +894,7 @@ export default {
   float: right;
 }
 
-.ele-wrapper-26c123e0-0165-4f7e-b933-872da959c7a3 {
+.ele-wrapper-batchRefund {
   margin: 0 1% 0 0;
   float: right;
 }
