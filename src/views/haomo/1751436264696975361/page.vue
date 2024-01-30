@@ -612,13 +612,13 @@
                         >
                         </hm-ant-bg-text>
                       </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-89527586-7e65-4c4b-92ae-d742a20e4c64"
-                      >
+                      <div class="ele-wrapper ele-wrapper-sharingImageSettings">
                         <hm-modal
-                          :visible="true"
+                          ref="sharingImageSettings"
+                          title="分享图片"
+                          v-model:visible="sharingImageSettings.visible"
                           :z-index="1000"
-                          class="ele-89527586-7e65-4c4b-92ae-d742a20e4c64"
+                          class="ele-sharingImageSettings"
                         >
                           <div
                             class="ele-wrapper ele-wrapper-8ef1d3f1-249d-4427-b301-382265c07670"
@@ -768,7 +768,9 @@ export default {
       addimage: {
         visible: false,
       },
-      sharingImageSettings: {},
+      sharingImageSettings: {
+        visible: true,
+      },
       title: {
         text: "创建活动",
         icon: "fa fa-tasks",
@@ -1334,9 +1336,6 @@ export default {
           },
         },
       },
-      "89527586-7e65-4c4b-92ae-d742a20e4c64": {
-        visible: true,
-      },
       sharingImageTable: {
         columns: [
           {
@@ -1690,7 +1689,7 @@ export default {
   }
 }
 
-.ele-wrapper-89527586-7e65-4c4b-92ae-d742a20e4c64 {
+.ele-wrapper-sharingImageSettings {
   /deep/.hm-modal {
     min-height: 0px;
   }
