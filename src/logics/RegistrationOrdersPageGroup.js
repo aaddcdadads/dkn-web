@@ -32,6 +32,7 @@ const searchRegistrationOrders = (logic.searchRegistrationOrders = async (
   } else {
     self.registrationOrdersTable.params = params;
   }
+  await startOrdersLoad(self, self.startData, 1);
 });
 
 /********************** end searchRegistrationOrders 开始 *********************/
