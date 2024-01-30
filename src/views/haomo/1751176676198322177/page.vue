@@ -359,6 +359,7 @@
                                   font-size="14px"
                                   :text-align="'right'"
                                   padding="2"
+                                  :enable-html-render="true"
                                   class="ele-e422be72-923b-42ad-bef4-7e886c910422"
                                 >
                                 </hm-ant-bg-text>
