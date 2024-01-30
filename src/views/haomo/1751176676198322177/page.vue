@@ -1747,7 +1747,7 @@ export default {
       this.addBackground.visible = false;
     },
     onTextColourKitChangecolorkit(e) {
-      console.log("e", e);
+      this.textColour = e;
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
       addActivty(this, arguments);
