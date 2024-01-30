@@ -25,7 +25,6 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
   self.addActivtyData = eventData;
 
   await self.$refs.activityForm.validate();
-  await self.$refs.activityExtForm.validate();
   await self.$refs.activityExtTwoForm.validate();
 
   let activityProjects = [],
