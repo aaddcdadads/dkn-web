@@ -479,7 +479,7 @@ export default {
             validator: function (value) {},
           },
           address: {
-            type: "Input",
+            type: "Select",
             title: "门店地址",
             style: {
               width: "50%",

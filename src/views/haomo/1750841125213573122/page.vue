@@ -133,8 +133,6 @@
                   :row-class-name="viewRegistrationOrdersTable.rowClassName"
                   @onSelectChange="onViewRegistrationOrdersTableOnSelectChange"
                   @onSelect="onViewRegistrationOrdersTableOnSelect"
-                  @onSelectAll="onViewRegistrationOrdersTableOnSelectAll"
-                  @change="onViewRegistrationOrdersTableChange"
                   class="ele-viewRegistrationOrdersTable"
                 >
                 </hm-ant-table>
@@ -852,12 +850,6 @@ export default {
     },
     onViewRegistrationOrdersTableOnSelect(data, index) {
       console.log("onSelect", data, index);
-    },
-    onViewRegistrationOrdersTableOnSelectAll(data, index) {
-      console.log("onSelectAll", data, index);
-    },
-    onViewRegistrationOrdersTableChange(data, index) {
-      console.log("change", data, index);
     },
     onViewRegistrationOrdersAddModalOk() {
       addViewRegistrationOrders(this, arguments);
