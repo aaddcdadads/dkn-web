@@ -140,13 +140,13 @@
                           >
                             <hm-ant-formily
                               ref="activityProjectForm"
-                              :schema="activityProjectForm.schema"
-                              :wrapper-col="16"
-                              :col-num="0"
-                              :label-col="6"
-                              :col-min-width="380"
                               :config="activityProjectForm.config"
                               v-model:value="activityProjectForm.value"
+                              :col-num="0"
+                              :col-min-width="380"
+                              :schema="activityProjectForm.schema"
+                              :label-col="6"
+                              :wrapper-col="16"
                               class="ele-activityProjectForm"
                             >
                             </hm-ant-formily>
@@ -156,10 +156,10 @@
                       <div class="ele-wrapper ele-wrapper-deleteproject">
                         <hm-modal
                           ref="deleteproject"
-                          :z-index="1000"
-                          v-model:visible="deleteproject.visible"
                           title="删除"
+                          v-model:visible="deleteproject.visible"
                           width="320px"
+                          :z-index="1000"
                           height=""
                           class="ele-deleteproject"
                         >
@@ -244,13 +244,13 @@
                               >
                                 <hm-ant-formily
                                   ref="addActivityImgFormTwo"
-                                  :schema="addActivityImgFormTwo.schema"
-                                  :wrapper-col="14"
-                                  :col-num="0"
-                                  :label-col="7"
-                                  :col-min-width="380"
                                   :config="addActivityImgFormTwo.config"
                                   v-model:value="addActivityImgFormTwo.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="addActivityImgFormTwo.schema"
+                                  :label-col="7"
+                                  :wrapper-col="14"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -429,9 +429,9 @@
                           <div class="ele-wrapper ele-wrapper-customerService">
                             <hm-ant-input
                               ref="customerService"
-                              width="480"
-                              title="活动咨询客服"
                               v-model:value="customerService.value"
+                              title="活动咨询客服"
+                              width="480"
                               class="ele-customerService"
                             >
                             </hm-ant-input>
@@ -1024,28 +1024,6 @@ export default {
         },
       },
       activityProjectForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           sortNo: {
             style: {
@@ -1139,6 +1117,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityProjectTable: {
         columns: [
@@ -1243,28 +1243,6 @@ export default {
         value: "",
       },
       addActivityImgFormTwo: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           sortNo: {
             style: {
@@ -1302,6 +1280,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityImgTableTwo: {
         columns: [
@@ -1672,9 +1672,6 @@ export default {
       self.activityRules.value = "";
       self.agreementCommitmentletter.value = "";
       self.getImg = function (url) {
-        if (!url) {
-          return self.$logImage || "";
-        }
         if (url.substring(0, 4) === "http") {
           return url;
         }
