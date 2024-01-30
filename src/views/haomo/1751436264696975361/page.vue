@@ -1937,7 +1937,7 @@ export default {
 }
 
 .ele-wrapper-676eaac4-2113-4104-a0d1-6c2704cf0cdb {
-  margin-left: 48px;
+  margin-left: 62px;
 }
 
 .ele-wrapper-agreementsAndCommitments {
@@ -1952,7 +1952,7 @@ export default {
 }
 
 .ele-wrapper-3e907204-ffc2-4af7-9c91-d488f3bbe726 {
-  margin-left: 20px;
+  margin-left: 34px;
 }
 
 .ele-wrapper-2bbe7f7f-8de5-4732-869f-e69a8a760184 {
@@ -1963,8 +1963,9 @@ export default {
 }
 
 .ele-wrapper-66d95dfc-4437-4ea7-86eb-26498a2706e5 {
-  margin-left: 28px;
-  margin-top: 10px;
+  width: 95%;
+  margin-left: 43px;
+  margin-top: 20px;
 }
 
 .ele-wrapper-message_2 {
