@@ -237,7 +237,6 @@
               width="600px"
               :z-index="1000"
               height="100%"
-              class="ele-storeDetailModal"
             >
               <div class="ele-wrapper ele-wrapper-detailsUserModalCard">
                 <hm-bg-card
@@ -850,13 +849,6 @@ export default {
 
 .ele-wrapper-storeEditForm {
   width: 100%;
-}
-
-.ele-wrapper-storeDetailModal {
-  /deep/ .ant-btn {
-    color: #fff !important;
-    background: red !important;
-  }
 }
 
 .ele-wrapper-detailsUserModalCard {
