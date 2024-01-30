@@ -552,7 +552,7 @@ export default {
               width: "242px",
               dataMap: {
                 label: "name",
-                value: "id",
+                value: "name",
               },
               title: "",
               params: {
@@ -574,7 +574,7 @@ export default {
               width: "242px",
               dataMap: {
                 label: "name",
-                value: "id",
+                value: "name",
               },
               title: "",
               params: {
