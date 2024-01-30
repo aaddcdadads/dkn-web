@@ -691,20 +691,19 @@ export default {
                 {
                   class: "applyNoDiv",
                   style: {
-                    width: 188,
                     height: "100%",
                     display: "flex",
-                    flexWrap: "wrap",
-                    justifyContent: "left",
-                    alignItems: "left",
-                    marginLeft: "-15px",
+                    alignItems: "center",
+                    paddingLeft: "16px",
+                    marginLeft: "-16px",
+                    backgroundColor: "#fe8989",
                   },
                 },
                 [
                   h(
                     "span",
                     {
-                      style: { cursor: "pointer" },
+                      style: {},
                     },
                     data.text
                   ),
