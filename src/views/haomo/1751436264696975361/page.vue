@@ -810,6 +810,7 @@
                           :pagination-hidden="
                             sharingImageTable.paginationHidden
                           "
+                          :get-data-map="sharingImageTable.getDataMap"
                           :actions="sharingImageTable.actions"
                           :is-flat-action="sharingImageTable.isFlatAction"
                           :row-class-name="sharingImageTable.rowClassName"
@@ -1660,15 +1661,34 @@ export default {
       sharingImageTable: {
         columns: [
           {
-            dataIndex: "image",
-            title: "图片",
-            width: 180,
-            key: "image",
+            customRender: function (data) {
+              return h(HmAntIconText, {
+                fontSize: "14px",
+                iconSize: "16px",
+                bgColorText: "transparent",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                text: "",
+                placement: "top",
+                img: self.getImg(data.record.path),
+                color: "black",
+                imgStyle: {
+                  height: "32px",
+                  marginRight: "4px",
+                  marginTop: "-4px",
+                },
+                onClick: function () {},
+              });
+            },
+            dataIndex: "path",
+            title: "分享图片",
+            key: "path",
           },
           {
-            dataIndex: "size",
+            dataIndex: "imgSize",
             title: "参考尺寸",
-            key: "size",
+            key: "imgSize",
           },
           {
             slots: {
@@ -1686,6 +1706,10 @@ export default {
           },
         ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
