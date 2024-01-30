@@ -358,6 +358,7 @@
                                 <hm-ant-bg-text
                                   text="协议与承诺："
                                   font-size="14px"
+                                  padding="2"
                                   class="ele-e422be72-923b-42ad-bef4-7e886c910422"
                                 >
                                 </hm-ant-bg-text>
@@ -473,6 +474,7 @@
                                 <hm-ant-bg-text
                                   text="协议与承诺书："
                                   font-size="14px"
+                                  padding="2"
                                   class="ele-04dfcec4-d289-4d3c-a977-7ed5a6ce3822"
                                 >
                                 </hm-ant-bg-text>
@@ -2034,7 +2036,7 @@ export default {
 
 .ele-wrapper-848e318a-9213-4805-a8d8-7f9b336b01d5 {
   width: 95%;
-  margin-left: 49px;
+  margin-left: 43px;
   margin-top: 20px;
 }
 
