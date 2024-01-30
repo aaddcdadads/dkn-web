@@ -29,6 +29,10 @@ const setActivity = (logic.setActivity = function () {
   item.cycle = [item.startTime, item.endTime];
   self.$refs.activityForm.setFormValues(item);
   self.$refs.activityTwoForm.setFormValues(item);
+
+  self.bgColour = item.bgColour;
+  self.colour = item.colour;
+  self.textColour = item.textColour;
 });
 
 /**
