@@ -94,6 +94,7 @@
                   placeholder="选择活动"
                   v-model:options="activitySelect.options"
                   :show-search="true"
+                  @change="onActivitySelectChange"
                   class="ele-activitySelect"
                 >
                 </hm-ant-select>
@@ -946,6 +947,10 @@ export default {
     },
     onExportButtonClick() {
       exportViewRegistrationOrders(this, arguments);
+    },
+    onActivitySelectChange(item) {
+      console.log("sss--", item);
+      this.selectActivityId = item;
     },
     onBatchRefundClick() {
       this.batchRefundModal.visible = true;
