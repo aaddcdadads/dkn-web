@@ -681,8 +681,8 @@ export default {
           },
           {
             title: "支付状态",
-            dataIndex: "paymentStatus",
-            key: "paymentStatus",
+            dataIndex: "paymentStatusText",
+            key: "paymentStatusText",
           },
           {
             title: "创建时间",
@@ -693,6 +693,7 @@ export default {
             title: "核销状态",
             dataIndex: "pickUpStatusText",
             key: "pickUpStatusText",
+            customRender: function (data) {},
           },
           {
             title: "核销时间",
