@@ -368,7 +368,74 @@
                                 <hm-wang-editor
                                   :mode="'simple'"
                                   value=""
-                                  :toolbar-config="{}"
+                                  :toolbar-config="{
+                                    toolbarKeys: [
+                                      'headerSelect',
+                                      'blockquote',
+                                      '|',
+                                      'bold',
+                                      'underline',
+                                      'italic',
+                                      {
+                                        key: 'group-more-style',
+                                        title: '更多',
+                                        menuKeys: [
+                                          'through',
+                                          'code',
+                                          'sup',
+                                          'sub',
+                                          'clearStyle',
+                                        ],
+                                      },
+                                      'color',
+                                      'bgColor',
+                                      '|',
+                                      'fontSize',
+                                      'fontFamily',
+                                      'lineHeight',
+                                      '|',
+                                      'bulletedList',
+                                      'numberedList',
+                                      'todo',
+                                      {
+                                        key: 'group-justify',
+                                        title: '对齐',
+                                        menuKeys: [
+                                          'justifyLeft',
+                                          'justifyRight',
+                                          'justifyCenter',
+                                          'justifyJustify',
+                                        ],
+                                      },
+                                      {
+                                        key: 'group-indent',
+                                        title: '缩进',
+                                        menuKeys: ['indent', 'delIndent'],
+                                      },
+                                      '|',
+                                      'emotion',
+                                      'insertLink',
+                                      {
+                                        key: 'group-image',
+                                        title: '图片',
+                                        iconSvg:
+                                          '<svg viewBox=&quot;0 0 1024 1024&quot;><path d=&quot;M959.877 128l0.123 0.123v767.775l-0.123 0.122H64.102l-0.122-0.122V128.123l0.122-0.123h895.775zM960 64H64C28.795 64 0 92.795 0 128v768c0 35.205 28.795 64 64 64h896c35.205 0 64-28.795 64-64V128c0-35.205-28.795-64-64-64zM832 288.01c0 53.023-42.988 96.01-96.01 96.01s-96.01-42.987-96.01-96.01S682.967 192 735.99 192 832 234.988 832 288.01zM896 832H128V704l224.01-384 256 320h64l224.01-192z&quot;></path></svg>',
+                                        menuKeys: [
+                                          'insertImage',
+                                          'uploadImage',
+                                        ],
+                                      },
+                                      'insertTable',
+                                      'codeBlock',
+                                      'divider',
+                                      '|',
+                                      'undo',
+                                      'redo',
+                                      '|',
+                                      'fullScreen',
+                                    ],
+                                    excludeKeys: [],
+                                  }"
                                   :max-content-length="2"
                                   class="ele-92a3011a-fa3f-40cc-b9ca-0a8958382ca4"
                                 >
@@ -1298,7 +1365,65 @@ export default {
       },
       "92a3011a-fa3f-40cc-b9ca-0a8958382ca4": {
         value: "",
-        toolbarConfig: {},
+        toolbarConfig: {
+          toolbarKeys: [
+            "headerSelect",
+            "blockquote",
+            "|",
+            "bold",
+            "underline",
+            "italic",
+            {
+              key: "group-more-style",
+              title: "更多",
+              menuKeys: ["through", "code", "sup", "sub", "clearStyle"],
+            },
+            "color",
+            "bgColor",
+            "|",
+            "fontSize",
+            "fontFamily",
+            "lineHeight",
+            "|",
+            "bulletedList",
+            "numberedList",
+            "todo",
+            {
+              key: "group-justify",
+              title: "对齐",
+              menuKeys: [
+                "justifyLeft",
+                "justifyRight",
+                "justifyCenter",
+                "justifyJustify",
+              ],
+            },
+            {
+              key: "group-indent",
+              title: "缩进",
+              menuKeys: ["indent", "delIndent"],
+            },
+            "|",
+            "emotion",
+            "insertLink",
+            {
+              key: "group-image",
+              title: "图片",
+              iconSvg:
+                '<svg viewBox="0 0 1024 1024"><path d="M959.877 128l0.123 0.123v767.775l-0.123 0.122H64.102l-0.122-0.122V128.123l0.122-0.123h895.775zM960 64H64C28.795 64 0 92.795 0 128v768c0 35.205 28.795 64 64 64h896c35.205 0 64-28.795 64-64V128c0-35.205-28.795-64-64-64zM832 288.01c0 53.023-42.988 96.01-96.01 96.01s-96.01-42.987-96.01-96.01S682.967 192 735.99 192 832 234.988 832 288.01zM896 832H128V704l224.01-384 256 320h64l224.01-192z"></path></svg>',
+              menuKeys: ["insertImage", "uploadImage"],
+            },
+            "insertTable",
+            "codeBlock",
+            "divider",
+            "|",
+            "undo",
+            "redo",
+            "|",
+            "fullScreen",
+          ],
+          excludeKeys: [],
+        },
       },
       "0303a115-4a17-41e3-b32a-c1d017db3f97": {
         value: "",
