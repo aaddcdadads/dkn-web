@@ -953,7 +953,7 @@ export default {
     onActivitySelectChange(item) {
       console.log("sss--", item);
       this.selectActivityId = item;
-      searchViewRegistrationOrders(self, null);
+      searchViewRegistrationOrders(this, null);
     },
     onBatchRefundClick() {
       this.batchRefundModal.visible = true;
