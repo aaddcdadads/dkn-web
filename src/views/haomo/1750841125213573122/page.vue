@@ -318,6 +318,7 @@
               width="320px"
               :z-index="1000"
               height="80px"
+              @ok="onBatchRefundModalOk"
             >
               <div
                 class="ele-wrapper ele-wrapper-065940be-5461-4e36-aed7-161a8e6a8126"
@@ -374,6 +375,7 @@ import {
   searchViewRegistrationOrders,
   addViewRegistrationOrders,
   editViewRegistrationOrders,
+  ordersBatchRefund,
 } from "/@/logics/OrderListGroup";
 
 export default {
@@ -916,6 +918,9 @@ export default {
     },
     onViewRegistrationOrdersDeleteModalOk() {
       this.viewRegistrationOrdersDeleteModal.visible = false;
+    },
+    onBatchRefundModalOk() {
+      ordersBatchRefund(this, arguments);
     },
   },
 };
