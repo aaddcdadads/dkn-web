@@ -417,16 +417,15 @@
                             >
                             </hm-ant-bg-text>
                           </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41"
-                          >
+                          <div class="ele-wrapper ele-wrapper-activityRules">
                             <hm-bg-card
+                              ref="activityRules"
                               width="100%"
                               height="100%"
                               border-radius=""
                               box-shadow-v-shadow=""
                               box-shadow-blur=""
-                              class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
+                              class="ele-activityRules"
                             >
                               <div
                                 class="ele-wrapper ele-wrapper-676eaac4-2113-4104-a0d1-6c2704cf0cdb"
@@ -440,31 +439,28 @@
                                 </hm-ant-bg-text>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-agreementsAndCommitments"
+                                class="ele-wrapper ele-wrapper-activityRules"
                               >
                                 <hm-wang-editor
-                                  ref="agreementsAndCommitments"
-                                  v-model:value="agreementsAndCommitments.value"
-                                  :toolbar-config="
-                                    agreementsAndCommitments.toolbarConfig
-                                  "
+                                  ref="activityRules"
+                                  v-model:value="activityRules.value"
+                                  :toolbar-config="activityRules.toolbarConfig"
                                   :max-content-length="2"
-                                  class="ele-agreementsAndCommitments"
+                                  class="ele-activityRules"
                                 >
                                 </hm-wang-editor>
                               </div>
                             </hm-bg-card>
                           </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-d744b8f6-17da-4ce8-9d84-c184b4cea091"
-                          >
+                          <div class="ele-wrapper ele-wrapper-activityRulesBox">
                             <hm-bg-card
+                              ref="activityRulesBox"
                               width="100%"
                               height="100%"
                               border-radius=""
                               box-shadow-v-shadow=""
                               box-shadow-blur=""
-                              class="ele-d744b8f6-17da-4ce8-9d84-c184b4cea091"
+                              class="ele-activityRulesBox"
                             >
                               <div
                                 class="ele-wrapper ele-wrapper-3e907204-ffc2-4af7-9c91-d488f3bbe726"
@@ -478,74 +474,18 @@
                                 </hm-ant-bg-text>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-2bbe7f7f-8de5-4732-869f-e69a8a760184"
+                                class="ele-wrapper ele-wrapper-agreementCommitmentletter"
                               >
                                 <hm-wang-editor
-                                  value=""
-                                  :toolbar-config="{
-                                    toolbarKeys: [
-                                      'blockquote',
-                                      'bold',
-                                      'underline',
-                                      'italic',
-                                      'color',
-                                      'bgColor',
-                                      'undo',
-                                      'redo',
-                                      'emotion',
-                                      'insertLink',
-                                      'fullScreen',
-                                      {
-                                        key: 'group-image',
-                                        title: '图片',
-                                        iconSvg:
-                                          '<svg viewBox=&quot;0 0 1024 1024&quot;><path d=&quot;M959.877 128l0.123 0.123v767.775l-0.123 0.122H64.102l-0.122-0.122V128.123l0.122-0.123h895.775zM960 64H64C28.795 64 0 92.795 0 128v768c0 35.205 28.795 64 64 64h896c35.205 0 64-28.795 64-64V128c0-35.205-28.795-64-64-64zM832 288.01c0 53.023-42.988 96.01-96.01 96.01s-96.01-42.987-96.01-96.01S682.967 192 735.99 192 832 234.988 832 288.01zM896 832H128V704l224.01-384 256 320h64l224.01-192z&quot;></path></svg>',
-                                        menuKeys: [
-                                          'insertImage',
-                                          'uploadImage',
-                                        ],
-                                      },
-                                      'fontSize',
-                                      'fontFamily',
-                                      'lineHeight',
-                                      {
-                                        key: 'group-more-style',
-                                        title: '更多',
-                                        menuKeys: [
-                                          'through',
-                                          'code',
-                                          'sup',
-                                          'sub',
-                                          'clearStyle',
-                                        ],
-                                      },
-                                      'bulletedList',
-                                      'numberedList',
-                                      'headerSelect',
-                                      {
-                                        key: 'group-justify',
-                                        title: '对齐',
-                                        menuKeys: [
-                                          'justifyLeft',
-                                          'justifyRight',
-                                          'justifyCenter',
-                                          'justifyJustify',
-                                        ],
-                                      },
-                                      {
-                                        key: 'group-indent',
-                                        title: '缩进',
-                                        menuKeys: ['indent', 'delIndent'],
-                                      },
-                                      'todo',
-                                      'divider',
-                                      'codeBlock',
-                                      'insertTable',
-                                    ],
-                                    excludeKeys: [],
-                                  }"
+                                  ref="agreementCommitmentletter"
+                                  v-model:value="
+                                    agreementCommitmentletter.value
+                                  "
+                                  :toolbar-config="
+                                    agreementCommitmentletter.toolbarConfig
+                                  "
                                   :max-content-length="2"
-                                  class="ele-2bbe7f7f-8de5-4732-869f-e69a8a760184"
+                                  class="ele-agreementCommitmentletter"
                                 >
                                 </hm-wang-editor>
                               </div>
@@ -1439,7 +1379,7 @@ export default {
         },
         value: {},
       },
-      agreementsAndCommitments: {
+      activityRules: {
         value: "",
         toolbarConfig: {
           toolbarKeys: [
@@ -1495,7 +1435,7 @@ export default {
           excludeKeys: [],
         },
       },
-      "2bbe7f7f-8de5-4732-869f-e69a8a760184": {
+      agreementCommitmentletter: {
         value: "",
         toolbarConfig: {
           toolbarKeys: [
@@ -1961,7 +1901,7 @@ export default {
   }
 }
 
-.ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41 {
+.ele-wrapper-activityRules {
   width: 100%;
 }
 
@@ -1969,14 +1909,14 @@ export default {
   margin-left: 62px;
 }
 
-.ele-wrapper-agreementsAndCommitments {
+.ele-wrapper-activityRules {
   width: 72%;
   /deep/.w-e-scroll {
     height: 120px;
   }
 }
 
-.ele-wrapper-d744b8f6-17da-4ce8-9d84-c184b4cea091 {
+.ele-wrapper-activityRulesBox {
   width: 100%;
 }
 
@@ -1984,7 +1924,7 @@ export default {
   margin-left: 34px;
 }
 
-.ele-wrapper-2bbe7f7f-8de5-4732-869f-e69a8a760184 {
+.ele-wrapper-agreementCommitmentletter {
   width: 72%;
   /deep/.w-e-scroll {
     height: 120px;
