@@ -482,7 +482,7 @@
                             <hm-ant-input
                               value=""
                               title="活动咨询客服："
-                              width="500"
+                              width="400"
                               class="ele-848e318a-9213-4805-a8d8-7f9b336b01d5"
                             >
                             </hm-ant-input>
