@@ -505,11 +505,11 @@ export default {
               title: "",
               options: [
                 {
-                  label: "已支付",
+                  label: "已报名",
                   value: 0,
                 },
                 {
-                  label: "未支付",
+                  label: "待支付",
                   value: 1,
                 },
                 {
