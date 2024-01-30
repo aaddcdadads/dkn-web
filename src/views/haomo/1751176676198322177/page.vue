@@ -845,7 +845,7 @@ export default {
             dataIndex: "multipleOrder",
             title: "可多人报名",
             key: "multipleOrder",
-            width: 70,
+            width: 60,
           },
           {
             dataIndex: "name",
