@@ -371,13 +371,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtForm"
-                                  :schema="activityExtForm.schema"
-                                  :wrapper-col="18"
-                                  :col-num="0"
-                                  :label-col="5"
-                                  :col-min-width="380"
                                   :config="activityExtForm.config"
                                   v-model:value="activityExtForm.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="activityExtForm.schema"
+                                  :label-col="5"
+                                  :wrapper-col="18"
                                   class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
@@ -1123,28 +1123,6 @@ export default {
         value: {},
       },
       activityExtForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           protocol: {
             style: {
@@ -1178,6 +1156,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         schema: {
@@ -1496,6 +1496,7 @@ export default {
 
 .ele-wrapper-fdc826af-3716-45fc-bda6-52dfe0e1524a {
   width: 100%;
+  margin-top: 20px;
 }
 
 .ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
