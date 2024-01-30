@@ -34,6 +34,8 @@ const ordersBatchRefund = (logic.ordersBatchRefund = async (
   console.log(`ordersBatchRefund: `, pageVm, eventData);
   self = Object.assign(pageVm, logic);
   self.ordersBatchRefundData = eventData;
+
+  self.viewRegistrationOrdersDeleteModal.visible = false;
 });
 
 /********************** end ordersBatchRefund 开始 *********************/
