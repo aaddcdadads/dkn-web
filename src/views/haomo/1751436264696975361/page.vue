@@ -1688,10 +1688,6 @@ export default {
             image: "",
             size: "375 * 667",
           },
-          {
-            image: "",
-            size: "375 * 667",
-          },
         ],
         paginationHidden: true,
         actions: [
