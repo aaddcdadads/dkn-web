@@ -266,7 +266,7 @@
           >
             <hm-modal
               ref="viewRegistrationOrdersDeleteModal"
-              title="删除"
+              title="退款"
               v-model:visible="viewRegistrationOrdersDeleteModal.visible"
               :closable="true"
               :ok-type="'danger'"
@@ -293,7 +293,7 @@
                       width="200px"
                       icon-size="0px"
                       color="#CF2323"
-                      color-text="#1F1E1E"
+                      color-text="#CF2323"
                       :text-align="'left'"
                       padding="0"
                       icon-padding="0"
