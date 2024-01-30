@@ -567,11 +567,11 @@
                   <div class="ele-wrapper ele-wrapper-messageRenedit">
                     <hm-bg-card
                       ref="messageRenedit"
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
                       width="100%"
                       height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
                       class="ele-messageRenedit"
                     >
                       <div class="ele-wrapper ele-wrapper-activityTwoForm">
@@ -587,6 +587,51 @@
                           class="ele-activityTwoForm"
                         >
                         </hm-ant-formily>
+                      </div>
+                    </hm-bg-card>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-3e78690d-ccdb-4866-aeb3-c45a66de14fd"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      class="ele-3e78690d-ccdb-4866-aeb3-c45a66de14fd"
+                    >
+                      <div
+                        class="ele-wrapper ele-wrapper-acb7b7e7-e364-4d1b-b80c-c68eb0426c4a"
+                      >
+                        <hm-ant-bg-text
+                          text="报名分享图片设置"
+                          font-size="14px"
+                          padding="2"
+                          class="ele-acb7b7e7-e364-4d1b-b80c-c68eb0426c4a"
+                        >
+                        </hm-ant-bg-text>
+                      </div>
+                      <div
+                        class="ele-wrapper ele-wrapper-89527586-7e65-4c4b-92ae-d742a20e4c64"
+                      >
+                        <hm-modal
+                          :visible="true"
+                          :z-index="1000"
+                          class="ele-89527586-7e65-4c4b-92ae-d742a20e4c64"
+                        >
+                        </hm-modal>
+                      </div>
+                      <div class="ele-wrapper ele-wrapper-sharingImageTable">
+                        <hm-ant-table
+                          ref="sharingImageTable"
+                          :columns="sharingImageTable.columns"
+                          :data="sharingImageTable.data"
+                          :actions="sharingImageTable.actions"
+                          :is-flat-action="sharingImageTable.isFlatAction"
+                          :row-class-name="sharingImageTable.rowClassName"
+                        >
+                        </hm-ant-table>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -688,6 +733,7 @@ export default {
       addimage: {
         visible: false,
       },
+      sharingImageSettings: {},
       title: {
         text: "创建活动",
         icon: "fa fa-tasks",
@@ -1253,6 +1299,55 @@ export default {
           },
         },
       },
+      "89527586-7e65-4c4b-92ae-d742a20e4c64": {
+        visible: true,
+      },
+      sharingImageTable: {
+        columns: [
+          {
+            dataIndex: "image",
+            title: "图片",
+            width: 180,
+            key: "image",
+          },
+          {
+            dataIndex: "size",
+            title: "参考尺寸",
+            key: "size",
+          },
+          {
+            slots: {
+              customRender: "action",
+            },
+            width: 180,
+            title: "操作",
+            key: "action",
+          },
+        ],
+        data: [
+          {
+            image: "",
+            size: "375 * 667",
+          },
+          {
+            image: "",
+            size: "375 * 667",
+          },
+        ],
+        actions: [
+          {
+            name: "编辑",
+            icon: "fa fa-pencil",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.sharingImageSettings.visible = true;
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
+      },
     };
   },
   watch: {},
@@ -1507,6 +1602,26 @@ export default {
 
 .ele-wrapper-activityTwoForm {
   width: 100%;
+}
+
+.ele-wrapper-3e78690d-ccdb-4866-aeb3-c45a66de14fd {
+  width: 100%;
+}
+
+.ele-wrapper-acb7b7e7-e364-4d1b-b80c-c68eb0426c4a {
+  border-left: 4px solid #0079fe;
+  margin-top: 15px;
+  margin-left: 8px;
+  padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
+}
+
+.ele-wrapper-89527586-7e65-4c4b-92ae-d742a20e4c64 {
+  /deep/.hm-modal {
+    min-height: 0px;
+  }
 }
 
 .ele-wrapper-isSaveOrUpdate {
