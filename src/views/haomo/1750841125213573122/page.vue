@@ -83,19 +83,18 @@
                 >
                 </hm-ant-button>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c"
-              >
+              <div class="ele-wrapper ele-wrapper-activitySelect">
                 <hm-ant-select
-                  value=" "
+                  ref="activitySelect"
+                  v-model:value="activitySelect.value"
                   url="/api/restify/activity/list"
-                  :params="{ pageNo: 1, pageSize: -1 }"
-                  :data-map="{ label: 'name', value: 'id' }"
+                  :params="activitySelect.params"
+                  :data-map="activitySelect.dataMap"
                   title=""
                   placeholder="选择活动"
-                  :options="[]"
+                  v-model:options="activitySelect.options"
                   :show-search="true"
-                  class="ele-9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c"
+                  class="ele-activitySelect"
                 >
                 </hm-ant-select>
               </div>
@@ -734,8 +733,8 @@ export default {
         },
         schema: {},
       },
-      "9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c": {
-        value: " ",
+      activitySelect: {
+        value: "",
         params: {
           pageNo: 1,
           pageSize: -1,
@@ -1036,7 +1035,7 @@ export default {
   float: right;
 }
 
-.ele-wrapper-9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c {
+.ele-wrapper-activitySelect {
   margin-left: 1%;
 }
 
