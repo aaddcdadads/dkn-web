@@ -574,7 +574,7 @@
                         class="ele-wrapper ele-wrapper-8126f126-e733-461e-a935-b2e92fd062a1"
                       >
                         <hm-modal
-                          :visible="true"
+                          :visible="false"
                           :z-index="1000"
                           class="ele-8126f126-e733-461e-a935-b2e92fd062a1"
                         >
@@ -585,36 +585,11 @@
                       >
                         <hm-ant-table
                           :columns="[
-                            { dataIndex: 'name', title: '姓名', key: 'name' },
+                            { dataIndex: 'image', title: '图片', key: 'image' },
                             {
-                              dataIndex: 'age',
-                              width: 80,
-                              title: '年龄',
-                              key: 'age',
-                            },
-                            {
-                              dataIndex: 'address',
-                              title: '地址',
-                              key: 'address',
-                              ellipsis: true,
-                            },
-                            {
-                              dataIndex: 'sexual',
-                              title: '性别',
-                              key: 'sexual',
-                              ellipsis: true,
-                            },
-                            {
-                              dataIndex: 'school',
-                              title: '毕业院校',
-                              key: 'school',
-                              ellipsis: true,
-                            },
-                            {
-                              slots: { customRender: 'action' },
-                              dataIndex: '',
-                              title: '操作',
-                              key: 'action',
+                              dataIndex: 'size',
+                              title: '参考尺寸',
+                              key: 'size',
                             },
                           ]"
                           :data="[
@@ -1401,7 +1376,7 @@ export default {
         rowClassName: {},
       },
       "8126f126-e733-461e-a935-b2e92fd062a1": {
-        visible: true,
+        visible: false,
       },
     };
   },
