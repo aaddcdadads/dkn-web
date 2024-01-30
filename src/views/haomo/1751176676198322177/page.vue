@@ -115,9 +115,9 @@
                       <div class="ele-wrapper ele-wrapper-addBtn1">
                         <hm-ant-button
                           ref="addBtn1"
-                          icon="fa fa-plus"
                           text="添加"
                           :type="'primary'"
+                          icon="fa fa-plus"
                           @click="onAddBtn1Click"
                           class="ele-addBtn1"
                         >
@@ -126,7 +126,7 @@
                       <div class="ele-wrapper ele-wrapper-addproject">
                         <hm-modal
                           ref="addproject"
-                          title="添加项目"
+                          title="活动项目"
                           v-model:visible="addproject.visible"
                           :z-index="1000"
                           height=""
@@ -606,11 +606,11 @@
                     class="ele-wrapper ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc"
                   >
                     <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
                       width="100%"
                       height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
                       class="ele-8e197d87-c68a-402f-90a7-400dc9c35edc"
                     >
                       <div class="ele-wrapper ele-wrapper-textColourKit">
@@ -1684,6 +1684,7 @@ export default {
 
     onAddBtn1Click() {
       this.addproject.visible = true;
+      this.activityProjectTableStatus = 1;
     },
     async onAddprojectOk() {
       let self = this;
