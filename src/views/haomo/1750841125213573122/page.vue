@@ -527,7 +527,6 @@ export default {
             },
             props: {
               title: "",
-              width: "242px",
               options: [
                 {
                   label: "已核销",
@@ -542,6 +541,7 @@ export default {
             validator: function (value) {},
           },
           originalPickUpName: {
+            type: "HmAntSelect",
             title: "原核销门店",
             style: {
               width: "50%",
@@ -550,8 +550,10 @@ export default {
             validator: function (value) {},
           },
           nowPickUpName: {
+            type: "HmAntSelect",
             title: "实际核销门店",
             style: {
+              title: "",
               width: "50%",
             },
             props: {},
@@ -565,7 +567,6 @@ export default {
             },
             props: {
               title: "",
-              width: "242px",
               options: [
                 {
                   label: "有",
