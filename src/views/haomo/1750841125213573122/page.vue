@@ -83,6 +83,16 @@
                 >
                 </hm-ant-button>
               </div>
+              <div
+                class="ele-wrapper ele-wrapper-9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c"
+              >
+                <hm-ant-select
+                  value="undefined"
+                  :options="[]"
+                  class="ele-9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c"
+                >
+                </hm-ant-select>
+              </div>
               <div class="ele-wrapper ele-wrapper-batchRefund">
                 <hm-ant-button
                   ref="batchRefund"
@@ -365,6 +375,7 @@ import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
+import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
@@ -387,6 +398,7 @@ export default {
     HmAntFormily,
     HmAntButton,
     HmAntUpload,
+    HmAntSelect,
     HmAntTable,
     HmModal,
     HmAntIconText,
@@ -716,6 +728,10 @@ export default {
         },
         schema: {},
       },
+      "9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c": {
+        value: null,
+        options: [],
+      },
       viewRegistrationOrdersTable: {
         columns: [
           {
@@ -1004,6 +1020,10 @@ export default {
 .ele-wrapper-exportButton {
   margin: 0 1% 0 0;
   float: right;
+}
+
+.ele-wrapper-9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c {
+  margin-left: 1%;
 }
 
 .ele-wrapper-batchRefund {
