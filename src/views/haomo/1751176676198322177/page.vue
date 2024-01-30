@@ -126,13 +126,13 @@
                       <div class="ele-wrapper ele-wrapper-addproject">
                         <hm-modal
                           ref="addproject"
-                          :z-index="1000"
-                          v-model:visible="addproject.visible"
                           title="添加项目"
-                          :auto-close="false"
+                          v-model:visible="addproject.visible"
+                          :z-index="1000"
                           height=""
-                          @cancel="onAddprojectCancel"
+                          :auto-close="false"
                           @ok="onAddprojectOk"
+                          @cancel="onAddprojectCancel"
                           class="ele-addproject"
                         >
                           <div
@@ -780,7 +780,7 @@ import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
 import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
-import { addActivityProject, addActivty } from "/@/logics/AddActivityForm";
+import { addActivty } from "/@/logics/AddActivityForm";
 
 export default {
   name: "NewActivity",
@@ -1705,11 +1705,23 @@ export default {
     onAddBtn1Click() {
       this.addproject.visible = true;
     },
+    async onAddprojectOk() {
+      let self = this;
+      await self.$refs.activityProjectForm.validate();
+      let item = self.$refs.activityProjectForm.getFormValues();
+      item.index = Math.floor(Math.random() * 10000);
+
+      //处理图片
+      if (item.imgPath?.file?.response?.message) {
+        item.imgPath = item.imgPath?.file?.response?.message;
+      }
+      self.$refs.activityProjectTable.cData.push(item);
+
+      self.addproject.visible = false;
+      self.$refs.activityProjectForm.reset();
+    },
     onAddprojectCancel() {
       this.addproject.visible = false;
-    },
-    onAddprojectOk() {
-      addActivityProject(this, arguments);
     },
     onAddBtn2Click() {
       this.addprize.visible = true;

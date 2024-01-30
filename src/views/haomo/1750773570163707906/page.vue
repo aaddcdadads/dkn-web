@@ -872,7 +872,7 @@ export default {
   margin-left: 90px;
   text-align: center;
   margin-top: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .ele-wrapper-storeDetailForm {
