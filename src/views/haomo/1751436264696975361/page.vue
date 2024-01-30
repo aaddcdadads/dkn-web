@@ -253,6 +253,13 @@
                               >
                                 <hm-ant-formily
                                   :config="{
+                                    sortNo: {
+                                      style: { width: '100%' },
+                                      type: 'InputNumber',
+                                      title: '奖品排序',
+                                      required: true,
+                                      props: { placeholder: '奖品序号' },
+                                    },
                                     cycle: {
                                       type: 'Input',
                                       title: '奖品名称',
@@ -444,6 +451,13 @@
                       >
                         <hm-ant-formily
                           :config="{
+                            sortNo: {
+                              style: { width: '100%' },
+                              type: 'InputNumber',
+                              title: '图片排序',
+                              required: true,
+                              props: { placeholder: '图片序号' },
+                            },
                             cycle: {
                               type: 'Input',
                               title: '参考尺寸',
@@ -912,24 +926,63 @@ export default {
       activityProjectTable: {
         columns: [
           {
+            customRender: function (data) {
+              return h(HmAntIconText, {
+                fontSize: "14px",
+                iconSize: "16px",
+                bgColorText: "transparent",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                text: "",
+                placement: "top",
+                img: self.getImg(data.record.imgPath),
+                color: "black",
+                imgStyle: {
+                  height: "32px",
+                  marginRight: "4px",
+                  marginTop: "-4px",
+                },
+                onClick: function () {},
+              });
+            },
+            dataIndex: "imgPath",
+            title: "项目图片",
+            key: "imgPath",
+          },
+          {
+            dataIndex: "expense",
+            title: "项目费用",
+            key: "expense",
+          },
+          {
+            dataIndex: "free",
+            title: "是否免费",
+            key: "free",
+          },
+          {
+            dataIndex: "multipleOrder",
+            width: 60,
+            title: "可多人报名",
+            key: "multipleOrder",
+          },
+          {
             dataIndex: "name",
-            width: 50,
-            title: "活动费用",
+            width: 130,
+            title: "活动项目名称",
             key: "name",
-          },
-          {
-            dataIndex: "age",
-            width: 90,
-            title: "费用名称",
-            key: "age",
             ellipsis: true,
           },
           {
-            dataIndex: "sexual",
-            width: 30,
+            dataIndex: "synopsis",
+            title: "项目简介",
+            key: "synopsis",
+            ellipsis: true,
+          },
+          {
+            dataIndex: "sortNo",
             title: "排序",
-            key: "sexual",
-            ellipsis: true,
+            key: "sortNo",
           },
           {
             slots: {
@@ -988,6 +1041,17 @@ export default {
       },
       "d6c85f5d-e546-49ce-802d-fe0a03aa2546": {
         config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "奖品排序",
+            required: true,
+            props: {
+              placeholder: "奖品序号",
+            },
+          },
           cycle: {
             type: "Input",
             title: "奖品名称",
@@ -1179,6 +1243,17 @@ export default {
       },
       "04ce007d-e1c2-4f4d-ac07-44b7718beacf": {
         config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "图片排序",
+            required: true,
+            props: {
+              placeholder: "图片序号",
+            },
+          },
           cycle: {
             type: "Input",
             title: "参考尺寸",
