@@ -461,6 +461,8 @@ export default {
           databaseId: "",
           column: "createTime",
           order: "desc",
+          pageNo: 1,
+          pageSize: 10,
         },
         columns: [
           {
