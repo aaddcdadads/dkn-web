@@ -396,6 +396,8 @@
                                       'bulletedList',
                                       'numberedList',
                                       'todo',
+                                      'divider',
+                                      'codeBlock',
                                       {
                                         key: 'group-justify',
                                         title: '对齐',
@@ -406,7 +408,6 @@
                                           'justifyJustify',
                                         ],
                                       },
-                                      'divider',
                                       {
                                         key: 'group-indent',
                                         title: '缩进',
@@ -425,7 +426,6 @@
                                         ],
                                       },
                                       'insertTable',
-                                      'codeBlock',
                                       'fullScreen',
                                     ],
                                     excludeKeys: [],
@@ -1462,6 +1462,8 @@ export default {
             "bulletedList",
             "numberedList",
             "todo",
+            "divider",
+            "codeBlock",
             {
               key: "group-justify",
               title: "对齐",
@@ -1472,7 +1474,6 @@ export default {
                 "justifyJustify",
               ],
             },
-            "divider",
             {
               key: "group-indent",
               title: "缩进",
@@ -1488,7 +1489,6 @@ export default {
               menuKeys: ["insertImage", "uploadImage"],
             },
             "insertTable",
-            "codeBlock",
             "fullScreen",
           ],
           excludeKeys: [],
