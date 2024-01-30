@@ -560,12 +560,41 @@
                     </hm-bg-card>
                   </div>
                   <div
+                    class="ele-wrapper ele-wrapper-d785c5c4-1020-487d-9d7c-c7a32ae8a48b"
+                  >
+                    <hm-ant-bg-text
+                      text="报名页背景颜色设置"
+                      font-size="14px"
+                      padding="2"
+                      class="ele-d785c5c4-1020-487d-9d7c-c7a32ae8a48b"
+                    >
+                    </hm-ant-bg-text>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-6cde1a8d-1302-438c-b680-233060f55136"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      class="ele-6cde1a8d-1302-438c-b680-233060f55136"
+                    >
+                      <div
+                        class="ele-wrapper ele-wrapper-4f84b811-ac2f-437a-ae0d-f8123514bb0c"
+                      >
+                        <hm-color-kit> </hm-color-kit>
+                      </div>
+                    </hm-bg-card>
+                  </div>
+                  <div
                     class="ele-wrapper ele-wrapper-56aec4a5-4b22-4f3e-9572-bd54033fe687"
                   >
                     <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
                       text="报名页信息框颜色设置"
+                      font-size="14px"
+                      padding="2"
                       class="ele-56aec4a5-4b22-4f3e-9572-bd54033fe687"
                     >
                     </hm-ant-bg-text>
@@ -1936,6 +1965,20 @@ export default {
 }
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
+  width: 100%;
+}
+
+.ele-wrapper-d785c5c4-1020-487d-9d7c-c7a32ae8a48b {
+  border-left: 4px solid #0079fe;
+  margin-top: 15px;
+  margin-left: 8px;
+  padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
+}
+
+.ele-wrapper-6cde1a8d-1302-438c-b680-233060f55136 {
   width: 100%;
 }
 
