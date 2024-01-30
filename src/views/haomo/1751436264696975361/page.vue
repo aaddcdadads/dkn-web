@@ -473,6 +473,7 @@
                                   text="协议与承诺书："
                                   font-size="14px"
                                   padding="2"
+                                  class="ele-3e907204-ffc2-4af7-9c91-d488f3bbe726"
                                 >
                                 </hm-ant-bg-text>
                               </div>
@@ -558,6 +559,7 @@
                               title="活动咨询客服"
                               placeholder=""
                               width="480"
+                              class="ele-66d95dfc-4437-4ea7-86eb-26498a2706e5"
                             >
                             </hm-ant-input>
                           </div>
@@ -1949,11 +1951,20 @@ export default {
   width: 100%;
 }
 
+.ele-wrapper-3e907204-ffc2-4af7-9c91-d488f3bbe726 {
+  margin-left: 20px;
+}
+
 .ele-wrapper-2bbe7f7f-8de5-4732-869f-e69a8a760184 {
   width: 72%;
   /deep/.w-e-scroll {
     height: 120px;
   }
+}
+
+.ele-wrapper-66d95dfc-4437-4ea7-86eb-26498a2706e5 {
+  margin-left: 28px;
+  margin-top: 10px;
 }
 
 .ele-wrapper-message_2 {
