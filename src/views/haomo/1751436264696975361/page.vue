@@ -433,6 +433,7 @@
                   <div class="ele-wrapper ele-wrapper-addimage">
                     <hm-modal
                       ref="addimage"
+                      title="背景图片"
                       v-model:visible="addimage.visible"
                       :z-index="1000"
                       height="250px"
