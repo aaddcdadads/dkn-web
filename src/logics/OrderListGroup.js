@@ -218,6 +218,7 @@ const searchViewRegistrationOrders = (logic.searchViewRegistrationOrders = async
       self.$refs.viewRegistrationOrdersFilter.getFormValues(),
       self.$refs.viewRegistrationOrdersFilter.cSchema
     ),
+    activityId: self.selectActivityId,
   };
   if (_.isEqual(params, self.viewRegistrationOrdersTable.params)) {
     self.$refs.viewRegistrationOrdersTable.getData();
