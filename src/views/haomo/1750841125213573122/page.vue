@@ -813,6 +813,37 @@ export default {
             width: "260",
             title: "操作",
             key: "action",
+            customRender: function (item) {
+              return h(
+                "div",
+                {
+                  style: {
+                    width: 200,
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "left",
+                    alignItems: "left",
+                  },
+                },
+                [
+                  h(HmAntButton, {
+                    disabled: item.record.pickUpStatus == 0 ? true : false,
+                    text: "退款",
+                    fontSize: 14,
+                    type: "link",
+                    icon: "",
+                    onClick: function () {
+                      if (item.record.paymentStatus === 0) {
+                        self.registrationOrderId = item.id;
+                        self.viewRegistrationOrdersDeleteModal.visible = true;
+                      } else {
+                        self.$message.error("已退款、待支付状态下不可退款");
+                      }
+                    },
+                  }),
+                ]
+              );
+            },
           },
         ],
         data: [{}],
