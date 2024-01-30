@@ -421,29 +421,50 @@
                             class="ele-wrapper ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41"
                           >
                             <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
                               width="100%"
                               height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
                               <div
-                                class="ele-wrapper ele-wrapper-activityExtForm"
+                                class="ele-wrapper ele-wrapper-676eaac4-2113-4104-a0d1-6c2704cf0cdb"
                               >
-                                <hm-ant-formily
-                                  ref="activityExtForm"
-                                  :config="activityExtForm.config"
-                                  v-model:value="activityExtForm.value"
-                                  :col-num="0"
-                                  :col-min-width="380"
-                                  :schema="activityExtForm.schema"
-                                  :label-col="4"
-                                  :wrapper-col="18"
-                                  class="ele-activityExtForm"
+                                <hm-ant-bg-text
+                                  text="协议与承诺："
+                                  font-size="14px"
+                                  class="ele-676eaac4-2113-4104-a0d1-6c2704cf0cdb"
                                 >
-                                </hm-ant-formily>
+                                </hm-ant-bg-text>
                               </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-agreementsAndCommitments"
+                              >
+                                <hm-wang-editor
+                                  ref="agreementsAndCommitments"
+                                  v-model:value="agreementsAndCommitments.value"
+                                  :toolbar-config="
+                                    agreementsAndCommitments.toolbarConfig
+                                  "
+                                  :max-content-length="2"
+                                  class="ele-agreementsAndCommitments"
+                                >
+                                </hm-wang-editor>
+                              </div>
+                            </hm-bg-card>
+                          </div>
+                          <div
+                            class="ele-wrapper ele-wrapper-d744b8f6-17da-4ce8-9d84-c184b4cea091"
+                          >
+                            <hm-bg-card
+                              width="100%"
+                              height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
+                              class="ele-d744b8f6-17da-4ce8-9d84-c184b4cea091"
+                            >
                             </hm-bg-card>
                           </div>
                         </hm-bg-card>
@@ -788,6 +809,7 @@ import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
+import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 import { detail } from "/@/logics/ActivityForm";
@@ -802,6 +824,7 @@ export default {
     HmAntButton,
     HmModal,
     HmAntTable,
+    HmWangEditor,
     HmColorKit,
   },
   data() {
@@ -1286,61 +1309,60 @@ export default {
         },
         value: {},
       },
-      activityExtForm: {
-        config: {
-          activityRules: {
-            style: {
-              width: "100%",
+      agreementsAndCommitments: {
+        value: "",
+        toolbarConfig: {
+          toolbarKeys: [
+            "blockquote",
+            "bold",
+            "underline",
+            "italic",
+            "color",
+            "bgColor",
+            "undo",
+            "redo",
+            "emotion",
+            "insertLink",
+            "fullScreen",
+            {
+              key: "group-image",
+              title: "图片",
+              iconSvg:
+                '<svg viewBox="0 0 1024 1024"><path d="M959.877 128l0.123 0.123v767.775l-0.123 0.122H64.102l-0.122-0.122V128.123l0.122-0.123h895.775zM960 64H64C28.795 64 0 92.795 0 128v768c0 35.205 28.795 64 64 64h896c35.205 0 64-28.795 64-64V128c0-35.205-28.795-64-64-64zM832 288.01c0 53.023-42.988 96.01-96.01 96.01s-96.01-42.987-96.01-96.01S682.967 192 735.99 192 832 234.988 832 288.01zM896 832H128V704l224.01-384 256 320h64l224.01-192z"></path></svg>',
+              menuKeys: ["insertImage", "uploadImage"],
             },
-            type: "Textarea",
-            title: "活动规则",
-            props: {
-              showCount: true,
-              placeholder: "请输入活动规则",
+            "fontSize",
+            "fontFamily",
+            "lineHeight",
+            {
+              key: "group-more-style",
+              title: "更多",
+              menuKeys: ["through", "code", "sup", "sub", "clearStyle"],
             },
-          },
-          protocol: {
-            style: {
-              width: "100%",
+            "bulletedList",
+            "numberedList",
+            "headerSelect",
+            {
+              key: "group-justify",
+              title: "对齐",
+              menuKeys: [
+                "justifyLeft",
+                "justifyRight",
+                "justifyCenter",
+                "justifyJustify",
+              ],
             },
-            type: "Textarea",
-            title: "协议与承诺书",
-            props: {
-              showCount: true,
-              placeholder: "请输入《活动报名用户协议及承诺书》",
+            {
+              key: "group-indent",
+              title: "缩进",
+              menuKeys: ["indent", "delIndent"],
             },
-          },
-          customerService: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动咨询与客服",
-            props: {},
-          },
-        },
-        value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
+            "todo",
+            "divider",
+            "codeBlock",
+            "insertTable",
+          ],
+          excludeKeys: [],
         },
       },
       "04ce007d-e1c2-4f4d-ac07-44b7718beacf": {
@@ -1757,9 +1779,19 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-activityExtForm {
+.ele-wrapper-676eaac4-2113-4104-a0d1-6c2704cf0cdb {
+  margin-left: 48px;
+}
+
+.ele-wrapper-agreementsAndCommitments {
+  width: 72%;
+  /deep/.w-e-scroll {
+    height: 120px;
+  }
+}
+
+.ele-wrapper-d744b8f6-17da-4ce8-9d84-c184b4cea091 {
   width: 100%;
-  margin-top: 20px;
 }
 
 .ele-wrapper-message_2 {
