@@ -63,8 +63,13 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
     });
     activityImgs = [...activityImgs, ...list];
   }
+  let item = self.$refs.activityForm.getFormValues();
+  item.startTime = self.$moment(item.cycle[0]).format("YYYY-MM-DD HH:mm:ss");
+  item.endTime = self.$moment(item.cycle[1]).format("YYYY-MM-DD HH:mm:ss");
+  console.log(item);
+  delete item.cycle;
   self.item = {
-    ...self.$refs.activityForm.getFormValues(),
+    ...item,
     activityProjects,
     activityImgs,
     activityExts,
