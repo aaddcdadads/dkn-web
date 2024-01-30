@@ -131,6 +131,10 @@
                     viewRegistrationOrdersTable.backgroundColor
                   "
                   :row-class-name="viewRegistrationOrdersTable.rowClassName"
+                  @onSelectChange="onViewRegistrationOrdersTableOnSelectChange"
+                  @onSelect="onViewRegistrationOrdersTableOnSelect"
+                  @onSelectAll="onViewRegistrationOrdersTableOnSelectAll"
+                  @change="onViewRegistrationOrdersTableChange"
                   class="ele-viewRegistrationOrdersTable"
                 >
                 </hm-ant-table>
@@ -829,6 +833,18 @@ export default {
     },
     onInvisibleImportSearchLogicBtnClick() {
       searchViewRegistrationOrders(this, arguments);
+    },
+    onViewRegistrationOrdersTableOnSelectChange(data, index) {
+      console.log("onSelectChange", data, index);
+    },
+    onViewRegistrationOrdersTableOnSelect(data, index) {
+      console.log("onSelect", data, index);
+    },
+    onViewRegistrationOrdersTableOnSelectAll(data, index) {
+      console.log("onSelectAll", data, index);
+    },
+    onViewRegistrationOrdersTableChange(data, index) {
+      console.log("change", data, index);
     },
     onViewRegistrationOrdersAddModalOk() {
       addViewRegistrationOrders(this, arguments);
