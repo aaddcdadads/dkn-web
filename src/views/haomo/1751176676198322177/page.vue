@@ -315,28 +315,6 @@
                                 class="ele-wrapper ele-wrapper-fdc826af-3716-45fc-bda6-52dfe0e1524a"
                               >
                                 <hm-ant-formily
-                                  :schema="{
-                                    type: 'object',
-                                    properties: {
-                                      form: {
-                                        'x-component': 'Form',
-                                        'x-component-props': {
-                                          'wrapper-col': { span: 14 },
-                                          'label-col': { span: 7 },
-                                          style: {
-                                            flexWrap: 'wrap',
-                                            display: 'flex',
-                                          },
-                                        },
-                                        type: 'void',
-                                        properties: {},
-                                      },
-                                    },
-                                  }"
-                                  :wrapper-col="16"
-                                  :col-num="0"
-                                  :label-col="5"
-                                  :col-min-width="380"
                                   :config="{
                                     ActivityRequirements: {
                                       style: { width: '100%' },
@@ -356,6 +334,28 @@
                                     },
                                   }"
                                   :value="{}"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="{
+                                    type: 'object',
+                                    properties: {
+                                      form: {
+                                        'x-component': 'Form',
+                                        'x-component-props': {
+                                          'wrapper-col': { span: 14 },
+                                          'label-col': { span: 7 },
+                                          style: {
+                                            flexWrap: 'wrap',
+                                            display: 'flex',
+                                          },
+                                        },
+                                        type: 'void',
+                                        properties: {},
+                                      },
+                                    },
+                                  }"
+                                  :label-col="5"
+                                  :wrapper-col="16"
                                   class="ele-fdc826af-3716-45fc-bda6-52dfe0e1524a"
                                 >
                                 </hm-ant-formily>
@@ -389,13 +389,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtForm"
-                                  :schema="activityExtForm.schema"
-                                  :wrapper-col="18"
-                                  :col-num="0"
-                                  :label-col="5"
-                                  :col-min-width="380"
                                   :config="activityExtForm.config"
                                   v-model:value="activityExtForm.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="activityExtForm.schema"
+                                  :label-col="5"
+                                  :wrapper-col="18"
                                   class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
@@ -1220,28 +1220,6 @@ export default {
         rowClassName: {},
       },
       "fdc826af-3716-45fc-bda6-52dfe0e1524a": {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           ActivityRequirements: {
             style: {
@@ -1267,8 +1245,6 @@ export default {
           },
         },
         value: {},
-      },
-      activityExtForm: {
         schema: {
           type: "object",
           properties: {
@@ -1291,6 +1267,8 @@ export default {
             },
           },
         },
+      },
+      activityExtForm: {
         config: {
           protocol: {
             style: {
@@ -1324,6 +1302,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         schema: {
