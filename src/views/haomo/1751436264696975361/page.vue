@@ -242,6 +242,7 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
+                              title="奖品图片"
                               v-model:visible="addprize.visible"
                               :z-index="1000"
                               height="250px"
