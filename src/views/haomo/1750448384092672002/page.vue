@@ -30,7 +30,7 @@
                   :col-num="0"
                   :col-min-width="280"
                   :schema="activityFilter.schema"
-                  :label-col="6"
+                  :label-col="7"
                   :wrapper-col="16"
                   class="ele-activityFilter"
                 >
