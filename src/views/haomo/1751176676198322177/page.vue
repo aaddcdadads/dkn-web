@@ -356,6 +356,7 @@
                                 <hm-markdown-editor
                                   ref="editrule"
                                   v-model:text="editrule.text"
+                                  :model="'preview'"
                                   :tab-size="2"
                                   :toc-nav-position-right="true"
                                   :default-show-toc="true"
