@@ -1622,15 +1622,6 @@ export default {
       },
       activityImgFormTre: {
         config: {
-          size: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "参考尺寸",
-            required: true,
-            props: {},
-          },
           imgPath: {
             style: {
               width: "100%",
