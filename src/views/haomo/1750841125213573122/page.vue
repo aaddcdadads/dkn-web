@@ -926,7 +926,10 @@ export default {
     onViewRegistrationOrdersTableOnSelectChange(data, index) {
       console.log("onSelectChange", data, index);
       //保存选中数据
-      this.onSelectList = data.selectedRowKeys;
+      this.onSelectList = data.selectedRows;
+      this.onSelectList = this.onSelectList.filter(
+        (item) => item.pickUpStatus == 0
+      );
       if (this.onSelectList.length > 0) {
         this.batchRefund.disabled = false;
       } else {
