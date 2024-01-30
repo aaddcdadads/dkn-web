@@ -692,6 +692,7 @@ export default {
                   class: "applyNoDiv",
                   style: {
                     width: 188,
+                    height: "100%",
                     display: "flex",
                     flexWrap: "wrap",
                     justifyContent: "left",
@@ -703,7 +704,7 @@ export default {
                   h(
                     "span",
                     {
-                      style: { color: "#1890ff", cursor: "pointer" },
+                      style: { cursor: "pointer" },
                     },
                     data.text
                   ),
