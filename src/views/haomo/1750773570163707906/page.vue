@@ -888,6 +888,7 @@ export default {
 
 .ele-wrapper-f9d782d6-4596-493b-8cbe-fa1187ade47e {
   margin: 0 12px;
+  border-radius: 8px;
 }
 
 .ele-wrapper-704ae18e-b0b5-497f-8b08-b95ffcabf7ba {
