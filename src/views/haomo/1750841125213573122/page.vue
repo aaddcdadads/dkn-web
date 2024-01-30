@@ -87,7 +87,7 @@
                 class="ele-wrapper ele-wrapper-9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c"
               >
                 <hm-ant-select
-                  value="undefined"
+                  value=" "
                   url="/api/restify/activity/list"
                   :params="{ pageNo: 1, pageSize: -1 }"
                   :data-map="{ label: 'name', value: 'id' }"
@@ -735,7 +735,7 @@ export default {
         schema: {},
       },
       "9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c": {
-        value: null,
+        value: " ",
         params: {
           pageNo: 1,
           pageSize: -1,
