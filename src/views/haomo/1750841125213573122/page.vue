@@ -328,7 +328,6 @@ import {
   searchViewRegistrationOrders,
   addViewRegistrationOrders,
   editViewRegistrationOrders,
-  deleteViewRegistrationOrders,
 } from "/@/logics/OrderListGroup";
 
 export default {
@@ -815,7 +814,7 @@ export default {
       this.viewRegistrationOrdersEditModal.visible = false;
     },
     onViewRegistrationOrdersDeleteModalOk() {
-      deleteViewRegistrationOrders(this, arguments);
+      this.viewRegistrationOrdersDeleteModal.visible = false;
     },
   },
 };
