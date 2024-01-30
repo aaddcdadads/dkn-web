@@ -1036,7 +1036,7 @@ export default {
 }
 
 .ele-wrapper-activitySelect {
-  margin-left: 1%;
+  margin: 0 1% 0 0;
 }
 
 .ele-wrapper-batchRefund {
