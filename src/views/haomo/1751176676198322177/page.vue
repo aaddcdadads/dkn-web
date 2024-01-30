@@ -305,8 +305,9 @@
                                 class="ele-wrapper ele-wrapper-37b100fe-30bf-47b0-9bed-b98bbfebd6f1"
                               >
                                 <hm-ant-bg-text
-                                  font-size="14px"
                                   text="活动运动信息"
+                                  font-size="14px"
+                                  padding="2"
                                   class="ele-37b100fe-30bf-47b0-9bed-b98bbfebd6f1"
                                 >
                                 </hm-ant-bg-text>
@@ -333,9 +334,9 @@
                             class="ele-wrapper ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48"
                           >
                             <hm-ant-bg-text
-                              padding="2"
-                              font-size="14px"
                               text="活动信息"
+                              font-size="14px"
+                              padding="2"
                               class="ele-633b539d-81dc-4e94-af68-dfba9182db48"
                             >
                             </hm-ant-bg-text>
@@ -573,6 +574,7 @@
                         <hm-ant-bg-text
                           text="报名分享图片设置"
                           font-size="14px"
+                          padding="2"
                           class="ele-428bc034-6551-4c0e-b7c0-36c4e903ac9e"
                         >
                         </hm-ant-bg-text>
