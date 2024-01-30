@@ -1071,6 +1071,9 @@ export default {
   /deep/.ant-table-header-column > div {
     background-color: transparent !important;
   }
+  /deep/.ant-table-row-cell-break-word > div {
+    background-color: transparent;
+  }
   width: 98%;
   margin-left: 1%;
 }
