@@ -1912,8 +1912,8 @@ export default {
 }
 
 .ele-wrapper-676eaac4-2113-4104-a0d1-6c2704cf0cdb {
-  margin-left: 62px;
-  width: 80px;
+  width: 20.8%;
+  text-align: right;
 }
 
 .ele-wrapper-activityRules {
@@ -1932,8 +1932,8 @@ export default {
 }
 
 .ele-wrapper-3e907204-ffc2-4af7-9c91-d488f3bbe726 {
-  margin-left: 23px;
-  width: 120px;
+  width: 20.8%;
+  text-align: right;
 }
 
 .ele-wrapper-agreementCommitmentletter {
