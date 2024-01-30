@@ -553,11 +553,11 @@
                     class="ele-wrapper ele-wrapper-cf8baab6-8c0a-4974-95ba-4c9e67749519"
                   >
                     <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
                       width="100%"
                       height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
                       class="ele-cf8baab6-8c0a-4974-95ba-4c9e67749519"
                     >
                       <div
@@ -570,14 +570,13 @@
                         >
                         </hm-ant-bg-text>
                       </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-8126f126-e733-461e-a935-b2e92fd062a1"
-                      >
+                      <div class="ele-wrapper ele-wrapper-sharingImageSettings">
                         <hm-modal
-                          :visible="false"
+                          ref="sharingImageSettings"
+                          v-model:visible="sharingImageSettings.visible"
                           :z-index="1000"
                           height=""
-                          class="ele-8126f126-e733-461e-a935-b2e92fd062a1"
+                          class="ele-sharingImageSettings"
                         >
                           <div
                             class="ele-wrapper ele-wrapper-89787e21-f9a9-487d-b055-c327bec09efd"
@@ -646,7 +645,7 @@
                               name: '编辑',
                               icon: 'fa fa-pencil',
                               callback:
-                                'function(item) {        \n        console.log(&quot;点击编辑: &quot;, item);\n             \n      }',
+                                'function(item) {        \n        console.log(&quot;点击编辑: &quot;, item);\n             self.sharingImageSettings.visible = true;\n      }',
                               type: 'link',
                             },
                           ]"
@@ -1419,7 +1418,7 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      "8126f126-e733-461e-a935-b2e92fd062a1": {
+      sharingImageSettings: {
         visible: false,
       },
       "89787e21-f9a9-487d-b055-c327bec09efd": {
@@ -1730,7 +1729,7 @@ export default {
   }
 }
 
-.ele-wrapper-8126f126-e733-461e-a935-b2e92fd062a1 {
+.ele-wrapper-sharingImageSettings {
   /deep/.hm-modal {
     min-height: 0px;
   }
