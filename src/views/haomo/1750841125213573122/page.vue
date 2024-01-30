@@ -665,6 +665,11 @@ export default {
             key: "phone",
           },
           {
+            title: "姓名/昵称",
+            dataIndex: "realname",
+            key: "realname",
+          },
+          {
             title: "报名项目",
             dataIndex: "activityId",
             key: "activityId",
