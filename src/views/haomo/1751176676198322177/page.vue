@@ -611,46 +611,18 @@
                           </div>
                         </hm-modal>
                       </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-43925a45-d2f9-4555-b0fc-9ec868b07679"
-                      >
+                      <div class="ele-wrapper ele-wrapper-sharingImageTable">
                         <hm-ant-table
-                          :columns="[
-                            {
-                              dataIndex: 'image',
-                              title: '图片',
-                              width: 180,
-                              key: 'image',
-                            },
-                            {
-                              dataIndex: 'size',
-                              title: '参考尺寸',
-                              key: 'size',
-                            },
-                            {
-                              slots: { customRender: 'action' },
-                              width: 180,
-                              title: '操作',
-                              key: 'action',
-                            },
-                          ]"
-                          :data="[
-                            { image: '', size: '375 * 667' },
-                            { image: '', size: '375 * 667' },
-                          ]"
-                          :pagination-hidden="true"
-                          :get-data-map="{ total: '', list: '' }"
-                          :actions="[
-                            {
-                              name: '编辑',
-                              icon: 'fa fa-pencil',
-                              callback:
-                                'function(item) {        \n        console.log(&quot;点击编辑: &quot;, item);\n             self.sharingImageSettings.visible = true;\n      }',
-                              type: 'link',
-                            },
-                          ]"
-                          :is-flat-action="true"
-                          :row-class-name="{}"
+                          ref="sharingImageTable"
+                          :columns="sharingImageTable.columns"
+                          :data="sharingImageTable.data"
+                          :pagination-hidden="
+                            sharingImageTable.paginationHidden
+                          "
+                          :get-data-map="sharingImageTable.getDataMap"
+                          :actions="sharingImageTable.actions"
+                          :is-flat-action="sharingImageTable.isFlatAction"
+                          :row-class-name="sharingImageTable.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -832,6 +804,9 @@ export default {
         visible: false,
       },
       addBackground: {
+        visible: false,
+      },
+      sharingImageSettings: {
         visible: false,
       },
       activityProjectForm: {
@@ -1418,8 +1393,56 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      sharingImageSettings: {
-        visible: false,
+      sharingImageTable: {
+        columns: [
+          {
+            dataIndex: "image",
+            title: "图片",
+            width: 180,
+            key: "image",
+          },
+          {
+            dataIndex: "size",
+            title: "参考尺寸",
+            key: "size",
+          },
+          {
+            slots: {
+              customRender: "action",
+            },
+            width: 180,
+            title: "操作",
+            key: "action",
+          },
+        ],
+        data: [
+          {
+            image: "",
+            size: "375 * 667",
+          },
+          {
+            image: "",
+            size: "375 * 667",
+          },
+        ],
+        paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        actions: [
+          {
+            name: "编辑",
+            icon: "fa fa-pencil",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.sharingImageSettings.visible = true;
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       "89787e21-f9a9-487d-b055-c327bec09efd": {
         config: {
