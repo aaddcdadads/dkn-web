@@ -585,11 +585,22 @@
                       >
                         <hm-ant-table
                           :columns="[
-                            { dataIndex: 'image', title: '图片', key: 'image' },
+                            {
+                              dataIndex: 'image',
+                              title: '图片',
+                              width: 180,
+                              key: 'image',
+                            },
                             {
                               dataIndex: 'size',
                               title: '参考尺寸',
                               key: 'size',
+                            },
+                            {
+                              slots: { customRender: 'action' },
+                              width: 180,
+                              title: '操作',
+                              key: 'action',
                             },
                           ]"
                           :data="[
@@ -602,9 +613,9 @@
                             {
                               name: '编辑',
                               icon: 'fa fa-pencil',
-                              type: 'link',
                               callback:
-                                'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                                'function(item) {        \n        console.log(&quot;点击编辑: &quot;, item);\n             \n      }',
+                              type: 'link',
                             },
                           ]"
                           :is-flat-action="true"
