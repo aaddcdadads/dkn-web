@@ -345,13 +345,22 @@
                             class="ele-wrapper ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41"
                           >
                             <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
                               width="100%"
                               height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
                               class="ele-81d9459e-4453-4843-b712-3c112a5e0a41"
                             >
+                              <div
+                                class="ele-wrapper ele-wrapper-e422be72-923b-42ad-bef4-7e886c910422"
+                              >
+                                <hm-ant-bg-text
+                                  text="协议与承诺："
+                                  font-size="14px"
+                                >
+                                </hm-ant-bg-text>
+                              </div>
                               <div
                                 class="ele-wrapper ele-wrapper-92a3011a-fa3f-40cc-b9ca-0a8958382ca4"
                               >
@@ -359,6 +368,7 @@
                                   :mode="'simple'"
                                   value=""
                                   :max-content-length="2"
+                                  class="ele-92a3011a-fa3f-40cc-b9ca-0a8958382ca4"
                                 >
                                 </hm-wang-editor>
                               </div>
@@ -367,13 +377,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtForm"
-                                  :schema="activityExtForm.schema"
-                                  :wrapper-col="18"
-                                  :col-num="0"
-                                  :label-col="5"
-                                  :col-min-width="380"
                                   :config="activityExtForm.config"
                                   v-model:value="activityExtForm.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="activityExtForm.schema"
+                                  :label-col="5"
+                                  :wrapper-col="18"
                                   class="ele-activityExtForm"
                                 >
                                 </hm-ant-formily>
@@ -1255,28 +1265,6 @@ export default {
         value: "",
       },
       activityExtForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           protocol: {
             style: {
@@ -1310,6 +1298,28 @@ export default {
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       "c55fbae6-544d-46d6-a83a-73b92291b38d": {
         schema: {
@@ -1752,6 +1762,10 @@ export default {
 
 .ele-wrapper-81d9459e-4453-4843-b712-3c112a5e0a41 {
   width: 100%;
+}
+
+.ele-wrapper-92a3011a-fa3f-40cc-b9ca-0a8958382ca4 {
+  width: 70%;
 }
 
 .ele-wrapper-activityExtForm {
