@@ -374,6 +374,7 @@
                                   :toolbar-config="activityRules.toolbarConfig"
                                   :editor-config="activityRules.editorConfig"
                                   :max-content-length="2"
+                                  @change="onActivityRulesChange"
                                   class="ele-activityRules"
                                 >
                                 </hm-wang-editor>
@@ -1743,6 +1744,9 @@ export default {
     },
     onAddprizeCancel() {
       this.addprize.visible = false;
+    },
+    onActivityRulesChange(e) {
+      this.activityRules.value = e;
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
