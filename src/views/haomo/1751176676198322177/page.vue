@@ -596,6 +596,7 @@
                             { image: '', size: '375 * 667' },
                             { image: '', size: '375 * 667' },
                           ]"
+                          :pagination-hidden="true"
                           :get-data-map="{ total: '', list: '' }"
                           :actions="[
                             {
