@@ -577,7 +577,11 @@
                       class="ele-3fb31f2b-4a48-499a-ba2a-8181388283b9"
                     >
                       <div class="ele-wrapper ele-wrapper-colourkit">
-                        <hm-color-kit ref="colourkit"> </hm-color-kit>
+                        <hm-color-kit
+                          ref="colourkit"
+                          @changecolorkit="onColourkitChangecolorkit"
+                        >
+                        </hm-color-kit>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -1745,6 +1749,9 @@ export default {
     },
     onAddBackgroundCancel() {
       this.addBackground.visible = false;
+    },
+    onColourkitChangecolorkit(e) {
+      this.colour = e;
     },
     onTextColourKitChangecolorkit(e) {
       this.textColour = e;
