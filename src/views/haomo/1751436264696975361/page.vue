@@ -413,15 +413,14 @@
                               </div>
                             </hm-bg-card>
                           </div>
-                          <div
-                            class="ele-wrapper ele-wrapper-66d95dfc-4437-4ea7-86eb-26498a2706e5"
-                          >
+                          <div class="ele-wrapper ele-wrapper-customerService">
                             <hm-ant-input
-                              value=""
+                              ref="customerService"
+                              v-model:value="customerService.value"
                               title="活动咨询客服"
                               placeholder=""
                               width="480"
-                              class="ele-66d95dfc-4437-4ea7-86eb-26498a2706e5"
+                              class="ele-customerService"
                             >
                             </hm-ant-input>
                           </div>
@@ -1174,7 +1173,7 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      "66d95dfc-4437-4ea7-86eb-26498a2706e5": {
+      customerService: {
         value: "",
       },
       addActivityImgFormTwo: {
@@ -1921,7 +1920,7 @@ export default {
   }
 }
 
-.ele-wrapper-66d95dfc-4437-4ea7-86eb-26498a2706e5 {
+.ele-wrapper-customerService {
   margin-top: 20px;
   width: 100%;
   /deep/.input-title {
