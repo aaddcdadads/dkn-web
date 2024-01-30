@@ -543,15 +543,15 @@
                       <div class="ele-wrapper ele-wrapper-activityImgTableOne">
                         <hm-ant-table
                           ref="activityImgTableOne"
-                          :is-flat-action="activityImgTableOne.isFlatAction"
-                          :get-data-map="activityImgTableOne.getDataMap"
-                          :data="activityImgTableOne.data"
                           :columns="activityImgTableOne.columns"
-                          :row-class-name="activityImgTableOne.rowClassName"
+                          :data="activityImgTableOne.data"
                           :pagination-hidden="
                             activityImgTableOne.paginationHidden
                           "
+                          :get-data-map="activityImgTableOne.getDataMap"
                           :actions="activityImgTableOne.actions"
+                          :is-flat-action="activityImgTableOne.isFlatAction"
+                          :row-class-name="activityImgTableOne.rowClassName"
                         >
                         </hm-ant-table>
                       </div>
@@ -1532,29 +1532,6 @@ export default {
         },
       },
       activityImgTableOne: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            address: "",
-            school: "",
-            name: "¥0",
-            key: "1",
-            age: "",
-            sexual: "",
-          },
-          {
-            address: "",
-            school: "",
-            name: "¥ 29.9",
-            key: "2",
-            age: "",
-            sexual: "",
-          },
-        ],
         columns: [
           {
             dataIndex: "name",
@@ -1584,8 +1561,12 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1606,6 +1587,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       sharingImageTable: {
         isFlatAction: true,
