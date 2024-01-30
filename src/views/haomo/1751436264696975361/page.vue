@@ -149,30 +149,6 @@
                           </div>
                         </hm-modal>
                       </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-62072282-5a38-4271-8533-29ced8865555"
-                      >
-                        <hm-modal
-                          title="编辑"
-                          :visible="false"
-                          :z-index="1000"
-                          height=""
-                          class="ele-62072282-5a38-4271-8533-29ced8865555"
-                        >
-                          <div
-                            class="ele-wrapper ele-wrapper-de1dd391-884c-455d-8aa8-69b60c225646"
-                          >
-                            <hm-ant-formily
-                              :value="{}"
-                              :col-num="0"
-                              :col-min-width="380"
-                              :label-col="7"
-                              :wrapper-col="14"
-                            >
-                            </hm-ant-formily>
-                          </div>
-                        </hm-modal>
-                      </div>
                       <div class="ele-wrapper ele-wrapper-deleteproject">
                         <hm-modal
                           ref="deleteproject"
@@ -959,9 +935,6 @@ export default {
           },
         },
       },
-      "62072282-5a38-4271-8533-29ced8865555": {
-        visible: false,
-      },
       activityProjectForm: {
         config: {
           sortNo: {
@@ -1078,9 +1051,6 @@ export default {
             },
           },
         },
-      },
-      "de1dd391-884c-455d-8aa8-69b60c225646": {
-        value: {},
       },
       activityProjectTable: {
         columns: [
@@ -1837,12 +1807,6 @@ export default {
 
 .ele-wrapper-activityProjectForm {
   height: 100%;
-}
-
-.ele-wrapper-62072282-5a38-4271-8533-29ced8865555 {
-  /deep/.hm-modal {
-    min-height: 0px;
-  }
 }
 
 .ele-wrapper-deleteproject {
