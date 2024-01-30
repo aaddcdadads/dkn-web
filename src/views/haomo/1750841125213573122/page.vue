@@ -89,6 +89,7 @@
                 <hm-ant-select
                   value="undefined"
                   title=""
+                  placeholder="选择活动"
                   :options="[]"
                   class="ele-9d51fbc8-bd41-4b4d-ae85-f2ea37fa816c"
                 >
