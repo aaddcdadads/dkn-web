@@ -317,13 +317,13 @@
                               >
                                 <hm-ant-formily
                                   ref="activityExtTwoForm"
-                                  :schema="activityExtTwoForm.schema"
-                                  :wrapper-col="16"
-                                  :col-num="0"
-                                  :label-col="5"
-                                  :col-min-width="380"
                                   :config="activityExtTwoForm.config"
                                   v-model:value="activityExtTwoForm.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="activityExtTwoForm.schema"
+                                  :label-col="5"
+                                  :wrapper-col="16"
                                   class="ele-activityExtTwoForm"
                                 >
                                 </hm-ant-formily>
@@ -1261,6 +1261,31 @@ export default {
         rowClassName: {},
       },
       activityExtTwoForm: {
+        config: {
+          activityType: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动类型",
+            required: false,
+            props: {
+              placeholder: "例子：跑步",
+            },
+          },
+          requirements: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动需求",
+            required: false,
+            props: {
+              placeholder: "例子：2km/5km/10km",
+            },
+          },
+        },
+        value: {},
         schema: {
           type: "object",
           properties: {
@@ -1283,31 +1308,6 @@ export default {
             },
           },
         },
-        config: {
-          ActivityRequirements: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动需求",
-            required: false,
-            props: {
-              placeholder: "例子：2km/5km/10km",
-            },
-          },
-          activityType: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动类型",
-            required: false,
-            props: {
-              placeholder: "例子：跑步",
-            },
-          },
-        },
-        value: {},
       },
       activityRules: {
         editorConfig: {
