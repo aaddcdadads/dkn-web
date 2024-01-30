@@ -550,6 +550,17 @@
                               </div>
                             </hm-bg-card>
                           </div>
+                          <div
+                            class="ele-wrapper ele-wrapper-66d95dfc-4437-4ea7-86eb-26498a2706e5"
+                          >
+                            <hm-ant-input
+                              value=""
+                              title="活动咨询客服"
+                              placeholder=""
+                              width="480"
+                            >
+                            </hm-ant-input>
+                          </div>
                         </hm-bg-card>
                       </div>
                     </hm-bg-card>
@@ -893,6 +904,7 @@ import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
+import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
 import { detail } from "/@/logics/ActivityForm";
@@ -908,6 +920,7 @@ export default {
     HmModal,
     HmAntTable,
     HmWangEditor,
+    HmAntInput,
     HmColorKit,
   },
   data() {
@@ -1246,6 +1259,9 @@ export default {
         ],
         isFlatAction: true,
         rowClassName: {},
+      },
+      "66d95dfc-4437-4ea7-86eb-26498a2706e5": {
+        value: "",
       },
       "d6c85f5d-e546-49ce-802d-fe0a03aa2546": {
         config: {
