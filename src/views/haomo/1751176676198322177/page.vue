@@ -481,7 +481,7 @@
                           >
                             <hm-ant-input
                               value=""
-                              title="活动咨询客服："
+                              title="活动咨询客服"
                               width="400"
                               class="ele-848e318a-9213-4805-a8d8-7f9b336b01d5"
                             >
@@ -1893,7 +1893,7 @@ export default {
 
 .ele-wrapper-848e318a-9213-4805-a8d8-7f9b336b01d5 {
   width: 95%;
-  margin-left: 10px;
+  margin-left: 30px;
   margin-top: 20px;
 }
 
