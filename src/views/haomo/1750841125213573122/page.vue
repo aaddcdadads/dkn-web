@@ -928,7 +928,7 @@ export default {
       //保存选中数据
       this.onSelectList = data.selectedRows;
       this.onSelectList = this.onSelectList.filter(
-        (item) => item.pickUpStatus == 0
+        (item) => item.pickUpStatus != 0
       );
       if (this.onSelectList.length > 0) {
         this.batchRefund.disabled = false;
