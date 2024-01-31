@@ -501,7 +501,48 @@ export default {
         value: {
           span: "文字内容",
         },
-        schema: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              type: "void",
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+                "label-col": {
+                  span: 8,
+                },
+              },
+              properties: {
+                urbanArea: {
+                  type: "string",
+                  required: true,
+                  "x-decorator": "FormItem",
+                  "x-decorator-props": {
+                    label: "门店所属区域",
+                    name: "urbanArea",
+                    style: {
+                      width: "50%",
+                    },
+                    class: ["required"],
+                  },
+                  "x-component-props": {
+                    "change-on-select": true,
+                    placeholder: "请选择地区",
+                    options: [],
+                  },
+                  "x-component": "Cascader",
+                },
+              },
+            },
+          },
+        },
       },
       storeDeleteModal: {
         visible: false,
