@@ -668,6 +668,8 @@
                           title="分享图片"
                           v-model:visible="sharingImageSettings.visible"
                           :z-index="1000"
+                          @ok="onSharingImageSettingsOk"
+                          @cancel="onSharingImageSettingsCancel"
                           class="ele-sharingImageSettings"
                         >
                           <div
@@ -1760,6 +1762,27 @@ export default {
     onAddActivityImgTableOneClick() {
       this.addimage.visible = true;
       this.activityImgTableOneStatus = 1;
+    },
+    async onSharingImageSettingsOk() {
+      let self = this;
+      await self.$refs.activityImgFormTre.validate();
+      let item = self.$refs.activityImgFormTre.getFormValues();
+      item.index = Math.floor(Math.random() * 10000);
+
+      //处理图片
+      if (item.imgPath?.file?.response?.message) {
+        item.path = item.imgPath?.file?.response?.message;
+      }
+      delete item.imgPath;
+      item.imgSize = "375 * 667";
+      self.$refs.sharingImageTable.cData = [item];
+      //self.$refs.sharingImageTable.cData.push(item)
+
+      self.sharingImageSettings.visible = false;
+      self.$refs.activityImgFormTre.reset();
+    },
+    onSharingImageSettingsCancel() {
+      this.sharingImageSettings.visible = false;
     },
   },
 };
