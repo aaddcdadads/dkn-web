@@ -517,6 +517,22 @@ export default {
             title: "操作",
             key: "action",
             customRender: function (item) {
+              var currentDate = self.$moment();
+              var anotherDate = self.$moment(
+                item.record.acPickUpTime,
+                "YYYY-MM-DD HH:mm:ss"
+              );
+              var statusFlag =
+                item.record.paymentStatus === 0 &&
+                currentDate.isBefore(anotherDate)
+                  ? 0
+                  : 1;
+              console.log(
+                "abc123",
+                item.record.paymentStatus,
+                currentDate.isBefore(anotherDate),
+                statusFlag
+              );
               return h(
                 "div",
                 {
@@ -530,24 +546,29 @@ export default {
                 },
                 [
                   h(HmAntButton, {
-                    disabled: item.record.pickUpStatus == 0 ? true : false,
+                    disabled: statusFlag === 0 ? false : true,
                     text: "核销",
                     fontSize: 14,
                     type: "link",
                     icon: "",
                     onClick: function () {
                       if (item.record.paymentStatus === 0) {
-                        self.registrationOrdersDeleteModal.visible = true;
-                        self.hexiaotype = true;
-                        self.hexiaoItem = {
-                          orderId: item.record.id,
-                          activityId: item.record.activityId,
-                          storeId: item.record.storeId,
-                          pickUpStatus: 0,
-                          pickUpTime: self
-                            .$moment()
-                            .format("YYYY-MM-DD HH:mm:ss"),
-                        };
+                        //当前时间在核销时间之前
+                        if (currentDate.isBefore(anotherDate)) {
+                          self.registrationOrdersDeleteModal.visible = true;
+                          self.hexiaotype = true;
+                          self.hexiaoItem = {
+                            orderId: item.record.id,
+                            activityId: item.record.activityId,
+                            storeId: item.record.storeId,
+                            pickUpStatus: 0,
+                            pickUpTime: self
+                              .$moment()
+                              .format("YYYY-MM-DD HH:mm:ss"),
+                          };
+                        } else {
+                          self.$message.error("超过核销截止时间了不可核销");
+                        }
                       } else {
                         self.$message.error("已退款、待支付状态下不可核销");
                       }
