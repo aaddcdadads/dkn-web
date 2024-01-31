@@ -274,6 +274,8 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
     bgColour: self.bgColour,
     colour: self.colour,
     textColour: self.textColour,
+    delActivityProjectList: self.delActivityProjectList,
+    delActivityImgList: self.delActivityImgList,
   };
 
   await editRequest();
