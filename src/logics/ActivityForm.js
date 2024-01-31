@@ -267,7 +267,7 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
   };
 
   await editRequest();
-  if (self.editRequestData.success) {
+  if (!self.editRequestData.success) {
     self.$message.error(self.editRequestData.message);
     return;
   }
