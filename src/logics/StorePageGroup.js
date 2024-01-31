@@ -213,6 +213,10 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   if (values.urbanArea && values.urbanArea.length > 0) {
     urbanArea = values.urbanArea[values.urbanArea.length - 1];
   }
+  self.addParams = {
+    ...values,
+    urbanArea: urbanArea,
+  };
   await addRequest();
   if (self.addRequestData.success) {
     self.$message.success("添加成功");
