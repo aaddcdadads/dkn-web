@@ -248,6 +248,7 @@
                                   v-model:value="addActivityImgFormTwo.value"
                                   :col-num="0"
                                   :col-min-width="380"
+                                  :schema="addActivityImgFormTwo.schema"
                                   :label-col="7"
                                   :wrapper-col="14"
                                 >
@@ -938,26 +939,53 @@ export default {
               placeholder: "奖品序号",
             },
           },
-          cycle: {
-            type: "Input",
-            title: "奖品名称",
+          imgPath: {
             style: {
               width: "100%",
             },
-            required: true,
-            props: {},
-          },
-          " name": {
             type: "UploadImage",
             title: "奖品图片",
+            required: true,
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+          name: {
             style: {
               width: "100%",
             },
+            type: "Input",
+            title: "奖品名称",
             required: true,
-            props: {},
+            props: {
+              placeholder: "请输入奖品名称",
+            },
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       addBackground: {},
       activityImgFormOne: {
