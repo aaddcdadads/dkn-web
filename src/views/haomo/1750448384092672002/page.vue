@@ -970,6 +970,7 @@ export default {
     onBathqiyongClick() {
       this.$nextTick(() => {
         this.batchEdit.visible = true;
+        this.allStatus = 1;
         this.prompt.text = "确认批量启用";
       });
     },
