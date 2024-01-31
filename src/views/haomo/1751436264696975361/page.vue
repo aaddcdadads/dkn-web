@@ -917,6 +917,40 @@ export default {
       addprize: {
         visible: false,
       },
+      addActivityImgFormTwo: {
+        config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "奖品排序",
+            required: true,
+            props: {
+              placeholder: "奖品序号",
+            },
+          },
+          cycle: {
+            type: "Input",
+            title: "奖品名称",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+          " name": {
+            type: "UploadImage",
+            title: "奖品图片",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+        },
+        value: {},
+      },
       addBackground: {},
       sharingImageSettings: {
         visible: false,
@@ -1164,40 +1198,6 @@ export default {
       customerService: {
         value: "",
       },
-      addActivityImgFormTwo: {
-        config: {
-          sortNo: {
-            style: {
-              width: "100%",
-            },
-            type: "InputNumber",
-            title: "奖品排序",
-            required: true,
-            props: {
-              placeholder: "奖品序号",
-            },
-          },
-          cycle: {
-            type: "Input",
-            title: "奖品名称",
-            style: {
-              width: "100%",
-            },
-            required: true,
-            props: {},
-          },
-          " name": {
-            type: "UploadImage",
-            title: "奖品图片",
-            style: {
-              width: "100%",
-            },
-            required: true,
-            props: {},
-          },
-        },
-        value: {},
-      },
       activityImgTableTwo: {
         columns: [
           {
@@ -1258,6 +1258,15 @@ export default {
             callback: function (item) {
               console.log("点击编辑: ", item);
               self.addprize.visible = true;
+              self.activityImgTableTwoItem = item;
+              self.activityImgTableTwoStatus = 2;
+              self.addActivityImgFormTwo.config.imgPath.props.imageUrl = self.getImg(
+                item.path
+              );
+              item.imgPath = item.path;
+              setTimeout(() => {
+                self.$refs.addActivityImgFormTwo.setFormValues(item);
+              });
             },
             type: "link",
           },
@@ -1266,6 +1275,8 @@ export default {
             icon: "fa fa-trash",
             callback: function (item) {
               console.log("点击删除: ", item);
+              self.deleteItem = item;
+              self.deleteStatus = 3;
               self.deleteproject.visible = true;
             },
             type: "link",
