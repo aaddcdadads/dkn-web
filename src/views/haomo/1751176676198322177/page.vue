@@ -863,6 +863,123 @@ export default {
       addproject: {
         visible: false,
       },
+      activityProjectForm: {
+        config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "排序",
+            required: true,
+            props: {
+              placeholder: "请输入排序",
+            },
+          },
+          multipleOrder: {
+            style: {
+              width: "100%",
+            },
+            type: "RadioGroup",
+            title: "是否多人报名",
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "是",
+                  value: 0,
+                },
+                {
+                  label: "否",
+                  value: 1,
+                },
+              ],
+            },
+          },
+          imgPath: {
+            style: {
+              width: "100%",
+            },
+            type: "UploadImage",
+            title: "活动图片",
+            required: true,
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+          name: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动项目名称",
+            required: true,
+            props: {},
+          },
+          synopsis: {
+            style: {
+              width: "100%",
+            },
+            type: "Textarea",
+            title: "项目简介",
+            required: true,
+            props: {},
+          },
+          expense: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "项目费用",
+            required: true,
+            props: {},
+          },
+          free: {
+            style: {
+              width: "100%",
+            },
+            type: "RadioGroup",
+            title: "是否免费",
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "是",
+                  value: 0,
+                },
+                {
+                  label: "否",
+                  value: 1,
+                },
+              ],
+            },
+          },
+        },
+        value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
+      },
       deleteproject: {
         visible: false,
       },
@@ -1023,123 +1140,6 @@ export default {
           autoFocus: true,
         },
       },
-      activityProjectForm: {
-        config: {
-          sortNo: {
-            style: {
-              width: "100%",
-            },
-            type: "InputNumber",
-            title: "排序",
-            required: true,
-            props: {
-              placeholder: "请输入排序",
-            },
-          },
-          multipleOrder: {
-            style: {
-              width: "100%",
-            },
-            type: "RadioGroup",
-            title: "是否多人报名",
-            required: true,
-            props: {
-              options: [
-                {
-                  label: "是",
-                  value: 0,
-                },
-                {
-                  label: "否",
-                  value: 1,
-                },
-              ],
-            },
-          },
-          imgPath: {
-            style: {
-              width: "100%",
-            },
-            type: "UploadImage",
-            title: "活动图片",
-            required: true,
-            props: {
-              action: "/api/sys/common/upload",
-              accept: ".jpg,.png",
-            },
-          },
-          name: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动项目名称",
-            required: true,
-            props: {},
-          },
-          synopsis: {
-            style: {
-              width: "100%",
-            },
-            type: "Textarea",
-            title: "项目简介",
-            required: true,
-            props: {},
-          },
-          expense: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "项目费用",
-            required: true,
-            props: {},
-          },
-          free: {
-            style: {
-              width: "100%",
-            },
-            type: "RadioGroup",
-            title: "是否免费",
-            required: true,
-            props: {
-              options: [
-                {
-                  label: "是",
-                  value: 0,
-                },
-                {
-                  label: "否",
-                  value: 1,
-                },
-              ],
-            },
-          },
-        },
-        value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-      },
       activityProjectTable: {
         columns: [
           {
@@ -1224,7 +1224,12 @@ export default {
               console.log("点击编辑: ", item);
               self.activityProjectTableStatus = 2;
               self.addproject.visible = true;
-              self.setActivityProjectForm(item);
+              self.activityProjectForm.config.imgPath.props.imageUrl = self.getImg(
+                item.imgPath
+              );
+              setTimeout(() => {
+                self.$refs.activityProjectForm.setFormValues(item);
+              });
             },
             type: "link",
           },
