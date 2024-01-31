@@ -1334,6 +1334,7 @@ export default {
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
+              self.activityProjectItem = item;
               self.activityProjectTableStatus = 2;
               self.addproject.visible = true;
               self.activityProjectForm.config.imgPath.props.imageUrl = self.getImg(
