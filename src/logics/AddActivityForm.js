@@ -78,6 +78,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
     activityProjects,
     activityImgs,
     activityExts,
+    expense,
     bgColour: self.bgColour,
     colour: self.colour,
     textColour: self.textColour,
