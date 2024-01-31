@@ -567,7 +567,141 @@ export default {
         value: {
           span: "文字内容",
         },
-        schema: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              type: "void",
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+                "label-col": {
+                  span: 8,
+                },
+              },
+              properties: {
+                parentId: {
+                  type: "string",
+                  required: true,
+                  "x-decorator": "FormItem",
+                  "x-decorator-props": {
+                    label: "经销商",
+                    name: "parentId",
+                    style: {
+                      width: "50%",
+                    },
+                    class: ["required"],
+                  },
+                  "x-component-props": {
+                    title: "",
+                    url: "/api/sys/sysDepart/list",
+                    params: {
+                      pageNo: 1,
+                      pageSize: -1,
+                      orgCategory: "4",
+                    },
+                    dataMap: {
+                      label: "departName",
+                      value: "id",
+                    },
+                    disabled: false,
+                  },
+                  "x-component": "HmAntSelect",
+                },
+                departName: {
+                  type: "string",
+                  required: true,
+                  "x-decorator": "FormItem",
+                  "x-decorator-props": {
+                    label: "学校名称",
+                    name: "departName",
+                    style: {
+                      width: "50%",
+                    },
+                    class: ["required"],
+                  },
+                  "x-component-props": {
+                    title: "",
+                  },
+                  "x-component": "HmAntInput",
+                },
+                regionId: {
+                  type: "string",
+                  required: true,
+                  "x-decorator": "FormItem",
+                  "x-decorator-props": {
+                    label: "地区",
+                    name: "regionId",
+                    style: {
+                      width: "50%",
+                    },
+                    class: ["required"],
+                  },
+                  "x-component-props": {
+                    "change-on-select": true,
+                    placeholder: "请选择地区",
+                    options: [],
+                  },
+                  "x-component": "Cascader",
+                },
+                address: {
+                  type: "string",
+                  "x-decorator": "FormItem",
+                  "x-decorator-props": {
+                    label: "地址",
+                    name: "address",
+                    style: {
+                      width: "50%",
+                    },
+                    class: [""],
+                  },
+                  "x-component-props": {
+                    title: "",
+                  },
+                  "x-component": "HmAntInput",
+                },
+                description: {
+                  type: "string",
+                  "x-decorator": "FormItem",
+                  "x-decorator-props": {
+                    label: "描述",
+                    name: "description",
+                    style: {
+                      width: "50%",
+                    },
+                    class: [""],
+                  },
+                  "x-component-props": {
+                    title: "",
+                  },
+                  "x-component": "HmAntInput",
+                },
+                avatar: {
+                  type: "object",
+                  "x-decorator": "FormItem",
+                  "x-decorator-props": {
+                    label: "logo图片",
+                    name: "avatar",
+                    style: {
+                      width: "50%",
+                    },
+                    class: [""],
+                  },
+                  "x-component-props": {
+                    title: "",
+                  },
+                  "x-component": "UploadImage",
+                },
+              },
+            },
+          },
+        },
       },
       storeFilter: {
         config: {
