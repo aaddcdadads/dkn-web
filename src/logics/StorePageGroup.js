@@ -80,31 +80,36 @@ const queryAreaRequestFail = (logic.queryAreaRequestFail = function () {});
  * 成功处理
  */
 const queryAreaRequestSuc = (logic.queryAreaRequestSuc = function () {
+  // 获取地区数据，self.queryAreaRequestData.result 是包含地区信息的变量
   var areas = self.queryAreaRequestData.result;
   console.log("打印地区", areas);
-
+  // 获取新增表单中地区选择组件的属性对象
   var regionProps =
     self.storeAddForm.schema.properties.form.properties.urbanArea[
       "x-component-props"
     ];
+  // 如果存在地区数据，设置选项为地区数据，否则设置为空数组
   if (areas) {
     regionProps.options = areas;
   } else {
     regionProps.options = [];
   }
+  // 更新新增表单中地区选择组件的属性对象
   self.storeAddForm.schema.properties.form.properties.urbanArea[
     "x-component-props"
   ] = regionProps;
-
+  // 获取编辑表单中地区选择组件的属性对象
   var editRegionProps =
     self.storeEditForm.schema.properties.form.properties.urbanArea[
       "x-component-props"
     ];
+  // 如果存在地区数据，设置选项为地区数据，否则设置为空数组
   if (areas) {
     editRegionProps.options = areas;
   } else {
     editRegionProps.options = [];
   }
+  // 更新编辑表单中地区选择组件的属性对象
   self.storeEditForm.schema.properties.form.properties.urbanArea[
     "x-component-props"
   ] = editRegionProps;
