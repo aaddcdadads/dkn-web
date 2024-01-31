@@ -67,7 +67,7 @@ const deleteStore = (logic.deleteStore = async (pageVm, eventData) => {
  * ajax请求
  */
 const queryAreaRequest = (logic.queryAreaRequest = async function () {
-  let res = await self.$getAction(`/api/web/area/getCascader`);
+  let res = await self.$getAction(`/api/area/getCascader`);
   self.queryAreaRequestData = res;
 });
 
