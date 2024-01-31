@@ -62,6 +62,19 @@ const deleteStore = (logic.deleteStore = async (pageVm, eventData) => {
 
 /********************** end deleteStore 开始 *********************/
 
+/********************** startRegion 开始 *********************/
+
+/**
+ * 逻辑流 startRegion 入口函数
+ */
+const startRegion = (logic.startRegion = async (pageVm, eventData) => {
+  console.log(`startRegion: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.startRegionData = eventData;
+});
+
+/********************** end startRegion 开始 *********************/
+
 /********************** editStore 开始 *********************/
 /**
  * 发送修改请求
@@ -181,6 +194,7 @@ export {
   exportStore,
   deleteRequest,
   deleteStore,
+  startRegion,
   editRequest,
   editStore,
   searchStore,
