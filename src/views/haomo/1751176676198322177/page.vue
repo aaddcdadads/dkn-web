@@ -1712,20 +1712,41 @@ export default {
     },
     async onAddprojectOk() {
       let self = this;
-      if (self.activityProjectTableStatus === 1) {
-        await self.$refs.activityProjectForm.validate();
-        let item = self.$refs.activityProjectForm.getFormValues();
-        item.index = Math.floor(Math.random() * 10000);
-
-        //处理图片
-        if (item.imgPath?.file?.response?.message) {
-          item.imgPath = item.imgPath?.file?.response?.message;
-        }
-        self.$refs.activityProjectTable.cData.push(item);
-
-        self.addproject.visible = false;
-      } else {
+      await self.$refs.activityProjectForm.validate();
+      let item = self.$refs.activityProjectForm.getFormValues();
+      //处理图片
+      if (item.imgPath?.file?.response?.message) {
+        item.imgPath = item.imgPath?.file?.response?.message;
       }
+      if (self.activityProjectTableStatus === 1) {
+        item.index = Math.floor(Math.random() * 10000);
+        self.$refs.activityProjectTable.cData.push(item);
+      } else if (self.activityProjectTableStatus === 2) {
+        if (
+          self.activityProjectItem.index ||
+          self.activityProjectItem.index == 0
+        ) {
+          self.$refs.activityProjectTable.cData.forEach((e, index) => {
+            if (e.index == self.activityProjectItem.index) {
+              self.$refs.activityProjectTable.cData[index] = {
+                index: self.activityProjectItem.index,
+                ...item,
+              };
+            }
+          });
+        } else {
+          self.$refs.activityProjectTable.cData.forEach((e, index) => {
+            if (e.id == self.activityProjectItem.id) {
+              self.$refs.activityProjectTable.cData[index] = {
+                index: self.activityProjectItem.index,
+                ...e,
+                ...item,
+              };
+            }
+          });
+        }
+      }
+      self.addproject.visible = false;
       self.$refs.activityProjectForm.reset();
     },
     onAddprojectCancel() {
