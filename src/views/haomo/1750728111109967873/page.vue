@@ -964,7 +964,7 @@ export default {
           }
         });
         if (!flag) {
-          this.bacthHeImportButton.disabled = true;
+          this.bacthHeImportButton.disabled = false;
         }
         //let selectPropertyArr = this.selectTempArr.filter(item => item.paymentStatus === 1 || item.paymentStatus === 2)
         // if (selectPropertyArr.length == 0) {
