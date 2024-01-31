@@ -586,51 +586,6 @@ export default {
                 },
               },
               properties: {
-                parentId: {
-                  type: "string",
-                  required: true,
-                  "x-decorator": "FormItem",
-                  "x-decorator-props": {
-                    label: "经销商",
-                    name: "parentId",
-                    style: {
-                      width: "50%",
-                    },
-                    class: ["required"],
-                  },
-                  "x-component-props": {
-                    title: "",
-                    url: "/api/sys/sysDepart/list",
-                    params: {
-                      pageNo: 1,
-                      pageSize: -1,
-                      orgCategory: "4",
-                    },
-                    dataMap: {
-                      label: "departName",
-                      value: "id",
-                    },
-                    disabled: false,
-                  },
-                  "x-component": "HmAntSelect",
-                },
-                departName: {
-                  type: "string",
-                  required: true,
-                  "x-decorator": "FormItem",
-                  "x-decorator-props": {
-                    label: "学校名称",
-                    name: "departName",
-                    style: {
-                      width: "50%",
-                    },
-                    class: ["required"],
-                  },
-                  "x-component-props": {
-                    title: "",
-                  },
-                  "x-component": "HmAntInput",
-                },
                 regionId: {
                   type: "string",
                   required: true,
@@ -649,54 +604,6 @@ export default {
                     options: [],
                   },
                   "x-component": "Cascader",
-                },
-                address: {
-                  type: "string",
-                  "x-decorator": "FormItem",
-                  "x-decorator-props": {
-                    label: "地址",
-                    name: "address",
-                    style: {
-                      width: "50%",
-                    },
-                    class: [""],
-                  },
-                  "x-component-props": {
-                    title: "",
-                  },
-                  "x-component": "HmAntInput",
-                },
-                description: {
-                  type: "string",
-                  "x-decorator": "FormItem",
-                  "x-decorator-props": {
-                    label: "描述",
-                    name: "description",
-                    style: {
-                      width: "50%",
-                    },
-                    class: [""],
-                  },
-                  "x-component-props": {
-                    title: "",
-                  },
-                  "x-component": "HmAntInput",
-                },
-                avatar: {
-                  type: "object",
-                  "x-decorator": "FormItem",
-                  "x-decorator-props": {
-                    label: "logo图片",
-                    name: "avatar",
-                    style: {
-                      width: "50%",
-                    },
-                    class: [""],
-                  },
-                  "x-component-props": {
-                    title: "",
-                  },
-                  "x-component": "UploadImage",
                 },
               },
             },
