@@ -472,10 +472,13 @@
                   <div class="ele-wrapper ele-wrapper-addimage">
                     <hm-modal
                       ref="addimage"
-                      title="背景图片"
+                      title="报名页背景图"
                       v-model:visible="addimage.visible"
                       :z-index="1000"
                       height="300px"
+                      :auto-close="false"
+                      @ok="onAddimageOk"
+                      @cancel="onAddimageCancel"
                       class="ele-addimage"
                     >
                       <div class="ele-wrapper ele-wrapper-activityImgFormOne">
@@ -1050,6 +1053,7 @@ export default {
       addimage: {
         visible: false,
       },
+      activityImgTableOneItem: {},
       title: {
         text: "创建活动",
         icon: "fa fa-tasks",
@@ -1872,6 +1876,38 @@ export default {
     onAddActivityImgTableOneClick() {
       this.addimage.visible = true;
       this.activityImgTableOneStatus = 1;
+    },
+    async onAddimageOk() {
+      let self = this;
+      await self.$refs.activityImgFormOne.validate();
+      let item = self.$refs.activityImgFormOne.getFormValues();
+
+      //处理图片
+      if (item.imgPath?.file?.response?.message) {
+        item.path = item.imgPath?.file?.response?.message;
+      }
+      delete item.imgPath;
+      item.imgSize = "375 * 667";
+      if (self.activityImgTableOneStatus === 1) {
+        item.index = Math.floor(Math.random() * 10000);
+
+        self.$refs.activityImgTableOne.cData.push(item);
+      } else {
+        self.$refs.activityImgTableOne.cData.forEach((e, index) => {
+          if (e.index == self.activityImgTableOneItem.index) {
+            self.$refs.activityImgTableOne.cData[index] = {
+              index: self.activityImgTableOneItem.index,
+              ...item,
+            };
+          }
+        });
+      }
+      self.addBackground.visible = false;
+      self.$refs.activityImgFormOne.reset();
+    },
+    onAddimageCancel() {
+      this.addBackground.visible = false;
+      this.$refs.activityImgFormOne.reset();
     },
     async onSharingImageSettingsOk() {
       let self = this;

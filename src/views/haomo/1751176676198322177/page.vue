@@ -1851,6 +1851,7 @@ export default {
     },
     onAddBackgroundCancel() {
       this.addBackground.visible = false;
+      this.$refs.activityImgFormOne.reset();
     },
     onBgColourKitChangecolorkit(e) {
       this.bgColour = e;
