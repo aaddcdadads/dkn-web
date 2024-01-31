@@ -220,9 +220,9 @@
                           <div class="ele-wrapper ele-wrapper-addBtn2">
                             <hm-ant-button
                               ref="addBtn2"
-                              icon="fa fa-plus"
                               text="添加"
                               :type="'primary'"
+                              icon="fa fa-plus"
                               @click="onAddBtn2Click"
                               class="ele-addBtn2"
                             >
@@ -1728,6 +1728,7 @@ export default {
     },
     onAddBtn2Click() {
       this.addprize.visible = true;
+      this.activityImgTableTwoStatus = 1;
     },
     async onAddprizeOk() {
       let self = this;
