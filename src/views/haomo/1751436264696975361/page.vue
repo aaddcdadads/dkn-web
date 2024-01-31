@@ -160,6 +160,7 @@
                           width="320px"
                           :z-index="1000"
                           height=""
+                          @ok="onDeleteprojectOk"
                           class="ele-deleteproject"
                         >
                           <div class="ele-wrapper ele-wrapper-deleteText">
@@ -1050,6 +1051,9 @@ export default {
       },
       addprice: {},
       activityProjectItem: {},
+      deleteItem: {},
+      delActivityProjectList: {},
+      delActivityImgList: {},
       activityImgTableTwoItem: {},
       addimage: {
         visible: false,
@@ -1855,6 +1859,63 @@ export default {
     onAddprojectCancel() {
       this.addproject.visible = false;
       this.$refs.activityProjectForm.reset();
+    },
+    onDeleteprojectOk() {
+      let self = this;
+      if (self.deleteItem.index || self.deleteItem.index == 0) {
+        switch (self.deleteStatus) {
+          case 1:
+            self.$refs.activityProjectTable.cData.forEach((e, index) => {
+              if (e.index == self.deleteItem.index) {
+                self.$refs.activityProjectTable.cData.splice(index, 1);
+              }
+            });
+
+            break;
+          case 2:
+            self.$refs.activityImgTableOne.cData.forEach((e, index) => {
+              if (e.index == self.deleteItem.index) {
+                self.$refs.activityImgTableOne.cData.splice(index, 1);
+              }
+            });
+            break;
+          case 3:
+            self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
+              if (e.index == self.deleteItem.index) {
+                self.$refs.activityImgTableTwo.cData.splice(index, 1);
+              }
+            });
+            break;
+        }
+      } else {
+        switch (self.deleteStatus) {
+          case 1:
+            self.$refs.activityProjectTable.cData.forEach((e, index) => {
+              if (e.id == self.deleteItem.id) {
+                self.$refs.activityProjectTable.cData.splice(index, 1);
+                self.delActivityProjectList.push(e.id);
+              }
+            });
+
+            break;
+          case 2:
+            self.$refs.activityImgTableOne.cData.forEach((e, index) => {
+              if (e.id == self.deleteItem.id) {
+                self.$refs.activityImgTableOne.cData.splice(index, 1);
+                self.delActivityImgList.push(e.id);
+              }
+            });
+            break;
+          case 3:
+            self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
+              if (e.id == self.deleteItem.id) {
+                self.$refs.activityImgTableTwo.cData.splice(index, 1);
+                self.delActivityImgList.push(e.id);
+              }
+            });
+            break;
+        }
+      }
     },
     onAddActivityImgTableTwoClick() {
       this.addprize.visible = true;
