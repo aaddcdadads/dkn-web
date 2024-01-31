@@ -68,6 +68,11 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
   item.endTime = self.$moment(item.cycle[1]).format("YYYY-MM-DD HH:mm:ss");
   console.log(item);
   delete item.cycle;
+
+  let expense = 0;
+  activityProjects.forEach((e) => {
+    expense += e.expense;
+  });
   self.item = {
     ...item,
     activityProjects,
