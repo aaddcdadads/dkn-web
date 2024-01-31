@@ -154,17 +154,11 @@ const detail = (logic.detail = async (pageVm, eventData) => {
       for (let key in self.activityForm.config) {
         self.activityForm.config[key].props.disabled = true;
       }
-      for (let key in self.activityExtForm.config) {
-        self.activityExtForm.config[key].props.disabled = true;
-      }
       for (let key in self.activityTwoForm.config) {
         self.activityTwoForm.config[key].props.disabled = true;
       }
       for (let key in self.activityExtTwoForm.config) {
         self.activityExtTwoForm.config[key].props.disabled = true;
-      }
-      for (let key in self.activityTwoForm.config) {
-        self.activityTwoForm.config[key].props.disabled = true;
       }
     });
     self.activityProjectTable.columns.splice(
