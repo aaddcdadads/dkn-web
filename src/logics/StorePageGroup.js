@@ -194,7 +194,7 @@ const searchStore = (logic.searchStore = async (pageVm, eventData) => {
  */
 const addRequest = (logic.addRequest = async function () {
   let res = await self.$postAction(`/api/restify/store/add`, {
-    ...self.$refs.storeAddForm.getFormValues(),
+    ...self.addParams,
   });
   self.addRequestData = res;
 });
