@@ -1756,6 +1756,7 @@ export default {
             icon: "fa fa-pencil",
             callback: function (item) {
               console.log("点击编辑: ", item);
+              self.imgItem = item;
               self.sharingImageSettings.visible = true;
             },
             type: "link",
