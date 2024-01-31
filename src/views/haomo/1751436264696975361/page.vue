@@ -1755,6 +1755,7 @@ export default {
     },
     onAddActivityImgTableTwoClick() {
       this.addprize.visible = true;
+      this.activityImgTableTwoStatus = 1;
     },
     onAddActivityImgTableOneClick() {
       this.addimage.visible = true;
