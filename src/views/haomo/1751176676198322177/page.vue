@@ -1557,6 +1557,7 @@ export default {
               self.activityImgFormOne.config.imgPath.props.imageUrl = self.getImg(
                 item.path
               );
+              item.imgPath = item.path;
               setTimeout(() => {
                 self.$refs.activityImgFormOne.setFormValues(item);
               });
