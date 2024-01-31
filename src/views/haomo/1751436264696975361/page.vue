@@ -1751,6 +1751,7 @@ export default {
 
     onAddActivityProjectClick() {
       this.addprice.visible = true;
+      this.activityProjectTableStatus = 1;
     },
     onAddActivityImgTableTwoClick() {
       this.addprize.visible = true;
