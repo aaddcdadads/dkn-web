@@ -738,10 +738,11 @@
                 class="ele-wrapper ele-wrapper-be6a0959-060d-4277-9590-2d5ddd2ab12e"
               >
                 <hm-ant-button
+                  text="修改活动"
+                  :type="'primary'"
                   :size="'large'"
                   icon="fa fa-check-circle"
-                  text="创建活动"
-                  :type="'primary'"
+                  @click="onElebe6A0959060D427795902D5Ddd2Ab12EClick"
                   class="ele-be6a0959-060d-4277-9590-2d5ddd2ab12e"
                 >
                 </hm-ant-button>
@@ -780,7 +781,7 @@ import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
 import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 
-import { detail } from "/@/logics/ActivityForm";
+import { detail, saveOrUpdate } from "/@/logics/ActivityForm";
 
 export default {
   name: "ActivityEditingAndModification",
@@ -2040,6 +2041,9 @@ export default {
     onSharingImageSettingsCancel() {
       this.sharingImageSettings.visible = false;
       this.$refs.activityImgFormTre.reset();
+    },
+    onElebe6A0959060D427795902D5Ddd2Ab12EClick() {
+      saveOrUpdate(this, arguments);
     },
   },
 };
