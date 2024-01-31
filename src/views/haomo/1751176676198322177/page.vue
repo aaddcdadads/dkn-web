@@ -1424,6 +1424,7 @@ export default {
               self.addActivityImgFormTwo.config.imgPath.props.imageUrl = self.getImg(
                 item.path
               );
+              item.imgPath = item.path;
               setTimeout(() => {
                 self.$refs.addActivityImgFormTwo.setFormValues(item);
               });
