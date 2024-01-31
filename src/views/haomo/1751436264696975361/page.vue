@@ -668,6 +668,7 @@
                           title="分享图片"
                           v-model:visible="sharingImageSettings.visible"
                           :z-index="1000"
+                          :auto-close="false"
                           @ok="onSharingImageSettingsOk"
                           @cancel="onSharingImageSettingsCancel"
                           class="ele-sharingImageSettings"
