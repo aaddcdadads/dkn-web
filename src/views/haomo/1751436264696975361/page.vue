@@ -694,6 +694,7 @@
                               v-model:value="activityImgFormTre.value"
                               :col-num="0"
                               :col-min-width="380"
+                              :schema="activityImgFormTre.schema"
                               :label-col="7"
                               :wrapper-col="14"
                             >
@@ -1759,15 +1760,6 @@ export default {
       },
       activityImgFormTre: {
         config: {
-          size: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "参考尺寸",
-            required: true,
-            props: {},
-          },
           imgPath: {
             style: {
               width: "100%",
@@ -1776,12 +1768,34 @@ export default {
             title: "图片",
             required: true,
             props: {
-              action: "",
+              action: "/api/sys/common/upload",
               accept: ".jpg,.png",
             },
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
     };
   },
