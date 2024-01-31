@@ -1104,6 +1104,7 @@ export default {
         visible: false,
       },
       activityProjectItem: {},
+      activityImgTableTwoItem: {},
       activityRules: {
         value: "",
         toolbarConfig: {
@@ -1772,29 +1773,14 @@ export default {
         //处理图片
         self.$refs.activityImgTableTwo.cData.push(item);
       } else if (self.activityImgTableTwoStatus === 2) {
-        if (
-          self.activityProjectItem.index ||
-          self.activityProjectItem.index == 0
-        ) {
-          self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
-            if (e.index == self.activityProjectItem.index) {
-              self.$refs.activityImgTableTwo.cData[index] = {
-                index: self.activityProjectItem.index,
-                ...item,
-              };
-            }
-          });
-        } else {
-          self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
-            if (e.id == self.activityProjectItem.id) {
-              self.$refs.activityImgTableTwo.cData[index] = {
-                index: self.activityProjectItem.index,
-                ...e,
-                ...item,
-              };
-            }
-          });
-        }
+        self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
+          if (e.index == self.activityImgTableTwoItem.index) {
+            self.$refs.activityImgTableTwo.cData[index] = {
+              index: self.activityImgTableTwoItem.index,
+              ...item,
+            };
+          }
+        });
       }
       self.addprize.visible = false;
       self.$refs.addActivityImgFormTwo.reset();
