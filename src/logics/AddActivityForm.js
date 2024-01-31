@@ -43,6 +43,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
       return x;
     });
   }
+
   if (self.$refs.activityImgTableOne.cData.length > 0) {
     activityImgs = self.$refs.activityImgTableOne.cData.map((x) => {
       x.type = 0;
@@ -73,6 +74,22 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
   activityProjects.forEach((e) => {
     expense += e.expense;
   });
+  if (activityProjects.lenght === 0) {
+    self.$message.error("请添加至少一个活动项目");
+    return;
+  }
+  if (!self.bgColour) {
+    self.$message.error("请设置报名页背景颜色");
+    return;
+  }
+  if (!self.colour) {
+    self.$message.error("请设置报名页信息框颜色");
+    return;
+  }
+  if (!self.textColour) {
+    self.$message.error("请设置报名页信息框字体颜色");
+    return;
+  }
   self.item = {
     ...item,
     activityProjects,
