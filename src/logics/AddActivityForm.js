@@ -90,6 +90,8 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
     self.$message.error("请设置报名页信息框字体颜色");
     return;
   }
+  if (new Date(item.closeTime).getTime() < new Date(item.startTime).getTime()) {
+  }
   self.item = {
     ...item,
     activityProjects,
