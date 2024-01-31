@@ -878,10 +878,13 @@ export default {
             style: {
               width: "100%",
             },
-            type: "Input",
+            type: "InputNumber",
             title: "项目费用",
             required: true,
-            props: {},
+            props: {
+              min: 0,
+              precision: 2,
+            },
           },
           free: {
             style: {
