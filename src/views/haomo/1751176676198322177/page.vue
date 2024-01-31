@@ -1558,6 +1558,7 @@ export default {
               console.log("点击编辑: ", item);
               self.addBackground.visible = true;
               self.activityImgTableOneStatus = 2;
+              self.activityImgTableOneItem = item;
               self.activityImgFormOne.config.imgPath.props.imageUrl = self.getImg(
                 item.path
               );
