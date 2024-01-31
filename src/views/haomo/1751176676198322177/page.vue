@@ -1370,6 +1370,7 @@ export default {
             callback: function (item) {
               console.log("点击编辑: ", item);
               self.addprize.visible = true;
+              self.activityImgTableTwoStatus = 2;
               self.addActivityImgFormTwo.config.imgPath.props.imageUrl = self.getImg(
                 item.path
               );
