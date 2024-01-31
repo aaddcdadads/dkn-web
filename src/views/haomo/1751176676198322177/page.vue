@@ -1725,29 +1725,14 @@ export default {
         item.index = Math.floor(Math.random() * 10000);
         self.$refs.activityProjectTable.cData.push(item);
       } else if (self.activityProjectTableStatus === 2) {
-        if (
-          self.activityProjectItem.index ||
-          self.activityProjectItem.index == 0
-        ) {
-          self.$refs.activityProjectTable.cData.forEach((e, index) => {
-            if (e.index == self.activityProjectItem.index) {
-              self.$refs.activityProjectTable.cData[index] = {
-                index: self.activityProjectItem.index,
-                ...item,
-              };
-            }
-          });
-        } else {
-          self.$refs.activityProjectTable.cData.forEach((e, index) => {
-            if (e.id == self.activityProjectItem.id) {
-              self.$refs.activityProjectTable.cData[index] = {
-                index: self.activityProjectItem.index,
-                ...e,
-                ...item,
-              };
-            }
-          });
-        }
+        self.$refs.activityProjectTable.cData.forEach((e, index) => {
+          if (e.index == self.activityProjectItem.index) {
+            self.$refs.activityProjectTable.cData[index] = {
+              index: self.activityProjectItem.index,
+              ...item,
+            };
+          }
+        });
       }
       self.addproject.visible = false;
       self.$refs.activityProjectForm.reset();
