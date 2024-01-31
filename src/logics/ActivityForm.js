@@ -160,6 +160,12 @@ const detail = (logic.detail = async (pageVm, eventData) => {
       for (let key in self.activityTwoForm.config) {
         self.activityTwoForm.config[key].props.disabled = true;
       }
+      for (let key in self.activityExtTwoForm.config) {
+        self.activityExtTwoForm.config[key].props.disabled = true;
+      }
+      for (let key in self.activityTwoForm.config) {
+        self.activityTwoForm.config[key].props.disabled = true;
+      }
     });
     self.activityProjectTable.columns.splice(
       self.activityProjectTable.columns.length - 1,
@@ -171,6 +177,10 @@ const detail = (logic.detail = async (pageVm, eventData) => {
     );
     self.activityImgTableTwo.columns.splice(
       self.activityImgTableTwo.columns.length - 1,
+      1
+    );
+    self.sharingImageTable.columns.splice(
+      self.sharingImageTable.columns.length - 1,
       1
     );
   } else {
