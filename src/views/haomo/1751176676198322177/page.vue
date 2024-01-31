@@ -1809,6 +1809,7 @@ export default {
     },
     onAddprizeCancel() {
       this.addprize.visible = false;
+      this.$refs.addActivityImgFormTwo.reset();
     },
     onActivityRulesChange(e) {
       this.activityRules.value = e;
