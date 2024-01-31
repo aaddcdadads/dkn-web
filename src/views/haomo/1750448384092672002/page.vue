@@ -543,7 +543,7 @@ export default {
       activityAddModal: {
         visible: false,
       },
-      self: {},
+      selectedRows: {},
       batchEdit: {
         visible: false,
       },
@@ -551,7 +551,6 @@ export default {
         text: "文字",
       },
       allStatus: {},
-      selectedRows: {},
       importButton: {
         visible: false,
         headers: null,
@@ -969,7 +968,7 @@ export default {
       exportActivity(this, arguments);
     },
     onBathqiyongClick() {
-      if (!this.self.selectedRows || this.self.selectedRows.length === 0) {
+      if (!this.selectedRows || this.selectedRows.length === 0) {
         this.$message.error("请选择活动");
         return;
       }
@@ -980,7 +979,7 @@ export default {
       });
     },
     onBatchBisabledClick() {
-      if (!this.self.selectedRows || this.self.selectedRows.length === 0) {
+      if (!this.selectedRows || this.selectedRows.length === 0) {
         this.$message.error("请选择活动");
         return;
       }
@@ -991,7 +990,7 @@ export default {
       });
     },
     onBatchDeleteClick() {
-      if (!this.self.selectedRows || this.self.selectedRows.length === 0) {
+      if (!this.selectedRows || this.selectedRows.length === 0) {
         this.$message.error("请选择活动");
         return;
       }
