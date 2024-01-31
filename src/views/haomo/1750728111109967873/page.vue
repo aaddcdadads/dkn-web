@@ -943,7 +943,7 @@ export default {
         var currentDate = this.$moment();
         var flag = false;
         this.selectTempArr.forEach((e) => {
-          var anotherDate = self.$moment(e.acPickUpTime, "YYYY-MM-DD HH:mm:ss");
+          var anotherDate = this.$moment(e.acPickUpTime, "YYYY-MM-DD HH:mm:ss");
           if (currentDate.isAfter(anotherDate)) {
             this.$message.error("超过核销截止时间了不可核销");
             this.bacthHeImportButton.disabled = true;
