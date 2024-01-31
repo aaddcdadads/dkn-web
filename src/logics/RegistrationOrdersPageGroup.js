@@ -309,7 +309,7 @@ const ajaxOrdersHeDuo = (logic.ajaxOrdersHeDuo = async function () {
  * 处理
  */
 const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = function () {
-  self.$message.success(self.ajaxOrdersHeDuoData.message);
+  self.$message.success("核销成功");
   self.$refs.registrationOrdersTable.getData();
   self.registrationOrdersDeleteModal.visible = false;
 });
@@ -318,7 +318,7 @@ const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = functio
  * 处理
  */
 const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = function () {
-  self.$message.error(self.ajaxOrdersHeDuoData.message);
+  self.$message.error("核销失败");
   self.$refs.registrationOrdersTable.getData();
   self.registrationOrdersDeleteModal.visible = false;
 });
