@@ -11,167 +11,172 @@ let logic = {};
 /**
  * 获取活动
  */
-const activityRequest = (logic.activityRequest = async function () {
-  let res = await self.$getAction(`/api/dkn/activity/queryById`, {
-    id: self.id,
-  });
+const activityRequest = logic.activityRequest = async function () {
+  let res = await self.$getAction(
+    `/api/dkn/activity/queryById`,
+    {
+    id:self.id
+}
+  )
   self.activityRequestData = res;
-});
+}
 
 /**
  * 处理
  */
-const setActivity = (logic.setActivity = function () {
-  if (!self.activityRequestData.success || !self.activityRequestData.result) {
-    return;
+const setActivity = logic.setActivity = function() {
+  if(!self.activityRequestData.success || !self.activityRequestData.result){
+      return
   }
-  let item = self.activityRequestData.result;
-  item.cycle = [item.startTime, item.endTime];
-  self.$refs.activityForm.setFormValues(item);
-  self.$refs.activityTwoForm.setFormValues(item);
+  let item = self.activityRequestData.result
+  item.cycle=[item.startTime,item.endTime]
+  self.$refs.activityForm.setFormValues(item)
+  self.$refs.activityTwoForm.setFormValues(item)
 
-  self.bgColour = item.bgColour;
-  self.colour = item.colour;
-  self.textColour = item.textColour;
+  self.bgColour=item.bgColour
+  self.colour=item.colour
+  self.textColour=item.textColour
 
-  self.bgColourKit.color = item.bgColour;
-  self.colourKit.color = item.colour;
-  self.textColourKit.color = item.textColour;
-});
+  self.bgColourKit.color=item.bgColour
+  self.colourKit.color=item.colour
+  self.textColourKit.color=item.textColour
+}
 
 /**
  * 活动拓展
  */
-const activityExtRequest = (logic.activityExtRequest = async function () {
-  let res = await self.$getAction(`/api/dkn/activityExt/list`, {
-    activityId: self.activityId,
-  });
+const activityExtRequest = logic.activityExtRequest = async function () {
+  let res = await self.$getAction(
+    `/api/dkn/activityExt/list`,
+    {
+    activityId:self.activityId
+}
+  )
   self.activityExtRequestData = res;
-});
+}
 
 /**
  * 处理
  */
-const setActivityExt = (logic.setActivityExt = function () {
-  if (
-    !self.activityExtRequestData.success ||
-    self.activityExtRequestData.result.records.length === 0
-  ) {
-    return;
+const setActivityExt = logic.setActivityExt = function() {
+  if(!self.activityExtRequestData.success || self.activityExtRequestData.result.records.length === 0){
+      return
   }
-  let item = self.activityExtRequestData.result.records[0];
-  self.$refs.activityExtTwoForm.setFormValues(item);
-  self.activityRules.value = item.activityRules;
-  self.agreementCommitmentletter.value = item.protocol;
-  self.customerService.value = item.customerService;
-});
+  let item = self.activityExtRequestData.result.records[0]
+  self.$refs.activityExtTwoForm.setFormValues(item)
+  self.activityRules.value=item.activityRules
+  self.agreementCommitmentletter.value=item.protocol
+  self.customerService.value=item.customerService
+}
 
 /**
  * 活动项目
  */
-const activityProjectRequest = (logic.activityProjectRequest = async function () {
-  let res = await self.$getAction(`/api/dkn/activityProject/list`, {
-    activityId: self.activityId,
-  });
+const activityProjectRequest = logic.activityProjectRequest = async function () {
+  let res = await self.$getAction(
+    `/api/dkn/activityProject/list`,
+    {
+    activityId:self.activityId
+}
+  )
   self.activityProjectRequestData = res;
-});
+}
 
 /**
  * 处理
  */
-const setActivityProject = (logic.setActivityProject = function () {
-  if (
-    !self.activityProjectRequestData.success ||
-    self.activityProjectRequestData.result.records.length === 0
-  ) {
-    return;
+const setActivityProject = logic.setActivityProject = function() {
+  if(!self.activityProjectRequestData.success || self.activityProjectRequestData.result.records.length === 0){
+      return
   }
-  self.$refs.activityProjectTable.cData =
-    self.activityProjectRequestData.result.records;
-});
+  self.$refs.activityProjectTable.cData=self.activityProjectRequestData.result.records
+  
+}
 
 /**
  * 活动图片
  */
-const activityImgRequest = (logic.activityImgRequest = async function () {
-  let res = await self.$getAction(`/api/dkn/activityImg/list`, {
-    activityId: self.activityId,
-  });
+const activityImgRequest = logic.activityImgRequest = async function () {
+  let res = await self.$getAction(
+    `/api/dkn/activityImg/list`,
+    {
+    activityId:self.activityId
+}
+  )
   self.activityImgRequestData = res;
-});
+}
 
 /**
  * 处理
  */
-const setActivityImg = (logic.setActivityImg = function () {
-  if (
-    !self.activityImgRequestData.success ||
-    self.activityImgRequestData.result.records.length === 0
-  ) {
-    return;
+const setActivityImg = logic.setActivityImg = function() {
+  if(!self.activityImgRequestData.success || self.activityImgRequestData.result.records.length === 0){
+      return
   }
-  let activityImgTableOneData = [],
-    activityImgTableTwoData = [];
-  self.activityImgRequestData.result.records.forEach((e) => {
-    if (e.type === 0) {
-      activityImgTableOneData.push(e);
-    } else if (e.type === 1) {
-      activityImgTableTwoData.push(e);
-    }
-  });
-  self.$refs.activityImgTableOne.cData = activityImgTableOneData;
-  self.$refs.activityImgTableTwo.cData = activityImgTableTwoData;
-});
+  let activityImgTableOneData=[],activityImgTableTwoData=[]
+  self.activityImgRequestData.result.records.forEach((e)=>{
+      if(e.type ===0){
+        activityImgTableOneData.push(e)
+      }else if(e.type ===1){
+          activityImgTableTwoData.push(e)
+      }
+  })
+  self.$refs.activityImgTableOne.cData=activityImgTableOneData
+  self.$refs.activityImgTableTwo.cData=activityImgTableTwoData
+}
+
 
 /**
  * 逻辑流 detail 入口函数
  */
-const detail = (logic.detail = async (pageVm, eventData) => {
-  console.log(`detail: `, pageVm, eventData);
+const detail = logic.detail = async (pageVm, eventData) => {
+  console.log(`detail: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.detailData = eventData;
 
-  self.id = self.$route.query.id;
-  self.activityId = self.id;
-  self.type = self.$route.query.type;
-  self.type = parseInt(self.type);
-  if (!self.id || self.type === 1) {
-    return;
-  }
+  
+  self.id=self.$route.query.id
+self.activityId=self.id
+self.type=self.$route.query.type
+self.type = parseInt(self.type)
+if(!self.id || self.type ===1){
+    return
+}
 
-  if (self.type === 3) {
-    self.title.text = "活动详情";
-    self.isSaveOrUpdate.hidden = true;
-    self.isTitle.text = "";
-    self.addActivityProject.visible = false;
-    self.addActivityImgTableOne.visible = false;
-    self.addActivityImgTableTwo.visible = false;
-    setTimeout(() => {
-      for (let key in self.activityForm.config) {
-        self.activityForm.config[key].props.disabled = true;
-      }
-      for (let key in self.activityExtForm.config) {
-        self.activityExtForm.config[key].props.disabled = true;
-      }
-      for (let key in self.activityTwoForm.config) {
-        self.activityTwoForm.config[key].props.disabled = true;
-      }
-    });
+
+if(self.type===3){
+    self.title.text="活动详情"
+    self.isSaveOrUpdate.hidden=true
+    self.isTitle.text=""
+    self.addActivityProject.visible=false
+    self.addActivityImgTableOne.visible=false
+    self.addActivityImgTableTwo.visible=false
+    setTimeout(()=>{
+        for(let key in self.activityForm.config){
+            self.activityForm.config[key].props.disabled=true
+        }
+        for(let key in self.activityExtForm.config){
+            self.activityExtForm.config[key].props.disabled=true
+        }
+        for(let key in self.activityTwoForm.config){
+            self.activityTwoForm.config[key].props.disabled=true
+        }
+    })
     self.activityProjectTable.columns.splice(
-      self.activityProjectTable.columns.length - 1,
-      1
+        self.activityProjectTable.columns.length - 1,
+        1
     );
     self.activityImgTableOne.columns.splice(
-      self.activityImgTableOne.columns.length - 1,
-      1
+        self.activityImgTableOne.columns.length - 1,
+        1
     );
     self.activityImgTableTwo.columns.splice(
-      self.activityImgTableTwo.columns.length - 1,
-      1
+        self.activityImgTableTwo.columns.length - 1,
+        1
     );
-  } else {
-    self.title.text = "编辑活动";
-  }
+}else{
+    self.title.text="编辑活动"
+}
   await activityRequest();
   setActivity();
   await activityExtRequest();
@@ -180,7 +185,8 @@ const detail = (logic.detail = async (pageVm, eventData) => {
   setActivityProject();
   await activityImgRequest();
   setActivityImg();
-});
+
+}
 
 /********************** end detail 开始 *********************/
 
@@ -188,73 +194,99 @@ const detail = (logic.detail = async (pageVm, eventData) => {
 /**
  * 发送编辑请求
  */
-const editRequest = (logic.editRequest = async function () {
-  let res = await self.$postAction(`/api/dkn/activity/edits`, {
+const editRequest = logic.editRequest = async function () {
+  let res = await self.$postAction(
+    `/api/dkn/activity/edits`,
+    {
     ...self.item,
-    id: self.id,
-  });
+    id:self.id
+}
+  )
   self.editRequestData = res;
-});
+}
+
 
 /**
  * 逻辑流 saveOrUpdate 入口函数
  */
-const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
-  console.log(`saveOrUpdate: `, pageVm, eventData);
+const saveOrUpdate = logic.saveOrUpdate = async (pageVm, eventData) => {
+  console.log(`saveOrUpdate: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.saveOrUpdateData = eventData;
 
-  await self.$refs.activityForm.validate();
-  await self.$refs.activityExtForm.validate();
-  await self.$refs.activityTwoForm.validate();
+  
+  await self.$refs.activityForm.validate()
+await self.$refs.activityExtTwoForm.validate()
+await self.$refs.activityTwoForm.validate()
 
-  let activityProjects = [],
-    activityImgs = [],
-    activityExts = [];
-  activityExts = [{ ...self.$refs.activityExtForm.getFormValues() }];
-  if (self.$refs.activityProjectTable.cData.length > 0) {
-    activityProjects = self.$refs.activityProjectTable.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      return x;
-    });
-  }
-  if (self.$refs.activityImgTableOne.cData.length > 0) {
-    activityProjects = self.$refs.activityImgTableOne.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      x.type = 0;
-      return x;
-    });
-  }
-  if (self.$refs.activityImgTableTwo.cData.length > 0) {
-    let list = self.$refs.activityImgTableTwo.cData.map((x) => {
-      delete x.id, x.createTime, x.createBy, x.updateTime, x.updateBy;
-      x.type = 1;
-      return x;
-    });
-    activityProjects = [...activityProjects, ...list];
-  }
-  self.item = {
-    ...self.$refs.activityForm.getFormValues(),
-    ...self.$refs.activityExtForm.getFormValues(),
-    ...self.$refs.activityTwoForm.getFormValues(),
-    activityExts,
+let activityProjects=[],activityImgs=[],activityExts=[]
+activityExts=[
+    {
+        activityRules:self.activityRules.value,
+        protocol:self.agreementCommitmentletter.value,
+        customerService:self.customerService.value,
+    ...self.$refs.activityExtTwoForm.getFormValues()}]
+if(self.$refs.activityProjectTable.cData.length > 0){
+    activityProjects = self.$refs.activityProjectTable.cData.map((x)=>{
+        return x
+    })
+}
+if(self.$refs.activityImgTableOne.cData.length > 0){
+    activityImgs = self.$refs.activityImgTableOne.cData.map((x)=>{
+        x.type=0
+        return x
+    })
+}
+if(self.$refs.activityImgTableTwo.cData.length > 0){
+     let list = self.$refs.activityImgTableTwo.cData.map((x)=>{
+        x.type=1
+        return x
+    })
+    activityImgs =[...activityImgs,...list]
+}
+if(self.$refs.sharingImageTable.cData.length > 0){
+     let list = self.$refs.sharingImageTable.cData.map((x)=>{
+        x.type=2
+        return x
+    })
+    activityImgs =[...activityImgs,...list]
+}
+let item =self.$refs.activityForm.getFormValues()
+    item.startTime = self.$moment(item.cycle[0]).format('YYYY-MM-DD HH:mm:ss')
+    item.endTime = self.$moment(item.cycle[1]).format('YYYY-MM-DD HH:mm:ss')
+    console.log(item)
+    delete item.cycle
+
+let expense=0
+    activityProjects.forEach(e=>{
+        expense+=e.expense
+    })
+self.item={
+    ...item,
+    ...self.$refs.activityTwoForm.getFormValues()
+    activityProjects,
     activityImgs,
     activityExts,
-    id: self.id,
-  };
+    expense,
+    bgColour:self.bgColour,
+    colour:self.colour,
+    textColour:self.textColour
+}
 
   await editRequest();
-  if (self.editRequestData.success) {
-    self.$message.error(self.editRequestData.message);
-    return;
-  }
-  self.$message.success("操作成功");
-  self.$router.push({
+  if(self.editRequestData.success){
+    self.$message.error(self.editRequestData.message)
+    return
+}
+self.$message.success("操作成功")
+self.$router.push({
     path: `/haomo/1750448384092672002/page`,
   });
-});
+
+}
 
 /********************** end saveOrUpdate 开始 *********************/
+
 
 export {
   activityRequest,
@@ -268,4 +300,4 @@ export {
   detail,
   editRequest,
   saveOrUpdate,
-};
+}
