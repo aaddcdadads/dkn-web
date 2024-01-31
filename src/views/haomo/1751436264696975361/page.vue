@@ -130,6 +130,7 @@
                           :z-index="1000"
                           height=""
                           :auto-close="false"
+                          @ok="onAddpriceOk"
                           class="ele-addprice"
                         >
                           <div
@@ -996,6 +997,7 @@ export default {
       addprice: {
         visible: false,
       },
+      activityProjectItem: {},
       addimage: {
         visible: false,
       },
@@ -1756,6 +1758,30 @@ export default {
     onAddActivityProjectClick() {
       this.addprice.visible = true;
       this.activityProjectTableStatus = 1;
+    },
+    async onAddpriceOk() {
+      let self = this;
+      await self.$refs.activityProjectForm.validate();
+      let item = self.$refs.activityProjectForm.getFormValues();
+      //处理图片
+      if (item.imgPath?.file?.response?.message) {
+        item.imgPath = item.imgPath?.file?.response?.message;
+      }
+      if (self.activityProjectTableStatus === 1) {
+        item.index = Math.floor(Math.random() * 10000);
+        self.$refs.activityProjectTable.cData.push(item);
+      } else if (self.activityProjectTableStatus === 2) {
+        self.$refs.activityProjectTable.cData.forEach((e, index) => {
+          if (e.index == self.activityProjectItem.index) {
+            self.$refs.activityProjectTable.cData[index] = {
+              index: self.activityProjectItem.index,
+              ...item,
+            };
+          }
+        });
+      }
+      self.addproject.visible = false;
+      self.$refs.activityProjectForm.reset();
     },
     onAddActivityImgTableTwoClick() {
       this.addprize.visible = true;
