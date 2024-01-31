@@ -1103,6 +1103,7 @@ export default {
       sharingImageSettings: {
         visible: false,
       },
+      activityProjectItem: {},
       activityRules: {
         value: "",
         toolbarConfig: {
@@ -1739,15 +1740,39 @@ export default {
       let self = this;
       await self.$refs.addActivityImgFormTwo.validate();
       let item = self.$refs.addActivityImgFormTwo.getFormValues();
-      item.index = Math.floor(Math.random() * 10000);
-
-      //处理图片
-      if (item.imgPath?.file?.response?.message) {
-        item.path = item.imgPath?.file?.response?.message;
+      if (self.activityImgTableTwoStatus === 1) {
+        item.index = Math.floor(Math.random() * 10000);
+        //处理图片
+        if (item.imgPath?.file?.response?.message) {
+          item.path = item.imgPath?.file?.response?.message;
+        }
+        delete item.imgPath;
+        self.$refs.activityImgTableTwo.cData.push(item);
+      } else if (self.activityImgTableTwoStatus === 2) {
+        if (
+          self.activityProjectItem.index ||
+          self.activityProjectItem.index == 0
+        ) {
+          self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
+            if (e.index == self.activityProjectItem.index) {
+              self.$refs.activityImgTableTwo.cData[index] = {
+                index: self.activityProjectItem.index,
+                ...item,
+              };
+            }
+          });
+        } else {
+          self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
+            if (e.id == self.activityProjectItem.id) {
+              self.$refs.activityImgTableTwo.cData[index] = {
+                index: self.activityProjectItem.index,
+                ...e,
+                ...item,
+              };
+            }
+          });
+        }
       }
-      delete item.imgPath;
-      self.$refs.activityImgTableTwo.cData.push(item);
-
       self.addprize.visible = false;
       self.$refs.addActivityImgFormTwo.reset();
     },
