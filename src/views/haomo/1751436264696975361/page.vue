@@ -1759,6 +1759,7 @@ export default {
     },
     onAddActivityImgTableOneClick() {
       this.addimage.visible = true;
+      this.activityImgTableOneStatus = 1;
     },
   },
 };
