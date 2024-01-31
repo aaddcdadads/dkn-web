@@ -1659,7 +1659,7 @@ export default {
             style: {
               width: "100%",
             },
-            type: "Input",
+            type: "InputNumber",
             title: "活动人数",
             required: true,
             props: {},
