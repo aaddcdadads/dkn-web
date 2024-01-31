@@ -1681,6 +1681,11 @@ export default {
         }
         return `/api/sys/common/static/${url}`;
       };
+      self.setActivityProjectForm = function (item) {
+        setTimeout(() => {
+          self.$refs.activityProjectForm.setFormValues(item);
+        });
+      };
     },
 
     onAddBtn1Click() {
