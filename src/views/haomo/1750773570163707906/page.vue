@@ -487,16 +487,6 @@ export default {
             required: true,
             disabled: false,
           },
-          urbanArea: {
-            type: "Input",
-            title: "门店所属区域",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            required: true,
-            validator: function (value) {},
-          },
           address: {
             type: "Input",
             title: "门店地址",
