@@ -952,6 +952,40 @@ export default {
         value: {},
       },
       addBackground: {},
+      activityImgFormOne: {
+        config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "图片排序",
+            required: true,
+            props: {
+              placeholder: "图片序号",
+            },
+          },
+          cycle: {
+            type: "Input",
+            title: "参考尺寸",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+          " name": {
+            type: "UploadImage",
+            title: "背景图片图片",
+            style: {
+              width: "100%",
+            },
+            required: true,
+            props: {},
+          },
+        },
+        value: {},
+      },
       sharingImageSettings: {
         visible: false,
       },
@@ -1446,40 +1480,6 @@ export default {
           excludeKeys: [],
         },
       },
-      activityImgFormOne: {
-        config: {
-          sortNo: {
-            style: {
-              width: "100%",
-            },
-            type: "InputNumber",
-            title: "图片排序",
-            required: true,
-            props: {
-              placeholder: "图片序号",
-            },
-          },
-          cycle: {
-            type: "Input",
-            title: "参考尺寸",
-            style: {
-              width: "100%",
-            },
-            required: true,
-            props: {},
-          },
-          " name": {
-            type: "UploadImage",
-            title: "背景图片图片",
-            style: {
-              width: "100%",
-            },
-            required: true,
-            props: {},
-          },
-        },
-        value: {},
-      },
       activityImgTableOne: {
         columns: [
           {
@@ -1540,6 +1540,15 @@ export default {
             callback: function (item) {
               console.log("点击编辑: ", item);
               self.addBackground.visible = true;
+              self.activityImgTableOneStatus = 2;
+              self.activityImgTableOneItem = item;
+              self.activityImgFormOne.config.imgPath.props.imageUrl = self.getImg(
+                item.path
+              );
+              item.imgPath = item.path;
+              setTimeout(() => {
+                self.$refs.activityImgFormOne.setFormValues(item);
+              });
             },
             type: "link",
           },
@@ -1548,6 +1557,8 @@ export default {
             icon: "fa fa-trash",
             callback: function (item) {
               console.log("点击删除: ", item);
+              self.deleteItem = item;
+              self.deleteStatus = 2;
               self.deleteproject.visible = true;
             },
             type: "link",
