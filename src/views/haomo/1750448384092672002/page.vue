@@ -543,6 +543,7 @@ export default {
       activityAddModal: {
         visible: false,
       },
+      self: {},
       batchEdit: {
         visible: false,
       },
@@ -968,6 +969,10 @@ export default {
       exportActivity(this, arguments);
     },
     onBathqiyongClick() {
+      if (!this.self.selectedRows || this.self.selectedRows.length === 0) {
+        this.$message.error("请选择活动");
+        return;
+      }
       this.$nextTick(() => {
         this.batchEdit.visible = true;
         this.allStatus = 1;
@@ -975,6 +980,10 @@ export default {
       });
     },
     onBatchBisabledClick() {
+      if (!this.self.selectedRows || this.self.selectedRows.length === 0) {
+        this.$message.error("请选择活动");
+        return;
+      }
       this.$nextTick(() => {
         this.batchEdit.visible = true;
         this.allStatus = 2;
@@ -982,6 +991,10 @@ export default {
       });
     },
     onBatchDeleteClick() {
+      if (!this.self.selectedRows || this.self.selectedRows.length === 0) {
+        this.$message.error("请选择活动");
+        return;
+      }
       this.$nextTick(() => {
         this.batchEdit.visible = true;
         this.allStatus = 3;
