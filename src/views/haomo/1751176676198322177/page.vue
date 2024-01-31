@@ -1050,6 +1050,56 @@ export default {
       addBackground: {
         visible: false,
       },
+      activityImgFormOne: {
+        config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "排序",
+            required: true,
+            props: {
+              placeholder: "图片序号",
+            },
+          },
+          imgPath: {
+            style: {
+              width: "100%",
+            },
+            type: "UploadImage",
+            title: "奖品图片",
+            required: true,
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+        },
+        value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
+      },
       sharingImageSettings: {
         visible: false,
       },
@@ -1442,56 +1492,6 @@ export default {
           },
         },
       },
-      activityImgFormOne: {
-        config: {
-          sortNo: {
-            style: {
-              width: "100%",
-            },
-            type: "InputNumber",
-            title: "排序",
-            required: true,
-            props: {
-              placeholder: "图片序号",
-            },
-          },
-          imgPath: {
-            style: {
-              width: "100%",
-            },
-            type: "UploadImage",
-            title: "奖品图片",
-            required: true,
-            props: {
-              action: "/api/sys/common/upload",
-              accept: ".jpg,.png",
-            },
-          },
-        },
-        value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-      },
       activityImgTableOne: {
         columns: [
           {
@@ -1552,6 +1552,13 @@ export default {
             callback: function (item) {
               console.log("点击编辑: ", item);
               self.addBackground.visible = true;
+              self.activityImgTableOneStatus = 2;
+              self.activityImgFormOne.config.imgPath.props.imageUrl = self.getImg(
+                item.path
+              );
+              setTimeout(() => {
+                self.$refs.activityImgFormOne.setFormValues(item);
+              });
             },
             type: "link",
           },
