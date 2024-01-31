@@ -740,7 +740,7 @@ export default {
           pageSize: 10,
           showSizeChanger: true,
         },
-        url: "/api/restify/store/list",
+        url: "/api/dkn/viewStoreArea/list",
         params: {
           databaseId: "",
           column: "createTime",
