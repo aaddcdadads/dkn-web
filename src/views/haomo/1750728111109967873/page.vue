@@ -950,13 +950,13 @@ export default {
             flag = true;
             return;
           }
-          if (item.pickUpStatusText == "已核销") {
+          if (e.pickUpStatusText == "已核销") {
             this.$message.error("数据已核销");
             this.bacthHeImportButton.disabled = true;
             flag = true;
             return;
           }
-          if (item.paymentStatus !== 0) {
+          if (e.paymentStatus !== 0) {
             this.$message.error("数据中存在已退款、待支付状态下不可核销");
             this.bacthHeImportButton.disabled = true;
             flag = true;
