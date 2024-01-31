@@ -61,7 +61,10 @@
               <div
                 class="ele-wrapper ele-wrapper-44fe706f-41bf-4ddf-b4bc-342934301487"
               >
-                <hm-ant-button> </hm-ant-button>
+                <hm-ant-button
+                  @click="onEle44Fe706F41Bf4DdfB4Bc342934301487Click"
+                >
+                </hm-ant-button>
               </div>
               <div
                 class="ele-wrapper ele-wrapper-68ec1e3a-e7db-413b-a7cc-7a386f743f83"
@@ -397,6 +400,7 @@ import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 import {
   downloadTemplate,
   exportStore,
+  loadAreaData,
   searchStore,
   addStore,
   editStore,
@@ -753,6 +757,9 @@ export default {
     },
     onExportButtonClick() {
       exportStore(this, arguments);
+    },
+    onEle44Fe706F41Bf4DdfB4Bc342934301487Click() {
+      loadAreaData(this, arguments);
     },
     onElef087F9B5C00641C6Aea1A22F650Dcce6Click() {
       this.storeAddModal.visible = true;
