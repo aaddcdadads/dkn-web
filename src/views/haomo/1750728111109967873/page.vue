@@ -475,11 +475,8 @@ export default {
           },
           {
             title: "姓名/昵称",
-            dataIndex: "realname",
-            key: "realname",
-            customRender: function (item) {
-              return item.text ? item.text : item.record.name;
-            },
+            dataIndex: "name",
+            key: "name",
           },
           {
             title: "报名渠道",
@@ -488,8 +485,8 @@ export default {
           },
           {
             title: "报名项目",
-            dataIndex: "activityId_dictText",
-            key: "activityId_dictText",
+            dataIndex: "acName",
+            key: "acName",
           },
           {
             title: "报名状态",
