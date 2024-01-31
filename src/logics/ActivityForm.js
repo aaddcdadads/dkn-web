@@ -225,6 +225,7 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
       protocol: self.agreementCommitmentletter.value,
       customerService: self.customerService.value,
       ...self.$refs.activityExtTwoForm.getFormValues(),
+      id: self.activityExtItem.id,
     },
   ];
   if (self.$refs.activityProjectTable.cData.length > 0) {
