@@ -977,6 +977,7 @@ export default {
     onBatchBisabledClick() {
       this.$nextTick(() => {
         this.batchEdit.visible = true;
+        this.allStatus = 2;
         this.prompt.text = "确认批量禁用";
       });
     },
