@@ -524,12 +524,7 @@ export default {
                 currentDate.isBefore(anotherDate)
                   ? 0
                   : 1;
-              console.log(
-                "abc123",
-                item.record.paymentStatus,
-                currentDate.isBefore(anotherDate),
-                statusFlag
-              );
+
               return h(
                 "div",
                 {
