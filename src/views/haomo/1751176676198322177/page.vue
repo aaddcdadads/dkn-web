@@ -998,6 +998,8 @@ export default {
         "icon": "fa fa-trash",
         "callback": function (item) {
                             console.log("点击删除: ", item);
+      self.deleteItem=item
+      self.deleteStatus=3
       self.deleteproject.visible = true;
                         },
         "type": "link"
