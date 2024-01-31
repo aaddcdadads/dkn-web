@@ -740,7 +740,8 @@ export default {
       console.log("this.storeAddForm.config");
       console.log("this.storeEditForm.config");
       console.log("this.storeDetailForm.config");
-
+      //加载地区下拉框数据
+      loadAreaData(this, arguments);
       //设置上传请求头
       this.$nextTick(() => {
         let token = localStorage.getItem("pro__Access-Token");
