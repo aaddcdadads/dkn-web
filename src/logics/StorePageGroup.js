@@ -84,7 +84,7 @@ const queryAreaRequestSuc = (logic.queryAreaRequestSuc = function () {
   console.log("打印地区", areas);
 
   var regionProps =
-    self.storeAddForm.schema.properties.form.properties.regionId[
+    self.storeAddForm.schema.properties.form.properties.urbanArea[
       "x-component-props"
     ];
   if (areas) {
@@ -92,17 +92,17 @@ const queryAreaRequestSuc = (logic.queryAreaRequestSuc = function () {
   } else {
     regionProps.options = [];
   }
-  self.storeAddForm.schema.properties.form.properties.regionId[
+  self.storeAddForm.schema.properties.form.properties.urbanArea[
     "x-component-props"
   ] = regionProps;
 
-  // var editRegionProps = self.viewDepartSchoolEditForm.schema.properties.form.properties.regionId["x-component-props"];
+  // var editRegionProps = self.viewDepartSchoolEditForm.schema.properties.form.properties.urbanArea["x-component-props"];
   // if(areas){
   //   editRegionProps.options = areas;
   // }else{
   //   editRegionProps.options = []
   // }
-  // self.viewDepartSchoolEditForm.schema.properties.form.properties.regionId["x-component-props"]=editRegionProps;
+  // self.viewDepartSchoolEditForm.schema.properties.form.properties.urbanArea["x-component-props"]=editRegionProps;
 });
 
 /**
