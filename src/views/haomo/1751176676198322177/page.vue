@@ -986,6 +986,67 @@ export default {
       addprize: {
         visible: false,
       },
+      addActivityImgFormTwo: {
+        config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "奖品排序",
+            required: true,
+            props: {
+              placeholder: "奖品序号",
+            },
+          },
+          imgPath: {
+            style: {
+              width: "100%",
+            },
+            type: "UploadImage",
+            title: "奖品图片",
+            required: true,
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+          name: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "奖品名称",
+            required: true,
+            props: {
+              placeholder: "请输入奖品名称",
+            },
+          },
+        },
+        value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
+      },
       addBackground: {
         visible: false,
       },
@@ -1249,67 +1310,6 @@ export default {
       customerService: {
         value: "",
       },
-      addActivityImgFormTwo: {
-        config: {
-          sortNo: {
-            style: {
-              width: "100%",
-            },
-            type: "InputNumber",
-            title: "奖品排序",
-            required: true,
-            props: {
-              placeholder: "奖品序号",
-            },
-          },
-          imgPath: {
-            style: {
-              width: "100%",
-            },
-            type: "UploadImage",
-            title: "奖品图片",
-            required: true,
-            props: {
-              action: "/api/sys/common/upload",
-              accept: ".jpg,.png",
-            },
-          },
-          name: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "奖品名称",
-            required: true,
-            props: {
-              placeholder: "请输入奖品名称",
-            },
-          },
-        },
-        value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-      },
       activityImgTableTwo: {
         columns: [
           {
@@ -1370,6 +1370,12 @@ export default {
             callback: function (item) {
               console.log("点击编辑: ", item);
               self.addprize.visible = true;
+              self.addActivityImgFormTwo.config.imgPath.props.imageUrl = self.getImg(
+                item.path
+              );
+              setTimeout(() => {
+                self.$refs.addActivityImgFormTwo.setFormValues(item);
+              });
             },
             type: "link",
           },
