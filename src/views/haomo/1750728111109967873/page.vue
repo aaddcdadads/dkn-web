@@ -422,7 +422,6 @@ import {
   addRegistrationOrders,
   editRegistrationOrders,
   startOrdersHeXiao,
-  startOrdersLoad,
 } from "/@/logics/RegistrationOrdersPageGroup";
 
 export default {
@@ -679,7 +678,7 @@ export default {
         schema: {},
       },
       userTotalText: {
-        text: "(用户总数:9999)",
+        text: "(用户总数:0)",
       },
       registrationOrdersDetailModal: {
         visible: false,
@@ -893,8 +892,6 @@ export default {
           };
         }
       });
-      //加载
-      startOrdersLoad(this, null);
     },
 
     onAddButtonClick() {
