@@ -1073,7 +1073,7 @@ export default {
         let params = self.selectedRows.map((e) => {
           return {
             id: e.id,
-            status: self.allStatus.value === 1 ? 0 : 1,
+            status: self.allStatus === 1 ? 0 : 1,
           };
         });
         const res = await self.$putAction(url, params);
