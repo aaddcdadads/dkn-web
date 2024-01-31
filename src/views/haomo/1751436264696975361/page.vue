@@ -122,17 +122,17 @@
                         >
                         </hm-ant-button>
                       </div>
-                      <div class="ele-wrapper ele-wrapper-addprice">
+                      <div class="ele-wrapper ele-wrapper-addproject">
                         <hm-modal
-                          ref="addprice"
+                          ref="addproject"
                           title="活动项目"
-                          v-model:visible="addprice.visible"
+                          v-model:visible="addproject.visible"
                           :z-index="1000"
                           height=""
                           :auto-close="false"
-                          @ok="onAddpriceOk"
-                          @cancel="onAddpriceCancel"
-                          class="ele-addprice"
+                          @ok="onAddprojectOk"
+                          @cancel="onAddprojectCancel"
+                          class="ele-addproject"
                         >
                           <div
                             class="ele-wrapper ele-wrapper-activityProjectForm"
@@ -236,7 +236,7 @@
                               title="奖品图片"
                               v-model:visible="addprize.visible"
                               :z-index="1000"
-                              height="300px"
+                              :auto-close="false"
                               class="ele-addprize"
                             >
                               <div
@@ -799,7 +799,9 @@ export default {
         textAlign: "center",
         hidden: false,
       },
-      addproject: {},
+      addproject: {
+        visible: false,
+      },
       activityProjectForm: {
         config: {
           sortNo: {
@@ -995,9 +997,7 @@ export default {
       sharingImageSettings: {
         visible: false,
       },
-      addprice: {
-        visible: false,
-      },
+      addprice: {},
       activityProjectItem: {},
       addimage: {
         visible: false,
@@ -1760,7 +1760,7 @@ export default {
       this.addprice.visible = true;
       this.activityProjectTableStatus = 1;
     },
-    async onAddpriceOk() {
+    async onAddprojectOk() {
       let self = this;
       await self.$refs.activityProjectForm.validate();
       let item = self.$refs.activityProjectForm.getFormValues();
@@ -1784,7 +1784,7 @@ export default {
       self.addproject.visible = false;
       self.$refs.activityProjectForm.reset();
     },
-    onAddpriceCancel() {
+    onAddprojectCancel() {
       this.addproject.visible = false;
       this.$refs.activityProjectForm.reset();
     },
@@ -1890,7 +1890,7 @@ export default {
   margin-left: 5px;
 }
 
-.ele-wrapper-addprice {
+.ele-wrapper-addproject {
   /deep/.hm-modal {
     min-height: 0px;
   }
