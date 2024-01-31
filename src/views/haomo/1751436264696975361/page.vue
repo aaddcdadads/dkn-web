@@ -1068,6 +1068,7 @@ export default {
       delActivityImgList: {},
       activityImgTableTwoItem: {},
       activityImgTableOneItem: {},
+      imgItem: {},
       title: {
         text: "创建活动",
         icon: "fa fa-tasks",
@@ -2064,7 +2065,9 @@ export default {
       item.imgSize = "375 * 667";
       self.$refs.sharingImageTable.cData = [item];
       //self.$refs.sharingImageTable.cData.push(item)
-
+      if (self.imgItem && self.imgItem.id) {
+        item.id = self.imgItem.id;
+      }
       self.sharingImageSettings.visible = false;
       self.$refs.activityImgFormTre.reset();
     },
