@@ -1924,14 +1924,29 @@ export default {
 
         self.$refs.activityImgTableOne.cData.push(item);
       } else {
-        self.$refs.activityImgTableOne.cData.forEach((e, index) => {
-          if (e.index == self.activityImgTableOneItem.index) {
-            self.$refs.activityImgTableOne.cData[index] = {
-              index: self.activityImgTableOneItem.index,
-              ...item,
-            };
-          }
-        });
+        if (
+          self.activityImgTableOneItem.index ||
+          self.activityImgTableOneItem.index == 0
+        ) {
+          self.$refs.activityImgTableOne.cData.forEach((e, index) => {
+            if (e.index == self.activityImgTableOneItem.index) {
+              self.$refs.activityImgTableOne.cData[index] = {
+                index: self.activityImgTableOneItem.index,
+                ...item,
+              };
+            }
+          });
+        } else {
+          self.$refs.activityImgTableOne.cData.forEach((e, index) => {
+            if (e.id == self.activityImgTableOneItem.id) {
+              self.$refs.activityImgTableOne.cData[index] = {
+                index: self.activityImgTableOneItem.index,
+                ...e,
+                ...item,
+              };
+            }
+          });
+        }
       }
       self.addBackground.visible = false;
       self.$refs.activityImgFormOne.reset();
