@@ -237,6 +237,7 @@
                               v-model:visible="addprize.visible"
                               :z-index="1000"
                               :auto-close="false"
+                              @ok="onAddprizeOk"
                               class="ele-addprize"
                             >
                               <div
@@ -1027,6 +1028,7 @@ export default {
       },
       addprice: {},
       activityProjectItem: {},
+      activityImgTableTwoItem: {},
       addimage: {
         visible: false,
       },
@@ -1819,6 +1821,31 @@ export default {
     onAddActivityImgTableTwoClick() {
       this.addprize.visible = true;
       this.activityImgTableTwoStatus = 1;
+    },
+    async onAddprizeOk() {
+      let self = this;
+      await self.$refs.addActivityImgFormTwo.validate();
+      let item = self.$refs.addActivityImgFormTwo.getFormValues();
+      if (item.imgPath?.file?.response?.message) {
+        item.path = item.imgPath?.file?.response?.message;
+      }
+      delete item.imgPath;
+      if (self.activityImgTableTwoStatus === 1) {
+        item.index = Math.floor(Math.random() * 10000);
+        //处理图片
+        self.$refs.activityImgTableTwo.cData.push(item);
+      } else if (self.activityImgTableTwoStatus === 2) {
+        self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
+          if (e.index == self.activityImgTableTwoItem.index) {
+            self.$refs.activityImgTableTwo.cData[index] = {
+              index: self.activityImgTableTwoItem.index,
+              ...item,
+            };
+          }
+        });
+      }
+      self.addprize.visible = false;
+      self.$refs.addActivityImgFormTwo.reset();
     },
     onAddActivityImgTableOneClick() {
       this.addimage.visible = true;
