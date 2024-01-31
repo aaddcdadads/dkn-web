@@ -60,6 +60,7 @@ const setActivityExt = (logic.setActivityExt = function () {
     return;
   }
   let item = self.activityExtRequestData.result.records[0];
+  self.activityExtItem = item;
   self.$refs.activityExtTwoForm.setFormValues(item);
   self.activityRules.value = item.activityRules;
   self.agreementCommitmentletter.value = item.protocol;
