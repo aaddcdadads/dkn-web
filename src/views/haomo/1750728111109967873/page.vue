@@ -940,16 +940,39 @@ export default {
       this.selectTempArr = item.selectedRows;
 
       if (this.selectTempArr.length > 0) {
-        let selectPropertyArr = this.selectTempArr.filter(
-          (item) => item.paymentStatus === 1 || item.paymentStatus === 2
-        );
-
-        if (selectPropertyArr.length == 0) {
-          this.bacthHeImportButton.disabled = false;
-        } else {
-          this.$message.error("数据中存在已退款、待支付状态下不可核销");
+        var currentDate = this.$moment();
+        var flag = false;
+        this.selectTempArr.forEach((e) => {
+          var anotherDate = self.$moment(e.acPickUpTime, "YYYY-MM-DD HH:mm:ss");
+          if (currentDate.isAfter(anotherDate)) {
+            this.$message.error("超过核销截止时间了不可核销");
+            this.bacthHeImportButton.disabled = true;
+            flag = true;
+            return;
+          }
+          if (item.record.pickUpStatusText == "已核销") {
+            this.$message.error("数据已核销");
+            this.bacthHeImportButton.disabled = true;
+            flag = true;
+            return;
+          }
+          if (item.record.paymentStatus !== 0) {
+            this.$message.error("数据中存在已退款、待支付状态下不可核销");
+            this.bacthHeImportButton.disabled = true;
+            flag = true;
+            return;
+          }
+        });
+        if (!flag) {
           this.bacthHeImportButton.disabled = true;
         }
+        //let selectPropertyArr = this.selectTempArr.filter(item => item.paymentStatus === 1 || item.paymentStatus === 2)
+        // if (selectPropertyArr.length == 0) {
+        //  this.bacthHeImportButton.disabled = false
+        // } else {
+        //   this.$message.error("数据中存在已退款、待支付状态下不可核销");
+        //   this.bacthHeImportButton.disabled = true
+        // }
       } else {
         this.bacthHeImportButton.disabled = true;
       }
