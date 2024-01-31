@@ -704,8 +704,8 @@ export default {
           },
           {
             title: "门店所属区域",
-            dataIndex: "urbanArea",
-            key: "urbanArea",
+            dataIndex: "mergerName",
+            key: "mergerName",
           },
           {
             title: "门店地址",
