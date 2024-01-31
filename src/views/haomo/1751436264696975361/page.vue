@@ -1802,6 +1802,8 @@ export default {
       self.bgColourKit.color = "#59c7f9";
       self.colourKit.color = "#59c7f9";
       self.textColourKit.color = "#59c7f9";
+      self.delActivityProjectList = [];
+      self.delActivityImgList = [];
       self.getImg = function (url) {
         if (!url) {
           return "";
