@@ -189,7 +189,7 @@ const detail = (logic.detail = async (pageVm, eventData) => {
  * 发送编辑请求
  */
 const editRequest = (logic.editRequest = async function () {
-  let res = await self.$postAction(`/api/dkn/activity/edits`, {
+  let res = await self.$putAction(`/api/dkn/activity/edits`, {
     ...self.item,
     id: self.id,
   });
