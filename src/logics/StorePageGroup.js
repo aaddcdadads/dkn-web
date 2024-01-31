@@ -96,13 +96,18 @@ const queryAreaRequestSuc = (logic.queryAreaRequestSuc = function () {
     "x-component-props"
   ] = regionProps;
 
-  // var editRegionProps = self.viewDepartSchoolEditForm.schema.properties.form.properties.urbanArea["x-component-props"];
-  // if(areas){
-  //   editRegionProps.options = areas;
-  // }else{
-  //   editRegionProps.options = []
-  // }
-  // self.viewDepartSchoolEditForm.schema.properties.form.properties.urbanArea["x-component-props"]=editRegionProps;
+  var editRegionProps =
+    self.storeEditForm.schema.properties.form.properties.urbanArea[
+      "x-component-props"
+    ];
+  if (areas) {
+    editRegionProps.options = areas;
+  } else {
+    editRegionProps.options = [];
+  }
+  self.storeEditForm.schema.properties.form.properties.urbanArea[
+    "x-component-props"
+  ] = editRegionProps;
 });
 
 /**
