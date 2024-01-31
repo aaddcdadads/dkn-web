@@ -485,6 +485,7 @@
                           v-model:value="activityImgFormOne.value"
                           :col-num="0"
                           :col-min-width="380"
+                          :schema="activityImgFormOne.schema"
                           :label-col="7"
                           :wrapper-col="14"
                         >
@@ -997,32 +998,48 @@ export default {
               width: "100%",
             },
             type: "InputNumber",
-            title: "图片排序",
+            title: "排序",
             required: true,
             props: {
               placeholder: "图片序号",
             },
           },
-          cycle: {
-            type: "Input",
-            title: "参考尺寸",
+          imgPath: {
             style: {
               width: "100%",
             },
-            required: true,
-            props: {},
-          },
-          " name": {
             type: "UploadImage",
-            title: "背景图片图片",
-            style: {
-              width: "100%",
-            },
+            title: "奖品图片",
             required: true,
-            props: {},
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
           },
         },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       sharingImageSettings: {
         visible: false,
