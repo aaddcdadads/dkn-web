@@ -540,17 +540,21 @@ export default {
             disabled: false,
           },
           urbanArea: {
-            type: "Input",
+            type: "Cascader",
             title: "门店所属区域",
             style: {
               width: "50%",
             },
-            props: {},
+            props: {
+              "change-on-select": true,
+              placeholder: "请选择区域",
+              options: [],
+            },
             required: true,
             validator: function (value) {},
           },
           address: {
-            type: "Select",
+            type: "Input",
             title: "门店地址",
             style: {
               width: "50%",
