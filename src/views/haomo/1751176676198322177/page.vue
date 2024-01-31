@@ -466,9 +466,9 @@
                   <div class="ele-wrapper ele-wrapper-addBtn3">
                     <hm-ant-button
                       ref="addBtn3"
-                      icon="fa fa-plus"
                       text="添加"
                       :type="'primary'"
+                      icon="fa fa-plus"
                       @click="onAddBtn3Click"
                       class="ele-addBtn3"
                     >
@@ -1758,6 +1758,7 @@ export default {
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
+      this.activityImgTableOneStatus = 1;
     },
     async onAddBackgroundOk() {
       let self = this;
