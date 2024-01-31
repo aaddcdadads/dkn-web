@@ -521,6 +521,7 @@ export default {
               );
               var statusFlag =
                 item.record.paymentStatus === 0 &&
+                item.record.pickUpStatusText == "待核销" &&
                 currentDate.isBefore(anotherDate)
                   ? 0
                   : 1;
