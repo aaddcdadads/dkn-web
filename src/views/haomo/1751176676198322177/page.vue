@@ -1756,23 +1756,23 @@ export default {
 
       switch (self.deleteStatus) {
         case 1:
-          self.$refs.quotationDetailTable.cData.forEach((e, index) => {
+          self.$refs.activityProjectTable.cData.forEach((e, index) => {
             if (e.index == self.deleteItem.index) {
-              self.$refs.quotationDetailTable.cData.splice(index, 1);
+              self.$refs.activityProjectTable.cData.splice(index, 1);
             }
           });
           break;
         case 2:
-          self.$refs.quotationDetailTable.cData.forEach((e, index) => {
+          self.$refs.activityImgTableOne.cData.forEach((e, index) => {
             if (e.index == self.deleteItem.index) {
-              self.$refs.quotationDetailTable.cData.splice(index, 1);
+              self.$refs.activityImgTableOne.cData.splice(index, 1);
             }
           });
           break;
         case 3:
-          self.$refs.quotationDetailTable.cData.forEach((e, index) => {
+          self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
             if (e.index == self.deleteItem.index) {
-              self.$refs.quotationDetailTable.cData.splice(index, 1);
+              self.$refs.activityImgTableTwo.cData.splice(index, 1);
             }
           });
           break;
