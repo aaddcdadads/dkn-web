@@ -83,13 +83,18 @@ const queryAreaRequestSuc = (logic.queryAreaRequestSuc = function () {
   var areas = self.queryAreaRequestData.result;
   console.log("打印地区", areas);
 
-  // var regionProps = self.viewDepartSchoolAddForm.schema.properties.form.properties.regionId["x-component-props"];
-  // if(areas){
-  //   regionProps.options = areas;
-  // }else{
-  //   regionProps.options = []
-  // }
-  // self.viewDepartSchoolAddForm.schema.properties.form.properties.regionId["x-component-props"]=regionProps;
+  var regionProps =
+    self.storeAddForm.schema.properties.form.properties.regionId[
+      "x-component-props"
+    ];
+  if (areas) {
+    regionProps.options = areas;
+  } else {
+    regionProps.options = [];
+  }
+  self.storeAddForm.schema.properties.form.properties.regionId[
+    "x-component-props"
+  ] = regionProps;
 
   // var editRegionProps = self.viewDepartSchoolEditForm.schema.properties.form.properties.regionId["x-component-props"];
   // if(areas){
