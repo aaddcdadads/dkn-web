@@ -984,6 +984,7 @@ export default {
     onBatchDeleteClick() {
       this.$nextTick(() => {
         this.batchEdit.visible = true;
+        this.allStatus = 3;
         this.prompt.text = "确认批量删除";
       });
     },
