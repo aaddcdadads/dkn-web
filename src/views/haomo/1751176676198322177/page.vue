@@ -161,6 +161,7 @@
                           width="320px"
                           :z-index="1000"
                           height=""
+                          @ok="onDeleteprojectOk"
                           class="ele-deleteproject"
                         >
                           <div class="ele-wrapper ele-wrapper-delText">
@@ -1104,6 +1105,7 @@ export default {
         visible: false,
       },
       activityProjectItem: {},
+      deleteItem: {},
       activityImgTableTwoItem: {},
       activityRules: {
         value: "",
@@ -1748,6 +1750,33 @@ export default {
     onAddprojectCancel() {
       this.addproject.visible = false;
       this.$refs.activityProjectForm.reset();
+    },
+    onDeleteprojectOk() {
+      let self = this;
+
+      switch (self.deleteStatus) {
+        case 1:
+          self.$refs.quotationDetailTable.cData.forEach((e, index) => {
+            if (e.index == self.deleteItem.index) {
+              self.$refs.quotationDetailTable.cData.splice(index, 1);
+            }
+          });
+          break;
+        case 2:
+          self.$refs.quotationDetailTable.cData.forEach((e, index) => {
+            if (e.index == self.deleteItem.index) {
+              self.$refs.quotationDetailTable.cData.splice(index, 1);
+            }
+          });
+          break;
+        case 3:
+          self.$refs.quotationDetailTable.cData.forEach((e, index) => {
+            if (e.index == self.deleteItem.index) {
+              self.$refs.quotationDetailTable.cData.splice(index, 1);
+            }
+          });
+          break;
+      }
     },
     onAddBtn2Click() {
       this.addprize.visible = true;
