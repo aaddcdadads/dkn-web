@@ -648,6 +648,16 @@ export default {
             },
             props: {
               title: "",
+              option: [
+                {
+                  lable: "启用",
+                  value: "0",
+                },
+                {
+                  lable: "禁用",
+                  value: "1",
+                },
+              ],
             },
             validator: function (value) {},
           },
