@@ -59,7 +59,11 @@
                 </hm-ant-button>
               </div>
               <div class="ele-wrapper ele-wrapper-cityButton">
-                <hm-ant-button ref="cityButton" @click="onCityButtonClick">
+                <hm-ant-button
+                  ref="cityButton"
+                  @click="onCityButtonClick"
+                  class="ele-cityButton"
+                >
                 </hm-ant-button>
               </div>
               <div
@@ -810,6 +814,10 @@ export default {
 
 .ele-wrapper-exportButton {
   margin: 0 0 0 1%;
+}
+
+.ele-wrapper-cityButton {
+  display: none;
 }
 
 .ele-wrapper-68ec1e3a-e7db-413b-a7cc-7a386f743f83 {
