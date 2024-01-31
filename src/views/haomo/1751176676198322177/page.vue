@@ -931,10 +931,13 @@ export default {
             style: {
               width: "100%",
             },
-            type: "Input",
+            type: "InputNumber",
             title: "项目费用",
             required: true,
-            props: {},
+            props: {
+              min: 0,
+              precision: 2,
+            },
           },
           free: {
             style: {
@@ -1753,7 +1756,6 @@ export default {
     },
     onDeleteprojectOk() {
       let self = this;
-
       switch (self.deleteStatus) {
         case 1:
           self.$refs.activityProjectTable.cData.forEach((e, index) => {
