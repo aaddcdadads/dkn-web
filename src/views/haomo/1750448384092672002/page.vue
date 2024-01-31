@@ -917,7 +917,7 @@ export default {
       self.selectedRows = [];
 
       self.copyUrl = function (id) {
-        let url = `${this.$accessAddress}?id=${id}`;
+        let url = `${this.$accessAddress}?activityId=${id}`;
         let self = this;
         if (!navigator.clipboard) {
           var ele = document.createElement("input");
