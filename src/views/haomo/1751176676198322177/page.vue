@@ -1689,21 +1689,25 @@ export default {
     },
     async onAddprojectOk() {
       let self = this;
-      await self.$refs.activityProjectForm.validate();
-      let item = self.$refs.activityProjectForm.getFormValues();
-      item.index = Math.floor(Math.random() * 10000);
+      if (self.activityProjectTableStatus === 1) {
+        await self.$refs.activityProjectForm.validate();
+        let item = self.$refs.activityProjectForm.getFormValues();
+        item.index = Math.floor(Math.random() * 10000);
 
-      //处理图片
-      if (item.imgPath?.file?.response?.message) {
-        item.imgPath = item.imgPath?.file?.response?.message;
+        //处理图片
+        if (item.imgPath?.file?.response?.message) {
+          item.imgPath = item.imgPath?.file?.response?.message;
+        }
+        self.$refs.activityProjectTable.cData.push(item);
+
+        self.addproject.visible = false;
+      } else {
       }
-      self.$refs.activityProjectTable.cData.push(item);
-
-      self.addproject.visible = false;
       self.$refs.activityProjectForm.reset();
     },
     onAddprojectCancel() {
       this.addproject.visible = false;
+      this.$refs.activityProjectForm.reset();
     },
     onAddBtn2Click() {
       this.addprize.visible = true;
