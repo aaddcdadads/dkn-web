@@ -193,7 +193,7 @@ const searchStore = (logic.searchStore = async (pageVm, eventData) => {
  * 发送添加请求
  */
 const addRequest = (logic.addRequest = async function () {
-  let res = await self.$postAction(`/api/restify/store/add`, {
+  let res = await self.$postAction(`/api/dkn/store/add`, {
     ...self.addParams,
   });
   self.addRequestData = res;
