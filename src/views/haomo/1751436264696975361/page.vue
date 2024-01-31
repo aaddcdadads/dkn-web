@@ -551,6 +551,7 @@
                         <hm-color-kit
                           ref="bgColourKit"
                           :color="bgColourKit.color"
+                          @changecolorkit="onBgColourKitChangecolorkit"
                         >
                         </hm-color-kit>
                       </div>
@@ -579,7 +580,11 @@
                       class="ele-3fb31f2b-4a48-499a-ba2a-8181388283b9"
                     >
                       <div class="ele-wrapper ele-wrapper-colourkit">
-                        <hm-color-kit ref="colourkit"> </hm-color-kit>
+                        <hm-color-kit
+                          ref="colourkit"
+                          @changecolorkit="onColourkitChangecolorkit"
+                        >
+                        </hm-color-kit>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -609,6 +614,7 @@
                         <hm-color-kit
                           ref="textColourKit"
                           :color="textColourKit.color"
+                          @changecolorkit="onTextColourKitChangecolorkit"
                         >
                         </hm-color-kit>
                       </div>
@@ -2033,6 +2039,15 @@ export default {
     onAddBackgroundCancel() {
       this.addBackground.visible = false;
       this.$refs.activityImgFormOne.reset();
+    },
+    onBgColourKitChangecolorkit(e) {
+      this.bgColour = e;
+    },
+    onColourkitChangecolorkit(e) {
+      this.colour = e;
+    },
+    onTextColourKitChangecolorkit(e) {
+      this.textColour = e;
     },
     async onSharingImageSettingsOk() {
       let self = this;
