@@ -210,32 +210,6 @@ if (_.isEqual(params, self.storeTable.params)) {
 
 /********************** addStore 开始 *********************/
 /**
- * 生成base64二维码
- */
-const behavior = logic.behavior = function() {
- //要存入二维码的id值
-const variableToEncode = "YourVariableValue"; 
-// 使用 variableToEncode 的值生成 QR Code 图片的 base64 编码
-let base64 = await self.$QRCode.toDataURL(variableToEncode, {
-    errorCorrectionLevel: "L",
-    margin: 1,
-    height: 300,
-    width: 300,
-    type: "10",
-    scal: 177
-})
-
-// 创建包含培养活动信息的参数对象，并将变量值存入二维码
-self.baseParams = {
-    id: cultivateId,
-    qrcodeUrl: base64,
-    ...self.$refs.viewCultivateAddForm.getFormValues(),
-    delFlag: 0
-}
-
-}
-
-/**
  * 发送添加请求
  */
 const addRequest = logic.addRequest = async function () {
@@ -265,13 +239,26 @@ if(values.urbanArea && values.urbanArea.length>0){
     urbanArea = values.urbanArea[values.urbanArea.length-1]
 }
 console.log("打印当前选择的地区",urbanArea);
+}
+//要存入二维码的id值
+const variableToEncode = "YourVariableValue"; 
+// 使用 variableToEncode 的值生成 QR Code 图片的 base64 编码
+let base64 = await self.$QRCode.toDataURL(variableToEncode, {
+    errorCorrectionLevel: "L",
+    margin: 1,
+    height: 300,
+    width: 300,
+    type: "10",
+    scal: 177
+})
+
 self.addParams = {
     ...values,
     urbanArea:urbanArea,
     status:1
-   
 }
-  behavior();
+
+
   await addRequest();
   if(self.addRequestData.success){
     self.$message.success("添加成功");
@@ -317,7 +304,6 @@ export {
   editRequest,
   editStore,
   searchStore,
-  behavior,
   addRequest,
   addStore,
   downloadTemplate,
