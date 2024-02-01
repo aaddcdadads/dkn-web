@@ -1037,7 +1037,7 @@ export default {
       };
 
       self.getQrCode = async function (url) {
-        const container = document.querySelector(".ele-wrapper-activityFilter");
+        const container = document.querySelector(".ele-wrapper-qrcode");
         console.log("container", container);
         new self.$QrCode(container, {
           text: url,
