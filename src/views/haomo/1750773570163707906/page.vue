@@ -651,11 +651,11 @@ export default {
               options: [
                 {
                   label: "启用",
-                  value: "0",
+                  value: 0,
                 },
                 {
                   label: "禁用",
-                  value: "1",
+                  value: 1,
                 },
               ],
             },
