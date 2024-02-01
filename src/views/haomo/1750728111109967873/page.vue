@@ -502,7 +502,7 @@ export default {
           {
             title: "报名付款时间",
             dataIndex: "paymentTime",
-            width: 220,
+            width: 180,
             key: "paymentTime",
           },
           {
