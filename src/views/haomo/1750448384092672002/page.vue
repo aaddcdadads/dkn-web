@@ -432,6 +432,7 @@
                       ref="urlInput"
                       v-model:value="urlInput.value"
                       title="URL"
+                      :disabled="true"
                       class="ele-urlInput"
                     >
                     </hm-ant-input>
@@ -1036,7 +1037,8 @@ export default {
         self.$message.success("操作成功");
       };
 
-      self.getQrCode = async function (url) {
+      self.getQrCode = async function (id) {
+        let url = `${self.$accessAddress}?activityId=${id}`;
         setTimeout(() => {
           const container = document.querySelector(".ele-wrapper-qrcode");
           console.log("container", container);
