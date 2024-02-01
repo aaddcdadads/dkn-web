@@ -541,7 +541,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       qrcodeModal: {
-        visible: true,
+        visible: false,
       },
       activityEditModal: {
         visible: false,
