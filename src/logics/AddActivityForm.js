@@ -67,7 +67,6 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
   let item = self.$refs.activityForm.getFormValues();
   item.startTime = self.$moment(item.cycle[0]).format("YYYY-MM-DD HH:mm:ss");
   item.endTime = self.$moment(item.cycle[1]).format("YYYY-MM-DD HH:mm:ss");
-  console.log(item);
   delete item.cycle;
 
   let expense = 0;
@@ -90,8 +89,26 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
     self.$message.error("请设置报名页信息框字体颜色");
     return;
   }
-  if (new Date(item.closeTime).getTime() < new Date(item.startTime).getTime()) {
+  let closeTime = new Date(item.closeTime).getTime();
+  let startTime = new Date(item.startTime).getTime();
+  let endTime = new Date(item.endTime).getTime();
+  let pickUpTime = new Date(item.pickUpTime).getTime();
+  if (closeTime < startTime) {
+    self.$message.error("报名截止时间不能小于活动周期的开始时间");
+    return;
   }
+  if (closeTime > endTime) {
+    self.$message.error("报名截止时间不能大于活动周期的结束时间");
+    return;
+  }
+  if (pickUpTime < startTime) {
+    self.$message.error("核销截止时间不能小于报名截止的时间");
+    return;
+  }
+  // if(pickUpTime >startTime){
+  //     self.$message.error("核销截止时间不能小于活动周期的开始时间")
+  //     return
+  // }
   self.item = {
     ...item,
     activityProjects,
