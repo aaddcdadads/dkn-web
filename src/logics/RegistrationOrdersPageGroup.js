@@ -204,7 +204,7 @@ const behaviorOrdersLoadPara = (logic.behaviorOrdersLoadPara = function () {
  * 数据请求
  */
 const ajaxOrdersLoad = (logic.ajaxOrdersLoad = async function () {
-  let res = await self.$getAction(`/api/dkn/viewRegistrationOrders/list`, {
+  let res = await self.$getAction(`/api/dkn/viewRegistrationOrders/listEntry`, {
     ...self.registrationOrdersTable.params,
     ...self.$getFilterValues(
       self.$refs.registrationOrdersFilter.getFormValues(),
