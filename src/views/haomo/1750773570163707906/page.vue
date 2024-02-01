@@ -806,6 +806,7 @@ export default {
   },
   methods: {
     onMounted() {
+      let self = this;
       console.log("this.importButton.visible");
       console.log("this.exportButton.visible");
       console.log("this.crudPagePanel.title");
