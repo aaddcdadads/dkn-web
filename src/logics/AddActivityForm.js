@@ -73,7 +73,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
   activityProjects.forEach((e) => {
     expense += e.expense;
   });
-  if (activityProjects.lenght === 0) {
+  if (activityProjects.length === 0) {
     self.$message.error("请添加至少一个活动项目");
     return;
   }
