@@ -264,6 +264,38 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
   activityProjects.forEach((e) => {
     expense += e.expense;
   });
+  if (activityProjects.lenght === 0) {
+    self.$message.error("请添加至少一个活动项目");
+    return;
+  }
+  if (!self.bgColour) {
+    self.$message.error("请设置报名页背景颜色");
+    return;
+  }
+  if (!self.colour) {
+    self.$message.error("请设置报名页信息框颜色");
+    return;
+  }
+  if (!self.textColour) {
+    self.$message.error("请设置报名页信息框字体颜色");
+    return;
+  }
+  let closeTime = new Date(item.closeTime).getTime();
+  let startTime = new Date(item.startTime).getTime();
+  let endTime = new Date(item.endTime).getTime();
+  let pickUpTime = new Date(item.pickUpTime).getTime();
+  if (closeTime < startTime) {
+    self.$message.error("报名截止时间不能小于活动周期的开始时间");
+    return;
+  }
+  if (closeTime > endTime) {
+    self.$message.error("报名截止时间不能大于活动周期的结束时间");
+    return;
+  }
+  if (pickUpTime < startTime) {
+    self.$message.error("核销截止时间不能小于报名截止的时间");
+    return;
+  }
   self.item = {
     ...item,
     ...self.$refs.activityTwoForm.getFormValues(),
