@@ -410,10 +410,10 @@
           >
             <hm-modal
               title="活动地址"
-              :visible="false"
+              :visible="true"
               :ok-button-boole="false"
               cancel-text="关闭"
-              width="810px"
+              width="510px"
               :z-index="1000"
               height="100%"
             >
@@ -428,6 +428,16 @@
                   box-shadow-color="#00000000"
                   class="ele-b30d54e9-4e74-4c47-b7d3-81f3d36b7f6a"
                 >
+                  <div
+                    class="ele-wrapper ele-wrapper-a9755570-7ff7-48da-9f8c-afc1b468c786"
+                  >
+                    <hm-ant-input
+                      value=""
+                      title="URL"
+                      class="ele-a9755570-7ff7-48da-9f8c-afc1b468c786"
+                    >
+                    </hm-ant-input>
+                  </div>
                 </hm-bg-card>
               </div>
               <div
@@ -441,6 +451,25 @@
                   box-shadow-color="#00000000"
                   class="ele-2ec3a6e9-60d5-49a0-8676-03c8bd1a7eec"
                 >
+                  <div
+                    class="ele-wrapper ele-wrapper-94ca123c-7c72-46ad-8770-3d45ef9f5eb9"
+                  >
+                    <hm-ant-bg-text text="二维码：" font-size="16px">
+                    </hm-ant-bg-text>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-d294e5fa-1558-4b84-a792-91c688bcc07f"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height=""
+                      border-radius=""
+                      padding=""
+                      box-shadow-color="#00000000"
+                      class="ele-d294e5fa-1558-4b84-a792-91c688bcc07f"
+                    >
+                    </hm-bg-card>
+                  </div>
                 </hm-bg-card>
               </div>
             </hm-modal>
@@ -466,6 +495,7 @@ import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
+import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
 import {
@@ -489,6 +519,7 @@ export default {
     HmModal,
     HmAntIconText,
     HmAntBgText,
+    HmAntInput,
     HmAntSwitch,
   },
   data() {
@@ -709,7 +740,7 @@ export default {
         visible: false,
       },
       "34b99b14-08e3-4224-9408-e09dcf54e13d": {
-        visible: false,
+        visible: true,
       },
       activityFilter: {
         config: {
@@ -932,6 +963,9 @@ export default {
         isFlatAction: true,
         backgroundColor: "#FFFFFF",
         rowClassName: {},
+      },
+      "a9755570-7ff7-48da-9f8c-afc1b468c786": {
+        value: "",
       },
     };
   },
@@ -1295,7 +1329,15 @@ export default {
   width: 100%;
 }
 
+.ele-wrapper-a9755570-7ff7-48da-9f8c-afc1b468c786 {
+  width: 100%;
+}
+
 .ele-wrapper-2ec3a6e9-60d5-49a0-8676-03c8bd1a7eec {
+  width: 100%;
+}
+
+.ele-wrapper-d294e5fa-1558-4b84-a792-91c688bcc07f {
   width: 100%;
 }
 
