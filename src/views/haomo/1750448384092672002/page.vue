@@ -433,6 +433,7 @@
                       v-model:value="urlInput.value"
                       title="URL"
                       :disabled="true"
+                      width="100%"
                       class="ele-urlInput"
                     >
                     </hm-ant-input>
@@ -441,7 +442,7 @@
                     class="ele-wrapper ele-wrapper-aea44c0c-2420-4f3f-94f8-b0352515ee1c"
                   >
                     <hm-ant-button
-                      text="批量启用"
+                      text="复制链接"
                       :type="'primary'"
                       class="ele-aea44c0c-2420-4f3f-94f8-b0352515ee1c"
                     >
@@ -540,7 +541,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       qrcodeModal: {
-        visible: false,
+        visible: true,
       },
       activityEditModal: {
         visible: false,
@@ -1343,11 +1344,12 @@ export default {
 }
 
 .ele-wrapper-urlInput {
-  width: 100%;
+  width: 70%;
 }
 
 .ele-wrapper-aea44c0c-2420-4f3f-94f8-b0352515ee1c {
-  margin-right: 8px;
+  margin-left: 8px;
+  margin-top: 10px;
 }
 
 .ele-wrapper-2ec3a6e9-60d5-49a0-8676-03c8bd1a7eec {
