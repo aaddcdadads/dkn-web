@@ -410,7 +410,7 @@
           >
             <hm-modal
               title="活动地址"
-              :visible="true"
+              :visible="false"
               :ok-button-boole="false"
               cancel-text="关闭"
               width="510px"
@@ -740,7 +740,7 @@ export default {
         visible: false,
       },
       "34b99b14-08e3-4224-9408-e09dcf54e13d": {
-        visible: true,
+        visible: false,
       },
       activityFilter: {
         config: {
