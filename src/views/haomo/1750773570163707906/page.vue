@@ -801,7 +801,7 @@ export default {
     };
   },
   watch: {},
-  mounted(e) {
+  async mounted(e) {
     this.onMounted(e);
   },
   methods: {
@@ -823,6 +823,21 @@ export default {
           };
         }
       });
+
+      //表格开关操作
+      self.updateStatus = async function (id, status) {
+        let url = "/api/dkn/activity/edit";
+        let params = {
+          id,
+          status: status ? 0 : 1,
+        };
+        const res = await self.$putAction(url, params);
+        if (!res.success) {
+          self.$message.error(res.message);
+          return;
+        }
+        self.$message.success("操作成功");
+      };
     },
 
     onDownloadTemplateButtonClick() {
