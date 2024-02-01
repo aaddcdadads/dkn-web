@@ -455,16 +455,15 @@
                     <hm-ant-bg-text text="二维码：" font-size="16px">
                     </hm-ant-bg-text>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-d294e5fa-1558-4b84-a792-91c688bcc07f"
-                  >
+                  <div class="ele-wrapper ele-wrapper-qrcode">
                     <hm-bg-card
+                      ref="qrcode"
                       width="100%"
                       height=""
                       border-radius=""
                       padding=""
                       box-shadow-color="#00000000"
-                      class="ele-d294e5fa-1558-4b84-a792-91c688bcc07f"
+                      class="ele-qrcode"
                     >
                     </hm-bg-card>
                   </div>
@@ -1337,7 +1336,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-d294e5fa-1558-4b84-a792-91c688bcc07f {
+.ele-wrapper-qrcode {
   width: 70%;
 }
 
