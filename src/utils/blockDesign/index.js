@@ -11,10 +11,11 @@ import { map, filter, reduce, array2tree } from './flowUtils';
 import { getAction, downloadAction, downloadFile, postAction, deleteAction, putAction } from '/@/request/http';
 import { getToken } from '/@/utils/auth';
 import { getFilterValues } from '/@/utils/util';
-
+import QrCode from 'qrcodejs2-fix';
 import './index.css';
 
 export function registerBlockDesign(app) {
+  app.config.globalProperties.$QrCode = QrCode;
   app.config.globalProperties.$accessAddress = import.meta.env.VITE_ACCESS_ADDRESS;
   app.config.globalProperties.$moment = moment;
   app.config.globalProperties.$axios = axios;
