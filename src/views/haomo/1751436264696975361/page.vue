@@ -1230,12 +1230,20 @@ export default {
             dataIndex: "free",
             title: "是否免费",
             key: "free",
+            customRender: function (data) {
+              let free = data.record.free;
+              return free === 0 ? "是" : "否";
+            },
           },
           {
             dataIndex: "multipleOrder",
             width: 60,
             title: "可多人报名",
             key: "multipleOrder",
+            customRender: function (data) {
+              let multipleOrder = data.record.multipleOrder;
+              return multipleOrder === 0 ? "是" : "否";
+            },
           },
           {
             dataIndex: "name",
