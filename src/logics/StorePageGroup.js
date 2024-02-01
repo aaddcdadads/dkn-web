@@ -252,11 +252,11 @@ console.log("打印当前选择的地区",urbanArea);
 //     scal: 177
 // })
 
-// self.addParams = {
-//     ...values,
-//     urbanArea:urbanArea,
-//     status:1
-// }
+self.addParams = {
+    ...values,
+    urbanArea:urbanArea,
+    status:1
+}
 
 
   await addRequest();
