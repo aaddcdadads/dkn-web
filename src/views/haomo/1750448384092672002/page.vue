@@ -437,6 +437,16 @@
                     >
                     </hm-ant-input>
                   </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-aea44c0c-2420-4f3f-94f8-b0352515ee1c"
+                  >
+                    <hm-ant-button
+                      text="批量启用"
+                      :type="'primary'"
+                      class="ele-aea44c0c-2420-4f3f-94f8-b0352515ee1c"
+                    >
+                    </hm-ant-button>
+                  </div>
                 </hm-bg-card>
               </div>
               <div
@@ -1334,6 +1344,10 @@ export default {
 
 .ele-wrapper-urlInput {
   width: 100%;
+}
+
+.ele-wrapper-aea44c0c-2420-4f3f-94f8-b0352515ee1c {
+  margin-right: 8px;
 }
 
 .ele-wrapper-2ec3a6e9-60d5-49a0-8676-03c8bd1a7eec {
