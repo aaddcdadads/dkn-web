@@ -763,13 +763,6 @@ export default {
             width: 250,
           },
           {
-            title: "活动费用",
-            dataIndex: "expense",
-            key: "expense",
-            fixed: "left",
-            width: 100,
-          },
-          {
             title: "活动周期",
             dataIndex: "startTime",
             key: "startTime",
