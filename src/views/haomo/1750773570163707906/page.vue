@@ -829,7 +829,7 @@ export default {
       // 更新活动状态的函数
       self.updateStatus = async function (id, status) {
         // 定义请求的 API 地址
-        let url = "/api/dkn/activity/edit";
+        let url = "/api/dkn/store/edit";
         // 准备请求参数，包括活动ID和要设置的状态（0 表示启用，1 表示禁用）
         let params = {
           id,
