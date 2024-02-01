@@ -1338,7 +1338,7 @@ export default {
 }
 
 .ele-wrapper-d294e5fa-1558-4b84-a792-91c688bcc07f {
-  width: 100%;
+  width: 70%;
 }
 
 .ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1 {
