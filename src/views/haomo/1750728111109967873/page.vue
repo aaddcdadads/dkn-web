@@ -466,37 +466,37 @@ export default {
           {
             title: "用户ID",
             dataIndex: "code",
-            width: 220,
+            width: 100,
             key: "code",
           },
           {
             title: "手机号",
             dataIndex: "phone",
-            width: 220,
+            width: 120,
             key: "phone",
           },
           {
             title: "姓名/昵称",
             dataIndex: "name",
-            width: 220,
+            width: 120,
             key: "name",
           },
           {
             title: "报名渠道",
             dataIndex: "channel",
-            width: 220,
+            width: 120,
             key: "channel",
           },
           {
             title: "报名项目",
             dataIndex: "acName",
-            width: 220,
+            width: 120,
             key: "acName",
           },
           {
             title: "报名状态",
             dataIndex: "paymentStatusText",
-            width: 220,
+            width: 100,
             key: "paymentStatusText",
           },
           {
@@ -508,7 +508,7 @@ export default {
           {
             title: "核销状态",
             dataIndex: "pickUpStatusText",
-            width: 220,
+            width: 100,
             key: "pickUpStatusText",
           },
           {
