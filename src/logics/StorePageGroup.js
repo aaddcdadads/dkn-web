@@ -195,6 +195,11 @@ const searchStore = (logic.searchStore = async (pageVm, eventData) => {
 
 /********************** addStore 开始 *********************/
 /**
+ * 处理
+ */
+const behavior = (logic.behavior = function () {});
+
+/**
  * 发送添加请求
  */
 const addRequest = (logic.addRequest = async function () {
@@ -224,6 +229,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
     urbanArea: urbanArea,
     status: 1,
   };
+  behavior();
   await addRequest();
   if (self.addRequestData.success) {
     self.$message.success("添加成功");
@@ -270,6 +276,7 @@ export {
   editRequest,
   editStore,
   searchStore,
+  behavior,
   addRequest,
   addStore,
   downloadTemplate,
