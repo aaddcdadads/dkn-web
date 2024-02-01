@@ -427,13 +427,12 @@
                   box-shadow-color="#00000000"
                   class="ele-b30d54e9-4e74-4c47-b7d3-81f3d36b7f6a"
                 >
-                  <div
-                    class="ele-wrapper ele-wrapper-a9755570-7ff7-48da-9f8c-afc1b468c786"
-                  >
+                  <div class="ele-wrapper ele-wrapper-urlInput">
                     <hm-ant-input
-                      value=""
+                      ref="urlInput"
+                      v-model:value="urlInput.value"
                       title="URL"
-                      class="ele-a9755570-7ff7-48da-9f8c-afc1b468c786"
+                      class="ele-urlInput"
                     >
                     </hm-ant-input>
                   </div>
@@ -964,7 +963,7 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "a9755570-7ff7-48da-9f8c-afc1b468c786": {
+      urlInput: {
         value: "",
       },
     };
@@ -1330,7 +1329,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-a9755570-7ff7-48da-9f8c-afc1b468c786 {
+.ele-wrapper-urlInput {
   width: 100%;
 }
 
