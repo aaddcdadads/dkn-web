@@ -925,6 +925,10 @@ export default {
           {
             name: "活动url",
             callback: function (item) {
+              if (item.status != 0) {
+                self.$message.error("当前活动禁用中");
+                return;
+              }
               self.qrcodeModal.visible = true;
               self.getQrCode(item.id);
             },
