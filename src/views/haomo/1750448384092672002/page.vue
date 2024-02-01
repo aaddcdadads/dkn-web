@@ -736,6 +736,9 @@ export default {
         textAlign: "left",
         padding: "0",
       },
+      urlInput: {
+        value: "",
+      },
       activityDetailModal: {
         visible: false,
       },
@@ -962,9 +965,6 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      urlInput: {
-        value: "",
-      },
     };
   },
   watch: {},
@@ -1037,16 +1037,18 @@ export default {
       };
 
       self.getQrCode = async function (url) {
-        const container = document.querySelector(".ele-wrapper-qrcode");
-        console.log("container", container);
-        new self.$QrCode(container, {
-          text: url,
-          width: 128,
-          height: 128,
-          colorDark: "#000000",
-          colorLight: "#ffffff",
+        setTimeout(() => {
+          const container = document.querySelector(".ele-wrapper-qrcode");
+          console.log("container", container);
+          new self.$QrCode(container, {
+            text: url,
+            width: 128,
+            height: 128,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+          });
+          self.urlInput.value = url;
         });
-        // console.log(base64);
       };
     },
 
