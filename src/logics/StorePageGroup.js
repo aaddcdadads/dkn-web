@@ -195,7 +195,7 @@ const searchStore = (logic.searchStore = async (pageVm, eventData) => {
 
 /********************** addStore 开始 *********************/
 /**
- * 处理
+ * 生成base64二维码
  */
 const behavior = (logic.behavior = function () {});
 
