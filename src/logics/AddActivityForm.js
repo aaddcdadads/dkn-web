@@ -101,7 +101,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
     self.$message.error("报名截止时间不能大于活动周期的结束时间");
     return;
   }
-  if (pickUpTime < startTime) {
+  if (pickUpTime < closeTime) {
     self.$message.error("核销截止时间不能小于报名截止的时间");
     return;
   }
