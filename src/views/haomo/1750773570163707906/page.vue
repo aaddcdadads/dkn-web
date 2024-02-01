@@ -728,9 +728,11 @@ export default {
             key: "status",
             customRender: function (data) {
               return h(HmAntSwitch, {
-                checked: false,
+                checked: data.record.status === 0,
                 title: "",
-                onChange: function (e) {},
+                onChange: function (e) {
+                  self.updateStatus(data.record.id, e);
+                },
               });
             },
           },
