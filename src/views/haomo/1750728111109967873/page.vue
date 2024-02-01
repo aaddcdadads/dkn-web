@@ -466,48 +466,56 @@ export default {
           {
             title: "用户ID",
             dataIndex: "code",
+            width: 220,
             key: "code",
           },
           {
             title: "手机号",
             dataIndex: "phone",
+            width: 220,
             key: "phone",
           },
           {
             title: "姓名/昵称",
             dataIndex: "name",
+            width: 220,
             key: "name",
           },
           {
             title: "报名渠道",
             dataIndex: "channel",
+            width: 220,
             key: "channel",
           },
           {
             title: "报名项目",
             dataIndex: "acName",
+            width: 220,
             key: "acName",
           },
           {
             title: "报名状态",
             dataIndex: "paymentStatusText",
+            width: 220,
             key: "paymentStatusText",
           },
           {
             title: "报名付款时间",
             dataIndex: "paymentTime",
+            width: 220,
             key: "paymentTime",
           },
           {
             title: "核销状态",
             dataIndex: "pickUpStatusText",
+            width: 220,
             key: "pickUpStatusText",
           },
           {
             slots: {
               customRender: "action",
             },
-            width: 260,
+            width: 90,
             title: "操作",
             key: "action",
             customRender: function (item) {
