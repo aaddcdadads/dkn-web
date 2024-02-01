@@ -409,7 +409,7 @@
             class="ele-wrapper ele-wrapper-34b99b14-08e3-4224-9408-e09dcf54e13d"
           >
             <hm-modal
-              title="查看详情"
+              title="活动地址"
               :visible="false"
               :ok-button-boole="false"
               cancel-text="关闭"
@@ -417,6 +417,32 @@
               :z-index="1000"
               height="100%"
             >
+              <div
+                class="ele-wrapper ele-wrapper-b30d54e9-4e74-4c47-b7d3-81f3d36b7f6a"
+              >
+                <hm-bg-card
+                  width="100%"
+                  height=""
+                  border-radius=""
+                  padding=""
+                  box-shadow-color="#00000000"
+                  class="ele-b30d54e9-4e74-4c47-b7d3-81f3d36b7f6a"
+                >
+                </hm-bg-card>
+              </div>
+              <div
+                class="ele-wrapper ele-wrapper-2ec3a6e9-60d5-49a0-8676-03c8bd1a7eec"
+              >
+                <hm-bg-card
+                  width="100%"
+                  height=""
+                  border-radius=""
+                  padding=""
+                  box-shadow-color="#00000000"
+                  class="ele-2ec3a6e9-60d5-49a0-8676-03c8bd1a7eec"
+                >
+                </hm-bg-card>
+              </div>
             </hm-modal>
           </div>
         </hm-bg-card>
@@ -1263,6 +1289,14 @@ export default {
   width: 272px;
   display: flex;
   justify-content: center;
+}
+
+.ele-wrapper-b30d54e9-4e74-4c47-b7d3-81f3d36b7f6a {
+  width: 100%;
+}
+
+.ele-wrapper-2ec3a6e9-60d5-49a0-8676-03c8bd1a7eec {
+  width: 100%;
 }
 
 .ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1 {
