@@ -1039,15 +1039,16 @@ export default {
       };
 
       self.getQrCode = async function (url) {
-        let base64 = await self.$QRCode.toDataURL(url, {
-          errorCorrectionLevel: "L",
-          margin: 1,
-          height: 300,
-          width: 300,
-          type: "10",
-          scal: 177,
+        const container = document.querySelector(".ele-wrapper-activityFilter");
+        console.log("container", container);
+        new self.$QrCode(container, {
+          text: url,
+          width: 128,
+          height: 128,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
         });
-        console.log(base64);
+        // console.log(base64);
       };
     },
 
