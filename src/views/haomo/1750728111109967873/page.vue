@@ -576,7 +576,7 @@ export default {
           pageSize: 10,
           showSizeChanger: true,
         },
-        url: "/api/dkn/viewRegistrationOrders/list",
+        url: "/api/dkn/viewRegistrationOrders/listEntry",
         getDataMap: {
           total: "",
           list: "",
