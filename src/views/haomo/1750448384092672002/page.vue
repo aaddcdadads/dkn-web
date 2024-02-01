@@ -670,7 +670,7 @@ export default {
       },
       activityFilter: {
         config: {
-          name: {
+          kyes: {
             type: "Input",
             title: "搜索活动",
             style: {
