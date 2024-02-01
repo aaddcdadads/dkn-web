@@ -444,6 +444,7 @@
                     <hm-ant-button
                       text="复制链接"
                       :type="'primary'"
+                      @click="onEleaea44C0C24204F3F94F8B0352515Ee1CClick"
                       class="ele-aea44c0c-2420-4f3f-94f8-b0352515ee1c"
                     >
                     </hm-ant-button>
@@ -1204,6 +1205,9 @@ export default {
         self.$message.success("操作成功");
       }
       self.$refs.activityTable.getData();
+    },
+    onEleaea44C0C24204F3F94F8B0352515Ee1CClick() {
+      this.copyUrl();
     },
   },
 };
