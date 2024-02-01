@@ -222,6 +222,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   self.addParams = {
     ...values,
     urbanArea: urbanArea,
+    status: 1,
   };
   await addRequest();
   if (self.addRequestData.success) {
