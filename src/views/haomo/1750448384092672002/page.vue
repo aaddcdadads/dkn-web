@@ -689,6 +689,16 @@ export default {
             },
             props: {
               title: "",
+              options: [
+                {
+                  label: "启用",
+                  value: 0,
+                },
+                {
+                  label: "禁用",
+                  value: 1,
+                },
+              ],
             },
             validator: function (value) {},
           },
