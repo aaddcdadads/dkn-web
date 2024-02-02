@@ -90,6 +90,7 @@
                         width="100%"
                         height=""
                         border-radius=""
+                        :text-align="'right'"
                         padding=""
                         box-shadow-color="#00000000"
                         class="ele-b26f83d8-788d-4911-b39c-d6db12ade907"
