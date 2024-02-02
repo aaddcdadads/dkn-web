@@ -195,13 +195,15 @@ const queryAreaRequestSucRegion = logic.queryAreaRequestSucRegion = function() {
   console.log("e=======",self.currentEditItem.urbanArea,self.$refs.storeEditForm.schema.properties);
   console.log("e=======2",self.$refs.storeEditForm.schema.properties.form.properties.name.default);
     console.log("e=======3",self.$refs.storeEditForm.schema.properties.form.properties.address.default);
-   setTimeout(() => {
+  
    self.$nextTick(function () {
+        setTimeout(() => {
        self.$refs.storeEditForm.schema.properties.form.properties.urbanArea.default = self.currentEditItem.urbanArea;
         self.$refs.storeEditForm.schema.properties.form.properties.name.default = self.currentEditItem.name;
          self.$refs.storeEditForm.schema.properties.form.properties.address.default = self.currentEditItem.address;
+    }3000);
   });
-   }3000);
+ 
 }
 
 
