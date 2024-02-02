@@ -822,7 +822,11 @@ export default {
       console.log("this.storeAddForm.config");
       console.log("this.storeEditForm.config");
       console.log("this.storeDetailForm.config");
-      console.log("e=======", self.$refs.storeEditForm.schema.properties);
+      console.log(
+        "e=======",
+        self.$refs.storeEditForm.schema.properties.form.properties.urbanArea
+          .default
+      );
       console.log(
         "e=======2",
         self.$refs.storeEditForm.schema.properties.form.properties.name.default
