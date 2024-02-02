@@ -266,9 +266,17 @@
                     </hm-ant-bg-text>
                   </div>
                   <div
-                    class="ele-wrapper ele-wrapper-216245a7-7953-4399-b2b2-43033411ee88"
+                    class="ele-wrapper ele-wrapper-1d8c5dce-11d9-4c07-bcd0-e9da88d61ded"
                   >
-                    <hm-image width="260" height="260"> </hm-image>
+                    <hm-bg-card
+                      width="100%"
+                      height=""
+                      border-radius=""
+                      padding=""
+                      box-shadow-color="#00000000"
+                      class="ele-1d8c5dce-11d9-4c07-bcd0-e9da88d61ded"
+                    >
+                    </hm-bg-card>
                   </div>
                   <div
                     class="ele-wrapper ele-wrapper-9babf229-dc69-4618-aee1-3b697b5baf99"
@@ -393,7 +401,6 @@ import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
-import HmImage from "/@/components/built-in/jeecg/HmImage.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
@@ -418,7 +425,6 @@ export default {
     HmAntTable,
     HmModal,
     HmAntBgText,
-    HmImage,
     HmAntIconText,
     HmAntSwitch,
   },
@@ -432,7 +438,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       storeDetailModal: {
-        visible: false,
+        visible: true,
       },
       storeDetailForm: {
         config: {
@@ -988,6 +994,10 @@ export default {
 
 .ele-wrapper-6a427e0a-e088-4f10-8f90-062dff49940b {
   float: left;
+}
+
+.ele-wrapper-1d8c5dce-11d9-4c07-bcd0-e9da88d61ded {
+  width: 70%;
 }
 
 .ele-wrapper-9babf229-dc69-4618-aee1-3b697b5baf99 {
