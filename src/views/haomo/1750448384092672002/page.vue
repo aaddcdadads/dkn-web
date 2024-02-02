@@ -1079,6 +1079,7 @@ export default {
           return;
         }
         self.$message.success("操作成功");
+        self.$refs.activityTable.getData();
       };
 
       self.getQrCode = async function (id) {
