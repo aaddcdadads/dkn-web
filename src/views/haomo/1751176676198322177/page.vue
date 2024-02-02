@@ -725,11 +725,12 @@
                 class="ele-wrapper ele-wrapper-b0a42962-4301-4b4d-9525-05bfef232b34"
               >
                 <hm-ant-button
-                  :ghost="true"
-                  :size="'large'"
-                  icon="fa fa-repeat"
                   text="重置"
                   :type="'primary'"
+                  :size="'large'"
+                  :ghost="true"
+                  icon="fa fa-repeat"
+                  @click="onEleb0A4296243014B4D952505Bfef232B34Click"
                   class="ele-b0a42962-4301-4b4d-9525-05bfef232b34"
                 >
                 </hm-ant-button>
@@ -1263,6 +1264,58 @@ export default {
       },
       activityImgTableOneItem: {},
       imgItem: {},
+      activityExtTwoForm: {
+        value: {},
+        config: {
+          activityType: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动类型",
+            required: false,
+            props: {
+              placeholder: "例子：跑步",
+            },
+          },
+          requirements: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动需求",
+            required: false,
+            props: {
+              placeholder: "例子：2km/5km/10km",
+            },
+          },
+        },
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
+      },
+      customerService: {
+        value: "",
+      },
       activityProjectTable: {
         columns: [
           {
@@ -1381,9 +1434,6 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      customerService: {
-        value: "",
-      },
       activityImgTableTwo: {
         columns: [
           {
@@ -1471,55 +1521,6 @@ export default {
         ],
         isFlatAction: true,
         rowClassName: {},
-      },
-      activityExtTwoForm: {
-        config: {
-          activityType: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动类型",
-            required: false,
-            props: {
-              placeholder: "例子：跑步",
-            },
-          },
-          requirements: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动需求",
-            required: false,
-            props: {
-              placeholder: "例子：2km/5km/10km",
-            },
-          },
-        },
-        value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
       },
       activityImgTableOne: {
         columns: [
@@ -1735,6 +1736,18 @@ export default {
         }
         return `/api/sys/common/static/${url}`;
       };
+
+      self.reset = function () {
+        self.activityForm.value = {};
+        self.activityExtTwoForm.value = {};
+        self.$refs.activityProjectTable.cData = [];
+        self.$refs.activityImgTableTwo.cData = [];
+        self.$refs.activityImgTableOne.cData = [];
+        self.$refs.sharingImageTable.cData = [{}];
+        self.activityRules.value = "";
+        self.agreementCommitmentletter.value = "";
+        self.customerService.value = "";
+      };
     },
 
     onAddBtn1Click() {
@@ -1910,6 +1923,9 @@ export default {
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
       addActivty(this, arguments);
+    },
+    onEleb0A4296243014B4D952505Bfef232B34Click() {
+      this.reset();
     },
   },
 };
