@@ -437,6 +437,7 @@
                       title="URL"
                       :disabled="true"
                       width="100%"
+                      :label-width="60"
                       class="ele-urlInput"
                     >
                     </hm-ant-input>
@@ -468,7 +469,11 @@
                   <div
                     class="ele-wrapper ele-wrapper-94ca123c-7c72-46ad-8770-3d45ef9f5eb9"
                   >
-                    <hm-ant-bg-text text="二维码：" font-size="16px">
+                    <hm-ant-bg-text
+                      text="二维码："
+                      font-size="16px"
+                      class="ele-94ca123c-7c72-46ad-8770-3d45ef9f5eb9"
+                    >
                     </hm-ant-bg-text>
                   </div>
                   <div class="ele-wrapper ele-wrapper-qrcode">
@@ -545,7 +550,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       qrcodeModal: {
-        visible: false,
+        visible: true,
       },
       activityEditModal: {
         visible: false,
@@ -1413,15 +1418,19 @@ export default {
 
 .ele-wrapper-urlInput {
   width: 70%;
+  float: left;
 }
 
 .ele-wrapper-aea44c0c-2420-4f3f-94f8-b0352515ee1c {
   margin-left: 8px;
-  margin-top: 10px;
 }
 
 .ele-wrapper-2ec3a6e9-60d5-49a0-8676-03c8bd1a7eec {
   width: 100%;
+}
+
+.ele-wrapper-94ca123c-7c72-46ad-8770-3d45ef9f5eb9 {
+  float: left;
 }
 
 .ele-wrapper-qrcode {
