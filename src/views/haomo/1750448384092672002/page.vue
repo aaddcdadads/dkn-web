@@ -872,6 +872,15 @@ export default {
             dataIndex: "startTime",
             key: "startTime",
             width: 220,
+            customRender: function (data) {
+              let startTime = self
+                .$moment(data.record.startTime)
+                .format("YYYY-MM-DD");
+              let endTime = self
+                .$moment(data.record.endTime)
+                .format("YYYY-MM-DD");
+              return `${startTime}-${endTime}`;
+            },
           },
           {
             title: "活动报名截止时间",
