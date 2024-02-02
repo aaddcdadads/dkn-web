@@ -761,11 +761,12 @@
                 class="ele-wrapper ele-wrapper-902e40e8-285f-4e3c-943d-eeafce2cbf7b"
               >
                 <hm-ant-button
-                  :ghost="true"
-                  :size="'large'"
-                  icon="fa fa-repeat"
                   text="重置"
                   :type="'primary'"
+                  :size="'large'"
+                  :ghost="true"
+                  icon="fa fa-repeat"
+                  @click="onEle902E40E8285F4E3C943DEeafce2Cbf7BClick"
                   class="ele-902e40e8-285f-4e3c-943d-eeafce2cbf7b"
                 >
                 </hm-ant-button>
@@ -2118,6 +2119,9 @@ export default {
     },
     onElebe6A0959060D427795902D5Ddd2Ab12EClick() {
       saveOrUpdate(this, arguments);
+    },
+    onEle902E40E8285F4E3C943DEeafce2Cbf7BClick() {
+      this.reset();
     },
   },
 };
