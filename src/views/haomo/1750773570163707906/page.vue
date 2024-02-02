@@ -58,10 +58,9 @@
                 >
                 </hm-ant-button>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-5d86c967-13ff-4143-a211-0ed474bc4272"
-              >
-                <hm-ant-button> </hm-ant-button>
+              <div class="ele-wrapper ele-wrapper-areaButton">
+                <hm-ant-button ref="areaButton" @click="onAreaButtonClick">
+                </hm-ant-button>
               </div>
               <div class="ele-wrapper ele-wrapper-cityButton">
                 <hm-ant-button
@@ -418,6 +417,7 @@ import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 import {
   downloadTemplate,
   exportStore,
+  loadAreaDataRegion,
   loadAreaData,
   searchStore,
   addStore,
@@ -868,6 +868,9 @@ export default {
     },
     onExportButtonClick() {
       exportStore(this, arguments);
+    },
+    onAreaButtonClick() {
+      loadAreaDataRegion(this, arguments);
     },
     onCityButtonClick() {
       loadAreaData(this, arguments);
