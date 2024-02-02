@@ -102,6 +102,7 @@
                             :type="bathqiyong.type"
                             :disabled="bathqiyong.disabled"
                             :icon="bathqiyong.icon"
+                            @click="onBathqiyongClick"
                             class="ele-bathqiyong"
                           >
                           </hm-ant-button>
@@ -445,7 +446,11 @@
               @cancel="onBatchEditCancel"
             >
               <div class="ele-wrapper ele-wrapper-prompt">
-                <hm-ant-bg-text ref="prompt" class="ele-prompt">
+                <hm-ant-bg-text
+                  ref="prompt"
+                  :text="prompt.text"
+                  class="ele-prompt"
+                >
                 </hm-ant-bg-text>
               </div>
             </hm-modal>
@@ -602,10 +607,16 @@ export default {
       storeDeleteModal: {
         visible: false,
       },
+      selectedRows: {},
+      batchEdit: {
+        visible: false,
+      },
+      prompt: {
+        text: "文字",
+      },
       storeAddModal: {
         visible: false,
       },
-      selectedRows: {},
       bathqiyong: {
         disabled: false,
         text: "批量启用",
@@ -625,9 +636,6 @@ export default {
         icon: "fa fa-trash",
       },
       qrcodeModal: {},
-      batchEdit: {
-        visible: false,
-      },
       importButton: {},
       exportButton: {
         visible: false,
@@ -978,6 +986,17 @@ export default {
     },
     onCityButtonClick() {
       loadAreaData(this, arguments);
+    },
+    onBathqiyongClick() {
+      if (!this.selectedRows || this.selectedRows.length === 0) {
+        this.$message.error("请先勾选");
+        return;
+      }
+      this.$nextTick(() => {
+        this.batchEdit.visible = true;
+        this.allStatus = 1;
+        this.prompt.text = "确认批量启用";
+      });
     },
     onElef087F9B5C00641C6Aea1A22F650Dcce6Click() {
       this.storeAddModal.visible = true;
