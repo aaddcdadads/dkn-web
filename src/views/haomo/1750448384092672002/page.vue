@@ -879,7 +879,7 @@ export default {
               let endTime = self
                 .$moment(data.record.endTime)
                 .format("YYYY-MM-DD");
-              return `${startTime}-${endTime}`;
+              return `${startTime}--${endTime}`;
             },
           },
           {
