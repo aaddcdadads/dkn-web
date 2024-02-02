@@ -1029,9 +1029,9 @@ export default {
       self.allModal.title = null;
       self.allText.text = null;
       self.selectedRows = [];
-      self.bathqiyong.disabled = false;
-      self.batchBisabled.disabled = false;
-      self.batchDelete.disabled = false;
+      self.bathqiyong.disabled = true;
+      self.batchBisabled.disabled = true;
+      self.batchDelete.disabled = true;
       self.copyUrl = function () {
         let url = self.urlInput.value;
         if (!navigator.clipboard) {
