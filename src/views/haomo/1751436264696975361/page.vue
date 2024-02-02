@@ -1871,6 +1871,8 @@ export default {
       //处理图片
       if (item.imgPath?.file?.response?.message) {
         item.imgPath = item.imgPath?.file?.response?.message;
+      } else {
+        item.imgPath = self.activityProjectItem.imgPath;
       }
       if (self.activityProjectTableStatus === 1) {
         item.index = Math.floor(Math.random() * 10000);
@@ -1974,6 +1976,8 @@ export default {
       let item = self.$refs.addActivityImgFormTwo.getFormValues();
       if (item.imgPath?.file?.response?.message) {
         item.path = item.imgPath?.file?.response?.message;
+      } else {
+        item.path = self.activityImgTableTwoItem.path;
       }
       delete item.imgPath;
       if (self.activityImgTableTwoStatus === 1) {
@@ -2024,6 +2028,8 @@ export default {
       //处理图片
       if (item.imgPath?.file?.response?.message) {
         item.path = item.imgPath?.file?.response?.message;
+      } else {
+        item.path = self.activityImgTableOneItem.path;
       }
       delete item.imgPath;
       item.imgSize = "375 * 667";
@@ -2081,6 +2087,8 @@ export default {
       //处理图片
       if (item.imgPath?.file?.response?.message) {
         item.path = item.imgPath?.file?.response?.message;
+      } else {
+        item.path = self.imgItem.path;
       }
       delete item.imgPath;
       item.imgSize = "375 * 667";
