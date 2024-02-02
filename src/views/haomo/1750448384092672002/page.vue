@@ -1115,10 +1115,10 @@ export default {
             jy.push(e);
           }
         });
-        if (qd.length === 0) {
+        if (qd.length !== 0) {
           self.bathqiyong.disabled = true;
         }
-        if (jy.length === 0) {
+        if (jy.length !== 0) {
           self.batchBisabled.disabled = true;
         }
       };
