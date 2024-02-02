@@ -97,17 +97,32 @@
                         <div
                           class="ele-wrapper ele-wrapper-bb77bb53-c344-465d-a179-82da0a29bbbd"
                         >
-                          <hm-ant-button> </hm-ant-button>
+                          <hm-ant-button
+                            text="批量启用"
+                            :type="'primary'"
+                            class="ele-bb77bb53-c344-465d-a179-82da0a29bbbd"
+                          >
+                          </hm-ant-button>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-2c4f5e1c-d67b-4d6a-b8ce-d922969fea6f"
                         >
-                          <hm-ant-button> </hm-ant-button>
+                          <hm-ant-button
+                            text="批量禁用"
+                            :type="'primary'"
+                            class="ele-2c4f5e1c-d67b-4d6a-b8ce-d922969fea6f"
+                          >
+                          </hm-ant-button>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-2b9d32f2-3e60-4fc2-b57d-71763009cfee"
                         >
-                          <hm-ant-button> </hm-ant-button>
+                          <hm-ant-button
+                            text="批量删除"
+                            :type="'primary'"
+                            class="ele-2b9d32f2-3e60-4fc2-b57d-71763009cfee"
+                          >
+                          </hm-ant-button>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-f087f9b5-c006-41c6-aea1-a22f650dcce6"
@@ -992,7 +1007,19 @@ export default {
 }
 
 .ele-wrapper-b26f83d8-788d-4911-b39c-d6db12ade907 {
-  width: 700px;
+  width: 800px;
+}
+
+.ele-wrapper-bb77bb53-c344-465d-a179-82da0a29bbbd {
+  margin-right: 8px;
+}
+
+.ele-wrapper-2c4f5e1c-d67b-4d6a-b8ce-d922969fea6f {
+  margin-right: 8px;
+}
+
+.ele-wrapper-2b9d32f2-3e60-4fc2-b57d-71763009cfee {
+  margin-right: 8px;
 }
 
 .ele-wrapper-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5 {
