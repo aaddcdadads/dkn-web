@@ -204,6 +204,7 @@
                               :row-class-name="
                                 activityProjectTable.rowClassName
                               "
+                              class="ele-activityProjectTable"
                             >
                             </hm-ant-table>
                           </div>
@@ -1990,6 +1991,12 @@ export default {
 
 .ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f {
   width: 100%;
+}
+
+.ele-wrapper-activityProjectTable {
+  /deep/ th:nth-child(8) > span {
+    padding-left: 0px !important;
+  }
 }
 
 .ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6 {
