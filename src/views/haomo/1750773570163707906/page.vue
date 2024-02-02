@@ -114,6 +114,7 @@
                             :type="batchBisabled.type"
                             :disabled="batchBisabled.disabled"
                             :icon="batchBisabled.icon"
+                            @click="onBatchBisabledClick"
                             class="ele-batchBisabled"
                           >
                           </hm-ant-button>
@@ -996,6 +997,17 @@ export default {
         this.batchEdit.visible = true;
         this.allStatus = 1;
         this.prompt.text = "确认批量启用";
+      });
+    },
+    onBatchBisabledClick() {
+      if (!this.selectedRows || this.selectedRows.length === 0) {
+        this.$message.error("请选择活动");
+        return;
+      }
+      this.$nextTick(() => {
+        this.batchEdit.visible = true;
+        this.allStatus = 2;
+        this.prompt.text = "确认批量禁用";
       });
     },
     onElef087F9B5C00641C6Aea1A22F650Dcce6Click() {
