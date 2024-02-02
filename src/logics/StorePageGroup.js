@@ -150,9 +150,9 @@ const regionParamHandler = (logic.regionParamHandler = function () {
 /**
  * 查询地区
  */
-const queryAreaRequest = (logic.queryAreaRequest = async function () {
+const queryAreaRequestRegionEcho = (logic.queryAreaRequestRegionEcho = async function () {
   let res = await self.$getAction(`/api/web/area/getCascader`);
-  self.queryAreaRequestData = res;
+  self.queryAreaRequestRegionEchoData = res;
 });
 
 /**
@@ -205,7 +205,7 @@ const loadAreaDataRegion = (logic.loadAreaDataRegion = async (
   self.loadAreaDataRegionData = eventData;
 
   regionParamHandler();
-  await queryAreaRequest();
+  await queryAreaRequestRegionEcho();
   if (self.queryAreaRequestData.success) {
     queryAreaRequestSuc();
   } else {
@@ -364,7 +364,7 @@ export {
   queryAreaRequestSuc,
   loadAreaData,
   regionParamHandler,
-  queryAreaRequest,
+  queryAreaRequestRegionEcho,
   queryAreaRequestFail,
   queryAreaRequestSuc,
   loadAreaDataRegion,
