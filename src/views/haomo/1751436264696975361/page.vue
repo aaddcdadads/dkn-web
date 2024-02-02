@@ -1147,203 +1147,6 @@ export default {
       textColourKit: {
         color: "#59c7f9",
       },
-      activityForm: {
-        value: {
-          status: 0,
-        },
-        config: {
-          name: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动名称",
-            required: true,
-            props: {},
-          },
-          cycle: {
-            style: {
-              width: "100%",
-            },
-            type: "RangePicker",
-            title: "活动周期",
-            required: true,
-            props: {},
-          },
-          closeTime: {
-            style: {
-              width: "100%",
-            },
-            type: "DatePicker",
-            title: "报名截止",
-            required: true,
-            props: {
-              showTime: true,
-            },
-          },
-          pickUpTime: {
-            style: {
-              width: "100%",
-            },
-            type: "DatePicker",
-            title: "核销截止",
-            required: true,
-            props: {
-              showTime: true,
-            },
-          },
-          status: {
-            default: 0,
-            style: {
-              width: "100%",
-            },
-            type: "RadioGroup",
-            title: "活动状态",
-            required: true,
-            props: {
-              options: [
-                {
-                  label: "启用",
-                  value: 0,
-                },
-                {
-                  label: "禁用",
-                  value: 1,
-                },
-              ],
-            },
-          },
-        },
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-      },
-      activityExtTwoForm: {
-        value: {},
-        config: {
-          activityType: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动类型",
-            required: false,
-            props: {
-              placeholder: "例子：跑步",
-            },
-          },
-          requirements: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动需求",
-            required: false,
-            props: {
-              placeholder: "例子：2km/5km/10km",
-            },
-          },
-        },
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-      },
-      activityTwoForm: {
-        value: {
-          unrealStatus: 1,
-        },
-        config: {
-          unrealStatus: {
-            style: {
-              width: "100%",
-            },
-            type: "RadioGroup",
-            title: "虚拟人数",
-            required: true,
-            props: {
-              options: [
-                {
-                  label: "启用",
-                  value: 0,
-                },
-                {
-                  label: "禁用",
-                  value: 1,
-                },
-              ],
-            },
-          },
-          unrealCount: {
-            style: {
-              width: "100%",
-            },
-            type: "InputNumber",
-            title: "活动人数",
-            required: true,
-            props: {},
-          },
-        },
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-      },
       activityRules: {
         value: "",
         toolbarConfig: {
@@ -1458,6 +1261,96 @@ export default {
       },
       customerService: {
         value: "",
+      },
+      activityForm: {
+        config: {
+          name: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动名称",
+            required: true,
+            props: {},
+          },
+          cycle: {
+            style: {
+              width: "100%",
+            },
+            type: "RangePicker",
+            title: "活动周期",
+            required: true,
+            props: {},
+          },
+          closeTime: {
+            style: {
+              width: "100%",
+            },
+            type: "DatePicker",
+            title: "报名截止",
+            required: true,
+            props: {
+              showTime: true,
+            },
+          },
+          pickUpTime: {
+            style: {
+              width: "100%",
+            },
+            type: "DatePicker",
+            title: "核销截止",
+            required: true,
+            props: {
+              showTime: true,
+            },
+          },
+          status: {
+            default: 0,
+            style: {
+              width: "100%",
+            },
+            type: "RadioGroup",
+            title: "活动状态",
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "启用",
+                  value: 0,
+                },
+                {
+                  label: "禁用",
+                  value: 1,
+                },
+              ],
+            },
+          },
+        },
+        value: {
+          status: 0,
+        },
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityProjectTable: {
         columns: [
@@ -1665,6 +1558,55 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
+      activityExtTwoForm: {
+        config: {
+          activityType: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动类型",
+            required: false,
+            props: {
+              placeholder: "例子：跑步",
+            },
+          },
+          requirements: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动需求",
+            required: false,
+            props: {
+              placeholder: "例子：2km/5km/10km",
+            },
+          },
+        },
+        value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
+      },
       activityImgTableOne: {
         columns: [
           {
@@ -1752,6 +1694,64 @@ export default {
         ],
         isFlatAction: true,
         rowClassName: {},
+      },
+      activityTwoForm: {
+        config: {
+          unrealStatus: {
+            style: {
+              width: "100%",
+            },
+            type: "RadioGroup",
+            title: "虚拟人数",
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "启用",
+                  value: 0,
+                },
+                {
+                  label: "禁用",
+                  value: 1,
+                },
+              ],
+            },
+          },
+          unrealCount: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "活动人数",
+            required: true,
+            props: {},
+          },
+        },
+        value: {
+          unrealStatus: 1,
+        },
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       sharingImageTable: {
         columns: [
@@ -1860,9 +1860,9 @@ export default {
         return `/api/sys/common/static/${url}`;
       };
       self.reset = function () {
-        self.activityForm.value = {};
-        self.activityExtTwoForm.value = {};
-        self.activityTwoForm.value = {};
+        self.$refs.activityForm.reset();
+        self.$refs.activityExtTwoForm.reset();
+        self.$refs.activityTwoForm.reset();
         self.$refs.activityProjectTable.cData = [];
         self.$refs.activityImgTableTwo.cData = [];
         self.$refs.activityImgTableOne.cData = [];
