@@ -768,14 +768,16 @@ export default {
           {
             name: "编辑",
             callback: function (item) {
-              self.storeEditModal.visible = true;
-              self.currentStoreId = item.id;
-              self.currentEditItem = item;
-              console.log("地区", self.currentEditItem.urbanArea);
-              self.$nextTick(function () {
-                self.storeEditForm.value = item;
-                self.onAreaButtonClick();
-              });
+              setTimeout(() => {
+                self.storeEditModal.visible = true;
+                self.currentStoreId = item.id;
+                self.currentEditItem = item;
+                console.log("地区", self.currentEditItem.urbanArea);
+                self.$nextTick(function () {
+                  self.storeEditForm.value = item;
+                  self.onAreaButtonClick();
+                });
+              }, 500);
             },
             type: "link",
           },
