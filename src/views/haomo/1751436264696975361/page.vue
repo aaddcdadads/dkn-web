@@ -203,6 +203,7 @@
                               :row-class-name="
                                 activityProjectTable.rowClassName
                               "
+                              class="ele-activityProjectTable"
                             >
                             </hm-ant-table>
                           </div>
@@ -288,6 +289,7 @@
                                   :row-class-name="
                                     activityImgTableTwo.rowClassName
                                   "
+                                  class="ele-activityImgTableTwo"
                                 >
                                 </hm-ant-table>
                               </div>
@@ -520,6 +522,7 @@
                           :actions="activityImgTableOne.actions"
                           :is-flat-action="activityImgTableOne.isFlatAction"
                           :row-class-name="activityImgTableOne.rowClassName"
+                          class="ele-activityImgTableOne"
                         >
                         </hm-ant-table>
                       </div>
@@ -2182,6 +2185,12 @@ export default {
   width: 100%;
 }
 
+.ele-wrapper-activityProjectTable {
+  /deep/ th:nth-child(8) > span {
+    padding-left: 0px !important;
+  }
+}
+
 .ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6 {
   border-left: 4px solid #0079fe;
   margin-top: 15px;
@@ -2204,6 +2213,12 @@ export default {
 
 .ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c {
   width: 100%;
+}
+
+.ele-wrapper-activityImgTableTwo {
+  /deep/ th:nth-child(4) > span {
+    padding-left: 0px !important;
+  }
 }
 
 .ele-wrapper-b20c5e06-5a57-4774-a563-47501fbdd9f4 {
@@ -2311,6 +2326,12 @@ export default {
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
   width: 100%;
+}
+
+.ele-wrapper-activityImgTableOne {
+  /deep/ th:nth-child(4) > span {
+    padding-left: 0px !important;
+  }
 }
 
 .ele-wrapper-c4dd580f-87df-48fe-8cd9-1eff76bb10e3 {
