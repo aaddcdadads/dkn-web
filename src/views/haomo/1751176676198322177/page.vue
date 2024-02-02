@@ -94,11 +94,11 @@
                     class="ele-wrapper ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180"
                   >
                     <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
                       width="100%"
                       height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
                       class="ele-824a7f59-7158-4b84-a954-01cbeb3c4180"
                     >
                       <div
@@ -1747,6 +1747,8 @@ export default {
       //处理图片
       if (item.imgPath?.file?.response?.message) {
         item.imgPath = item.imgPath?.file?.response?.message;
+      } else {
+        item.imgPath = self.activityProjectItem.imgPath;
       }
       if (self.activityProjectTableStatus === 1) {
         item.index = Math.floor(Math.random() * 10000);
