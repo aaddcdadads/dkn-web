@@ -508,11 +508,11 @@
                     class="ele-wrapper ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2"
                   >
                     <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
                       width="100%"
                       height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
                       class="ele-89ea97da-357c-4295-9803-b1d0b63db0a2"
                     >
                       <div class="ele-wrapper ele-wrapper-activityImgTableOne">
@@ -1847,6 +1847,8 @@ export default {
       //处理图片
       if (item.imgPath?.file?.response?.message) {
         item.path = item.imgPath?.file?.response?.message;
+      } else {
+        item.path = self.activityImgTableOneItem.path;
       }
       delete item.imgPath;
       item.imgSize = "375 * 667";
