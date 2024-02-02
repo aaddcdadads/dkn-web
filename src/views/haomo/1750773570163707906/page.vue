@@ -627,6 +627,7 @@ export default {
           },
         },
       },
+      urlInput: {},
       storeFilter: {
         config: {
           name: {
@@ -847,6 +848,22 @@ export default {
         }
         // 如果响应成功，显示操作成功的消息
         self.$message.success("操作成功");
+      };
+      //生成二维码
+      self.getQrCode = async function (id) {
+        let url = `${self.$accessAddress}?activityId=${id}`;
+        setTimeout(() => {
+          const container = document.querySelector(".ele-wrapper-qrcode");
+          console.log("container", container);
+          new self.$QrCode(container, {
+            text: url,
+            width: 128,
+            height: 128,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+          });
+          self.urlInput.value = url;
+        });
       };
     },
 
