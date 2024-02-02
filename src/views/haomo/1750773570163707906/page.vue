@@ -1087,7 +1087,7 @@ export default {
     async onBatchEditOk() {
       let self = this;
       if (self.allStatus === 1 || self.allStatus === 2) {
-        let url = "/api/dkn/activity/editBatch";
+        let url = "/api/dkn/store/editBatch";
         let params = self.selectedRows.map((e) => {
           return {
             id: e.id,
@@ -1101,7 +1101,7 @@ export default {
         }
         self.$message.success("操作成功");
       } else if (self.allStatus === 3) {
-        let url = "/api/dkn/activity/deleteBatch";
+        let url = "/api/dkn/store/editBatch";
         let params = self.selectedRows.map((e) => {
           return e.id;
         });
