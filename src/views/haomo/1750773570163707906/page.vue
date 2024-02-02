@@ -1085,8 +1085,12 @@ export default {
       deleteStore(this, arguments);
     },
     async onBatchEditOk() {
+      // 获取当前组件实例
       let self = this;
+
+      // 根据不同的状态执行不同的操作
       if (self.allStatus === 1 || self.allStatus === 2) {
+        // 批量编辑操作
         let url = "/api/dkn/store/editBatch";
         let params = self.selectedRows.map((e) => {
           return {
@@ -1094,30 +1098,39 @@ export default {
             status: self.allStatus === 1 ? 0 : 1,
           };
         });
+        // 发送 PUT 请求，等待响应
         const res = await self.$putAction(url, params);
         if (!res.success) {
+          // 如果请求不成功，显示错误消息并退出函数
           self.$message.error(res.message);
           return;
         }
+        // 操作成功的提示
         self.$message.success("操作成功");
       } else if (self.allStatus === 3) {
+        // 批量删除操作
         let url = "/api/dkn/store/deleteBatch";
         let params = self.selectedRows.map((e) => {
           return e.id;
         });
+        // 发送 DELETE 请求，等待响应
         const res = await self.$deleteAction(url, {
           ids: params.join(","),
         });
         if (!res.success) {
+          // 如果请求不成功，显示错误消息并退出函数
           self.$message.error(res.message);
           return;
         }
+        // 操作成功后的处理
         self.selectedRows = [];
         self.bathqiyong.disabled = true;
         self.batchBisabled.disabled = true;
         self.batchDelete.disabled = true;
         self.$message.success("操作成功");
       }
+
+      // 刷新表格数据
       self.$refs.storeTable.getData();
     },
     onBatchEditCancel() {
