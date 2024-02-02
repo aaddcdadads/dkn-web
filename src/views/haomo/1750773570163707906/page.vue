@@ -429,6 +429,17 @@
               </div>
             </hm-modal>
           </div>
+          <div class="ele-wrapper ele-wrapper-batchEdit">
+            <hm-modal
+              ref="batchEdit"
+              title="批量操作"
+              v-model:visible="batchEdit.visible"
+              width="320px"
+              :z-index="1000"
+              height=""
+            >
+            </hm-modal>
+          </div>
         </hm-bg-card>
       </div>
       <div class="ele-wrapper ele-wrapper-ca97e822-f663-4433-9bc3-763a5a8b2fd1">
@@ -665,6 +676,9 @@ export default {
       storeDetailForm: {},
       storeNameText: {
         text: "",
+      },
+      batchEdit: {
+        visible: false,
       },
       storeFilter: {
         config: {
