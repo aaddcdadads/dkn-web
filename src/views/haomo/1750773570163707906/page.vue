@@ -1035,7 +1035,7 @@ export default {
       this.$nextTick(() => {
         // 设置批量编辑对话框的可见性为true
         this.batchEdit.visible = true;
-        // 设置操作状态为3，这可能是一个标识，表示批量删除
+        //1:启用，2:禁用，3:删除
         this.allStatus = 3;
         // 设置提示文本
         this.prompt.text = "确认批量删除";
