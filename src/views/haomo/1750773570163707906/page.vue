@@ -288,6 +288,7 @@
                       box-shadow-h-shadow=""
                       box-shadow-v-shadow=""
                       box-shadow-blur=""
+                      box-shadow-spread=""
                       class="ele-484bf8ce-7d76-4bf5-bd8b-b64d3ed4b395"
                     >
                     </hm-bg-card>
