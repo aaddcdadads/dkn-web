@@ -881,7 +881,7 @@ export default {
     onStoreEditModalCancel() {
       this.storeEditModal.visible = false;
     },
-    onDaochuButtonClick() {
+    async onDaochuButtonClick() {
       //使用a标签下载二维码
       const downloadLink = document.createElement("a");
       downloadLink.href = self.baseUrl;
