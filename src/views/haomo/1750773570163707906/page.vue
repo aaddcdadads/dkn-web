@@ -773,7 +773,7 @@ export default {
             name: "门店核销码",
             callback: function (item) {
               self.storeDetailModal.visible = true;
-              self.getQrCode(item.id);
+              self.getQrCode(item.id, item.name);
             },
             type: "link",
           },
@@ -854,12 +854,12 @@ export default {
       };
       //生成二维码
       self.getQrCode = async function (id) {
-        let url = `${self.$accessAddress}?activityId=${id}`;
+        let variableToEncode = `${id}`;
         setTimeout(() => {
           const container = document.querySelector(".ele-wrapper-qrcode");
           console.log("container", container);
           new self.$QrCode(container, {
-            text: url,
+            text: variableToEncode,
             width: 128,
             height: 128,
             colorDark: "#000000",
