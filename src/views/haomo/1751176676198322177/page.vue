@@ -1999,6 +1999,9 @@ export default {
   /deep/ th:nth-child(8) > span {
     padding-left: 0px !important;
   }
+  /deep/.ant-table-tbody > tr > td:nth-child(8) {
+    padding-left: 0px !important;
+  }
 }
 
 .ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6 {
@@ -2027,6 +2030,9 @@ export default {
 
 .ele-wrapper-activityImgTableTwo {
   /deep/ th:nth-child(4) > span {
+    padding-left: 0px !important;
+  }
+  /deep/.ant-table-tbody > tr > td:nth-child(4) {
     padding-left: 0px !important;
   }
 }
@@ -2139,6 +2145,9 @@ export default {
 
 .ele-wrapper-activityImgTableOne {
   /deep/ th:nth-child(4) > span {
+    padding-left: 0px !important;
+  }
+  /deep/.ant-table-tbody > tr > td:nth-child(4) {
     padding-left: 0px !important;
   }
 }
