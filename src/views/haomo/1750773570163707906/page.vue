@@ -843,12 +843,12 @@ export default {
           });
           //门店名称
           self.storeNameText.text = titele;
-          // 获取生成的二维码图片的链接
-          const qrCodeImage = container.querySelector("img");
-          const qrCodeImageUrl = qrCodeImage.src;
+          // 获取生成的二维码的 base64 编码
+          const canvas = container.querySelector("canvas");
+          const qrCodeBase64 = canvas.toDataURL("image/png");
 
-          // 打印二维码图片的链接
-          console.log("QR Code Image URL:", qrCodeImageUrl);
+          // 打印二维码的 base64 编码
+          console.log("QR Code Base64:", qrCodeBase64);
         });
       };
     },
