@@ -771,8 +771,8 @@ export default {
               self.currentStoreId = item.id;
               self.$nextTick(function () {
                 self.storeEditForm.value = item;
+                self.onAreaButtonClick();
               });
-              self.onAreaButtonClick();
             },
             type: "link",
           },
