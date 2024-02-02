@@ -133,18 +133,73 @@ const loadAreaData = (logic.loadAreaData = async (pageVm, eventData) => {
 
 /********************** end loadAreaData 开始 *********************/
 
-/********************** loadAreaData 开始 *********************/
-
+/********************** loadAreaDataRegion 开始 *********************/
 /**
- * 逻辑流 loadAreaData 入口函数
+ * ajax请求
  */
-const loadAreaData = (logic.loadAreaData = async (pageVm, eventData) => {
-  console.log(`loadAreaData: `, pageVm, eventData);
-  self = Object.assign(pageVm, logic);
-  self.loadAreaDataData = eventData;
+const queryAreaRequest = (logic.queryAreaRequest = async function () {
+  let res = await self.$getAction(`/api/web/area/getCascader`);
+  self.queryAreaRequestData = res;
 });
 
-/********************** end loadAreaData 开始 *********************/
+/**
+ * 失败处理
+ */
+const queryAreaRequestFail = (logic.queryAreaRequestFail = function () {});
+
+/**
+ * 成功处理
+ */
+const queryAreaRequestSuc = (logic.queryAreaRequestSuc = function () {
+  var areas = self.queryAreaRequestData.result;
+
+  var regionProps =
+    self.viewDepartSchoolAddForm.schema.properties.form.properties.regionId[
+      "x-component-props"
+    ];
+  if (areas) {
+    regionProps.options = areas;
+  } else {
+    regionProps.options = [];
+  }
+  self.viewDepartSchoolAddForm.schema.properties.form.properties.regionId[
+    "x-component-props"
+  ] = regionProps;
+
+  var editRegionProps =
+    self.viewDepartSchoolEditForm.schema.properties.form.properties.regionId[
+      "x-component-props"
+    ];
+  if (areas) {
+    editRegionProps.options = areas;
+  } else {
+    editRegionProps.options = [];
+  }
+  self.viewDepartSchoolEditForm.schema.properties.form.properties.regionId[
+    "x-component-props"
+  ] = editRegionProps;
+});
+
+/**
+ * 逻辑流 loadAreaDataRegion 入口函数
+ */
+const loadAreaDataRegion = (logic.loadAreaDataRegion = async (
+  pageVm,
+  eventData
+) => {
+  console.log(`loadAreaDataRegion: `, pageVm, eventData);
+  self = Object.assign(pageVm, logic);
+  self.loadAreaDataRegionData = eventData;
+
+  await queryAreaRequest();
+  if (self.queryAreaRequestData.success) {
+    queryAreaRequestSuc();
+  } else {
+    queryAreaRequestFail();
+  }
+});
+
+/********************** end loadAreaDataRegion 开始 *********************/
 
 /********************** editStore 开始 *********************/
 /**
@@ -294,7 +349,10 @@ export {
   queryAreaRequestFail,
   queryAreaRequestSuc,
   loadAreaData,
-  loadAreaData,
+  queryAreaRequest,
+  queryAreaRequestFail,
+  queryAreaRequestSuc,
+  loadAreaDataRegion,
   editRequest,
   editStore,
   searchStore,
