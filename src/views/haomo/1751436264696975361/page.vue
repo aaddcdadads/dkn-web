@@ -1285,6 +1285,64 @@ export default {
           },
         },
       },
+      activityTwoForm: {
+        value: {
+          unrealStatus: 1,
+        },
+        config: {
+          unrealStatus: {
+            style: {
+              width: "100%",
+            },
+            type: "RadioGroup",
+            title: "虚拟人数",
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "启用",
+                  value: 0,
+                },
+                {
+                  label: "禁用",
+                  value: 1,
+                },
+              ],
+            },
+          },
+          unrealCount: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "活动人数",
+            required: true,
+            props: {},
+          },
+        },
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
+      },
       activityRules: {
         value: "",
         toolbarConfig: {
@@ -1694,64 +1752,6 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      activityTwoForm: {
-        config: {
-          unrealStatus: {
-            style: {
-              width: "100%",
-            },
-            type: "RadioGroup",
-            title: "虚拟人数",
-            required: true,
-            props: {
-              options: [
-                {
-                  label: "启用",
-                  value: 0,
-                },
-                {
-                  label: "禁用",
-                  value: 1,
-                },
-              ],
-            },
-          },
-          unrealCount: {
-            style: {
-              width: "100%",
-            },
-            type: "InputNumber",
-            title: "活动人数",
-            required: true,
-            props: {},
-          },
-        },
-        value: {
-          unrealStatus: 1,
-        },
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-      },
       sharingImageTable: {
         columns: [
           {
@@ -1861,6 +1861,7 @@ export default {
       self.reset = function () {
         self.activityForm.value = {};
         self.activityExtTwoForm.value = {};
+        self.activityTwoForm.value = {};
         self.$refs.activityProjectTable.cData = [];
         self.$refs.activityImgTableTwo.cData = [];
         self.$refs.activityImgTableOne.cData = [];
