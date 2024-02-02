@@ -237,7 +237,7 @@
           <div class="ele-wrapper ele-wrapper-storeDetailModal">
             <hm-modal
               ref="storeDetailModal"
-              title="查看详情"
+              title="门店核销码"
               v-model:visible="storeDetailModal.visible"
               :ok-button-boole="false"
               cancel-text="导出门店二维码"
@@ -437,7 +437,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       storeDetailModal: {
-        visible: true,
+        visible: false,
       },
       storeEditModal: {
         visible: false,
