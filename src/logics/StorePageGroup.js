@@ -246,6 +246,7 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
 
   await self.$refs.storeEditForm.validate();
   var values = self.$refs.viewDepartSchoolEditForm.getFormValues();
+
   //地区处理
   let urbanArea = null;
   if (Object.prototype.toString.call(values.urbanArea) === "[object Array]") {
@@ -256,9 +257,10 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
   } else {
     urbanArea = values.urbanArea;
   }
-
+  console.log("e=======", urbanArea, values.id, self.currentStoreId);
   self.editParams = {
     ...values,
+    id: self.currentStoreId,
     urbanArea: urbanArea,
   };
   await editRequest();
