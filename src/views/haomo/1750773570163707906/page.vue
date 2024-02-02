@@ -438,6 +438,14 @@
               :z-index="1000"
               height=""
             >
+              <div
+                class="ele-wrapper ele-wrapper-4cf2a6f1-df2d-4f29-a723-e430c9b53e51"
+              >
+                <hm-ant-bg-text
+                  class="ele-4cf2a6f1-df2d-4f29-a723-e430c9b53e51"
+                >
+                </hm-ant-bg-text>
+              </div>
             </hm-modal>
           </div>
         </hm-bg-card>
@@ -678,7 +686,7 @@ export default {
         text: "",
       },
       batchEdit: {
-        visible: false,
+        visible: true,
       },
       storeFilter: {
         config: {
@@ -1132,6 +1140,12 @@ export default {
 
 .ele-wrapper-deleteUserInputText {
   width: 60%;
+}
+
+.ele-wrapper-4cf2a6f1-df2d-4f29-a723-e430c9b53e51 {
+  width: 272px;
+  display: flex;
+  justify-content: center;
 }
 
 .ele-wrapper-ca97e822-f663-4433-9bc3-763a5a8b2fd1 {
