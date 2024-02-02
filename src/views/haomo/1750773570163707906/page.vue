@@ -991,13 +991,19 @@ export default {
       loadAreaData(this, arguments);
     },
     onBathqiyongClick() {
+      // 检查是否有选中的行
       if (!this.selectedRows || this.selectedRows.length === 0) {
+        // 如果没有选中的行，显示错误消息并退出函数
         this.$message.error("请先勾选");
         return;
       }
+      // 使用 $nextTick 确保在DOM更新后执行
       this.$nextTick(() => {
+        // 设置批量编辑对话框的可见性为true
         this.batchEdit.visible = true;
+        //1:启用，2:禁用，3:删除
         this.allStatus = 1;
+        // 设置提示文本
         this.prompt.text = "确认批量启用";
       });
     },
