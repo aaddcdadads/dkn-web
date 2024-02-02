@@ -209,7 +209,7 @@ const loadAreaDataRegion = (logic.loadAreaDataRegion = async (
 
   regionParamHandler();
   await queryAreaRequestRegionEcho();
-  if (self.queryAreaRequestData.success) {
+  if (self.queryAreaRequestRegionEchoData.success) {
     queryAreaRequestSucRegion();
   } else {
     queryAreaFailRegions();
