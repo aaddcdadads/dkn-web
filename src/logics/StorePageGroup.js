@@ -180,8 +180,9 @@ const queryAreaRequestSucRegion = (logic.queryAreaRequestSucRegion = function ()
     self.currentEditItem.urbanArea = [];
   }
   self.$nextTick(function () {
-    self.$refs.storeEditForm.schema.properties.form.properties.mergerName.default =
-      self.currentEditItem.urbanArea;
+    self.storeEditForm.schema.properties.form.properties.mergerName[
+      "x-component-props"
+    ] = self.currentEditItem.urbanArea;
   });
 });
 
