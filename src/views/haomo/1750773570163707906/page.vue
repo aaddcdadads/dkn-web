@@ -100,6 +100,7 @@
                           <hm-ant-button
                             text="批量启用"
                             :type="'primary'"
+                            icon="fa fa-toggle-on"
                             class="ele-bb77bb53-c344-465d-a179-82da0a29bbbd"
                           >
                           </hm-ant-button>
@@ -110,6 +111,7 @@
                           <hm-ant-button
                             text="批量禁用"
                             :type="'primary'"
+                            icon="fa fa-toggle-off"
                             class="ele-2c4f5e1c-d67b-4d6a-b8ce-d922969fea6f"
                           >
                           </hm-ant-button>
@@ -120,6 +122,7 @@
                           <hm-ant-button
                             text="批量删除"
                             :type="'primary'"
+                            icon="fa fa-trash"
                             class="ele-2b9d32f2-3e60-4fc2-b57d-71763009cfee"
                           >
                           </hm-ant-button>
