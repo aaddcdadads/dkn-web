@@ -455,10 +455,10 @@ export default {
       storeDetailModal: {
         visible: false,
       },
-      currentEditItem: {},
       storeEditModal: {
         visible: false,
       },
+      currentEditItem: {},
       storeEditForm: {
         config: {
           name: {
@@ -758,9 +758,7 @@ export default {
             callback: function (item) {
               self.storeDetailModal.visible = true;
               self.getQrCode(item.id, item.name);
-              self.currentEditItem = item;
               console.log("打印二维码url", self.baseUrl);
-              console.log("地区", self.currentEditItem.urbanArea);
             },
             type: "link",
           },
@@ -769,6 +767,8 @@ export default {
             callback: function (item) {
               self.storeEditModal.visible = true;
               self.currentStoreId = item.id;
+              self.currentEditItem = item;
+              console.log("地区", self.currentEditItem.urbanArea);
               self.$nextTick(function () {
                 self.storeEditForm.value = item;
                 self.onAreaButtonClick();
