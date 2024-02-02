@@ -900,6 +900,11 @@ export default {
       console.log("this.storeAddForm.config");
       console.log("this.storeEditForm.config");
       console.log("this.storeDetailForm.config");
+      //初始批量按钮禁用状态
+      self.selectedRows = [];
+      self.bathqiyong.disabled = true;
+      self.batchBisabled.disabled = true;
+      self.batchDelete.disabled = true;
 
       //加载地区下拉框数据
       loadAreaData(this, arguments);
