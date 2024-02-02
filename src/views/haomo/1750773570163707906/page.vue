@@ -277,27 +277,20 @@
                     >
                     </hm-bg-card>
                   </div>
-                  <div class="ele-wrapper ele-wrapper-storeNameText">
-                    <hm-ant-bg-text
-                      ref="storeNameText"
-                      text="门店名称"
-                      class="ele-storeNameText"
+                  <div
+                    class="ele-wrapper ele-wrapper-484bf8ce-7d76-4bf5-bd8b-b64d3ed4b395"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height=""
+                      border-radius=""
+                      padding=""
+                      box-shadow-h-shadow=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      class="ele-484bf8ce-7d76-4bf5-bd8b-b64d3ed4b395"
                     >
-                    </hm-ant-bg-text>
-                  </div>
-                  <div class="ele-wrapper ele-wrapper-storeDetailForm">
-                    <hm-ant-formily
-                      ref="storeDetailForm"
-                      :config="storeDetailForm.config"
-                      v-model:value="storeDetailForm.value"
-                      :col-num="2"
-                      :col-min-width="380"
-                      :schema="storeDetailForm.schema"
-                      :label-col="7"
-                      :wrapper-col="14"
-                      class="ele-storeDetailForm"
-                    >
-                    </hm-ant-formily>
+                    </hm-bg-card>
                   </div>
                 </hm-bg-card>
               </div>
@@ -436,7 +429,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       storeDetailModal: {
-        visible: false,
+        visible: true,
       },
       storeEditModal: {
         visible: false,
@@ -594,43 +587,7 @@ export default {
           },
         },
       },
-      storeDetailForm: {
-        config: {
-          name: {
-            type: "Span",
-            title: "门店名称",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            validator: function (value) {},
-            required: false,
-            disabled: false,
-          },
-          urbanArea: {
-            type: "Span",
-            title: "门店所属区域",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            validator: function (value) {},
-          },
-          address: {
-            type: "Span",
-            title: "门店地址",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            validator: function (value) {},
-          },
-        },
-        value: {
-          span: "文字内容",
-        },
-        schema: {},
-      },
+      storeDetailForm: {},
       urlInput: {},
       storeFilter: {
         config: {
@@ -998,17 +955,8 @@ export default {
   width: 70%;
 }
 
-.ele-wrapper-storeNameText {
-  width: 260px;
-  margin-left: 90px;
-  text-align: center;
-  margin-top: 8px;
-  margin-bottom: 16px;
-}
-
-.ele-wrapper-storeDetailForm {
+.ele-wrapper-484bf8ce-7d76-4bf5-bd8b-b64d3ed4b395 {
   width: 100%;
-  display: none;
 }
 
 .ele-wrapper-bottomBg {
