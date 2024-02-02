@@ -637,6 +637,7 @@ export default {
       prompt: {
         text: "文字",
       },
+      allStatus: {},
       bathqiyong: {
         disabled: false,
         text: "批量启用",
@@ -652,7 +653,6 @@ export default {
         text: "批量删除",
         type: "primary",
       },
-      allStatus: {},
       importButton: {
         visible: false,
         headers: null,
@@ -1180,29 +1180,11 @@ export default {
     },
     onActivityTableOnSelect(e) {
       this.selectedRows = e.selectedRows;
-      let self = this;
-      if (this.selectedRows.length > 0) {
-        self.bathqiyong.disabled = false;
-        self.batchBisabled.disabled = false;
-        self.batchDelete.disabled = false;
-      } else {
-        self.bathqiyong.disabled = true;
-        self.batchBisabled.disabled = true;
-        self.batchDelete.disabled = true;
-      }
+      this.isDisabled();
     },
     onActivityTableOnSelectAll(e) {
       this.selectedRows = e.selectedRows;
-      let self = this;
-      if (this.selectedRows.length > 0) {
-        self.bathqiyong.disabled = false;
-        self.batchBisabled.disabled = false;
-        self.batchDelete.disabled = false;
-      } else {
-        self.bathqiyong.disabled = true;
-        self.batchBisabled.disabled = true;
-        self.batchDelete.disabled = true;
-      }
+      this.isDisabled();
     },
     onActivityAddModalOk() {
       addActivity(this, arguments);
