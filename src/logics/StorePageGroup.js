@@ -167,33 +167,25 @@ const queryAreaFailRegions = (logic.queryAreaFailRegions = function () {});
  * 成功处理
  */
 const queryAreaRequestSucRegion = (logic.queryAreaRequestSucRegion = function () {
-  var areas = self.queryAreaRequestData.result;
-
-  var regionProps =
-    self.viewDepartSchoolAddForm.schema.properties.form.properties.regionId[
-      "x-component-props"
-    ];
-  if (areas) {
-    regionProps.options = areas;
+  var result = self.queryAreaRequestRegionEchoData.result;
+  if (result && result.areaGroup) {
+    var split = result.areaGroup.split(",");
+    var regionId = [];
+    for (var i = 0; i < split.length; i++) {
+      regionId[i] = split[i];
+    }
+    self.currentEditItem.regionId = regionId;
   } else {
-    regionProps.options = [];
+    self.currentEditItem.regionId = [];
   }
-  self.viewDepartSchoolAddForm.schema.properties.form.properties.regionId[
-    "x-component-props"
-  ] = regionProps;
-
-  var editRegionProps =
-    self.viewDepartSchoolEditForm.schema.properties.form.properties.regionId[
-      "x-component-props"
-    ];
-  if (areas) {
-    editRegionProps.options = areas;
-  } else {
-    editRegionProps.options = [];
-  }
-  self.viewDepartSchoolEditForm.schema.properties.form.properties.regionId[
-    "x-component-props"
-  ] = editRegionProps;
+  self.$nextTick(function () {
+    let props =
+      self.$refs.viewDepartSchoolEditForm.schema.properties.form.properties
+        .avatar["x-component-props"];
+    props.imageUrl = self.currentEditItem.avatar;
+    self.$refs.viewDepartSchoolEditForm.schema.properties.form.properties.regionId.default =
+      self.currentEditItem.regionId;
+  });
 });
 
 /**
