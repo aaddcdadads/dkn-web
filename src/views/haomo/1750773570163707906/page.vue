@@ -296,10 +296,9 @@
                       >
                         <hm-ant-bg-text text="门店名称："> </hm-ant-bg-text>
                       </div>
-                      <div
-                        class="ele-wrapper ele-wrapper-542c2491-71f1-42b6-85d3-fa425f6f39ee"
-                      >
-                        <hm-ant-bg-text text=""> </hm-ant-bg-text>
+                      <div class="ele-wrapper ele-wrapper-storeNameText">
+                        <hm-ant-bg-text ref="storeNameText" text="">
+                        </hm-ant-bg-text>
                       </div>
                     </hm-bg-card>
                   </div>
