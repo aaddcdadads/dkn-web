@@ -277,12 +277,11 @@
                     >
                     </hm-bg-card>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-9babf229-dc69-4618-aee1-3b697b5baf99"
-                  >
+                  <div class="ele-wrapper ele-wrapper-storeNameText">
                     <hm-ant-bg-text
+                      ref="storeNameText"
                       text="门店名称"
-                      class="ele-9babf229-dc69-4618-aee1-3b697b5baf99"
+                      class="ele-storeNameText"
                     >
                     </hm-ant-bg-text>
                   </div>
@@ -999,7 +998,7 @@ export default {
   width: 70%;
 }
 
-.ele-wrapper-9babf229-dc69-4618-aee1-3b697b5baf99 {
+.ele-wrapper-storeNameText {
   width: 260px;
   margin-left: 90px;
   text-align: center;
