@@ -158,7 +158,7 @@ const queryAreaRequestRegionEcho = (logic.queryAreaRequestRegionEcho = async fun
 /**
  * 失败处理
  */
-const queryAreaRequestFailRegion = (logic.queryAreaRequestFailRegion = function () {});
+const queryAreaRequestFailRegions = (logic.queryAreaRequestFailRegions = function () {});
 
 /**
  * 成功处理
@@ -209,7 +209,7 @@ const loadAreaDataRegion = (logic.loadAreaDataRegion = async (
   if (self.queryAreaRequestData.success) {
     queryAreaRequestSucRegion();
   } else {
-    queryAreaRequestFailRegion();
+    queryAreaRequestFailRegions();
   }
 });
 
@@ -365,7 +365,7 @@ export {
   loadAreaData,
   regionParamHandler,
   queryAreaRequestRegionEcho,
-  queryAreaRequestFailRegion,
+  queryAreaRequestFailRegions,
   queryAreaRequestSucRegion,
   loadAreaDataRegion,
   editRequest,
