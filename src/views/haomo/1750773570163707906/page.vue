@@ -324,6 +324,7 @@
                       text="导出门店二维码"
                       :type="'primary'"
                       :size="'large'"
+                      @click="onDaochuButtonClick"
                       class="ele-daochuButton"
                     >
                     </hm-ant-button>
@@ -523,6 +524,8 @@ export default {
       storeAddModal: {
         visible: false,
       },
+      cultivateObj: {},
+      qrcodeModal: {},
       importButton: {},
       exportButton: {
         visible: false,
@@ -840,6 +843,12 @@ export default {
           });
           //门店名称
           self.storeNameText.text = titele;
+          // 获取生成的二维码图片的链接
+          const qrCodeImage = container.querySelector("img");
+          const qrCodeImageUrl = qrCodeImage.src;
+
+          // 打印二维码图片的链接
+          console.log("QR Code Image URL:", qrCodeImageUrl);
         });
       };
     },
@@ -870,6 +879,16 @@ export default {
     },
     onStoreEditModalCancel() {
       this.storeEditModal.visible = false;
+    },
+    onDaochuButtonClick() {
+      //使用a标签下载二维码
+      const downloadLink = document.createElement("a");
+      downloadLink.href = this.cultivateObj.qrcodeUrl;
+      downloadLink.download = `${this.cultivateObj.title}-二维码.png`;
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      this.qrcodeModal.visible = false;
     },
     onStoreDeleteModalOk() {
       deleteStore(this, arguments);
