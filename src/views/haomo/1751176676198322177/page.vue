@@ -1262,6 +1262,7 @@ export default {
         },
       },
       activityImgTableOneItem: {},
+      imgItem: {},
       activityProjectTable: {
         columns: [
           {
@@ -1893,6 +1894,8 @@ export default {
       //处理图片
       if (item.imgPath?.file?.response?.message) {
         item.path = item.imgPath?.file?.response?.message;
+      } else {
+        item.path = self.imgItem.path;
       }
       delete item.imgPath;
       item.imgSize = "375 * 667";
