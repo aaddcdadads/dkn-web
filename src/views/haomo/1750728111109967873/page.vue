@@ -887,10 +887,18 @@ export default {
     };
   },
   watch: {},
+  created(e) {
+    this.onCreated(e);
+  },
   mounted(e) {
     this.onMounted(e);
   },
   methods: {
+    onCreated() {
+      if (this.$route.query.activityId) {
+        this.registrationOrdersTable.params.activityId = this.$route.query.activityId;
+      }
+    },
     onMounted() {
       console.log("this.importButton.visible");
       console.log("this.exportButton.visible");
