@@ -822,20 +822,7 @@ export default {
       console.log("this.storeAddForm.config");
       console.log("this.storeEditForm.config");
       console.log("this.storeDetailForm.config");
-      console.log(
-        "e=======",
-        self.$refs.storeEditForm.schema.properties.form.properties.urbanArea
-          .default
-      );
-      console.log(
-        "e=======2",
-        self.$refs.storeEditForm.schema.properties.form.properties.name.default
-      );
-      console.log(
-        "e=======3",
-        self.$refs.storeEditForm.schema.properties.form.properties.address
-          .default
-      );
+
       //加载地区下拉框数据
       loadAreaData(this, arguments);
       //设置上传请求头
