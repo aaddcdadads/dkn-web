@@ -126,6 +126,7 @@
                             :type="batchDelete.type"
                             :disabled="batchDelete.disabled"
                             :icon="batchDelete.icon"
+                            @click="onBatchDeleteClick"
                             class="ele-batchDelete"
                           >
                           </hm-ant-button>
@@ -1008,6 +1009,17 @@ export default {
         this.batchEdit.visible = true;
         this.allStatus = 2;
         this.prompt.text = "确认批量禁用";
+      });
+    },
+    onBatchDeleteClick() {
+      if (!this.selectedRows || this.selectedRows.length === 0) {
+        this.$message.error("请选择活动");
+        return;
+      }
+      this.$nextTick(() => {
+        this.batchEdit.visible = true;
+        this.allStatus = 3;
+        this.prompt.text = "确认批量删除";
       });
     },
     onElef087F9B5C00641C6Aea1A22F650Dcce6Click() {
