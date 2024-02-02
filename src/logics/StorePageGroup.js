@@ -152,7 +152,9 @@ const regionParamHandler = (logic.regionParamHandler = function () {
  * 查询地区
  */
 const queryAreaRequestRegionEcho = (logic.queryAreaRequestRegionEcho = async function () {
-  let res = await self.$getAction(`/api/dkn/area/queryById`);
+  let res = await self.$getAction(`/api/dkn/area/queryById`, {
+    id: self.regionIds,
+  });
   self.queryAreaRequestRegionEchoData = res;
 });
 
