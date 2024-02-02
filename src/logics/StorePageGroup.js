@@ -168,24 +168,23 @@ const queryAreaFailRegions = (logic.queryAreaFailRegions = function () {});
  */
 const queryAreaRequestSucRegion = (logic.queryAreaRequestSucRegion = function () {
   var result = self.queryAreaRequestRegionEchoData.result;
-  if (result && result.areaGroup) {
-    var split = result.areaGroup.split(",");
-    var regionId = [];
-    for (var i = 0; i < split.length; i++) {
-      regionId[i] = split[i];
-    }
-    self.currentEditItem.regionId = regionId;
-  } else {
-    self.currentEditItem.regionId = [];
-  }
-  self.$nextTick(function () {
-    let props =
-      self.$refs.viewDepartSchoolEditForm.schema.properties.form.properties
-        .avatar["x-component-props"];
-    props.imageUrl = self.currentEditItem.avatar;
-    self.$refs.viewDepartSchoolEditForm.schema.properties.form.properties.regionId.default =
-      self.currentEditItem.regionId;
-  });
+  console.log("打印结果", result);
+  //   if(result && result.areaGroup){
+  //     var split = result.areaGroup.split(",");
+  //     var regionId = [];
+  //     for(var i=0;i<split.length;i++){
+  //       regionId[i]=split[i];
+  //     }
+  //     self.currentEditItem.regionId = regionId;
+  //   }else{
+  //     self.currentEditItem.regionId = []
+  //   }
+  //    self.$nextTick(function () {
+  //     let props = self.$refs.viewDepartSchoolEditForm.schema.properties.form.properties.avatar["x-component-props"];
+  //     props.imageUrl = self.currentEditItem.avatar;
+  //     self.$refs.viewDepartSchoolEditForm.schema.properties.form.properties.regionId.default = self.currentEditItem.regionId;
+
+  //   });
 });
 
 /**
