@@ -179,7 +179,12 @@ const queryAreaRequestSucRegion = (logic.queryAreaRequestSucRegion = function ()
   } else {
     self.currentEditItem.urbanArea = [];
   }
-  console.log("e=======", self.currentEditItem.urbanArea);
+  console.log(
+    "e=======",
+    self.currentEditItem.urbanArea,
+    self.$refs.storeEditForm.schema.properties
+  );
+
   self.$nextTick(function () {
     self.$refs.storeEditForm.schema.properties.form.properties.mergerName.default =
       self.currentEditItem.urbanArea;
