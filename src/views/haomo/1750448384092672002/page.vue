@@ -111,8 +111,9 @@
                         <div class="ele-wrapper ele-wrapper-bathqiyong">
                           <hm-ant-button
                             ref="bathqiyong"
-                            text="批量启用"
-                            :type="'primary'"
+                            :text="bathqiyong.text"
+                            :type="bathqiyong.type"
+                            :disabled="bathqiyong.disabled"
                             @click="onBathqiyongClick"
                             class="ele-bathqiyong"
                           >
@@ -121,8 +122,9 @@
                         <div class="ele-wrapper ele-wrapper-batchBisabled">
                           <hm-ant-button
                             ref="batchBisabled"
-                            text="批量禁用"
-                            :type="'primary'"
+                            :text="batchBisabled.text"
+                            :type="batchBisabled.type"
+                            :disabled="batchBisabled.disabled"
                             @click="onBatchBisabledClick"
                             class="ele-batchBisabled"
                           >
@@ -131,8 +133,9 @@
                         <div class="ele-wrapper ele-wrapper-batchDelete">
                           <hm-ant-button
                             ref="batchDelete"
-                            text="批量删除"
-                            :type="'primary'"
+                            :text="batchDelete.text"
+                            :type="batchDelete.type"
+                            :disabled="batchDelete.disabled"
                             @click="onBatchDeleteClick"
                             class="ele-batchDelete"
                           >
@@ -749,6 +752,21 @@ export default {
         textAlign: "left",
         padding: "0",
       },
+      bathqiyong: {
+        disabled: false,
+        text: "批量启用",
+        type: "primary",
+      },
+      batchBisabled: {
+        disabled: false,
+        text: "批量禁用",
+        type: "primary",
+      },
+      batchDelete: {
+        disabled: false,
+        text: "批量删除",
+        type: "primary",
+      },
       urlInput: {
         value: "",
       },
@@ -1011,7 +1029,9 @@ export default {
       self.allModal.title = null;
       self.allText.text = null;
       self.selectedRows = [];
-
+      self.bathqiyong.disabled = false;
+      self.batchBisabled.disabled = false;
+      self.batchDelete.disabled = false;
       self.copyUrl = function () {
         let url = self.urlInput.value;
         if (!navigator.clipboard) {
