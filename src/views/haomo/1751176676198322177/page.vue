@@ -1264,55 +1264,6 @@ export default {
       },
       activityImgTableOneItem: {},
       imgItem: {},
-      activityExtTwoForm: {
-        value: {},
-        config: {
-          activityType: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动类型",
-            required: false,
-            props: {
-              placeholder: "例子：跑步",
-            },
-          },
-          requirements: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动需求",
-            required: false,
-            props: {
-              placeholder: "例子：2km/5km/10km",
-            },
-          },
-        },
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
-      },
       customerService: {
         value: "",
       },
@@ -1521,6 +1472,55 @@ export default {
         ],
         isFlatAction: true,
         rowClassName: {},
+      },
+      activityExtTwoForm: {
+        config: {
+          activityType: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动类型",
+            required: false,
+            props: {
+              placeholder: "例子：跑步",
+            },
+          },
+          requirements: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动需求",
+            required: false,
+            props: {
+              placeholder: "例子：2km/5km/10km",
+            },
+          },
+        },
+        value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityImgTableOne: {
         columns: [
@@ -1738,8 +1738,8 @@ export default {
       };
 
       self.reset = function () {
-        self.activityForm.value = {};
-        self.activityExtTwoForm.value = {};
+        self.$refs.activityForm.reset();
+        self.$refs.activityExtTwoForm.reset();
         self.$refs.activityProjectTable.cData = [];
         self.$refs.activityImgTableTwo.cData = [];
         self.$refs.activityImgTableOne.cData = [];
