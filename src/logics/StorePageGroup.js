@@ -179,19 +179,6 @@ const queryAreaRequestSucRegion = (logic.queryAreaRequestSucRegion = function ()
   } else {
     self.currentEditItem.urbanArea = [];
   }
-  console.log(
-    "e=======",
-    self.currentEditItem.urbanArea,
-    self.$refs.storeEditForm.schema.properties
-  );
-  console.log(
-    "e=======2",
-    self.$refs.storeEditForm.schema.properties.form.properties.name.default
-  );
-  console.log(
-    "e=======3",
-    self.$refs.storeEditForm.schema.properties.form.properties.address.default
-  );
 
   self.$nextTick(function () {
     self.$refs.storeEditForm.schema.properties.form.properties.urbanArea.default =
