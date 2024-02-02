@@ -105,14 +105,13 @@
                           >
                           </hm-ant-button>
                         </div>
-                        <div
-                          class="ele-wrapper ele-wrapper-2c4f5e1c-d67b-4d6a-b8ce-d922969fea6f"
-                        >
+                        <div class="ele-wrapper ele-wrapper-batchBisabled">
                           <hm-ant-button
+                            ref="batchBisabled"
                             text="批量禁用"
                             :type="'primary'"
                             icon="fa fa-toggle-off"
-                            class="ele-2c4f5e1c-d67b-4d6a-b8ce-d922969fea6f"
+                            class="ele-batchBisabled"
                           >
                           </hm-ant-button>
                         </div>
@@ -1021,7 +1020,7 @@ export default {
   margin-right: 8px;
 }
 
-.ele-wrapper-2c4f5e1c-d67b-4d6a-b8ce-d922969fea6f {
+.ele-wrapper-batchBisabled {
   margin-right: 8px;
 }
 
