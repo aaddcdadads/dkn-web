@@ -772,6 +772,7 @@ export default {
               self.$nextTick(function () {
                 self.storeEditForm.value = item;
               });
+              self.onAreaButtonClick();
             },
             type: "link",
           },
