@@ -148,7 +148,7 @@ const regionParamHandler = (logic.regionParamHandler = function () {
 });
 
 /**
- * ajax请求
+ * 查询地区
  */
 const queryAreaRequest = (logic.queryAreaRequest = async function () {
   let res = await self.$getAction(`/api/web/area/getCascader`);
