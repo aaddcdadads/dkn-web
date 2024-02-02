@@ -1147,26 +1147,26 @@ export default {
       this.selectedRows = e.selectedRows;
       let self = this;
       if (this.selectedRows.length > 0) {
-        self.bathqiyong.disabled = true;
-        self.batchBisabled.disabled = true;
-        self.batchDelete.disabled = true;
-      } else {
         self.bathqiyong.disabled = false;
         self.batchBisabled.disabled = false;
         self.batchDelete.disabled = false;
+      } else {
+        self.bathqiyong.disabled = true;
+        self.batchBisabled.disabled = true;
+        self.batchDelete.disabled = true;
       }
     },
     onActivityTableOnSelectAll(e) {
       this.selectedRows = e.selectedRows;
       let self = this;
       if (this.selectedRows.length > 0) {
-        self.bathqiyong.disabled = true;
-        self.batchBisabled.disabled = true;
-        self.batchDelete.disabled = true;
-      } else {
         self.bathqiyong.disabled = false;
         self.batchBisabled.disabled = false;
         self.batchDelete.disabled = false;
+      } else {
+        self.bathqiyong.disabled = true;
+        self.batchBisabled.disabled = true;
+        self.batchDelete.disabled = true;
       }
     },
     onActivityAddModalOk() {
