@@ -375,6 +375,7 @@
                                   v-model:value="activityRules.value"
                                   :toolbar-config="activityRules.toolbarConfig"
                                   :max-content-length="2"
+                                  @change="onActivityRulesChange"
                                   class="ele-activityRules"
                                 >
                                 </hm-wang-editor>
@@ -1110,43 +1111,6 @@ export default {
       delActivityProjectList: {},
       delActivityImgList: {},
       activityImgTableTwoItem: {},
-      activityImgTableOneItem: {},
-      imgItem: {},
-      title: {
-        text: "创建活动",
-        icon: "fa fa-tasks",
-        fontSize: "14px",
-      },
-      isTitle: {
-        text: "* 为必填项",
-        fontSize: "14px",
-        color: "#999999",
-      },
-      addActivityProject: {
-        visible: true,
-        text: "添加",
-        type: "primary",
-        icon: "fa fa-plus",
-      },
-      addActivityImgTableOne: {
-        visible: true,
-        text: "添加",
-        type: "primary",
-        icon: "fa fa-plus",
-      },
-      addActivityImgTableTwo: {
-        visible: true,
-        text: "添加",
-        type: "primary",
-        icon: "fa fa-plus",
-      },
-      bgColourKit: {
-        color: "#59c7f9",
-      },
-      colourKit: {},
-      textColourKit: {
-        color: "#59c7f9",
-      },
       activityRules: {
         value: "",
         toolbarConfig: {
@@ -1202,6 +1166,43 @@ export default {
           ],
           excludeKeys: [],
         },
+      },
+      activityImgTableOneItem: {},
+      imgItem: {},
+      title: {
+        text: "创建活动",
+        icon: "fa fa-tasks",
+        fontSize: "14px",
+      },
+      isTitle: {
+        text: "* 为必填项",
+        fontSize: "14px",
+        color: "#999999",
+      },
+      addActivityProject: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
+      addActivityImgTableOne: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
+      addActivityImgTableTwo: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
+      bgColourKit: {
+        color: "#59c7f9",
+      },
+      colourKit: {},
+      textColourKit: {
+        color: "#59c7f9",
       },
       agreementCommitmentletter: {
         value: "",
@@ -2028,6 +2029,9 @@ export default {
     onAddprizeCancel() {
       this.addprize.visible = false;
       this.$refs.addActivityImgFormTwo.reset();
+    },
+    onActivityRulesChange(e) {
+      this.activityRules.value = e;
     },
     onAddActivityImgTableOneClick() {
       this.addBackground.visible = true;
