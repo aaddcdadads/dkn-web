@@ -438,12 +438,8 @@
               :z-index="1000"
               height=""
             >
-              <div
-                class="ele-wrapper ele-wrapper-4cf2a6f1-df2d-4f29-a723-e430c9b53e51"
-              >
-                <hm-ant-bg-text
-                  class="ele-4cf2a6f1-df2d-4f29-a723-e430c9b53e51"
-                >
+              <div class="ele-wrapper ele-wrapper-prompt">
+                <hm-ant-bg-text ref="prompt" class="ele-prompt">
                 </hm-ant-bg-text>
               </div>
             </hm-modal>
@@ -686,7 +682,7 @@ export default {
         text: "",
       },
       batchEdit: {
-        visible: true,
+        visible: false,
       },
       storeFilter: {
         config: {
@@ -1142,7 +1138,7 @@ export default {
   width: 60%;
 }
 
-.ele-wrapper-4cf2a6f1-df2d-4f29-a723-e430c9b53e51 {
+.ele-wrapper-prompt {
   width: 272px;
   display: flex;
   justify-content: center;
