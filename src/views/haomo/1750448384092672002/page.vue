@@ -637,6 +637,21 @@ export default {
       prompt: {
         text: "文字",
       },
+      bathqiyong: {
+        disabled: false,
+        text: "批量启用",
+        type: "primary",
+      },
+      batchBisabled: {
+        disabled: false,
+        text: "批量禁用",
+        type: "primary",
+      },
+      batchDelete: {
+        disabled: false,
+        text: "批量删除",
+        type: "primary",
+      },
       allStatus: {},
       importButton: {
         visible: false,
@@ -751,21 +766,6 @@ export default {
         color: "#CF2323",
         textAlign: "left",
         padding: "0",
-      },
-      bathqiyong: {
-        disabled: false,
-        text: "批量启用",
-        type: "primary",
-      },
-      batchBisabled: {
-        disabled: false,
-        text: "批量禁用",
-        type: "primary",
-      },
-      batchDelete: {
-        disabled: false,
-        text: "批量删除",
-        type: "primary",
       },
       urlInput: {
         value: "",
@@ -1145,9 +1145,29 @@ export default {
     },
     onActivityTableOnSelect(e) {
       this.selectedRows = e.selectedRows;
+      let self = this;
+      if (this.selectedRows.length > 0) {
+        self.bathqiyong.disabled = true;
+        self.batchBisabled.disabled = true;
+        self.batchDelete.disabled = true;
+      } else {
+        self.bathqiyong.disabled = false;
+        self.batchBisabled.disabled = false;
+        self.batchDelete.disabled = false;
+      }
     },
     onActivityTableOnSelectAll(e) {
       this.selectedRows = e.selectedRows;
+      let self = this;
+      if (this.selectedRows.length > 0) {
+        self.bathqiyong.disabled = true;
+        self.batchBisabled.disabled = true;
+        self.batchDelete.disabled = true;
+      } else {
+        self.bathqiyong.disabled = false;
+        self.batchBisabled.disabled = false;
+        self.batchDelete.disabled = false;
+      }
     },
     onActivityAddModalOk() {
       addActivity(this, arguments);
