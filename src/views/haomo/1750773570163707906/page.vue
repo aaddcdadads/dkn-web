@@ -524,7 +524,6 @@ export default {
       storeAddModal: {
         visible: false,
       },
-      cultivateObj: {},
       qrcodeModal: {},
       importButton: {},
       exportButton: {
@@ -844,6 +843,7 @@ export default {
           });
           //门店名称
           self.storeNameText.text = titele;
+          self.storeNameTitle = titele;
           // 获取生成的二维码的 base64 编码
           const canvas = container.querySelector("canvas");
           const qrCodeBase64 = canvas.toDataURL("image/png");
@@ -884,8 +884,8 @@ export default {
     onDaochuButtonClick() {
       //使用a标签下载二维码
       const downloadLink = document.createElement("a");
-      downloadLink.href = this.cultivateObj.qrcodeUrl;
-      downloadLink.download = `${this.cultivateObj.title}-二维码.png`;
+      downloadLink.href = self.baseUrl;
+      downloadLink.download = self.storeNameTitle + "-二维码.png";
       document.body.appendChild(downloadLink);
       downloadLink.click();
       document.body.removeChild(downloadLink);
