@@ -291,6 +291,11 @@
                       box-shadow-spread=""
                       class="ele-484bf8ce-7d76-4bf5-bd8b-b64d3ed4b395"
                     >
+                      <div
+                        class="ele-wrapper ele-wrapper-9fa6ebb7-26cf-471e-af62-d8b5679ca587"
+                      >
+                        <hm-ant-bg-text text="门店名称"> </hm-ant-bg-text>
+                      </div>
                     </hm-bg-card>
                   </div>
                 </hm-bg-card>
