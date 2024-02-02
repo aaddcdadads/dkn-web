@@ -473,17 +473,6 @@ export default {
             required: true,
             disabled: false,
           },
-          address: {
-            type: "Input",
-            title: "门店地址",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            default: "",
-            required: true,
-            validator: function (value) {},
-          },
         },
         value: {
           span: "文字内容",
@@ -507,6 +496,24 @@ export default {
                 },
               },
               properties: {
+                address: {
+                  type: "string",
+                  required: true,
+                  default: "",
+                  "x-decorator": "FormItem",
+                  "x-decorator-props": {
+                    label: "门店地址",
+                    name: "address",
+                    style: {
+                      width: "50%",
+                    },
+                    class: ["required"],
+                  },
+                  "x-component-props": {
+                    title: "",
+                  },
+                  "x-component": "HmAntInput",
+                },
                 urbanArea: {
                   type: "string",
                   required: true,
