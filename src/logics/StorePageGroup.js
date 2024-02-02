@@ -229,7 +229,7 @@ const loadAreaDataRegion = (logic.loadAreaDataRegion = async (
  * 发送修改请求
  */
 const editRequest = (logic.editRequest = async function () {
-  let res = await self.$putAction(`/api/restify/store/edit`, self.editParams);
+  let res = await self.$putAction(`/api/dkn/store/edit`, self.editParams);
   self.editRequestData = res;
 });
 
