@@ -1806,6 +1806,8 @@ export default {
       let item = self.$refs.addActivityImgFormTwo.getFormValues();
       if (item.imgPath?.file?.response?.message) {
         item.path = item.imgPath?.file?.response?.message;
+      } else {
+        item.path = self.activityImgTableTwoItem.path;
       }
       delete item.imgPath;
       if (self.activityImgTableTwoStatus === 1) {
