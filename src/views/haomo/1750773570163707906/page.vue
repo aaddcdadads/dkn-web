@@ -95,14 +95,13 @@
                         box-shadow-color="#00000000"
                         class="ele-b26f83d8-788d-4911-b39c-d6db12ade907"
                       >
-                        <div
-                          class="ele-wrapper ele-wrapper-bb77bb53-c344-465d-a179-82da0a29bbbd"
-                        >
+                        <div class="ele-wrapper ele-wrapper-bathqiyong">
                           <hm-ant-button
+                            ref="bathqiyong"
                             text="批量启用"
                             :type="'primary'"
                             icon="fa fa-toggle-on"
-                            class="ele-bb77bb53-c344-465d-a179-82da0a29bbbd"
+                            class="ele-bathqiyong"
                           >
                           </hm-ant-button>
                         </div>
@@ -188,6 +187,7 @@
                   :url="storeTable.url"
                   :params="storeTable.params"
                   :get-data-map="storeTable.getDataMap"
+                  :row-select-flag="storeTable.rowSelectFlag"
                   :actions="storeTable.actions"
                   :is-flat-action="storeTable.isFlatAction"
                   :background-color="storeTable.backgroundColor"
@@ -803,6 +803,7 @@ export default {
           total: "",
           list: "",
         },
+        rowSelectFlag: true,
         actions: [
           {
             name: "门店核销码",
@@ -1016,7 +1017,7 @@ export default {
   width: 800px;
 }
 
-.ele-wrapper-bb77bb53-c344-465d-a179-82da0a29bbbd {
+.ele-wrapper-bathqiyong {
   margin-right: 8px;
 }
 
