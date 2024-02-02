@@ -417,6 +417,7 @@
                                     agreementCommitmentletter.toolbarConfig
                                   "
                                   :max-content-length="2"
+                                  @change="onAgreementCommitmentletterChange"
                                   class="ele-agreementCommitmentletter"
                                 >
                                 </hm-wang-editor>
@@ -1167,43 +1168,6 @@ export default {
           excludeKeys: [],
         },
       },
-      activityImgTableOneItem: {},
-      imgItem: {},
-      title: {
-        text: "创建活动",
-        icon: "fa fa-tasks",
-        fontSize: "14px",
-      },
-      isTitle: {
-        text: "* 为必填项",
-        fontSize: "14px",
-        color: "#999999",
-      },
-      addActivityProject: {
-        visible: true,
-        text: "添加",
-        type: "primary",
-        icon: "fa fa-plus",
-      },
-      addActivityImgTableOne: {
-        visible: true,
-        text: "添加",
-        type: "primary",
-        icon: "fa fa-plus",
-      },
-      addActivityImgTableTwo: {
-        visible: true,
-        text: "添加",
-        type: "primary",
-        icon: "fa fa-plus",
-      },
-      bgColourKit: {
-        color: "#59c7f9",
-      },
-      colourKit: {},
-      textColourKit: {
-        color: "#59c7f9",
-      },
       agreementCommitmentletter: {
         value: "",
         toolbarConfig: {
@@ -1259,6 +1223,43 @@ export default {
           ],
           excludeKeys: [],
         },
+      },
+      activityImgTableOneItem: {},
+      imgItem: {},
+      title: {
+        text: "创建活动",
+        icon: "fa fa-tasks",
+        fontSize: "14px",
+      },
+      isTitle: {
+        text: "* 为必填项",
+        fontSize: "14px",
+        color: "#999999",
+      },
+      addActivityProject: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
+      addActivityImgTableOne: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
+      addActivityImgTableTwo: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
+      bgColourKit: {
+        color: "#59c7f9",
+      },
+      colourKit: {},
+      textColourKit: {
+        color: "#59c7f9",
       },
       customerService: {
         value: "",
@@ -2032,6 +2033,9 @@ export default {
     },
     onActivityRulesChange(e) {
       this.activityRules.value = e;
+    },
+    onAgreementCommitmentletterChange(e) {
+      this.agreementCommitmentletter.value = e;
     },
     onAddActivityImgTableOneClick() {
       this.addBackground.visible = true;
