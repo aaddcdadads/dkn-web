@@ -442,6 +442,7 @@
               width="320px"
               :z-index="1000"
               height=""
+              @cancel="onBatchEditCancel"
             >
               <div class="ele-wrapper ele-wrapper-prompt">
                 <hm-ant-bg-text ref="prompt" class="ele-prompt">
@@ -624,6 +625,9 @@ export default {
         icon: "fa fa-trash",
       },
       qrcodeModal: {},
+      batchEdit: {
+        visible: false,
+      },
       importButton: {},
       exportButton: {
         visible: false,
@@ -704,9 +708,6 @@ export default {
       storeDetailForm: {},
       storeNameText: {
         text: "",
-      },
-      batchEdit: {
-        visible: false,
       },
       storeFilter: {
         config: {
@@ -1033,6 +1034,9 @@ export default {
     },
     onStoreDeleteModalOk() {
       deleteStore(this, arguments);
+    },
+    onBatchEditCancel() {
+      this.batchEdit.visible = false;
     },
   },
 };
