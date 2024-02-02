@@ -35,9 +35,9 @@
                 class="ele-wrapper ele-wrapper-230f0090-9b76-4e5d-9556-f91759f40cf8"
               >
                 <hm-ant-bg-text
-                  color="#999999"
-                  font-size="14px"
                   text="* 为必填项"
+                  font-size="14px"
+                  color="#999999"
                 >
                 </hm-ant-bg-text>
               </div>
@@ -534,9 +534,9 @@
                     class="ele-wrapper ele-wrapper-d785c5c4-1020-487d-9d7c-c7a32ae8a48b"
                   >
                     <hm-ant-bg-text
-                      padding="2"
-                      font-size="14px"
                       text="报名页背景颜色设置"
+                      font-size="14px"
+                      padding="2"
                       class="ele-d785c5c4-1020-487d-9d7c-c7a32ae8a48b"
                     >
                     </hm-ant-bg-text>
@@ -1424,6 +1424,7 @@ export default {
             width: 80,
             title: "操作",
             key: "action",
+            aligen: "center",
           },
         ],
         data: [],
