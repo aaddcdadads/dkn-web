@@ -245,6 +245,21 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
   self.editStoreData = eventData;
 
   await self.$refs.storeEditForm.validate();
+  //地区处理
+  let regionId = null;
+  if (Object.prototype.toString.call(values.regionId) === "[object Array]") {
+    regionId =
+      values.regionId.length > 0
+        ? values.regionId[values.regionId.length - 1]
+        : null;
+  } else {
+    regionId = values.regionId;
+  }
+
+  self.editParams = {
+    ...values,
+    regionId: regionId,
+  };
   await editRequest();
   if (self.editRequestData.success) {
     self.$message.success("编辑成功");
