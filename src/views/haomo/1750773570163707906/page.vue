@@ -297,7 +297,10 @@
                         <hm-ant-bg-text text="门店名称："> </hm-ant-bg-text>
                       </div>
                       <div class="ele-wrapper ele-wrapper-storeNameText">
-                        <hm-ant-bg-text ref="storeNameText" text="">
+                        <hm-ant-bg-text
+                          ref="storeNameText"
+                          :text="storeNameText.text"
+                        >
                         </hm-ant-bg-text>
                       </div>
                     </hm-bg-card>
@@ -598,7 +601,9 @@ export default {
         },
       },
       storeDetailForm: {},
-      urlInput: {},
+      storeNameText: {
+        text: "",
+      },
       storeFilter: {
         config: {
           name: {
@@ -833,7 +838,8 @@ export default {
             colorDark: "#000000",
             colorLight: "#ffffff",
           });
-          self.urlInput.value = url;
+          //门店名称
+          self.storeNameText.text = titele;
         });
       };
     },
