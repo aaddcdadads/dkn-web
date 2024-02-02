@@ -287,6 +287,7 @@
                                   :row-class-name="
                                     activityImgTableTwo.rowClassName
                                   "
+                                  class="ele-activityImgTableTwo"
                                 >
                                 </hm-ant-table>
                               </div>
@@ -526,6 +527,7 @@
                           :actions="activityImgTableOne.actions"
                           :is-flat-action="activityImgTableOne.isFlatAction"
                           :row-class-name="activityImgTableOne.rowClassName"
+                          class="ele-activityImgTableOne"
                         >
                         </hm-ant-table>
                       </div>
@@ -2023,6 +2025,12 @@ export default {
   width: 100%;
 }
 
+.ele-wrapper-activityImgTableTwo {
+  /deep/ th:nth-child(8) > span {
+    padding-left: 0px !important;
+  }
+}
+
 .ele-wrapper-e3996ba6-7678-4de0-abea-832a2097c2c9 {
   width: 100%;
 }
@@ -2127,6 +2135,12 @@ export default {
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
   width: 100%;
+}
+
+.ele-wrapper-activityImgTableOne {
+  /deep/ th:nth-child(8) > span {
+    padding-left: 0px !important;
+  }
 }
 
 .ele-wrapper-d785c5c4-1020-487d-9d7c-c7a32ae8a48b {
