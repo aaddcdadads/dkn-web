@@ -135,6 +135,19 @@ const loadAreaData = (logic.loadAreaData = async (pageVm, eventData) => {
 
 /********************** loadAreaDataRegion 开始 *********************/
 /**
+ * 参数处理
+ */
+const regionParamHandler = (logic.regionParamHandler = function () {
+  let regionIds = self.currentEditItem.regionId;
+  if (Object.prototype.toString.call(regionIds) === "[object Array]") {
+    self.regionIds =
+      regionIds.length > 0 ? regionIds[regionIds.length - 1] : null;
+  } else {
+    self.regionIds = regionIds;
+  }
+});
+
+/**
  * ajax请求
  */
 const queryAreaRequest = (logic.queryAreaRequest = async function () {
@@ -191,6 +204,7 @@ const loadAreaDataRegion = (logic.loadAreaDataRegion = async (
   self = Object.assign(pageVm, logic);
   self.loadAreaDataRegionData = eventData;
 
+  regionParamHandler();
   await queryAreaRequest();
   if (self.queryAreaRequestData.success) {
     queryAreaRequestSuc();
@@ -349,6 +363,7 @@ export {
   queryAreaRequestFail,
   queryAreaRequestSuc,
   loadAreaData,
+  regionParamHandler,
   queryAreaRequest,
   queryAreaRequestFail,
   queryAreaRequestSuc,
