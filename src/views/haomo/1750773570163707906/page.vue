@@ -265,16 +265,15 @@
                     >
                     </hm-ant-bg-text>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-1d8c5dce-11d9-4c07-bcd0-e9da88d61ded"
-                  >
+                  <div class="ele-wrapper ele-wrapper-qrcode">
                     <hm-bg-card
+                      ref="qrcode"
                       width="100%"
                       height=""
                       border-radius=""
                       padding=""
                       box-shadow-color="#00000000"
-                      class="ele-1d8c5dce-11d9-4c07-bcd0-e9da88d61ded"
+                      class="ele-qrcode"
                     >
                     </hm-bg-card>
                   </div>
@@ -440,43 +439,6 @@ export default {
       storeDetailModal: {
         visible: true,
       },
-      storeDetailForm: {
-        config: {
-          name: {
-            type: "Span",
-            title: "门店名称",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            validator: function (value) {},
-            required: false,
-            disabled: false,
-          },
-          urbanArea: {
-            type: "Span",
-            title: "门店所属区域",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            validator: function (value) {},
-          },
-          address: {
-            type: "Span",
-            title: "门店地址",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            validator: function (value) {},
-          },
-        },
-        value: {
-          span: "文字内容",
-        },
-        schema: {},
-      },
       storeEditModal: {
         visible: false,
       },
@@ -633,6 +595,43 @@ export default {
           },
         },
       },
+      storeDetailForm: {
+        config: {
+          name: {
+            type: "Span",
+            title: "门店名称",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+          urbanArea: {
+            type: "Span",
+            title: "门店所属区域",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+          },
+          address: {
+            type: "Span",
+            title: "门店地址",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+          },
+        },
+        value: {
+          span: "文字内容",
+        },
+        schema: {},
+      },
       urlInput: {},
       storeFilter: {
         config: {
@@ -774,9 +773,7 @@ export default {
             name: "门店核销码",
             callback: function (item) {
               self.storeDetailModal.visible = true;
-              self.$nextTick(function () {
-                self.storeDetailForm.value = item;
-              });
+              self.getQrCode(item.id);
             },
             type: "link",
           },
@@ -996,7 +993,7 @@ export default {
   float: left;
 }
 
-.ele-wrapper-1d8c5dce-11d9-4c07-bcd0-e9da88d61ded {
+.ele-wrapper-qrcode {
   width: 70%;
 }
 
