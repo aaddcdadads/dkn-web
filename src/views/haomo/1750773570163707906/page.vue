@@ -335,6 +335,7 @@
                       text="确定"
                       :type="'primary'"
                       :size="'large'"
+                      @click="onSureButtonClick"
                       class="ele-sureButton"
                     >
                     </hm-ant-button>
@@ -890,6 +891,10 @@ export default {
       downloadLink.click();
       document.body.removeChild(downloadLink);
       this.qrcodeModal.visible = false;
+    },
+    onSureButtonClick() {
+      //关闭弹窗
+      this.storeDetailModal.visible = false;
     },
     onStoreDeleteModalOk() {
       deleteStore(this, arguments);
