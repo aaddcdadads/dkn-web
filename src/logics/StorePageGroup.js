@@ -245,20 +245,21 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
   self.editStoreData = eventData;
 
   await self.$refs.storeEditForm.validate();
+  var values = self.$refs.viewDepartSchoolEditForm.getFormValues();
   //地区处理
-  let regionId = null;
-  if (Object.prototype.toString.call(values.regionId) === "[object Array]") {
-    regionId =
-      values.regionId.length > 0
-        ? values.regionId[values.regionId.length - 1]
+  let urbanArea = null;
+  if (Object.prototype.toString.call(values.urbanArea) === "[object Array]") {
+    urbanArea =
+      values.urbanArea.length > 0
+        ? values.urbanArea[values.urbanArea.length - 1]
         : null;
   } else {
-    regionId = values.regionId;
+    urbanArea = values.urbanArea;
   }
 
   self.editParams = {
     ...values,
-    regionId: regionId,
+    urbanArea: urbanArea,
   };
   await editRequest();
   if (self.editRequestData.success) {
