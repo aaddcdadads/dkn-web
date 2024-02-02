@@ -917,7 +917,9 @@ export default {
                 title: "",
                 onChange: function (e) {
                   self.updateStatus(data.record.id, e);
-                  data.record.status = e;
+                  setTimeout(() => {
+                    data.record.status = e;
+                  });
                 },
               });
             },
