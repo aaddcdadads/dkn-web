@@ -1147,6 +1147,9 @@ export default {
         color: "#59c7f9",
       },
       activityForm: {
+        value: {
+          status: 0,
+        },
         config: {
           name: {
             style: {
@@ -1210,9 +1213,6 @@ export default {
             },
           },
         },
-        value: {
-          status: 0,
-        },
         schema: {
           type: "object",
           properties: {
@@ -1236,216 +1236,8 @@ export default {
           },
         },
       },
-      activityProjectTable: {
-        columns: [
-          {
-            customRender: function (data) {
-              return h(HmAntIconText, {
-                fontSize: "14px",
-                iconSize: "16px",
-                bgColorText: "transparent",
-                width: "100%",
-                display: "flex",
-                alignItems: "center",
-                text: "",
-                placement: "top",
-                img: self.getImg(data.record.imgPath),
-                color: "black",
-                imgStyle: {
-                  height: "32px",
-                  marginRight: "4px",
-                  marginTop: "-4px",
-                },
-                onClick: function () {},
-              });
-            },
-            dataIndex: "imgPath",
-            title: "项目图片",
-            key: "imgPath",
-          },
-          {
-            dataIndex: "expense",
-            title: "项目费用",
-            key: "expense",
-          },
-          {
-            dataIndex: "free",
-            title: "是否免费",
-            key: "free",
-            customRender: function (data) {
-              let free = data.record.free;
-              return free === 0 ? "是" : "否";
-            },
-          },
-          {
-            dataIndex: "multipleOrder",
-            width: 60,
-            title: "可多人报名",
-            key: "multipleOrder",
-            customRender: function (data) {
-              let multipleOrder = data.record.multipleOrder;
-              return multipleOrder === 0 ? "是" : "否";
-            },
-          },
-          {
-            dataIndex: "name",
-            width: 130,
-            title: "活动项目名称",
-            key: "name",
-            ellipsis: true,
-          },
-          {
-            dataIndex: "synopsis",
-            title: "项目简介",
-            key: "synopsis",
-            ellipsis: true,
-          },
-          {
-            dataIndex: "sortNo",
-            title: "排序",
-            key: "sortNo",
-          },
-          {
-            slots: {
-              customRender: "action",
-            },
-            width: 100,
-            title: "操作",
-            key: "action",
-            align: "center",
-          },
-        ],
-        data: [],
-        paginationHidden: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        actions: [
-          {
-            name: "编辑",
-            icon: "fa fa-pencil",
-            callback: function (item) {
-              console.log("点击编辑: ", item);
-              self.activityProjectItem = item;
-              self.activityProjectTableStatus = 2;
-              self.addproject.visible = true;
-              self.activityProjectForm.config.imgPath.props.imageUrl = self.getImg(
-                item.imgPath
-              );
-              setTimeout(() => {
-                self.$refs.activityProjectForm.setFormValues(item);
-              });
-            },
-            type: "link",
-          },
-          {
-            name: "删除",
-            icon: "fa fa-trash",
-            callback: function (item) {
-              console.log("点击删除: ", item);
-              self.deleteItem = item;
-              self.deleteStatus = 1;
-              self.deleteproject.visible = true;
-            },
-            type: "link",
-          },
-        ],
-        isFlatAction: true,
-        rowClassName: {},
-      },
-      customerService: {
-        value: "",
-      },
-      activityImgTableTwo: {
-        columns: [
-          {
-            customRender: function (data) {
-              return h(HmAntIconText, {
-                fontSize: "14px",
-                iconSize: "16px",
-                bgColorText: "transparent",
-                width: "100%",
-                display: "flex",
-                alignItems: "center",
-                text: "",
-                placement: "top",
-                img: self.getImg(data.record.path),
-                color: "black",
-                imgStyle: {
-                  height: "32px",
-                  marginRight: "4px",
-                  marginTop: "-4px",
-                },
-                onClick: function () {},
-              });
-            },
-            dataIndex: "path",
-            title: "奖品图片",
-            key: "path",
-          },
-          {
-            dataIndex: "name",
-            title: "奖品名称",
-            key: "name",
-          },
-          {
-            dataIndex: "sortNo",
-            title: "奖品排序",
-            key: "sortNo",
-            ellipsis: true,
-          },
-          {
-            slots: {
-              customRender: "action",
-            },
-            width: 80,
-            title: "操作",
-            key: "action",
-            align: "center",
-          },
-        ],
-        data: [],
-        paginationHidden: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        actions: [
-          {
-            name: "编辑",
-            icon: "fa fa-pencil",
-            callback: function (item) {
-              console.log("点击编辑: ", item);
-              self.addprize.visible = true;
-              self.activityImgTableTwoItem = item;
-              self.activityImgTableTwoStatus = 2;
-              self.addActivityImgFormTwo.config.imgPath.props.imageUrl = self.getImg(
-                item.path
-              );
-              item.imgPath = item.path;
-              setTimeout(() => {
-                self.$refs.addActivityImgFormTwo.setFormValues(item);
-              });
-            },
-            type: "link",
-          },
-          {
-            name: "删除",
-            icon: "fa fa-trash",
-            callback: function (item) {
-              console.log("点击删除: ", item);
-              self.deleteItem = item;
-              self.deleteStatus = 3;
-              self.deleteproject.visible = true;
-            },
-            type: "link",
-          },
-        ],
-        isFlatAction: true,
-        rowClassName: {},
-      },
       activityExtTwoForm: {
+        value: {},
         config: {
           activityType: {
             style: {
@@ -1470,7 +1262,6 @@ export default {
             },
           },
         },
-        value: {},
         schema: {
           type: "object",
           properties: {
@@ -1605,6 +1396,215 @@ export default {
           ],
           excludeKeys: [],
         },
+      },
+      customerService: {
+        value: "",
+      },
+      activityProjectTable: {
+        columns: [
+          {
+            customRender: function (data) {
+              return h(HmAntIconText, {
+                fontSize: "14px",
+                iconSize: "16px",
+                bgColorText: "transparent",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                text: "",
+                placement: "top",
+                img: self.getImg(data.record.imgPath),
+                color: "black",
+                imgStyle: {
+                  height: "32px",
+                  marginRight: "4px",
+                  marginTop: "-4px",
+                },
+                onClick: function () {},
+              });
+            },
+            dataIndex: "imgPath",
+            title: "项目图片",
+            key: "imgPath",
+          },
+          {
+            dataIndex: "expense",
+            title: "项目费用",
+            key: "expense",
+          },
+          {
+            dataIndex: "free",
+            title: "是否免费",
+            key: "free",
+            customRender: function (data) {
+              let free = data.record.free;
+              return free === 0 ? "是" : "否";
+            },
+          },
+          {
+            dataIndex: "multipleOrder",
+            width: 60,
+            title: "可多人报名",
+            key: "multipleOrder",
+            customRender: function (data) {
+              let multipleOrder = data.record.multipleOrder;
+              return multipleOrder === 0 ? "是" : "否";
+            },
+          },
+          {
+            dataIndex: "name",
+            width: 130,
+            title: "活动项目名称",
+            key: "name",
+            ellipsis: true,
+          },
+          {
+            dataIndex: "synopsis",
+            title: "项目简介",
+            key: "synopsis",
+            ellipsis: true,
+          },
+          {
+            dataIndex: "sortNo",
+            title: "排序",
+            key: "sortNo",
+          },
+          {
+            slots: {
+              customRender: "action",
+            },
+            width: 100,
+            title: "操作",
+            key: "action",
+            align: "center",
+          },
+        ],
+        data: [],
+        paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        actions: [
+          {
+            name: "编辑",
+            icon: "fa fa-pencil",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.activityProjectItem = item;
+              self.activityProjectTableStatus = 2;
+              self.addproject.visible = true;
+              self.activityProjectForm.config.imgPath.props.imageUrl = self.getImg(
+                item.imgPath
+              );
+              setTimeout(() => {
+                self.$refs.activityProjectForm.setFormValues(item);
+              });
+            },
+            type: "link",
+          },
+          {
+            name: "删除",
+            icon: "fa fa-trash",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+              self.deleteItem = item;
+              self.deleteStatus = 1;
+              self.deleteproject.visible = true;
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
+      },
+      activityImgTableTwo: {
+        columns: [
+          {
+            customRender: function (data) {
+              return h(HmAntIconText, {
+                fontSize: "14px",
+                iconSize: "16px",
+                bgColorText: "transparent",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                text: "",
+                placement: "top",
+                img: self.getImg(data.record.path),
+                color: "black",
+                imgStyle: {
+                  height: "32px",
+                  marginRight: "4px",
+                  marginTop: "-4px",
+                },
+                onClick: function () {},
+              });
+            },
+            dataIndex: "path",
+            title: "奖品图片",
+            key: "path",
+          },
+          {
+            dataIndex: "name",
+            title: "奖品名称",
+            key: "name",
+          },
+          {
+            dataIndex: "sortNo",
+            title: "奖品排序",
+            key: "sortNo",
+            ellipsis: true,
+          },
+          {
+            slots: {
+              customRender: "action",
+            },
+            width: 80,
+            title: "操作",
+            key: "action",
+            align: "center",
+          },
+        ],
+        data: [],
+        paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        actions: [
+          {
+            name: "编辑",
+            icon: "fa fa-pencil",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.addprize.visible = true;
+              self.activityImgTableTwoItem = item;
+              self.activityImgTableTwoStatus = 2;
+              self.addActivityImgFormTwo.config.imgPath.props.imageUrl = self.getImg(
+                item.path
+              );
+              item.imgPath = item.path;
+              setTimeout(() => {
+                self.$refs.addActivityImgFormTwo.setFormValues(item);
+              });
+            },
+            type: "link",
+          },
+          {
+            name: "删除",
+            icon: "fa fa-trash",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+              self.deleteItem = item;
+              self.deleteStatus = 3;
+              self.deleteproject.visible = true;
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityImgTableOne: {
         columns: [
@@ -1857,6 +1857,17 @@ export default {
           return url;
         }
         return `/api/sys/common/static/${url}`;
+      };
+      self.reset = function () {
+        self.activityForm.value = {};
+        self.activityExtTwoForm.value = {};
+        self.$refs.activityProjectTable.cData = [];
+        self.$refs.activityImgTableTwo.cData = [];
+        self.$refs.activityImgTableOne.cData = [];
+        self.$refs.sharingImageTable.cData = [{}];
+        self.activityRules.value = "";
+        self.agreementCommitmentletter.value = "";
+        self.customerService.value = "";
       };
     },
 
