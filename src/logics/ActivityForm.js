@@ -255,8 +255,9 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
     activityImgs = [...activityImgs, ...list];
   }
   let item = self.$refs.activityForm.getFormValues();
-  item.startTime = self.$moment(item.cycle[0]).format("YYYY-MM-DD HH:mm:ss");
-  item.endTime = self.$moment(item.cycle[1]).format("YYYY-MM-DD HH:mm:ss");
+  item.startTime =
+    self.$moment(item.cycle[0]).format("YYYY-MM-DD") + " 00:00:00";
+  item.endTime = self.$moment(item.cycle[1]).format("YYYY-MM-DD") + " 23:59:59";
   console.log(item);
   delete item.cycle;
 
