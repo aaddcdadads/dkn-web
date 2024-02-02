@@ -460,20 +460,7 @@ export default {
       },
       currentEditItem: {},
       storeEditForm: {
-        config: {
-          name: {
-            type: "Input",
-            title: "门店名称",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            default: "",
-            validator: function (value) {},
-            required: true,
-            disabled: false,
-          },
-        },
+        config: {},
         value: {
           span: "文字内容",
         },
@@ -496,6 +483,24 @@ export default {
                 },
               },
               properties: {
+                name: {
+                  type: "string",
+                  required: true,
+                  default: "",
+                  "x-decorator": "FormItem",
+                  "x-decorator-props": {
+                    label: "门店名称",
+                    name: "name",
+                    style: {
+                      width: "50%",
+                    },
+                    class: ["required"],
+                  },
+                  "x-component-props": {
+                    title: "",
+                  },
+                  "x-component": "HmAntInput",
+                },
                 address: {
                   type: "string",
                   required: true,
