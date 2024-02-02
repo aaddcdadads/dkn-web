@@ -780,7 +780,7 @@ export default {
               self.currentEditItem = item;
               console.log("地区", self.currentEditItem.urbanArea);
               self.$nextTick(function () {
-                self.storeEditForm.value = item;
+                //self.storeEditForm.value = item;
                 self.onAreaButtonClick();
               });
             },
