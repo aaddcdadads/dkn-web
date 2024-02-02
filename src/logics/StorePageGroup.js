@@ -194,14 +194,12 @@ const queryAreaRequestSucRegion = (logic.queryAreaRequestSucRegion = function ()
   );
 
   self.$nextTick(function () {
-    setTimeout(() => {
-      self.$refs.storeEditForm.schema.properties.form.properties.urbanArea.default =
-        self.currentEditItem.urbanArea;
-      self.$refs.storeEditForm.schema.properties.form.properties.name.default =
-        self.currentEditItem.name;
-      self.$refs.storeEditForm.schema.properties.form.properties.address.default =
-        self.currentEditItem.address;
-    }, 3000);
+    self.$refs.storeEditForm.schema.properties.form.properties.urbanArea.default =
+      self.currentEditItem.urbanArea;
+    self.$refs.storeEditForm.schema.properties.form.properties.name.default =
+      self.currentEditItem.name;
+    self.$refs.storeEditForm.schema.properties.form.properties.address.default =
+      self.currentEditItem.address;
   });
 });
 
