@@ -1101,7 +1101,7 @@ export default {
         }
         self.$message.success("操作成功");
       } else if (self.allStatus === 3) {
-        let url = "/api/dkn/store/editBatch";
+        let url = "/api/dkn/store/deleteBatch";
         let params = self.selectedRows.map((e) => {
           return e.id;
         });
@@ -1118,7 +1118,7 @@ export default {
         self.batchDelete.disabled = true;
         self.$message.success("操作成功");
       }
-      self.$refs.activityTable.getData();
+      self.$refs.storeTable.getData();
     },
     onBatchEditCancel() {
       this.batchEdit.visible = false;
