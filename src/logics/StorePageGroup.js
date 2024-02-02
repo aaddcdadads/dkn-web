@@ -138,7 +138,8 @@ const loadAreaData = (logic.loadAreaData = async (pageVm, eventData) => {
  * 参数处理
  */
 const regionParamHandler = (logic.regionParamHandler = function () {
-  let regionIds = self.currentEditItem.regionId;
+  let regionIds = self.currentEditItem.urbanArea;
+  console.log("打印", regionIds);
   if (Object.prototype.toString.call(regionIds) === "[object Array]") {
     self.regionIds =
       regionIds.length > 0 ? regionIds[regionIds.length - 1] : null;
