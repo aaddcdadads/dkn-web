@@ -135,6 +135,7 @@
                             :type="'primary'"
                             icon="fa fa-plus"
                             @click="onElef087F9B5C00641C6Aea1A22F650Dcce6Click"
+                            class="ele-f087f9b5-c006-41c6-aea1-a22f650dcce6"
                           >
                           </hm-ant-button>
                         </div>
@@ -158,6 +159,7 @@
                             text="导出核销码"
                             :type="'primary'"
                             icon="fa fa-download"
+                            class="ele-6f9a0599-82dc-4e11-880c-d7f38d3f8892"
                           >
                           </hm-ant-button>
                         </div>
@@ -1025,12 +1027,20 @@ export default {
   margin-right: 8px;
 }
 
+.ele-wrapper-f087f9b5-c006-41c6-aea1-a22f650dcce6 {
+  margin-right: 8px;
+}
+
 .ele-wrapper-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5 {
-  margin: 0 5% 0 5%;
+  margin-right: 8px;
   transform: translateY(-1px);
   /deep/ .upload-class {
     min-width: 0;
   }
+}
+
+.ele-wrapper-6f9a0599-82dc-4e11-880c-d7f38d3f8892 {
+  margin-right: 8px;
 }
 
 .ele-wrapper-invisibleImportSearchLogicBtn {
