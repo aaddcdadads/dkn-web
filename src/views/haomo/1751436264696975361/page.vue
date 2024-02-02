@@ -1065,6 +1065,45 @@ export default {
       sharingImageSettings: {
         visible: false,
       },
+      activityImgFormTre: {
+        config: {
+          imgPath: {
+            style: {
+              width: "100%",
+            },
+            type: "UploadImage",
+            title: "图片",
+            required: true,
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+        },
+        value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
+      },
       activityProjectItem: {},
       deleteItem: {},
       delActivityProjectList: {},
@@ -1773,51 +1812,19 @@ export default {
               console.log("点击编辑: ", item);
               self.imgItem = item;
               self.sharingImageSettings.visible = true;
+              self.activityImgFormTre.config.imgPath.props.imageUrl = self.getImg(
+                item.path
+              );
+              item.imgPath = item.path;
+              setTimeout(() => {
+                self.$refs.activityImgFormTre.setFormValues(item);
+              });
             },
             type: "link",
           },
         ],
         isFlatAction: true,
         rowClassName: {},
-      },
-      activityImgFormTre: {
-        config: {
-          imgPath: {
-            style: {
-              width: "100%",
-            },
-            type: "UploadImage",
-            title: "图片",
-            required: true,
-            props: {
-              action: "/api/sys/common/upload",
-              accept: ".jpg,.png",
-            },
-          },
-        },
-        value: {},
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
       },
     };
   },
