@@ -1096,6 +1096,32 @@ export default {
           self.urlInput.value = url;
         });
       };
+      self.isDisabled = function () {
+        if (this.selectedRows.length > 0) {
+          self.bathqiyong.disabled = false;
+          self.batchBisabled.disabled = false;
+          self.batchDelete.disabled = false;
+        } else {
+          self.bathqiyong.disabled = true;
+          self.batchBisabled.disabled = true;
+          self.batchDelete.disabled = true;
+        }
+        let qd = [],
+          jy = [];
+        this.selectedRows.forEach((e) => {
+          if (e.status === 0) {
+            qd.push(e);
+          } else {
+            jy.push(e);
+          }
+        });
+        if (qd.length === 0) {
+          self.bathqiyong.disabled = true;
+        }
+        if (jy.length === 0) {
+          self.batchBisabled.disabled = true;
+        }
+      };
     },
 
     onAddButtonClick() {
