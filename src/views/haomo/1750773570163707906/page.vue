@@ -846,7 +846,7 @@ export default {
           // 获取生成的二维码的 base64 编码
           const canvas = container.querySelector("canvas");
           const qrCodeBase64 = canvas.toDataURL("image/png");
-
+          self.baseUrl = qrCodeBase64;
           // 打印二维码的 base64 编码
           console.log("QR Code Base64:", qrCodeBase64);
         });
