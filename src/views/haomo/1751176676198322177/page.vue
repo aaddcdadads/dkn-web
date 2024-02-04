@@ -1434,13 +1434,7 @@ export default {
             align: "center",
           },
         ],
-        data: [
-          {
-            customRender: "",
-            name: "电视放的开飞机啊饭卡；速度方法都是咖啡",
-            sortNo: "112",
-          },
-        ],
+        data: [],
         paginationHidden: true,
         getDataMap: {
           total: "",
