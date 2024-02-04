@@ -1520,7 +1520,12 @@ export default {
             align: "center",
           },
         ],
-        data: [],
+        data: [
+          {
+            customRender: "",
+            name: "三顿饭噶咖啡馆感觉阿富汗adage对方的",
+          },
+        ],
         paginationHidden: true,
         getDataMap: {
           total: "",
@@ -2264,6 +2269,9 @@ export default {
   /deep/.ant-table-tbody > tr > td:nth-child(4) {
     padding-left: 0px !important;
   }
+  /deep/.ant-table-body {
+    overflow: hidden !important;
+  }
 }
 
 .ele-wrapper-b20c5e06-5a57-4774-a563-47501fbdd9f4 {
@@ -2379,6 +2387,9 @@ export default {
   }
   /deep/.ant-table-tbody > tr > td:nth-child(4) {
     padding-left: 0px !important;
+  }
+  /deep/.ant-table-body {
+    overflow: hidden !important;
   }
 }
 
