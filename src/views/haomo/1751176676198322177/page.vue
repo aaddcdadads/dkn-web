@@ -1059,7 +1059,7 @@ export default {
         },
       },
       addBackground: {
-        visible: true,
+        visible: false,
         style: {
           top: "100px",
           overflow: "scroll",
