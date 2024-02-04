@@ -1662,7 +1662,12 @@ export default {
             align: "center",
           },
         ],
-        data: [],
+        data: [
+          {
+            customRender: "",
+            imgSize: "三顿饭噶咖啡馆感觉阿富汗adage对方的",
+          },
+        ],
         paginationHidden: true,
         getDataMap: {
           total: "",
