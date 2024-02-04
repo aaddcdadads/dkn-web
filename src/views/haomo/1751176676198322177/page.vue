@@ -500,6 +500,7 @@
                           :schema="activityImgFormOne.schema"
                           :label-col="7"
                           :wrapper-col="14"
+                          class="ele-activityImgFormOne"
                         >
                         </hm-ant-formily>
                       </div>
@@ -2179,6 +2180,10 @@ export default {
     height: 200px;
     overflow-y: scroll;
   }
+}
+
+.ele-wrapper-activityImgFormOne {
+  width: 100%;
 }
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
