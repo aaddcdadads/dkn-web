@@ -1508,6 +1508,7 @@ export default {
             dataIndex: "sortNo",
             title: "奖品排序",
             key: "sortNo",
+            width: 120,
             ellipsis: true,
           },
           {
@@ -1650,6 +1651,7 @@ export default {
             dataIndex: "sortNo",
             title: "图片排序",
             key: "sortNo",
+            width: 120,
             ellipsis: true,
           },
           {
