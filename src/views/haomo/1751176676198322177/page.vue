@@ -483,7 +483,7 @@
                       title="报名页背景图"
                       v-model:visible="addBackground.visible"
                       :z-index="1000"
-                      height="300px"
+                      height=""
                       :auto-close="false"
                       @ok="onAddBackgroundOk"
                       @cancel="onAddBackgroundCancel"
