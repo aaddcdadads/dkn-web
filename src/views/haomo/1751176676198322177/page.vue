@@ -2176,8 +2176,8 @@ export default {
 }
 
 .ele-wrapper-activityImgFormOne {
-  height: 800px;
-  background-color: red;
+  height: 200px;
+  overflow-y: scroll;
 }
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
