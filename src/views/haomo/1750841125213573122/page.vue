@@ -871,7 +871,7 @@ export default {
           },
           activitySelect: {
             type: "HmAntSelect",
-            title: "活动列表",
+            title: "选择活动",
             style: {
               width: "50%",
             },
