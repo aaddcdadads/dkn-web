@@ -499,6 +499,7 @@
                           :schema="activityImgFormOne.schema"
                           :label-col="7"
                           :wrapper-col="14"
+                          class="ele-activityImgFormOne"
                         >
                         </hm-ant-formily>
                       </div>
@@ -1056,7 +1057,7 @@ export default {
         },
       },
       addBackground: {
-        visible: false,
+        visible: true,
       },
       activityImgFormOne: {
         config: {
@@ -2167,6 +2168,13 @@ export default {
   /deep/.hm-modal {
     min-height: 0px;
   }
+  /deep/.ant-modal-body {
+    overflow-y: scroll;
+  }
+}
+
+.ele-wrapper-activityImgFormOne {
+  height: 800px;
 }
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {
