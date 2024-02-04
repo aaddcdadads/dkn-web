@@ -483,7 +483,7 @@
                       title="报名页背景图"
                       v-model:visible="addBackground.visible"
                       :z-index="1000"
-                      height=""
+                      height="300px"
                       :auto-close="false"
                       :style="addBackground.style"
                       @ok="onAddBackgroundOk"
@@ -1060,7 +1060,7 @@ export default {
         visible: true,
         style: {
           top: "100px",
-          "overflow-y": "scroll",
+          overflow: "scroll",
         },
       },
       activityImgFormOne: {
