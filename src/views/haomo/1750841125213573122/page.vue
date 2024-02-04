@@ -869,6 +869,34 @@ export default {
             },
             validator: function (value) {},
           },
+          activitySelect: {
+            type: "HmAntSelect",
+            title: "活动列表",
+            style: {
+              width: "50%",
+            },
+            props: {
+              width: "242px",
+              dataMap: {
+                label: "name",
+                value: "name",
+              },
+              title: "",
+              params: {
+                pageNo: 1,
+                pageSize: -1,
+              },
+              showSearch: true,
+              url: "/api/restify/activity/list",
+            },
+            events: {
+              "@click": function (item) {
+                this.selectActivityId = item ?? "";
+                searchViewRegistrationOrders(this, null);
+              },
+            },
+            validator: function (value) {},
+          },
           search: {
             type: "HmAntButton",
             title: "",
@@ -1045,6 +1073,7 @@ export default {
 
 .ele-wrapper-activitySelect {
   margin: 0 1% 0 1%;
+  display: none;
 }
 
 .ele-wrapper-batchRefund {
