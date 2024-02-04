@@ -1056,7 +1056,7 @@ export default {
         },
       },
       addBackground: {
-        visible: false,
+        visible: true,
       },
       activityImgFormOne: {
         config: {
@@ -2167,6 +2167,13 @@ export default {
   /deep/.hm-modal {
     min-height: 0px;
   }
+  /deep/.ant-modal-content {
+    > .ant-modal-body {
+      overflow-y: scroll;
+    }
+  }
+  height: 200px;
+  overflow-y: scroll;
 }
 
 .ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2 {

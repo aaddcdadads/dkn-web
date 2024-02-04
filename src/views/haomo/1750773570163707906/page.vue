@@ -101,7 +101,6 @@
                             :text="bathqiyong.text"
                             :type="bathqiyong.type"
                             :disabled="bathqiyong.disabled"
-                            :icon="bathqiyong.icon"
                             @click="onBathqiyongClick"
                             class="ele-bathqiyong"
                           >
@@ -113,7 +112,6 @@
                             :text="batchBisabled.text"
                             :type="batchBisabled.type"
                             :disabled="batchBisabled.disabled"
-                            :icon="batchBisabled.icon"
                             @click="onBatchBisabledClick"
                             class="ele-batchBisabled"
                           >
@@ -125,7 +123,6 @@
                             :text="batchDelete.text"
                             :type="batchDelete.type"
                             :disabled="batchDelete.disabled"
-                            :icon="batchDelete.icon"
                             @click="onBatchDeleteClick"
                             class="ele-batchDelete"
                           >
@@ -625,19 +622,19 @@ export default {
         disabled: false,
         text: "批量启用",
         type: "primary",
-        icon: "fa fa-toggle-on",
+        icon: "",
       },
       batchBisabled: {
         disabled: false,
         text: "批量禁用",
         type: "primary",
-        icon: "fa fa-toggle-off",
+        icon: "",
       },
       batchDelete: {
         disabled: false,
         text: "批量删除",
         type: "primary",
-        icon: "fa fa-trash",
+        icon: "",
       },
       importButton: {},
       exportButton: {
