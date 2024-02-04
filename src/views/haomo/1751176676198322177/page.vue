@@ -2066,6 +2066,9 @@ export default {
   /deep/.ant-table-tbody > tr > td:nth-child(4) {
     padding-left: 0px !important;
   }
+  /deep/.ant-table-body {
+    overflow: hidden !important;
+  }
 }
 
 .ele-wrapper-e3996ba6-7678-4de0-abea-832a2097c2c9 {
