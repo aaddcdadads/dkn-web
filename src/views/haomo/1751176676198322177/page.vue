@@ -482,7 +482,7 @@
                       ref="addBackground"
                       title="报名页背景图"
                       v-model:visible="addBackground.visible"
-                      width=""
+                      width="600"
                       :z-index="1000"
                       height=""
                       :auto-close="false"
