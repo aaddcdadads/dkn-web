@@ -1576,7 +1576,12 @@ export default {
             align: "center",
           },
         ],
-        data: [],
+        data: [
+          {
+            customRender: "",
+            imgSize: "",
+          },
+        ],
         paginationHidden: true,
         getDataMap: {
           total: "",
