@@ -1433,7 +1433,13 @@ export default {
             align: "center",
           },
         ],
-        data: [],
+        data: [
+          {
+            customRender: "",
+            name: "",
+            sortNo: "",
+          },
+        ],
         paginationHidden: true,
         getDataMap: {
           total: "",
