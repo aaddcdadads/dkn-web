@@ -1521,12 +1521,7 @@ export default {
             align: "center",
           },
         ],
-        data: [
-          {
-            customRender: "",
-            name: "三顿饭噶咖啡馆感觉阿富汗adage对方的",
-          },
-        ],
+        data: [],
         paginationHidden: true,
         getDataMap: {
           total: "",
@@ -1664,12 +1659,7 @@ export default {
             align: "center",
           },
         ],
-        data: [
-          {
-            customRender: "",
-            imgSize: "三顿饭噶咖啡馆感觉阿富汗adage对方的",
-          },
-        ],
+        data: [],
         paginationHidden: true,
         getDataMap: {
           total: "",
