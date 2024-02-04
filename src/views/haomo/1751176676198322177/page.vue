@@ -2168,8 +2168,10 @@ export default {
   /deep/.hm-modal {
     min-height: 0px;
   }
-  /deep/.ant-modal-body {
-    overflow-y: scroll;
+  /deep/.ant-modal-content {
+    > .ant-modal-body {
+      overflow-y: scroll;
+    }
   }
 }
 
