@@ -1101,16 +1101,8 @@ export default {
     },
     onStoreTableOnSelectAll(e) {
       this.selectedRows = e.selectedRows;
-      let self = this;
-      if (this.selectedRows.length > 0) {
-        self.bathqiyong.disabled = false;
-        self.batchBisabled.disabled = false;
-        self.batchDelete.disabled = false;
-      } else {
-        self.bathqiyong.disabled = true;
-        self.batchBisabled.disabled = true;
-        self.batchDelete.disabled = true;
-      }
+      //调用启用禁用方法
+      this.isDisabled();
     },
     onStoreAddModalOk() {
       addStore(this, arguments);
