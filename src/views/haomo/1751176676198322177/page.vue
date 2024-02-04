@@ -1659,8 +1659,8 @@ export default {
         ],
         data: [
           {
-            image: "",
-            size: "375 * 667",
+            customRender: "",
+            imgSize: "375 * 667",
           },
         ],
         paginationHidden: true,
