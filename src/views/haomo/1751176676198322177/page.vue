@@ -485,6 +485,7 @@
                       :z-index="1000"
                       height=""
                       :auto-close="false"
+                      :style="addBackground.style"
                       @ok="onAddBackgroundOk"
                       @cancel="onAddBackgroundCancel"
                       class="ele-addBackground"
@@ -1057,6 +1058,10 @@ export default {
       },
       addBackground: {
         visible: true,
+        style: {
+          top: "100px",
+          "overflow-y": "scroll",
+        },
       },
       activityImgFormOne: {
         config: {
