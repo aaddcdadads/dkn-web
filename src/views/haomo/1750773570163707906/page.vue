@@ -620,6 +620,7 @@ export default {
       storeAddModal: {
         visible: false,
       },
+      qrcodeModal: {},
       bathqiyong: {
         disabled: false,
         text: "批量启用",
@@ -638,7 +639,6 @@ export default {
         type: "primary",
         icon: "fa fa-trash",
       },
-      qrcodeModal: {},
       importButton: {},
       exportButton: {
         visible: false,
@@ -1088,16 +1088,8 @@ export default {
     },
     onStoreTableOnSelect(e) {
       this.selectedRows = e.selectedRows;
-      let self = this;
-      if (this.selectedRows.length > 0) {
-        self.bathqiyong.disabled = false;
-        self.batchBisabled.disabled = false;
-        self.batchDelete.disabled = false;
-      } else {
-        self.bathqiyong.disabled = true;
-        self.batchBisabled.disabled = true;
-        self.batchDelete.disabled = true;
-      }
+      //调用启用禁用方法
+      this.isDisabled();
     },
     onStoreTableOnSelectAll(e) {
       this.selectedRows = e.selectedRows;
