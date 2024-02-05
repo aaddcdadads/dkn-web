@@ -521,7 +521,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       storeDetailModal: {
-        visible: false,
+        visible: true,
       },
       storeEditModal: {
         visible: false,
