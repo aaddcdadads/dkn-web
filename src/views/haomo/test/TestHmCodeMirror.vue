@@ -1,6 +1,7 @@
 <template>
   <div>
     <hm-code-mirror
+      ref="codemirror"
       v-model:value="cValue"
       v-model:diffValue="cDiffValue"
       :autofocus="false"
@@ -9,27 +10,27 @@
       :tab-size="4"
       :autoDestroy="true"
       theme="dark"
-      language="jsx"
+      language="javascript"
       mode="default"
+      :autoScroll="false"
     ></hm-code-mirror>
     <button @click="changeValue">changeValue</button>
+    <button @click="formatCode">formatCode</button>
   </div>
 </template>
 
 <script>
 import HmCodeMirror from "/@/components/built-in/jeecg/HmCodeMirror.vue";
 export default {
-  components: {
-    HmCodeMirror,
-  },
+  components: { HmCodeMirror },
   data() {
     return {
       cValue: `aaa`,
-      cDiffValue: "bbbb"
+      cDiffValue: "bbbb",
     };
   },
-  methods:{
-    changeValue(){
+  methods: {
+    changeValue() {
       this.cValue = `<template>
   <div>
     <hm-code-mirror
@@ -154,10 +155,13 @@ export default {
     ></hm-code-mirror>
     <button @click="changeValue">changeValue</button>
   </div>
-</template>`
-      console.log(this.cValue)
-    }
-  }
+</template>`;
+      console.log(this.cValue);
+    },
+    formatCode() {
+      this.$refs.codemirror.formatCode();
+    },
+  },
 };
 </script>
 
