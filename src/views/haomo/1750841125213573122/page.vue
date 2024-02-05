@@ -553,8 +553,8 @@ export default {
         columns: [
           {
             title: "订单编号",
-            dataIndex: "id",
-            key: "id",
+            dataIndex: "code",
+            key: "code",
           },
           {
             title: "手机号",
