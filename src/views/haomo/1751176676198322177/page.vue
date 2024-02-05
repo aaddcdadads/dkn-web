@@ -2185,7 +2185,7 @@ export default {
 .ele-wrapper-activityImgFormOne {
   width: 100%;
   /deep/.ant-form-item-control-input {
-    overflow: scroll;
+    overflow: auto;
   }
 }
 
