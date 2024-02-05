@@ -28,7 +28,7 @@
                   :col-num="0"
                   :col-min-width="380"
                   :schema="storeFilter.schema"
-                  :label-col="5"
+                  :label-col="6"
                   :wrapper-col="14"
                   class="ele-storeFilter"
                 >
