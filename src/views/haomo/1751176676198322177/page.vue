@@ -813,7 +813,7 @@ export default {
             style: {
               width: "100%",
             },
-            type: "DatePicker",
+            type: "RangePicker",
             title: "核销截止",
             required: true,
             props: {
