@@ -575,6 +575,10 @@ export default {
             title: "订单金额",
             dataIndex: "money",
             key: "money",
+            customRender: function (data) {
+              let money = data.record.money ? data.record.money : 0;
+              return `￥${money}`;
+            },
           },
           {
             title: "报名渠道",
