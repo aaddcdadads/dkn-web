@@ -516,7 +516,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       storeDetailModal: {
-        visible: false,
+        visible: true,
       },
       storeEditModal: {
         visible: false,
@@ -1299,6 +1299,7 @@ export default {
 
 .ele-wrapper-484bf8ce-7d76-4bf5-bd8b-b64d3ed4b395 {
   width: 100%;
+  margin-top: 20px;
 }
 
 .ele-wrapper-bottomBg {
