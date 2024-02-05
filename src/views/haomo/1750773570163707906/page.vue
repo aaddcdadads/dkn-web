@@ -308,6 +308,7 @@
                       ref="erCode"
                       text="二维码："
                       font-size="16px"
+                      :text-align="'right'"
                       padding="3"
                       class="ele-erCode"
                     >
@@ -344,7 +345,6 @@
                           ref="storeName"
                           text="门店名称："
                           font-size="16px"
-                          :text-align="'right'"
                           padding="3"
                           class="ele-storeName"
                         >
