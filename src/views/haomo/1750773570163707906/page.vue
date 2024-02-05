@@ -307,7 +307,7 @@
                     class="ele-wrapper ele-wrapper-6a427e0a-e088-4f10-8f90-062dff49940b"
                   >
                     <hm-ant-bg-text
-                      text="二维码： "
+                      text="二维码："
                       font-size="16px"
                       :text-align="'right'"
                       padding="3"
