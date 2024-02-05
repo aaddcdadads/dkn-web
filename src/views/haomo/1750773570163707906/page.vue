@@ -303,14 +303,13 @@
                   box-shadow-color="#00000000"
                   class="ele-detailsUserModalCard"
                 >
-                  <div
-                    class="ele-wrapper ele-wrapper-6a427e0a-e088-4f10-8f90-062dff49940b"
-                  >
+                  <div class="ele-wrapper ele-wrapper-erCode">
                     <hm-ant-bg-text
+                      ref="erCode"
                       text="二维码："
                       font-size="16px"
                       padding="3"
-                      class="ele-6a427e0a-e088-4f10-8f90-062dff49940b"
+                      class="ele-erCode"
                     >
                     </hm-ant-bg-text>
                   </div>
@@ -340,15 +339,14 @@
                       box-shadow-spread=""
                       class="ele-484bf8ce-7d76-4bf5-bd8b-b64d3ed4b395"
                     >
-                      <div
-                        class="ele-wrapper ele-wrapper-9fa6ebb7-26cf-471e-af62-d8b5679ca587"
-                      >
+                      <div class="ele-wrapper ele-wrapper-storeName">
                         <hm-ant-bg-text
+                          ref="storeName"
                           text="门店名称："
                           font-size="16px"
                           :text-align="'right'"
                           padding="3"
-                          class="ele-9fa6ebb7-26cf-471e-af62-d8b5679ca587"
+                          class="ele-storeName"
                         >
                         </hm-ant-bg-text>
                       </div>
@@ -1296,7 +1294,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-6a427e0a-e088-4f10-8f90-062dff49940b {
+.ele-wrapper-erCode {
   float: left;
   width: 120px;
 }
@@ -1311,7 +1309,7 @@ export default {
   margin-bottom: 10px;
 }
 
-.ele-wrapper-9fa6ebb7-26cf-471e-af62-d8b5679ca587 {
+.ele-wrapper-storeName {
   width: 120px;
 }
 
