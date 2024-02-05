@@ -563,13 +563,13 @@ export default {
           },
           {
             title: "姓名/昵称",
-            dataIndex: "realname",
-            key: "realname",
+            dataIndex: "name",
+            key: "name",
           },
           {
             title: "报名项目",
-            dataIndex: "activityId_dictText",
-            key: "activityId_dictText",
+            dataIndex: "acName",
+            key: "acName",
           },
           {
             title: "订单金额",
