@@ -719,7 +719,7 @@ export default {
       storeDetailForm: {},
       storeNameText: {
         text: "",
-        fontSize: "14px",
+        fontSize: "16px",
       },
       storeFilter: {
         config: {
