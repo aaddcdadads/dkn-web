@@ -2176,7 +2176,7 @@ export default {
   /deep/.hm-modal {
     min-height: 0px;
   }
-  /deep/.ant-modal {
+  /deep/.dialog-class {
     overflow: auto !important;
   }
 
