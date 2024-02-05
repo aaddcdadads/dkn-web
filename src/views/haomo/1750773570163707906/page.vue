@@ -309,6 +309,7 @@
                     <hm-ant-bg-text
                       text="二维码： "
                       font-size="16px"
+                      :text-align="'right'"
                       class="ele-6a427e0a-e088-4f10-8f90-062dff49940b"
                     >
                     </hm-ant-bg-text>
@@ -342,7 +343,11 @@
                       <div
                         class="ele-wrapper ele-wrapper-9fa6ebb7-26cf-471e-af62-d8b5679ca587"
                       >
-                        <hm-ant-bg-text text="门店名称：" font-size="16px">
+                        <hm-ant-bg-text
+                          text="门店名称："
+                          font-size="16px"
+                          :text-align="'right'"
+                        >
                         </hm-ant-bg-text>
                       </div>
                       <div class="ele-wrapper ele-wrapper-storeNameText">
@@ -516,7 +521,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       storeDetailModal: {
-        visible: false,
+        visible: true,
       },
       storeEditModal: {
         visible: false,
