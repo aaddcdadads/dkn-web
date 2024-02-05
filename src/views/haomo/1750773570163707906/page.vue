@@ -347,7 +347,6 @@
                           font-size="16px"
                           :text-align="'right'"
                           padding="3"
-                          class="ele-storeName"
                         >
                         </hm-ant-bg-text>
                       </div>
@@ -1307,10 +1306,6 @@ export default {
   width: 100%;
   margin-top: 15px;
   margin-bottom: 10px;
-}
-
-.ele-wrapper-storeName {
-  width: 120px;
 }
 
 .ele-wrapper-bottomBg {
