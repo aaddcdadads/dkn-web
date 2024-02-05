@@ -347,6 +347,7 @@
                           text="门店名称："
                           font-size="16px"
                           :text-align="'right'"
+                          class="ele-9fa6ebb7-26cf-471e-af62-d8b5679ca587"
                         >
                         </hm-ant-bg-text>
                       </div>
@@ -1296,6 +1297,7 @@ export default {
 
 .ele-wrapper-6a427e0a-e088-4f10-8f90-062dff49940b {
   float: left;
+  width: 120px;
 }
 
 .ele-wrapper-qrcode {
@@ -1306,6 +1308,10 @@ export default {
   width: 100%;
   margin-top: 15px;
   margin-bottom: 10px;
+}
+
+.ele-wrapper-9fa6ebb7-26cf-471e-af62-d8b5679ca587 {
+  width: 120px;
 }
 
 .ele-wrapper-bottomBg {
