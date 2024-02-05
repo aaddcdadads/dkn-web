@@ -2179,7 +2179,6 @@ export default {
 
   /deep/.ant-modal-body {
     height: 200px;
-    overflow-y: scroll;
   }
 }
 
