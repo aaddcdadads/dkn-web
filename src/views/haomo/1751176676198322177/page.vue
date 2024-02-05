@@ -2177,7 +2177,7 @@ export default {
     min-height: 0px;
   }
   /deep/.ant-model {
-    overflow: auto;
+    overflow: auto !important;
   }
 
   /deep/.ant-modal-body {
