@@ -2176,6 +2176,9 @@ export default {
   /deep/.hm-modal {
     min-height: 0px;
   }
+  /deep/.ant-model {
+    overflow: auto;
+  }
 
   /deep/.ant-modal-body {
     height: 200px;
