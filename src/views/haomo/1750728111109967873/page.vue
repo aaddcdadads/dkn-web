@@ -699,10 +699,10 @@ export default {
       userTotalText: {
         text: "(用户总数:0)",
       },
-      registrationOrdersDetailModal: {
-        visible: false,
-      },
       registrationOrdersFilter: {
+        value: {
+          span: "文字内容",
+        },
         config: {
           code: {
             type: "Input",
@@ -845,10 +845,10 @@ export default {
             validator: function (value) {},
           },
         },
-        value: {
-          span: "文字内容",
-        },
         schema: {},
+      },
+      registrationOrdersDetailModal: {
+        visible: false,
       },
       activitySelect: {
         value: null,
@@ -919,6 +919,9 @@ export default {
           };
         }
       });
+      if (this.$route.query.activityId) {
+        this.registrationOrdersFilter.value.activityId = this.$route.query.activityId;
+      }
     },
 
     onAddButtonClick() {
