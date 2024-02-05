@@ -345,6 +345,7 @@
                           ref="storeName"
                           text="门店名称："
                           font-size="16px"
+                          :text-align="'right'"
                           padding="3"
                           class="ele-storeName"
                         >
