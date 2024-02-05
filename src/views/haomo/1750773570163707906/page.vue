@@ -1297,7 +1297,6 @@ export default {
 
 .ele-wrapper-erCode {
   float: left;
-  width: 120px;
 }
 
 .ele-wrapper-qrcode {
