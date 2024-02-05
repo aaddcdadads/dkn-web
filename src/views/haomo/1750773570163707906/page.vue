@@ -1319,6 +1319,7 @@ export default {
   margin: 0 12px;
   /deep/.ele-daochuButton {
     border-radius: 4px;
+    font-size: 13px;
   }
 }
 
@@ -1326,6 +1327,7 @@ export default {
   margin: 0 12px;
   /deep/.ele-sureButton {
     border-radius: 4px;
+    font-size: 13px;
   }
 }
 
