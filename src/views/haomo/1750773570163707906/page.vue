@@ -535,6 +535,7 @@
                           text="下载模板"
                           :type="'link'"
                           icon="fa fa-paperclip"
+                          @click="onEleafbfba92716B4Ef98Bc8Ccafb793Fe73Click"
                           class="ele-afbfba92-716b-4ef9-8bc8-ccafb793fe73"
                         >
                         </hm-ant-button>
@@ -1272,6 +1273,13 @@ export default {
     },
     onImportantModalCancel() {
       this.importantModal.visible = false;
+    },
+    onEleafbfba92716B4Ef98Bc8Ccafb793Fe73Click() {
+      self.$downloadFile(
+        "门店列表模板.xlsx",
+        "/api/dkn/store/downExcelTemplate",
+        {}
+      );
     },
   },
 };
