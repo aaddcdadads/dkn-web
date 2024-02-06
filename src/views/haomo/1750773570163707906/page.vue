@@ -1287,14 +1287,37 @@ export default {
       this.storeEditModal.visible = false;
     },
     async onDaochuButtonClick() {
-      //使用a标签下载二维码
-      const downloadLink = document.createElement("a");
-      downloadLink.href = this.baseUrl;
-      downloadLink.download = this.storeNameTitle + "-二维码.png";
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-      this.qrcodeModal.visible = false;
+      // 创建一个 <canvas> 元素用于合成图像
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+
+      // 设置 <canvas> 元素的尺寸，保证足够容纳二维码和门店名称
+      canvas.width = 128;
+      canvas.height = 128 + 20; // 20 是门店名称的高度
+
+      // 绘制二维码图像
+      const qrImg = new Image();
+      qrImg.src = this.baseUrl;
+      qrImg.onload = () => {
+        ctx.drawImage(qrImg, 0, 0, 128, 128); // 绘制二维码图像
+        // 设置门店名称的位置和样式
+        ctx.fillStyle = "#000"; // 设置文本颜色
+        ctx.font = "12px Arial"; // 设置字体和大小
+        ctx.textAlign = "center"; // 文本水平居中
+        ctx.fillText(this.storeNameTitle, 64, 128 + 15); // 绘制门店名称
+        // 将合成后的图像转换为 Base64 编码的数据
+        const imgBase64 = canvas.toDataURL("image/png");
+        // 创建下载链接
+        const downloadLink = document.createElement("a");
+        downloadLink.href = imgBase64;
+        downloadLink.download = this.storeNameTitle + "-二维码.png";
+        document.body.appendChild(downloadLink);
+        // 触发下载
+        downloadLink.click();
+        // 移除下载链接
+        document.body.removeChild(downloadLink);
+        this.qrcodeModal.visible = false;
+      };
     },
     onSureButtonClick() {
       //关闭弹窗
