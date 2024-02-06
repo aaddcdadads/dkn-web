@@ -701,6 +701,7 @@ export default {
           {
             name: "退款",
             callback: function (item) {
+              self.registrationOrder = item;
               self.registrationOrderId = item.id;
               self.viewRegistrationOrdersDeleteModal.visible = true;
 
