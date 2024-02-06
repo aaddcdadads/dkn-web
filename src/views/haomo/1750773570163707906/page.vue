@@ -474,12 +474,11 @@
               </div>
             </hm-modal>
           </div>
-          <div
-            class="ele-wrapper ele-wrapper-058cee58-cf5b-46cf-b698-6d42424e254f"
-          >
+          <div class="ele-wrapper ele-wrapper-importantModal">
             <hm-modal
+              ref="importantModal"
               title="导入"
-              :visible="true"
+              v-model:visible="importantModal.visible"
               :closable="true"
               ok-text="删除"
               :ok-button-boole="false"
@@ -820,7 +819,7 @@ export default {
         text: "",
         fontSize: "16px",
       },
-      "058cee58-cf5b-46cf-b698-6d42424e254f": {
+      importantModal: {
         visible: true,
       },
       storeFilter: {
