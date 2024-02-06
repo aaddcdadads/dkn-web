@@ -30,7 +30,7 @@ const setActivity = logic.setActivity = function() {
   }
   let item = self.activityRequestData.result
   item.cycle=[item.startTime,item.endTime]
-  item.pickUpTime=[item.pickUpStartTime,item.pickUpEndTime]]
+  item.pickUpTime=[item.pickUpStartTime,item.pickUpEndTime]
   self.$refs.activityForm.setFormValues(item)
   self.$refs.activityTwoForm.setFormValues(item)
 
