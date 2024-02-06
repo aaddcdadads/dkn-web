@@ -318,12 +318,12 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   self.addStoreData = eventData;
 
   await self.$refs.storeAddForm.validate();
-  var values = self.$refs.storeAddForm.getFormValues();
-  let urbanArea = null;
-  if (values.urbanArea && values.urbanArea.length > 0) {
-    urbanArea = values.urbanArea[values.urbanArea.length - 1];
-  }
-  console.log("打印当前选择的地区", urbanArea, "打印id", values.id);
+  // var values = self.$refs.storeAddForm.getFormValues();
+  // let urbanArea = null;
+  // if(values.urbanArea && values.urbanArea.length>0){
+  //     urbanArea = values.urbanArea[values.urbanArea.length-1]
+  // }
+  // console.log("打印当前选择的地区",urbanArea,"打印id",values.id);
 
   // //要存入二维码的id值
   // const variableToEncode = "YourVariableValue";
@@ -339,7 +339,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
 
   self.addParams = {
     ...values,
-    urbanArea: urbanArea,
+
     status: 0,
   };
 
