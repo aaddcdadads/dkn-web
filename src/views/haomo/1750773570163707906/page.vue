@@ -1115,14 +1115,34 @@ export default {
       this.storeEditModal.visible = false;
     },
     async onDaochuButtonClick() {
-      //使用a标签下载二维码
+      // 使用a标签下载二维码
       const downloadLink = document.createElement("a");
       downloadLink.href = this.baseUrl;
       downloadLink.download = this.storeNameTitle + "-二维码.png";
       document.body.appendChild(downloadLink);
+
+      // 创建显示门店名称的元素
+      const storeNameElement = document.createElement("p");
+      storeNameElement.textContent = "门店名称: " + this.storeNameTitle;
+      storeNameElement.style.marginTop = "10px"; // 你可以调整这个值来改变文字与二维码之间的距离
+
+      // 将门店名称元素添加到body中，位于下载链接之后
+      document.body.insertBefore(storeNameElement, downloadLink.nextSibling);
+
+      // 触发下载
       downloadLink.click();
-      document.body.removeChild(downloadLink);
-      this.qrcodeModal.visible = false;
+
+      // 下载完成后，移除下载链接和门店名称元素
+      downloadLink.addEventListener("click", function () {
+        setTimeout(() => {
+          document.body.removeChild(downloadLink);
+          document.body.removeChild(storeNameElement);
+          this.qrcodeModal.visible = false;
+        }, 0);
+      });
+
+      // 确保下载链接是可见的（如果之前设置为不可见）
+      downloadLink.style.display = "block";
     },
     onSureButtonClick() {
       //关闭弹窗
