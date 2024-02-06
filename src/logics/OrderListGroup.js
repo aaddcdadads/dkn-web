@@ -37,6 +37,10 @@ const ordersBatchRefund = (logic.ordersBatchRefund = async (
   self = Object.assign(pageVm, logic);
   self.ordersBatchRefundData = eventData;
 
+  console.log("this.onSelectList", self.onSelectList);
+  self.onSelectList.forEach((item) => {
+    self.orderRefund(self, [item]);
+  });
   self.batchRefundModal.visible = false;
 });
 
