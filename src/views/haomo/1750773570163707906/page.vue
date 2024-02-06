@@ -918,8 +918,8 @@ export default {
           },
           {
             title: "门店所属区域",
-            dataIndex: "mergerName",
-            key: "mergerName",
+            dataIndex: "urbanArea",
+            key: "urbanArea",
           },
           {
             title: "门店地址",
