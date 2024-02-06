@@ -19,7 +19,34 @@ const orderRefund = (logic.orderRefund = async (pageVm, eventData) => {
 
   self.viewRegistrationOrdersDeleteModal.visible = false;
   let order = self.orderRefundData[0];
-  self.$getAction("/api/");
+  if (!order) {
+    order = self.registrationOrder;
+  }
+  if (!order.channel || (order.channel != "0" && order.channel != "1")) {
+    return self.$message.error("渠道错误");
+  }
+  if (order.channel == "0") {
+    //wx
+    self.$getAction("/api/wechat/refund", { orderId: order.id }).then((res) => {
+      if (res && res.indexOf("SUCCESS") > -1) {
+        return self.$message.succes("退款申请成功");
+      } else {
+        return self.$message.succes("退款申请失败");
+      }
+    });
+  }
+  if (order.channel == "1") {
+    //zfb
+    self
+      .$getAction("/api/aliPay/tradeRefund", { orderId: order.id })
+      .then((res) => {
+        if (res.success) {
+          return self.$message.succes("退款申请成功");
+        } else {
+          return self.$message.succes("退款申请失败");
+        }
+      });
+  }
 });
 
 /********************** end orderRefund 开始 *********************/
