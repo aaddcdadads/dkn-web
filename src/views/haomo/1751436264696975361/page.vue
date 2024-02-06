@@ -1722,15 +1722,12 @@ export default {
             },
             events: {
               "@change": function (e) {
-                self.$refs.activityTwoForm.form.setFieldState(
-                  "unrealCount",
-                  (state) => {
-                    state.required = true;
-                    if (e == 1) {
-                      state.required = false;
-                    }
-                  }
-                );
+                let item = self.$refs.activityTwoForm.getFormValues();
+                self.$refs.activityTwoForm.config.unrealCount.required =
+                  e.target.value == 0 ? true : false;
+                setTimeout(() => {
+                  self.$refs.activityTwoForm.setFormValues(item);
+                });
               },
             },
           },
