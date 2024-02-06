@@ -183,7 +183,6 @@
                   :background-color="registrationOrdersTable.backgroundColor"
                   :row-class-name="registrationOrdersTable.rowClassName"
                   @onSelectChange="onRegistrationOrdersTableOnSelectChange"
-                  @onSelectAll="onRegistrationOrdersTableOnSelectAll"
                   class="ele-registrationOrdersTable"
                 >
                 </hm-ant-table>
@@ -1041,9 +1040,6 @@ export default {
       } else {
         this.bacthHeImportButton.disabled = true;
       }
-    },
-    onRegistrationOrdersTableOnSelectAll(e) {
-      console.log("onselectAll", e);
     },
     onQuanXuanBoxOnChange(item) {
       console.log("quanxuan123", item);
