@@ -962,14 +962,14 @@ export default {
       this.selectTempArr = item.selectedRows;
 
       if (this.selectTempArr.length > 0) {
-        const currentTimepick = this.$moment();
+        var currentTimepick = this.$moment();
         var flag = false;
         this.selectTempArr.forEach((e) => {
-          const startTimepick = this.$moment(
+          var startTimepick = this.$moment(
             e.pickUpStartTime,
             "YYYY-MM-DD HH:mm:ss"
           );
-          const endTimepick = this.$moment(
+          var endTimepick = this.$moment(
             e.pickUpEndTime,
             "YYYY-MM-DD HH:mm:ss"
           );
