@@ -550,7 +550,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       qrcodeModal: {
-        visible: false,
+        visible: true,
       },
       activityEditModal: {
         visible: false,
@@ -1428,6 +1428,10 @@ export default {
 .ele-wrapper-urlInput {
   width: 70%;
   float: left;
+  /deep/.input-title {
+    font-size: 16px !important;
+    color: #000000 !important;
+  }
 }
 
 .ele-wrapper-aea44c0c-2420-4f3f-94f8-b0352515ee1c {
