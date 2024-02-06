@@ -32,9 +32,9 @@ const orderRefund = (logic.orderRefund = async (pageVm, eventData) => {
     //wx
     self.$getAction("/api/wechat/refund", { orderId: order.id }).then((res) => {
       if (res && res.indexOf("SUCCESS") > -1) {
-        return self.$message.success("退款申请成功");
+        return self.$message.success("【微信】申请退款成功");
       } else {
-        return self.$message.error("退款申请失败");
+        return self.$message.error("【微信】申请退款失败");
       }
     });
   }
@@ -44,9 +44,10 @@ const orderRefund = (logic.orderRefund = async (pageVm, eventData) => {
       .$getAction("/api/aliPay/tradeRefund", { orderId: order.id })
       .then((res) => {
         if (res.success) {
-          return self.$message.success("退款申请成功");
+          self.$refs.viewRegistrationOrdersTable.getData();
+          return self.$message.success("【支付宝】退款成功");
         } else {
-          return self.$message.error("退款申请失败");
+          return self.$message.error("【支付宝】退款失败");
         }
       });
   }
