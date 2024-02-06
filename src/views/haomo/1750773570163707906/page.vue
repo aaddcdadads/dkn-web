@@ -141,10 +141,23 @@
                           </hm-ant-button>
                         </div>
                         <div
+                          class="ele-wrapper ele-wrapper-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5"
+                        >
+                          <hm-ant-upload
+                            title=""
+                            text="导入门店"
+                            :button-type="'primary'"
+                            :file-list="[]"
+                            action="/api/restify/store/importExcel"
+                            class="ele-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5"
+                          >
+                          </hm-ant-upload>
+                        </div>
+                        <div
                           class="ele-wrapper ele-wrapper-6cc57d26-7b37-4d79-8a99-1f8e6af5478f"
                         >
                           <hm-ant-button
-                            text="导入门店"
+                            text="导出核销码"
                             :type="'primary'"
                             icon="fa fa-download"
                             class="ele-6cc57d26-7b37-4d79-8a99-1f8e6af5478f"
@@ -461,6 +474,89 @@
               </div>
             </hm-modal>
           </div>
+          <div
+            class="ele-wrapper ele-wrapper-058cee58-cf5b-46cf-b698-6d42424e254f"
+          >
+            <hm-modal
+              title="导入"
+              :visible="true"
+              :closable="true"
+              ok-text="删除"
+              :ok-button-boole="false"
+              :ok-type="'danger'"
+              :z-index="1000"
+              height="180px"
+            >
+              <div
+                class="ele-wrapper ele-wrapper-3735a4cb-1c0b-4050-807c-5780659b7ddc"
+              >
+                <hm-bg-card
+                  width="480px"
+                  height="180px"
+                  border-radius=""
+                  :text-align="'center'"
+                  padding=""
+                  box-shadow-h-shadow=""
+                  box-shadow-v-shadow=""
+                  box-shadow-blur=""
+                  box-shadow-spread=""
+                  box-shadow-color="#00000000"
+                >
+                  <div
+                    class="ele-wrapper ele-wrapper-9cec9dc8-fe98-4620-bc41-f3bf45e728fc"
+                  >
+                    <hm-ant-upload
+                      title=""
+                      text="上传文件"
+                      :file-list="[]"
+                      action="/api/web/viewClassInfo/importExcel"
+                      :headers="{}"
+                      class="ele-9cec9dc8-fe98-4620-bc41-f3bf45e728fc"
+                    >
+                    </hm-ant-upload>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-a160ebb9-189f-4350-b467-2689abf84e5e"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height=""
+                      border-radius=""
+                      :text-align="'center'"
+                      padding=""
+                      box-shadow-h-shadow=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      box-shadow-spread=""
+                      box-shadow-color="#00000000"
+                      class="ele-a160ebb9-189f-4350-b467-2689abf84e5e"
+                    >
+                      <div
+                        class="ele-wrapper ele-wrapper-706a76c9-3924-4706-aae2-a0cdfc54572a"
+                      >
+                        <hm-ant-bg-text
+                          text="仅支持xls、xlsx格式文件  "
+                          font-size="16px"
+                        >
+                        </hm-ant-bg-text>
+                      </div>
+                      <div
+                        class="ele-wrapper ele-wrapper-afbfba92-716b-4ef9-8bc8-ccafb793fe73"
+                      >
+                        <hm-ant-button
+                          text="下载模板"
+                          :type="'link'"
+                          icon="fa fa-paperclip"
+                          class="ele-afbfba92-716b-4ef9-8bc8-ccafb793fe73"
+                        >
+                        </hm-ant-button>
+                      </div>
+                    </hm-bg-card>
+                  </div>
+                </hm-bg-card>
+              </div>
+            </hm-modal>
+          </div>
         </hm-bg-card>
       </div>
       <div class="ele-wrapper ele-wrapper-ca97e822-f663-4433-9bc3-763a5a8b2fd1">
@@ -477,6 +573,7 @@ import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
 import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
+import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
@@ -501,6 +598,7 @@ export default {
     HmPanel,
     HmAntFormily,
     HmAntButton,
+    HmAntUpload,
     HmAntTable,
     HmModal,
     HmAntBgText,
@@ -722,6 +820,9 @@ export default {
         text: "",
         fontSize: "16px",
       },
+      "058cee58-cf5b-46cf-b698-6d42424e254f": {
+        visible: true,
+      },
       storeFilter: {
         config: {
           name: {
@@ -894,6 +995,13 @@ export default {
         isFlatAction: true,
         backgroundColor: "#FFFFFF",
         rowClassName: {},
+      },
+      "6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5": {
+        fileList: [],
+      },
+      "9cec9dc8-fe98-4620-bc41-f3bf45e728fc": {
+        fileList: [],
+        headers: {},
       },
     };
   },
@@ -1239,6 +1347,14 @@ export default {
   margin-right: 8px;
 }
 
+.ele-wrapper-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5 {
+  margin-right: 8px;
+  transform: translateY(-1px);
+  /deep/ .upload-class {
+    min-width: 0;
+  }
+}
+
 .ele-wrapper-6cc57d26-7b37-4d79-8a99-1f8e6af5478f {
   margin-right: 8px;
 }
@@ -1332,6 +1448,20 @@ export default {
   width: 272px;
   display: flex;
   justify-content: center;
+}
+
+.ele-wrapper-9cec9dc8-fe98-4620-bc41-f3bf45e728fc {
+  margin-left: 2%;
+}
+
+.ele-wrapper-a160ebb9-189f-4350-b467-2689abf84e5e {
+  width: 100%;
+}
+
+.ele-wrapper-afbfba92-716b-4ef9-8bc8-ccafb793fe73 {
+  /deep/.ant-btn-icon-only {
+    color: "blue";
+  }
 }
 
 .ele-wrapper-ca97e822-f663-4433-9bc3-763a5a8b2fd1 {
