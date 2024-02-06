@@ -437,7 +437,7 @@
                       title="URL"
                       :disabled="true"
                       width="100%"
-                      :label-width="60"
+                      :label-width="64"
                       class="ele-urlInput"
                     >
                     </hm-ant-input>
@@ -472,6 +472,7 @@
                     <hm-ant-bg-text
                       text="二维码："
                       font-size="16px"
+                      padding="0"
                       class="ele-94ca123c-7c72-46ad-8770-3d45ef9f5eb9"
                     >
                     </hm-ant-bg-text>
@@ -1431,6 +1432,7 @@ export default {
   float: left;
   /deep/.input-title {
     font-size: 16px !important;
+    text-align: right !important;
     color: #000000 !important;
   }
 }
