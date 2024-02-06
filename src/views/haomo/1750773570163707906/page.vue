@@ -497,7 +497,7 @@
                       title=""
                       text="上传文件"
                       :file-list="[]"
-                      action="/api/web/viewClassInfo/importExcel"
+                      action="/api/dkn/store/importExcel "
                       :headers="{}"
                       class="ele-9cec9dc8-fe98-4620-bc41-f3bf45e728fc"
                     >
