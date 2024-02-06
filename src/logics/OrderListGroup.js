@@ -18,6 +18,8 @@ const orderRefund = (logic.orderRefund = async (pageVm, eventData) => {
   self.orderRefundData = eventData;
 
   self.viewRegistrationOrdersDeleteModal.visible = false;
+  let order = self.orderRefundData[0];
+  self.$getAction("/api/");
 });
 
 /********************** end orderRefund 开始 *********************/
