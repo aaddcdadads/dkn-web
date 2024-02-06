@@ -804,6 +804,7 @@ export default {
                     class: ["required"],
                   },
                   "x-component-props": {
+                    width: "100%",
                     title: "",
                     url: "/api/dkn/viewCity/list",
                     params: {
