@@ -35,9 +35,8 @@ const exportStore = (logic.exportStore = async (pageVm, eventData) => {
  * 发送删除请求
  */
 const deleteRequest = (logic.deleteRequest = async function () {
-  let res = await self.$deleteAction(`/api/restify/store/delete`, {
+  let res = await self.$deleteAction(`/api/dkn/store/delete`, {
     id: self.currentStoreId,
-    databaseId: "",
   });
   self.deleteRequestData = res;
 });
