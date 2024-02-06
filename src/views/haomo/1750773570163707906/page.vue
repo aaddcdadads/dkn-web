@@ -141,17 +141,15 @@
                           </hm-ant-button>
                         </div>
                         <div
-                          class="ele-wrapper ele-wrapper-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5"
+                          class="ele-wrapper ele-wrapper-6cc57d26-7b37-4d79-8a99-1f8e6af5478f"
                         >
-                          <hm-ant-upload
-                            title=""
+                          <hm-ant-button
                             text="导入门店"
-                            :button-type="'primary'"
-                            :file-list="[]"
-                            action="/api/restify/store/importExcel"
-                            class="ele-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5"
+                            :type="'primary'"
+                            icon="fa fa-download"
+                            class="ele-6cc57d26-7b37-4d79-8a99-1f8e6af5478f"
                           >
-                          </hm-ant-upload>
+                          </hm-ant-button>
                         </div>
                         <div
                           class="ele-wrapper ele-wrapper-6f9a0599-82dc-4e11-880c-d7f38d3f8892"
@@ -479,7 +477,6 @@ import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
 import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
-import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
@@ -504,7 +501,6 @@ export default {
     HmPanel,
     HmAntFormily,
     HmAntButton,
-    HmAntUpload,
     HmAntTable,
     HmModal,
     HmAntBgText,
@@ -899,9 +895,6 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5": {
-        fileList: [],
-      },
     };
   },
   watch: {},
@@ -1246,12 +1239,8 @@ export default {
   margin-right: 8px;
 }
 
-.ele-wrapper-6ce972a2-d6e6-41d8-907a-2d0ebe5ef0a5 {
+.ele-wrapper-6cc57d26-7b37-4d79-8a99-1f8e6af5478f {
   margin-right: 8px;
-  transform: translateY(-1px);
-  /deep/ .upload-class {
-    min-width: 0;
-  }
 }
 
 .ele-wrapper-6f9a0599-82dc-4e11-880c-d7f38d3f8892 {
