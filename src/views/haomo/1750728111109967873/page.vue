@@ -177,6 +177,7 @@
                   :params="registrationOrdersTable.params"
                   :get-data-map="registrationOrdersTable.getDataMap"
                   :row-select-flag="registrationOrdersTable.rowSelectFlag"
+                  :row-selection="registrationOrdersTable.rowSelection"
                   :actions="registrationOrdersTable.actions"
                   :is-flat-action="registrationOrdersTable.isFlatAction"
                   :background-color="registrationOrdersTable.backgroundColor"
@@ -462,6 +463,7 @@ export default {
           pageNo: 1,
           pageSize: 10,
         },
+        rowSelection: {},
         columns: [
           {
             title: "用户ID",
@@ -945,7 +947,8 @@ export default {
       console.log("this.registrationOrdersEditForm.config");
       console.log(
         "this.registrationOrdersDetailForm.config",
-        "this.userTotalText.text"
+        "this.userTotalText.text",
+        "this.registrationOrdersTable.rowSelection"
       );
 
       //设置上传请求头
