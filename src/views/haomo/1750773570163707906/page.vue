@@ -956,7 +956,7 @@ export default {
           pageSize: 10,
           showSizeChanger: true,
         },
-        url: "/api/dkn/viewStoreArea/list",
+        url: "/api/dkn/store/list",
         params: {
           databaseId: "",
           column: "createTime",
