@@ -672,8 +672,8 @@ export default {
                     icon: "",
                     onClick: function () {
                       if (item.record.paymentStatus === 0) {
-                        self.registrationOrder = item;
-                        self.registrationOrderId = item.id;
+                        self.registrationOrder = item.record;
+                        self.registrationOrderId = item.record.id;
                         self.viewRegistrationOrdersDeleteModal.visible = true;
                       } else {
                         self.$message.error("已退款、待支付状态下不可退款");
