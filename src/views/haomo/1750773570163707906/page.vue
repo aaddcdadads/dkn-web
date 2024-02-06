@@ -994,8 +994,8 @@ export default {
               self.currentEditItem = item;
               console.log("地区", self.currentEditItem.urbanArea);
               self.$nextTick(function () {
-                //self.storeEditForm.value = item;
-                self.onAreaButtonClick();
+                self.storeEditForm.value = item;
+                //self.onAreaButtonClick();
               });
             },
             type: "link",
