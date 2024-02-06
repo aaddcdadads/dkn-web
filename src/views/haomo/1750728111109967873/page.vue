@@ -962,11 +962,19 @@ export default {
       this.selectTempArr = item.selectedRows;
 
       if (this.selectTempArr.length > 0) {
-        var currentDate = this.$moment();
+        const currentTimepick = this.$moment();
         var flag = false;
         this.selectTempArr.forEach((e) => {
           var anotherDate = this.$moment(e.acPickUpTime, "YYYY-MM-DD HH:mm:ss");
-          if (currentDate.isAfter(anotherDate)) {
+          const startTimepick = this.$moment(
+            e.pickUpStartTime,
+            "YYYY-MM-DD HH:mm:ss"
+          );
+          const endTimepick = this.$moment(
+            e.pickUpEndTime,
+            "YYYY-MM-DD HH:mm:ss"
+          );
+          if (currentTimepick.isBetween(startTimepick, endTimepick)) {
             this.$message.error("超过核销截止时间了不可核销");
             this.bacthHeImportButton.disabled = true;
             flag = true;
