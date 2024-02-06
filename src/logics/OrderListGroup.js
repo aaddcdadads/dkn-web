@@ -19,7 +19,7 @@ const orderRefund = (logic.orderRefund = async (pageVm, eventData) => {
 
   self.viewRegistrationOrdersDeleteModal.visible = false;
   let order = self.orderRefundData[0];
-  if (!order) {
+  if (!order || !order.id) {
     order = self.registrationOrder;
   }
   if (
