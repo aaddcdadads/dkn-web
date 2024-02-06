@@ -959,10 +959,8 @@ export default {
       //生成二维码
       self.getQrCode = async function (id, name) {
         let variableToEncode = `${id}`;
-        let title = `${name}`;
-        console.log("打印id", variableToEncode, "打印店名", title);
-
-        // 创建二维码并添加到容器
+        let titele = `${name}`;
+        console.log("打印id", variableToEncode, "打印店名", titele);
         setTimeout(() => {
           const container = document.querySelector(".ele-wrapper-qrcode");
           console.log("container", container);
@@ -973,25 +971,14 @@ export default {
             colorDark: "#000000",
             colorLight: "#ffffff",
           });
-
-          // 创建文字元素
-          const textElement = document.createElement("p");
-          textElement.style.marginTop = "10px"; // 设置文字与二维码之间的间距
-          textElement.textContent = title; // 设置文字内容
-
-          // 将文字元素添加到容器下方
-          container.appendChild(textElement);
-
-          // 门店名称赋值
-          self.storeNameText.text = title;
-          self.storeNameTitle = title;
-
+          //门店名称
+          self.storeNameText.text = titele;
+          self.storeNameTitle = titele;
           // 获取生成的二维码的 base64 编码
           const canvas = container.querySelector("canvas");
           const qrCodeBase64 = canvas.toDataURL("image/png");
-
-          // 更新 baseUrl 并打印
           self.baseUrl = qrCodeBase64;
+          // 打印二维码的 base64 编码
           console.log("QR Code Base64:", qrCodeBase64);
         });
       };
