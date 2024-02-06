@@ -551,7 +551,7 @@ export default {
         titleBlockColor: "#1890FF00",
       },
       qrcodeModal: {
-        visible: false,
+        visible: true,
       },
       activityEditModal: {
         visible: false,
@@ -1424,7 +1424,7 @@ export default {
 
 .ele-wrapper-b30d54e9-4e74-4c47-b7d3-81f3d36b7f6a {
   width: 100%;
-  padding-bottom: 8px;
+  padding-bottom: 12px;
 }
 
 .ele-wrapper-urlInput {
