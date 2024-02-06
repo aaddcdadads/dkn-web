@@ -973,7 +973,7 @@ export default {
             e.pickUpEndTime,
             "YYYY-MM-DD HH:mm:ss"
           );
-          if (currentTimepick.isBetween(startTimepick, endTimepick)) {
+          if (!currentTimepick.isBetween(startTimepick, endTimepick)) {
             this.$message.error("超过核销截止时间了不可核销");
             this.bacthHeImportButton.disabled = true;
             flag = true;
