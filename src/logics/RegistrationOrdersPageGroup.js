@@ -310,9 +310,13 @@ const ajaxOrdersHeDuo = (logic.ajaxOrdersHeDuo = async function () {
  */
 const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = function () {
   self.$message.success("核销成功");
-  self.$refs.registrationOrdersTable.getData();
-  self.registrationOrdersTable.rowSelection = {};
-  self.$refs.registrationOrdersTable.selectedRows = [];
+
+  self.registrationOrdersTable.rowSelection = { selectedRowKeys: [] };
+  self.$nextTick(() => {
+    self.registrationOrdersTable.rowSelection = {};
+    self.$refs.registrationOrdersTable.getData();
+  });
+  self.bacthHeImportButton.disabled = true;
   self.registrationOrdersDeleteModal.visible = false;
 });
 
@@ -321,8 +325,12 @@ const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = functio
  */
 const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = function () {
   self.$message.error("核销失败");
-  self.$refs.registrationOrdersTable.getData();
-  self.registrationOrdersTable.rowSelection = {};
+  self.registrationOrdersTable.rowSelection = { selectedRowKeys: [] };
+  self.$nextTick(() => {
+    self.registrationOrdersTable.rowSelection = {};
+    self.$refs.registrationOrdersTable.getData();
+  });
+  self.bacthHeImportButton.disabled = true;
   self.registrationOrdersDeleteModal.visible = false;
 });
 
