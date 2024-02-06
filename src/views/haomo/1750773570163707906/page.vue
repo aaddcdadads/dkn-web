@@ -682,7 +682,6 @@ export default {
                 urbanArea: {
                   type: "string",
                   required: true,
-                  default: "",
                   "x-decorator": "FormItem",
                   "x-decorator-props": {
                     label: "门店所属区域",
@@ -693,11 +692,21 @@ export default {
                     class: ["required"],
                   },
                   "x-component-props": {
-                    "change-on-select": true,
+                    width: "100%",
+                    title: "",
+                    url: "/api/dkn/viewCity/list",
+                    params: {
+                      pageNo: 1,
+                      pageSize: -1,
+                    },
+                    dataMap: {
+                      label: "name",
+                      value: "name",
+                    },
                     placeholder: "请选择地区",
                     options: [],
                   },
-                  "x-component": "Cascader",
+                  "x-component": "HmAntSelect",
                 },
               },
             },
