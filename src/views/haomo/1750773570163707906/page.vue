@@ -821,7 +821,7 @@ export default {
                     url: "/api/dkn/viewCity/list",
                     params: {
                       pageNo: 1,
-                      pageSize: 99,
+                      pageSize: -1,
                     },
                     dataMap: {
                       label: "name",
