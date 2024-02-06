@@ -1275,7 +1275,7 @@ export default {
       this.importantModal.visible = false;
     },
     onEleafbfba92716B4Ef98Bc8Ccafb793Fe73Click() {
-      self.$downloadFile(
+      this.$downloadFile(
         "门店列表模板.xlsx",
         "/api/dkn/store/downExcelTemplate",
         {}
