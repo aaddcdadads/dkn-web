@@ -1720,6 +1720,20 @@ export default {
                 },
               ],
             },
+            events: {
+              "@change": function (e) {
+                self.$refs.activityTwoForm.form.setFieldState(
+                  "unrealCount",
+                  (state) => {
+                    state.value = [];
+                    state.required = true;
+                    if (e == 1) {
+                      state.required = false;
+                    }
+                  }
+                );
+              },
+            },
           },
           unrealCount: {
             style: {
