@@ -672,6 +672,7 @@ export default {
                     icon: "",
                     onClick: function () {
                       if (item.record.paymentStatus === 0) {
+                        self.registrationOrder = item;
                         self.registrationOrderId = item.id;
                         self.viewRegistrationOrdersDeleteModal.visible = true;
                       } else {
