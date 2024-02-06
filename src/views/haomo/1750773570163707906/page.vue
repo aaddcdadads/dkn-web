@@ -58,6 +58,14 @@
                 >
                 </hm-ant-button>
               </div>
+              <div
+                class="ele-wrapper ele-wrapper-366e61cc-8402-4144-a772-fc906182575a"
+              >
+                <hm-ant-button
+                  @click="onEle366E61Cc84024144A772Fc906182575AClick"
+                >
+                </hm-ant-button>
+              </div>
               <div class="ele-wrapper ele-wrapper-areaButton">
                 <hm-ant-button
                   ref="areaButton"
@@ -1115,6 +1123,57 @@ export default {
     },
     onExportButtonClick() {
       exportStore(this, arguments);
+    },
+    onEle366E61Cc84024144A772Fc906182575AClick() {
+      // 假设你有一个base64图片列表
+      const base64Images = [
+        "data:image/png;base64,iVBORw0KG...",
+        "data:image/png;base64,iVBORw0KG...",
+        // ...更多base64图片
+      ];
+
+      // 转换base64到Blob
+      function base64ToBlob(base64Data, contentType) {
+        contentType = contentType || "";
+        const sliceSize = 1024;
+        const byteCharacters = atob(base64Data.split(",")[1]);
+        const bytesLength = byteCharacters.length;
+        const slicesCount = Math.ceil(bytesLength / sliceSize);
+        const byteArrays = new Array(slicesCount);
+
+        for (let sliceIndex = 0; sliceIndex < slicesCount; ++sliceIndex) {
+          const begin = sliceIndex * sliceSize;
+          const end = Math.min(begin + sliceSize, bytesLength);
+
+          const bytes = new Array(end - begin);
+          for (let offset = begin, i = 0; offset < end; ++i, ++offset) {
+            bytes[i] = byteCharacters[offset].charCodeAt(0);
+          }
+
+          byteArrays[sliceIndex] = new Uint8Array(bytes);
+        }
+
+        return new Blob(byteArrays, { type: contentType });
+      }
+
+      // 创建并下载zip文件
+      function downloadImagesAsZip(base64Images) {
+        const zip = new JSZip();
+        const imgFolder = zip.folder("images");
+
+        base64Images.forEach((base64Image, index) => {
+          const imageName = `image_${index}.png`;
+          const blob = base64ToBlob(base64Image, "image/png");
+          imgFolder.file(imageName, blob);
+        });
+
+        zip.generateAsync({ type: "blob" }).then((blob) => {
+          saveAs(blob, "images.zip");
+        });
+      }
+
+      // 调用函数
+      downloadImagesAsZip(base64Images);
     },
     onAreaButtonClick() {
       loadAreaDataRegion(this, arguments);
