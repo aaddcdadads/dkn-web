@@ -147,6 +147,7 @@
                             text="导入门店"
                             :type="'primary'"
                             icon="fa fa-download"
+                            @click="onEle6Cc57D267B374D798A991F8E6Af5478FClick"
                             class="ele-6cc57d26-7b37-4d79-8a99-1f8e6af5478f"
                           >
                           </hm-ant-button>
@@ -706,6 +707,9 @@ export default {
       storeAddModal: {
         visible: false,
       },
+      importantModal: {
+        visible: false,
+      },
       qrcodeModal: {},
       bathqiyong: {
         disabled: false,
@@ -724,9 +728,6 @@ export default {
         text: "批量删除",
         type: "primary",
         icon: "",
-      },
-      importantModal: {
-        visible: false,
       },
       importButton: {},
       exportButton: {
@@ -1173,6 +1174,9 @@ export default {
     },
     onElef087F9B5C00641C6Aea1A22F650Dcce6Click() {
       this.storeAddModal.visible = true;
+    },
+    onEle6Cc57D267B374D798A991F8E6Af5478FClick() {
+      this.importantModal.visible = true;
     },
     onInvisibleImportSearchLogicBtnClick() {
       searchStore(this, arguments);
