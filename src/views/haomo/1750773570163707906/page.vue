@@ -1307,6 +1307,8 @@ export default {
         ctx.fillText(this.storeNameTitle, 64, 128 + 15); // 绘制门店名称
         // 将合成后的图像转换为 Base64 编码的数据
         const imgBase64 = canvas.toDataURL("image/png");
+
+        console.log("打印合成图像base64编码", imgBase64);
         // 创建下载链接
         const downloadLink = document.createElement("a");
         downloadLink.href = imgBase64;
