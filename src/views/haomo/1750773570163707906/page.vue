@@ -485,6 +485,7 @@
               :ok-type="'danger'"
               :z-index="1000"
               height="180px"
+              @cancel="onImportantModalCancel"
             >
               <div
                 class="ele-wrapper ele-wrapper-3735a4cb-1c0b-4050-807c-5780659b7ddc"
@@ -737,6 +738,9 @@ export default {
         type: "primary",
         icon: "",
       },
+      importantModal: {
+        visible: true,
+      },
       importButton: {},
       exportButton: {
         visible: false,
@@ -818,9 +822,6 @@ export default {
       storeNameText: {
         text: "",
         fontSize: "16px",
-      },
-      importantModal: {
-        visible: true,
       },
       storeFilter: {
         config: {
@@ -1280,6 +1281,9 @@ export default {
     },
     onBatchEditCancel() {
       this.batchEdit.visible = false;
+    },
+    onImportantModalCancel() {
+      this.importantModal.visible = false;
     },
   },
 };
