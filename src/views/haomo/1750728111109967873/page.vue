@@ -483,9 +483,9 @@ export default {
           },
           {
             title: "报名渠道",
-            dataIndex: "channelText",
+            dataIndex: "channel_dictText",
             width: 120,
-            key: "channelText",
+            key: "channel_dictText",
           },
           {
             title: "报名项目",
