@@ -243,21 +243,17 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
   await self.$refs.storeEditForm.validate();
   var values = self.$refs.storeEditForm.getFormValues();
 
-  //地区处理
-  let urbanArea = null;
-  if (Object.prototype.toString.call(values.urbanArea) === "[object Array]") {
-    urbanArea =
-      values.urbanArea.length > 0
-        ? values.urbanArea[values.urbanArea.length - 1]
-        : null;
-  } else {
-    urbanArea = values.urbanArea;
-  }
-  console.log("e=======", urbanArea, values.id, self.currentStoreId);
+  // //地区处理
+  // let urbanArea = null;
+  // if(Object.prototype.toString.call(values.urbanArea) === '[object Array]'){
+  //   urbanArea = values.urbanArea.length>0?values.urbanArea[values.urbanArea.length-1]:null;
+  // }else{
+  //   urbanArea = values.urbanArea;
+  // }
+  // console.log("e=======",urbanArea,values.id,self.currentStoreId);
   self.editParams = {
     ...values,
     id: self.currentStoreId,
-    urbanArea: urbanArea,
   };
   await editRequest();
   if (self.editRequestData.success) {
