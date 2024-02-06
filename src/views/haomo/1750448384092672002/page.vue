@@ -898,6 +898,15 @@ export default {
             dataIndex: "pickUpTime",
             key: "pickUpTime",
             width: 220,
+            customRender: function (data) {
+              let pickUpStartTime = self
+                .$moment(data.record.pickUpStartTime)
+                .format("YYYY.MM.DD");
+              let pickUpEndTime = self
+                .$moment(data.record.pickUpEndTime)
+                .format("YYYY.MM.DD");
+              return `${pickUpStartTime}--${pickUpEndTime}`;
+            },
           },
           {
             title: "报名人数",
