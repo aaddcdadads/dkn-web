@@ -519,15 +519,19 @@ export default {
             title: "操作",
             key: "action",
             customRender: function (item) {
-              var currentDate = self.$moment();
-              var anotherDate = self.$moment(
-                item.record.acPickUpTime,
+              const currentTimepick = self.$moment();
+              const startTimepick = self.$moment(
+                item.record.pickUpStartTime,
+                "YYYY-MM-DD HH:mm:ss"
+              );
+              const endTimepick = self.$moment(
+                item.record.pickUpEndTime,
                 "YYYY-MM-DD HH:mm:ss"
               );
               var statusFlag =
                 item.record.paymentStatus === 0 &&
                 item.record.pickUpStatusText == "待核销" &&
-                currentDate.isBefore(anotherDate)
+                currentTimepick.isBetween(startTimepick, endTimepick)
                   ? 0
                   : 1;
 
@@ -552,7 +556,9 @@ export default {
                     onClick: function () {
                       if (item.record.paymentStatus === 0) {
                         //当前时间在核销时间之前
-                        if (currentDate.isBefore(anotherDate)) {
+                        if (
+                          currentTimepick.isBetween(startTimepick, endTimepick)
+                        ) {
                           self.registrationOrdersDeleteModal.visible = true;
                           self.hexiaotype = true;
                           self.hexiaoItem = {
