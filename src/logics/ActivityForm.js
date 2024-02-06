@@ -286,16 +286,16 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
   let endTime = new Date(item.endTime).getTime();
   let pickUpTime = new Date(item.pickUpTime).getTime();
   if (closeTime < startTime) {
-    self.$message.error("报名截止时间不能小于活动周期的开始时间");
-    return;
+    // self.$message.error("报名截止时间不能小于活动周期的开始时间")
+    // return
   }
   if (closeTime > endTime) {
-    self.$message.error("报名截止时间不能大于活动周期的结束时间");
-    return;
+    // self.$message.error("报名截止时间不能大于活动周期的结束时间")
+    // return
   }
   if (pickUpTime < closeTime) {
-    self.$message.error("核销截止时间不能小于报名截止的时间");
-    return;
+    // self.$message.error("核销截止时间不能小于报名截止的时间")
+    // return
   }
   self.item = {
     ...item,
