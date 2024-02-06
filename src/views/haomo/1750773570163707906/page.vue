@@ -62,6 +62,7 @@
                 class="ele-wrapper ele-wrapper-366e61cc-8402-4144-a772-fc906182575a"
               >
                 <hm-ant-button
+                  :visible="false"
                   @click="onEle366E61Cc84024144A772Fc906182575AClick"
                 >
                 </hm-ant-button>
