@@ -312,6 +312,7 @@ const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = functio
   self.$message.success("核销成功");
   self.$refs.registrationOrdersTable.getData();
   self.registrationOrdersTable.rowSelection = {};
+  self.$refs.registrationOrdersTable.selectedRows = [];
   self.registrationOrdersDeleteModal.visible = false;
 });
 
