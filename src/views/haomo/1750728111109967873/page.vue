@@ -965,7 +965,6 @@ export default {
         const currentTimepick = this.$moment();
         var flag = false;
         this.selectTempArr.forEach((e) => {
-          var anotherDate = this.$moment(e.acPickUpTime, "YYYY-MM-DD HH:mm:ss");
           const startTimepick = this.$moment(
             e.pickUpStartTime,
             "YYYY-MM-DD HH:mm:ss"
