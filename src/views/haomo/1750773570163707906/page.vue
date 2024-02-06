@@ -692,6 +692,7 @@ export default {
                     class: ["required"],
                   },
                   "x-component-props": {
+                    showSearch: true,
                     width: "100%",
                     title: "",
                     url: "/api/dkn/viewCity/list",
@@ -814,6 +815,7 @@ export default {
                     class: ["required"],
                   },
                   "x-component-props": {
+                    showSearch: true,
                     width: "100%",
                     title: "",
                     url: "/api/dkn/viewCity/list",
