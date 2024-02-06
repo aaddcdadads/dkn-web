@@ -732,12 +732,44 @@ export default {
               width: "242px",
               options: [
                 {
-                  label: "app",
-                  value: "app",
+                  label: "政府渠道-普陀",
+                  value: 0,
                 },
                 {
-                  label: "web",
-                  value: "web",
+                  label: "政府渠道-闵行",
+                  value: 1,
+                },
+                {
+                  label: "政府渠道-奉贤",
+                  value: 2,
+                },
+                {
+                  label: "政府渠道-宝山",
+                  value: 3,
+                },
+                {
+                  label: "政府渠道-黄浦",
+                  value: 4,
+                },
+                {
+                  label: "政府渠道-杨浦",
+                  value: 5,
+                },
+                {
+                  label: "政府渠道-虹口",
+                  value: 6,
+                },
+                {
+                  label: "政府渠道-高行",
+                  value: 7,
+                },
+                {
+                  label: "政府渠道-徐汇",
+                  value: 8,
+                },
+                {
+                  label: "政府渠道-松江",
+                  value: 9,
                 },
               ],
             },
