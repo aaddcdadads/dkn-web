@@ -22,10 +22,13 @@ const orderRefund = (logic.orderRefund = async (pageVm, eventData) => {
   if (!order) {
     order = self.registrationOrder;
   }
-  if (!order.channel || (order.channel != "0" && order.channel != "1")) {
-    return self.$message.error("渠道错误");
+  if (
+    !order.paymentChannel ||
+    (order.paymentChannel != "0" && order.paymentChannel != "1")
+  ) {
+    return self.$message.error("支付渠道错误");
   }
-  if (order.channel == "0") {
+  if (order.paymentChannel == "0") {
     //wx
     self.$getAction("/api/wechat/refund", { orderId: order.id }).then((res) => {
       if (res && res.indexOf("SUCCESS") > -1) {
@@ -35,7 +38,7 @@ const orderRefund = (logic.orderRefund = async (pageVm, eventData) => {
       }
     });
   }
-  if (order.channel == "1") {
+  if (order.paymentChannel == "1") {
     //zfb
     self
       .$getAction("/api/aliPay/tradeRefund", { orderId: order.id })
