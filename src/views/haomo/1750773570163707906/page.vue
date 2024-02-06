@@ -804,6 +804,7 @@ export default {
                     class: ["required"],
                   },
                   "x-component-props": {
+                    title: "",
                     url: "/api/dkn/viewCity/list",
                     params: "",
                     dataMaps: [
