@@ -806,7 +806,10 @@ export default {
                   "x-component-props": {
                     title: "",
                     url: "/api/dkn/viewCity/list",
-                    params: "",
+                    params: {
+                      pageNo: 1,
+                      pageSize: -1,
+                    },
                     dataMap: {
                       label: "name",
                       value: "name",
