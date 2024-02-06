@@ -739,7 +739,7 @@ export default {
         icon: "",
       },
       importantModal: {
-        visible: true,
+        visible: false,
       },
       importButton: {},
       exportButton: {
