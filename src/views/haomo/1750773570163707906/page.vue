@@ -1115,49 +1115,47 @@ export default {
       this.storeEditModal.visible = false;
     },
     async onDaochuButtonClick() {
-      const downloadLink = document.createElement("a");
-      downloadLink.href = this.baseUrl;
-      downloadLink.download = this.storeNameTitle + "-二维码.png";
-      document.body.appendChild(downloadLink);
+      // 假设 self.$QrCode 返回一个包含 canvas 元素的 Promise
+      self
+        .$QrCode(container, {
+          text: variableToEncode,
+          width: 128,
+          height: 128,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+        })
+        .then((canvas) => {
+          // 获取 canvas 的 2D 渲染上下文
+          const ctx = canvas.getContext("2d");
 
-      // 创建用于显示名称的元素
-      const nameElement = document.createElement("div");
-      nameElement.textContent = "门店名称"; // 设置要显示的名称
-      nameElement.style.textAlign = "center"; // 确保文本居中
-      nameElement.style.marginTop = "10px"; // 设置名称与二维码之间的间距
+          // 设置字体样式和大小
+          ctx.font = "16px Arial";
+          ctx.fillStyle = "black"; // 文字颜色
+          ctx.textBaseline = "bottom"; // 文字基线对齐方式
 
-      // 创建二维码并添加到容器
-      const qrCodeContainer = document.createElement("div");
-      qrCodeContainer.className = "ele-wrapper-qrcode"; // 假设这是二维码容器的类名
-      new self.$QrCode(qrCodeContainer, {
-        text: this.storeNameTitle,
-        width: 128,
-        height: 128,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-      });
+          // 计算文字的位置，确保它在二维码下方居中
+          const text = this.storeNameTitle;
+          const metrics = ctx.measureText(text);
+          const x = (canvas.width - metrics.width) / 2; // 水平居中
+          const y = canvas.height + 20; // 垂直位置在二维码下方
 
-      // 将名称元素添加到二维码容器下方
-      qrCodeContainer.appendChild(nameElement);
+          // 在 canvas 上绘制文字
+          ctx.fillText(text, x, y);
 
-      // 将二维码容器添加到body中
-      document.body.appendChild(qrCodeContainer);
+          // 将带有文字的 canvas 转换为 base64 编码的图片
+          const qrCodeBase64 = canvas.toDataURL("image/png");
 
-      // 模拟点击链接来触发下载
-      downloadLink.click();
-
-      // 下载完成后，移除下载链接和二维码容器
-      downloadLink.addEventListener(
-        "download",
-        function () {
+          // 创建下载链接并触发下载
+          const downloadLink = document.createElement("a");
+          downloadLink.href = qrCodeBase64;
+          downloadLink.download = this.storeNameTitle + "-二维码.png";
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
           document.body.removeChild(downloadLink);
-          document.body.removeChild(qrCodeContainer);
-        },
-        { once: true }
-      );
 
-      // 隐藏二维码模态框
-      this.qrcodeModal.visible = false;
+          // 隐藏二维码模态框
+          this.qrcodeModal.visible = false;
+        });
     },
     onSureButtonClick() {
       //关闭弹窗
