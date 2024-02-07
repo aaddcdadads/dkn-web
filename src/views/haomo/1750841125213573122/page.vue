@@ -897,8 +897,7 @@ export default {
             },
             events: {
               "@click": function (item) {
-                this.selectActivityId = item ?? "";
-                searchViewRegistrationOrders(this, null);
+                searchViewRegistrationOrders(self, null);
               },
             },
             validator: function (value) {},
