@@ -347,7 +347,9 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   const qrCodeBase64 = canvas.toDataURL("image/jpg");
   // 设置 self.baseUrl
   self.baseUrl = qrCodeBase64;
-  console.log("QR Code Base64:", self.baseUrl);
+  setTimeout(() => {
+    console.log("QR Code Base64:", self.baseUrl);
+  }, 2000);
   // 继续执行其他操作
   self.addParams = {
     ...values,
