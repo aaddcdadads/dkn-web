@@ -743,20 +743,8 @@ export default {
             props: {
               title: "",
               width: "242px",
-              options: [
-                {
-                  label: "微信",
-                  value: "微信",
-                },
-                {
-                  label: "支付宝",
-                  value: "支付宝",
-                },
-                {
-                  label: "app",
-                  value: "app",
-                },
-              ],
+              showSearch: true,
+              url: "/api/sys/dict/getDictItems/channel",
             },
             validator: function (value) {},
           },
