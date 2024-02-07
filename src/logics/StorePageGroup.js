@@ -331,30 +331,23 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
 
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
-  // setTimeout(() => {
-  //   const container = document.querySelector(".ele-wrapper-qrcode");
-  //   console.log("container", container);
-  console.log("随机生成id", randomString);
-  new self.$QrCode({
-    text: randomString, // 使用随机数作为 text 字段的值
-    width: 128,
-    height: 128,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
+
+  const cultivateId = self.$buildUUID();
+  let base64 = await self.$QRCode.toDataURL(cultivateId, {
+    errorCorrectionLevel: "L",
+    margin: 1,
+    height: 300,
+    width: 300,
+    type: "10",
+    scal: 177,
   });
-  //门店名称
-  self.storeNameText.text = titele;
-  self.storeNameTitle = titele;
-  // 获取生成的二维码的 base64 编码
-  //   const canvas = container.querySelector("canvas");
-  const qrCodeBase64 = canvas.toDataURL("image/png");
-  self.baseUrl = qrCodeBase64;
-  // 打印二维码的 base64 编码
-  console.log("QR Code Base64:", qrCodeBase64);
+  self.baseUrl = base64;
+  console.log("QR Code Base64:", base64);
   // });
 
   self.addParams = {
     ...values,
+    id: cultivateId,
     status: 0,
     qrCode: self.baseUrl,
     qrCodeId: randomString,
