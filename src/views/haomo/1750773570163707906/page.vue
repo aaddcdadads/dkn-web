@@ -1261,21 +1261,21 @@ export default {
       this.importantModal.visible = true;
     },
     onEle6F9A059982Dc4E11880CD7F38D3F8892Click() {
-      let urlTypes = "";
+      let urlTypes = "/api/dkn/store/list";
       let paramsTypes = {
         pageSize: -1,
       };
       this.$getAction(urlTypes, paramsTypes).then((resTypes) => {
         console.log("查询项目", resTypes);
-        let options = [];
-        resTypes.result.forEach((eTypes) => {
-          let parTypes = {
-            label: eTypes.title,
-            value: eTypes.value,
-          };
-          options.push(parTypes);
-          console.log("查询项目参数", parTypes);
-        });
+        //let options = []
+        // resTypes.result.forEach(eTypes => {
+        // let parTypes = {
+        //   label: eTypes.title,
+        //    value: eTypes.value
+        //  }
+        //  options.push(parTypes);
+        // console.log('查询项目参数', parTypes);
+        // });
 
         // this.videoSurveillanceCameraType.options = options
       });
