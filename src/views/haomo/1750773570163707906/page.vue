@@ -1289,7 +1289,7 @@ export default {
         const container = document.querySelector(".ele-wrapper-rcodeTwo");
         console.log("container", container);
         new self.$QrCode(container, {
-          text: "6666",
+          text: randomString,
           width: 128,
           height: 128,
           colorDark: "#000000",
