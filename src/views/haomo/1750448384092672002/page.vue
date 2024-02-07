@@ -1092,8 +1092,7 @@ export default {
       self.bathqiyong.disabled = true;
       self.batchBisabled.disabled = true;
       self.batchDelete.disabled = true;
-      self.copyUrl = function () {
-        let url = self.urlInput.value;
+      self.copyUrl = function (url) {
         if (!navigator.clipboard) {
           var ele = document.createElement("input");
           ele.value = url;
