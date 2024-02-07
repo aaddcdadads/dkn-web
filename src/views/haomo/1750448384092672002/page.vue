@@ -420,6 +420,20 @@
               height="100%"
             >
               <div
+                class="ele-wrapper ele-wrapper-9e3b4e17-761a-4730-8444-b50b2595cf04"
+              >
+                <hm-bg-card
+                  width="100%"
+                  height=""
+                  border-radius=""
+                  padding=""
+                  box-shadow-color="#00000000"
+                  :hidden="true"
+                  class="ele-9e3b4e17-761a-4730-8444-b50b2595cf04"
+                >
+                </hm-bg-card>
+              </div>
+              <div
                 class="ele-wrapper ele-wrapper-b30d54e9-4e74-4c47-b7d3-81f3d36b7f6a"
               >
                 <hm-bg-card
@@ -1423,6 +1437,11 @@ export default {
   width: 272px;
   display: flex;
   justify-content: center;
+}
+
+.ele-wrapper-9e3b4e17-761a-4730-8444-b50b2595cf04 {
+  width: 100%;
+  padding-bottom: 12px;
 }
 
 .ele-wrapper-b30d54e9-4e74-4c47-b7d3-81f3d36b7f6a {
