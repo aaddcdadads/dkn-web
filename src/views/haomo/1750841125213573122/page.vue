@@ -666,10 +666,12 @@ export default {
                 [
                   h(HmAntButton, {
                     disabled:
-                      item.record.pickUpStatus != 0 ||
-                      item.record.paymentStatus != 0
-                        ? false
-                        : true,
+                      item.record.pickUpStatus == 0 ||
+                      item.record.paymentStatus == 1 ||
+                      item.record.paymentStatus == 2 ||
+                      !item.record.money
+                        ? true
+                        : false,
                     text: "退款",
                     fontSize: 14,
                     type: "link",
