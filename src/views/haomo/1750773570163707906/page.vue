@@ -1268,7 +1268,7 @@ export default {
       this.$getAction(urlTypes, paramsTypes).then((resTypes) => {
         console.log("查询门店", resTypes);
         let options = [];
-        resTypes.result.forEach((eTypes) => {
+        resTypes.result.records.forEach((eTypes) => {
           let parTypes = {
             fileName: eTypes.name,
             base64: eTypes.qrCode,
