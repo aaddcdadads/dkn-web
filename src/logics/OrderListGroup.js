@@ -258,9 +258,7 @@ const searchViewRegistrationOrders = (logic.searchViewRegistrationOrders = async
     ),
     activityId: self.selectActivityId,
   };
-  if (!self.selectActivityId) {
-    delete params.activityId;
-  }
+
   if (_.isEqual(params, self.viewRegistrationOrdersTable.params)) {
     self.$refs.viewRegistrationOrdersTable.getData();
   } else {
