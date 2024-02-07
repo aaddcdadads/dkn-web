@@ -737,10 +737,6 @@ export default {
       prompt: {
         text: "文字",
       },
-      storeNameText: {
-        text: "",
-        fontSize: "16px",
-      },
       storeAddModal: {
         visible: false,
       },
@@ -855,6 +851,10 @@ export default {
         },
       },
       storeDetailForm: {},
+      storeNameText: {
+        text: "",
+        fontSize: "16px",
+      },
       storeFilter: {
         config: {
           name: {
@@ -1280,9 +1280,6 @@ export default {
           colorDark: "#000000",
           colorLight: "#ffffff",
         });
-        //门店名称
-        self.storeNameText.text = titele;
-        self.storeNameTitle = titele;
         // 获取生成的二维码的 base64 编码
         const canvas = container.querySelector("canvas");
         const qrCodeBase64 = canvas.toDataURL("image/png");
