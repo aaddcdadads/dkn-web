@@ -602,8 +602,8 @@ export default {
           },
           {
             title: "核销时间",
-            dataIndex: "pickUpTime",
-            key: "pickUpTime",
+            dataIndex: "orderPickUpCreateTime",
+            key: "orderPickUpCreateTime",
           },
           {
             title: "原核销门店",
