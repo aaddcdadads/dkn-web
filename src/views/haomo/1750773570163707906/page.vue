@@ -1456,6 +1456,7 @@ export default {
       console.log("打印", e);
       if (e.file.status == "done") {
         this.importantModal.visible = false;
+        this.$refs.storeTable.getData();
       }
     },
     onEleafbfba92716B4Ef98Bc8Ccafb793Fe73Click() {
