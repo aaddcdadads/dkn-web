@@ -343,20 +343,40 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   await addRequest();
   if (self.addRequestData.success) {
     self.$message.success("添加成功");
-    self.storId = self.addRequestData.result.id;
-    console.log(
-      "打印新增的数据id",
-      self.storId,
-      self.addRequestData,
-      self.baseUrl
-    );
-    let urlEdit = "/api/dkn/store/edit";
-    let paramsEdit = {
-      id: self.storId,
-      qrCode: self.baseUrl,
-    };
-    self.$putAction(urlEdit, paramsEdit).then((resTypes) => {
-      console.log("编辑base64", resTypes);
+    setTimeout(() => {
+      self.storId = self.addRequestData.result.id;
+      console.log(
+        "打印新增的数据id",
+        self.storId,
+        self.addRequestData,
+        self.baseUrl
+      );
+      const container = document.querySelector(".ele-wrapper-rcodeTwo");
+      console.log("container", container);
+      new self.$QrCode(container, {
+        text:
+          "https://dkn-h5.dev.haumo.cn/pages/haomo/1751895267671543809/page?storeId=" +
+          self.storId,
+        width: 128,
+        height: 128,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+      });
+      // 获取生成的二维码的 base64 编码
+      const canvas = container.querySelector("canvas");
+      const qrCodeBase64 = canvas.toDataURL("image/png");
+      self.baseUrl = qrCodeBase64;
+      // 打印二维码的 base64 编码
+      console.log("QR64======:", qrCodeBase64);
+
+      let urlEdit = "/api/dkn/store/edit";
+      let paramsEdit = {
+        id: self.storId,
+        qrCode: self.baseUrl,
+      };
+      self.$putAction(urlEdit, paramsEdit).then((resTypes) => {
+        console.log("编辑base64", resTypes);
+      });
     });
     self.$refs.storeAddForm.reset();
     self.storeAddModal.visible = false;
