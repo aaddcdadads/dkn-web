@@ -341,19 +341,27 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
     colorDark: "#000000",
     colorLight: "#ffffff",
   });
-  const qrCodeBase64 = canvas.toDataURL("image/png");
 
-  // 设置 self.baseUrl
-  self.baseUrl = qrCodeBase64;
-  console.log("QR Code Base64:", self.baseUrl);
+  // 等待一段时间，确保二维码生成完成
+  setTimeout(() => {
+    // 获取生成的二维码的 base64 编码
+    const qrCodeBase64 = canvas.toDataURL("image/png");
 
-  // 继续执行其他操作
-  self.addParams = {
-    ...values,
-    status: 0,
-    qrCode: self.baseUrl,
-    qrCodeId: randomString,
-  };
+    // 设置 self.baseUrl
+    self.baseUrl = qrCodeBase64;
+    console.log("QR Code Base64:", self.baseUrl);
+
+    // 检查生成的 Canvas 尺寸
+    console.log("Canvas Size:", canvas.width, canvas.height);
+
+    // 继续执行其他操作
+    self.addParams = {
+      ...values,
+      status: 0,
+      qrCode: self.baseUrl,
+      qrCodeId: randomString,
+    };
+  }, 800); // 1秒延迟
 
   await addRequest();
   if (self.addRequestData.success) {
