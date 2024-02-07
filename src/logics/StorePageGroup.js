@@ -327,7 +327,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   }
 
   // 调用函数生成随机字符串
-  const randomString = generateRandomString(15); // 生成长度为10的随机字符串
+  const randomString = generateRandomString(15); // 生成长度为15的随机字符串
 
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
