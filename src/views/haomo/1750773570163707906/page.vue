@@ -198,6 +198,7 @@
                   :params="storeTable.params"
                   :get-data-map="storeTable.getDataMap"
                   :row-select-flag="storeTable.rowSelectFlag"
+                  :row-selection="storeTable.rowSelection"
                   :actions="storeTable.actions"
                   :is-flat-action="storeTable.isFlatAction"
                   :background-color="storeTable.backgroundColor"
@@ -748,6 +749,105 @@ export default {
       },
       videoSurveillanceCameraType: {},
       qrcodeModal: {},
+      storeTable: {
+        rowSelection: {},
+        columns: [
+          {
+            title: "门店名称",
+            dataIndex: "name",
+            key: "name",
+          },
+          {
+            title: "门店所属区域",
+            dataIndex: "urbanArea",
+            key: "urbanArea",
+          },
+          {
+            title: "门店地址",
+            dataIndex: "address",
+            key: "address",
+          },
+          {
+            title: "启用状态",
+            dataIndex: "status",
+            key: "status",
+            customRender: function (data) {
+              return h(HmAntSwitch, {
+                checked: data.record.status === 0,
+                title: "",
+                onChange: function (e) {
+                  self.updateStatus(data.record.id, e);
+                },
+              });
+            },
+          },
+          {
+            slots: {
+              customRender: "action",
+            },
+            width: "260",
+            title: "操作",
+            key: "action",
+          },
+        ],
+        data: [{}],
+        pagination: {
+          current: 1,
+          pageSizeOptions: ["10", "20", "30", "40"],
+          pageSize: 10,
+          showSizeChanger: true,
+        },
+        url: "/api/dkn/store/list",
+        params: {
+          databaseId: "",
+          column: "createTime",
+          order: "desc",
+        },
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        rowSelectFlag: true,
+        actions: [
+          {
+            name: "门店核销码",
+            callback: function (item) {
+              self.storeDetailModal.visible = true;
+              self.getQrCode(item.id, item.name);
+              console.log("打印二维码url", self.baseUrl);
+            },
+            type: "link",
+          },
+          {
+            name: "编辑",
+            callback: function (item) {
+              self.storeEditModal.visible = true;
+              self.currentStoreId = item.id;
+              self.currentEditItem = item;
+              console.log("地区", self.currentEditItem.urbanArea);
+              setTimeout(() => {
+                self.$nextTick(function () {
+                  //self.storeEditForm.value = item;
+                  self.$refs.storeEditForm.setFormValues(item);
+                  //self.onAreaButtonClick();
+                });
+              }, 600);
+            },
+            type: "link",
+          },
+          {
+            name: "删除",
+            callback: function (item) {
+              self.storeDeleteModal.visible = true;
+              self.currentStoreId = item.id;
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        backgroundColor: "#FFFFFF",
+        rowClassName: {},
+      },
       bathqiyong: {
         disabled: false,
         text: "批量启用",
@@ -935,104 +1035,6 @@ export default {
           span: "文字内容",
         },
         schema: {},
-      },
-      storeTable: {
-        columns: [
-          {
-            title: "门店名称",
-            dataIndex: "name",
-            key: "name",
-          },
-          {
-            title: "门店所属区域",
-            dataIndex: "urbanArea",
-            key: "urbanArea",
-          },
-          {
-            title: "门店地址",
-            dataIndex: "address",
-            key: "address",
-          },
-          {
-            title: "启用状态",
-            dataIndex: "status",
-            key: "status",
-            customRender: function (data) {
-              return h(HmAntSwitch, {
-                checked: data.record.status === 0,
-                title: "",
-                onChange: function (e) {
-                  self.updateStatus(data.record.id, e);
-                },
-              });
-            },
-          },
-          {
-            slots: {
-              customRender: "action",
-            },
-            width: "260",
-            title: "操作",
-            key: "action",
-          },
-        ],
-        data: [{}],
-        pagination: {
-          current: 1,
-          pageSizeOptions: ["10", "20", "30", "40"],
-          pageSize: 10,
-          showSizeChanger: true,
-        },
-        url: "/api/dkn/store/list",
-        params: {
-          databaseId: "",
-          column: "createTime",
-          order: "desc",
-        },
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        rowSelectFlag: true,
-        actions: [
-          {
-            name: "门店核销码",
-            callback: function (item) {
-              self.storeDetailModal.visible = true;
-              self.getQrCode(item.id, item.name);
-              console.log("打印二维码url", self.baseUrl);
-            },
-            type: "link",
-          },
-          {
-            name: "编辑",
-            callback: function (item) {
-              self.storeEditModal.visible = true;
-              self.currentStoreId = item.id;
-              self.currentEditItem = item;
-              console.log("地区", self.currentEditItem.urbanArea);
-              setTimeout(() => {
-                self.$nextTick(function () {
-                  //self.storeEditForm.value = item;
-                  self.$refs.storeEditForm.setFormValues(item);
-                  //self.onAreaButtonClick();
-                });
-              }, 600);
-            },
-            type: "link",
-          },
-          {
-            name: "删除",
-            callback: function (item) {
-              self.storeDeleteModal.visible = true;
-              self.currentStoreId = item.id;
-            },
-            type: "link",
-          },
-        ],
-        isFlatAction: true,
-        backgroundColor: "#FFFFFF",
-        rowClassName: {},
       },
       "9cec9dc8-fe98-4620-bc41-f3bf45e728fc": {
         fileList: [],
@@ -1419,6 +1421,13 @@ export default {
           self.$message.error(res.message);
           return;
         }
+        self.storeTable.rowSelection = {
+          selectedRowKeys: [],
+        };
+        self.$nextTick(() => {
+          self.storeTable.rowSelection = {};
+          self.$refs.storeTable.getData();
+        });
         // 操作成功的提示
         self.$message.success("操作成功");
       } else if (self.allStatus === 3) {
@@ -1437,14 +1446,19 @@ export default {
           return;
         }
         // 操作成功后的处理
-        self.selectedRows = [];
+        self.storeTable.rowSelection = {
+          selectedRowKeys: [],
+        };
+        self.$nextTick(() => {
+          self.storeTable.rowSelection = {};
+          self.$refs.storeTable.getData();
+        });
         self.bathqiyong.disabled = true;
         self.batchBisabled.disabled = true;
         self.batchDelete.disabled = true;
         self.$message.success("操作成功");
       }
       // 刷新表格数据
-      self.$refs.storeTable.getData();
     },
     onBatchEditCancel() {
       this.batchEdit.visible = false;
