@@ -298,7 +298,7 @@ const searchStore = (logic.searchStore = async (pageVm, eventData) => {
 /**
  * 处理
  */
-const behavior = (logic.behavior = function () {});
+const behaviorNumber = (logic.behaviorNumber = function () {});
 
 /**
  * 发送添加请求
@@ -318,7 +318,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   self = Object.assign(pageVm, logic);
   self.addStoreData = eventData;
 
-  behavior();
+  behaviorNumber();
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
   // setTimeout(() => {
@@ -402,7 +402,7 @@ export {
   editRequest,
   editStore,
   searchStore,
-  behavior,
+  behaviorNumber,
   addRequest,
   addStore,
   downloadTemplate,
