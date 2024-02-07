@@ -1289,7 +1289,7 @@ export default {
         const container = document.querySelector(".ele-wrapper-rcodeTwo");
         console.log("container", container);
         new self.$QrCode(container, {
-          text: randomString,
+          text: self.randomString,
           width: 128,
           height: 128,
           colorDark: "#000000",
@@ -1300,7 +1300,7 @@ export default {
         const qrCodeBase64 = canvas.toDataURL("image/png");
         self.baseUrl = qrCodeBase64;
         // 打印二维码的 base64 编码
-        console.log("QR Code Base64:", qrCodeBase64);
+        console.log("QR64======:", qrCodeBase64);
       });
       this.storeAddModal.visible = true;
     },
