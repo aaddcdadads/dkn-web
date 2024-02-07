@@ -521,6 +521,9 @@
                       :file-list="[]"
                       action="/api/dkn/store/importExcel "
                       :headers="{}"
+                      @onUploadDone="
+                        onEle9Cec9Dc8Fe984620Bc41F3Bf45E728FcOnUploadDone
+                      "
                       class="ele-9cec9dc8-fe98-4620-bc41-f3bf45e728fc"
                     >
                     </hm-ant-upload>
@@ -1448,6 +1451,9 @@ export default {
     },
     onImportantModalCancel() {
       this.importantModal.visible = false;
+    },
+    onEle9Cec9Dc8Fe984620Bc41F3Bf45E728FcOnUploadDone(e) {
+      console.log("打印", e);
     },
     onEleafbfba92716B4Ef98Bc8Ccafb793Fe73Click() {
       this.$downloadFile(
