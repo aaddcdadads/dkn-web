@@ -338,7 +338,7 @@ var values = self.$refs.storeAddForm.getFormValues();
 self.number = Math.random().toString()
     console.log("随机生成id",self.number);
   new self.$QrCode(container, {
-    text: self.number// 使用随机数作为 text 字段的值
+    text: self.number,// 使用随机数作为 text 字段的值
     width: 128,
     height: 128,
     colorDark: "#000000",
