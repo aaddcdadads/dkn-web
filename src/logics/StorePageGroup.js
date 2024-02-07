@@ -332,18 +332,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
 
-  new self.$QrCode(randomString, {
-    text: randomString,
-    width: 128,
-    height: 128,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
-  });
-  const canvas = container.querySelector("canvas");
-  const qrCodeBase64 = canvas.toDataURL("image/png");
-  self.baseUrl = qrCodeBase64;
-  console.log("QR Code Base64:", qrCodeBase64);
-  // });
+  self.getQrCode(item.id, item.name);
 
   self.addParams = {
     ...values,
