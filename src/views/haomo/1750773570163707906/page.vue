@@ -1094,7 +1094,7 @@ export default {
       };
       //生成二维码
       self.getQrCode = async function (id, name) {
-        let variableToEncode = "666";
+        let variableToEncode = `${id}`;
         let titele = `${name}`;
         console.log("打印id", variableToEncode, "打印店名", titele);
         setTimeout(() => {
