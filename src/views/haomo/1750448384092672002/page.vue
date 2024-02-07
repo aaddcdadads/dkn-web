@@ -1131,6 +1131,7 @@ export default {
           });
           self.urlInput.value = url;
         });
+        self.getCode();
       };
       self.isDisabled = function () {
         if (this.selectedRows.length > 0) {
@@ -1157,6 +1158,10 @@ export default {
         if (jy.length !== 0) {
           self.batchBisabled.disabled = true;
         }
+      };
+      self.getCode = async function () {
+        let url = "/api/sys/dict/getDictItems/channel";
+        const res = await self.$getAction(url);
       };
     },
 
