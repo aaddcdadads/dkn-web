@@ -341,19 +341,21 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
     colorDark: "#000000",
     colorLight: "#ffffff",
   });
-  const qrCodeBase64 = canvas.toDataURL("image/png");
+  setTimeout(() => {
+    const qrCodeBase64 = canvas.toDataURL("image/png");
 
-  // 设置 self.baseUrl
-  self.baseUrl = qrCodeBase64;
-  console.log("QR Code Base64:", self.baseUrl);
+    // 设置 self.baseUrl
+    self.baseUrl = qrCodeBase64;
+    console.log("QR Code Base64:", self.baseUrl);
 
-  // 继续执行其他操作
-  self.addParams = {
-    ...values,
-    status: 0,
-    qrCode: self.baseUrl,
-    qrCodeId: randomString,
-  };
+    // 继续执行其他操作
+    self.addParams = {
+      ...values,
+      status: 0,
+      qrCode: self.baseUrl,
+      qrCodeId: randomString,
+    };
+  });
   await addRequest();
   if (self.addRequestData.success) {
     self.$message.success("添加成功");
