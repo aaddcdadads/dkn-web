@@ -343,6 +343,8 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   await addRequest();
   if (self.addRequestData.success) {
     self.$message.success("添加成功");
+    self.$refs.storeAddForm.reset();
+    self.$refs.storeTable.getData();
     setTimeout(() => {
       self.storId = self.addRequestData.result.id;
       console.log(
@@ -377,10 +379,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
       self.$putAction(urlEdit, paramsEdit).then((resTypes) => {
         console.log("编辑base64", resTypes);
       });
-    });
-    self.$refs.storeAddForm.reset();
-    self.storeAddModal.visible = false;
-    self.$refs.storeTable.getData();
+    }, 2000);
   } else {
     self.$message.error("添加失败");
   }
