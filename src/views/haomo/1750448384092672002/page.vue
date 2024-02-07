@@ -1159,9 +1159,14 @@ export default {
           self.batchBisabled.disabled = true;
         }
       };
-      self.getCode = async function () {
+      self.getCode = async function (id) {
         let url = "/api/sys/dict/getDictItems/channel";
         const res = await self.$getAction(url);
+        let u = `${self.$accessAddress}?activityId=${id}`;
+        const list = res.result.map((e) => {
+          return { ...e, url: `${u}&channel=${e.value}` };
+        });
+        return list;
       };
     },
 
