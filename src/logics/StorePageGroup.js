@@ -334,6 +334,9 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
 
   // 生成二维码
   const canvas = document.createElement("canvas");
+  canvas.width = 300; // 设置宽度为 300 像素
+  canvas.height = 300; // 设置高度为 300 像素
+
   new self.$QrCode(canvas, {
     text: randomString,
     width: 128,
