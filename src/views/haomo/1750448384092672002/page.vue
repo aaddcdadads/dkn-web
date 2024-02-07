@@ -1182,6 +1182,7 @@ export default {
         const list = res.result.map((e) => {
           return {
             ...e,
+            id: e.value,
             url: `${u}&channel=${e.value}`,
           };
         });
