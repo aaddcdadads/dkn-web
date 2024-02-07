@@ -885,7 +885,7 @@ export default {
               width: "242px",
               dataMap: {
                 label: "name",
-                value: "name",
+                value: "id",
               },
               title: "",
               params: {
