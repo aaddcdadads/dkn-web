@@ -431,6 +431,11 @@
                   :hidden="true"
                   class="ele-9e3b4e17-761a-4730-8444-b50b2595cf04"
                 >
+                  <div
+                    class="ele-wrapper ele-wrapper-1da8ae2b-b803-4e95-a8c3-79b895b22288"
+                  >
+                    <hm-activity-list> </hm-activity-list>
+                  </div>
                 </hm-bg-card>
               </div>
               <div
@@ -530,6 +535,7 @@ import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
+import HmActivityList from "/@/components/decathlon-spring-festivalactivities-web/hm-activity-list/index.vue";
 import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
@@ -554,6 +560,7 @@ export default {
     HmModal,
     HmAntIconText,
     HmAntBgText,
+    HmActivityList,
     HmAntInput,
     HmAntSwitch,
   },
