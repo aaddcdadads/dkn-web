@@ -296,11 +296,6 @@ const searchStore = (logic.searchStore = async (pageVm, eventData) => {
 
 /********************** addStore 开始 *********************/
 /**
- * 随机id
- */
-const behaviorNumber = (logic.behaviorNumber = function () {});
-
-/**
  * 发送添加请求
  */
 const addRequest = (logic.addRequest = async function () {
@@ -318,7 +313,22 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   self = Object.assign(pageVm, logic);
   self.addStoreData = eventData;
 
-  behaviorNumber();
+  // 生成一个随机的数字和英文组合的字符串
+  function generateRandomString(length) {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let result = "";
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
+    }
+    return result;
+  }
+
+  // 调用函数生成随机字符串
+  const randomString = generateRandomString(15); // 生成长度为10的随机字符串
+
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
   // setTimeout(() => {
@@ -402,7 +412,6 @@ export {
   editRequest,
   editStore,
   searchStore,
-  behaviorNumber,
   addRequest,
   addStore,
   downloadTemplate,
