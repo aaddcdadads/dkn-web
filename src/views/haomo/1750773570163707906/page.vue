@@ -246,6 +246,19 @@
                     >
                     </hm-ant-formily>
                   </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-9f6c8ac9-75ce-48d2-a83c-aea2889adfca"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height=""
+                      border-radius=""
+                      padding=""
+                      box-shadow-color="#00000000"
+                      class="ele-9f6c8ac9-75ce-48d2-a83c-aea2889adfca"
+                    >
+                    </hm-bg-card>
+                  </div>
                 </hm-bg-card>
               </div>
             </hm-modal>
@@ -726,7 +739,7 @@ export default {
         text: "文字",
       },
       storeAddModal: {
-        visible: false,
+        visible: true,
       },
       importantModal: {
         visible: false,
@@ -1506,6 +1519,10 @@ export default {
 
 .ele-wrapper-storeAddForm {
   width: 100%;
+}
+
+.ele-wrapper-9f6c8ac9-75ce-48d2-a83c-aea2889adfca {
+  width: 70%;
 }
 
 .ele-wrapper-newUserModalCard {
