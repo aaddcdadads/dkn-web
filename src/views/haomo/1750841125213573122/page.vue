@@ -602,8 +602,8 @@ export default {
           },
           {
             title: "核销时间",
-            dataIndex: "orderPickUpCreateTime",
-            key: "orderPickUpCreateTime",
+            dataIndex: "pickUpTime",
+            key: "pickUpTime",
           },
           {
             title: "原核销门店",
@@ -722,7 +722,7 @@ export default {
       },
       viewRegistrationOrdersFilter: {
         config: {
-          userCode: {
+          code: {
             type: "Input",
             title: "搜索用户",
             style: {
