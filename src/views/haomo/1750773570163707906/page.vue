@@ -1269,12 +1269,14 @@ export default {
         console.log("查询门店", resTypes);
         let options = [];
         resTypes.result.records.forEach((eTypes) => {
-          let parTypes = {
-            fileName: eTypes.name,
-            base64: eTypes.qrCode,
-          };
-          options.push(parTypes);
-          console.log("查询项目", parTypes);
+          if (eTypes.qrCode !== null) {
+            let parTypes = {
+              fileName: eTypes.name,
+              base64: eTypes.qrCode,
+            };
+            options.push(parTypes);
+            console.log("查询项目", parTypes);
+          }
         });
         this.$downloadImgZip(options);
         // this.videoSurveillanceCameraType.options = options
