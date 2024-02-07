@@ -875,7 +875,7 @@ export default {
             },
             validator: function (value) {},
           },
-          activitySelect: {
+          activityId: {
             type: "HmAntSelect",
             title: "选择活动",
             style: {
