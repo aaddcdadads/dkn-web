@@ -1147,7 +1147,7 @@ export default {
           });
           self.urlInput.value = url;
         });
-        self.activityList.list = await self.getCode();
+        self.activityList.list = await self.getCode(id);
       };
       self.isDisabled = function () {
         if (this.selectedRows.length > 0) {
