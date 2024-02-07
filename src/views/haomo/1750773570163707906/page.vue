@@ -1540,6 +1540,7 @@ export default {
 
 .ele-wrapper-rcodeTwo {
   width: 70%;
+  display: none;
 }
 
 .ele-wrapper-newUserModalCard {
