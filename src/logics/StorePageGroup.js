@@ -296,7 +296,7 @@ const searchStore = (logic.searchStore = async (pageVm, eventData) => {
 
 /********************** addStore 开始 *********************/
 /**
- * 处理
+ * 随机id
  */
 const behaviorNumber = (logic.behaviorNumber = function () {});
 
