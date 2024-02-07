@@ -345,7 +345,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
     self.$message.success("添加成功");
     self.$refs.storeAddForm.reset();
     self.$refs.storeTable.getData();
-    self.storeAddModal.visible = true;
+    self.storeAddModal.visible = false;
     setTimeout(() => {
       self.storId = self.addRequestData.result.id;
       console.log(
