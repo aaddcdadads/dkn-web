@@ -164,7 +164,7 @@ const exportViewRegistrationOrders = (logic.exportViewRegistrationOrders = async
   self = Object.assign(pageVm, logic);
   self.exportViewRegistrationOrdersData = eventData;
 
-  let url = "/api/dkn/viewRegistrationOrders/exportExcel";
+  let url = "/api/dkn/viewRegistrationOrders/ordersExportExcel";
   let params = {
     ...self.viewRegistrationOrdersTable.params,
     ...self.$getFilterValues(
@@ -172,7 +172,7 @@ const exportViewRegistrationOrders = (logic.exportViewRegistrationOrders = async
       self.$refs.viewRegistrationOrdersFilter.cSchema
     ),
   };
-  self.$downloadFile("view_registration_orders列表数据.xlsx", url, params);
+  self.$downloadFile("订单列表数据.xlsx", url, params);
 });
 
 /********************** end exportViewRegistrationOrders 开始 *********************/
