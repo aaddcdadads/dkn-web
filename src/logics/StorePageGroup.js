@@ -376,12 +376,12 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
       self.$putAction(urlEdit, paramsEdit).then((resTypes) => {
         console.log("编辑base64", resTypes);
       });
-    }, 1000);
-    self.$message.success("添加成功");
-    self.$refs.storeAddForm.reset();
-    self.$refs.storeTable.getData();
+      self.$message.success("添加成功");
+      self.$refs.storeAddForm.reset();
+      self.$refs.storeTable.getData();
 
-    self.storeAddModal.visible = false;
+      self.storeAddModal.visible = false;
+    }, 1000);
   } else {
     self.$message.error("添加失败");
   }
