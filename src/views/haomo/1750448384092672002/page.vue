@@ -430,6 +430,11 @@
                   box-shadow-color="#00000000"
                   class="ele-b30d54e9-4e74-4c47-b7d3-81f3d36b7f6a"
                 >
+                  <div
+                    class="ele-wrapper ele-wrapper-5c037ef5-6da8-4042-bd4c-46e46b41a22a"
+                  >
+                    <hm-activity-list> </hm-activity-list>
+                  </div>
                   <div class="ele-wrapper ele-wrapper-urlInput">
                     <hm-ant-input
                       ref="urlInput"
@@ -514,6 +519,7 @@ import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
 import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
+import HmActivityList from "/@/components/decathlon-spring-festivalactivities-web/hm-activity-list/index.vue";
 import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
@@ -538,6 +544,7 @@ export default {
     HmModal,
     HmAntIconText,
     HmAntBgText,
+    HmActivityList,
     HmAntInput,
     HmAntSwitch,
   },
