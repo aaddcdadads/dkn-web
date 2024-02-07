@@ -331,28 +331,23 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
 
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
-  setTimeout(() => {
-    // 创建一个新的 canvas 元素
-    const canvas = document.createElement("canvas");
-    // 使用 qrcodejs2 库生成二维码
-    new self.$QrCode(canvas, {
-      text: "6666",
-      width: 128,
-      height: 128,
-      colorDark: "#000000",
-      colorLight: "#ffffff",
-    });
 
-    // 将 canvas 插入到页面中，或者其他操作
-    // document.body.appendChild(canvas);
-
-    // 获取生成的二维码的 base64 编码
-    const qrCodeBase64 = canvas.toDataURL("image/png");
-    self.baseUrl = qrCodeBase64;
-    console.log("QR Code Base64:", self.baseUrl);
+  // 生成二维码
+  const canvas = document.createElement("canvas");
+  new self.$QrCode(canvas, {
+    text: "6666",
+    width: 128,
+    height: 128,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
   });
-  // 打印二维码的 base64 编码
+  const qrCodeBase64 = canvas.toDataURL("image/png");
 
+  // 设置 self.baseUrl
+  self.baseUrl = qrCodeBase64;
+  console.log("QR Code Base64:", self.baseUrl);
+
+  // 继续执行其他操作
   self.addParams = {
     ...values,
     status: 0,
