@@ -334,7 +334,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   // setTimeout(() => {
   const container = document.querySelector(".ele-wrapper-qrcode");
   console.log("container", container);
-  console.log("随机生成id", self.number);
+  console.log("随机生成id", randomString);
   new self.$QrCode(container, {
     text: randomString, // 使用随机数作为 text 字段的值
     width: 128,
