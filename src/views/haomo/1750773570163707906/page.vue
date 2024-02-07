@@ -1454,6 +1454,9 @@ export default {
     },
     onEle9Cec9Dc8Fe984620Bc41F3Bf45E728FcOnUploadDone(e) {
       console.log("打印", e);
+      if (e.file.status == "done") {
+        this.importantModal.visible = false;
+      }
     },
     onEleafbfba92716B4Ef98Bc8Ccafb793Fe73Click() {
       this.$downloadFile(
