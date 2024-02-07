@@ -737,6 +737,10 @@ export default {
       prompt: {
         text: "文字",
       },
+      storeNameText: {
+        text: "",
+        fontSize: "16px",
+      },
       storeAddModal: {
         visible: false,
       },
@@ -851,10 +855,6 @@ export default {
         },
       },
       storeDetailForm: {},
-      storeNameText: {
-        text: "",
-        fontSize: "16px",
-      },
       storeFilter: {
         config: {
           name: {
@@ -1269,6 +1269,27 @@ export default {
       });
     },
     onElef087F9B5C00641C6Aea1A22F650Dcce6Click() {
+      let self = this;
+      setTimeout(() => {
+        const container = document.querySelector(".ele-wrapper-qrcode");
+        console.log("container", container);
+        new self.$QrCode(container, {
+          text: variableToEncode,
+          width: 128,
+          height: 128,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+        });
+        //门店名称
+        self.storeNameText.text = titele;
+        self.storeNameTitle = titele;
+        // 获取生成的二维码的 base64 编码
+        const canvas = container.querySelector("canvas");
+        const qrCodeBase64 = canvas.toDataURL("image/png");
+        self.baseUrl = qrCodeBase64;
+        // 打印二维码的 base64 编码
+        console.log("QR Code Base64:", qrCodeBase64);
+      });
       this.storeAddModal.visible = true;
     },
     onEle6Cc57D267B374D798A991F8E6Af5478FClick() {
