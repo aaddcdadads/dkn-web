@@ -73,7 +73,7 @@ const ordersBatchRefund = (logic.ordersBatchRefund = async (
     self.orderRefund(self, [item]);
   });
   self.batchRefundModal.visible = false;
-  location.reload();
+  // location.reload();
 });
 
 /********************** end ordersBatchRefund 开始 *********************/
