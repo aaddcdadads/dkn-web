@@ -1271,10 +1271,10 @@ export default {
     onElef087F9B5C00641C6Aea1A22F650Dcce6Click() {
       let self = this;
       setTimeout(() => {
-        const container = document.querySelector(".ele-wrapper-qrcode");
+        const container = document.querySelector(".ele-wrapper-rcodeTwo");
         console.log("container", container);
         new self.$QrCode(container, {
-          text: variableToEncode,
+          text: "6666",
           width: 128,
           height: 128,
           colorDark: "#000000",
