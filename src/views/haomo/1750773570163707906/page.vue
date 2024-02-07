@@ -1456,7 +1456,7 @@ export default {
       console.log("打印", e);
       if (e.file.status == "done") {
         this.importantModal.visible = false;
-        this.$message.error(e.file.response.message);
+        this.$message.success(e.file.response.message);
         this.$refs.storeTable.getData();
       }
     },
