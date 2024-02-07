@@ -308,7 +308,9 @@ const addRequest = (logic.addRequest = async function () {
 /**
  * 处理
  */
-const behaviorNumBer = (logic.behaviorNumBer = function () {});
+const behaviorNumBer = (logic.behaviorNumBer = function () {
+  self.$message.error("店名重复");
+});
 
 /**
  * 逻辑流 addStore 入口函数
