@@ -332,8 +332,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
 
-  const cultivateId = self.$buildUUID();
-  let base64 = await self.$QRCode.toDataURL(cultivateId, {
+  let base64 = await self.$QRCode.toDataURL(randomString, {
     errorCorrectionLevel: "L",
     margin: 1,
     height: 300,
@@ -347,7 +346,6 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
 
   self.addParams = {
     ...values,
-    id: cultivateId,
     status: 0,
     qrCode: self.baseUrl,
     qrCodeId: randomString,
