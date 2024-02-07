@@ -231,7 +231,7 @@ const loadAreaDataRegion = logic.loadAreaDataRegion = async (pageVm, eventData) 
 /**
  * 处理
  */
-const behavior = logic.behavior = function() {
+const behaviorNmuBerEdit = logic.behaviorNmuBerEdit = function() {
   
 }
 
@@ -249,7 +249,7 @@ const editRequest = logic.editRequest = async function () {
 /**
  * 处理
  */
-const behavior = logic.behavior = function() {
+const behaviorNmuBerEdit = logic.behaviorNmuBerEdit = function() {
   
 }
 
@@ -263,7 +263,7 @@ const editStore = logic.editStore = async (pageVm, eventData) => {
   self.editStoreData = eventData;
 
   
-  behavior();
+  behaviorNmuBerEdit();
   if(){
     await self.$refs.storeEditForm.validate()
 var values = self.$refs.storeEditForm.getFormValues();
@@ -294,7 +294,7 @@ self.storeEditModal.visible = false;
 }
 
 }else{
-    behavior();
+    behaviorNmuBerEdit();
 
 }
 
@@ -488,9 +488,9 @@ export {
   queryAreaFailRegions,
   queryAreaRequestSucRegion,
   loadAreaDataRegion,
-  behavior,
+  behaviorNmuBerEdit,
   editRequest,
-  behavior,
+  behaviorNmuBerEdit,
   editStore,
   searchStore,
   addRequest,
