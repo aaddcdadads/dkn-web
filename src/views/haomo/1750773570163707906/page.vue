@@ -168,6 +168,7 @@
                             text="导出核销码"
                             :type="'primary'"
                             icon="fa fa-download"
+                            @click="onEle6F9A059982Dc4E11880CD7F38D3F8892Click"
                             class="ele-6f9a0599-82dc-4e11-880c-d7f38d3f8892"
                           >
                           </hm-ant-button>
@@ -730,6 +731,7 @@ export default {
       importantModal: {
         visible: false,
       },
+      videoSurveillanceCameraType: {},
       qrcodeModal: {},
       bathqiyong: {
         disabled: false,
@@ -1257,6 +1259,26 @@ export default {
     },
     onEle6Cc57D267B374D798A991F8E6Af5478FClick() {
       this.importantModal.visible = true;
+    },
+    onEle6F9A059982Dc4E11880CD7F38D3F8892Click() {
+      let urlTypes = "";
+      let paramsTypes = {
+        pageSize: -1,
+      };
+      this.$getAction(urlTypes, paramsTypes).then((resTypes) => {
+        console.log("查询项目", resTypes);
+        let options = [];
+        resTypes.result.forEach((eTypes) => {
+          let parTypes = {
+            label: eTypes.title,
+            value: eTypes.value,
+          };
+          options.push(parTypes);
+          console.log("查询项目参数", parTypes);
+        });
+
+        // this.videoSurveillanceCameraType.options = options
+      });
     },
     onInvisibleImportSearchLogicBtnClick() {
       searchStore(this, arguments);
