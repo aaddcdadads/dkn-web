@@ -431,10 +431,8 @@
                   :hidden="true"
                   class="ele-9e3b4e17-761a-4730-8444-b50b2595cf04"
                 >
-                  <div
-                    class="ele-wrapper ele-wrapper-1da8ae2b-b803-4e95-a8c3-79b895b22288"
-                  >
-                    <hm-activity-list> </hm-activity-list>
+                  <div class="ele-wrapper ele-wrapper-activityList">
+                    <hm-activity-list ref="activityList"> </hm-activity-list>
                   </div>
                 </hm-bg-card>
               </div>
