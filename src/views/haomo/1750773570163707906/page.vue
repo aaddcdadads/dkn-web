@@ -1136,23 +1136,6 @@ export default {
           self.batchBisabled.disabled = true;
         }
       };
-      //查询
-      self.getList = async function () {
-        // 定义请求的 API 地址
-        let url = "/api/dkn/store/list";
-        // 准备请求参数，包括活动ID和要设置的状态（0 表示启用，1 表示禁用）
-        let params = {};
-        // 发送 PUT 请求，并等待响应
-        const res = await self.$getAction(url, params);
-        // 检查响应是否成功
-        if (!res.success) {
-          // 如果响应不成功，显示错误消息并退出函数
-          self.$message.error(res.message);
-          return;
-        }
-        // 如果响应成功，显示操作成功的消息
-        console.log("打印数据======", res);
-      };
     },
 
     onDownloadTemplateButtonClick() {
