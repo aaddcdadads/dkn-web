@@ -332,22 +332,25 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
   setTimeout(() => {
-    const container = document.querySelector(".ele-wrapper-qrcode");
-    console.log("container", container);
-    new self.$QrCode(container, {
-      text: variableToEncode,
+    // 创建一个新的 canvas 元素
+    const canvas = document.createElement("canvas");
+
+    // 使用 qrcodejs2 库生成二维码
+    new self.$QrCode(canvas, {
+      text: "6666",
       width: 128,
       height: 128,
       colorDark: "#000000",
       colorLight: "#ffffff",
     });
-    //门店名称
-    self.storeNameText.text = titele;
-    self.storeNameTitle = titele;
+
+    // 将 canvas 插入到页面中，或者其他操作
+    // document.body.appendChild(canvas);
+
     // 获取生成的二维码的 base64 编码
-    const canvas = container.querySelector("canvas");
     const qrCodeBase64 = canvas.toDataURL("image/png");
     self.baseUrl = qrCodeBase64;
+
     // 打印二维码的 base64 编码
     console.log("QR Code Base64:", qrCodeBase64);
   });
