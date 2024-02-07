@@ -256,7 +256,7 @@ const editStore = logic.editStore = async (pageVm, eventData) => {
   self.editStoreData = eventData;
 
   
-  var values = self.$refs.storeAddForm.getFormValues();
+  var values = self.$refs.storeEditForm.getFormValues();
 let urls = '/api/dkn/store/list';
   let paramsEs = {
     name:values.name
