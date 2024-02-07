@@ -345,6 +345,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   await addRequest();
   if (self.addRequestData.success) {
     self.$message.success("添加成功");
+    console.log("打印新增的数据id", self.addRequestData);
     self.$refs.storeAddForm.reset();
     self.storeAddModal.visible = false;
     self.$refs.storeTable.getData();
