@@ -4,7 +4,7 @@ import { VueCookieNext } from 'vue-cookie-next';
 import eventBus from 'vue3-eventbus';
 import VuePdf from 'vue3-pdfjs';
 
-import "font-awesome/css/font-awesome.min.css";
+import 'font-awesome/css/font-awesome.min.css';
 import Antd from 'ant-design-vue';
 import loadComponent from './loadComponent';
 import { map, filter, reduce, array2tree } from './flowUtils';
@@ -13,6 +13,7 @@ import { getToken } from '/@/utils/auth';
 import { getFilterValues } from '/@/utils/util';
 import QrCode from 'qrcodejs2-fix';
 import './index.css';
+import downloadImgZip from '../img';
 
 export function registerBlockDesign(app) {
   app.config.globalProperties.$QrCode = QrCode;
@@ -39,6 +40,7 @@ export function registerBlockDesign(app) {
   app.config.globalProperties.$array2tree = array2tree;
   //formily表单格式化为过滤器值的方法
   app.config.globalProperties.$getFilterValues = getFilterValues;
+  app.config.globalProperties.$downloadImgZip = downloadImgZip;
 
   app.use(Antd);
   app.use(loadComponent);
@@ -49,5 +51,5 @@ export function registerBlockDesign(app) {
 }
 
 export default {
-  registerBlockDesign
-} 
+  registerBlockDesign,
+};

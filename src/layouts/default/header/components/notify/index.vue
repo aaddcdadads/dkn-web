@@ -74,9 +74,9 @@
       listData.value[0].count = 0;
       listData.value[1].count = 0;
 
-      onMounted(() => {
-        initWebSocket();
-      });
+      // onMounted(() => {
+      //   initWebSocket();
+      // });
 
       const count = computed(() => {
         let count = 0;
