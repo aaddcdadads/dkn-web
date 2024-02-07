@@ -316,8 +316,8 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
   // setTimeout(() => {
-  //   const container = document.querySelector(".ele-wrapper-qrcode");
-  //   console.log("container", container);
+  const container = document.querySelector(".ele-wrapper-qrcode");
+  console.log("container", container);
   self.number = Math.random().toString();
   console.log("随机生成id", self.number);
   new self.$QrCode(container, {
