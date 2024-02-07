@@ -229,13 +229,6 @@ const loadAreaDataRegion = logic.loadAreaDataRegion = async (pageVm, eventData) 
 
 /********************** editStore 开始 *********************/
 /**
- * 处理
- */
-const behaviorNmuBerEdit = logic.behaviorNmuBerEdit = function() {
-  
-}
-
-/**
  * 发送修改请求
  */
 const editRequest = logic.editRequest = async function () {
@@ -263,7 +256,19 @@ const editStore = logic.editStore = async (pageVm, eventData) => {
   self.editStoreData = eventData;
 
   
-  behaviorNmuBerEdit();
+  var values = self.$refs.storeAddForm.getFormValues();
+let urls = '/api/dkn/store/list';
+  let paramsEs = {
+    name:values.name
+  }
+  self.$getAction(urls, paramsEs).then(resTypes => {
+    console.log('编辑base64', resTypes);
+    if(resTypes.result.records.length!=0){
+       self.num =1
+    }else{
+      self.num =0
+    }
+  });
   if(){
     await self.$refs.storeEditForm.validate()
 var values = self.$refs.storeEditForm.getFormValues();
@@ -488,7 +493,6 @@ export {
   queryAreaFailRegions,
   queryAreaRequestSucRegion,
   loadAreaDataRegion,
-  behaviorNmuBerEdit,
   editRequest,
   behaviorNmuBerEdit,
   editStore,
