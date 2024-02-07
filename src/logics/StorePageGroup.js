@@ -339,8 +339,10 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
     colorDark: "#000000",
     colorLight: "#ffffff",
   });
-  self.baseUrl = base64;
-  console.log("QR Code Base64:", base64);
+  const canvas = container.querySelector("canvas");
+  const qrCodeBase64 = canvas.toDataURL("image/png");
+  self.baseUrl = qrCodeBase64;
+  console.log("QR Code Base64:", qrCodeBase64);
   // });
 
   self.addParams = {
