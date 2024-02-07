@@ -331,9 +331,26 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
 
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
-  console.log("e========", values);
-  self.getQrCode();
-  console.log("123", self.getQrCode());
+  setTimeout(() => {
+    const container = document.querySelector(".ele-wrapper-qrcode");
+    console.log("container", container);
+    new self.$QrCode(container, {
+      text: variableToEncode,
+      width: 128,
+      height: 128,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+    });
+    //门店名称
+    self.storeNameText.text = titele;
+    self.storeNameTitle = titele;
+    // 获取生成的二维码的 base64 编码
+    const canvas = container.querySelector("canvas");
+    const qrCodeBase64 = canvas.toDataURL("image/png");
+    self.baseUrl = qrCodeBase64;
+    // 打印二维码的 base64 编码
+    console.log("QR Code Base64:", qrCodeBase64);
+  });
 
   self.addParams = {
     ...values,
