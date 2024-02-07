@@ -1266,16 +1266,16 @@ export default {
         pageSize: -1,
       };
       this.$getAction(urlTypes, paramsTypes).then((resTypes) => {
-        console.log("查询项目", resTypes);
-        //let options = []
-        // resTypes.result.forEach(eTypes => {
-        // let parTypes = {
-        //   label: eTypes.title,
-        //    value: eTypes.value
-        //  }
-        //  options.push(parTypes);
-        // console.log('查询项目参数', parTypes);
-        // });
+        console.log("查询门店", resTypes);
+        let options = [];
+        resTypes.result.forEach((eTypes) => {
+          let parTypes = {
+            fileName: eTypes.name,
+            base64: eTypes.qrCode,
+          };
+          options.push(parTypes);
+          console.log("查询项目", parTypes);
+        });
 
         // this.videoSurveillanceCameraType.options = options
       });
