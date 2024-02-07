@@ -431,7 +431,11 @@
                   class="ele-9e3b4e17-761a-4730-8444-b50b2595cf04"
                 >
                   <div class="ele-wrapper ele-wrapper-activityList">
-                    <hm-activity-list ref="activityList"> </hm-activity-list>
+                    <hm-activity-list
+                      ref="activityList"
+                      :list="activityList.list"
+                    >
+                    </hm-activity-list>
                   </div>
                 </hm-bg-card>
               </div>
@@ -796,6 +800,18 @@ export default {
       urlInput: {
         value: "",
       },
+      activityList: {
+        list: [
+          {
+            id: 1,
+            url: "http://baidu.com",
+          },
+          {
+            id: 2,
+            url: "http://baidu.com",
+          },
+        ],
+      },
       activityDetailModal: {
         visible: false,
       },
@@ -1131,7 +1147,7 @@ export default {
           });
           self.urlInput.value = url;
         });
-        self.getCode();
+        self.activityList.list = await self.getCode();
       };
       self.isDisabled = function () {
         if (this.selectedRows.length > 0) {
@@ -1164,7 +1180,10 @@ export default {
         const res = await self.$getAction(url);
         let u = `${self.$accessAddress}?activityId=${id}`;
         const list = res.result.map((e) => {
-          return { ...e, url: `${u}&channel=${e.value}` };
+          return {
+            ...e,
+            url: `${u}&channel=${e.value}`,
+          };
         });
         return list;
       };
