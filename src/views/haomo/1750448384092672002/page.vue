@@ -1285,6 +1285,7 @@ export default {
         self.$message.success("操作成功");
       }
       self.$refs.activityTable.getData();
+      location.reload();
     },
     onEleaea44C0C24204F3F94F8B0352515Ee1CClick() {
       this.copyUrl();
