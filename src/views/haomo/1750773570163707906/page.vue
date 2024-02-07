@@ -1166,7 +1166,7 @@ export default {
       }
 
       // 调用函数生成随机字符串
-      const randomString = generateRandomString(15); // 生成长度为15的随机字符串
+      self.randomString = generateRandomString(15); // 生成长度为15的随机字符串
     },
 
     onDownloadTemplateButtonClick() {
