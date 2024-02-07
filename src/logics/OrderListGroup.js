@@ -164,7 +164,7 @@ const exportViewRegistrationOrders = (logic.exportViewRegistrationOrders = async
   self = Object.assign(pageVm, logic);
   self.exportViewRegistrationOrdersData = eventData;
 
-  let url = "/api/restify/viewRegistrationOrders/exportExcel";
+  let url = "/api/dkn/viewRegistrationOrders/exportExcel";
   let params = {
     ...self.viewRegistrationOrdersTable.params,
     ...self.$getFilterValues(
