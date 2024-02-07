@@ -335,7 +335,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   // 生成二维码
   const canvas = document.createElement("canvas");
   new self.$QrCode(canvas, {
-    text: "6666",
+    text: randomString,
     width: 128,
     height: 128,
     colorDark: "#000000",
