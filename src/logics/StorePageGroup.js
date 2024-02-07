@@ -336,7 +336,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
     }
   });
 
-  if (self.num != 1) {
+  if (self.num == 0) {
     await self.$refs.storeAddForm.validate();
     var values = self.$refs.storeAddForm.getFormValues();
 
