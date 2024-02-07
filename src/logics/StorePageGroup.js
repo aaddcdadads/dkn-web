@@ -332,13 +332,12 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
 
-  let base64 = await self.$QRCode.toDataURL(randomString, {
-    errorCorrectionLevel: "L",
-    margin: 1,
-    height: 300,
-    width: 300,
-    type: "10",
-    scal: 177,
+  new self.$QrCode(randomString, {
+    text: randomString,
+    width: 128,
+    height: 128,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
   });
   self.baseUrl = base64;
   console.log("QR Code Base64:", base64);
