@@ -363,7 +363,7 @@ new self.$QrCode(canvas, {
 
 // 获取生成的二维码的 base64 编码
 const qrCodeBase64 = canvas.toDataURL("image/png");
-//self.baseUrl = qrCodeBase64;
+self.baseUrl = qrCodeBase64;
 
 // 打印二维码的 base64 编码
 console.log("QR Code Base64:", qrCodeBase64);
@@ -371,7 +371,7 @@ console.log("QR Code Base64:", qrCodeBase64);
 self.addParams = {
     ...values,
     status:0,
-    qrCode:qrCodeBase64,
+    qrCode:self.baseUrl,
     qrCodeId:randomString
 }
 
