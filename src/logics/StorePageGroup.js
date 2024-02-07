@@ -331,7 +331,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
 
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
-
+  console.log("e========", values);
   self.getQrCode();
   console.log("123", self.getQrCode());
 
