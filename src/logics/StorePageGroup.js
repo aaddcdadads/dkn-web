@@ -339,8 +339,8 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
 
   new self.$QrCode(canvas, {
     text: "666",
-    width: 128,
-    height: 128,
+    width: 300,
+    height: 300,
     colorDark: "#000000",
     colorLight: "#ffffff",
   });
