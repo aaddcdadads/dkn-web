@@ -332,22 +332,22 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
 
-  // 生成二维码
-  const canvas = document.createElement("canvas");
-  canvas.width = 300; // 设置宽度为 300 像素
-  canvas.height = 300; // 设置高度为 300 像素
+  // // 生成二维码
+  // const canvas = document.createElement('canvas');
+  // canvas.width = 300; // 设置宽度为 300 像素
+  // canvas.height = 300; // 设置高度为 300 像素
 
-  new self.$QrCode(canvas, {
-    text: "666",
-    width: 300,
-    height: 300,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
-  });
-  const qrCodeBase64 = canvas.toDataURL("image/jpg");
-  // 设置 self.baseUrl
-  self.baseUrl = qrCodeBase64;
-  console.log("QR Code Base64:", self.baseUrl);
+  // new self.$QrCode(canvas, {
+  //   text: "666",
+  //   width: 300,
+  //   height: 300,
+  //   colorDark: "#000000",
+  //   colorLight: "#ffffff",
+  // });
+  // const qrCodeBase64 = canvas.toDataURL("image/jpg");
+  // // 设置 self.baseUrl
+  // self.baseUrl = qrCodeBase64;
+  // console.log("QR Code Base64:", self.baseUrl);
 
   // 继续执行其他操作
   self.addParams = {
