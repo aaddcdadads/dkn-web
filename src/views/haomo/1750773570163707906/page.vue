@@ -1292,23 +1292,7 @@ export default {
     },
     onElef087F9B5C00641C6Aea1A22F650Dcce6Click() {
       let self = this;
-      setTimeout(() => {
-        const container = document.querySelector(".ele-wrapper-rcodeTwo");
-        console.log("container", container);
-        new self.$QrCode(container, {
-          text: self.randomString,
-          width: 128,
-          height: 128,
-          colorDark: "#000000",
-          colorLight: "#ffffff",
-        });
-        // 获取生成的二维码的 base64 编码
-        const canvas = container.querySelector("canvas");
-        const qrCodeBase64 = canvas.toDataURL("image/png");
-        self.baseUrl = qrCodeBase64;
-        // 打印二维码的 base64 编码
-        console.log("QR64======:", qrCodeBase64);
-      });
+
       this.storeAddModal.visible = true;
     },
     onEle6Cc57D267B374D798A991F8E6Af5478FClick() {
