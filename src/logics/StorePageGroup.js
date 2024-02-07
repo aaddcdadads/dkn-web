@@ -338,7 +338,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   canvas.height = 300; // 设置高度为 300 像素
 
   new self.$QrCode(canvas, {
-    text: randomString,
+    text: "666",
     width: 128,
     height: 128,
     colorDark: "#000000",
