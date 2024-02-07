@@ -344,7 +344,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
     colorDark: "#000000",
     colorLight: "#ffffff",
   });
-  const qrCodeBase64 = canvas.toDataURL("image/png");
+  const qrCodeBase64 = canvas.toDataURL("image/jpg");
   // 设置 self.baseUrl
   self.baseUrl = qrCodeBase64;
   console.log("QR Code Base64:", self.baseUrl);
