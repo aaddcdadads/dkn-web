@@ -1276,7 +1276,7 @@ export default {
           options.push(parTypes);
           console.log("查询项目", parTypes);
         });
-
+        this.$downloadImgZip(options);
         // this.videoSurveillanceCameraType.options = options
       });
     },
