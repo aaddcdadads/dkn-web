@@ -313,7 +313,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   self = Object.assign(pageVm, logic);
   self.addStoreData = eventData;
 
-  // 生成一个随机的数字和英文组合的字符串
+  // 生成一个随机的数字和英文组合的字符串，用于存入二维码
   function generateRandomString(length) {
     const characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
