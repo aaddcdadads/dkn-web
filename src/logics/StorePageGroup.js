@@ -362,15 +362,14 @@ self.addParams = {
   if(self.addRequestData.success){
     self.$message.success("添加成功");
 self.storId = self.addRequestData.result.id;
-console.log("打印新增的数据id",self.storId,self.addRequestData);
+console.log("打印新增的数据id",self.storId,self.addRequestData,self.baseUrl);
 let urlEdit = '/api/dkn/store/edit';
   let paramsEdit = {
-    id:self.storId
-    qrCode:xxx
+    id:self.storId,
+    qrCode: self.baseUrl
   }
-  this.$putAction(urlTypes, paramsTypes).then(resTypes => {
+  self.$putAction(urlEdit, paramsEdit).then(resTypes => {
     console.log('编辑base64', resTypes);
-  
   });
   self.$refs.storeAddForm.reset();
 self.storeAddModal.visible = false;
