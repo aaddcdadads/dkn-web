@@ -991,10 +991,10 @@ export default {
       this.onSelectList = data.selectedRows.filter(
         (item) =>
           !(
-            item.record.pickUpStatus == 0 ||
-            item.record.paymentStatus == 1 ||
-            item.record.paymentStatus == 2 ||
-            !item.record.money
+            item.pickUpStatus == 0 ||
+            item.paymentStatus == 1 ||
+            item.paymentStatus == 2 ||
+            !item.money
           )
       );
 
