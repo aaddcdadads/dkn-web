@@ -895,11 +895,7 @@ export default {
               showSearch: true,
               url: "/api/restify/activity/list",
             },
-            events: {
-              "@click": function (item) {
-                searchViewRegistrationOrders(self, null);
-              },
-            },
+            events: {},
             validator: function (value) {},
           },
           search: {
