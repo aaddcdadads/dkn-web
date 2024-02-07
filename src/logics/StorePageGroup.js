@@ -356,9 +356,7 @@ var values = self.$refs.storeAddForm.getFormValues();
 // 继续执行其他操作
 self.addParams = {
     ...values,
-    status: 0,
-    qrCode: self.baseUrl,
-    qrCodeId: self.randomString
+    status: 0
 };
   await addRequest();
   if(self.addRequestData.success){
