@@ -328,7 +328,6 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   self.$getAction(urls, paramsEs).then((resTypes) => {
     console.log("编辑base64", resTypes);
     if (resTypes.result.records.length != 0) {
-      self.$message.error("店名重复");
       self.num = 1;
       return;
     } else {
