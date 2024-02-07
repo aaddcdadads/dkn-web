@@ -235,7 +235,9 @@ const editRequest = (logic.editRequest = async function () {
 /**
  * 处理
  */
-const behaviorNmuBerEdit = (logic.behaviorNmuBerEdit = function () {});
+const behaviorNmuBerEdit = (logic.behaviorNmuBerEdit = function () {
+  self.$message.error("店名重复");
+});
 
 /**
  * 逻辑流 editStore 入口函数
