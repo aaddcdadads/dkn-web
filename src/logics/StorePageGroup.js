@@ -314,6 +314,20 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   self.addStoreData = eventData;
 
   // 生成一个随机的数字和英文组合的字符串，用于存入二维码
+  var values = self.$refs.storeAddForm.getFormValues();
+
+  let urls = "/api/dkn/store/list";
+  let paramsEs = {
+    name: values.name,
+  };
+  self.$putAction(urls, paramsEs).then((resTypes) => {
+    console.log("编辑base64", resTypes);
+    if (resTypes.records.length != 0) {
+      self.num = 1;
+    } else {
+      self.num = 0;
+    }
+  });
 
   await self.$refs.storeAddForm.validate();
   var values = self.$refs.storeAddForm.getFormValues();
