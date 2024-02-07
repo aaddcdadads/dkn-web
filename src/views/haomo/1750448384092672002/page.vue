@@ -428,7 +428,6 @@
                   border-radius=""
                   padding=""
                   box-shadow-color="#00000000"
-                  :hidden="true"
                   class="ele-9e3b4e17-761a-4730-8444-b50b2595cf04"
                 >
                   <div class="ele-wrapper ele-wrapper-activityList">
