@@ -353,7 +353,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
     delFlage: 0,
   };
   self.$getAction(urls, paramsEs).then((resTypes) => {
-    self.sum = resTypes.result.records.total;
+    self.sum = resTypes.result.records.length;
     console.log("编辑base64", self.sum);
   });
 
