@@ -370,11 +370,11 @@ let paramsEs = {
   name: values.name,
   delFlage: 0
 };
-self.$getAction(urls, paramsEs).then(resTypes => {
-  self.sum = resTypes.result.records.length;
+const res= await self。$getAction(urls,paramsEs)
+  self.sum = res.result.records.length;
   console.log('编辑base64', self.sum);
-  
-});
+
+
 
 
   if(){
