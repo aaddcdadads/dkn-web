@@ -333,6 +333,7 @@ const addRequest = (logic.addRequest = async function () {
  * 处理
  */
 const behaviorNumBer = (logic.behaviorNumBer = function () {
+  console.log("e=====", self.num);
   self.$message.error("店名重复111");
 });
 
