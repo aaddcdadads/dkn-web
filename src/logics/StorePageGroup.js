@@ -361,7 +361,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
     if (resTypes.result.total != 0) {
       self.num = "0";
     }
-    console.log("e=====", self.num);
+    console.log("e====111=", self.num);
   });
 
   if (self.num == "1") {
