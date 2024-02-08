@@ -354,7 +354,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   };
   self.$getAction(urls, paramsEs).then((resTypes) => {
     console.log("编辑base64", resTypes);
-    if (resTypes.result.total != 0) {
+    if (resTypes.result.total == 0) {
       self.num = 1;
     } else {
       self.num = 0;
