@@ -350,7 +350,7 @@ const addRequest = logic.addRequest = async function () {
  * 处理
  */
 const behaviorTenThree = logic.behaviorTenThree = function() {
-  
+  self.$message.error("门店名称重复");
 }
 
 
