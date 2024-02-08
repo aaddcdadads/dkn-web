@@ -377,7 +377,7 @@ const res= await self。$getAction(urls,paramsEs)
 
 
 
-  if(){
+  if(self.sum==0){
     await self.$refs.storeAddForm.validate();
 var values = self.$refs.storeAddForm.getFormValues();
 
