@@ -346,6 +346,13 @@ const addRequest = logic.addRequest = async function () {
   self.addRequestData = res;
 }
 
+/**
+ * 处理
+ */
+const behavior = logic.behavior = function() {
+  
+}
+
 
 /**
  * 逻辑流 addStore 入口函数
@@ -376,11 +383,7 @@ self.$getAction(urls, paramsEs).then(resTypes => {
 
 
   if(){
-  
-}else{
-  
-}
-  await self.$refs.storeAddForm.validate();
+    await self.$refs.storeAddForm.validate();
 var values = self.$refs.storeAddForm.getFormValues();
 
 // // 生成二维码
@@ -451,6 +454,11 @@ self.$refs.storeTable.getData();
 
 }
 
+}else{
+    behavior();
+
+}
+
 }
 
 /********************** end addStore 开始 *********************/
@@ -491,6 +499,7 @@ export {
   editStore,
   searchStore,
   addRequest,
+  behavior,
   addStore,
   downloadTemplate,
 }
