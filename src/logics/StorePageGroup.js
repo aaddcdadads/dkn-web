@@ -349,7 +349,7 @@ const addRequest = logic.addRequest = async function () {
 /**
  * 处理
  */
-const behavior = logic.behavior = function() {
+const behaviorTenThree = logic.behaviorTenThree = function() {
   
 }
 
@@ -450,7 +450,7 @@ self.$refs.storeTable.getData();
 }
 
 }else{
-    behavior();
+    behaviorTenThree();
 
 }
 
@@ -494,7 +494,7 @@ export {
   editStore,
   searchStore,
   addRequest,
-  behavior,
+  behaviorTenThree,
   addStore,
   downloadTemplate,
 }
