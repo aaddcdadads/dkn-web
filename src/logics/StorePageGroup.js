@@ -355,13 +355,10 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   };
   self.$getAction(urls, paramsEs).then((resTypes) => {
     console.log("编辑base64", resTypes);
-    if (resTypes.result.total == 0) {
-      self.num = "1";
-    }
     if (resTypes.result.total != 0) {
-      self.num = "0";
+      // 如果条件成立，则跳出函数，不执行后面的代码
+      return;
     }
-    console.log("e====111=", self.num);
   });
 
   if (self.num == "1") {
