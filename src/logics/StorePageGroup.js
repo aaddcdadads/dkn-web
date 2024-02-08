@@ -350,6 +350,7 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   let urls = "/api/dkn/store/list";
   let paramsEs = {
     name: values.name,
+    delFlage: 0,
   };
   self.$getAction(urls, paramsEs).then((resTypes) => {
     console.log("编辑base64", resTypes);
