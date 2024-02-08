@@ -360,6 +360,8 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
   });
 
   if (self.nmbe == 1) {
+    behaviorEditMube();
+  } else {
     await self.$refs.storeAddForm.validate();
     var values = self.$refs.storeAddForm.getFormValues();
 
@@ -430,8 +432,6 @@ const addStore = (logic.addStore = async (pageVm, eventData) => {
     } else {
       self.$message.error("添加失败");
     }
-  } else {
-    behaviorEditMube();
   }
 });
 
