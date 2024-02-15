@@ -245,22 +245,20 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
   if (self.editNum == 1) {
     self.number = 1;
     self.editName = values.name;
+    let urls = "/api/dkn/store/list";
+    let paramsEs = {
+      name: self.editName,
+      delFlage: 0,
+    };
+    const res = await self.$getAction(urls, paramsEs);
+    self.sum = res.result.records.length;
+    console.log("编辑base64", self.sum);
   }
-  if (self.editNum == 0) {
-    self.number = 0;
-  }
-  // let urls = '/api/dkn/store/list';
-  //   let paramsEs = {
-  //     name:values.name
-  //   }
-  //   self.$getAction(urls, paramsEs).then(resTypes => {
-  //     console.log('编辑base64', resTypes);
-  //     if(resTypes.result.records.length!=0){
-  //        self.num =1
-  //     }else{
-  //       self.num =0
-  //     }
-  //   });
+  // if(self.editNum == 0 ){
+  //   self.number = 0
+
+  // }
+
   await self.$refs.storeEditForm.validate();
   var values = self.$refs.storeEditForm.getFormValues();
 
