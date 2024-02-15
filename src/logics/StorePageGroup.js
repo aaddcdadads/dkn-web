@@ -236,10 +236,8 @@ const editRequest = (logic.editRequest = async function () {
  * 处理
  */
 const behaviorTenThreeEdit = (logic.behaviorTenThreeEdit = function () {
-  if (self.neme == self.editName) {
-    console.log(self.neme, self.editName);
-    self.$message.error("门店名称重复");
-  }
+  console.log(self.neme, self.editName);
+  self.$message.error("门店名称重复");
 });
 
 /**
