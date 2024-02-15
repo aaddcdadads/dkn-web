@@ -293,6 +293,7 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
       self.$refs.storeEditForm.reset();
       self.storeEditModal.visible = false;
       self.$refs.storeTable.getData();
+      self.editNum = 0;
     } else {
       self.$message.error("编辑失败");
     }
