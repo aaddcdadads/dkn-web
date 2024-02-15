@@ -242,6 +242,13 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
 
   var values = self.$refs.storeEditForm.getFormValues();
   console.log("打印编辑变量", self.editNum);
+  if (self.editNum == 1) {
+    self.number = 1;
+    self.editName = values.name;
+  }
+  if (self.editNum == 0) {
+    self.number = 0;
+  }
   // let urls = '/api/dkn/store/list';
   //   let paramsEs = {
   //     name:values.name
