@@ -233,6 +233,13 @@ const editRequest = (logic.editRequest = async function () {
 });
 
 /**
+ * 处理
+ */
+const behaviorTenThree = (logic.behaviorTenThree = function () {
+  self.$message.error("门店名称重复");
+});
+
+/**
  * 逻辑流 editStore 入口函数
  */
 const editStore = (logic.editStore = async (pageVm, eventData) => {
@@ -260,31 +267,32 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
   // }
 
   if (self.sum == 0) {
-  } else {
-  }
-  await self.$refs.storeEditForm.validate();
-  var values = self.$refs.storeEditForm.getFormValues();
+    await self.$refs.storeEditForm.validate();
+    var values = self.$refs.storeEditForm.getFormValues();
 
-  // //地区处理
-  // let urbanArea = null;
-  // if(Object.prototype.toString.call(values.urbanArea) === '[object Array]'){
-  //   urbanArea = values.urbanArea.length>0?values.urbanArea[values.urbanArea.length-1]:null;
-  // }else{
-  //   urbanArea = values.urbanArea;
-  // }
-  // console.log("e=======",urbanArea,values.id,self.currentStoreId);
-  self.editParams = {
-    ...values,
-    id: self.currentStoreId,
-  };
-  await editRequest();
-  if (self.editRequestData.success) {
-    self.$message.success("编辑成功");
-    self.$refs.storeEditForm.reset();
-    self.storeEditModal.visible = false;
-    self.$refs.storeTable.getData();
+    // //地区处理
+    // let urbanArea = null;
+    // if(Object.prototype.toString.call(values.urbanArea) === '[object Array]'){
+    //   urbanArea = values.urbanArea.length>0?values.urbanArea[values.urbanArea.length-1]:null;
+    // }else{
+    //   urbanArea = values.urbanArea;
+    // }
+    // console.log("e=======",urbanArea,values.id,self.currentStoreId);
+    self.editParams = {
+      ...values,
+      id: self.currentStoreId,
+    };
+    await editRequest();
+    if (self.editRequestData.success) {
+      self.$message.success("编辑成功");
+      self.$refs.storeEditForm.reset();
+      self.storeEditModal.visible = false;
+      self.$refs.storeTable.getData();
+    } else {
+      self.$message.error("编辑失败");
+    }
   } else {
-    self.$message.error("编辑失败");
+    behaviorTenThree();
   }
 });
 
@@ -467,6 +475,7 @@ export {
   queryAreaRequestSucRegion,
   loadAreaDataRegion,
   editRequest,
+  behaviorTenThree,
   editStore,
   searchStore,
   addRequest,
