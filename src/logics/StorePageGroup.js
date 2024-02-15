@@ -260,6 +260,9 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
     const res = await self.$getAction(urls, paramsEs);
     self.sum = res.result.records.length;
     console.log("编辑base64", self.sum);
+    if (self.sum != 0) {
+      self.number = 2;
+    }
   }
   // if(self.editNum == 0 ){
   //   self.number = 0
