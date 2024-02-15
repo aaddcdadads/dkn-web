@@ -1053,6 +1053,7 @@ export default {
   methods: {
     onMounted() {
       let self = this;
+      self.editNum = 0;
       console.log("this.importButton.visible");
       console.log("this.exportButton.visible");
       console.log("this.crudPagePanel.title");
