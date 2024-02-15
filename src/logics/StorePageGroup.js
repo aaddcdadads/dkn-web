@@ -271,7 +271,7 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
 
   // }
 
-  if (self.sum == 0) {
+  if (self.sum == 0 || self.editNum == 0) {
     await self.$refs.storeEditForm.validate();
     var values = self.$refs.storeEditForm.getFormValues();
 
