@@ -235,7 +235,7 @@ const editRequest = (logic.editRequest = async function () {
 /**
  * 处理
  */
-const behaviorTenThree = (logic.behaviorTenThree = function () {
+const behaviorTenThreeEdit = (logic.behaviorTenThreeEdit = function () {
   self.$message.error("门店名称重复");
 });
 
@@ -292,7 +292,7 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
       self.$message.error("编辑失败");
     }
   } else {
-    behaviorTenThree();
+    behaviorTenThreeEdit();
   }
 });
 
@@ -475,7 +475,7 @@ export {
   queryAreaRequestSucRegion,
   loadAreaDataRegion,
   editRequest,
-  behaviorTenThree,
+  behaviorTenThreeEdit,
   editStore,
   searchStore,
   addRequest,
