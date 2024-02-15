@@ -676,7 +676,8 @@ export default {
                   "x-component-props": {
                     title: "",
                     onChange: function (e) {
-                      console.log("e=====", e);
+                      this.editNum = 1;
+                      console.log("e=====", e, this.editNum);
                     },
                   },
                   "x-component": "HmAntInput",
