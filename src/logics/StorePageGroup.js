@@ -233,13 +233,6 @@ const editRequest = (logic.editRequest = async function () {
 });
 
 /**
- * 处理
- */
-const behaviorNmuBerEdit = (logic.behaviorNmuBerEdit = function () {
-  self.$message.error("店名重复");
-});
-
-/**
  * 逻辑流 editStore 入口函数
  */
 const editStore = (logic.editStore = async (pageVm, eventData) => {
@@ -248,45 +241,41 @@ const editStore = (logic.editStore = async (pageVm, eventData) => {
   self.editStoreData = eventData;
 
   var values = self.$refs.storeEditForm.getFormValues();
-  let urls = "/api/dkn/store/list";
-  let paramsEs = {
-    name: values.name,
-  };
-  self.$getAction(urls, paramsEs).then((resTypes) => {
-    console.log("编辑base64", resTypes);
-    if (resTypes.result.records.length != 0) {
-      self.num = 1;
-    } else {
-      self.num = 0;
-    }
-  });
-  if (self.num != 0) {
-    await self.$refs.storeEditForm.validate();
-    var values = self.$refs.storeEditForm.getFormValues();
+  // let urls = '/api/dkn/store/list';
+  //   let paramsEs = {
+  //     name:values.name
+  //   }
+  //   self.$getAction(urls, paramsEs).then(resTypes => {
+  //     console.log('编辑base64', resTypes);
+  //     if(resTypes.result.records.length!=0){
+  //        self.num =1
+  //     }else{
+  //       self.num =0
+  //     }
+  //   });
+  await self.$refs.storeEditForm.validate();
+  var values = self.$refs.storeEditForm.getFormValues();
 
-    // //地区处理
-    // let urbanArea = null;
-    // if(Object.prototype.toString.call(values.urbanArea) === '[object Array]'){
-    //   urbanArea = values.urbanArea.length>0?values.urbanArea[values.urbanArea.length-1]:null;
-    // }else{
-    //   urbanArea = values.urbanArea;
-    // }
-    // console.log("e=======",urbanArea,values.id,self.currentStoreId);
-    self.editParams = {
-      ...values,
-      id: self.currentStoreId,
-    };
-    await editRequest();
-    if (self.editRequestData.success) {
-      self.$message.success("编辑成功");
-      self.$refs.storeEditForm.reset();
-      self.storeEditModal.visible = false;
-      self.$refs.storeTable.getData();
-    } else {
-      self.$message.error("编辑失败");
-    }
+  // //地区处理
+  // let urbanArea = null;
+  // if(Object.prototype.toString.call(values.urbanArea) === '[object Array]'){
+  //   urbanArea = values.urbanArea.length>0?values.urbanArea[values.urbanArea.length-1]:null;
+  // }else{
+  //   urbanArea = values.urbanArea;
+  // }
+  // console.log("e=======",urbanArea,values.id,self.currentStoreId);
+  self.editParams = {
+    ...values,
+    id: self.currentStoreId,
+  };
+  await editRequest();
+  if (self.editRequestData.success) {
+    self.$message.success("编辑成功");
+    self.$refs.storeEditForm.reset();
+    self.storeEditModal.visible = false;
+    self.$refs.storeTable.getData();
   } else {
-    behaviorNmuBerEdit();
+    self.$message.error("编辑失败");
   }
 });
 
@@ -469,7 +458,6 @@ export {
   queryAreaRequestSucRegion,
   loadAreaDataRegion,
   editRequest,
-  behaviorNmuBerEdit,
   editStore,
   searchStore,
   addRequest,
