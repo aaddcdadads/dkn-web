@@ -12,6 +12,7 @@
     "dev": "vite",
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
     "build": "cross-env NODE_ENV=production NODE_OPTIONS=--max-old-space-size=4096 vite build && esno ./build/script/postBuild.ts",
+    "build:dkn": "cross-env vite build --mode dkn && esno ./build/script/postBuild.ts",
     "build:test": "cross-env vite build --mode test && esno ./build/script/postBuild.ts",
     "build:no-cache": "yarn clean:cache && npm run build",
     "gen:icon": "esno ./build/generate/icon/index.ts",
