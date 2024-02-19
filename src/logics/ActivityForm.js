@@ -302,6 +302,20 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
     // self.$message.error("核销截止时间不能小于报名截止的时间")
     // return
   }
+  if (self.customerService.value) {
+    //是否为座机
+    let phoneRegex = /^(0\d{2,3}-?)?(\d{7,8})(-\d{1,4})?$/;
+    let status = phoneRegex.test(self.customerService.value);
+    if (!status) {
+      //是否为手机号
+      phoneRegex = /^1[3456789]\d{9}$/;
+      status = phoneRegex.test(self.customerService.value);
+    }
+    if (status) {
+      self.$message.error("客服咨询不正确，请输入手机号或座机");
+      return;
+    }
+  }
   self.item = {
     ...item,
     ...self.$refs.activityTwoForm.getFormValues(),
