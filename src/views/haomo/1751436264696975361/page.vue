@@ -1335,7 +1335,7 @@ export default {
     "data": [
       {
         "image": "",
-        "size": "375 * 667"
+        "size": "375 * 607"
       }
     ],
     "paginationHidden": true,
