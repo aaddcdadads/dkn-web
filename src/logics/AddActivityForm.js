@@ -125,7 +125,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
       phoneRegex = /^1[3456789]\d{9}$/;
       status = phoneRegex.test(self.customerService.value);
     }
-    if (status) {
+    if (!status) {
       self.$message.error("客服咨询不正确，请输入手机号或座机");
       return;
     }
