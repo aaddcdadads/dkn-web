@@ -587,6 +587,7 @@
                       <div class="ele-wrapper ele-wrapper-colourkit">
                         <hm-color-kit
                           ref="colourkit"
+                          :color="colourkit.color"
                           @changecolorkit="onColourkitChangecolorkit"
                         >
                         </hm-color-kit>
@@ -1257,7 +1258,9 @@ export default {
       bgColourKit: {
         color: "#59c7f9",
       },
-      colourKit: {},
+      colourkit: {
+        color: "#59c7f9",
+      },
       textColourKit: {
         color: "#59c7f9",
       },
@@ -1860,7 +1863,7 @@ export default {
       self.addActivityImgTableOne.visible = true;
       self.addActivityImgTableTwo.visible = true;
       self.bgColourKit.color = "#59c7f9";
-      self.colourKit.color = "#59c7f9";
+      self.colourkit.color = "#59c7f9";
       self.textColourKit.color = "#59c7f9";
       self.delActivityProjectList = [];
       self.delActivityImgList = [];
