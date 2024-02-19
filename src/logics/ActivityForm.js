@@ -312,7 +312,7 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
       status = phoneRegex.test(self.customerService.value);
     }
     if (!status) {
-      self.$message.error("客服咨询不正确，请输入手机号或座机");
+      self.$message.error("活动咨询客服不正确，请输入手机号或座机");
       return;
     }
   }
