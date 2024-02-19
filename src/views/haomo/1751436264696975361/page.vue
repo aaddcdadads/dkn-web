@@ -584,11 +584,10 @@
                       height="100%"
                       class="ele-3fb31f2b-4a48-499a-ba2a-8181388283b9"
                     >
-                      <div class="ele-wrapper ele-wrapper-colourkit">
+                      <div class="ele-wrapper ele-wrapper-colourKit">
                         <hm-color-kit
-                          ref="colourkit"
-                          :color="colourkit.color"
-                          @changecolorkit="onColourkitChangecolorkit"
+                          ref="colourKit"
+                          @changecolorkit="onColourKitChangecolorkit"
                         >
                         </hm-color-kit>
                       </div>
@@ -1258,9 +1257,7 @@ export default {
       bgColourKit: {
         color: "#59c7f9",
       },
-      colourkit: {
-        color: "#59c7f9",
-      },
+      colourkit: {},
       textColourKit: {
         color: "#59c7f9",
       },
@@ -2108,7 +2105,7 @@ export default {
     onBgColourKitChangecolorkit(e) {
       this.bgColour = e;
     },
-    onColourkitChangecolorkit(e) {
+    onColourKitChangecolorkit(e) {
       this.colour = e;
     },
     onTextColourKitChangecolorkit(e) {
