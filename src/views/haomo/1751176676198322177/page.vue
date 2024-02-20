@@ -640,67 +640,27 @@
                     >
                     </hm-ant-bg-text>
                   </div>
-                  <div
-                    class="ele-wrapper ele-wrapper-c4c21057-7af5-412a-b953-7d860df8d4c6"
-                  >
+                  <div class="ele-wrapper ele-wrapper-messageRenedit">
                     <hm-bg-card
+                      ref="messageRenedit"
                       width="100%"
                       height="100%"
                       border-radius=""
                       box-shadow-v-shadow=""
                       box-shadow-blur=""
-                      class="ele-c4c21057-7af5-412a-b953-7d860df8d4c6"
+                      class="ele-messageRenedit"
                     >
-                      <div
-                        class="ele-wrapper ele-wrapper-9bb4b8dd-492d-464f-8170-93fd783b48f1"
-                      >
+                      <div class="ele-wrapper ele-wrapper-activityTwoForm">
                         <hm-ant-formily
-                          :config="{
-                            unrealStatus: {
-                              style: { width: '100%' },
-                              type: 'RadioGroup',
-                              title: '虚拟人数',
-                              required: true,
-                              props: {
-                                options: [
-                                  { label: '启用', value: 0 },
-                                  { label: '禁用', value: 1 },
-                                ],
-                              },
-                              events: {
-                                '@change':
-                                  'function (e) {\n         let item = self.$refs.activityTwoForm.getFormValues()\n          self.$refs.activityTwoForm.config.unrealCount.required = e.target.value == 0 ? true : false\n          setTimeout(() => { \n            self.$refs.activityTwoForm.setFormValues(item)\n          })\n      }',
-                              },
-                            },
-                            unrealCount: {
-                              style: { width: '100%' },
-                              type: 'InputNumber',
-                              title: '活动人数',
-                              required: false,
-                              props: {},
-                            },
-                          }"
-                          :value="{ unrealStatus: 1 }"
+                          ref="activityTwoForm"
+                          :config="activityTwoForm.config"
+                          v-model:value="activityTwoForm.value"
                           :col-num="0"
                           :col-min-width="380"
-                          :schema="{
-                            type: 'object',
-                            properties: {
-                              form: {
-                                'x-component': 'Form',
-                                'x-component-props': {
-                                  'wrapper-col': { span: 14 },
-                                  'label-col': { span: 7 },
-                                  style: { flexWrap: 'wrap', display: 'flex' },
-                                },
-                                type: 'void',
-                                properties: {},
-                              },
-                            },
-                          }"
+                          :schema="activityTwoForm.schema"
                           :label-col="4"
                           :wrapper-col="16"
-                          class="ele-9bb4b8dd-492d-464f-8170-93fd783b48f1"
+                          class="ele-activityTwoForm"
                         >
                         </hm-ant-formily>
                       </div>
@@ -1698,7 +1658,7 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      "9bb4b8dd-492d-464f-8170-93fd783b48f1": {
+      activityTwoForm: {
         config: {
           unrealStatus: {
             style: {
@@ -2405,7 +2365,7 @@ export default {
   }
 }
 
-.ele-wrapper-c4c21057-7af5-412a-b953-7d860df8d4c6 {
+.ele-wrapper-messageRenedit {
   width: 100%;
   .ele-messageRenedit {
     display: flex;
@@ -2413,7 +2373,7 @@ export default {
   }
 }
 
-.ele-wrapper-9bb4b8dd-492d-464f-8170-93fd783b48f1 {
+.ele-wrapper-activityTwoForm {
   width: 100%;
 }
 
