@@ -6,7 +6,7 @@
       <div class="item-url flex-row">
         <span class="item-label">URL:</span>
         <a-input v-model:value="item.url" placeholder="活动链接" disabled />
-        <a-button type="primary" @click="copyLink(item, item.url)">复制链接</a-button>
+        <a-button type="primary" @click="copyLink(item, item.url)" :id="'copy' + item.id">复制链接</a-button>
       </div>
       <div class="item-qrcode flex-row">
         <span class="item-label">二维码:</span>
@@ -16,6 +16,7 @@
   </div>
 </template>
 <script>
+import Clipboard from 'clipboard';
 export default {
   props: {
     /**
@@ -56,7 +57,26 @@ export default {
   },
   methods: {
     copyLink(e, str) {
-      this.$emit("copyLink", e, str);
+      let self=this
+      let id=`#copy${e.id}`
+      var clipboard = new Clipboard(id, {
+        text: function() {
+          return str;
+        }
+      });
+
+    clipboard.on('success', function(e) {
+      self.$message.success('复制成功！');
+      e.clearSelection();
+    });
+
+    clipboard.on('error', function() {
+      self.$message.error('复制失败！');
+    });
+
+    // 手动触发点击事件
+    // document.querySelector(id).click();
+      // this.$emit("copyLink", e, str);
     },
     setQrcode() {
       setTimeout(() => {
