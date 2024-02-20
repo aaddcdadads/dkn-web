@@ -68,12 +68,15 @@ export default {
     clipboard.on('success', function(e) {
       self.$message.success('复制成功！');
       e.clearSelection();
+    clipboard.destroy()
+
     });
 
     clipboard.on('error', function() {
       self.$message.error('复制失败！');
-    });
+    clipboard.destroy()
 
+    });
     // 手动触发点击事件
     // document.querySelector(id).click();
       // this.$emit("copyLink", e, str);
