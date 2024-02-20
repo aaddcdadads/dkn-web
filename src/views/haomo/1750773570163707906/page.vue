@@ -1324,7 +1324,7 @@ export default {
         resTypes.result.records.forEach((eTypes) => {
           if (eTypes.qrCode !== null) {
             let parTypes = {
-              fileName: eTypes.name,
+              fileName: `${eTypes.name}.png`,
               base64: eTypes.qrCode,
             };
             options.push(parTypes);

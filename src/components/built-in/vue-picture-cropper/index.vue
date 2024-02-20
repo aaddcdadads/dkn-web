@@ -7,14 +7,13 @@
       @change="selectFile"
       style="display: none"
     />
-    <div class="select-file-slot">
+    <div class="select-file-slot" v-if="src === undefined || !src">
       <slot>
-        <span v-if="src === undefined || !src" @click="clickSelectFile"
-          >选择图片</span
-        >
+        <span class="select-file-text" @click="clickSelectFile">选择图片</span>
       </slot>
     </div>
     <vue-picture-cropper
+      v-else
       :boxStyle="boxStyle"
       :img="src"
       :options="options"
@@ -94,6 +93,7 @@ export default {
   },
   methods: {
     clear() {
+      this.src = "";
       cropper.clear();
     },
     reset() {
@@ -152,14 +152,18 @@ export default {
   .select-file-slot {
     width: 100%;
     height: 100%;
+    background: #f8f8f8;
     position: absolute;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     border: 1px dashed #f2f2f2;
   }
+  .select-file-text{
+      user-select: none;
+      cursor: pointer;
+    }
 }
 </style>
