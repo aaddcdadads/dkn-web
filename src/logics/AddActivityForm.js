@@ -26,6 +26,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
 
   await self.$refs.activityForm.validate();
   await self.$refs.activityExtTwoForm.validate();
+  await self.$refs.activityTwoForm.validate();
 
   let activityProjects = [],
     activityImgs = [],
@@ -132,6 +133,7 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
   }
   self.item = {
     ...item,
+    ...self.$refs.activityTwoForm.getFormValues(),
     activityProjects,
     activityImgs,
     activityExts,
