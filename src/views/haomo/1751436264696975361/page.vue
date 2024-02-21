@@ -609,11 +609,11 @@
                     class="ele-wrapper ele-wrapper-8e197d87-c68a-402f-90a7-400dc9c35edc"
                   >
                     <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
                       width="100%"
                       height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
                       class="ele-8e197d87-c68a-402f-90a7-400dc9c35edc"
                     >
                       <div class="ele-wrapper ele-wrapper-textColourKit">
@@ -1303,7 +1303,7 @@ export default {
               width: "100%",
             },
             type: "RangePicker",
-            title: "核销截止",
+            title: "核销周期",
             required: true,
             props: {
               showTime: true,
