@@ -736,7 +736,7 @@ export default {
             },
             props: {
               width: "242px",
-              placeholder: "用户ID/手机号/姓名/昵称",
+              placeholder: "订单编号/手机号/姓名/昵称",
             },
             validator: function (value) {},
           },
