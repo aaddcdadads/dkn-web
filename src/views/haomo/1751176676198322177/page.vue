@@ -1998,6 +1998,13 @@ export default {
           }
         });
       }
+      self.$refs.activityImgTableOne.cData.stour((a, b) => a.sortNo - b.sortNo);
+      self.$refs.activityImgTableOne.cData.forEach((e, index) => {
+        e.imgSize = "375 * 667";
+        if (index === 0) {
+          e.imgSize = "375 * 455";
+        }
+      });
       self.addBackground.visible = false;
       self.$refs.activityImgFormOne.reset();
     },
