@@ -851,7 +851,7 @@ export default {
               width: "100%",
             },
             type: "RangePicker",
-            title: "核销截止",
+            title: "核销周期",
             required: true,
             props: {
               showTime: true,
