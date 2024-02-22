@@ -1109,6 +1109,7 @@ export default {
       };
       //生成二维码
       self.getQrCode = async function (id, name) {
+        console.log("打印域名", `${self.$accessAddress}`);
         let variableToEncode =
           `${self.$accessAddress}` +
           "/pages/haomo/1751895267671543809/page?storeId=" +
