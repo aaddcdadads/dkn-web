@@ -1110,7 +1110,8 @@ export default {
       //生成二维码
       self.getQrCode = async function (id, name) {
         let variableToEncode =
-          "https://dkn-h5.dev.haumo.cn/pages/haomo/1751895267671543809/page?storeId=" +
+          `${self.$accessAddress}` +
+          "/pages/haomo/1751895267671543809/page?storeId=" +
           `${id}`;
         let titele = `${name}`;
         console.log("打印id", variableToEncode, "打印店名", titele);
