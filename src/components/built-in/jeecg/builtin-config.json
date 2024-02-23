@@ -699,6 +699,15 @@
         "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-listant--docs",
         "type": 0,
         "isBuiltIn": true
+      },
+      {
+        "name": "HmProjectCard",
+        "title": "项目卡片",
+        "importPath": "built-in/jeecg/HmProjectCard",
+        "imgUrl": "/built-in/jeecg/img/HmProjectCard.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/卡片类-hmprojectcard--docs",
+        "type": 0,
+        "isBuiltIn": true
       }
     ]
   },
