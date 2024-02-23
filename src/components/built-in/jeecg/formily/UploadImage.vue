@@ -136,9 +136,9 @@ export default {
       if (!isJpgOrPng) {
         this.$message.error('You can only upload [jpg,jpeg,png,bmp,webp] file!');
       }
-      const isLt2M = file.size / 1024 / 1024 < 2;
+      const isLt2M = file.size / 1024 / 1024 < 20;
       if (!isLt2M) {
-        this.$message.error('Image must smaller than 2MB!');
+        this.$message.error('Image must smaller than 20MB!');
       }
       if (this.manualUpload) {
         this.beforeUploadFile(file)
