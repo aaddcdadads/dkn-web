@@ -900,7 +900,7 @@ export default {
                 pageSize: -1,
               },
               showSearch: true,
-              url: "/api/restify/activity/list",
+              url: "/api/dkn/activity/list",
             },
             events: {},
             validator: function (value) {},
