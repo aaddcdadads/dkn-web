@@ -891,7 +891,7 @@ export default {
             props: {
               width: "242px",
               dataMap: {
-                label: "name",
+                label: "nameAndId",
                 value: "id",
               },
               title: "",
