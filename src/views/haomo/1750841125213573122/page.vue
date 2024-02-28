@@ -567,6 +567,11 @@ export default {
             key: "name",
           },
           {
+            title: "活动id",
+            dataIndex: "activityId",
+            key: "activityId",
+          },
+          {
             title: "报名项目",
             dataIndex: "acName",
             key: "acName",
@@ -589,6 +594,14 @@ export default {
             title: "支付状态",
             dataIndex: "paymentStatusText",
             key: "paymentStatusText",
+          },
+          {
+            title: "支付渠道",
+            dataIndex: "paymentChannel",
+            key: "paymentChannel",
+            customRender: function (data) {
+              return data.text ? (data.text == "0" ? "微信" : "支付宝") : "";
+            },
           },
           {
             title: "创建时间",
