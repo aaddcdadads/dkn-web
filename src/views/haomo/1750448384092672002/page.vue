@@ -624,6 +624,7 @@
               v-model:visible="addStoreScope.visible"
               :z-index="1000"
               height=""
+              :auto-close="false"
               @ok="onAddStoreScopeOk"
               @cancel="onAddStoreScopeCancel"
             >
