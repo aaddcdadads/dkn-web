@@ -1728,6 +1728,7 @@ export default {
       this.addStoreScope.visible = true;
       this.treeSelect.value = [];
       this.activityStoreTag.ctagList = [];
+      this.getTreeSelect();
     },
     onElea6D2B6Ac15764E40916D93F815A9290BClick() {
       this.importantModal.visible = true;
