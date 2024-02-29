@@ -1653,6 +1653,9 @@ export default {
 
 .ele-wrapper-treeSelect {
   width: 100%;
+  /deep/.ant-cascader-picker {
+    width: 85%;
+  }
 }
 
 .ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1 {
