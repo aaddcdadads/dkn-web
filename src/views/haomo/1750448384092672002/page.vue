@@ -1778,6 +1778,7 @@ export default {
     },
     onTreeSelectChange(e) {
       console.log("e", e);
+      this.setTag(e);
     },
     onViewActivityStoreUploadOnUploadDone(e) {
       console.log("打印", e);
