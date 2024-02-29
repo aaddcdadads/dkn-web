@@ -645,6 +645,89 @@
               </div>
             </hm-modal>
           </div>
+          <div
+            class="ele-wrapper ele-wrapper-5b6aa1ba-541c-486d-9dd9-b3a5885d8a88"
+          >
+            <hm-modal
+              title="导入"
+              :visible="false"
+              :closable="true"
+              ok-text="删除"
+              :ok-button-boole="false"
+              :ok-type="'danger'"
+              :z-index="1000"
+              height="180px"
+            >
+              <div
+                class="ele-wrapper ele-wrapper-797edf01-b948-4ddc-88c5-2278bde7b928"
+              >
+                <hm-bg-card
+                  width="480px"
+                  height="180px"
+                  border-radius=""
+                  :text-align="'center'"
+                  padding=""
+                  box-shadow-h-shadow=""
+                  box-shadow-v-shadow=""
+                  box-shadow-blur=""
+                  box-shadow-spread=""
+                  box-shadow-color="#00000000"
+                >
+                  <div
+                    class="ele-wrapper ele-wrapper-e633c830-6e43-4d49-b031-b7fa38c0db8f"
+                  >
+                    <hm-ant-upload
+                      title=""
+                      text="上传文件"
+                      :file-list="[]"
+                      action="/api/dkn/store/importExcel "
+                      :headers="{}"
+                      class="ele-e633c830-6e43-4d49-b031-b7fa38c0db8f"
+                    >
+                    </hm-ant-upload>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-32674f07-f53e-48c8-b937-c9fdc4cde32a"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height=""
+                      border-radius=""
+                      :text-align="'center'"
+                      padding=""
+                      box-shadow-h-shadow=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      box-shadow-spread=""
+                      box-shadow-color="#00000000"
+                      class="ele-32674f07-f53e-48c8-b937-c9fdc4cde32a"
+                    >
+                      <div
+                        class="ele-wrapper ele-wrapper-25a0083f-38cb-436f-af9c-cb74443f0024"
+                      >
+                        <hm-ant-bg-text
+                          text="仅支持xls、xlsx格式文件  "
+                          font-size="16px"
+                        >
+                        </hm-ant-bg-text>
+                      </div>
+                      <div
+                        class="ele-wrapper ele-wrapper-476e74cc-7c7d-4b02-b2a5-c7c4317019ee"
+                      >
+                        <hm-ant-button
+                          text="下载模板"
+                          :type="'link'"
+                          icon="fa fa-paperclip"
+                          class="ele-476e74cc-7c7d-4b02-b2a5-c7c4317019ee"
+                        >
+                        </hm-ant-button>
+                      </div>
+                    </hm-bg-card>
+                  </div>
+                </hm-bg-card>
+              </div>
+            </hm-modal>
+          </div>
         </hm-bg-card>
       </div>
       <div class="ele-wrapper ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1">
@@ -1009,6 +1092,9 @@ export default {
       activityDetailModal: {
         visible: false,
       },
+      "5b6aa1ba-541c-486d-9dd9-b3a5885d8a88": {
+        visible: false,
+      },
       activityFilter: {
         config: {
           kyes: {
@@ -1268,6 +1354,10 @@ export default {
       },
       treeSelect: {
         value: [],
+      },
+      "e633c830-6e43-4d49-b031-b7fa38c0db8f": {
+        fileList: [],
+        headers: {},
       },
     };
   },
@@ -1766,6 +1856,20 @@ export default {
 
 .ele-wrapper-c5aada0d-3f95-4720-b893-2dafd5cd218b {
   margin: 10px;
+}
+
+.ele-wrapper-e633c830-6e43-4d49-b031-b7fa38c0db8f {
+  margin-left: 2%;
+}
+
+.ele-wrapper-32674f07-f53e-48c8-b937-c9fdc4cde32a {
+  width: 100%;
+}
+
+.ele-wrapper-476e74cc-7c7d-4b02-b2a5-c7c4317019ee {
+  /deep/.ant-btn-icon-only {
+    color: "blue";
+  }
 }
 
 .ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1 {
