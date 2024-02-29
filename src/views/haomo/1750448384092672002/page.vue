@@ -1302,8 +1302,10 @@ export default {
             name: "门店配置",
             callback: function (item) {
               console.log("门店配置");
-              self.ativityId = item.id;
-              self.viewActivityStoreUpload.data = { ativityId: self.ativityId };
+              self.activityId = item.id;
+              self.viewActivityStoreUpload.data = {
+                activityId: self.activityId,
+              };
               self.viewActivityStoreTable.params = {
                 activityId: item.id,
               };
