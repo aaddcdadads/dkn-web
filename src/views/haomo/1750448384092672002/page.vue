@@ -557,6 +557,28 @@
                 class="ele-wrapper ele-wrapper-47d2cd5e-11cb-4b0c-a529-867fb03d6d71"
               >
                 <hm-ant-table
+                  :columns="[
+                    { title: '门店名称', dataIndex: 'storeName', key: 'name' },
+                    {
+                      title: '所属区域',
+                      dataIndex: 'region',
+                      key: 'age',
+                      width: 80,
+                    },
+                    {
+                      title: '门店地址',
+                      dataIndex: 'storeAddress',
+                      key: 'address',
+                      ellipsis: true,
+                    },
+                    {
+                      title: '操作',
+                      dataIndex: '',
+                      key: 'action',
+                      slots: { customRender: 'action' },
+                    },
+                  ]"
+                  :data="[]"
                   :actions="[
                     {
                       name: '编辑',
