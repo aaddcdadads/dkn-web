@@ -599,6 +599,7 @@
                       type: 'link',
                     },
                   ]"
+                  :is-flat-action="true"
                   :row-class-name="{}"
                   class="ele-47d2cd5e-11cb-4b0c-a529-867fb03d6d71"
                 >
