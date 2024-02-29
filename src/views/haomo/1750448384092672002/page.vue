@@ -522,6 +522,7 @@
               title="活动门店配置"
               v-model:visible="StoreConfigurationPopupFrame.visible"
               :z-index="1000"
+              :style="StoreConfigurationPopupFrame.style"
             >
               <div
                 class="ele-wrapper ele-wrapper-d72366d9-57b6-47e7-a63d-641343f2d736"
@@ -902,6 +903,10 @@ export default {
       },
       StoreConfigurationPopupFrame: {
         visible: true,
+        style: {
+          top: "100px",
+          padding: "10px 15px",
+        },
       },
       activityFilter: {
         config: {
