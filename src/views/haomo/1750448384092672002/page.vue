@@ -632,6 +632,7 @@
                   title=""
                   :options="treeSelect.options"
                   width="500px"
+                  @change="onTreeSelectChange"
                   class="ele-treeSelect"
                 >
                 </hm-ant-cascader>
@@ -1746,6 +1747,9 @@ export default {
         self.$message.error(res.message);
       }
       self.$refs.viewActivityStoreTable.getData();
+    },
+    onTreeSelectChange(e) {
+      console.log("e", e);
     },
     onViewActivityStoreUploadOnUploadDone(e) {
       console.log("打印", e);
