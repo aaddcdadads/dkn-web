@@ -583,7 +583,7 @@
                       slots: { customRender: 'action' },
                     },
                   ]"
-                  :data="[]"
+                  :data="[{ storeName: '123' }]"
                   :actions="[
                     {
                       name: '编辑',
