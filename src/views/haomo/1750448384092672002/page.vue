@@ -625,6 +625,7 @@
               :z-index="1000"
               height=""
               @ok="onAddStoreScopeOk"
+              @cancel="onAddStoreScopeCancel"
             >
               <div class="ele-wrapper ele-wrapper-treeSelect">
                 <hm-ant-cascader
@@ -1802,6 +1803,9 @@ export default {
     },
     onAddStoreScopeOk() {
       this.addActivityStore();
+    },
+    onAddStoreScopeCancel() {
+      this.addStoreScope.visible = false;
     },
     onTreeSelectChange(e) {
       console.log("e", e);
