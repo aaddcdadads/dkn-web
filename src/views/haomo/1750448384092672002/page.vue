@@ -1160,6 +1160,8 @@ export default {
           },
         ],
       },
+      storeList: {},
+      activityStoreTagList: {},
       activityDetailModal: {
         visible: false,
       },
@@ -1555,6 +1557,7 @@ export default {
         const res = await self.$getAction(url, {
           status: 0,
         });
+        let l = [];
         const list = res.result.map((e) => {
           let children = e.store.map((s) => {
             return {
@@ -1563,6 +1566,7 @@ export default {
               ...s,
             };
           });
+          l = [...l, ...children];
           return {
             ...e,
             label: e.key,
@@ -1571,8 +1575,32 @@ export default {
           };
         });
         self.treeSelect.options = list;
+        self.storeList = l;
       };
       self.getTreeSelect();
+      self.activityStoreTagList = [];
+      self.setTag = async function (e) {
+        if (e.length === 1) {
+          return;
+        }
+        let key = e[1];
+        const i = self.storeList.findIndex((a) => a.id == key);
+        if (i === -1) {
+          return;
+        }
+        const item = self.storeList[i];
+        const listKey = self.activityStoreTagList.findIndex((a) => a.id == key);
+        if (listKey !== -1) {
+          return;
+        }
+        self.activityStoreTagList.push(item);
+        self.activityStoreTag.ctagList = self.activityStoreTagList.map((e) => {
+          return {
+            ...e,
+            value: e.name,
+          };
+        });
+      };
     },
 
     onAddButtonClick() {
