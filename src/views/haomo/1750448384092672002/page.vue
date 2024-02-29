@@ -521,7 +521,7 @@
               ref="StoreConfigurationPopupFrame"
               title="活动门店配置"
               v-model:visible="StoreConfigurationPopupFrame.visible"
-              :z-index="1000"
+              :z-index="997"
               :style="StoreConfigurationPopupFrame.style"
             >
               <div
@@ -600,6 +600,11 @@
                 </hm-ant-table>
               </div>
             </hm-modal>
+          </div>
+          <div
+            class="ele-wrapper ele-wrapper-64ce8a64-99ea-4d01-af61-f7358044a47b"
+          >
+            <hm-modal :visible="true" :z-index="1000"> </hm-modal>
           </div>
         </hm-bg-card>
       </div>
@@ -907,6 +912,9 @@ export default {
           top: "100px",
           padding: "10px 15px",
         },
+      },
+      "64ce8a64-99ea-4d01-af61-f7358044a47b": {
+        visible: true,
       },
       activityFilter: {
         config: {
