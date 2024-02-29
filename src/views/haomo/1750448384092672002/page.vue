@@ -1672,7 +1672,6 @@ export default {
         this.$refs.viewActivityStoreTable.getData();
       }
       if (e.file.status == "error") {
-        this.importantModal.visible = false;
         this.$message.error(e.file.response.message);
         this.$refs.viewActivityStoreTable.getData();
       }
