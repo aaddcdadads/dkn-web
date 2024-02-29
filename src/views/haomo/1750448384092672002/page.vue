@@ -1032,6 +1032,7 @@ export default {
         visible: false,
       },
       delViewActivityStoreModal: {},
+      activityStoreTagList: {},
       importButton: {
         visible: false,
         headers: null,
@@ -1162,7 +1163,6 @@ export default {
         ],
       },
       storeList: {},
-      activityStoreTagList: {},
       activityDetailModal: {
         visible: false,
       },
@@ -1783,6 +1783,11 @@ export default {
     },
     onActivityStoreTagClose(e) {
       console.log("e", e);
+      const i = this.activityStoreTagList.findIndex((a) => a.id == e.id);
+      if (i === -1) {
+        return;
+      }
+      this.activityStoreTagList.splice(i, 1);
     },
     onViewActivityStoreUploadOnUploadDone(e) {
       console.log("打印", e);
