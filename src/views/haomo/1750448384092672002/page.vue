@@ -642,6 +642,7 @@
                   ref="activityStoreTag"
                   :title="activityStoreTag.title"
                   :ctag-list="activityStoreTag.ctagList"
+                  @close="onActivityStoreTagClose"
                   class="ele-activityStoreTag"
                 >
                 </hm-ant-tag>
@@ -1779,6 +1780,9 @@ export default {
     onTreeSelectChange(e) {
       console.log("e", e);
       this.setTag(e);
+    },
+    onActivityStoreTagClose(e) {
+      console.log("e", e);
     },
     onViewActivityStoreUploadOnUploadDone(e) {
       console.log("打印", e);
