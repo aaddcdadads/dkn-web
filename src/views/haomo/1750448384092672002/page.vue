@@ -523,6 +523,7 @@
               v-model:visible="StoreConfigurationPopupFrame.visible"
               :z-index="1000"
               :style="StoreConfigurationPopupFrame.style"
+              class="ele-StoreConfigurationPopupFrame"
             >
               <div
                 class="ele-wrapper ele-wrapper-d72366d9-57b6-47e7-a63d-641343f2d736"
@@ -1609,6 +1610,12 @@ export default {
 
 .ele-wrapper-qrcode {
   width: 70%;
+}
+
+.ele-wrapper-StoreConfigurationPopupFrame {
+  /deep/.ant-modal-body {
+    padding: 10px 15px;
+  }
 }
 
 .ele-wrapper-d72366d9-57b6-47e7-a63d-641343f2d736 {
