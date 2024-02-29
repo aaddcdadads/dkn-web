@@ -1554,7 +1554,7 @@ export default {
       let self = this;
       let url = "/api/dkn/activityStore/delete";
       let params = {
-        id: self.delViewActivityStoreModal.id,
+        id: self.delViewActivityStoreModal.activityStoreId,
       };
       const res = await self.$deleteAction(url, params);
       if (res.success) {
