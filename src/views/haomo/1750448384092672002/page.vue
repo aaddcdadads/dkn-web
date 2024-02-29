@@ -524,6 +524,28 @@
               :z-index="1000"
             >
               <div
+                class="ele-wrapper ele-wrapper-d72366d9-57b6-47e7-a63d-641343f2d736"
+              >
+                <hm-bg-card>
+                  <div
+                    class="ele-wrapper ele-wrapper-5827416b-69cb-4a9c-9f7e-ad94d1b37311"
+                  >
+                    <hm-ant-button text="新增" :type="'primary'" :ghost="true">
+                    </hm-ant-button>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-a6d2b6ac-1576-4e40-916d-93f815a9290b"
+                  >
+                    <hm-ant-button
+                      text="批量导入"
+                      :type="'primary'"
+                      :ghost="true"
+                    >
+                    </hm-ant-button>
+                  </div>
+                </hm-bg-card>
+              </div>
+              <div
                 class="ele-wrapper ele-wrapper-7e559381-e2f0-486d-8b2e-3d43d0f29028"
               >
                 <hm-ant-button text="新增" :type="'primary'" :ghost="true">
@@ -534,6 +556,26 @@
               >
                 <hm-ant-button text="批量导入" :type="'primary'" :ghost="true">
                 </hm-ant-button>
+              </div>
+              <div
+                class="ele-wrapper ele-wrapper-47d2cd5e-11cb-4b0c-a529-867fb03d6d71"
+              >
+                <hm-ant-table
+                  :actions="[
+                    {
+                      name: '编辑',
+                      callback:
+                        'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                    },
+                    {
+                      name: '删除',
+                      callback:
+                        'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                    },
+                  ]"
+                  :row-class-name="{}"
+                >
+                </hm-ant-table>
               </div>
             </hm-modal>
           </div>
