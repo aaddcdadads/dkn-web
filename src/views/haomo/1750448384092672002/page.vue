@@ -696,6 +696,13 @@ export default {
       qrcodeModal: {
         visible: false,
       },
+      StoreConfigurationPopupFrame: {
+        visible: false,
+        style: {
+          top: "100px",
+          padding: "10px 15px",
+        },
+      },
       activityEditModal: {
         visible: false,
       },
@@ -934,15 +941,8 @@ export default {
       activityDetailModal: {
         visible: false,
       },
-      StoreConfigurationPopupFrame: {
-        visible: true,
-        style: {
-          top: "100px",
-          padding: "10px 15px",
-        },
-      },
       addStoreScope: {
-        visible: true,
+        visible: false,
       },
       activityFilter: {
         config: {
@@ -1145,6 +1145,7 @@ export default {
             name: "门店配置",
             callback: function (item) {
               console.log("门店配置");
+              self.StoreConfigurationPopupFrame.visible = true;
             },
             type: "link",
           },
