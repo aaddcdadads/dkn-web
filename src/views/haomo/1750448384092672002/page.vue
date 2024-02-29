@@ -575,12 +575,11 @@
                 >
                 </hm-ant-table>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-88b0c4c5-329f-4b27-a16d-89c03aeb6c89"
-              >
+              <div class="ele-wrapper ele-wrapper-viewActivityStoreModal">
                 <hm-modal
+                  ref="viewActivityStoreModal"
                   title="删除"
-                  :visible="false"
+                  v-model:visible="viewActivityStoreModal.visible"
                   :closable="true"
                   :ok-type="'danger'"
                   width="320px"
@@ -1260,7 +1259,7 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "88b0c4c5-329f-4b27-a16d-89c03aeb6c89": {
+      viewActivityStoreModal: {
         visible: false,
       },
       treeSelect: {
