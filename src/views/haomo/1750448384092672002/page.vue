@@ -521,6 +521,7 @@
               title="活动门店配置"
               v-model:visible="StoreConfigurationPopupFrame.visible"
               :cancel-button-props="false"
+              width="720px"
               :z-index="997"
               :style="StoreConfigurationPopupFrame.style"
             >
