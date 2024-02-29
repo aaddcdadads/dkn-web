@@ -594,6 +594,7 @@
                     },
                   ]"
                   :row-class-name="{}"
+                  class="ele-47d2cd5e-11cb-4b0c-a529-867fb03d6d71"
                 >
                 </hm-ant-table>
               </div>
@@ -1611,6 +1612,10 @@ export default {
 
 .ele-wrapper-a6d2b6ac-1576-4e40-916d-93f815a9290b {
   margin-left: 10px;
+}
+
+.ele-wrapper-47d2cd5e-11cb-4b0c-a529-867fb03d6d71 {
+  width: 100%;
 }
 
 .ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1 {
