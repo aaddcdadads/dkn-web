@@ -1603,7 +1603,27 @@ export default {
           };
         });
       };
-      self.addActivityStore = async function () {};
+      self.addActivityStore = async function () {
+        if (self.activityStoreTagList.length == 0) {
+          self.$message.error("请选择门店");
+          return;
+        }
+        const params = self.activityStoreTagList.map((e) => {
+          return {
+            activityId: self.activityId,
+            storeId: e.id,
+          };
+        });
+        let url = "/api/dkn/activityStore/addBatch";
+        const res = await self.$postAction(url, params);
+        if (res.success) {
+          self.$message.success("保存成功");
+          self.addStoreScope.visible = false;
+        } else {
+          self.$message.error(res.message);
+        }
+        self.$refs.viewActivityStoreTable.getData();
+      };
     },
 
     onAddButtonClick() {
