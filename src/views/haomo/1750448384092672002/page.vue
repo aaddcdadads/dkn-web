@@ -1556,7 +1556,7 @@ export default {
       let params = {
         id: self.delViewActivityStoreModal.id,
       };
-      const res = await self.deleteAction(url, params);
+      const res = await self.$deleteAction(url, params);
       if (res.success) {
         self.$message.success("删除成功");
       } else {
