@@ -575,6 +575,45 @@
                 >
                 </hm-ant-table>
               </div>
+              <div
+                class="ele-wrapper ele-wrapper-88b0c4c5-329f-4b27-a16d-89c03aeb6c89"
+              >
+                <hm-modal
+                  title="删除"
+                  :visible="false"
+                  :closable="true"
+                  :ok-type="'danger'"
+                  width="320px"
+                  :z-index="1000"
+                  height="80px"
+                >
+                  <div
+                    class="ele-wrapper ele-wrapper-e3c72123-dab1-4e7d-947b-9cc498196b55"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height=""
+                      border-radius=""
+                      padding=""
+                      box-shadow-color="#00000000"
+                      class="ele-e3c72123-dab1-4e7d-947b-9cc498196b55"
+                    >
+                      <div
+                        class="ele-wrapper ele-wrapper-20c28b0a-2f8d-4fb4-ae2e-2d5c7ac30af6"
+                      >
+                        <hm-ant-bg-text
+                          text="是否要删除?"
+                          color="#CF2323"
+                          :text-align="'left'"
+                          padding="0"
+                          class="ele-20c28b0a-2f8d-4fb4-ae2e-2d5c7ac30af6"
+                        >
+                        </hm-ant-bg-text>
+                      </div>
+                    </hm-bg-card>
+                  </div>
+                </hm-modal>
+              </div>
             </hm-modal>
           </div>
           <div class="ele-wrapper ele-wrapper-addStoreScope">
@@ -1221,6 +1260,9 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
+      "88b0c4c5-329f-4b27-a16d-89c03aeb6c89": {
+        visible: false,
+      },
       treeSelect: {
         value: [],
       },
@@ -1688,6 +1730,14 @@ export default {
   /deep/.ant-btn-link {
     color: #000;
   }
+}
+
+.ele-wrapper-e3c72123-dab1-4e7d-947b-9cc498196b55 {
+  width: 100%;
+}
+
+.ele-wrapper-20c28b0a-2f8d-4fb4-ae2e-2d5c7ac30af6 {
+  width: 60%;
 }
 
 .ele-wrapper-treeSelect {
