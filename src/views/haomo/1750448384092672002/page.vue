@@ -519,6 +519,7 @@
           <div class="ele-wrapper ele-wrapper-StoreConfigurationPopupFrame">
             <hm-modal
               ref="StoreConfigurationPopupFrame"
+              title="活动门店配置"
               v-model:visible="StoreConfigurationPopupFrame.visible"
               :z-index="1000"
             >
