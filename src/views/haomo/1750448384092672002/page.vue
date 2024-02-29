@@ -526,7 +526,14 @@
               <div
                 class="ele-wrapper ele-wrapper-d72366d9-57b6-47e7-a63d-641343f2d736"
               >
-                <hm-bg-card>
+                <hm-bg-card
+                  width="100%"
+                  height="100%"
+                  border-radius=""
+                  box-shadow-v-shadow=""
+                  box-shadow-blur=""
+                  class="ele-d72366d9-57b6-47e7-a63d-641343f2d736"
+                >
                   <div
                     class="ele-wrapper ele-wrapper-5827416b-69cb-4a9c-9f7e-ad94d1b37311"
                   >
@@ -544,18 +551,6 @@
                     </hm-ant-button>
                   </div>
                 </hm-bg-card>
-              </div>
-              <div
-                class="ele-wrapper ele-wrapper-7e559381-e2f0-486d-8b2e-3d43d0f29028"
-              >
-                <hm-ant-button text="新增" :type="'primary'" :ghost="true">
-                </hm-ant-button>
-              </div>
-              <div
-                class="ele-wrapper ele-wrapper-d0f8a1ab-6840-4d41-a775-f5a0abbb5eb7"
-              >
-                <hm-ant-button text="批量导入" :type="'primary'" :ghost="true">
-                </hm-ant-button>
               </div>
               <div
                 class="ele-wrapper ele-wrapper-47d2cd5e-11cb-4b0c-a529-867fb03d6d71"
@@ -1583,6 +1578,10 @@ export default {
 
 .ele-wrapper-qrcode {
   width: 70%;
+}
+
+.ele-wrapper-d72366d9-57b6-47e7-a63d-641343f2d736 {
+  width: 100%;
 }
 
 .ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1 {
