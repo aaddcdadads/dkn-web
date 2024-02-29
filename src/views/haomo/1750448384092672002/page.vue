@@ -680,6 +680,7 @@
                       text="上传文件"
                       v-model:file-list="viewActivityStoreUpload.fileList"
                       action="/api/dkn/viewActivityStore/importExcel "
+                      :data="viewActivityStoreUpload.data"
                       :headers="viewActivityStoreUpload.headers"
                       class="ele-viewActivityStoreUpload"
                     >
@@ -793,6 +794,11 @@ export default {
       },
       qrcodeModal: {
         visible: false,
+      },
+      viewActivityStoreUpload: {
+        data: {},
+        fileList: [],
+        headers: {},
       },
       viewActivityStoreTable: {
         params: {
@@ -1297,6 +1303,7 @@ export default {
             callback: function (item) {
               console.log("门店配置");
               self.ativityId = item.id;
+              self.viewActivityStoreUpload.data = { ativityId: self.ativityId };
               self.viewActivityStoreTable.params = {
                 activityId: item.id,
               };
@@ -1354,10 +1361,6 @@ export default {
       },
       treeSelect: {
         value: [],
-      },
-      viewActivityStoreUpload: {
-        fileList: [],
-        headers: {},
       },
     };
   },
