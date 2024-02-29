@@ -1571,6 +1571,7 @@ export default {
         });
         self.treeSelect.options = list;
       };
+      self.getTreeSelect();
     },
 
     onAddButtonClick() {
