@@ -516,6 +516,14 @@
               </div>
             </hm-modal>
           </div>
+          <div class="ele-wrapper ele-wrapper-StoreConfigurationPopupFrame">
+            <hm-modal
+              ref="StoreConfigurationPopupFrame"
+              v-model:visible="StoreConfigurationPopupFrame.visible"
+              :z-index="1000"
+            >
+            </hm-modal>
+          </div>
         </hm-bg-card>
       </div>
       <div class="ele-wrapper ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1">
@@ -815,6 +823,9 @@ export default {
       },
       activityDetailModal: {
         visible: false,
+      },
+      StoreConfigurationPopupFrame: {
+        visible: true,
       },
       activityFilter: {
         config: {
