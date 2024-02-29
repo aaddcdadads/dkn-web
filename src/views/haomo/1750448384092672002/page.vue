@@ -622,7 +622,11 @@
               <div
                 class="ele-wrapper ele-wrapper-c5aada0d-3f95-4720-b893-2dafd5cd218b"
               >
-                <hm-ant-tag title=""> </hm-ant-tag>
+                <hm-ant-tag
+                  title=""
+                  class="ele-c5aada0d-3f95-4720-b893-2dafd5cd218b"
+                >
+                </hm-ant-tag>
               </div>
             </hm-modal>
           </div>
@@ -1663,6 +1667,10 @@ export default {
   /deep/.ant-cascader-picker {
     width: 85%;
   }
+}
+
+.ele-wrapper-c5aada0d-3f95-4720-b893-2dafd5cd218b {
+  margin: 10px;
 }
 
 .ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1 {
