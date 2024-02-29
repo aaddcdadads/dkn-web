@@ -607,6 +607,7 @@
               title="添加门店范围"
               v-model:visible="addStoreScope.visible"
               :z-index="1000"
+              height=""
             >
             </hm-modal>
           </div>
