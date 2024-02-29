@@ -523,6 +523,16 @@
               v-model:visible="StoreConfigurationPopupFrame.visible"
               :z-index="1000"
             >
+              <div
+                class="ele-wrapper ele-wrapper-7e559381-e2f0-486d-8b2e-3d43d0f29028"
+              >
+                <hm-ant-button> </hm-ant-button>
+              </div>
+              <div
+                class="ele-wrapper ele-wrapper-d0f8a1ab-6840-4d41-a775-f5a0abbb5eb7"
+              >
+                <hm-ant-button> </hm-ant-button>
+              </div>
             </hm-modal>
           </div>
         </hm-bg-card>
