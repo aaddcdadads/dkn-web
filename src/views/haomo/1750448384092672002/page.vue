@@ -635,12 +635,12 @@
                 >
                 </hm-ant-cascader>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-c5aada0d-3f95-4720-b893-2dafd5cd218b"
-              >
+              <div class="ele-wrapper ele-wrapper-activityStoreTag">
                 <hm-ant-tag
-                  title=""
-                  class="ele-c5aada0d-3f95-4720-b893-2dafd5cd218b"
+                  ref="activityStoreTag"
+                  :title="activityStoreTag.title"
+                  :ctag-list="activityStoreTag.ctagList"
+                  class="ele-activityStoreTag"
                 >
                 </hm-ant-tag>
               </div>
@@ -965,6 +965,28 @@ export default {
       },
       addStoreScope: {
         visible: false,
+      },
+      activityStoreTag: {
+        ctagList: [
+          {
+            value: "周星星1",
+            id: 1,
+            title: "sadda",
+          },
+          {
+            value: "周星星2",
+          },
+          {
+            value: "周星星3",
+          },
+          {
+            value: "周星星4",
+          },
+          {
+            value: "周星星5",
+          },
+        ],
+        title: "",
       },
       importantModal: {
         visible: false,
@@ -1646,6 +1668,7 @@ export default {
     },
     onEle5827416B69Cb4A9C9F7EAd94D1B37311Click() {
       this.addStoreScope.visible = true;
+      this.activityStoreTag.ctagList = [];
     },
     onElea6D2B6Ac15764E40916D93F815A9290BClick() {
       this.importantModal.visible = true;
@@ -1882,7 +1905,7 @@ export default {
   }
 }
 
-.ele-wrapper-c5aada0d-3f95-4720-b893-2dafd5cd218b {
+.ele-wrapper-activityStoreTag {
   margin: 10px;
 }
 
