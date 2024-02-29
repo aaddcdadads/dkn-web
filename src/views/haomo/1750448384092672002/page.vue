@@ -1210,6 +1210,7 @@ export default {
             name: "门店配置",
             callback: function (item) {
               console.log("门店配置");
+              self.ativityId = item.id;
               self.viewActivityStoreTable.params = {
                 activityId: item.id,
               };
