@@ -561,45 +561,17 @@
                   </div>
                 </hm-bg-card>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-47d2cd5e-11cb-4b0c-a529-867fb03d6d71"
-              >
+              <div class="ele-wrapper ele-wrapper-viewActivityStoreTable">
                 <hm-ant-table
-                  :columns="[
-                    { title: '门店名称', dataIndex: 'storeName', key: 'name' },
-                    {
-                      title: '所属区域',
-                      dataIndex: 'region',
-                      key: 'age',
-                      width: 80,
-                    },
-                    {
-                      title: '门店地址',
-                      dataIndex: 'storeAddress',
-                      key: 'address',
-                      ellipsis: true,
-                    },
-                    {
-                      title: '操作',
-                      dataIndex: '',
-                      key: 'action',
-                      slots: { customRender: 'action' },
-                    },
-                  ]"
-                  :data="[{ storeName: '123' }]"
-                  url="/api/dkn/viewActivityStore/list"
-                  :params="{ id: '-1' }"
-                  :actions="[
-                    {
-                      name: '删除',
-                      callback:
-                        'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
-                      type: 'link',
-                    },
-                  ]"
-                  :is-flat-action="true"
-                  :row-class-name="{}"
-                  class="ele-47d2cd5e-11cb-4b0c-a529-867fb03d6d71"
+                  ref="viewActivityStoreTable"
+                  :columns="viewActivityStoreTable.columns"
+                  :data="viewActivityStoreTable.data"
+                  :url="viewActivityStoreTable.url"
+                  :params="viewActivityStoreTable.params"
+                  :actions="viewActivityStoreTable.actions"
+                  :is-flat-action="viewActivityStoreTable.isFlatAction"
+                  :row-class-name="viewActivityStoreTable.rowClassName"
+                  class="ele-viewActivityStoreTable"
                 >
                 </hm-ant-table>
               </div>
@@ -1201,6 +1173,55 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
+      viewActivityStoreTable: {
+        columns: [
+          {
+            title: "门店名称",
+            dataIndex: "storeName",
+            key: "name",
+          },
+          {
+            title: "所属区域",
+            dataIndex: "region",
+            key: "age",
+            width: 80,
+          },
+          {
+            title: "门店地址",
+            dataIndex: "storeAddress",
+            key: "address",
+            ellipsis: true,
+          },
+          {
+            title: "操作",
+            dataIndex: "",
+            key: "action",
+            slots: {
+              customRender: "action",
+            },
+          },
+        ],
+        data: [
+          {
+            storeName: "123",
+          },
+        ],
+        url: "/api/dkn/viewActivityStore/list",
+        params: {
+          id: "-1",
+        },
+        actions: [
+          {
+            name: "删除",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
+      },
       treeSelect: {
         value: [],
       },
@@ -1663,7 +1684,7 @@ export default {
   margin-left: 10px;
 }
 
-.ele-wrapper-47d2cd5e-11cb-4b0c-a529-867fb03d6d71 {
+.ele-wrapper-viewActivityStoreTable {
   width: 100%;
   /deep/.ant-btn-link {
     color: #000;
