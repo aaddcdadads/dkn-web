@@ -630,6 +630,7 @@
                   ref="treeSelect"
                   v-model:value="treeSelect.value"
                   title=""
+                  :options="treeSelect.options"
                   width="500px"
                   class="ele-treeSelect"
                 >
@@ -967,6 +968,40 @@ export default {
         visible: false,
       },
       treeSelect: {
+        options: [
+          {
+            value: "zhejiang",
+            label: "Zhejiang",
+            children: [
+              {
+                value: "hangzhou",
+                label: "Hangzhou",
+                children: [
+                  {
+                    value: "xihu",
+                    label: "West Lake",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "jiangsu",
+            label: "Jiangsu",
+            children: [
+              {
+                value: "nanjing",
+                label: "Nanjing",
+                children: [
+                  {
+                    value: "zhonghuamen",
+                    label: "Zhong Hua Men",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
         value: [],
       },
       activityStoreTag: {
@@ -1513,6 +1548,28 @@ export default {
           };
         });
         return list;
+      };
+      self.getTreeSelect = async function () {
+        let url = "/api/dkn/store/listOrder";
+        const res = await self.$getAction(url, {
+          status: 0,
+        });
+        const list = res.result.map((e) => {
+          let children = e.store.map((s) => {
+            return {
+              label: s.name,
+              value: s.id,
+              ...s,
+            };
+          });
+          return {
+            ...e,
+            label: e.name,
+            value: e.id,
+            children,
+          };
+        });
+        self.treeSelect.options = list;
       };
     },
 
