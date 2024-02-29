@@ -588,12 +588,6 @@
                   :data="[{ storeName: '123' }]"
                   :actions="[
                     {
-                      name: '编辑',
-                      callback:
-                        'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
-                      type: 'link',
-                    },
-                    {
                       name: '删除',
                       callback:
                         'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
