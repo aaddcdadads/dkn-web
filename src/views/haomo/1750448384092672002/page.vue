@@ -555,6 +555,7 @@
                       text="批量导入"
                       :type="'primary'"
                       :ghost="true"
+                      @click="onElea6D2B6Ac15764E40916D93F815A9290BClick"
                       class="ele-a6d2b6ac-1576-4e40-916d-93f815a9290b"
                     >
                     </hm-ant-button>
@@ -645,12 +646,11 @@
               </div>
             </hm-modal>
           </div>
-          <div
-            class="ele-wrapper ele-wrapper-5b6aa1ba-541c-486d-9dd9-b3a5885d8a88"
-          >
+          <div class="ele-wrapper ele-wrapper-importantModal">
             <hm-modal
+              ref="importantModal"
               title="导入"
-              :visible="false"
+              v-model:visible="importantModal.visible"
               :closable="true"
               ok-text="删除"
               :ok-button-boole="false"
@@ -960,6 +960,9 @@ export default {
       addStoreScope: {
         visible: false,
       },
+      importantModal: {
+        visible: false,
+      },
       delViewActivityStoreModal: {},
       importButton: {
         visible: false,
@@ -1091,9 +1094,6 @@ export default {
         ],
       },
       activityDetailModal: {
-        visible: false,
-      },
-      "5b6aa1ba-541c-486d-9dd9-b3a5885d8a88": {
         visible: false,
       },
       activityFilter: {
@@ -1641,6 +1641,9 @@ export default {
     },
     onEle5827416B69Cb4A9C9F7EAd94D1B37311Click() {
       this.addStoreScope.visible = true;
+    },
+    onElea6D2B6Ac15764E40916D93F815A9290BClick() {
+      this.importantModal.visible = true;
     },
     async onViewActivityStoreModalOk() {
       let self = this;
