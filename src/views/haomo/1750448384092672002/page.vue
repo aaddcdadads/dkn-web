@@ -434,7 +434,6 @@
                     <hm-activity-list
                       ref="activityList"
                       :list="activityList.list"
-                      @copyLink="onActivityListCopyLink"
                     >
                     </hm-activity-list>
                   </div>
@@ -538,7 +537,12 @@
                   <div
                     class="ele-wrapper ele-wrapper-5827416b-69cb-4a9c-9f7e-ad94d1b37311"
                   >
-                    <hm-ant-button text="新增" :type="'primary'" :ghost="true">
+                    <hm-ant-button
+                      text="新增"
+                      :type="'primary'"
+                      :ghost="true"
+                      @click="onEle5827416B69Cb4A9C9F7EAd94D1B37311Click"
+                    >
                     </hm-ant-button>
                   </div>
                   <div
@@ -809,6 +813,9 @@ export default {
         text: "批量删除",
         type: "primary",
       },
+      addStoreScope: {
+        visible: false,
+      },
       importButton: {
         visible: false,
         headers: null,
@@ -939,9 +946,6 @@ export default {
         ],
       },
       activityDetailModal: {
-        visible: false,
-      },
-      addStoreScope: {
         visible: false,
       },
       activityFilter: {
@@ -1476,11 +1480,11 @@ export default {
       self.$refs.activityTable.getData();
       //location.reload();
     },
-    onActivityListCopyLink(e, u) {
-      this.copyUrl(u);
-    },
     onEleaea44C0C24204F3F94F8B0352515Ee1CClick() {
       this.copyUrl();
+    },
+    onEle5827416B69Cb4A9C9F7EAd94D1B37311Click() {
+      this.addStoreScope.visible = true;
     },
   },
 };
