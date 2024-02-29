@@ -1603,6 +1603,7 @@ export default {
           };
         });
       };
+      self.addActivityStore = async function () {};
     },
 
     onAddButtonClick() {
