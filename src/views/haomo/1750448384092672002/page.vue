@@ -520,6 +520,7 @@
               ref="StoreConfigurationPopupFrame"
               title="活动门店配置"
               v-model:visible="StoreConfigurationPopupFrame.visible"
+              :cancel-button-props="false"
               :z-index="997"
               :style="StoreConfigurationPopupFrame.style"
             >
