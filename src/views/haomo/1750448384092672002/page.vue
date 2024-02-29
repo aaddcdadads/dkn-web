@@ -585,6 +585,7 @@
                   width="320px"
                   :z-index="1000"
                   height="80px"
+                  @ok="onViewActivityStoreModalOk"
                 >
                   <div
                     class="ele-wrapper ele-wrapper-e3c72123-dab1-4e7d-947b-9cc498196b55"
@@ -875,6 +876,7 @@ export default {
       addStoreScope: {
         visible: false,
       },
+      delViewActivityStoreModal: {},
       importButton: {
         visible: false,
         headers: null,
@@ -1547,6 +1549,20 @@ export default {
     },
     onEle5827416B69Cb4A9C9F7EAd94D1B37311Click() {
       this.addStoreScope.visible = true;
+    },
+    async onViewActivityStoreModalOk() {
+      let self = this;
+      let url = "/api/dkn/activityStore/delete";
+      let params = {
+        id: self.delViewActivityStoreModal.id,
+      };
+      const res = await self.deleteAction(url, params);
+      if (res.success) {
+        self.$message.success("删除成功");
+      } else {
+        self.$message.error(res.message);
+      }
+      self.$refs.viewActivityStoreTable.getData();
     },
   },
 };
