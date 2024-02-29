@@ -619,6 +619,11 @@
                 >
                 </hm-ant-cascader>
               </div>
+              <div
+                class="ele-wrapper ele-wrapper-c5aada0d-3f95-4720-b893-2dafd5cd218b"
+              >
+                <hm-ant-tag> </hm-ant-tag>
+              </div>
             </hm-modal>
           </div>
         </hm-bg-card>
@@ -645,6 +650,7 @@ import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmActivityList from "/@/components/decathlon-spring-festivalactivities-web/hm-activity-list/index.vue";
 import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmAntCascader from "/@/components/built-in/jeecg/HmAntCascader.vue";
+import HmAntTag from "/@/components/built-in/jeecg/HmAntTag.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
 import {
@@ -671,6 +677,7 @@ export default {
     HmActivityList,
     HmAntInput,
     HmAntCascader,
+    HmAntTag,
     HmAntSwitch,
   },
   data() {
