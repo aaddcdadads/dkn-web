@@ -1663,6 +1663,9 @@ export default {
 
 .ele-wrapper-47d2cd5e-11cb-4b0c-a529-867fb03d6d71 {
   width: 100%;
+  /deep/.ant-btn-link {
+    color: #000;
+  }
 }
 
 .ele-wrapper-treeSelect {
