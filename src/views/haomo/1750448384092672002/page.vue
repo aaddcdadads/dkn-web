@@ -718,6 +718,7 @@
                           text="下载模板"
                           :type="'link'"
                           icon="fa fa-paperclip"
+                          @click="onEle476E74Cc7C7D4B02B2A5C7C4317019EeClick"
                           class="ele-476e74cc-7c7d-4b02-b2a5-c7c4317019ee"
                         >
                         </hm-ant-button>
@@ -1654,6 +1655,13 @@ export default {
         self.$message.error(res.message);
       }
       self.$refs.viewActivityStoreTable.getData();
+    },
+    onEle476E74Cc7C7D4B02B2A5C7C4317019EeClick() {
+      this.$downloadFile(
+        "活动门店列表模板.xlsx",
+        "/api/dkn/viewActivityStore/downExcelTemplate",
+        {}
+      );
     },
   },
 };
