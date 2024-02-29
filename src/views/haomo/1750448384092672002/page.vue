@@ -612,7 +612,12 @@
               <div
                 class="ele-wrapper ele-wrapper-9c35ef61-f1d9-4f5c-a7e0-b1d46e35560d"
               >
-                <hm-ant-cascader :value="[]"> </hm-ant-cascader>
+                <hm-ant-cascader
+                  :value="[]"
+                  title=""
+                  class="ele-9c35ef61-f1d9-4f5c-a7e0-b1d46e35560d"
+                >
+                </hm-ant-cascader>
               </div>
             </hm-modal>
           </div>
@@ -1643,6 +1648,10 @@ export default {
 }
 
 .ele-wrapper-47d2cd5e-11cb-4b0c-a529-867fb03d6d71 {
+  width: 100%;
+}
+
+.ele-wrapper-9c35ef61-f1d9-4f5c-a7e0-b1d46e35560d {
   width: 100%;
 }
 
