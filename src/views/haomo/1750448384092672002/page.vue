@@ -615,6 +615,7 @@
                 <hm-ant-cascader
                   :value="[]"
                   title=""
+                  width="500"
                   class="ele-9c35ef61-f1d9-4f5c-a7e0-b1d46e35560d"
                 >
                 </hm-ant-cascader>
