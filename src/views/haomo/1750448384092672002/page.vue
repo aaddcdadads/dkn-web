@@ -609,14 +609,13 @@
               :z-index="1000"
               height=""
             >
-              <div
-                class="ele-wrapper ele-wrapper-9c35ef61-f1d9-4f5c-a7e0-b1d46e35560d"
-              >
+              <div class="ele-wrapper ele-wrapper-treeSelect">
                 <hm-ant-cascader
-                  :value="[]"
+                  ref="treeSelect"
+                  v-model:value="treeSelect.value"
                   title=""
                   width="500px"
-                  class="ele-9c35ef61-f1d9-4f5c-a7e0-b1d46e35560d"
+                  class="ele-treeSelect"
                 >
                 </hm-ant-cascader>
               </div>
@@ -1186,7 +1185,7 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "9c35ef61-f1d9-4f5c-a7e0-b1d46e35560d": {
+      treeSelect: {
         value: [],
       },
     };
@@ -1652,7 +1651,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-9c35ef61-f1d9-4f5c-a7e0-b1d46e35560d {
+.ele-wrapper-treeSelect {
   width: 100%;
 }
 
