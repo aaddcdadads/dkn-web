@@ -966,6 +966,9 @@ export default {
       addStoreScope: {
         visible: false,
       },
+      treeSelect: {
+        value: [],
+      },
       activityStoreTag: {
         ctagList: [
           {
@@ -1384,9 +1387,6 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      treeSelect: {
-        value: [],
-      },
     };
   },
   watch: {},
@@ -1668,6 +1668,7 @@ export default {
     },
     onEle5827416B69Cb4A9C9F7EAd94D1B37311Click() {
       this.addStoreScope.visible = true;
+      this.treeSelect.value = [];
       this.activityStoreTag.ctagList = [];
     },
     onElea6D2B6Ac15764E40916D93F815A9290BClick() {
