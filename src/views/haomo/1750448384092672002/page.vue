@@ -672,6 +672,55 @@ export default {
       qrcodeModal: {
         visible: false,
       },
+      viewActivityStoreTable: {
+        params: {
+          id: "-1",
+        },
+        columns: [
+          {
+            title: "门店名称",
+            dataIndex: "storeName",
+            key: "name",
+          },
+          {
+            title: "所属区域",
+            dataIndex: "region",
+            key: "age",
+            width: 80,
+          },
+          {
+            title: "门店地址",
+            dataIndex: "storeAddress",
+            key: "address",
+            ellipsis: true,
+          },
+          {
+            title: "操作",
+            dataIndex: "",
+            key: "action",
+            slots: {
+              customRender: "action",
+            },
+          },
+        ],
+        data: [
+          {
+            storeName: "123",
+          },
+        ],
+        url: "/api/dkn/viewActivityStore/list",
+        actions: [
+          {
+            name: "删除",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
+      },
       StoreConfigurationPopupFrame: {
         visible: false,
         style: {
@@ -1121,6 +1170,9 @@ export default {
             name: "门店配置",
             callback: function (item) {
               console.log("门店配置");
+              self.viewActivityStoreTable.params = {
+                activityId: item.id,
+              };
               self.StoreConfigurationPopupFrame.visible = true;
             },
             type: "link",
@@ -1171,55 +1223,6 @@ export default {
         ],
         isFlatAction: true,
         backgroundColor: "#FFFFFF",
-        rowClassName: {},
-      },
-      viewActivityStoreTable: {
-        columns: [
-          {
-            title: "门店名称",
-            dataIndex: "storeName",
-            key: "name",
-          },
-          {
-            title: "所属区域",
-            dataIndex: "region",
-            key: "age",
-            width: 80,
-          },
-          {
-            title: "门店地址",
-            dataIndex: "storeAddress",
-            key: "address",
-            ellipsis: true,
-          },
-          {
-            title: "操作",
-            dataIndex: "",
-            key: "action",
-            slots: {
-              customRender: "action",
-            },
-          },
-        ],
-        data: [
-          {
-            storeName: "123",
-          },
-        ],
-        url: "/api/dkn/viewActivityStore/list",
-        params: {
-          id: "-1",
-        },
-        actions: [
-          {
-            name: "删除",
-            callback: function (item) {
-              console.log("点击删除: ", item);
-            },
-            type: "link",
-          },
-        ],
-        isFlatAction: true,
         rowClassName: {},
       },
       treeSelect: {
