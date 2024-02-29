@@ -1014,6 +1014,13 @@ export default {
             type: "link",
           },
           {
+            name: "门店配置",
+            callback: function (item) {
+              console.log("门店配置");
+            },
+            type: "link",
+          },
+          {
             name: "报名列表",
             callback: function (item) {
               self.$router.push({
