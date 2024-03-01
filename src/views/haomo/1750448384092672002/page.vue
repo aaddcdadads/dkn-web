@@ -628,6 +628,54 @@
               @ok="onAddStoreScopeOk"
               @cancel="onAddStoreScopeCancel"
             >
+              <div
+                class="ele-wrapper ele-wrapper-1e0e60a2-51ce-4b16-a2a2-3b1df6079cf3"
+              >
+                <hm-ant-tree-select
+                  value="undefined"
+                  title=""
+                  :tree-data="[
+                    {
+                      title: 'Node1',
+                      value: 'Node1',
+                      key: '0-0',
+                      children: [
+                        {
+                          title: 'Child Node1',
+                          value: 'Child Node1',
+                          key: '0-0-0',
+                        },
+                      ],
+                    },
+                    {
+                      title: 'Node2',
+                      value: 'Node2',
+                      key: '0-1',
+                      children: [
+                        {
+                          title: 'Child Node3',
+                          value: 'Child Node3',
+                          key: '0-1-0',
+                          disabled: 'true',
+                        },
+                        {
+                          title: 'Child Node4',
+                          value: 'Child Node4',
+                          key: '0-1-1',
+                        },
+                        {
+                          title: 'Child Node5',
+                          value: 'Child Node5',
+                          key: '0-1-2',
+                        },
+                      ],
+                    },
+                  ]"
+                  :multiple="true"
+                  class="ele-1e0e60a2-51ce-4b16-a2a2-3b1df6079cf3"
+                >
+                </hm-ant-tree-select>
+              </div>
               <div class="ele-wrapper ele-wrapper-treeSelect">
                 <hm-ant-cascader
                   ref="treeSelect"
@@ -759,6 +807,7 @@ import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmActivityList from "/@/components/decathlon-spring-festivalactivities-web/hm-activity-list/index.vue";
 import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
+import HmAntTreeSelect from "/@/components/built-in/jeecg/HmAntTreeSelect.vue";
 import HmAntCascader from "/@/components/built-in/jeecg/HmAntCascader.vue";
 import HmAntTag from "/@/components/built-in/jeecg/HmAntTag.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
@@ -786,6 +835,7 @@ export default {
     HmAntBgText,
     HmActivityList,
     HmAntInput,
+    HmAntTreeSelect,
     HmAntCascader,
     HmAntTag,
     HmAntSwitch,
@@ -1429,6 +1479,46 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
+      "1e0e60a2-51ce-4b16-a2a2-3b1df6079cf3": {
+        value: null,
+        treeData: [
+          {
+            title: "Node1",
+            value: "Node1",
+            key: "0-0",
+            children: [
+              {
+                title: "Child Node1",
+                value: "Child Node1",
+                key: "0-0-0",
+              },
+            ],
+          },
+          {
+            title: "Node2",
+            value: "Node2",
+            key: "0-1",
+            children: [
+              {
+                title: "Child Node3",
+                value: "Child Node3",
+                key: "0-1-0",
+                disabled: "true",
+              },
+              {
+                title: "Child Node4",
+                value: "Child Node4",
+                key: "0-1-1",
+              },
+              {
+                title: "Child Node5",
+                value: "Child Node5",
+                key: "0-1-2",
+              },
+            ],
+          },
+        ],
+      },
     };
   },
   watch: {},
@@ -2029,6 +2119,10 @@ export default {
 
 .ele-wrapper-20c28b0a-2f8d-4fb4-ae2e-2d5c7ac30af6 {
   width: 60%;
+}
+
+.ele-wrapper-1e0e60a2-51ce-4b16-a2a2-3b1df6079cf3 {
+  width: 100%;
 }
 
 .ele-wrapper-treeSelect {
