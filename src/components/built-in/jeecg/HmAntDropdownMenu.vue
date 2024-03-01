@@ -96,6 +96,13 @@ export default {
       },
     },
     /**
+     * 菜单文字大小
+     */
+    menuTextSize: {
+      type: String,
+      default: "14px",
+    },
+    /**
      * 图标位置
      * @type Enum
      * @options ["left", "right", "top", "bottom"]
@@ -163,6 +170,7 @@ export default {
         },
       ],
       cPadding: "5px",
+      cMenuTextSize: "14px",
       cIconSize: "18px",
       cIconStyle: "display: inline-block",
     };
@@ -183,6 +191,9 @@ export default {
     padding(value) {
       this.cPadding = this.getCssUnit(value);
     },
+    menuTextSize(value) {
+      this.cMenuTextSize = this.getCssUnit(value);
+    },
     iconSize(value) {
       this.cIconSize = this.getCssUnit(value);
     },
@@ -195,6 +206,7 @@ export default {
     this.cVisible = this.visible;
     this.hrefColor = this.color;
     this.iconColor = this.iconcolor;
+    this.cMenuTextSize = this.getCssUnit(this.menuTextSize);
     this.cIconSize = this.getCssUnit(this.iconSize);
     this.cPadding = this.getCssUnit(this.padding);
     this.calcIconStyle(this.iconPosition);
@@ -231,6 +243,7 @@ export default {
 <style scoped>
 .hrefText {
   color: v-bind(hrefColor);
+  font-size: v-bind(cMenuTextSize);
 }
 .text-icon {
   color: v-bind(iconColor);
