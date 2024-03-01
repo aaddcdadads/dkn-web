@@ -1534,7 +1534,7 @@ export default {
         const list = res.result.map((e) => {
           let children = e.store.map((s) => {
             return {
-              label: s.name,
+              title: s.name,
               value: s.id,
               ...s,
             };
@@ -1542,7 +1542,7 @@ export default {
           l = [...l, ...children];
           return {
             ...e,
-            label: e.key,
+            title: e.key,
             value: e.key,
             children,
           };
