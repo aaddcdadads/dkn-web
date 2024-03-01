@@ -628,67 +628,18 @@
               @ok="onAddStoreScopeOk"
               @cancel="onAddStoreScopeCancel"
             >
-              <div
-                class="ele-wrapper ele-wrapper-1e0e60a2-51ce-4b16-a2a2-3b1df6079cf3"
-              >
-                <hm-ant-tree-select
-                  value="undefined"
-                  title=""
-                  :tree-data="[
-                    {
-                      title: 'Node1',
-                      value: 'Node1',
-                      key: '0-0',
-                      children: [
-                        {
-                          title: 'Child Node1',
-                          value: 'Child Node1',
-                          key: '0-0-0',
-                        },
-                      ],
-                    },
-                    {
-                      title: 'Node2',
-                      value: 'Node2',
-                      key: '0-1',
-                      children: [
-                        {
-                          title: 'Child Node3',
-                          value: 'Child Node3',
-                          key: '0-1-0',
-                          disabled: 'true',
-                        },
-                        {
-                          title: 'Child Node4',
-                          value: 'Child Node4',
-                          key: '0-1-1',
-                        },
-                        {
-                          title: 'Child Node5',
-                          value: 'Child Node5',
-                          key: '0-1-2',
-                        },
-                      ],
-                    },
-                  ]"
-                  :multiple="true"
-                  :tree-checkable="true"
-                  @change="onEle1E0E60A251Ce4B16A2A23B1Df6079Cf3Change"
-                  class="ele-1e0e60a2-51ce-4b16-a2a2-3b1df6079cf3"
-                >
-                </hm-ant-tree-select>
-              </div>
               <div class="ele-wrapper ele-wrapper-treeSelect">
-                <hm-ant-cascader
+                <hm-ant-tree-select
                   ref="treeSelect"
                   v-model:value="treeSelect.value"
                   title=""
-                  :options="treeSelect.options"
-                  width="500px"
+                  v-model:tree-data="treeSelect.treeData"
+                  :multiple="true"
+                  :tree-checkable="true"
                   @change="onTreeSelectChange"
                   class="ele-treeSelect"
                 >
-                </hm-ant-cascader>
+                </hm-ant-tree-select>
               </div>
               <div class="ele-wrapper ele-wrapper-activityStoreTag">
                 <hm-ant-tag
@@ -810,7 +761,6 @@ import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmActivityList from "/@/components/decathlon-spring-festivalactivities-web/hm-activity-list/index.vue";
 import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmAntTreeSelect from "/@/components/built-in/jeecg/HmAntTreeSelect.vue";
-import HmAntCascader from "/@/components/built-in/jeecg/HmAntCascader.vue";
 import HmAntTag from "/@/components/built-in/jeecg/HmAntTag.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
@@ -838,7 +788,6 @@ export default {
     HmActivityList,
     HmAntInput,
     HmAntTreeSelect,
-    HmAntCascader,
     HmAntTag,
     HmAntSwitch,
   },
@@ -1025,41 +974,45 @@ export default {
         visible: true,
       },
       treeSelect: {
-        options: [
+        options: null,
+        value: null,
+        treeData: [
           {
-            value: "zhejiang",
-            label: "Zhejiang",
+            title: "Node1",
+            value: "Node1",
+            key: "0-0",
             children: [
               {
-                value: "hangzhou",
-                label: "Hangzhou",
-                children: [
-                  {
-                    value: "xihu",
-                    label: "West Lake",
-                  },
-                ],
+                title: "Child Node1",
+                value: "Child Node1",
+                key: "0-0-0",
               },
             ],
           },
           {
-            value: "jiangsu",
-            label: "Jiangsu",
+            title: "Node2",
+            value: "Node2",
+            key: "0-1",
             children: [
               {
-                value: "nanjing",
-                label: "Nanjing",
-                children: [
-                  {
-                    value: "zhonghuamen",
-                    label: "Zhong Hua Men",
-                  },
-                ],
+                title: "Child Node3",
+                value: "Child Node3",
+                key: "0-1-0",
+                disabled: "true",
+              },
+              {
+                title: "Child Node4",
+                value: "Child Node4",
+                key: "0-1-1",
+              },
+              {
+                title: "Child Node5",
+                value: "Child Node5",
+                key: "0-1-2",
               },
             ],
           },
         ],
-        value: [],
       },
       activityStoreTag: {
         ctagList: [
@@ -1481,46 +1434,6 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "1e0e60a2-51ce-4b16-a2a2-3b1df6079cf3": {
-        value: null,
-        treeData: [
-          {
-            title: "Node1",
-            value: "Node1",
-            key: "0-0",
-            children: [
-              {
-                title: "Child Node1",
-                value: "Child Node1",
-                key: "0-0-0",
-              },
-            ],
-          },
-          {
-            title: "Node2",
-            value: "Node2",
-            key: "0-1",
-            children: [
-              {
-                title: "Child Node3",
-                value: "Child Node3",
-                key: "0-1-0",
-                disabled: "true",
-              },
-              {
-                title: "Child Node4",
-                value: "Child Node4",
-                key: "0-1-1",
-              },
-              {
-                title: "Child Node5",
-                value: "Child Node5",
-                key: "0-1-2",
-              },
-            ],
-          },
-        ],
-      },
     };
   },
   watch: {},
@@ -1900,10 +1813,6 @@ export default {
     onAddStoreScopeCancel() {
       this.addStoreScope.visible = false;
     },
-    onEle1E0E60A251Ce4B16A2A23B1Df6079Cf3Change(e) {
-      console.log("e", e);
-      this.setTag(e);
-    },
     onTreeSelectChange(e) {
       console.log("e", e);
       this.setTag(e);
@@ -2127,15 +2036,8 @@ export default {
   width: 60%;
 }
 
-.ele-wrapper-1e0e60a2-51ce-4b16-a2a2-3b1df6079cf3 {
-  width: 100%;
-}
-
 .ele-wrapper-treeSelect {
   width: 100%;
-  /deep/.ant-cascader-picker {
-    width: 85%;
-  }
 }
 
 .ele-wrapper-activityStoreTag {
