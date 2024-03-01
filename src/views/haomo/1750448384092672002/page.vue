@@ -672,6 +672,7 @@
                     },
                   ]"
                   :multiple="true"
+                  :tree-checkable="true"
                   class="ele-1e0e60a2-51ce-4b16-a2a2-3b1df6079cf3"
                 >
                 </hm-ant-tree-select>
