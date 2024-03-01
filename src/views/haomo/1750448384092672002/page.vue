@@ -524,6 +524,7 @@
               :cancel-button-props="false"
               width="720px"
               :z-index="997"
+              height=""
               :style="StoreConfigurationPopupFrame.style"
             >
               <div
