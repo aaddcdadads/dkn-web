@@ -1815,7 +1815,6 @@ export default {
     },
     onTreeSelectChange(e) {
       console.log("e", e);
-      this.setTag(e);
     },
     onActivityStoreTagClose(e) {
       console.log("e", e);
