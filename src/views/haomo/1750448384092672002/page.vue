@@ -974,9 +974,8 @@ export default {
         visible: false,
       },
       treeSelect: {
-        options: null,
-        value: null,
         treeData: [],
+        value: null,
       },
       activityStoreTag: {
         ctagList: [
@@ -1547,7 +1546,7 @@ export default {
             children,
           };
         });
-        self.treeSelect.options = list;
+        self.treeSelect.treeData = list;
         self.storeList = l;
       };
       self.getTreeSelect();
