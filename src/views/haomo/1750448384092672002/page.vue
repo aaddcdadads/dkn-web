@@ -1574,14 +1574,14 @@ export default {
         });
       };
       self.addActivityStore = async function () {
-        if (self.activityStoreTagList.length == 0) {
-          self.$message.error("请选择门店");
-          return;
-        }
-        const params = self.activityStoreTagList.map((e) => {
+        //if (self.activityStoreTagList.length == 0) {
+        //  self.$message.error("请选择门店")
+        //  return
+        //}
+        const params = self.treeSelect.value.map((e) => {
           return {
             activityId: self.activityId,
-            storeId: e.id,
+            storeId: e,
           };
         });
         let url = "/api/dkn/activityStore/addBatch";
