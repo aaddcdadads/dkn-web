@@ -971,7 +971,7 @@ export default {
         type: "primary",
       },
       addStoreScope: {
-        visible: true,
+        visible: false,
       },
       treeSelect: {
         options: null,
