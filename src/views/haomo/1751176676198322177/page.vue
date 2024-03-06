@@ -1363,6 +1363,11 @@ export default {
       activityProjectTable: {
         columns: [
           {
+            dataIndex: "sortNo",
+            title: "排序",
+            key: "sortNo",
+          },
+          {
             customRender: function (data) {
               return h(HmAntIconText, {
                 fontSize: "14px",
@@ -1423,11 +1428,6 @@ export default {
             title: "项目简介",
             key: "synopsis",
             ellipsis: true,
-          },
-          {
-            dataIndex: "sortNo",
-            title: "排序",
-            key: "sortNo",
           },
           {
             slots: {
