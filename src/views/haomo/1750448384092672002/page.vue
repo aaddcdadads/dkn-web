@@ -1351,6 +1351,13 @@ export default {
             type: "link",
           },
           {
+            name: "渠道配置",
+            callback: function (item) {
+              console.log("渠道配置");
+            },
+            type: "link",
+          },
+          {
             name: "报名列表",
             callback: function (item) {
               self.$router.push({
@@ -1382,6 +1389,13 @@ export default {
               //self.$nextTick(function() {
               //  self.activityEditForm.value = item;;
               //});
+            },
+            type: "link",
+          },
+          {
+            name: "参与列表",
+            callback: function (item) {
+              console.log("参与列表");
             },
             type: "link",
           },
