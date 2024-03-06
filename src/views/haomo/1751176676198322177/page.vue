@@ -79,13 +79,13 @@
                   <div class="ele-wrapper ele-wrapper-activityForm">
                     <hm-ant-formily
                       ref="activityForm"
-                      :schema="activityForm.schema"
-                      :wrapper-col="16"
-                      :col-num="0"
-                      :label-col="5"
-                      :col-min-width="380"
                       :config="activityForm.config"
                       v-model:value="activityForm.value"
+                      :col-num="0"
+                      :col-min-width="380"
+                      :schema="activityForm.schema"
+                      :label-col="5"
+                      :wrapper-col="16"
                       class="ele-activityForm"
                     >
                     </hm-ant-formily>
@@ -981,29 +981,16 @@ export default {
     let self = this;
     return {
       activityForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
+          name: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动名称",
+            required: true,
+            props: {},
+          },
           epithet: {
             style: {
               width: "100%",
@@ -1013,12 +1000,12 @@ export default {
             required: false,
             props: {},
           },
-          name: {
+          cycle: {
             style: {
               width: "100%",
             },
-            type: "Input",
-            title: "活动名称",
+            type: "RangePicker",
+            title: "活动周期",
             required: true,
             props: {},
           },
@@ -1032,15 +1019,6 @@ export default {
             props: {
               showTime: true,
             },
-          },
-          cycle: {
-            style: {
-              width: "100%",
-            },
-            type: "RangePicker",
-            title: "活动周期",
-            required: true,
-            props: {},
           },
           status: {
             default: 0,
@@ -1066,6 +1044,28 @@ export default {
         },
         value: {
           status: 0,
+        },
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
         },
       },
       addproject: {
