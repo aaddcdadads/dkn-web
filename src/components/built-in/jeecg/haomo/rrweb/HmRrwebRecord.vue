@@ -4,6 +4,7 @@
 
 <script>
 import * as rrweb from "rrweb";
+import { ifvisible } from '@rosskevin/ifvisible'
 
 export default {
   name: "HmRrwebRecord",
@@ -52,6 +53,13 @@ export default {
       type: Boolean,
       default: true
     },
+    /**
+     * 进入idle时长
+     */
+    idleDuration: {
+      type: Number,
+      default: 180
+    }
   },
   data() {
     return {
@@ -61,8 +69,7 @@ export default {
       cParams: {},
       events: [],
       cRouteStop: true,
-      // 当前页面在浏览器里是否可见
-      pageVisible: true
+
     };
   },
   watch: {
@@ -92,8 +99,7 @@ export default {
     //this.start();
     this.currentRoute = this.$route.path;
 
-    // 监听visibilitychange事件
-    document.addEventListener('visibilitychange', this.handleVisibilityChange);
+    ifvisible.setIdleDuration(this.idleDuration || 180);
   },
   methods: {
     start: function (e) {
@@ -106,8 +112,8 @@ export default {
           }
 
           // 如果当前页面在浏览器里未显示（隐藏tab页），则不记录任何操作
-          if (self.pageVisible === false) {
-            console.log(`页面未显示，rrweb停止记录事件`);
+          if (ifvisible.now('hidden') || ifvisible.now('idle')) {
+            console.log(`页面不活跃，rrweb停止记录事件`);
             return;
           }
 
@@ -185,20 +191,10 @@ export default {
         }
       });
     },
-    handleVisibilityChange: function () {
-      if (document.visibilityState === 'visible') {
-        this.pageVisible = true;
-      } else {
-        this.pageVisible = false;
-      }
-    }
   },
   destroyed(e) {
     // 停止循环定时
     clearInterval(this.recordInterval);
-
-    // 移除页面监听事件
-    document.removeEventListener('visibilitychange', this.handleVisibilityChange);
   },
 };
 </script>

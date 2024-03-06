@@ -179,11 +179,11 @@
                         class="ele-wrapper ele-wrapper-678d6f52-6548-4f95-b813-d079ff38bb6f"
                       >
                         <hm-bg-card
-                          box-shadow-blur=""
-                          box-shadow-v-shadow=""
-                          border-radius=""
                           width="100%"
                           height="100%"
+                          border-radius=""
+                          box-shadow-v-shadow=""
+                          box-shadow-blur=""
                           class="ele-678d6f52-6548-4f95-b813-d079ff38bb6f"
                         >
                           <div
@@ -501,9 +501,9 @@
                             class="ele-wrapper ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48"
                           >
                             <hm-ant-bg-text
-                              padding="2"
-                              font-size="14px"
                               text="活动信息"
+                              font-size="14px"
+                              padding="2"
                               class="ele-633b539d-81dc-4e94-af68-dfba9182db48"
                             >
                             </hm-ant-bg-text>
@@ -522,10 +522,10 @@
                                 class="ele-wrapper ele-wrapper-e422be72-923b-42ad-bef4-7e886c910422"
                               >
                                 <hm-ant-bg-text
-                                  padding="2"
-                                  font-size="14px"
                                   text="活动规则："
+                                  font-size="14px"
                                   :text-align="'right'"
+                                  padding="2"
                                   :enable-html-render="true"
                                   class="ele-e422be72-923b-42ad-bef4-7e886c910422"
                                 >
@@ -537,10 +537,10 @@
                                 <hm-wang-editor
                                   ref="activityRules"
                                   :mode="'simple'"
-                                  :max-content-length="2"
-                                  :editor-config="activityRules.editorConfig"
                                   v-model:value="activityRules.value"
                                   :toolbar-config="activityRules.toolbarConfig"
+                                  :editor-config="activityRules.editorConfig"
+                                  :max-content-length="2"
                                   @change="onActivityRulesChange"
                                   class="ele-activityRules"
                                 >
@@ -834,11 +834,11 @@
                     class="ele-wrapper ele-wrapper-cf8baab6-8c0a-4974-95ba-4c9e67749519"
                   >
                     <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
                       width="100%"
                       height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
                       class="ele-cf8baab6-8c0a-4974-95ba-4c9e67749519"
                     >
                       <div
@@ -884,17 +884,121 @@
                       <div class="ele-wrapper ele-wrapper-sharingImageTable">
                         <hm-ant-table
                           ref="sharingImageTable"
-                          :is-flat-action="sharingImageTable.isFlatAction"
-                          :get-data-map="sharingImageTable.getDataMap"
-                          :data="sharingImageTable.data"
                           :columns="sharingImageTable.columns"
-                          :row-class-name="sharingImageTable.rowClassName"
+                          :data="sharingImageTable.data"
                           :pagination-hidden="
                             sharingImageTable.paginationHidden
                           "
+                          :get-data-map="sharingImageTable.getDataMap"
                           :actions="sharingImageTable.actions"
+                          :is-flat-action="sharingImageTable.isFlatAction"
+                          :row-class-name="sharingImageTable.rowClassName"
                         >
                         </hm-ant-table>
+                      </div>
+                      <div
+                        class="ele-wrapper ele-wrapper-68ad2c49-1e8e-4aaa-8c65-7bb1268ad2c1"
+                      >
+                        <hm-ant-bg-text
+                          text="活动信息"
+                          font-size="14px"
+                          padding="2"
+                          class="ele-68ad2c49-1e8e-4aaa-8c65-7bb1268ad2c1"
+                        >
+                        </hm-ant-bg-text>
+                      </div>
+                    </hm-bg-card>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-d5a8bc0c-0036-4449-8519-430c556ce236"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      class="ele-d5a8bc0c-0036-4449-8519-430c556ce236"
+                    >
+                      <div
+                        class="ele-wrapper ele-wrapper-7bd3d144-f35d-4dac-aff1-06db6231e523"
+                      >
+                        <hm-ant-bg-text
+                          text="活动规则："
+                          font-size="14px"
+                          padding="2"
+                          class="ele-7bd3d144-f35d-4dac-aff1-06db6231e523"
+                        >
+                        </hm-ant-bg-text>
+                      </div>
+                      <div
+                        class="ele-wrapper ele-wrapper-a8009497-6250-4645-a850-97907cfbdabb"
+                      >
+                        <hm-wang-editor
+                          value=""
+                          :toolbar-config="{
+                            excludeKeys: [],
+                            toolbarKeys: [
+                              'blockquote',
+                              'bold',
+                              'underline',
+                              'italic',
+                              'color',
+                              'bgColor',
+                              'undo',
+                              'redo',
+                              'emotion',
+                              'insertLink',
+                              'fullScreen',
+                              {
+                                iconSvg:
+                                  '<svg viewBox=&quot;0 0 1024 1024&quot;><path d=&quot;M959.877 128l0.123 0.123v767.775l-0.123 0.122H64.102l-0.122-0.122V128.123l0.122-0.123h895.775zM960 64H64C28.795 64 0 92.795 0 128v768c0 35.205 28.795 64 64 64h896c35.205 0 64-28.795 64-64V128c0-35.205-28.795-64-64-64zM832 288.01c0 53.023-42.988 96.01-96.01 96.01s-96.01-42.987-96.01-96.01S682.967 192 735.99 192 832 234.988 832 288.01zM896 832H128V704l224.01-384 256 320h64l224.01-192z&quot;></path></svg>',
+                                title: '图片',
+                                menuKeys: ['insertImage', 'uploadImage'],
+                                key: 'group-image',
+                              },
+                              'fontSize',
+                              'fontFamily',
+                              'lineHeight',
+                              {
+                                title: '更多',
+                                menuKeys: [
+                                  'through',
+                                  'code',
+                                  'sup',
+                                  'sub',
+                                  'clearStyle',
+                                ],
+                                key: 'group-more-style',
+                              },
+                              'bulletedList',
+                              'numberedList',
+                              'headerSelect',
+                              {
+                                title: '对齐',
+                                menuKeys: [
+                                  'justifyLeft',
+                                  'justifyRight',
+                                  'justifyCenter',
+                                  'justifyJustify',
+                                ],
+                                key: 'group-justify',
+                              },
+                              {
+                                title: '缩进',
+                                menuKeys: ['indent', 'delIndent'],
+                                key: 'group-indent',
+                              },
+                              'todo',
+                              'divider',
+                              'codeBlock',
+                              'insertTable',
+                            ],
+                          }"
+                          :max-content-length="2"
+                          class="ele-a8009497-6250-4645-a850-97907cfbdabb"
+                        >
+                        </hm-wang-editor>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -906,9 +1010,9 @@
             class="ele-wrapper ele-wrapper-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6"
           >
             <hm-bg-card
-              border-radius=""
               width="100%"
               height="100%"
+              border-radius=""
               :text-align="'center'"
               class="ele-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6"
             >
@@ -1324,24 +1428,6 @@ export default {
       activityImgTableTwoItem: {},
       activityRules: {
         value: "",
-        editorConfig: {
-          MENU_CONF: {
-            uploadImage: {
-              server: "/api/upload",
-              headers: {},
-              fieldName: "file",
-            },
-            uploadVideo: {
-              server: "/api/upload",
-              headers: {},
-              fieldName: "file",
-            },
-          },
-          scroll: true,
-          readOnly: false,
-          placeholder: "请输入...",
-          autoFocus: true,
-        },
         toolbarConfig: {
           excludeKeys: [],
           toolbarKeys: [
@@ -1394,6 +1480,24 @@ export default {
             "codeBlock",
             "insertTable",
           ],
+        },
+        editorConfig: {
+          MENU_CONF: {
+            uploadImage: {
+              server: "/api/upload",
+              headers: {},
+              fieldName: "file",
+            },
+            uploadVideo: {
+              server: "/api/upload",
+              headers: {},
+              fieldName: "file",
+            },
+          },
+          scroll: true,
+          readOnly: false,
+          placeholder: "请输入...",
+          autoFocus: true,
         },
       },
       agreementCommitmentletter: {
@@ -1884,17 +1988,6 @@ export default {
         },
       },
       sharingImageTable: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [
-          {
-            customRender: "",
-            imgSize: "375 * 607",
-          },
-        ],
         columns: [
           {
             customRender: function (data) {
@@ -1935,8 +2028,17 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [
+          {
+            customRender: "",
+            imgSize: "375 * 607",
+          },
+        ],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1948,6 +2050,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityImgFormTre: {
         schema: {
@@ -1987,6 +2091,62 @@ export default {
           },
         },
         value: {},
+      },
+      "a8009497-6250-4645-a850-97907cfbdabb": {
+        value: "",
+        toolbarConfig: {
+          excludeKeys: [],
+          toolbarKeys: [
+            "blockquote",
+            "bold",
+            "underline",
+            "italic",
+            "color",
+            "bgColor",
+            "undo",
+            "redo",
+            "emotion",
+            "insertLink",
+            "fullScreen",
+            {
+              iconSvg:
+                '<svg viewBox="0 0 1024 1024"><path d="M959.877 128l0.123 0.123v767.775l-0.123 0.122H64.102l-0.122-0.122V128.123l0.122-0.123h895.775zM960 64H64C28.795 64 0 92.795 0 128v768c0 35.205 28.795 64 64 64h896c35.205 0 64-28.795 64-64V128c0-35.205-28.795-64-64-64zM832 288.01c0 53.023-42.988 96.01-96.01 96.01s-96.01-42.987-96.01-96.01S682.967 192 735.99 192 832 234.988 832 288.01zM896 832H128V704l224.01-384 256 320h64l224.01-192z"></path></svg>',
+              title: "图片",
+              menuKeys: ["insertImage", "uploadImage"],
+              key: "group-image",
+            },
+            "fontSize",
+            "fontFamily",
+            "lineHeight",
+            {
+              title: "更多",
+              menuKeys: ["through", "code", "sup", "sub", "clearStyle"],
+              key: "group-more-style",
+            },
+            "bulletedList",
+            "numberedList",
+            "headerSelect",
+            {
+              title: "对齐",
+              menuKeys: [
+                "justifyLeft",
+                "justifyRight",
+                "justifyCenter",
+                "justifyJustify",
+              ],
+              key: "group-justify",
+            },
+            {
+              title: "缩进",
+              menuKeys: ["indent", "delIndent"],
+              key: "group-indent",
+            },
+            "todo",
+            "divider",
+            "codeBlock",
+            "insertTable",
+          ],
+        },
       },
     };
   },
@@ -2616,6 +2776,31 @@ export default {
 .ele-wrapper-sharingImageSettings {
   /deep/.hm-modal {
     min-height: 0px;
+  }
+}
+
+.ele-wrapper-68ad2c49-1e8e-4aaa-8c65-7bb1268ad2c1 {
+  border-left: 4px solid #0079fe;
+  margin-top: 15px;
+  padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
+}
+
+.ele-wrapper-d5a8bc0c-0036-4449-8519-430c556ce236 {
+  width: 100%;
+}
+
+.ele-wrapper-7bd3d144-f35d-4dac-aff1-06db6231e523 {
+  width: 20.8%;
+  text-align: right;
+}
+
+.ele-wrapper-a8009497-6250-4645-a850-97907cfbdabb {
+  width: 72%;
+  /deep/.w-e-scroll {
+    height: 120px;
   }
 }
 
