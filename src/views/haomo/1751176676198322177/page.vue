@@ -2344,7 +2344,7 @@ export default {
 
 .ele-wrapper-2b650687-b88f-4fe2-a2a3-f29ff7bf53b3 {
   border-left: 4px solid #0079fe;
-  margin-top: 15px;
+  margin-top: 20px;
   padding-left: 5px;
   .hm-bg-text {
     font-weight: 700;
