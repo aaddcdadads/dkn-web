@@ -1371,7 +1371,7 @@ export default {
             name: "查看详情",
             callback: function (item) {
               self.$router.push({
-                path: `/haomo/1751436264696975361/page`,
+                path: `/haomo/1765266373170171906/page`,
                 query: { type: 3, id: item.id },
               });
             },
