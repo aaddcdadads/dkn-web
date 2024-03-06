@@ -2283,7 +2283,7 @@ export default {
     text-align: right;
   }
   /deep/.ant-input-class {
-    width: 68%;
+    width: 67.5%;
   }
 }
 
