@@ -395,6 +395,31 @@
                                 class="ele-wrapper ele-wrapper-96bb95ad-bddc-4f8d-acc8-0ddcad8a20d4"
                               >
                                 <hm-ant-table
+                                  :columns="[
+                                    {
+                                      title: '核销轮次',
+                                      dataIndex: 'verificationround',
+                                      key: 'verificationround',
+                                    },
+                                    {
+                                      title: '轮次名称',
+                                      dataIndex: 'roundname',
+                                      key: 'roundname',
+                                      width: 80,
+                                    },
+                                    {
+                                      title: '可核销时间段',
+                                      dataIndex: 'verifiabletime',
+                                      key: 'verifiabletime',
+                                    },
+                                    {
+                                      title: '操作',
+                                      dataIndex: '',
+                                      key: 'action',
+                                      slots: { customRender: 'action' },
+                                    },
+                                  ]"
+                                  :data="[]"
                                   :actions="[
                                     {
                                       name: '编辑',
