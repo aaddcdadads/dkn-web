@@ -875,7 +875,7 @@ export default {
             required: true,
             props: {},
           },
-          cycle: {
+          epithet: {
             style: {
               width: "100%",
             },
@@ -884,23 +884,21 @@ export default {
             required: false,
             props: {},
           },
+          cycle: {
+            style: {
+              width: "100%",
+            },
+            type: "RangePicker",
+            title: "活动周期",
+            required: true,
+            props: {},
+          },
           closeTime: {
             style: {
               width: "100%",
             },
             type: "DatePicker",
             title: "报名截止",
-            required: true,
-            props: {
-              showTime: true,
-            },
-          },
-          pickUpTime: {
-            style: {
-              width: "100%",
-            },
-            type: "RangePicker",
-            title: "核销周期",
             required: true,
             props: {
               showTime: true,
