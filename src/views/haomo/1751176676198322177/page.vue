@@ -46,12 +46,12 @@
           <div class="ele-wrapper ele-wrapper-message_1">
             <hm-bg-card
               ref="message_1"
-              padding=""
-              box-shadow-blur=""
-              box-shadow-v-shadow=""
-              border-radius=""
               width="100%"
               height="100%"
+              border-radius=""
+              padding=""
+              box-shadow-v-shadow=""
+              box-shadow-blur=""
               class="ele-message_1"
             >
               <div
@@ -297,11 +297,11 @@
                             class="ele-wrapper ele-wrapper-e3996ba6-7678-4de0-abea-832a2097c2c9"
                           >
                             <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
                               width="100%"
                               height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
                               class="ele-e3996ba6-7678-4de0-abea-832a2097c2c9"
                             >
                               <div
@@ -334,12 +334,36 @@
                             </hm-bg-card>
                           </div>
                           <div
+                            class="ele-wrapper ele-wrapper-aaba946a-d941-4abc-85fe-15bc805b4457"
+                          >
+                            <hm-bg-card
+                              width="100%"
+                              height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
+                              class="ele-aaba946a-d941-4abc-85fe-15bc805b4457"
+                            >
+                              <div
+                                class="ele-wrapper ele-wrapper-cb320e37-bd6b-4901-9a10-6de43f0b51c9"
+                              >
+                                <hm-ant-bg-text
+                                  text="活动地址"
+                                  font-size="14px"
+                                  padding="2"
+                                  class="ele-cb320e37-bd6b-4901-9a10-6de43f0b51c9"
+                                >
+                                </hm-ant-bg-text>
+                              </div>
+                            </hm-bg-card>
+                          </div>
+                          <div
                             class="ele-wrapper ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48"
                           >
                             <hm-ant-bg-text
-                              padding="2"
-                              font-size="14px"
                               text="活动信息"
+                              font-size="14px"
+                              padding="2"
                               class="ele-633b539d-81dc-4e94-af68-dfba9182db48"
                             >
                             </hm-ant-bg-text>
@@ -448,11 +472,11 @@
               <div class="ele-wrapper ele-wrapper-message_2">
                 <hm-bg-card
                   ref="message_2"
-                  box-shadow-blur=""
-                  box-shadow-v-shadow=""
-                  border-radius=""
                   width="100%"
                   height="100%"
+                  border-radius=""
+                  box-shadow-v-shadow=""
+                  box-shadow-blur=""
                   class="ele-message_2"
                 >
                   <div
@@ -742,9 +766,9 @@
             class="ele-wrapper ele-wrapper-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6"
           >
             <hm-bg-card
-              border-radius=""
               width="100%"
               height="100%"
+              border-radius=""
               :text-align="'center'"
               class="ele-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6"
             >
@@ -752,10 +776,10 @@
                 class="ele-wrapper ele-wrapper-78fb2568-9250-4a78-987d-c766b916f771"
               >
                 <hm-ant-button
-                  :size="'large'"
-                  icon="fa fa-check-circle"
                   text="创建活动"
                   :type="'primary'"
+                  :size="'large'"
+                  icon="fa fa-check-circle"
                   @click="onEle78Fb256892504A78987DC766B916F771Click"
                   class="ele-78fb2568-9250-4a78-987d-c766b916f771"
                 >
@@ -2204,6 +2228,19 @@ export default {
 .ele-wrapper-activityExtTwoForm {
   width: 100%;
   margin-top: 20px;
+}
+
+.ele-wrapper-aaba946a-d941-4abc-85fe-15bc805b4457 {
+  width: 100%;
+}
+
+.ele-wrapper-cb320e37-bd6b-4901-9a10-6de43f0b51c9 {
+  border-left: 4px solid #0079fe;
+  margin-top: 15px;
+  padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
 }
 
 .ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
