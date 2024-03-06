@@ -2279,7 +2279,7 @@ export default {
   width: 100%;
   margin-top: 20px;
   /deep/.input-title {
-    width: 18%;
+    width: 19%;
     text-align: right;
   }
   /deep/.ant-input-class {
