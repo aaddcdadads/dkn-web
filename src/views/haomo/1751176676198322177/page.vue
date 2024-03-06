@@ -405,7 +405,6 @@
                                       title: '轮次名称',
                                       dataIndex: 'roundname',
                                       key: 'roundname',
-                                      width: 80,
                                     },
                                     {
                                       title: '可核销时间段',
