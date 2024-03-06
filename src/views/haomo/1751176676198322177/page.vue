@@ -2195,6 +2195,9 @@ export default {
   /deep/.ant-table-thead > tr > th > span {
     padding-left: 0px !important;
   }
+  /deep/..ant-table-thead > tr > th {
+    text-align: center;
+  }
 }
 
 .ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6 {
