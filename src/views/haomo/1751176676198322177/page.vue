@@ -371,7 +371,7 @@
                                   >
                                     <hm-ant-input
                                       value=""
-                                      title="活动地址："
+                                      title="活动地址"
                                       width="480"
                                       class="ele-50b478d3-db63-4dbe-b2b3-968844df7bfe"
                                     >
