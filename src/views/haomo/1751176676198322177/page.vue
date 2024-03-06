@@ -691,9 +691,9 @@
                     class="ele-wrapper ele-wrapper-cb6694c4-1a06-4212-a50f-7d72ce02ce68"
                   >
                     <hm-ant-bg-text
-                      padding="2"
+                      text="活动参与人数信息修改（虚拟人数，实际显示人数为实际报名+虚拟人数）"
                       font-size="14px"
-                      text="活动参与人数信息修改"
+                      padding="2"
                       class="ele-cb6694c4-1a06-4212-a50f-7d72ce02ce68"
                     >
                     </hm-ant-bg-text>
