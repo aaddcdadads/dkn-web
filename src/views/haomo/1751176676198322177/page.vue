@@ -464,18 +464,35 @@
                                 class="ele-wrapper ele-wrapper-32f73ba3-e652-4fd6-856c-d1d40436effc"
                               >
                                 <hm-ant-table
+                                  :columns="[
+                                    {
+                                      title: '字段名',
+                                      dataIndex: 'school',
+                                      key: 'school',
+                                      ellipsis: true,
+                                    },
+                                    {
+                                      title: '操作',
+                                      dataIndex: '',
+                                      key: 'action',
+                                      slots: { customRender: 'action' },
+                                    },
+                                  ]"
                                   :actions="[
                                     {
                                       name: '编辑',
                                       callback:
                                         'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                                      type: 'link',
                                     },
                                     {
                                       name: '删除',
                                       callback:
                                         'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                                      type: 'link',
                                     },
                                   ]"
+                                  :is-flat-action="true"
                                   :row-class-name="{}"
                                 >
                                 </hm-ant-table>
