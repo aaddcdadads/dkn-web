@@ -497,16 +497,6 @@
                               </div>
                             </hm-bg-card>
                           </div>
-                          <div class="ele-wrapper ele-wrapper-customerService">
-                            <hm-ant-input
-                              ref="customerService"
-                              v-model:value="customerService.value"
-                              title="活动咨询客服"
-                              width="480"
-                              class="ele-customerService"
-                            >
-                            </hm-ant-input>
-                          </div>
                         </hm-bg-card>
                       </div>
                     </hm-bg-card>
@@ -1447,9 +1437,7 @@ export default {
           ],
         },
       },
-      customerService: {
-        value: "",
-      },
+      customerService: {},
       activityProjectTable: {
         isFlatAction: true,
         getDataMap: {
@@ -2391,18 +2379,6 @@ export default {
 .ele-wrapper-2a08a42c-a92e-46de-8f8d-b5724cfc40ea {
   margin-left: 5px;
   margin-top: 15px;
-}
-
-.ele-wrapper-customerService {
-  width: 100%;
-  margin-top: 20px;
-  /deep/.input-title {
-    width: 19.8%;
-    text-align: right;
-  }
-  /deep/.ant-input-class {
-    width: 71%;
-  }
 }
 
 .ele-wrapper-message_2 {
