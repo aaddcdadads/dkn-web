@@ -380,6 +380,30 @@
                                   </div>
                                 </hm-bg-card>
                               </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-2b650687-b88f-4fe2-a2a3-f29ff7bf53b3"
+                              >
+                                <hm-ant-bg-text
+                                  text="活动核销轮次设置（最多可设置3轮，至少1轮每轮时间段不允许出现重叠）"
+                                  font-size="14px"
+                                  padding="2"
+                                  class="ele-2b650687-b88f-4fe2-a2a3-f29ff7bf53b3"
+                                >
+                                </hm-ant-bg-text>
+                              </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-bbbf6821-3f7d-4cb1-b78a-bf148c7b5364"
+                              >
+                                <hm-bg-card
+                                  width="100%"
+                                  height="100%"
+                                  border-radius=""
+                                  box-shadow-v-shadow=""
+                                  box-shadow-blur=""
+                                  class="ele-bbbf6821-3f7d-4cb1-b78a-bf148c7b5364"
+                                >
+                                </hm-bg-card>
+                              </div>
                             </hm-bg-card>
                           </div>
                           <div
@@ -2281,6 +2305,19 @@ export default {
   /deep/.ant-input-class {
     width: 67.5%;
   }
+}
+
+.ele-wrapper-2b650687-b88f-4fe2-a2a3-f29ff7bf53b3 {
+  border-left: 4px solid #0079fe;
+  margin-top: 15px;
+  padding-left: 5px;
+  .hm-bg-text {
+    font-weight: 700;
+  }
+}
+
+.ele-wrapper-bbbf6821-3f7d-4cb1-b78a-bf148c7b5364 {
+  width: 100%;
 }
 
 .ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
