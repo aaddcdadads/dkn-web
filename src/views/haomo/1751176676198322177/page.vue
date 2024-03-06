@@ -355,6 +355,19 @@
                                 >
                                 </hm-ant-bg-text>
                               </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-d873ccb8-7e59-4395-bcfc-8e2f4e73088a"
+                              >
+                                <hm-bg-card
+                                  width="100%"
+                                  height="100%"
+                                  border-radius=""
+                                  box-shadow-v-shadow=""
+                                  box-shadow-blur=""
+                                  class="ele-d873ccb8-7e59-4395-bcfc-8e2f4e73088a"
+                                >
+                                </hm-bg-card>
+                              </div>
                             </hm-bg-card>
                           </div>
                           <div
@@ -2241,6 +2254,10 @@ export default {
   .hm-bg-text {
     font-weight: 700;
   }
+}
+
+.ele-wrapper-d873ccb8-7e59-4395-bcfc-8e2f4e73088a {
+  width: 100%;
 }
 
 .ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
