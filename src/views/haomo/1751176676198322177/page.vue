@@ -879,9 +879,9 @@ export default {
             style: {
               width: "100%",
             },
-            type: "RangePicker",
-            title: "活动周期",
-            required: true,
+            type: "Input",
+            title: "活动别称",
+            required: false,
             props: {},
           },
           closeTime: {
