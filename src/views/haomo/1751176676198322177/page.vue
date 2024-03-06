@@ -596,9 +596,9 @@
                           <div class="ele-wrapper ele-wrapper-customerService">
                             <hm-ant-input
                               ref="customerService"
-                              width="480"
-                              title="活动咨询客服"
                               v-model:value="customerService.value"
+                              title="活动咨询客服"
+                              width="480"
                               class="ele-customerService"
                             >
                             </hm-ant-input>
@@ -1092,6 +1092,30 @@
                           class="ele-3ace06d9-2eb5-476d-8846-44435a0adedd"
                         >
                         </hm-wang-editor>
+                      </div>
+                    </hm-bg-card>
+                  </div>
+                  <div
+                    class="ele-wrapper ele-wrapper-56d1d904-8eec-4ac8-a483-a0f3cd3a2d06"
+                  >
+                    <hm-bg-card
+                      width="100%"
+                      height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      class="ele-56d1d904-8eec-4ac8-a483-a0f3cd3a2d06"
+                    >
+                      <div
+                        class="ele-wrapper ele-wrapper-f041c0a3-345b-4faa-b97d-b09be000b6c8"
+                      >
+                        <hm-ant-input
+                          value=""
+                          title="活动咨询客服"
+                          width="480"
+                          class="ele-f041c0a3-345b-4faa-b97d-b09be000b6c8"
+                        >
+                        </hm-ant-input>
                       </div>
                     </hm-bg-card>
                   </div>
@@ -2297,6 +2321,9 @@ export default {
           ],
         },
       },
+      "f041c0a3-345b-4faa-b97d-b09be000b6c8": {
+        value: "",
+      },
     };
   },
   watch: {},
@@ -2966,6 +2993,22 @@ export default {
   width: 72%;
   /deep/.w-e-scroll {
     height: 120px;
+  }
+}
+
+.ele-wrapper-56d1d904-8eec-4ac8-a483-a0f3cd3a2d06 {
+  width: 100%;
+}
+
+.ele-wrapper-f041c0a3-345b-4faa-b97d-b09be000b6c8 {
+  width: 100%;
+  margin-top: 20px;
+  /deep/.input-title {
+    width: 19.8%;
+    text-align: right;
+  }
+  /deep/.ant-input-class {
+    width: 71%;
   }
 }
 
