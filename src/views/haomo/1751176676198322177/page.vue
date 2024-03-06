@@ -2277,6 +2277,14 @@ export default {
 
 .ele-wrapper-50b478d3-db63-4dbe-b2b3-968844df7bfe {
   width: 100%;
+  margin-top: 20px;
+  /deep/.input-title {
+    width: 19.8%;
+    text-align: right;
+  }
+  /deep/.ant-input-class {
+    width: 71%;
+  }
 }
 
 .ele-wrapper-633b539d-81dc-4e94-af68-dfba9182db48 {
