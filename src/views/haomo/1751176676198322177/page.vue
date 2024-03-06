@@ -444,9 +444,9 @@
                                 class="ele-wrapper ele-wrapper-71104b33-c64b-4cf7-9044-51db79ed2874"
                               >
                                 <hm-ant-bg-text
-                                  padding="2"
+                                  text="参与人信息配置（必填）"
                                   font-size="14px"
-                                  text="活动奖品设置（可为空）"
+                                  padding="2"
                                   class="ele-71104b33-c64b-4cf7-9044-51db79ed2874"
                                 >
                                 </hm-ant-bg-text>
