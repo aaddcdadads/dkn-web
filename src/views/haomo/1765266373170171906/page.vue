@@ -917,10 +917,10 @@
                 class="ele-wrapper ele-wrapper-78fb2568-9250-4a78-987d-c766b916f771"
               >
                 <hm-ant-button
+                  text="保存"
+                  :type="'primary'"
                   :size="'large'"
                   icon="fa fa-check-circle"
-                  text="创建活动"
-                  :type="'primary'"
                   @click="onEle78Fb256892504A78987DC766B916F771Click"
                   class="ele-78fb2568-9250-4a78-987d-c766b916f771"
                 >
@@ -930,11 +930,11 @@
                 class="ele-wrapper ele-wrapper-b0a42962-4301-4b4d-9525-05bfef232b34"
               >
                 <hm-ant-button
-                  :ghost="true"
-                  :size="'large'"
-                  icon="fa fa-repeat"
-                  text="重置"
+                  text="返回"
                   :type="'primary'"
+                  :size="'large'"
+                  :ghost="true"
+                  icon="fa fa-repeat"
                   @click="onEleb0A4296243014B4D952505Bfef232B34Click"
                   class="ele-b0a42962-4301-4b4d-9525-05bfef232b34"
                 >
