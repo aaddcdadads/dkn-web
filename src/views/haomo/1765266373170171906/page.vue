@@ -470,6 +470,9 @@
                                   text="添加"
                                   :type="'primary'"
                                   icon="fa fa-plus"
+                                  @click="
+                                    onEle2A08A42CA92E46De8F8DB5724Cfc40EaClick
+                                  "
                                   class="ele-2a08a42c-a92e-46de-8f8d-b5724cfc40ea"
                                 >
                                 </hm-ant-button>
@@ -1357,10 +1360,10 @@ export default {
       delActivityImgList: {},
       activityImgTableTwoItem: {},
       activityPickUpTableItem: {},
-      activityDictItemTableItem: {},
       activityDictItemModal: {
         visible: false,
       },
+      activityDictItemTableItem: {},
       activityImgTableOneItem: {},
       activityRules: {
         value: "",
@@ -2398,6 +2401,10 @@ export default {
     onActivityPickUpModalCancel() {
       this.activityPickUpModal.visible = false;
       this.$refs.activityPickUpForm.reset();
+    },
+    onEle2A08A42CA92E46De8F8DB5724Cfc40EaClick() {
+      this.activityDictItemModal.visible = true;
+      this.activityDictItemStatus = 1;
     },
     async onActivityDictItemModalOk() {
       let self = this;
