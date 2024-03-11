@@ -870,6 +870,7 @@
                             agreementCommitmentletter.toolbarConfig
                           "
                           :max-content-length="2"
+                          @change="onAgreementCommitmentletterChange"
                           class="ele-agreementCommitmentletter"
                         >
                         </hm-wang-editor>
@@ -2163,6 +2164,9 @@ export default {
     },
     onActivityRulesChange(e) {
       this.activityRules.value = e;
+    },
+    onAgreementCommitmentletterChange(e) {
+      this.agreementCommitmentletter.value = e;
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
       addActivty(this, arguments);
