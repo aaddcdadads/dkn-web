@@ -475,6 +475,12 @@
                                 </hm-ant-button>
                               </div>
                               <div
+                                class="ele-wrapper ele-wrapper-925b710e-aef5-4561-9a75-659a3c135859"
+                              >
+                                <hm-modal :visible="true" :z-index="1000">
+                                </hm-modal>
+                              </div>
+                              <div
                                 class="ele-wrapper ele-wrapper-32f73ba3-e652-4fd6-856c-d1d40436effc"
                               >
                                 <hm-ant-table
@@ -1782,6 +1788,9 @@ export default {
         ],
         isFlatAction: true,
         rowClassName: {},
+      },
+      "925b710e-aef5-4561-9a75-659a3c135859": {
+        visible: true,
       },
       address: {
         value: "",
