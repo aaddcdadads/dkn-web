@@ -1905,7 +1905,11 @@ export default {
                 value: "id",
               },
             },
-            validator: function (value) {},
+            events: {
+              "@change": function (e) {
+                console.log("e", e);
+              },
+            },
           },
         },
         value: {},
