@@ -413,6 +413,7 @@
                                   v-model:visible="activityPickUpModal.visible"
                                   :z-index="1000"
                                   :auto-close="false"
+                                  @ok="onActivityPickUpModalOk"
                                   class="ele-activityPickUpModal"
                                 >
                                   <div
@@ -1341,6 +1342,7 @@ export default {
       activityPickUpModal: {
         visible: false,
       },
+      activityPickUpTableItem: {},
       activityImgTableOneItem: {},
       activityRules: {
         value: "",
@@ -2287,6 +2289,41 @@ export default {
     onEle277Cb52C4Cb24Fd397252Aac9220C5BeClick() {
       this.activityPickUpModal.visible = true;
       this.activityPickUpStatus = 1;
+    },
+    async onActivityPickUpModalOk() {
+      let self = this;
+      await self.$refs.activityPickUpForm.validate();
+      let item = self.$refs.activityPickUpForm.getFormValues();
+      if (self.activityImgTableTwoStatus === 1) {
+        item.index = Math.floor(Math.random() * 10000);
+        self.$refs.activityPickUpTable.cData.push(item);
+      } else if (self.activityImgTableTwoStatus === 2) {
+        if (
+          self.activityPickUpTableItem.index ||
+          self.activityPickUpTableItem.index == 0
+        ) {
+          self.$refs.activityPickUpTable.cData.forEach((e, index) => {
+            if (e.index == self.activityPickUpTableItem.index) {
+              self.$refs.activityPickUpTable.cData[index] = {
+                index: self.activityPickUpTableItem.index,
+                ...item,
+              };
+            }
+          });
+        } else {
+          self.$refs.activityPickUpTable.cData.forEach((e, index) => {
+            if (e.id == self.activityPickUpTableItem.id) {
+              self.$refs.activityPickUpTable.cData[index] = {
+                index: self.activityPickUpTableItem.index,
+                ...e,
+                ...item,
+              };
+            }
+          });
+        }
+      }
+      self.activityPickUpModal.visible = false;
+      self.$refs.activityPickUpForm.reset();
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
