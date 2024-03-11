@@ -1365,6 +1365,7 @@ export default {
       activityDictItemModal: {
         visible: false,
       },
+      dictItem: {},
       activityDictItemTableItem: {},
       activityImgTableOneItem: {},
       activityRules: {
@@ -2435,6 +2436,7 @@ export default {
       let self = this;
       await self.$refs.activityDictItemForm.validate();
       let item = self.$refs.activityDictItemForm.getFormValues();
+      item.name = self.dictItem.itemText;
       if (self.activityDictItemStatus === 1) {
         item.index = Math.floor(Math.random() * 10000);
         self.$refs.activityDictItemTable.cData.push(item);
