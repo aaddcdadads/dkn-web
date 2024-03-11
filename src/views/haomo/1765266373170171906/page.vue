@@ -246,13 +246,13 @@
                               >
                                 <hm-ant-formily
                                   ref="addActivityImgFormTwo"
-                                  :schema="addActivityImgFormTwo.schema"
-                                  :wrapper-col="14"
-                                  :col-num="0"
-                                  :label-col="7"
-                                  :col-min-width="380"
                                   :config="addActivityImgFormTwo.config"
                                   v-model:value="addActivityImgFormTwo.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="addActivityImgFormTwo.schema"
+                                  :label-col="7"
+                                  :wrapper-col="14"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -337,11 +337,11 @@
                             class="ele-wrapper ele-wrapper-aaba946a-d941-4abc-85fe-15bc805b4457"
                           >
                             <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
                               width="100%"
                               height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
                               class="ele-aaba946a-d941-4abc-85fe-15bc805b4457"
                             >
                               <div
@@ -411,6 +411,64 @@
                                   :auto-close="false"
                                   class="ele-c0b1c2d9-784d-4fcd-afa3-6ba92dfd2aa8"
                                 >
+                                  <div
+                                    class="ele-wrapper ele-wrapper-35179c1e-5e52-4ea0-b218-73c4ab6b0d2e"
+                                  >
+                                    <hm-ant-formily
+                                      :config="{
+                                        sortNo: {
+                                          style: { width: '100%' },
+                                          type: 'InputNumber',
+                                          title: '奖品排序',
+                                          required: true,
+                                          props: { placeholder: '奖品序号' },
+                                        },
+                                        imgPath: {
+                                          style: { width: '100%' },
+                                          type: 'UploadImage',
+                                          title: '奖品图片',
+                                          required: true,
+                                          props: {
+                                            action: '/api/sys/common/upload',
+                                            accept: '.jpg,.png',
+                                          },
+                                        },
+                                        name: {
+                                          style: { width: '100%' },
+                                          type: 'Input',
+                                          title: '奖品名称',
+                                          required: true,
+                                          props: {
+                                            placeholder: '请输入奖品名称',
+                                          },
+                                        },
+                                      }"
+                                      :value="{}"
+                                      :col-num="0"
+                                      :col-min-width="380"
+                                      :schema="{
+                                        type: 'object',
+                                        properties: {
+                                          form: {
+                                            'x-component': 'Form',
+                                            'x-component-props': {
+                                              'wrapper-col': { span: 14 },
+                                              'label-col': { span: 7 },
+                                              style: {
+                                                flexWrap: 'wrap',
+                                                display: 'flex',
+                                              },
+                                            },
+                                            type: 'void',
+                                            properties: {},
+                                          },
+                                        },
+                                      }"
+                                      :label-col="7"
+                                      :wrapper-col="14"
+                                    >
+                                    </hm-ant-formily>
+                                  </div>
                                 </hm-modal>
                               </div>
                               <div
@@ -1260,6 +1318,7 @@ export default {
             },
           },
         },
+        value: {},
         schema: {
           type: "object",
           properties: {
@@ -1282,7 +1341,6 @@ export default {
             },
           },
         },
-        value: {},
       },
       addBackground: {
         visible: false,
@@ -1733,6 +1791,67 @@ export default {
       },
       address: {
         value: "",
+      },
+      "35179c1e-5e52-4ea0-b218-73c4ab6b0d2e": {
+        config: {
+          sortNo: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "奖品排序",
+            required: true,
+            props: {
+              placeholder: "奖品序号",
+            },
+          },
+          imgPath: {
+            style: {
+              width: "100%",
+            },
+            type: "UploadImage",
+            title: "奖品图片",
+            required: true,
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+          name: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "奖品名称",
+            required: true,
+            props: {
+              placeholder: "请输入奖品名称",
+            },
+          },
+        },
+        value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityImgTableOne: {
         columns: [
