@@ -488,10 +488,11 @@
                                   class="ele-activityDictItemModal"
                                 >
                                   <div
-                                    class="ele-wrapper ele-wrapper-91312d06-7e71-4f82-aa7d-d5aa529de511"
+                                    class="ele-wrapper ele-wrapper-activityDictItemForm"
                                   >
                                     <hm-ant-formily
-                                      :value="{}"
+                                      ref="activityDictItemForm"
+                                      v-model:value="activityDictItemForm.value"
                                       :col-num="0"
                                       :col-min-width="380"
                                       :label-col="7"
@@ -1878,7 +1879,7 @@ export default {
           },
         },
       },
-      "91312d06-7e71-4f82-aa7d-d5aa529de511": {
+      activityDictItemForm: {
         value: {},
       },
       activityImgTableOne: {
