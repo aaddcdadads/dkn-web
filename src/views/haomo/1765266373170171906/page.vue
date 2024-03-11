@@ -1907,7 +1907,8 @@ export default {
             },
             events: {
               "@change": function (e, i) {
-                console.log("e", e);
+                const s = i.findIndex((a) => (a.id = e));
+                self.dictItem = i[s];
               },
             },
           },
