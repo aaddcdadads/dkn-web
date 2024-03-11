@@ -610,8 +610,8 @@ export default {
           },
           {
             title: "核销状态",
-            dataIndex: "pickUpStatusText",
-            key: "pickUpStatusText",
+            dataIndex: "writeStatusGroups",
+            key: "writeStatusGroups",
             customRender: function (data) {
               console.log("核销状态===", data);
               return self.processingData(data.text);
@@ -619,10 +619,10 @@ export default {
           },
           {
             title: "核销时间",
-            dataIndex: "orderPickUpCreateTime",
-            key: "orderPickUpCreateTime",
+            dataIndex: "writeTimeGroups",
+            key: "writeTimeGroups",
             customRender: function (data) {
-              console.log("核销状态===", data);
+              console.log("核销时间===", data);
               return self.processingData(data.text);
             },
           },
