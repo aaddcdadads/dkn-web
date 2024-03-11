@@ -647,8 +647,8 @@ export default {
           },
           {
             title: "实际核销门店",
-            dataIndex: "nowPickUpName",
-            key: "nowPickUpName",
+            dataIndex: "storeNames",
+            key: "storeNames",
             width: 180,
             customRender: function (data) {
               let names = data.text.split(",");
