@@ -831,6 +831,7 @@
                           v-model:value="activityRules.value"
                           :toolbar-config="activityRules.toolbarConfig"
                           :max-content-length="2"
+                          @change="onActivityRulesChange"
                           class="ele-activityRules"
                         >
                         </hm-wang-editor>
@@ -886,14 +887,13 @@
                       box-shadow-blur=""
                       class="ele-56d1d904-8eec-4ac8-a483-a0f3cd3a2d06"
                     >
-                      <div
-                        class="ele-wrapper ele-wrapper-f041c0a3-345b-4faa-b97d-b09be000b6c8"
-                      >
+                      <div class="ele-wrapper ele-wrapper-customerService">
                         <hm-ant-input
-                          value=""
+                          ref="customerService"
+                          v-model:value="customerService.value"
                           title="活动咨询客服"
                           width="480"
-                          class="ele-f041c0a3-345b-4faa-b97d-b09be000b6c8"
+                          class="ele-customerService"
                         >
                         </hm-ant-input>
                       </div>
@@ -1437,7 +1437,9 @@ export default {
           ],
         },
       },
-      customerService: {},
+      customerService: {
+        value: "",
+      },
       activityProjectTable: {
         isFlatAction: true,
         getDataMap: {
@@ -1951,9 +1953,6 @@ export default {
         },
         value: {},
       },
-      "f041c0a3-345b-4faa-b97d-b09be000b6c8": {
-        value: "",
-      },
     };
   },
   watch: {},
@@ -2161,6 +2160,9 @@ export default {
 
       self.sharingImageSettings.visible = false;
       self.$refs.activityImgFormTre.reset();
+    },
+    onActivityRulesChange(e) {
+      this.activityRules.value = e;
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
       addActivty(this, arguments);
@@ -2564,7 +2566,7 @@ export default {
   width: 100%;
 }
 
-.ele-wrapper-f041c0a3-345b-4faa-b97d-b09be000b6c8 {
+.ele-wrapper-customerService {
   width: 100%;
   margin-top: 20px;
   /deep/.input-title {
