@@ -475,14 +475,17 @@
                                 </hm-ant-button>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-925b710e-aef5-4561-9a75-659a3c135859"
+                                class="ele-wrapper ele-wrapper-activityDictItemModal"
                               >
                                 <hm-modal
+                                  ref="activityDictItemModal"
                                   title="核销轮次"
-                                  :visible="false"
+                                  v-model:visible="
+                                    activityDictItemModal.visible
+                                  "
                                   :z-index="1000"
                                   :auto-close="false"
-                                  class="ele-925b710e-aef5-4561-9a75-659a3c135859"
+                                  class="ele-activityDictItemModal"
                                 >
                                   <div
                                     class="ele-wrapper ele-wrapper-91312d06-7e71-4f82-aa7d-d5aa529de511"
@@ -1807,7 +1810,7 @@ export default {
         isFlatAction: true,
         rowClassName: {},
       },
-      "925b710e-aef5-4561-9a75-659a3c135859": {
+      activityDictItemModal: {
         visible: false,
       },
       address: {
@@ -2716,7 +2719,7 @@ export default {
   margin-top: 15px;
 }
 
-.ele-wrapper-925b710e-aef5-4561-9a75-659a3c135859 {
+.ele-wrapper-activityDictItemModal {
   /deep/.hm-modal {
     min-height: 0px;
   }
