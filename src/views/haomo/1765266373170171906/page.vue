@@ -2356,6 +2356,11 @@ export default {
       let self = this;
       await self.$refs.activityPickUpForm.validate();
       let item = self.$refs.activityPickUpForm.getFormValues();
+      item.startTime =
+        self.$moment(item.pickUpTime[0]).format("YYYY-MM-DD") + " 00:00:00";
+      item.endTime =
+        self.$moment(item.pickUpTime[1]).format("YYYY-MM-DD") + " 23:59:59";
+      delete item.pickUpTime;
       if (self.activityPickUpStatus === 1) {
         item.index = Math.floor(Math.random() * 10000);
         self.$refs.activityPickUpTable.cData.push(item);
