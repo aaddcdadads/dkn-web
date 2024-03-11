@@ -1755,39 +1755,25 @@ export default {
       },
       activityPickUpForm: {
         config: {
-          sortNo: {
+          name: {
             style: {
               width: "100%",
             },
-            type: "InputNumber",
+            type: "Input",
             title: "奖品排序",
             required: true,
             props: {
               placeholder: "奖品序号",
             },
           },
-          imgPath: {
+          pickUpTime: {
             style: {
               width: "100%",
             },
-            type: "UploadImage",
-            title: "奖品图片",
+            type: "RangePicker",
+            title: "核销时间段",
             required: true,
-            props: {
-              action: "/api/sys/common/upload",
-              accept: ".jpg,.png",
-            },
-          },
-          name: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "奖品名称",
-            required: true,
-            props: {
-              placeholder: "请输入奖品名称",
-            },
+            props: {},
           },
         },
         value: {},
