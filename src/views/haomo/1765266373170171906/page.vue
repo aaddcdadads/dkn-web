@@ -359,20 +359,20 @@
                                 class="ele-wrapper ele-wrapper-d873ccb8-7e59-4395-bcfc-8e2f4e73088a"
                               >
                                 <hm-bg-card
-                                  box-shadow-blur=""
-                                  box-shadow-v-shadow=""
-                                  border-radius=""
                                   width="100%"
                                   height="100%"
+                                  border-radius=""
+                                  box-shadow-v-shadow=""
+                                  box-shadow-blur=""
                                   class="ele-d873ccb8-7e59-4395-bcfc-8e2f4e73088a"
                                 >
                                   <div class="ele-wrapper ele-wrapper-address">
                                     <hm-ant-input
                                       ref="address"
-                                      width="480"
-                                      placeholder="例子：上海市徐汇区"
-                                      title="活动地址"
                                       v-model:value="address.value"
+                                      title="活动地址"
+                                      placeholder="例子：上海市徐汇区"
+                                      width="480"
                                       class="ele-address"
                                     >
                                     </hm-ant-input>
@@ -833,6 +833,7 @@
                           v-model:value="activityRules.value"
                           :toolbar-config="activityRules.toolbarConfig"
                           :max-content-length="2"
+                          @change="onActivityRulesChange"
                           class="ele-activityRules"
                         >
                         </hm-wang-editor>
@@ -1328,19 +1329,6 @@ export default {
       delActivityImgList: {},
       activityImgTableTwoItem: {},
       activityImgTableOneItem: {},
-      title: {},
-      isSaveOrUpdate: {},
-      isTitle: {},
-      addActivityProject: {},
-      addActivityImgTableOne: {},
-      addActivityImgTableTwo: {},
-      bgColourKit: {
-        color: "#59c7f9",
-      },
-      colourKit: {},
-      textColourKit: {
-        color: "#59c7f9",
-      },
       activityRules: {
         value: "",
         toolbarConfig: {
@@ -1396,6 +1384,19 @@ export default {
             "insertTable",
           ],
         },
+      },
+      title: {},
+      isSaveOrUpdate: {},
+      isTitle: {},
+      addActivityProject: {},
+      addActivityImgTableOne: {},
+      addActivityImgTableTwo: {},
+      bgColourKit: {
+        color: "#59c7f9",
+      },
+      colourKit: {},
+      textColourKit: {
+        color: "#59c7f9",
       },
       agreementCommitmentletter: {
         value: "",
@@ -2280,6 +2281,9 @@ export default {
     },
     onSharingImageSettingsCancel() {
       this.sharingImageSettings.visible = false;
+    },
+    onActivityRulesChange(e) {
+      this.activityRules.value = e;
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
       saveOrUpdate(this, arguments);
