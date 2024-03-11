@@ -637,7 +637,7 @@ export default {
               console.log("核销时间===", data);
               return self.processingData(data.text);
             },
-            width: 400,
+            width: 360,
           },
           {
             title: "原核销门店",
