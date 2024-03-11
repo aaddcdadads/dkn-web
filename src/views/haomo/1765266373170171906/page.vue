@@ -477,7 +477,25 @@
                               <div
                                 class="ele-wrapper ele-wrapper-925b710e-aef5-4561-9a75-659a3c135859"
                               >
-                                <hm-modal :visible="true" :z-index="1000">
+                                <hm-modal
+                                  title="核销轮次"
+                                  :visible="false"
+                                  :z-index="1000"
+                                  :auto-close="false"
+                                  class="ele-925b710e-aef5-4561-9a75-659a3c135859"
+                                >
+                                  <div
+                                    class="ele-wrapper ele-wrapper-91312d06-7e71-4f82-aa7d-d5aa529de511"
+                                  >
+                                    <hm-ant-formily
+                                      :value="{}"
+                                      :col-num="0"
+                                      :col-min-width="380"
+                                      :label-col="7"
+                                      :wrapper-col="14"
+                                    >
+                                    </hm-ant-formily>
+                                  </div>
                                 </hm-modal>
                               </div>
                               <div
@@ -1790,7 +1808,7 @@ export default {
         rowClassName: {},
       },
       "925b710e-aef5-4561-9a75-659a3c135859": {
-        visible: true,
+        visible: false,
       },
       address: {
         value: "",
@@ -1841,6 +1859,9 @@ export default {
             },
           },
         },
+      },
+      "91312d06-7e71-4f82-aa7d-d5aa529de511": {
+        value: {},
       },
       activityImgTableOne: {
         columns: [
@@ -2693,6 +2714,12 @@ export default {
 .ele-wrapper-2a08a42c-a92e-46de-8f8d-b5724cfc40ea {
   margin-left: 5px;
   margin-top: 15px;
+}
+
+.ele-wrapper-925b710e-aef5-4561-9a75-659a3c135859 {
+  /deep/.hm-modal {
+    min-height: 0px;
+  }
 }
 
 .ele-wrapper-message_2 {
