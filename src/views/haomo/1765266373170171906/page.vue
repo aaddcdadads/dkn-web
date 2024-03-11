@@ -1844,10 +1844,10 @@ export default {
               width: "100%",
             },
             type: "Input",
-            title: "奖品排序",
+            title: "轮次名称",
             required: true,
             props: {
-              placeholder: "奖品序号",
+              placeholder: "轮次名称",
             },
           },
           pickUpTime: {
