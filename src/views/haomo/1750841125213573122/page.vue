@@ -974,11 +974,14 @@ export default {
         if (!strs) {
           return "";
         }
+        console.log("strs--", strs);
+        let strArr = strs.split(",");
+        let strNumberArr = ["一", "二", "三"];
         let hArr = [];
-        for (let i = 0; i < 3; i++) {
-          hArr.push(h("span", {}, "第" + i + "轮:已核销"));
+        for (let i = 0; i < strArr.length; i++) {
+          hArr.push(h("span", {}, "第" + strNumberArr[i] + "轮:" + strArr[i]));
         }
-        console.log("hArr--", hArr);
+
         return h(
           "div",
           {
