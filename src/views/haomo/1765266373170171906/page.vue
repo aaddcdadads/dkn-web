@@ -126,13 +126,13 @@
                       <div class="ele-wrapper ele-wrapper-addproject">
                         <hm-modal
                           ref="addproject"
-                          :z-index="1000"
-                          v-model:visible="addproject.visible"
                           title="活动项目"
-                          :auto-close="false"
+                          v-model:visible="addproject.visible"
+                          :z-index="1000"
                           height=""
-                          @cancel="onAddprojectCancel"
+                          :auto-close="false"
                           @ok="onAddprojectOk"
+                          @cancel="onAddprojectCancel"
                           class="ele-addproject"
                         >
                           <div
@@ -619,6 +619,7 @@
                       <div class="ele-wrapper ele-wrapper-bgColourKit">
                         <hm-color-kit
                           ref="bgColourKit"
+                          :color="bgColourKit.color"
                           @changecolorkit="onBgColourKitChangecolorkit"
                         >
                         </hm-color-kit>
@@ -681,6 +682,7 @@
                       <div class="ele-wrapper ele-wrapper-textColourKit">
                         <hm-color-kit
                           ref="textColourKit"
+                          :color="textColourKit.color"
                           @changecolorkit="onTextColourKitChangecolorkit"
                         >
                         </hm-color-kit>
@@ -1325,6 +1327,19 @@ export default {
       activityImgTableTwoItem: {},
       activityImgTableOneItem: {},
       imgItem: {},
+      title: {},
+      isSaveOrUpdate: {},
+      isTitle: {},
+      addActivityProject: {},
+      addActivityImgTableOne: {},
+      addActivityImgTableTwo: {},
+      bgColourKit: {
+        color: "#59c7f9",
+      },
+      colourKit: {},
+      textColourKit: {
+        color: "#59c7f9",
+      },
       activityRules: {
         value: "",
         toolbarConfig: {
@@ -1957,10 +1972,48 @@ export default {
     };
   },
   watch: {},
+  created(e) {
+    this.onCreated(e);
+  },
   mounted(e) {
     this.onMounted(e);
   },
   methods: {
+    onCreated() {
+      let self = this;
+      self.title.text = "创建活动";
+      self.isSaveOrUpdate.hidden = false;
+      self.isTitle.text = "* 为必填项";
+      self.addActivityProject.visible = true;
+      self.addActivityImgTableOne.visible = true;
+      self.addActivityImgTableTwo.visible = true;
+      self.bgColourKit.color = "#59c7f9";
+      self.colourKit.color = "#59c7f9";
+      self.textColourKit.color = "#59c7f9";
+      self.delActivityProjectList = [];
+      self.delActivityImgList = [];
+      self.getImg = function (url) {
+        if (!url) {
+          return "";
+        }
+        if (url.substring(0, 4) === "http") {
+          return url;
+        }
+        return `/api/sys/common/static/${url}`;
+      };
+      self.reset = function () {
+        self.$refs.activityForm.reset();
+        self.$refs.activityExtTwoForm.reset();
+        self.$refs.activityTwoForm.reset();
+        self.$refs.activityProjectTable.cData = [];
+        self.$refs.activityImgTableTwo.cData = [];
+        self.$refs.activityImgTableOne.cData = [];
+        self.$refs.sharingImageTable.cData = [{}];
+        self.activityRules.value = "";
+        self.agreementCommitmentletter.value = "";
+        self.customerService.value = "";
+      };
+    },
     onMounted() {
       let self = this;
       self.type = parseInt(self.$route.query.type);
@@ -1993,10 +2046,6 @@ export default {
       this.addproject.visible = true;
       this.activityProjectTableStatus = 1;
     },
-    onAddprojectCancel() {
-      this.addproject.visible = false;
-      this.$refs.activityProjectForm.reset();
-    },
     async onAddprojectOk() {
       let self = this;
       await self.$refs.activityProjectForm.validate();
@@ -2022,6 +2071,10 @@ export default {
       }
       self.addproject.visible = false;
       self.$refs.activityProjectForm.reset();
+    },
+    onAddprojectCancel() {
+      this.addproject.visible = false;
+      this.$refs.activityProjectForm.reset();
     },
     onDeleteprojectOk() {
       let self = this;
