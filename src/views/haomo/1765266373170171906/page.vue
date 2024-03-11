@@ -872,6 +872,7 @@
                             agreementCommitmentletter.toolbarConfig
                           "
                           :max-content-length="2"
+                          @change="onAgreementCommitmentletterChange"
                           class="ele-agreementCommitmentletter"
                         >
                         </hm-wang-editor>
@@ -1385,19 +1386,6 @@ export default {
           ],
         },
       },
-      title: {},
-      isSaveOrUpdate: {},
-      isTitle: {},
-      addActivityProject: {},
-      addActivityImgTableOne: {},
-      addActivityImgTableTwo: {},
-      bgColourKit: {
-        color: "#59c7f9",
-      },
-      colourKit: {},
-      textColourKit: {
-        color: "#59c7f9",
-      },
       agreementCommitmentletter: {
         value: "",
         toolbarConfig: {
@@ -1453,6 +1441,19 @@ export default {
             "insertTable",
           ],
         },
+      },
+      title: {},
+      isSaveOrUpdate: {},
+      isTitle: {},
+      addActivityProject: {},
+      addActivityImgTableOne: {},
+      addActivityImgTableTwo: {},
+      bgColourKit: {
+        color: "#59c7f9",
+      },
+      colourKit: {},
+      textColourKit: {
+        color: "#59c7f9",
       },
       customerService: {},
       activityProjectTable: {
@@ -2284,6 +2285,9 @@ export default {
     },
     onActivityRulesChange(e) {
       this.activityRules.value = e;
+    },
+    onAgreementCommitmentletterChange(e) {
+      this.agreementCommitmentletter.value = e;
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
       saveOrUpdate(this, arguments);
