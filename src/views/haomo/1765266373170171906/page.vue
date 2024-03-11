@@ -414,6 +414,7 @@
                                   :z-index="1000"
                                   :auto-close="false"
                                   @ok="onActivityPickUpModalOk"
+                                  @cancel="onActivityPickUpModalCancel"
                                   class="ele-activityPickUpModal"
                                 >
                                   <div
@@ -2324,6 +2325,10 @@ export default {
       }
       self.activityPickUpModal.visible = false;
       self.$refs.activityPickUpForm.reset();
+    },
+    onActivityPickUpModalCancel() {
+      this.activityPickUpModal.visible = false;
+      this.$refs.activityPickUpForm.reset();
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
