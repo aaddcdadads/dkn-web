@@ -233,12 +233,12 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              :z-index="1000"
-                              v-model:visible="addprize.visible"
                               title="奖品图片"
+                              v-model:visible="addprize.visible"
+                              :z-index="1000"
                               :auto-close="false"
-                              @cancel="onAddprizeCancel"
                               @ok="onAddprizeOk"
+                              @cancel="onAddprizeCancel"
                               class="ele-addprize"
                             >
                               <div
@@ -2128,10 +2128,6 @@ export default {
       this.addprize.visible = true;
       this.activityImgTableTwoStatus = 1;
     },
-    onAddprizeCancel() {
-      this.addprize.visible = false;
-      this.$refs.addActivityImgFormTwo.reset();
-    },
     async onAddprizeOk() {
       let self = this;
       await self.$refs.addActivityImgFormTwo.validate();
@@ -2147,17 +2143,36 @@ export default {
         //处理图片
         self.$refs.activityImgTableTwo.cData.push(item);
       } else if (self.activityImgTableTwoStatus === 2) {
-        self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
-          if (e.index == self.activityImgTableTwoItem.index) {
-            self.$refs.activityImgTableTwo.cData[index] = {
-              index: self.activityImgTableTwoItem.index,
-              ...item,
-            };
-          }
-        });
+        if (
+          self.activityImgTableTwoItem.index ||
+          self.activityImgTableTwoItem.index == 0
+        ) {
+          self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
+            if (e.index == self.activityImgTableTwoItem.index) {
+              self.$refs.activityImgTableTwo.cData[index] = {
+                index: self.activityImgTableTwoItem.index,
+                ...item,
+              };
+            }
+          });
+        } else {
+          self.$refs.activityImgTableTwo.cData.forEach((e, index) => {
+            if (e.id == self.activityImgTableTwoItem.id) {
+              self.$refs.activityImgTableTwo.cData[index] = {
+                index: self.activityImgTableTwoItem.index,
+                ...e,
+                ...item,
+              };
+            }
+          });
+        }
       }
       self.addprize.visible = false;
       self.$refs.addActivityImgFormTwo.reset();
+    },
+    onAddprizeCancel() {
+      this.addprize.visible = false;
+      this.$refs.addActivityImgFormTwo.reset();
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
