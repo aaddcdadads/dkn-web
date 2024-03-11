@@ -963,6 +963,7 @@ import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
 
+import { detail } from "/@/logics/ActivityForm";
 import { addActivty } from "/@/logics/AddActivityForm";
 
 export default {
@@ -1976,7 +1977,7 @@ export default {
     this.onCreated(e);
   },
   mounted(e) {
-    this.onMounted(e);
+    detail(this, arguments);
   },
   methods: {
     onCreated() {
@@ -2005,33 +2006,6 @@ export default {
         self.$refs.activityForm.reset();
         self.$refs.activityExtTwoForm.reset();
         self.$refs.activityTwoForm.reset();
-        self.$refs.activityProjectTable.cData = [];
-        self.$refs.activityImgTableTwo.cData = [];
-        self.$refs.activityImgTableOne.cData = [];
-        self.$refs.sharingImageTable.cData = [{}];
-        self.activityRules.value = "";
-        self.agreementCommitmentletter.value = "";
-        self.customerService.value = "";
-      };
-    },
-    onMounted() {
-      let self = this;
-      self.type = parseInt(self.$route.query.type);
-      self.activityRules.value = "";
-      self.agreementCommitmentletter.value = "";
-      self.getImg = function (url) {
-        if (!url) {
-          return "";
-        }
-        if (url.substring(0, 4) === "http") {
-          return url;
-        }
-        return `/api/sys/common/static/${url}`;
-      };
-
-      self.reset = function () {
-        self.$refs.activityForm.reset();
-        self.$refs.activityExtTwoForm.reset();
         self.$refs.activityProjectTable.cData = [];
         self.$refs.activityImgTableTwo.cData = [];
         self.$refs.activityImgTableOne.cData = [];
