@@ -2438,9 +2438,26 @@ export default {
       let item = self.$refs.activityDictItemForm.getFormValues();
       item.name = self.dictItem.itemText;
       if (self.activityDictItemStatus === 1) {
+        const i = self.$refs.activityDictItemTable.cData.findIndex(
+          (e) => e.sysDictItemId === item.sysDictItemId
+        );
+        if (i != -1) {
+          self.$message.error("配置项已存在");
+          return;
+        }
         item.index = Math.floor(Math.random() * 10000);
         self.$refs.activityDictItemTable.cData.push(item);
       } else if (self.activityDictItemStatus === 2) {
+        const i = self.$refs.activityDictItemTable.cData.findIndex(
+          (e) => e.sysDictItemId === item.sysDictItemId
+        );
+        if (
+          i != -1 &&
+          self.activityDictItemTableItem.sysDictItemId !== item.sysDictItemId
+        ) {
+          self.$message.error("配置项已存在");
+          return;
+        }
         if (
           self.activityDictItemTableItem.index ||
           self.activityDictItemTableItem.index == 0
