@@ -1892,7 +1892,7 @@ export default {
       },
       activityDictItemForm: {
         config: {
-          status: {
+          sysDictItemId: {
             type: "HmAntSelect",
             title: "参与人配置项",
             style: {
