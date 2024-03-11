@@ -489,6 +489,7 @@
                                   :z-index="1000"
                                   :auto-close="false"
                                   @ok="onActivityDictItemModalOk"
+                                  @cancel="onActivityDictItemModalCancel"
                                   class="ele-activityDictItemModal"
                                 >
                                   <div
@@ -2440,6 +2441,10 @@ export default {
       }
       self.activityDictItemModal.visible = false;
       self.$refs.activityDictItemForm.reset();
+    },
+    onActivityDictItemModalCancel() {
+      this.activityDictItemModal.visible = false;
+      this.$refs.activityDictItemForm.reset();
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
