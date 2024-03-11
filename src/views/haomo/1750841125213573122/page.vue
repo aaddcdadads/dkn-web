@@ -612,6 +612,32 @@ export default {
             title: "核销状态",
             dataIndex: "pickUpStatusText",
             key: "pickUpStatusText",
+            customRender: function (data) {
+              console.log("核销状态===", data);
+              return h(
+                "div",
+                {
+                  class: "applyNoDiv",
+                  style: {
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    paddingLeft: "16px",
+                    marginLeft: "-16px",
+                    backgroundColor: "#fe8989",
+                  },
+                },
+                [
+                  h(
+                    "span",
+                    {
+                      style: {},
+                    },
+                    "第一轮:已核销"
+                  ),
+                ]
+              );
+            },
           },
           {
             title: "核销时间",
