@@ -651,33 +651,14 @@ export default {
             key: "nowPickUpName",
             width: 180,
             customRender: function (data) {
-              console.log("ss实际核销门店s", data);
-              if (data.record.originalPickUpName == data.record.nowPickUpName) {
-                return data.text;
+              let names = data.text.split(",");
+              console.log("ss实际核销门店s", names);
+              if (
+                names.some((item) => item !== data.record.originalPickUpName)
+              ) {
+                return self.processingColorData(data.text, "#fe8989");
               }
-              return h(
-                "div",
-                {
-                  class: "applyNoDiv",
-                  style: {
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    paddingLeft: "16px",
-                    marginLeft: "-16px",
-                    backgroundColor: "#fe8989",
-                  },
-                },
-                [
-                  h(
-                    "span",
-                    {
-                      style: {},
-                    },
-                    data.text
-                  ),
-                ]
-              );
+              return self.processingColorData(data.text);
             },
           },
           {
@@ -986,7 +967,7 @@ export default {
   },
   methods: {
     onCreated() {
-      this.processingData = function (strs) {
+      this.processingData = function (strs, color) {
         if (!strs) {
           return "";
         }
@@ -1002,7 +983,35 @@ export default {
           "div",
           {
             class: "applyNoDiv",
-            style: {},
+            style: { backgroundColor: color },
+          },
+          hArr
+        );
+      };
+      //颜色
+      this.processingColorData = function (strs, color) {
+        if (!strs) {
+          return "";
+        }
+        console.log("strs--", strs);
+        let strArr = strs.split(",");
+        let strNumberArr = ["一", "二", "三"];
+        let hArr = [];
+        for (let i = 0; i < strArr.length; i++) {
+          hArr.push(h("div", {}, "第" + strNumberArr[i] + "轮:" + strArr[i]));
+        }
+        return h(
+          "div",
+          {
+            class: "applyNoDiv",
+            style: {
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              paddingLeft: "16px",
+              marginLeft: "-16px",
+              backgroundColor: color,
+            },
           },
           hArr
         );
