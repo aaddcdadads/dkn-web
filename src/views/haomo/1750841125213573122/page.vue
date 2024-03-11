@@ -977,7 +977,6 @@ export default {
               alignItems: "center",
               paddingLeft: "16px",
               marginLeft: "-16px",
-              backgroundColor: "#fe8989",
             },
           },
           [
