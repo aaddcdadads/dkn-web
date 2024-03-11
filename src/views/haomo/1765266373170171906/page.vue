@@ -497,6 +497,7 @@
                                   >
                                     <hm-ant-formily
                                       ref="activityDictItemForm"
+                                      :config="activityDictItemForm.config"
                                       v-model:value="activityDictItemForm.value"
                                       :col-num="0"
                                       :col-min-width="380"
@@ -1889,6 +1890,20 @@ export default {
         },
       },
       activityDictItemForm: {
+        config: {
+          status: {
+            type: "HmAntSelect",
+            title: "活动状态",
+            style: {
+              width: "25%",
+            },
+            props: {
+              title: "",
+              url: "/api/sys/dict/getDictItems/channel",
+            },
+            validator: function (value) {},
+          },
+        },
         value: {},
       },
       activityImgTableOne: {
