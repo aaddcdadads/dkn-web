@@ -627,7 +627,7 @@ export default {
               console.log("核销状态===", data);
               return self.processingData(data.text);
             },
-            width: 150,
+            width: 120,
           },
           {
             title: "核销时间",
@@ -637,7 +637,7 @@ export default {
               console.log("核销时间===", data);
               return self.processingData(data.text);
             },
-            width: 200,
+            width: 400,
           },
           {
             title: "原核销门店",
@@ -995,7 +995,7 @@ export default {
         let strNumberArr = ["一", "二", "三"];
         let hArr = [];
         for (let i = 0; i < strArr.length; i++) {
-          hArr.push(h("span", {}, "第" + strNumberArr[i] + "轮:" + strArr[i]));
+          hArr.push(h("div", {}, "第" + strNumberArr[i] + "轮:" + strArr[i]));
         }
 
         return h(
