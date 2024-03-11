@@ -1812,8 +1812,8 @@ export default {
         columns: [
           {
             title: "字段名",
-            dataIndex: "field",
-            key: "field",
+            dataIndex: "name",
+            key: "name",
             ellipsis: true,
           },
           {
