@@ -222,9 +222,9 @@
                           <div class="ele-wrapper ele-wrapper-addBtn2">
                             <hm-ant-button
                               ref="addBtn2"
-                              icon="fa fa-plus"
                               text="添加"
                               :type="'primary'"
+                              icon="fa fa-plus"
                               @click="onAddBtn2Click"
                               class="ele-addBtn2"
                             >
@@ -383,12 +383,23 @@
                                 class="ele-wrapper ele-wrapper-2b650687-b88f-4fe2-a2a3-f29ff7bf53b3"
                               >
                                 <hm-ant-bg-text
-                                  padding="2"
-                                  font-size="14px"
                                   text="活动核销轮次设置（最多可设置3轮，至少1轮每轮时间段不允许出现重叠）"
+                                  font-size="14px"
+                                  padding="2"
                                   class="ele-2b650687-b88f-4fe2-a2a3-f29ff7bf53b3"
                                 >
                                 </hm-ant-bg-text>
+                              </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-277cb52c-4cb2-4fd3-9725-2aac9220c5be"
+                              >
+                                <hm-ant-button
+                                  text="添加"
+                                  :type="'primary'"
+                                  icon="fa fa-plus"
+                                  class="ele-277cb52c-4cb2-4fd3-9725-2aac9220c5be"
+                                >
+                                </hm-ant-button>
                               </div>
                               <div
                                 class="ele-wrapper ele-wrapper-96bb95ad-bddc-4f8d-acc8-0ddcad8a20d4"
@@ -2491,6 +2502,11 @@ export default {
   .hm-bg-text {
     font-weight: 700;
   }
+}
+
+.ele-wrapper-277cb52c-4cb2-4fd3-9725-2aac9220c5be {
+  margin-left: 5px;
+  margin-top: 15px;
 }
 
 .ele-wrapper-71104b33-c64b-4cf7-9044-51db79ed2874 {
