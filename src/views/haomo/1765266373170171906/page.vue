@@ -485,6 +485,7 @@
                                   "
                                   :z-index="1000"
                                   :auto-close="false"
+                                  @ok="onActivityDictItemModalOk"
                                   class="ele-activityDictItemModal"
                                 >
                                   <div
@@ -1356,6 +1357,10 @@ export default {
       delActivityImgList: {},
       activityImgTableTwoItem: {},
       activityPickUpTableItem: {},
+      activityDictItemTableItem: {},
+      activityDictItemModal: {
+        visible: false,
+      },
       activityImgTableOneItem: {},
       activityRules: {
         value: "",
@@ -1794,9 +1799,6 @@ export default {
         ],
         isFlatAction: true,
         rowClassName: {},
-      },
-      activityDictItemModal: {
-        visible: false,
       },
       activityDictItemTable: {
         columns: [
@@ -2388,6 +2390,41 @@ export default {
     onActivityPickUpModalCancel() {
       this.activityPickUpModal.visible = false;
       this.$refs.activityPickUpForm.reset();
+    },
+    async onActivityDictItemModalOk() {
+      let self = this;
+      await self.$refs.activityDictItemForm.validate();
+      let item = self.$refs.activityDictItemForm.getFormValues();
+      if (self.activityDictItemStatus === 1) {
+        item.index = Math.floor(Math.random() * 10000);
+        self.$refs.activityDictItemTable.cData.push(item);
+      } else if (self.activityDictItemStatus === 2) {
+        if (
+          self.activityDictItemTableItem.index ||
+          self.activityDictItemTableItem.index == 0
+        ) {
+          self.$refs.activityDictItemTable.cData.forEach((e, index) => {
+            if (e.index == self.activityDictItemTableItem.index) {
+              self.$refs.activityDictItemTable.cData[index] = {
+                index: self.activityDictItemTableItem.index,
+                ...item,
+              };
+            }
+          });
+        } else {
+          self.$refs.activityDictItemTable.cData.forEach((e, index) => {
+            if (e.id == self.activityDictItemTableItem.id) {
+              self.$refs.activityDictItemTable.cData[index] = {
+                index: self.activityDictItemTableItem.index,
+                ...e,
+                ...item,
+              };
+            }
+          });
+        }
+      }
+      self.activityDictItemModal.visible = false;
+      self.$refs.activityDictItemForm.reset();
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
