@@ -614,13 +614,17 @@ export default {
             key: "pickUpStatusText",
             customRender: function (data) {
               console.log("核销状态===", data);
-              return self.processingData(data);
+              return self.processingData(data.text);
             },
           },
           {
             title: "核销时间",
             dataIndex: "orderPickUpCreateTime",
             key: "orderPickUpCreateTime",
+            customRender: function (data) {
+              console.log("核销状态===", data);
+              return self.processingData(data.text);
+            },
           },
           {
             title: "原核销门店",
