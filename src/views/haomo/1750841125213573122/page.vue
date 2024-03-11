@@ -966,12 +966,15 @@ export default {
   },
   methods: {
     onCreated() {
-      this.processingData = function (data) {
+      this.processingData = function (strs) {
+        if (!strs) {
+          return "";
+        }
         let hArr = [];
-        let i = 3;
-        i.foreach((item) => {
-          arr.push(h("span", {}, "第" + i + "轮:已核销"));
-        });
+        for (let i = 0; i < 3; i++) {
+          hArr.push(h("span", {}, "第" + i + "轮:已核销"));
+        }
+        console.log("hArr--", hArr);
         return h(
           "div",
           {
