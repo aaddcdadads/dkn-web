@@ -1900,6 +1900,10 @@ export default {
             props: {
               title: "",
               url: "/api/sys/dict/getDictItem",
+              dataMap: {
+                label: "itemText",
+                value: "id",
+              },
             },
             validator: function (value) {},
           },
