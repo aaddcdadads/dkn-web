@@ -402,14 +402,15 @@
                                 </hm-ant-button>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-c0b1c2d9-784d-4fcd-afa3-6ba92dfd2aa8"
+                                class="ele-wrapper ele-wrapper-activityPickUp"
                               >
                                 <hm-modal
+                                  ref="activityPickUp"
                                   title="奖品图片"
-                                  :visible="false"
+                                  v-model:visible="activityPickUp.visible"
                                   :z-index="1000"
                                   :auto-close="false"
-                                  class="ele-c0b1c2d9-784d-4fcd-afa3-6ba92dfd2aa8"
+                                  class="ele-activityPickUp"
                                 >
                                   <div
                                     class="ele-wrapper ele-wrapper-35179c1e-5e52-4ea0-b218-73c4ab6b0d2e"
@@ -1786,7 +1787,7 @@ export default {
         },
         value: {},
       },
-      "c0b1c2d9-784d-4fcd-afa3-6ba92dfd2aa8": {
+      activityPickUp: {
         visible: false,
       },
       address: {
@@ -2643,7 +2644,7 @@ export default {
   margin-top: 15px;
 }
 
-.ele-wrapper-c0b1c2d9-784d-4fcd-afa3-6ba92dfd2aa8 {
+.ele-wrapper-activityPickUp {
   /deep/.hm-modal {
     min-height: 0px;
   }
