@@ -555,6 +555,7 @@ export default {
             title: "订单编号",
             dataIndex: "code",
             key: "code",
+            fixed: "left",
             width: 150,
           },
           {
@@ -686,6 +687,7 @@ export default {
             width: 100,
             title: "操作",
             key: "action",
+            fixed: "right",
             customRender: function (item) {
               return h(
                 "div",
