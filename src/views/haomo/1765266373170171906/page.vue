@@ -1781,7 +1781,7 @@ export default {
               self.activityPickUpModal.visible = true;
               self.activityPickUpTableItem = item;
               self.activityPickUpTableStatus = 2;
-              item.imgPath = item.path;
+              item.pickUpTime = [item.startTime, item.endTime];
               setTimeout(() => {
                 self.$refs.activityPickUpForm.setFormValues(item);
               });
