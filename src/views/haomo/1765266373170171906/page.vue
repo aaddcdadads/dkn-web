@@ -409,7 +409,7 @@
                               >
                                 <hm-modal
                                   ref="activityPickUpModal"
-                                  title="奖品图片"
+                                  title="核销轮次"
                                   v-model:visible="activityPickUpModal.visible"
                                   :z-index="1000"
                                   :auto-close="false"
