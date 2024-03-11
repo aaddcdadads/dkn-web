@@ -1754,6 +1754,9 @@ export default {
             dataIndex: "verifiabletime",
             title: "可核销时间段",
             key: "verifiabletime",
+            customRender: function (data) {
+              return `${data.record.startTime}--${data.record.endTime}`;
+            },
           },
           {
             slots: {
