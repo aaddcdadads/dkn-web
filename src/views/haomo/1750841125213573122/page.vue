@@ -614,29 +614,7 @@ export default {
             key: "pickUpStatusText",
             customRender: function (data) {
               console.log("核销状态===", data);
-              return h(
-                "div",
-                {
-                  class: "applyNoDiv",
-                  style: {
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    paddingLeft: "16px",
-                    marginLeft: "-16px",
-                    backgroundColor: "#fe8989",
-                  },
-                },
-                [
-                  h(
-                    "span",
-                    {
-                      style: {},
-                    },
-                    "第一轮:已核销"
-                  ),
-                ]
-              );
+              return self.processingData(data);
             },
           },
           {
@@ -980,10 +958,40 @@ export default {
     };
   },
   watch: {},
+  created(e) {
+    this.onCreated(e);
+  },
   mounted(e) {
     this.onMounted(e);
   },
   methods: {
+    onCreated() {
+      this.processingData = function (data) {
+        return h(
+          "div",
+          {
+            class: "applyNoDiv",
+            style: {
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              paddingLeft: "16px",
+              marginLeft: "-16px",
+              backgroundColor: "#fe8989",
+            },
+          },
+          [
+            h(
+              "span",
+              {
+                style: {},
+              },
+              "第一轮:已核销"
+            ),
+          ]
+        );
+      };
+    },
     onMounted() {
       console.log("this.importButton.visible");
       console.log("this.exportButton.visible");
