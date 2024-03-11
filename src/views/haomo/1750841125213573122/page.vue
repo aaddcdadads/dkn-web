@@ -967,34 +967,18 @@ export default {
   methods: {
     onCreated() {
       this.processingData = function (data) {
+        let hArr = [];
+        let i = 3;
+        i.foreach((item) => {
+          arr.push(h("span", {}, "第" + i + "轮:已核销"));
+        });
         return h(
           "div",
           {
             class: "applyNoDiv",
-            style: {
-              height: "100%",
-              display: "flex",
-              alignItems: "center",
-              paddingLeft: "16px",
-              marginLeft: "-16px",
-            },
+            style: {},
           },
-          [
-            h(
-              "span",
-              {
-                style: {},
-              },
-              "第一轮:已核销"
-            ),
-            h(
-              "span",
-              {
-                style: {},
-              },
-              "第er轮:已核销"
-            ),
-          ]
+          hArr
         );
       };
     },
