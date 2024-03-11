@@ -961,7 +961,6 @@ import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
 
-import { detail } from "/@/logics/ActivityForm";
 import { addActivty } from "/@/logics/AddActivityForm";
 
 export default {
@@ -1958,14 +1957,11 @@ export default {
     };
   },
   watch: {},
-  created(e) {
-    this.onCreated(e);
-  },
   mounted(e) {
-    detail(this, arguments);
+    this.onMounted(e);
   },
   methods: {
-    onCreated() {
+    onMounted() {
       ///
       let self = this;
       self.type = parseInt(self.$route.query.type);
