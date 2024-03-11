@@ -1966,6 +1966,7 @@ export default {
   },
   methods: {
     onCreated() {
+      ///
       let self = this;
       self.type = parseInt(self.$route.query.type);
       self.activityRules.value = "";
