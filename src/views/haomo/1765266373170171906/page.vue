@@ -963,8 +963,7 @@ import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
 
-import { detail } from "/@/logics/ActivityForm";
-import { addActivty } from "/@/logics/AddActivityForm";
+import { detail, saveOrUpdate } from "/@/logics/ActivityForm";
 
 export default {
   name: "NewActivityEditingandModificationPage",
@@ -2283,7 +2282,7 @@ export default {
       this.sharingImageSettings.visible = false;
     },
     onEle78Fb256892504A78987DC766B916F771Click() {
-      addActivty(this, arguments);
+      saveOrUpdate(this, arguments);
     },
     onEleb0A4296243014B4D952505Bfef232B34Click() {
       this.reset();
