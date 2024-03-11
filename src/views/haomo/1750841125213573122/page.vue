@@ -555,26 +555,31 @@ export default {
             title: "订单编号",
             dataIndex: "code",
             key: "code",
+            width: 150,
           },
           {
             title: "手机号",
             dataIndex: "phone",
             key: "phone",
+            width: 100,
           },
           {
             title: "姓名/昵称",
             dataIndex: "name",
             key: "name",
+            width: 100,
           },
           {
             title: "活动id",
             dataIndex: "acCode",
             key: "acCode",
+            width: 100,
           },
           {
             title: "报名项目",
             dataIndex: "acName",
             key: "acName",
+            width: 100,
           },
           {
             title: "订单金额",
@@ -584,16 +589,19 @@ export default {
               let money = data.record.money ? data.record.money : 0;
               return `￥${money}`;
             },
+            width: 50,
           },
           {
             title: "报名渠道",
             dataIndex: "channel",
             key: "channel",
+            width: 100,
           },
           {
             title: "支付状态",
             dataIndex: "paymentStatusText",
             key: "paymentStatusText",
+            width: 100,
           },
           {
             title: "支付渠道",
@@ -602,11 +610,13 @@ export default {
             customRender: function (data) {
               return data.text ? (data.text == "0" ? "微信" : "支付宝") : "";
             },
+            width: 100,
           },
           {
             title: "创建时间",
             dataIndex: "createTime",
             key: "createTime",
+            width: 180,
           },
           {
             title: "核销状态",
@@ -616,6 +626,7 @@ export default {
               console.log("核销状态===", data);
               return self.processingData(data.text);
             },
+            width: 150,
           },
           {
             title: "核销时间",
@@ -625,16 +636,19 @@ export default {
               console.log("核销时间===", data);
               return self.processingData(data.text);
             },
+            width: 200,
           },
           {
             title: "原核销门店",
             dataIndex: "originalPickUpName",
             key: "originalPickUpName",
+            width: 120,
           },
           {
             title: "实际核销门店",
             dataIndex: "nowPickUpName",
             key: "nowPickUpName",
+            width: 180,
             customRender: function (data) {
               console.log("ss实际核销门店s", data);
               if (data.record.originalPickUpName == data.record.nowPickUpName) {
@@ -669,7 +683,7 @@ export default {
             slots: {
               customRender: "action",
             },
-            width: "260",
+            width: 100,
             title: "操作",
             key: "action",
             customRender: function (item) {
