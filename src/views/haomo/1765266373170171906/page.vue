@@ -994,7 +994,7 @@ export default {
             required: true,
             props: {},
           },
-          epithet: {
+          alias: {
             style: {
               width: "100%",
             },
