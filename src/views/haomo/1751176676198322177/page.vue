@@ -126,13 +126,13 @@
                       <div class="ele-wrapper ele-wrapper-addproject">
                         <hm-modal
                           ref="addproject"
-                          :z-index="1000"
-                          v-model:visible="addproject.visible"
                           title="活动项目"
-                          :auto-close="false"
+                          v-model:visible="addproject.visible"
+                          :z-index="1000"
                           height=""
-                          @cancel="onAddprojectCancel"
+                          :auto-close="false"
                           @ok="onAddprojectOk"
+                          @cancel="onAddprojectCancel"
                           class="ele-addproject"
                         >
                           <div
@@ -156,10 +156,10 @@
                       <div class="ele-wrapper ele-wrapper-deleteproject">
                         <hm-modal
                           ref="deleteproject"
-                          :z-index="1000"
-                          v-model:visible="deleteproject.visible"
                           title="删除"
+                          v-model:visible="deleteproject.visible"
                           width="320px"
+                          :z-index="1000"
                           height=""
                           @ok="onDeleteprojectOk"
                           class="ele-deleteproject"
@@ -369,10 +369,10 @@
                                   <div class="ele-wrapper ele-wrapper-address">
                                     <hm-ant-input
                                       ref="address"
-                                      width="480"
-                                      placeholder="例子：上海市徐汇区"
-                                      title="活动地址"
                                       v-model:value="address.value"
+                                      title="活动地址"
+                                      placeholder="例子：上海市徐汇区"
+                                      width="480"
                                       class="ele-address"
                                     >
                                     </hm-ant-input>
@@ -961,6 +961,7 @@ import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
 import HmWangEditor from "/@/components/built-in/jeecg/haomo/HmWangEditor.vue";
 
+import { detail } from "/@/logics/ActivityForm";
 import { addActivty } from "/@/logics/AddActivityForm";
 
 export default {
@@ -1957,11 +1958,14 @@ export default {
     };
   },
   watch: {},
+  created(e) {
+    this.onCreated(e);
+  },
   mounted(e) {
-    this.onMounted(e);
+    detail(this, arguments);
   },
   methods: {
-    onMounted() {
+    onCreated() {
       let self = this;
       self.type = parseInt(self.$route.query.type);
       self.activityRules.value = "";
@@ -1993,10 +1997,6 @@ export default {
       this.addproject.visible = true;
       this.activityProjectTableStatus = 1;
     },
-    onAddprojectCancel() {
-      this.addproject.visible = false;
-      this.$refs.activityProjectForm.reset();
-    },
     async onAddprojectOk() {
       let self = this;
       await self.$refs.activityProjectForm.validate();
@@ -2022,6 +2022,10 @@ export default {
       }
       self.addproject.visible = false;
       self.$refs.activityProjectForm.reset();
+    },
+    onAddprojectCancel() {
+      this.addproject.visible = false;
+      this.$refs.activityProjectForm.reset();
     },
     onDeleteprojectOk() {
       let self = this;
