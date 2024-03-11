@@ -402,6 +402,18 @@
                                 </hm-ant-button>
                               </div>
                               <div
+                                class="ele-wrapper ele-wrapper-c0b1c2d9-784d-4fcd-afa3-6ba92dfd2aa8"
+                              >
+                                <hm-modal
+                                  title="奖品图片"
+                                  :visible="false"
+                                  :z-index="1000"
+                                  :auto-close="false"
+                                  class="ele-c0b1c2d9-784d-4fcd-afa3-6ba92dfd2aa8"
+                                >
+                                </hm-modal>
+                              </div>
+                              <div
                                 class="ele-wrapper ele-wrapper-96bb95ad-bddc-4f8d-acc8-0ddcad8a20d4"
                               >
                                 <hm-ant-table
@@ -1716,6 +1728,9 @@ export default {
         },
         value: {},
       },
+      "c0b1c2d9-784d-4fcd-afa3-6ba92dfd2aa8": {
+        visible: false,
+      },
       address: {
         value: "",
       },
@@ -2507,6 +2522,12 @@ export default {
 .ele-wrapper-277cb52c-4cb2-4fd3-9725-2aac9220c5be {
   margin-left: 5px;
   margin-top: 15px;
+}
+
+.ele-wrapper-c0b1c2d9-784d-4fcd-afa3-6ba92dfd2aa8 {
+  /deep/.hm-modal {
+    min-height: 0px;
+  }
 }
 
 .ele-wrapper-71104b33-c64b-4cf7-9044-51db79ed2874 {
