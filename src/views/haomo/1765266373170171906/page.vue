@@ -1899,7 +1899,7 @@ export default {
             },
             props: {
               title: "",
-              url: "/api/sys/dict/getDictItems/member_detail",
+              url: "/api/sys/dict/getDictItems/getDictItem",
             },
             validator: function (value) {},
           },
