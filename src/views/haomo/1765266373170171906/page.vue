@@ -1746,9 +1746,9 @@ export default {
             key: "verificationround",
           },
           {
-            dataIndex: "roundname",
+            dataIndex: "name",
             title: "轮次名称",
-            key: "roundname",
+            key: "name",
           },
           {
             dataIndex: "verifiabletime",
