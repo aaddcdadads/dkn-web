@@ -146,26 +146,14 @@ const activityPickUpRequest = (logic.activityPickUpRequest = async function () {
  */
 const setActivityPickUp = (logic.setActivityPickUp = function () {
   if (
-    !self.activityImgRequestData.success ||
-    self.activityImgRequestData.result.records.length === 0
+    !self.activityPickUpRequestData.success ||
+    self.activityPickUpRequestData.result.records.length === 0
   ) {
     return;
   }
-  let activityImgTableOneData = [],
-    activityImgTableTwoData = [],
-    activityImgTableTreData = [];
-  self.activityImgRequestData.result.records.forEach((e) => {
-    if (e.type === 0) {
-      activityImgTableOneData.push(e);
-    } else if (e.type === 1) {
-      activityImgTableTwoData.push(e);
-    } else {
-      activityImgTableTreData.push(e);
-    }
-  });
-  self.$refs.activityImgTableOne.cData = activityImgTableOneData;
-  self.$refs.activityImgTableTwo.cData = activityImgTableTwoData;
-  self.$refs.sharingImageTable.cData = activityImgTableTreData;
+
+  self.$refs.activityPickUpTable.cData =
+    self.activityPickUpRequestData.result.records;
 });
 
 /**
@@ -184,26 +172,14 @@ const activityDictItemRequest = (logic.activityDictItemRequest = async function 
  */
 const setActivityDictItem = (logic.setActivityDictItem = function () {
   if (
-    !self.activityImgRequestData.success ||
-    self.activityImgRequestData.result.records.length === 0
+    !self.activityDictItemRequestData.success ||
+    self.activityDictItemRequestData.result.records.length === 0
   ) {
     return;
   }
-  let activityImgTableOneData = [],
-    activityImgTableTwoData = [],
-    activityImgTableTreData = [];
-  self.activityImgRequestData.result.records.forEach((e) => {
-    if (e.type === 0) {
-      activityImgTableOneData.push(e);
-    } else if (e.type === 1) {
-      activityImgTableTwoData.push(e);
-    } else {
-      activityImgTableTreData.push(e);
-    }
-  });
-  self.$refs.activityImgTableOne.cData = activityImgTableOneData;
-  self.$refs.activityImgTableTwo.cData = activityImgTableTwoData;
-  self.$refs.sharingImageTable.cData = activityImgTableTreData;
+
+  self.$refs.activityDictItemTable.cData =
+    self.activityDictItemRequestData.result.records;
 });
 
 /**
