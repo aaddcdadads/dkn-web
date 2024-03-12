@@ -233,12 +233,12 @@
                           <div class="ele-wrapper ele-wrapper-addprize">
                             <hm-modal
                               ref="addprize"
-                              :z-index="1000"
-                              v-model:visible="addprize.visible"
                               title="奖品图片"
+                              v-model:visible="addprize.visible"
+                              :z-index="1000"
                               :auto-close="false"
-                              @cancel="onAddprizeCancel"
                               @ok="onAddprizeOk"
+                              @cancel="onAddprizeCancel"
                               class="ele-addprize"
                             >
                               <div
@@ -397,6 +397,9 @@
                                   text="添加"
                                   :type="'primary'"
                                   icon="fa fa-plus"
+                                  @click="
+                                    onEled1031250B5474D76B4Ed9Adb9115Eb40Click
+                                  "
                                   class="ele-d1031250-b547-4d76-b4ed-9adb9115eb40"
                                 >
                                 </hm-ant-button>
@@ -502,14 +505,17 @@
                                 </hm-ant-button>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-8342d972-8229-49a9-a625-0b0465cdc1b1"
+                                class="ele-wrapper ele-wrapper-activityDictItemModal"
                               >
                                 <hm-modal
+                                  ref="activityDictItemModal"
                                   title="核销轮次"
-                                  :visible="false"
+                                  v-model:visible="
+                                    activityDictItemModal.visible
+                                  "
                                   :z-index="1000"
                                   :auto-close="false"
-                                  class="ele-8342d972-8229-49a9-a625-0b0465cdc1b1"
+                                  class="ele-activityDictItemModal"
                                 >
                                   <div
                                     class="ele-wrapper ele-wrapper-activityDictItemForm"
@@ -1389,6 +1395,9 @@ export default {
       activityProjectItem: {},
       deleteItem: {},
       activityImgTableTwoItem: {},
+      activityPickUpModal: {
+        visible: false,
+      },
       activityImgTableOneItem: {},
       imgItem: {},
       activityRules: {
@@ -1754,10 +1763,7 @@ export default {
         },
         value: {},
       },
-      activityPickUpModal: {
-        visible: false,
-      },
-      "8342d972-8229-49a9-a625-0b0465cdc1b1": {
+      activityDictItemModal: {
         visible: false,
       },
       address: {
@@ -2198,10 +2204,6 @@ export default {
       this.addprize.visible = true;
       this.activityImgTableTwoStatus = 1;
     },
-    onAddprizeCancel() {
-      this.addprize.visible = false;
-      this.$refs.addActivityImgFormTwo.reset();
-    },
     async onAddprizeOk() {
       let self = this;
       await self.$refs.addActivityImgFormTwo.validate();
@@ -2228,6 +2230,14 @@ export default {
       }
       self.addprize.visible = false;
       self.$refs.addActivityImgFormTwo.reset();
+    },
+    onAddprizeCancel() {
+      this.addprize.visible = false;
+      this.$refs.addActivityImgFormTwo.reset();
+    },
+    onEled1031250B5474D76B4Ed9Adb9115Eb40Click() {
+      this.activityPickUpModal.visible = true;
+      this.activityPickUpStatus = 1;
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
@@ -2543,7 +2553,7 @@ export default {
   margin-top: 15px;
 }
 
-.ele-wrapper-8342d972-8229-49a9-a625-0b0465cdc1b1 {
+.ele-wrapper-activityDictItemModal {
   /deep/.hm-modal {
     min-height: 0px;
   }
