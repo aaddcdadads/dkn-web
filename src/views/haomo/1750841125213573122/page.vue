@@ -800,7 +800,7 @@ export default {
             },
             validator: function (value) {},
           },
-          pickUpStatus: {
+          writeStatusGroups: {
             type: "HmAntSelect",
             title: "核销状态",
             style: {
