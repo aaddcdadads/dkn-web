@@ -94,11 +94,11 @@
                     class="ele-wrapper ele-wrapper-824a7f59-7158-4b84-a954-01cbeb3c4180"
                   >
                     <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
                       width="100%"
                       height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
                       class="ele-824a7f59-7158-4b84-a954-01cbeb3c4180"
                     >
                       <div
@@ -2248,6 +2248,42 @@ export default {
         self.activityRules.value = "";
         self.agreementCommitmentletter.value = "";
         self.customerService.value = "";
+      };
+      self.checkPickUpTime = function () {
+        const items = self.$refs.activityPickUpTable.cData;
+        if (items.length === 0) {
+          return true;
+        }
+        if (items.length === 3) {
+          self.$message.error("最多设置3轮核销");
+          return false;
+        }
+        let item = self.$refs.activityPickUpForm.getFormValues();
+        let startTime = new Date(
+          self.$moment(item.pickUpTime[0]).format("YYYY-MM-DD") + " 00:00:00"
+        ).getTime();
+        let endTime = new Date(
+          self.$moment(item.pickUpTime[1]).format("YYYY-MM-DD") + " 23:59:59"
+        ).getTime();
+        let status = true;
+        items.forEach((e) => {
+          let start = new Date(self.$moment(e.startTime)).getTime();
+          let end = new Date(self.$moment(e.endTime)).getTime();
+          try {
+            if (startTime > start && startTime < end) {
+              throw new Error();
+            }
+            if (endTime > start && endTime < end) {
+              throw new Error();
+            }
+          } catch {
+            status = false;
+          }
+        });
+        if (!status) {
+          self.$message.error("轮次时间冲突请重新选择");
+        }
+        return status;
       };
     },
 
