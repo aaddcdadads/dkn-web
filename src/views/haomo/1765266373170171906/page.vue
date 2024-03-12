@@ -2473,6 +2473,7 @@ export default {
       await self.$refs.activityDictItemForm.validate();
       let item = self.$refs.activityDictItemForm.getFormValues();
       item.name = self.dictItem.itemText;
+      item.type = 1;
       if (self.activityDictItemStatus === 1) {
         const i = self.$refs.activityDictItemTable.cData.findIndex(
           (e) => e.sysDictItemId === item.sysDictItemId
