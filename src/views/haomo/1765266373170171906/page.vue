@@ -1836,8 +1836,8 @@ export default {
         columns: [
           {
             title: "字段名",
-            dataIndex: "name",
-            key: "name",
+            dataIndex: "sysDictItemId_dictText",
+            key: "sysDictItemId_dictText",
             ellipsis: true,
           },
           {
