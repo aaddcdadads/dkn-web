@@ -383,12 +383,35 @@
                                 class="ele-wrapper ele-wrapper-2b650687-b88f-4fe2-a2a3-f29ff7bf53b3"
                               >
                                 <hm-ant-bg-text
-                                  padding="2"
-                                  font-size="14px"
                                   text="活动核销轮次设置（最多可设置3轮，至少1轮每轮时间段不允许出现重叠）"
+                                  font-size="14px"
+                                  padding="2"
                                   class="ele-2b650687-b88f-4fe2-a2a3-f29ff7bf53b3"
                                 >
                                 </hm-ant-bg-text>
+                              </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-d1031250-b547-4d76-b4ed-9adb9115eb40"
+                              >
+                                <hm-ant-button
+                                  text="添加"
+                                  :type="'primary'"
+                                  icon="fa fa-plus"
+                                  class="ele-d1031250-b547-4d76-b4ed-9adb9115eb40"
+                                >
+                                </hm-ant-button>
+                              </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-9ee0d4e1-9815-4a1e-b093-d4f480ca2692"
+                              >
+                                <hm-modal
+                                  title="核销轮次"
+                                  :visible="false"
+                                  :z-index="1000"
+                                  :auto-close="false"
+                                  class="ele-9ee0d4e1-9815-4a1e-b093-d4f480ca2692"
+                                >
+                                </hm-modal>
                               </div>
                               <div
                                 class="ele-wrapper ele-wrapper-96bb95ad-bddc-4f8d-acc8-0ddcad8a20d4"
@@ -1689,6 +1712,9 @@ export default {
         },
         value: {},
       },
+      "9ee0d4e1-9815-4a1e-b093-d4f480ca2692": {
+        visible: false,
+      },
       address: {
         value: "",
       },
@@ -2371,6 +2397,17 @@ export default {
   padding-left: 5px;
   .hm-bg-text {
     font-weight: 700;
+  }
+}
+
+.ele-wrapper-d1031250-b547-4d76-b4ed-9adb9115eb40 {
+  margin-left: 5px;
+  margin-top: 15px;
+}
+
+.ele-wrapper-9ee0d4e1-9815-4a1e-b093-d4f480ca2692 {
+  /deep/.hm-modal {
+    min-height: 0px;
   }
 }
 
