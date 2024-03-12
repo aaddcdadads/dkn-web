@@ -844,7 +844,7 @@ export default {
             },
             validator: function (value) {},
           },
-          nowPickUpName: {
+          storeNames: {
             type: "HmAntSelect",
             title: "实际核销门店",
             style: {
