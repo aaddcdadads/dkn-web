@@ -140,13 +140,13 @@
                           >
                             <hm-ant-formily
                               ref="activityProjectForm"
-                              :schema="activityProjectForm.schema"
-                              :wrapper-col="16"
-                              :col-num="0"
-                              :label-col="6"
-                              :col-min-width="380"
                               :config="activityProjectForm.config"
                               v-model:value="activityProjectForm.value"
+                              :col-num="0"
+                              :col-min-width="380"
+                              :schema="activityProjectForm.schema"
+                              :label-col="6"
+                              :wrapper-col="16"
                               class="ele-activityProjectForm"
                             >
                             </hm-ant-formily>
@@ -1199,7 +1199,29 @@ export default {
               ],
             },
           },
+          orderNumber: {
+            style: {
+              width: "100%",
+            },
+            type: "InputNumber",
+            title: "可报名人数",
+            required: true,
+            props: {
+              min: 1,
+              precision: 0,
+            },
+          },
+          alias: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "组别名",
+            required: true,
+            props: {},
+          },
         },
+        value: {},
         schema: {
           type: "object",
           properties: {
@@ -1222,7 +1244,6 @@ export default {
             },
           },
         },
-        value: {},
       },
       deleteproject: {
         visible: false,
