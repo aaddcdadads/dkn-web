@@ -2231,6 +2231,20 @@ export default {
             }
           });
           break;
+        case 4:
+          self.$refs.activityPickUpTable.cData.forEach((e, index) => {
+            if (e.index == self.deleteItem.index) {
+              self.$refs.activityPickUpTable.cData.splice(index, 1);
+            }
+          });
+          break;
+        case 5:
+          self.$refs.activityDictItemTable.cData.forEach((e, index) => {
+            if (e.index == self.deleteItem.index) {
+              self.$refs.activityDictItemTable.cData.splice(index, 1);
+            }
+          });
+          break;
       }
     },
     onAddBtn2Click() {
