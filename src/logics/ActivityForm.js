@@ -257,6 +257,18 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
     });
     activityImgs = [...activityImgs, ...list];
   }
+  let activityPickUps = [];
+  if (self.$refs.activityPickUpTable.cData.length > 0) {
+    activityPickUps = self.$refs.activityPickUpTable.cData.map((x) => {
+      return x;
+    });
+  }
+  let activityDictItems = [];
+  if (self.$refs.activityDictItemTable.cData.length > 0) {
+    activityDictItems = self.$refs.activityDictItemTable.cData.map((x) => {
+      return x;
+    });
+  }
   let item = self.$refs.activityForm.getFormValues();
   item.startTime =
     self.$moment(item.cycle[0]).format("YYYY-MM-DD") + " 00:00:00";
@@ -328,6 +340,10 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
     textColour: self.textColour,
     delActivityProjectList: self.delActivityProjectList,
     delActivityImgList: self.delActivityImgList,
+    activityPickUps,
+    activityDictItems,
+    delActivityPickUpList: self.delActivityPickUpList,
+    delActivityDictItemList: self.delActivityDictItemList,
   };
 
   await editRequest();
