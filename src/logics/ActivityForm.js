@@ -132,6 +132,81 @@ const setActivityImg = (logic.setActivityImg = function () {
 });
 
 /**
+ * 活动核销
+ */
+const activityPickUpRequest = (logic.activityPickUpRequest = async function () {
+  let res = await self.$getAction(`/api/dkn/activityPickUp/list`, {
+    activityId: self.activityId,
+  });
+  self.activityPickUpRequestData = res;
+});
+
+/**
+ * 处理
+ */
+const setActivityPickUp = (logic.setActivityPickUp = function () {
+  if (
+    !self.activityImgRequestData.success ||
+    self.activityImgRequestData.result.records.length === 0
+  ) {
+    return;
+  }
+  let activityImgTableOneData = [],
+    activityImgTableTwoData = [],
+    activityImgTableTreData = [];
+  self.activityImgRequestData.result.records.forEach((e) => {
+    if (e.type === 0) {
+      activityImgTableOneData.push(e);
+    } else if (e.type === 1) {
+      activityImgTableTwoData.push(e);
+    } else {
+      activityImgTableTreData.push(e);
+    }
+  });
+  self.$refs.activityImgTableOne.cData = activityImgTableOneData;
+  self.$refs.activityImgTableTwo.cData = activityImgTableTwoData;
+  self.$refs.sharingImageTable.cData = activityImgTableTreData;
+});
+
+/**
+ * 活动字典
+ */
+const activityDictItemRequest = (logic.activityDictItemRequest = async function () {
+  let res = await self.$getAction(`/api/dkn/activityDictItem/list`, {
+    activityId: self.activityId,
+    type: 1,
+  });
+  self.activityDictItemRequestData = res;
+});
+
+/**
+ * 处理
+ */
+const setActivityDictItem = (logic.setActivityDictItem = function () {
+  if (
+    !self.activityImgRequestData.success ||
+    self.activityImgRequestData.result.records.length === 0
+  ) {
+    return;
+  }
+  let activityImgTableOneData = [],
+    activityImgTableTwoData = [],
+    activityImgTableTreData = [];
+  self.activityImgRequestData.result.records.forEach((e) => {
+    if (e.type === 0) {
+      activityImgTableOneData.push(e);
+    } else if (e.type === 1) {
+      activityImgTableTwoData.push(e);
+    } else {
+      activityImgTableTreData.push(e);
+    }
+  });
+  self.$refs.activityImgTableOne.cData = activityImgTableOneData;
+  self.$refs.activityImgTableTwo.cData = activityImgTableTwoData;
+  self.$refs.sharingImageTable.cData = activityImgTableTreData;
+});
+
+/**
  * 逻辑流 detail 入口函数
  */
 const detail = (logic.detail = async (pageVm, eventData) => {
@@ -192,6 +267,10 @@ const detail = (logic.detail = async (pageVm, eventData) => {
   setActivityProject();
   await activityImgRequest();
   setActivityImg();
+  await activityPickUpRequest();
+  setActivityPickUp();
+  await activityDictItemRequest();
+  setActivityDictItem();
 });
 
 /********************** end detail 开始 *********************/
@@ -368,6 +447,10 @@ export {
   setActivityProject,
   activityImgRequest,
   setActivityImg,
+  activityPickUpRequest,
+  setActivityPickUp,
+  activityDictItemRequest,
+  setActivityDictItem,
   detail,
   editRequest,
   saveOrUpdate,
