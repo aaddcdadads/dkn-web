@@ -812,11 +812,11 @@ export default {
               options: [
                 {
                   label: "已核销",
-                  value: 0,
+                  value: "已核销",
                 },
                 {
                   label: "待核销",
-                  value: 1,
+                  value: "待核销",
                 },
               ],
             },
