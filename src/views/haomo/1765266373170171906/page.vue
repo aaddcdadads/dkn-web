@@ -1360,6 +1360,8 @@ export default {
       deleteItem: {},
       delActivityProjectList: {},
       delActivityImgList: {},
+      delActivityPickUpList: {},
+      delActivityDictItemList: {},
       activityImgTableTwoItem: {},
       activityPickUpTableItem: {},
       activityDictItemModal: {
@@ -2301,6 +2303,20 @@ export default {
               }
             });
             break;
+          case 4:
+            self.$refs.activityPickUpTable.cData.forEach((e, index) => {
+              if (e.index == self.deleteItem.index) {
+                self.$refs.activityPickUpTable.cData.splice(index, 1);
+              }
+            });
+            break;
+          case 5:
+            self.$refs.activityDictItemTable.cData.forEach((e, index) => {
+              if (e.index == self.deleteItem.index) {
+                self.$refs.activityDictItemTable.cData.splice(index, 1);
+              }
+            });
+            break;
         }
       } else {
         switch (self.deleteStatus) {
@@ -2326,6 +2342,22 @@ export default {
               if (e.id == self.deleteItem.id) {
                 self.$refs.activityImgTableTwo.cData.splice(index, 1);
                 self.delActivityImgList.push(e.id);
+              }
+            });
+            break;
+          case 4:
+            self.$refs.activityPickUpTable.cData.forEach((e, index) => {
+              if (e.id == self.deleteItem.id) {
+                self.$refs.activityPickUpTable.cData.splice(index, 1);
+                self.delActivityPickUpList.push(e.id);
+              }
+            });
+            break;
+          case 5:
+            self.$refs.activityDictItemTable.cData.forEach((e, index) => {
+              if (e.id == self.deleteItem.id) {
+                self.$refs.activityDictItemTable.cData.splice(index, 1);
+                self.delActivityDictItemList.push(e.id);
               }
             });
             break;
