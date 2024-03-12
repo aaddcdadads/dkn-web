@@ -440,19 +440,21 @@
                                 <hm-ant-table
                                   :columns="[
                                     {
-                                      dataIndex: 'verificationround',
+                                      dataIndex: 'number',
                                       title: '核销轮次',
-                                      key: 'verificationround',
+                                      key: 'number',
                                     },
                                     {
-                                      dataIndex: 'roundname',
+                                      dataIndex: 'name',
                                       title: '轮次名称',
-                                      key: 'roundname',
+                                      key: 'name',
                                     },
                                     {
                                       dataIndex: 'verifiabletime',
                                       title: '可核销时间段',
                                       key: 'verifiabletime',
+                                      customRender:
+                                        'function (data) {\n              return `${data.record.startTime}--${data.record.endTime}`\n    }',
                                     },
                                     {
                                       slots: { customRender: 'action' },
@@ -468,15 +470,15 @@
                                       name: '编辑',
                                       icon: 'fa fa-pencil',
                                       callback:
-                                        'function (item) {\n                            console.log(&quot;点击编辑: &quot;, item);\n                        }',
+                                        'function(item) {        \n          console.log(&quot;点击编辑: &quot;, item);\n         self.activityPickUpModal.visible = true;   \n         self.activityPickUpTableItem=item\n         self.activityPickUpTableStatus = 2\n      item.pickUpTime=[item.startTime,item.endTime]\n        setTimeout(() => {\n            self.$refs.activityPickUpForm.setFormValues(item);\n          });\n        }',
                                       type: 'link',
                                     },
                                     {
                                       name: '删除',
-                                      callback:
-                                        'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
-                                      type: 'link',
                                       icon: 'fa fa-trash',
+                                      callback:
+                                        'function (item) {\n                              console.log(&quot;点击删除: &quot;, item);\n        self.deleteItem=item\n        self.deleteStatus=4\n        self.deleteproject.visible = true;\n                          }',
+                                      type: 'link',
                                     },
                                   ]"
                                   :is-flat-action="true"
