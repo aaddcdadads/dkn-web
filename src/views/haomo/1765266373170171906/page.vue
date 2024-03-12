@@ -1770,9 +1770,9 @@ export default {
       activityPickUpTable: {
         columns: [
           {
-            dataIndex: "verificationround",
+            dataIndex: "number",
             title: "核销轮次",
-            key: "verificationround",
+            key: "number",
           },
           {
             dataIndex: "name",
