@@ -191,19 +191,19 @@
                           >
                             <hm-ant-table
                               ref="activityProjectTable"
-                              :is-flat-action="
-                                activityProjectTable.isFlatAction
-                              "
-                              :get-data-map="activityProjectTable.getDataMap"
-                              :data="activityProjectTable.data"
                               :columns="activityProjectTable.columns"
-                              :row-class-name="
-                                activityProjectTable.rowClassName
-                              "
+                              :data="activityProjectTable.data"
                               :pagination-hidden="
                                 activityProjectTable.paginationHidden
                               "
+                              :get-data-map="activityProjectTable.getDataMap"
                               :actions="activityProjectTable.actions"
+                              :is-flat-action="
+                                activityProjectTable.isFlatAction
+                              "
+                              :row-class-name="
+                                activityProjectTable.rowClassName
+                              "
                               class="ele-activityProjectTable"
                             >
                             </hm-ant-table>
@@ -1552,12 +1552,6 @@ export default {
         value: "",
       },
       activityProjectTable: {
-        isFlatAction: true,
-        getDataMap: {
-          total: "",
-          list: "",
-        },
-        data: [],
         columns: [
           {
             dataIndex: "sortNo",
@@ -1595,9 +1589,9 @@ export default {
             key: "expense",
           },
           {
-            dataIndex: "count",
+            dataIndex: "orderNumber",
             title: "可报名人数",
-            key: "count",
+            key: "orderNumber",
           },
           {
             dataIndex: "name",
@@ -1613,9 +1607,9 @@ export default {
             ellipsis: true,
           },
           {
-            dataIndex: "groupalias",
+            dataIndex: "alias",
             title: "组别名",
-            key: "groupalias",
+            key: "alias",
             ellipsis: true,
           },
           {
@@ -1628,8 +1622,12 @@ export default {
             key: "action",
           },
         ],
-        rowClassName: {},
+        data: [],
         paginationHidden: true,
+        getDataMap: {
+          total: "",
+          list: "",
+        },
         actions: [
           {
             name: "编辑",
@@ -1660,6 +1658,8 @@ export default {
             type: "link",
           },
         ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       activityImgTableTwo: {
         columns: [
