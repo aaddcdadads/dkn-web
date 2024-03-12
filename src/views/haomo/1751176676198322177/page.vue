@@ -502,6 +502,9 @@
                                   text="添加"
                                   :type="'primary'"
                                   icon="fa fa-plus"
+                                  @click="
+                                    onEle2A08A42CA92E46De8F8DB5724Cfc40EaClick
+                                  "
                                   class="ele-2a08a42c-a92e-46de-8f8d-b5724cfc40ea"
                                 >
                                 </hm-ant-button>
@@ -517,6 +520,8 @@
                                   "
                                   :z-index="1000"
                                   :auto-close="false"
+                                  @ok="onActivityDictItemModalOk"
+                                  @cancel="onActivityDictItemModalCancel"
                                   class="ele-activityDictItemModal"
                                 >
                                   <div
@@ -1401,6 +1406,11 @@ export default {
         visible: false,
       },
       activityPickUpTableItem: {},
+      activityDictItemModal: {
+        visible: false,
+      },
+      dictItem: {},
+      activityDictItemTableItem: {},
       activityImgTableOneItem: {},
       imgItem: {},
       activityRules: {
@@ -1765,9 +1775,6 @@ export default {
           },
         },
         value: {},
-      },
-      activityDictItemModal: {
-        visible: false,
       },
       address: {
         value: "",
@@ -2285,6 +2292,68 @@ export default {
     onActivityPickUpModalCancel() {
       this.activityPickUpModal.visible = false;
       this.$refs.activityPickUpForm.reset();
+    },
+    onEle2A08A42CA92E46De8F8DB5724Cfc40EaClick() {
+      this.activityDictItemModal.visible = true;
+      this.activityDictItemStatus = 1;
+    },
+    async onActivityDictItemModalOk() {
+      let self = this;
+      await self.$refs.activityDictItemForm.validate();
+      let item = self.$refs.activityDictItemForm.getFormValues();
+      item.sysDictItemId_dictText = self.dictItem.itemText;
+      item.type = 1;
+      if (self.activityDictItemStatus === 1) {
+        const i = self.$refs.activityDictItemTable.cData.findIndex(
+          (e) => e.sysDictItemId === item.sysDictItemId
+        );
+        if (i != -1) {
+          self.$message.error("配置项已存在");
+          return;
+        }
+        item.index = Math.floor(Math.random() * 10000);
+        self.$refs.activityDictItemTable.cData.push(item);
+      } else if (self.activityDictItemStatus === 2) {
+        const i = self.$refs.activityDictItemTable.cData.findIndex(
+          (e) => e.sysDictItemId === item.sysDictItemId
+        );
+        if (
+          i != -1 &&
+          self.activityDictItemTableItem.sysDictItemId !== item.sysDictItemId
+        ) {
+          self.$message.error("配置项已存在");
+          return;
+        }
+        if (
+          self.activityDictItemTableItem.index ||
+          self.activityDictItemTableItem.index == 0
+        ) {
+          self.$refs.activityDictItemTable.cData.forEach((e, index) => {
+            if (e.index == self.activityDictItemTableItem.index) {
+              self.$refs.activityDictItemTable.cData[index] = {
+                index: self.activityDictItemTableItem.index,
+                ...item,
+              };
+            }
+          });
+        } else {
+          self.$refs.activityDictItemTable.cData.forEach((e, index) => {
+            if (e.id == self.activityDictItemTableItem.id) {
+              self.$refs.activityDictItemTable.cData[index] = {
+                index: self.activityDictItemTableItem.index,
+                ...e,
+                ...item,
+              };
+            }
+          });
+        }
+      }
+      self.activityDictItemModal.visible = false;
+      self.$refs.activityDictItemForm.reset();
+    },
+    onActivityDictItemModalCancel() {
+      this.activityDictItemModal.visible = false;
+      this.$refs.activityDictItemForm.reset();
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
