@@ -65,17 +65,28 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
     });
     activityImgs = [...activityImgs, ...list];
   }
+
+  let activityPickUps = [];
+  if (self.$refs.activityPickUpTable.cData.length > 0) {
+    activityPickUps = self.$refs.activityPickUpTable.cData.map((x) => {
+      return x;
+    });
+  }
+  let activityDictItems = [];
+  if (self.$refs.activityDictItemTable.cData.length > 0) {
+    activityDictItems = self.$refs.activityDictItemTable.cData.map((x) => {
+      return x;
+    });
+  }
   let item = self.$refs.activityForm.getFormValues();
   item.startTime =
     self.$moment(item.cycle[0]).format("YYYY-MM-DD") + " 00:00:00";
   item.endTime = self.$moment(item.cycle[1]).format("YYYY-MM-DD") + " 23:59:59";
   delete item.cycle;
 
-  item.pickUpStartTime =
-    self.$moment(item.pickUpTime[0]).format("YYYY-MM-DD") + " 00:00:00";
-  item.pickUpEndTime =
-    self.$moment(item.pickUpTime[1]).format("YYYY-MM-DD") + " 23:59:59";
-  delete item.pickUpTime;
+  // item.pickUpStartTime = self.$moment(item.pickUpTime[0]).format('YYYY-MM-DD')+" 00:00:00"
+  // item.pickUpEndTime = self.$moment(item.pickUpTime[1]).format('YYYY-MM-DD')+" 23:59:59"
+  // delete item.pickUpTime
 
   let expense = 0;
   activityProjects.forEach((e) => {
@@ -142,6 +153,8 @@ const addActivty = (logic.addActivty = async (pageVm, eventData) => {
     colour: self.colour,
     textColour: self.textColour,
     address: self.address.value,
+    activityPickUps,
+    activityDictItems,
   };
 
   await editRequest();
