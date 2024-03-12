@@ -337,11 +337,11 @@
                             class="ele-wrapper ele-wrapper-aaba946a-d941-4abc-85fe-15bc805b4457"
                           >
                             <hm-bg-card
-                              box-shadow-blur=""
-                              box-shadow-v-shadow=""
-                              border-radius=""
                               width="100%"
                               height="100%"
+                              border-radius=""
+                              box-shadow-v-shadow=""
+                              box-shadow-blur=""
                               class="ele-aaba946a-d941-4abc-85fe-15bc805b4457"
                             >
                               <div
@@ -402,22 +402,26 @@
                                 </hm-ant-button>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-9ee0d4e1-9815-4a1e-b093-d4f480ca2692"
+                                class="ele-wrapper ele-wrapper-activityPickUpModal"
                               >
                                 <hm-modal
+                                  ref="activityPickUpModal"
                                   title="核销轮次"
-                                  :visible="false"
+                                  v-model:visible="activityPickUpModal.visible"
                                   :z-index="1000"
                                   :auto-close="false"
-                                  class="ele-9ee0d4e1-9815-4a1e-b093-d4f480ca2692"
+                                  class="ele-activityPickUpModal"
                                 >
                                   <div
-                                    class="ele-wrapper ele-wrapper-3623df46-c793-4ffe-8d5c-4d5264a1e813"
+                                    class="ele-wrapper ele-wrapper-activityPickUpForm"
                                   >
                                     <hm-ant-formily
-                                      :value="{}"
+                                      ref="activityPickUpForm"
+                                      :config="activityPickUpForm.config"
+                                      v-model:value="activityPickUpForm.value"
                                       :col-num="0"
                                       :col-min-width="380"
+                                      :schema="activityPickUpForm.schema"
                                       :label-col="7"
                                       :wrapper-col="14"
                                     >
@@ -508,10 +512,12 @@
                                   class="ele-8342d972-8229-49a9-a625-0b0465cdc1b1"
                                 >
                                   <div
-                                    class="ele-wrapper ele-wrapper-3f0355a3-bd46-404d-bceb-2a4438b4c879"
+                                    class="ele-wrapper ele-wrapper-activityDictItemForm"
                                   >
                                     <hm-ant-formily
-                                      :value="{}"
+                                      ref="activityDictItemForm"
+                                      :config="activityDictItemForm.config"
+                                      v-model:value="activityDictItemForm.value"
                                       :col-num="0"
                                       :col-min-width="380"
                                       :label-col="7"
@@ -1748,7 +1754,7 @@ export default {
         },
         value: {},
       },
-      "9ee0d4e1-9815-4a1e-b093-d4f480ca2692": {
+      activityPickUpModal: {
         visible: false,
       },
       "8342d972-8229-49a9-a625-0b0465cdc1b1": {
@@ -1757,10 +1763,77 @@ export default {
       address: {
         value: "",
       },
-      "3623df46-c793-4ffe-8d5c-4d5264a1e813": {
+      activityPickUpForm: {
+        config: {
+          name: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "轮次名称",
+            required: true,
+            props: {
+              placeholder: "轮次名称",
+            },
+          },
+          pickUpTime: {
+            style: {
+              width: "100%",
+            },
+            type: "RangePicker",
+            title: "核销时间段",
+            required: true,
+            props: {},
+          },
+        },
         value: {},
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
-      "3f0355a3-bd46-404d-bceb-2a4438b4c879": {
+      activityDictItemForm: {
+        config: {
+          sysDictItemId: {
+            type: "HmAntSelect",
+            title: "参与人配置项",
+            style: {
+              width: "100%",
+            },
+            props: {
+              title: "",
+              url: "/api/sys/dict/getDictItem",
+              dataMap: {
+                label: "itemText",
+                value: "id",
+              },
+            },
+            events: {
+              "@change": function (e, i) {
+                const s = i.findIndex((a) => a.id === e);
+                self.dictItem = JSON.parse(JSON.stringify(i[s]));
+              },
+            },
+          },
+        },
         value: {},
       },
       activityImgTableOne: {
@@ -2450,7 +2523,7 @@ export default {
   margin-top: 15px;
 }
 
-.ele-wrapper-9ee0d4e1-9815-4a1e-b093-d4f480ca2692 {
+.ele-wrapper-activityPickUpModal {
   /deep/.hm-modal {
     min-height: 0px;
   }
