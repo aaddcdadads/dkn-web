@@ -507,6 +507,18 @@
                                   :auto-close="false"
                                   class="ele-8342d972-8229-49a9-a625-0b0465cdc1b1"
                                 >
+                                  <div
+                                    class="ele-wrapper ele-wrapper-3f0355a3-bd46-404d-bceb-2a4438b4c879"
+                                  >
+                                    <hm-ant-formily
+                                      :value="{}"
+                                      :col-num="0"
+                                      :col-min-width="380"
+                                      :label-col="7"
+                                      :wrapper-col="14"
+                                    >
+                                    </hm-ant-formily>
+                                  </div>
                                 </hm-modal>
                               </div>
                               <div
@@ -1746,6 +1758,9 @@ export default {
         value: "",
       },
       "3623df46-c793-4ffe-8d5c-4d5264a1e813": {
+        value: {},
+      },
+      "3f0355a3-bd46-404d-bceb-2a4438b4c879": {
         value: {},
       },
       activityImgTableOne: {
