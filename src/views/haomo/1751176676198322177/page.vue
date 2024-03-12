@@ -435,54 +435,20 @@
                                 </hm-modal>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-96bb95ad-bddc-4f8d-acc8-0ddcad8a20d4"
+                                class="ele-wrapper ele-wrapper-activityPickUpTable"
                               >
                                 <hm-ant-table
-                                  :columns="[
-                                    {
-                                      dataIndex: 'number',
-                                      title: '核销轮次',
-                                      key: 'number',
-                                    },
-                                    {
-                                      dataIndex: 'name',
-                                      title: '轮次名称',
-                                      key: 'name',
-                                    },
-                                    {
-                                      dataIndex: 'verifiabletime',
-                                      title: '可核销时间段',
-                                      key: 'verifiabletime',
-                                      customRender:
-                                        'function (data) {\n              return `${data.record.startTime}--${data.record.endTime}`\n    }',
-                                    },
-                                    {
-                                      slots: { customRender: 'action' },
-                                      dataIndex: '',
-                                      title: '操作',
-                                      key: 'action',
-                                    },
-                                  ]"
-                                  :data="[]"
-                                  :get-data-map="{ total: '', list: '' }"
-                                  :actions="[
-                                    {
-                                      name: '编辑',
-                                      icon: 'fa fa-pencil',
-                                      callback:
-                                        'function(item) {        \n          console.log(&quot;点击编辑: &quot;, item);\n         self.activityPickUpModal.visible = true;   \n         self.activityPickUpTableItem=item\n         self.activityPickUpTableStatus = 2\n      item.pickUpTime=[item.startTime,item.endTime]\n        setTimeout(() => {\n            self.$refs.activityPickUpForm.setFormValues(item);\n          });\n        }',
-                                      type: 'link',
-                                    },
-                                    {
-                                      name: '删除',
-                                      icon: 'fa fa-trash',
-                                      callback:
-                                        'function (item) {\n                              console.log(&quot;点击删除: &quot;, item);\n        self.deleteItem=item\n        self.deleteStatus=4\n        self.deleteproject.visible = true;\n                          }',
-                                      type: 'link',
-                                    },
-                                  ]"
-                                  :is-flat-action="true"
-                                  :row-class-name="{}"
+                                  ref="activityPickUpTable"
+                                  :columns="activityPickUpTable.columns"
+                                  :data="activityPickUpTable.data"
+                                  :get-data-map="activityPickUpTable.getDataMap"
+                                  :actions="activityPickUpTable.actions"
+                                  :is-flat-action="
+                                    activityPickUpTable.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityPickUpTable.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -543,35 +509,19 @@
                                 </hm-modal>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-32f73ba3-e652-4fd6-856c-d1d40436effc"
+                                class="ele-wrapper ele-wrapper-activityDictItemTable"
                               >
                                 <hm-ant-table
-                                  :columns="[
-                                    {
-                                      title: '字段名',
-                                      dataIndex: 'sysDictItemId_dictText',
-                                      key: 'sysDictItemId_dictText',
-                                      ellipsis: true,
-                                    },
-                                    {
-                                      title: '操作',
-                                      dataIndex: '',
-                                      key: 'action',
-                                      slots: { customRender: 'action' },
-                                    },
-                                  ]"
-                                  :data="[]"
-                                  :actions="[
-                                    {
-                                      name: '删除',
-                                      callback:
-                                        'function (item) {\n                         self.deleteItem=item\n        self.deleteStatus=5\n        self.deleteproject.visible = true;\n                        }',
-                                      type: 'link',
-                                      icon: 'fa fa-trash',
-                                    },
-                                  ]"
-                                  :is-flat-action="true"
-                                  :row-class-name="{}"
+                                  ref="activityDictItemTable"
+                                  :columns="activityDictItemTable.columns"
+                                  :data="activityDictItemTable.data"
+                                  :actions="activityDictItemTable.actions"
+                                  :is-flat-action="
+                                    activityDictItemTable.isFlatAction
+                                  "
+                                  :row-class-name="
+                                    activityDictItemTable.rowClassName
+                                  "
                                 >
                                 </hm-ant-table>
                               </div>
@@ -1360,6 +1310,9 @@ export default {
         },
         value: {},
       },
+      activityPickUpModal: {
+        visible: false,
+      },
       addBackground: {
         visible: false,
         style: {
@@ -1425,9 +1378,6 @@ export default {
       activityProjectItem: {},
       deleteItem: {},
       activityImgTableTwoItem: {},
-      activityPickUpModal: {
-        visible: false,
-      },
       activityPickUpTableItem: {},
       activityDictItemModal: {
         visible: false,
@@ -1798,6 +1748,104 @@ export default {
           },
         },
         value: {},
+      },
+      activityPickUpTable: {
+        columns: [
+          {
+            dataIndex: "number",
+            title: "核销轮次",
+            key: "number",
+          },
+          {
+            dataIndex: "name",
+            title: "轮次名称",
+            key: "name",
+          },
+          {
+            dataIndex: "verifiabletime",
+            title: "可核销时间段",
+            key: "verifiabletime",
+            customRender: function (data) {
+              return `${data.record.startTime}--${data.record.endTime}`;
+            },
+          },
+          {
+            slots: {
+              customRender: "action",
+            },
+            dataIndex: "",
+            title: "操作",
+            key: "action",
+          },
+        ],
+        data: [],
+        getDataMap: {
+          total: "",
+          list: "",
+        },
+        actions: [
+          {
+            name: "编辑",
+            icon: "fa fa-pencil",
+            callback: function (item) {
+              console.log("点击编辑: ", item);
+              self.activityPickUpModal.visible = true;
+              self.activityPickUpTableItem = item;
+              self.activityPickUpTableStatus = 2;
+              item.pickUpTime = [item.startTime, item.endTime];
+              setTimeout(() => {
+                self.$refs.activityPickUpForm.setFormValues(item);
+              });
+            },
+            type: "link",
+          },
+          {
+            name: "删除",
+            icon: "fa fa-trash",
+            callback: function (item) {
+              console.log("点击删除: ", item);
+              self.deleteItem = item;
+              self.deleteStatus = 4;
+              self.deleteproject.visible = true;
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
+      },
+      activityDictItemTable: {
+        columns: [
+          {
+            title: "字段名",
+            dataIndex: "sysDictItemId_dictText",
+            key: "sysDictItemId_dictText",
+            ellipsis: true,
+          },
+          {
+            title: "操作",
+            dataIndex: "",
+            key: "action",
+            slots: {
+              customRender: "action",
+            },
+          },
+        ],
+        data: [],
+        actions: [
+          {
+            name: "删除",
+            callback: function (item) {
+              self.deleteItem = item;
+              self.deleteStatus = 5;
+              self.deleteproject.visible = true;
+            },
+            type: "link",
+            icon: "fa fa-trash",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       address: {
         value: "",
