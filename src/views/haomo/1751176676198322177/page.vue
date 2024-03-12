@@ -549,8 +549,8 @@
                                   :columns="[
                                     {
                                       title: '字段名',
-                                      dataIndex: 'field',
-                                      key: 'field',
+                                      dataIndex: 'sysDictItemId_dictText',
+                                      key: 'sysDictItemId_dictText',
                                       ellipsis: true,
                                     },
                                     {
@@ -565,7 +565,7 @@
                                     {
                                       name: '删除',
                                       callback:
-                                        'function (item) {\n                            console.log(&quot;点击删除: &quot;, item);\n                        }',
+                                        'function (item) {\n                         self.deleteItem=item\n        self.deleteStatus=5\n        self.deleteproject.visible = true;\n                        }',
                                       type: 'link',
                                       icon: 'fa fa-trash',
                                     },
