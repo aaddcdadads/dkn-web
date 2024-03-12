@@ -2410,6 +2410,14 @@ export default {
           });
         }
       }
+      self.$refs.activityPickUpTable.cData.sort(
+        (a, b) =>
+          new Date(self.$moment(a.endTime)).getTime() -
+          new Date(self.$moment(b.endTime)).getTime()
+      );
+      self.$refs.activityPickUpTable.cData.forEach((e, index) => {
+        e.number = index + 1;
+      });
       self.activityPickUpModal.visible = false;
       self.$refs.activityPickUpForm.reset();
     },
