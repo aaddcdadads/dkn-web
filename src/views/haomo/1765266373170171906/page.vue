@@ -2480,16 +2480,19 @@ export default {
     async onActivityPickUpModalOk() {
       let self = this;
       await self.$refs.activityPickUpForm.validate();
+      if (!self.checkPickUpTime()) {
+        return;
+      }
       let item = self.$refs.activityPickUpForm.getFormValues();
       item.startTime =
         self.$moment(item.pickUpTime[0]).format("YYYY-MM-DD") + " 00:00:00";
       item.endTime =
         self.$moment(item.pickUpTime[1]).format("YYYY-MM-DD") + " 23:59:59";
       delete item.pickUpTime;
-      if (self.activityPickUpStatus === 1) {
+      if (self.activityPickUpTableStatus === 1) {
         item.index = Math.floor(Math.random() * 10000);
         self.$refs.activityPickUpTable.cData.push(item);
-      } else if (self.activityImgTableTwoStatus === 2) {
+      } else if (self.activityPickUpTableStatus === 2) {
         if (
           self.activityPickUpTableItem.index ||
           self.activityPickUpTableItem.index == 0
