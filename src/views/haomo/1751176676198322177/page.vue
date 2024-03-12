@@ -411,6 +411,18 @@
                                   :auto-close="false"
                                   class="ele-9ee0d4e1-9815-4a1e-b093-d4f480ca2692"
                                 >
+                                  <div
+                                    class="ele-wrapper ele-wrapper-3623df46-c793-4ffe-8d5c-4d5264a1e813"
+                                  >
+                                    <hm-ant-formily
+                                      :value="{}"
+                                      :col-num="0"
+                                      :col-min-width="380"
+                                      :label-col="7"
+                                      :wrapper-col="14"
+                                    >
+                                    </hm-ant-formily>
+                                  </div>
                                 </hm-modal>
                               </div>
                               <div
@@ -484,6 +496,18 @@
                                   class="ele-2a08a42c-a92e-46de-8f8d-b5724cfc40ea"
                                 >
                                 </hm-ant-button>
+                              </div>
+                              <div
+                                class="ele-wrapper ele-wrapper-8342d972-8229-49a9-a625-0b0465cdc1b1"
+                              >
+                                <hm-modal
+                                  title="核销轮次"
+                                  :visible="false"
+                                  :z-index="1000"
+                                  :auto-close="false"
+                                  class="ele-8342d972-8229-49a9-a625-0b0465cdc1b1"
+                                >
+                                </hm-modal>
                               </div>
                               <div
                                 class="ele-wrapper ele-wrapper-32f73ba3-e652-4fd6-856c-d1d40436effc"
@@ -1715,8 +1739,14 @@ export default {
       "9ee0d4e1-9815-4a1e-b093-d4f480ca2692": {
         visible: false,
       },
+      "8342d972-8229-49a9-a625-0b0465cdc1b1": {
+        visible: false,
+      },
       address: {
         value: "",
+      },
+      "3623df46-c793-4ffe-8d5c-4d5264a1e813": {
+        value: {},
       },
       activityImgTableOne: {
         columns: [
@@ -2423,6 +2453,12 @@ export default {
 .ele-wrapper-2a08a42c-a92e-46de-8f8d-b5724cfc40ea {
   margin-left: 5px;
   margin-top: 15px;
+}
+
+.ele-wrapper-8342d972-8229-49a9-a625-0b0465cdc1b1 {
+  /deep/.hm-modal {
+    min-height: 0px;
+  }
 }
 
 .ele-wrapper-message_2 {
