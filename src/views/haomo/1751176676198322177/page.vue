@@ -413,6 +413,8 @@
                                   v-model:visible="activityPickUpModal.visible"
                                   :z-index="1000"
                                   :auto-close="false"
+                                  @ok="onActivityPickUpModalOk"
+                                  @cancel="onActivityPickUpModalCancel"
                                   class="ele-activityPickUpModal"
                                 >
                                   <div
@@ -1398,6 +1400,7 @@ export default {
       activityPickUpModal: {
         visible: false,
       },
+      activityPickUpTableItem: {},
       activityImgTableOneItem: {},
       imgItem: {},
       activityRules: {
@@ -2238,6 +2241,50 @@ export default {
     onEled1031250B5474D76B4Ed9Adb9115Eb40Click() {
       this.activityPickUpModal.visible = true;
       this.activityPickUpStatus = 1;
+    },
+    async onActivityPickUpModalOk() {
+      let self = this;
+      await self.$refs.activityPickUpForm.validate();
+      let item = self.$refs.activityPickUpForm.getFormValues();
+      item.startTime =
+        self.$moment(item.pickUpTime[0]).format("YYYY-MM-DD") + " 00:00:00";
+      item.endTime =
+        self.$moment(item.pickUpTime[1]).format("YYYY-MM-DD") + " 23:59:59";
+      delete item.pickUpTime;
+      if (self.activityPickUpStatus === 1) {
+        item.index = Math.floor(Math.random() * 10000);
+        self.$refs.activityPickUpTable.cData.push(item);
+      } else if (self.activityImgTableTwoStatus === 2) {
+        if (
+          self.activityPickUpTableItem.index ||
+          self.activityPickUpTableItem.index == 0
+        ) {
+          self.$refs.activityPickUpTable.cData.forEach((e, index) => {
+            if (e.index == self.activityPickUpTableItem.index) {
+              self.$refs.activityPickUpTable.cData[index] = {
+                index: self.activityPickUpTableItem.index,
+                ...item,
+              };
+            }
+          });
+        } else {
+          self.$refs.activityPickUpTable.cData.forEach((e, index) => {
+            if (e.id == self.activityPickUpTableItem.id) {
+              self.$refs.activityPickUpTable.cData[index] = {
+                index: self.activityPickUpTableItem.index,
+                ...e,
+                ...item,
+              };
+            }
+          });
+        }
+      }
+      self.activityPickUpModal.visible = false;
+      self.$refs.activityPickUpForm.reset();
+    },
+    onActivityPickUpModalCancel() {
+      this.activityPickUpModal.visible = false;
+      this.$refs.activityPickUpForm.reset();
     },
     onAddBtn3Click() {
       this.addBackground.visible = true;
