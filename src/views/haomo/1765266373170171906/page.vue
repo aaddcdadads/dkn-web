@@ -1557,9 +1557,9 @@ export default {
             key: "expense",
           },
           {
-            dataIndex: "count",
+            dataIndex: "orderNumber",
             title: "可报名人数",
-            key: "count",
+            key: "orderNumber",
           },
           {
             dataIndex: "name",
@@ -1575,9 +1575,9 @@ export default {
             ellipsis: true,
           },
           {
-            dataIndex: "groupalias",
+            dataIndex: "alias",
             title: "组别名",
-            key: "groupalias",
+            key: "alias",
             ellipsis: true,
           },
           {
