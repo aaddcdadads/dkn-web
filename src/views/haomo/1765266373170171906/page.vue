@@ -1831,7 +1831,9 @@ export default {
           {
             name: "删除",
             callback: function (item) {
-              console.log("点击删除: ", item);
+              self.deleteItem = item;
+              self.deleteStatus = 5;
+              self.deleteproject.visible = true;
             },
             type: "link",
             icon: "fa fa-trash",
