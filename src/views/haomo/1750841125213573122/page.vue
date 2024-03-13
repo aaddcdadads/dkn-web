@@ -1022,8 +1022,8 @@ export default {
             class: "applyNoDiv",
             style: {
               height: "100%",
-              display: "flex",
-              alignItems: "center",
+              //display: "flex",
+              //alignItems: "center",
               paddingLeft: "16px",
               marginLeft: "-16px",
               backgroundColor: color,
