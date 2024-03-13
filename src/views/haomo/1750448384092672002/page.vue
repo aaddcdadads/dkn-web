@@ -933,6 +933,9 @@
                               text="下载模板"
                               :type="'link'"
                               icon="fa fa-paperclip"
+                              @click="
+                                onEle6A2C4B1BFc1D4F9F9Baf3Dc513039Ea8Click
+                              "
                               class="ele-6a2c4b1b-fc1d-4f9f-9baf-3dc513039ea8"
                             >
                             </hm-ant-button>
@@ -2129,6 +2132,13 @@ export default {
     onAddChannelModalCancel() {
       this.addChannelModal.visible = false;
       this.addActivityDictItem();
+    },
+    onEle6A2C4B1BFc1D4F9F9Baf3Dc513039Ea8Click() {
+      this.$downloadFile(
+        "活动渠道列表模板.xlsx",
+        "/api/dkn/activityDictItem/downExcelTemplate",
+        {}
+      );
     },
   },
 };
