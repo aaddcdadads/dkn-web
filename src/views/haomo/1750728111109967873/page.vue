@@ -823,7 +823,7 @@ export default {
       }
 
       this.processingData = function (par) {
-        if (!strs) {
+        if (!par) {
           return "";
         }
 
