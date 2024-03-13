@@ -867,6 +867,34 @@ export default {
       if (this.$route.query.activityId) {
         this.registrationOrdersTable.params.activityId = this.$route.query.activityId;
       }
+    },
+    onMounted() {
+      console.log("this.importButton.visible");
+      console.log("this.exportButton.visible");
+      console.log("this.crudPagePanel.title");
+      console.log("this.registrationOrdersAddForm.config");
+      console.log(
+        "this.registrationOrdersEditForm.config",
+        "this.registrationOrdersDeleteModal.visible"
+      );
+      console.log(
+        "this.registrationOrdersDetailForm.config",
+        "this.userTotalText.text",
+        "this.registrationOrdersTable.rowSelection"
+      );
+
+      //设置上传请求头
+      this.$nextTick(() => {
+        let token = localStorage.getItem("pro__Access-Token");
+        if (token) {
+          this.importButton.headers = {
+            "X-Access-Token": token,
+          };
+        }
+      });
+      if (this.$route.query.activityId) {
+        this.registrationOrdersFilter.value.activityId = this.$route.query.activityId;
+      }
       this.processingData = function (data, paymentStatus, startTime, endTime) {
         if (!data) {
           return "";
@@ -900,12 +928,12 @@ export default {
                 if (paymentStatus === 0) {
                   //当前时间在核销时间之前
                   if (currentTimepick.isBetween(startTimepick, endTimepick)) {
-                    self.registrationOrdersDeleteModal.visible = true;
+                    this.registrationOrdersDeleteModal.visible = true;
                   } else {
-                    self.$message.error("超过核销截止时间了不可核销");
+                    this.$message.error("超过核销截止时间了不可核销");
                   }
                 } else {
-                  self.$message.error("已退款、待支付状态下不可核销");
+                  this.$message.error("已退款、待支付状态下不可核销");
                 }
               },
             })
@@ -925,31 +953,6 @@ export default {
           resultButton
         );
       };
-    },
-    onMounted() {
-      console.log("this.importButton.visible");
-      console.log("this.exportButton.visible");
-      console.log("this.crudPagePanel.title");
-      console.log("this.registrationOrdersAddForm.config");
-      console.log("this.registrationOrdersEditForm.config");
-      console.log(
-        "this.registrationOrdersDetailForm.config",
-        "this.userTotalText.text",
-        "this.registrationOrdersTable.rowSelection"
-      );
-
-      //设置上传请求头
-      this.$nextTick(() => {
-        let token = localStorage.getItem("pro__Access-Token");
-        if (token) {
-          this.importButton.headers = {
-            "X-Access-Token": token,
-          };
-        }
-      });
-      if (this.$route.query.activityId) {
-        this.registrationOrdersFilter.value.activityId = this.$route.query.activityId;
-      }
     },
 
     onAddButtonClick() {
