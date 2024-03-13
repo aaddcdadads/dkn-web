@@ -854,33 +854,77 @@
               <div class="ele-wrapper ele-wrapper-impotChannelModal">
                 <hm-modal
                   ref="impotChannelModal"
+                  title="导入"
                   v-model:visible="impotChannelModal.visible"
+                  :closable="true"
+                  ok-text="删除"
+                  :ok-button-boole="false"
+                  :ok-type="'danger'"
                   :z-index="1000"
+                  height="180px"
                 >
                   <div
                     class="ele-wrapper ele-wrapper-2f8a2b08-8274-4c92-9dfa-ead59429baa6"
                   >
-                    <hm-bg-card>
+                    <hm-bg-card
+                      width="480px"
+                      height="180px"
+                      border-radius=""
+                      :text-align="'center'"
+                      padding=""
+                      box-shadow-h-shadow=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
+                      box-shadow-spread=""
+                      box-shadow-color="#00000000"
+                    >
                       <div class="ele-wrapper ele-wrapper-channelUpload">
                         <hm-ant-upload
                           ref="channelUpload"
+                          title=""
+                          text="上传文件"
                           v-model:file-list="channelUpload.fileList"
+                          action="/api/dkn/viewActivityStore/importExcel "
+                          :headers="channelUpload.headers"
+                          class="ele-channelUpload"
                         >
                         </hm-ant-upload>
                       </div>
                       <div
                         class="ele-wrapper ele-wrapper-8241b2f8-302f-4604-a53c-668ed78c4b87"
                       >
-                        <hm-bg-card>
+                        <hm-bg-card
+                          width="100%"
+                          height=""
+                          border-radius=""
+                          :text-align="'center'"
+                          padding=""
+                          box-shadow-h-shadow=""
+                          box-shadow-v-shadow=""
+                          box-shadow-blur=""
+                          box-shadow-spread=""
+                          box-shadow-color="#00000000"
+                          class="ele-8241b2f8-302f-4604-a53c-668ed78c4b87"
+                        >
                           <div
                             class="ele-wrapper ele-wrapper-4de01ecb-90f3-4fb9-b2b5-14d848156621"
                           >
-                            <hm-ant-bg-text> </hm-ant-bg-text>
+                            <hm-ant-bg-text
+                              text="仅支持xls、xlsx格式文件  "
+                              font-size="16px"
+                            >
+                            </hm-ant-bg-text>
                           </div>
                           <div
                             class="ele-wrapper ele-wrapper-6a2c4b1b-fc1d-4f9f-9baf-3dc513039ea8"
                           >
-                            <hm-ant-button> </hm-ant-button>
+                            <hm-ant-button
+                              text="下载模板"
+                              :type="'link'"
+                              icon="fa fa-paperclip"
+                              class="ele-6a2c4b1b-fc1d-4f9f-9baf-3dc513039ea8"
+                            >
+                            </hm-ant-button>
                           </div>
                         </hm-bg-card>
                       </div>
@@ -1623,7 +1667,7 @@ export default {
         visible: false,
       },
       impotChannelModal: {
-        visible: true,
+        visible: false,
       },
       channelTree: {
         value: null,
@@ -1667,6 +1711,7 @@ export default {
       },
       channelUpload: {
         fileList: [],
+        headers: {},
       },
     };
   },
@@ -2312,6 +2357,20 @@ export default {
 
 .ele-wrapper-bb41f563-3631-4d69-8120-616a9e58816a {
   width: 60%;
+}
+
+.ele-wrapper-channelUpload {
+  margin-left: 2%;
+}
+
+.ele-wrapper-8241b2f8-302f-4604-a53c-668ed78c4b87 {
+  width: 100%;
+}
+
+.ele-wrapper-6a2c4b1b-fc1d-4f9f-9baf-3dc513039ea8 {
+  /deep/.ant-btn-icon-only {
+    color: "blue";
+  }
 }
 
 .ele-wrapper-bd8f481b-9f27-4d1b-9a65-3e3566be69e1 {
