@@ -652,35 +652,9 @@ export default {
             },
             validator: function (value) {},
           },
-          paymentStatus: {
-            type: "HmAntSelect",
-            title: "报名状态",
-            style: {
-              width: "50%",
-            },
-            props: {
-              title: "",
-              width: "242px",
-              options: [
-                {
-                  label: "已报名",
-                  value: 0,
-                },
-                {
-                  label: "未支付",
-                  value: 1,
-                },
-                {
-                  label: "已退款",
-                  value: 2,
-                },
-              ],
-            },
-            validator: function (value) {},
-          },
-          pickUpStatus: {
-            type: "HmAntSelect",
-            title: "核销状态",
+          alias: {
+            type: "Input",
+            title: "组别名",
             style: {
               width: "50%",
             },
