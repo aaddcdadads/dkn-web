@@ -656,7 +656,9 @@ export default {
               let names = data.text.split(",");
               let filterNames = names.filter((item) => item !== "");
               if (
-                names.some((item) => item !== data.record.originalPickUpName)
+                filterNames.some(
+                  (item) => item !== data.record.originalPickUpName
+                )
               ) {
                 return self.processingColorData(data.text, "#fe8989");
               }
