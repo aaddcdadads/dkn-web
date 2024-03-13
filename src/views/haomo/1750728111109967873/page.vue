@@ -890,6 +890,10 @@ export default {
               disabled: statusFlag === 0 ? false : true,
               text: splText[0] + "轮:核销",
               fontSize: 14,
+              style: {
+                width: "100%",
+                display: "block",
+              },
               type: "link",
               icon: "",
               onClick: function () {
