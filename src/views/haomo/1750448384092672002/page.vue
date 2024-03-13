@@ -810,6 +810,7 @@
                   width="320px"
                   :z-index="1000"
                   height="80px"
+                  @ok="onDelChannelModalOk"
                 >
                   <div
                     class="ele-wrapper ele-wrapper-47c9a74e-6fc3-48db-8992-6ce487ba6500"
@@ -1291,6 +1292,7 @@ export default {
       impotChannelModal: {
         visible: false,
       },
+      delViewActivityDictItem: {},
       importButton: {
         visible: false,
         headers: null,
@@ -2138,6 +2140,20 @@ export default {
     },
     onEle6C6Ecbd635Bf43B5BdadAb23699Ef7DfClick() {
       this.impotChannelModal.visible = true;
+    },
+    async onDelChannelModalOk() {
+      let self = this;
+      let url = "/api/dkn/activityDictItem/delete";
+      let params = {
+        id: self.delViewActivityDictItem.id,
+      };
+      const res = await self.$deleteAction(url, params);
+      if (res.success) {
+        self.$message.success("删除成功");
+      } else {
+        self.$message.error(res.message);
+      }
+      self.$refs.channelTable.getData();
     },
     onAddChannelModalCancel() {
       this.addChannelModal.visible = false;
