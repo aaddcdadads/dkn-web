@@ -285,14 +285,15 @@ const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = functio
 const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {
   self.heXiaoDuo = [];
   self.selectTempArr.forEach((e) => {
-    let par = {
-      orderId: e.id,
-      activityId: e.activityId,
-      storeId: e.storeId,
-      pickUpStatus: 0,
-      pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
-    };
-    self.heXiaoDuo.push(par);
+    let splData = e.pickUpStatusAction.split(",");
+    for (let i = 0; i < splData.length; i++) {
+      let splText = splData[i].split(":");
+      let par = {
+        id: splText[2],
+        pickUpStatus: 0,
+      };
+      self.heXiaoDuo.push(par);
+    }
   });
 });
 
