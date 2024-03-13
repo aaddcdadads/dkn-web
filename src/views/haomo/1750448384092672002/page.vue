@@ -847,10 +847,13 @@
                   height=""
                   :auto-close="false"
                 >
-                  <div
-                    class="ele-wrapper ele-wrapper-97bd2365-db0b-4957-bd65-661e1fdeb3ac"
-                  >
-                    <hm-ant-select value="undefined" :options="[]">
+                  <div class="ele-wrapper ele-wrapper-channelSelect">
+                    <hm-ant-select
+                      ref="channelSelect"
+                      v-model:value="channelSelect.value"
+                      url="/api/sys/dict/getDictItem"
+                      v-model:options="channelSelect.options"
+                    >
                     </hm-ant-select>
                   </div>
                 </hm-modal>
@@ -1217,7 +1220,10 @@ export default {
       addChannelModal: {
         visible: false,
       },
-      channelSelect: {},
+      channelSelect: {
+        value: null,
+        options: [],
+      },
       impotChannelModal: {
         visible: false,
       },
@@ -1669,10 +1675,6 @@ export default {
       },
       delChannelModal: {
         visible: false,
-      },
-      "97bd2365-db0b-4957-bd65-661e1fdeb3ac": {
-        value: null,
-        options: [],
       },
       channelUpload: {
         fileList: [],
