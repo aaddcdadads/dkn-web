@@ -1653,16 +1653,6 @@ export default {
             type: "link",
           },
           {
-            name: "报名列表",
-            callback: function (item) {
-              self.$router.push({
-                path: `/haomo/1767760231825149953/page`,
-                query: { activityId: item.id },
-              });
-            },
-            type: "link",
-          },
-          {
             name: "查看详情",
             callback: function (item) {
               self.$router.push({
@@ -1690,7 +1680,10 @@ export default {
           {
             name: "参与列表",
             callback: function (item) {
-              console.log("参与列表");
+              self.$router.push({
+                path: `/haomo/1767760231825149953/page`,
+                query: { activityId: item.id },
+              });
             },
             type: "link",
           },
