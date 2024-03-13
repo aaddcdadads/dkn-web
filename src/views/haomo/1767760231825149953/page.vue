@@ -521,7 +521,7 @@ export default {
           pageSize: 10,
           showSizeChanger: true,
         },
-        url: "/api/dkn/viewOrderProject/listEntry",
+        url: "/api/dkn/viewOrderProject/list",
         getDataMap: {
           total: "",
           list: "",
