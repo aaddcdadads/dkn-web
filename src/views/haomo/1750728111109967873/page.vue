@@ -997,13 +997,13 @@ export default {
       if (this.selectTempArr.length > 0) {
         var currentTimepick = this.$moment();
         var flag = false;
-        this.selectTempArr.forEach((e) => {
+        for (let i = 0; i < this.selectTempArr.length; i++) {
           var startTimepick = this.$moment(
-            e.pickUpStartTime,
+            this.selectTempArr[i].pickUpStartTime,
             "YYYY-MM-DD HH:mm:ss"
           );
           var endTimepick = this.$moment(
-            e.pickUpEndTime,
+            this.selectTempArr[i].pickUpEndTime,
             "YYYY-MM-DD HH:mm:ss"
           );
           if (!currentTimepick.isBetween(startTimepick, endTimepick)) {
@@ -1012,14 +1012,14 @@ export default {
             flag = true;
             return;
           }
-          if (e.paymentStatus !== 0) {
+          if (this.selectTempArr[i].paymentStatus !== 0) {
             this.$message.error("数据中存在已退款、待支付状态下不可核销");
             this.bacthHeImportButton.disabled = true;
             flag = true;
             return;
           }
 
-          let splData = e.pickUpStatusAction.split(",");
+          let splData = this.selectTempArr[i].pickUpStatusAction.split(",");
           for (let i = 0; i < splData.length; i++) {
             let splText = splData[i].split(":");
             if (splText[1] === 0) {
@@ -1029,7 +1029,11 @@ export default {
               return;
             }
           }
-        });
+          if (flag) {
+            return;
+          }
+        }
+
         if (!flag) {
           this.bacthHeImportButton.disabled = false;
         }
