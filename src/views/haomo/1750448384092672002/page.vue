@@ -896,6 +896,7 @@
                           text="上传文件"
                           v-model:file-list="channelUpload.fileList"
                           action="/api/dkn/viewActivityDictItem/importExcel "
+                          :data="channelUpload.data"
                           :headers="channelUpload.headers"
                           class="ele-channelUpload"
                         >
@@ -1073,6 +1074,51 @@ export default {
           top: "100px",
           padding: "10px 15px",
         },
+      },
+      channelUpload: {
+        data: {},
+        fileList: [],
+        headers: {},
+      },
+      channelTable: {
+        params: {
+          id: "-1",
+        },
+        columns: [
+          {
+            title: "渠道名称",
+            dataIndex: "sysDictItemId_dictText",
+            key: "sysDictItemId_dictText",
+          },
+          {
+            title: "数据值",
+            dataIndex: "itemValue",
+            key: "itemValue",
+            width: 80,
+          },
+          {
+            title: "操作",
+            dataIndex: "",
+            key: "action",
+            slots: {
+              customRender: "action",
+            },
+          },
+        ],
+        data: [],
+        url: "/api/dkn/viewActivityStore/list",
+        actions: [
+          {
+            name: "删除",
+            callback: function (item) {
+              self.delViewActivityStoreModal = item;
+              self.viewActivityStoreModal.visible = true;
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
       },
       channelModal: {
         visible: false,
@@ -1587,7 +1633,14 @@ export default {
           {
             name: "渠道配置",
             callback: function (item) {
+              self.activityId = item.id;
+              self.channelUpload.data = { activityId: self.activityId };
+              self.channelTable.params = {
+                activityId: item.id,
+                type: 0,
+              };
               self.channelModal.visible = true;
+
               console.log("渠道配置");
             },
             type: "link",
@@ -1647,52 +1700,8 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      channelTable: {
-        columns: [
-          {
-            title: "渠道名称",
-            dataIndex: "sysDictItemId_dictText",
-            key: "sysDictItemId_dictText",
-          },
-          {
-            title: "数据值",
-            dataIndex: "itemValue",
-            key: "itemValue",
-            width: 80,
-          },
-          {
-            title: "操作",
-            dataIndex: "",
-            key: "action",
-            slots: {
-              customRender: "action",
-            },
-          },
-        ],
-        data: [],
-        url: "/api/dkn/viewActivityStore/list",
-        params: {
-          id: "-1",
-        },
-        actions: [
-          {
-            name: "删除",
-            callback: function (item) {
-              self.delViewActivityStoreModal = item;
-              self.viewActivityStoreModal.visible = true;
-            },
-            type: "link",
-          },
-        ],
-        isFlatAction: true,
-        rowClassName: {},
-      },
       delChannelModal: {
         visible: false,
-      },
-      channelUpload: {
-        fileList: [],
-        headers: {},
       },
     };
   },
