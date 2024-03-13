@@ -1112,8 +1112,8 @@ export default {
           {
             name: "删除",
             callback: function (item) {
-              self.delViewActivityStoreModal = item;
-              self.viewActivityStoreModal.visible = true;
+              self.delViewActivityDictItem = item;
+              self.delChannelModal.visible = true;
             },
             type: "link",
           },
@@ -1209,6 +1209,9 @@ export default {
         visible: false,
       },
       viewActivityStoreModal: {
+        visible: false,
+      },
+      delChannelModal: {
         visible: false,
       },
       activityAddModal: {
@@ -1700,9 +1703,6 @@ export default {
         isFlatAction: true,
         backgroundColor: "#FFFFFF",
         rowClassName: {},
-      },
-      delChannelModal: {
-        visible: false,
       },
     };
   },
