@@ -1630,21 +1630,15 @@ export default {
       channelTable: {
         columns: [
           {
-            title: "门店名称",
-            dataIndex: "name",
-            key: "name",
+            title: "渠道名称",
+            dataIndex: "sysDictItemId_dictText",
+            key: "sysDictItemId_dictText",
           },
           {
-            title: "所属区域",
-            dataIndex: "urbanArea",
-            key: "urbanArea",
+            title: "数据值",
+            dataIndex: "itemValue",
+            key: "itemValue",
             width: 80,
-          },
-          {
-            title: "门店地址",
-            dataIndex: "address",
-            key: "address",
-            ellipsis: true,
           },
           {
             title: "操作",
