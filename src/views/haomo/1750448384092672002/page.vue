@@ -841,13 +841,11 @@
                   height=""
                   :auto-close="false"
                 >
-                  <div class="ele-wrapper ele-wrapper-channelTree">
-                    <hm-ant-tree-select
-                      ref="channelTree"
-                      v-model:value="channelTree.value"
-                      v-model:tree-data="channelTree.treeData"
-                    >
-                    </hm-ant-tree-select>
+                  <div
+                    class="ele-wrapper ele-wrapper-97bd2365-db0b-4957-bd65-661e1fdeb3ac"
+                  >
+                    <hm-ant-select value="undefined" :options="[]">
+                    </hm-ant-select>
                   </div>
                 </hm-modal>
               </div>
@@ -959,6 +957,7 @@ import HmActivityList from "/@/components/decathlon-spring-festivalactivities-we
 import HmAntInput from "/@/components/built-in/jeecg/HmAntInput.vue";
 import HmAntTreeSelect from "/@/components/built-in/jeecg/HmAntTreeSelect.vue";
 import HmAntTag from "/@/components/built-in/jeecg/HmAntTag.vue";
+import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntSwitch from "/@/components/built-in/jeecg/HmAntSwitch.vue";
 
 import {
@@ -986,6 +985,7 @@ export default {
     HmAntInput,
     HmAntTreeSelect,
     HmAntTag,
+    HmAntSelect,
     HmAntSwitch,
   },
   data() {
@@ -1669,45 +1669,9 @@ export default {
       impotChannelModal: {
         visible: false,
       },
-      channelTree: {
+      "97bd2365-db0b-4957-bd65-661e1fdeb3ac": {
         value: null,
-        treeData: [
-          {
-            title: "Node1",
-            value: "Node1",
-            key: "0-0",
-            children: [
-              {
-                title: "Child Node1",
-                value: "Child Node1",
-                key: "0-0-0",
-              },
-            ],
-          },
-          {
-            title: "Node2",
-            value: "Node2",
-            key: "0-1",
-            children: [
-              {
-                title: "Child Node3",
-                value: "Child Node3",
-                key: "0-1-0",
-                disabled: "true",
-              },
-              {
-                title: "Child Node4",
-                value: "Child Node4",
-                key: "0-1-1",
-              },
-              {
-                title: "Child Node5",
-                value: "Child Node5",
-                key: "0-1-2",
-              },
-            ],
-          },
-        ],
+        options: [],
       },
       channelUpload: {
         fileList: [],
