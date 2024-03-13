@@ -653,6 +653,7 @@ export default {
             customRender: function (data) {
               console.log("ss实际核销门店----", data.text, data);
               if (!data.text) {
+                console.log("ss实际核销门店22----", data.text, data);
                 return self.processingColorData(data.text, "#fe8989");
               }
               let names = data.text.split(",");
