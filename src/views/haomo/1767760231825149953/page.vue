@@ -827,8 +827,8 @@ export default {
           let columns = res.result.records.map((e) => {
             return {
               title: `拓展字段(${e.itemText})`,
-              dataIndex: e.itemValue,
-              key: e.itemValue,
+              dataIndex: `${e.itemValue}_dict`,
+              key: `${e.itemValue}_dict`,
             };
           });
           console.log("columns", columns);
