@@ -895,7 +895,7 @@
                           title=""
                           text="上传文件"
                           v-model:file-list="channelUpload.fileList"
-                          action="/api/dkn/viewActivityStore/importExcel "
+                          action="/api/dkn/viewActivityDictItem/importExcel "
                           :headers="channelUpload.headers"
                           class="ele-channelUpload"
                         >
@@ -2136,7 +2136,7 @@ export default {
     onEle6A2C4B1BFc1D4F9F9Baf3Dc513039Ea8Click() {
       this.$downloadFile(
         "活动渠道列表模板.xlsx",
-        "/api/dkn/activityDictItem/downExcelTemplate",
+        "/api/dkn/viewActivityDictItem/downExcelTemplate",
         {}
       );
     },
