@@ -1233,6 +1233,13 @@ export default {
             width: 250,
           },
           {
+            title: "活动别称",
+            dataIndex: "alias",
+            key: "alias",
+            fixed: "left",
+            width: 250,
+          },
+          {
             title: "活动周期",
             dataIndex: "startTime",
             key: "startTime",
@@ -1254,24 +1261,15 @@ export default {
             width: 220,
           },
           {
-            title: "活动核销截止时间",
-            dataIndex: "pickUpTime",
-            key: "pickUpTime",
-            width: 220,
-            customRender: function (data) {
-              let pickUpStartTime = self
-                .$moment(data.record.pickUpStartTime)
-                .format("YYYY.MM.DD");
-              let pickUpEndTime = self
-                .$moment(data.record.pickUpEndTime)
-                .format("YYYY.MM.DD");
-              return `${pickUpStartTime}--${pickUpEndTime}`;
-            },
-          },
-          {
             title: "报名人数",
             dataIndex: "orders",
             key: "orders",
+            width: 100,
+          },
+          {
+            title: "总参与人次",
+            dataIndex: "ordersTotal",
+            key: "ordersTotal",
             width: 100,
           },
           {
