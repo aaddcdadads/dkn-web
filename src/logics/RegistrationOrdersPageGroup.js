@@ -266,6 +266,7 @@ const behaviorOrdersHeXiaoOneSucc = (logic.behaviorOrdersHeXiaoOneSucc = functio
   self.$message.success("核销成功");
   self.$refs.registrationOrdersTable.getData();
   self.registrationOrdersDeleteModal.visible = false;
+  self.orderPickUpId = null;
 });
 
 /**
@@ -275,6 +276,7 @@ const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = functio
   self.$message.error("核销失败");
   self.$refs.registrationOrdersTable.getData();
   self.registrationOrdersDeleteModal.visible = false;
+  self.orderPickUpId = null;
 });
 
 /**
