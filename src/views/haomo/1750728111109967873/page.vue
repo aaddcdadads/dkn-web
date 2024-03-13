@@ -812,6 +812,27 @@ export default {
       if (this.$route.query.activityId) {
         this.registrationOrdersTable.params.activityId = this.$route.query.activityId;
       }
+
+      this.processingData = function (par) {
+        if (!strs) {
+          return "";
+        }
+
+        let strArr = strs.split(",");
+        for (let i = 0; i < strArr.length; i++) {
+          hArr.push(h("div", {}, strArr[i]));
+        }
+        return h(
+          "div",
+          {
+            class: "applyNoDiv",
+            style: {
+              backgroundColor: color,
+            },
+          },
+          hArr
+        );
+      };
     },
     onMounted() {
       console.log("this.importButton.visible");
