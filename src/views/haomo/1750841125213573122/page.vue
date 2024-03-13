@@ -996,9 +996,9 @@ export default {
       };
       //颜色
       this.processingColorData = function (strs, color) {
-        //if (!strs) {
-        //  return "";
-        //}
+        if (!strs) {
+          return "";
+        }
         console.log("strs--", strs);
         let strArr = strs.split(",");
         let strNumberArr = ["一", "二", "三"];
