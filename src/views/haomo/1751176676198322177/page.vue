@@ -1907,6 +1907,9 @@ export default {
             },
             props: {
               title: "",
+              params: {
+                code: "member_detail",
+              },
               url: "/api/sys/dict/getDictItem",
               dataMap: {
                 label: "itemText",
