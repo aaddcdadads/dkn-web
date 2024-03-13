@@ -847,6 +847,7 @@
                   :z-index="1000"
                   height=""
                   :auto-close="false"
+                  @ok="onAddChannelModalOk"
                   @cancel="onAddChannelModalCancel"
                 >
                   <div class="ele-wrapper ele-wrapper-channelSelect">
@@ -2155,9 +2156,11 @@ export default {
       }
       self.$refs.channelTable.getData();
     },
+    onAddChannelModalOk() {
+      this.addActivityDictItem();
+    },
     onAddChannelModalCancel() {
       this.addChannelModal.visible = false;
-      this.addActivityDictItem();
     },
     onChannelUploadOnUploadDone(e) {
       console.log("打印", e);
