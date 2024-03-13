@@ -898,6 +898,7 @@
                           action="/api/dkn/viewActivityDictItem/importExcel "
                           :data="channelUpload.data"
                           :headers="channelUpload.headers"
+                          @onUploadDone="onChannelUploadOnUploadDone"
                           class="ele-channelUpload"
                         >
                         </hm-ant-upload>
@@ -2141,6 +2142,18 @@ export default {
     onAddChannelModalCancel() {
       this.addChannelModal.visible = false;
       this.addActivityDictItem();
+    },
+    onChannelUploadOnUploadDone(e) {
+      console.log("打印", e);
+      if (e.file.status == "done") {
+        this.impotChannelModal.visible = false;
+        this.$message.success(e.file.response.message);
+        this.$refs.channelTable.getData();
+      }
+      if (e.file.status == "error") {
+        this.$message.error(e.file.response.message);
+        this.$refs.channelTable.getData();
+      }
     },
     onEle6A2C4B1BFc1D4F9F9Baf3Dc513039Ea8Click() {
       this.$downloadFile(
