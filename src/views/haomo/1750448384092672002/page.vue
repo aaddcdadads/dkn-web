@@ -779,6 +779,7 @@
                       text="批量导入"
                       :type="'primary'"
                       :ghost="true"
+                      @click="onEle6C6Ecbd635Bf43B5BdadAb23699Ef7DfClick"
                       class="ele-6c6ecbd6-35bf-43b5-bdad-ab23699ef7df"
                     >
                     </hm-ant-button>
@@ -1217,6 +1218,9 @@ export default {
         visible: false,
       },
       channelSelect: {},
+      impotChannelModal: {
+        visible: false,
+      },
       importButton: {
         visible: false,
         headers: null,
@@ -1672,9 +1676,6 @@ export default {
       delChannelModal: {
         visible: false,
       },
-      impotChannelModal: {
-        visible: false,
-      },
       "97bd2365-db0b-4957-bd65-661e1fdeb3ac": {
         value: null,
         options: [],
@@ -2095,6 +2096,9 @@ export default {
     onEle29Cecb17Fabb4Ee5A5B7512570C6D4B8Click() {
       this.addChannelModal.visible = true;
       this.channelSelect.value = [];
+    },
+    onEle6C6Ecbd635Bf43B5BdadAb23699Ef7DfClick() {
+      this.impotChannelModal.visible = true;
     },
   },
 };
