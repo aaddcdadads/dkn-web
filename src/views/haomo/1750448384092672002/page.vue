@@ -1888,6 +1888,25 @@ export default {
         }
         self.$refs.viewActivityStoreTable.getData();
       };
+
+      self.addActivityDictItem = async function () {
+        const params = self.channelSelect.value.map((e) => {
+          return {
+            activityId: self.activityId,
+            sysDictItemId: e,
+            type: 0,
+          };
+        });
+        let url = "/api/dkn/activityDictItem/addBatch";
+        const res = await self.$postAction(url, params);
+        if (res.success) {
+          self.$message.success("保存成功");
+          self.addChannelModal.visible = false;
+        } else {
+          self.$message.error(res.message);
+        }
+        self.$refs.channelTable.getData();
+      };
     },
 
     onAddButtonClick() {
