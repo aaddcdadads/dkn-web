@@ -855,6 +855,7 @@
                       url="/api/sys/dict/getDictItem"
                       :params="channelSelect.params"
                       :data-map="channelSelect.dataMap"
+                      :mode="'multiple'"
                       v-model:options="channelSelect.options"
                     >
                     </hm-ant-select>
