@@ -341,6 +341,14 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
     self.$message.error("请添加至少一个活动项目");
     return;
   }
+  if (activityDictItems.length === 0) {
+    self.$message.error("请添加至少一个参与人信息");
+    return;
+  }
+  if (activityPickUps.length === 0) {
+    self.$message.error("请添加至少一轮核销");
+    return;
+  }
   if (!self.bgColour) {
     self.$message.error("请设置报名页背景颜色");
     return;
