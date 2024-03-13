@@ -495,7 +495,18 @@ export default {
             width: 120,
             key: "activityName",
             customRender: function (data) {
-              return self.processingData(data.text);
+              let aa = data.text ? data.text : "/n";
+              let replacedString = data.text?.replace(/,/g, "\n");
+              return h(
+                "pre",
+                {
+                  title: replacedString,
+                  style: {
+                    textAlign: "left",
+                  },
+                },
+                replacedString
+              );
             },
           },
           {
@@ -504,7 +515,18 @@ export default {
             width: 120,
             key: "activityAlias",
             customRender: function (data) {
-              return self.processingData(data.text);
+              let aa = data.text ? data.text : "/n";
+              let replacedString = data.text?.replace(/,/g, "\n");
+              return h(
+                "pre",
+                {
+                  title: replacedString,
+                  style: {
+                    textAlign: "left",
+                  },
+                },
+                replacedString
+              );
             },
           },
           {
@@ -525,7 +547,18 @@ export default {
             width: 100,
             key: "pickUpStatusText",
             customRender: function (data) {
-              return self.processingData(data.text);
+              let aa = data.text ? data.text : "/n";
+              let replacedString = data.text?.replace(/,/g, "\n");
+              return h(
+                "pre",
+                {
+                  title: replacedString,
+                  style: {
+                    textAlign: "left",
+                  },
+                },
+                replacedString
+              );
             },
           },
         ],
