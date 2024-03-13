@@ -855,7 +855,6 @@
                       :params="channelSelect.params"
                       :data-map="channelSelect.dataMap"
                       v-model:options="channelSelect.options"
-                      @change="onChannelSelectChange"
                     >
                     </hm-ant-select>
                   </div>
@@ -2105,11 +2104,6 @@ export default {
     },
     onEle6C6Ecbd635Bf43B5BdadAb23699Ef7DfClick() {
       this.impotChannelModal.visible = true;
-    },
-    onChannelSelectChange(e) {
-      let self = this;
-      const s = i.findIndex((a) => a.id === e);
-      self.dictItem = JSON.parse(JSON.stringify(i[s]));
     },
   },
 };
