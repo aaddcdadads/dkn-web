@@ -754,7 +754,7 @@ export default {
             },
             validator: function (value) {},
           },
-          pickUpStatus: {
+          pickUpStatusText: {
             type: "HmAntSelect",
             title: "核销状态",
             style: {
@@ -771,6 +771,10 @@ export default {
                 {
                   label: "待核销",
                   value: 1,
+                },
+                {
+                  label: "混合核销",
+                  value: 2,
                 },
               ],
             },
