@@ -852,6 +852,7 @@
                       ref="channelSelect"
                       v-model:value="channelSelect.value"
                       url="/api/sys/dict/getDictItem"
+                      :params="channelSelect.params"
                       v-model:options="channelSelect.options"
                     >
                     </hm-ant-select>
@@ -1222,6 +1223,9 @@ export default {
       },
       channelSelect: {
         value: null,
+        params: {
+          code: "channel",
+        },
         options: [],
       },
       impotChannelModal: {
