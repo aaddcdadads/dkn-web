@@ -2128,6 +2128,7 @@ export default {
     },
     onAddChannelModalCancel() {
       this.addChannelModal.visible = false;
+      this.addActivityDictItem();
     },
   },
 };
