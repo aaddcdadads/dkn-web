@@ -738,18 +738,17 @@
               </div>
             </hm-modal>
           </div>
-          <div
-            class="ele-wrapper ele-wrapper-f9f49b25-f6b8-4fd8-934a-8b021810dfa6"
-          >
+          <div class="ele-wrapper ele-wrapper-channelModal">
             <hm-modal
-              title="活动门店配置"
-              :visible="false"
+              ref="channelModal"
+              title="渠道配置"
+              v-model:visible="channelModal.visible"
               :closable="true"
               :cancel-button-props="false"
               width="720px"
               :z-index="997"
               height=""
-              :style="{ top: '100px', padding: '10px 15px' }"
+              :style="channelModal.style"
             >
               <div
                 class="ele-wrapper ele-wrapper-85e440ed-e222-47c9-b9b5-b5da932b435f"
@@ -781,54 +780,25 @@
                   </div>
                 </hm-bg-card>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-f42160e8-bb04-4e20-8ff5-d5a8516408a8"
-              >
+              <div class="ele-wrapper ele-wrapper-channelTable">
                 <hm-ant-table
-                  :columns="[
-                    { title: '门店名称', dataIndex: 'name', key: 'name' },
-                    {
-                      title: '所属区域',
-                      dataIndex: 'urbanArea',
-                      key: 'urbanArea',
-                      width: 80,
-                    },
-                    {
-                      title: '门店地址',
-                      dataIndex: 'address',
-                      key: 'address',
-                      ellipsis: true,
-                    },
-                    {
-                      title: '操作',
-                      dataIndex: '',
-                      key: 'action',
-                      slots: { customRender: 'action' },
-                    },
-                  ]"
-                  :data="[]"
-                  url="/api/dkn/viewActivityStore/list"
-                  :params="{ id: '-1' }"
-                  :actions="[
-                    {
-                      name: '删除',
-                      callback:
-                        'function (item) {\n      self.delViewActivityStoreModal=item\n      self.viewActivityStoreModal.visible=true\n                        }',
-                      type: 'link',
-                    },
-                  ]"
-                  :is-flat-action="true"
-                  :row-class-name="{}"
-                  class="ele-f42160e8-bb04-4e20-8ff5-d5a8516408a8"
+                  ref="channelTable"
+                  :columns="channelTable.columns"
+                  :data="channelTable.data"
+                  :url="channelTable.url"
+                  :params="channelTable.params"
+                  :actions="channelTable.actions"
+                  :is-flat-action="channelTable.isFlatAction"
+                  :row-class-name="channelTable.rowClassName"
+                  class="ele-channelTable"
                 >
                 </hm-ant-table>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-4fd7c58a-1132-4396-ab2c-0d6ad9791e3f"
-              >
+              <div class="ele-wrapper ele-wrapper-delChannelModal">
                 <hm-modal
+                  ref="delChannelModal"
                   title="删除"
-                  :visible="false"
+                  v-model:visible="delChannelModal.visible"
                   :closable="true"
                   :ok-type="'danger'"
                   width="320px"
@@ -862,75 +832,41 @@
                   </div>
                 </hm-modal>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-9ba086b6-dd16-4550-914a-980206674410"
-              >
+              <div class="ele-wrapper ele-wrapper-addChannelModal">
                 <hm-modal
+                  ref="addChannelModal"
                   title="添加门店范围"
-                  :visible="false"
+                  v-model:visible="addChannelModal.visible"
                   :z-index="1000"
                   height=""
                   :auto-close="false"
                 >
-                  <div
-                    class="ele-wrapper ele-wrapper-93b50d38-443a-48ed-b81b-ccda83e20abf"
-                  >
+                  <div class="ele-wrapper ele-wrapper-channelTree">
                     <hm-ant-tree-select
-                      value="undefined"
-                      :tree-data="[
-                        {
-                          title: 'Node1',
-                          value: 'Node1',
-                          key: '0-0',
-                          children: [
-                            {
-                              title: 'Child Node1',
-                              value: 'Child Node1',
-                              key: '0-0-0',
-                            },
-                          ],
-                        },
-                        {
-                          title: 'Node2',
-                          value: 'Node2',
-                          key: '0-1',
-                          children: [
-                            {
-                              title: 'Child Node3',
-                              value: 'Child Node3',
-                              key: '0-1-0',
-                              disabled: 'true',
-                            },
-                            {
-                              title: 'Child Node4',
-                              value: 'Child Node4',
-                              key: '0-1-1',
-                            },
-                            {
-                              title: 'Child Node5',
-                              value: 'Child Node5',
-                              key: '0-1-2',
-                            },
-                          ],
-                        },
-                      ]"
+                      ref="channelTree"
+                      v-model:value="channelTree.value"
+                      v-model:tree-data="channelTree.treeData"
                     >
                     </hm-ant-tree-select>
                   </div>
                 </hm-modal>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-da0b118d-d67a-42c6-8ee4-cf267a5f6a17"
-              >
-                <hm-modal :visible="true" :z-index="1000">
+              <div class="ele-wrapper ele-wrapper-impotChannelModal">
+                <hm-modal
+                  ref="impotChannelModal"
+                  v-model:visible="impotChannelModal.visible"
+                  :z-index="1000"
+                >
                   <div
                     class="ele-wrapper ele-wrapper-2f8a2b08-8274-4c92-9dfa-ead59429baa6"
                   >
                     <hm-bg-card>
-                      <div
-                        class="ele-wrapper ele-wrapper-a8d1dd55-62ba-49d8-993d-737b9a9697c6"
-                      >
-                        <hm-ant-upload :file-list="[]"> </hm-ant-upload>
+                      <div class="ele-wrapper ele-wrapper-channelUpload">
+                        <hm-ant-upload
+                          ref="channelUpload"
+                          v-model:file-list="channelUpload.fileList"
+                        >
+                        </hm-ant-upload>
                       </div>
                       <div
                         class="ele-wrapper ele-wrapper-8241b2f8-302f-4604-a53c-668ed78c4b87"
@@ -1072,6 +1008,13 @@ export default {
         rowClassName: {},
       },
       StoreConfigurationPopupFrame: {
+        visible: false,
+        style: {
+          top: "100px",
+          padding: "10px 15px",
+        },
+      },
+      channelModal: {
         visible: false,
         style: {
           top: "100px",
@@ -1354,13 +1297,6 @@ export default {
       activityDetailModal: {
         visible: false,
       },
-      "f9f49b25-f6b8-4fd8-934a-8b021810dfa6": {
-        visible: false,
-        style: {
-          top: "100px",
-          padding: "10px 15px",
-        },
-      },
       activityFilter: {
         config: {
           kyes: {
@@ -1574,6 +1510,7 @@ export default {
           {
             name: "渠道配置",
             callback: function (item) {
+              self.channelModal.visible = true;
               console.log("渠道配置");
             },
             type: "link",
@@ -1633,16 +1570,62 @@ export default {
         backgroundColor: "#FFFFFF",
         rowClassName: {},
       },
-      "4fd7c58a-1132-4396-ab2c-0d6ad9791e3f": {
+      channelTable: {
+        columns: [
+          {
+            title: "门店名称",
+            dataIndex: "name",
+            key: "name",
+          },
+          {
+            title: "所属区域",
+            dataIndex: "urbanArea",
+            key: "urbanArea",
+            width: 80,
+          },
+          {
+            title: "门店地址",
+            dataIndex: "address",
+            key: "address",
+            ellipsis: true,
+          },
+          {
+            title: "操作",
+            dataIndex: "",
+            key: "action",
+            slots: {
+              customRender: "action",
+            },
+          },
+        ],
+        data: [],
+        url: "/api/dkn/viewActivityStore/list",
+        params: {
+          id: "-1",
+        },
+        actions: [
+          {
+            name: "删除",
+            callback: function (item) {
+              self.delViewActivityStoreModal = item;
+              self.viewActivityStoreModal.visible = true;
+            },
+            type: "link",
+          },
+        ],
+        isFlatAction: true,
+        rowClassName: {},
+      },
+      delChannelModal: {
         visible: false,
       },
-      "9ba086b6-dd16-4550-914a-980206674410": {
+      addChannelModal: {
         visible: false,
       },
-      "da0b118d-d67a-42c6-8ee4-cf267a5f6a17": {
+      impotChannelModal: {
         visible: true,
       },
-      "93b50d38-443a-48ed-b81b-ccda83e20abf": {
+      channelTree: {
         value: null,
         treeData: [
           {
@@ -1682,7 +1665,7 @@ export default {
           },
         ],
       },
-      "a8d1dd55-62ba-49d8-993d-737b9a9697c6": {
+      channelUpload: {
         fileList: [],
       },
     };
@@ -2316,7 +2299,7 @@ export default {
   margin-left: 10px;
 }
 
-.ele-wrapper-f42160e8-bb04-4e20-8ff5-d5a8516408a8 {
+.ele-wrapper-channelTable {
   width: 100%;
   /deep/.ant-btn-link {
     color: #000;
