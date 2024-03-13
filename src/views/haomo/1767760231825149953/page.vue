@@ -662,7 +662,11 @@ export default {
               title: "",
               width: "242px",
               showSearch: true,
-              url: "/api/sys/dict/getDictItems/channel",
+              dataMap: {
+                label: "itemText",
+                value: "itemValue",
+              },
+              url: "/api/dkn/viewActivityDictItem/list",
             },
             validator: function (value) {},
           },
