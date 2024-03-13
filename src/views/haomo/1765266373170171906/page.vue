@@ -1926,6 +1926,9 @@ export default {
             props: {
               title: "",
               url: "/api/sys/dict/getDictItem",
+              params: {
+                code: "member_detail",
+              },
               dataMap: {
                 label: "itemText",
                 value: "id",
