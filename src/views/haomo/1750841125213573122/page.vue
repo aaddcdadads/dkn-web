@@ -881,11 +881,11 @@ export default {
               options: [
                 {
                   label: "有",
-                  value: 0,
+                  value: 1,
                 },
                 {
                   label: "无",
-                  value: 1,
+                  value: 0,
                 },
               ],
             },
