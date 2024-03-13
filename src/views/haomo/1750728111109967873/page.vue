@@ -851,6 +851,60 @@ export default {
       if (this.$route.query.activityId) {
         this.registrationOrdersTable.params.activityId = this.$route.query.activityId;
       }
+      this.processingData = function (data, paymentStatus, startTime, endTime) {
+        if (!data) {
+          return "";
+        }
+        let splData = data.split(",");
+        let resultButton = [];
+        const currentTimepick = this.$moment();
+        const startTimepick = this.$moment(startTime, "YYYY-MM-DD HH:mm:ss");
+        const endTimepick = this.$moment(endTime, "YYYY-MM-DD HH:mm:ss");
+
+        for (let i = 0; i < splData.length; i++) {
+          let splText = splData[i].split(":");
+          var statusFlag =
+            paymentStatus === 0 &&
+            splText[1] === 1 &&
+            currentTimepick.isBetween(startTimepick, endTimepick)
+              ? 0
+              : 1;
+          resultButton.push(
+            h(HmAntButton, {
+              disabled: statusFlag === 0 ? false : true,
+              text: splText[0] + "轮:核销",
+              fontSize: 14,
+              type: "link",
+              icon: "",
+              onClick: function () {
+                if (paymentStatus === 0) {
+                  //当前时间在核销时间之前
+                  if (currentTimepick.isBetween(startTimepick, endTimepick)) {
+                    self.registrationOrdersDeleteModal.visible = true;
+                  } else {
+                    self.$message.error("超过核销截止时间了不可核销");
+                  }
+                } else {
+                  self.$message.error("已退款、待支付状态下不可核销");
+                }
+              },
+            })
+          );
+        }
+        return h(
+          "div",
+          {
+            style: {
+              width: 200,
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "left",
+              alignItems: "left",
+            },
+          },
+          resultButton
+        );
+      };
     },
     onMounted() {
       console.log("this.importButton.visible");
