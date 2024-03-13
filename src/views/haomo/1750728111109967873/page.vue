@@ -932,6 +932,7 @@ export default {
                   if (currentTimepick.isBetween(startTimepick, endTimepick)) {
                     self.registrationOrdersDeleteModal.visible = true;
                     self.hexiaotype = true;
+                    self.orderPickUpId = splText[3];
                   } else {
                     self.$message.error("超过核销截止时间了不可核销");
                   }
