@@ -490,10 +490,16 @@ export default {
             key: "channel_dictText",
           },
           {
-            title: "报名项目",
-            dataIndex: "acName",
+            title: "报名项目名称",
+            dataIndex: "activityName",
             width: 120,
-            key: "acName",
+            key: "activityName",
+          },
+          {
+            title: "组别(参与次)",
+            dataIndex: "activityAlias",
+            width: 120,
+            key: "activityAlias",
           },
           {
             title: "报名状态",
