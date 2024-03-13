@@ -846,6 +846,7 @@
                   :z-index="1000"
                   height=""
                   :auto-close="false"
+                  @cancel="onAddChannelModalCancel"
                 >
                   <div class="ele-wrapper ele-wrapper-channelSelect">
                     <hm-ant-select
@@ -2104,6 +2105,9 @@ export default {
     },
     onEle6C6Ecbd635Bf43B5BdadAb23699Ef7DfClick() {
       this.impotChannelModal.visible = true;
+    },
+    onAddChannelModalCancel() {
+      this.addChannelModal.visible = false;
     },
   },
 };
