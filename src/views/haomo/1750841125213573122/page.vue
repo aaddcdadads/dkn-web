@@ -868,7 +868,7 @@ export default {
             },
             validator: function (value) {},
           },
-          storeDifferences: {
+          storeDifference: {
             type: "HmAntSelect",
             title: "核销门店差异",
             style: {
