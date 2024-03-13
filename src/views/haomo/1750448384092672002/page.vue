@@ -853,6 +853,7 @@
                       v-model:value="channelSelect.value"
                       url="/api/sys/dict/getDictItem"
                       :params="channelSelect.params"
+                      :data-map="channelSelect.dataMap"
                       v-model:options="channelSelect.options"
                     >
                     </hm-ant-select>
@@ -1225,6 +1226,10 @@ export default {
         value: null,
         params: {
           code: "channel",
+        },
+        dataMap: {
+          label: "itemText",
+          value: "id",
         },
         options: [],
       },
