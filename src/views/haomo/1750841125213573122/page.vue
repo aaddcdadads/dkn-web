@@ -651,8 +651,9 @@ export default {
             key: "storeNames",
             width: 180,
             customRender: function (data) {
-              if (!data.text) return;
-
+              if (!data.text) {
+                return self.processingColorData(data.text, "#fe8989");
+              }
               let names = data.text.split(",");
               console.log("ss实际核销门店s", names);
               if (
