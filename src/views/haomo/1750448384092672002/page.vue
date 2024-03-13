@@ -1088,8 +1088,8 @@ export default {
         columns: [
           {
             title: "渠道名称",
-            dataIndex: "sysDictItemId_dictText",
-            key: "sysDictItemId_dictText",
+            dataIndex: "itemText",
+            key: "itemText",
           },
           {
             title: "数据值",
