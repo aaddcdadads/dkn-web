@@ -764,7 +764,12 @@
                   <div
                     class="ele-wrapper ele-wrapper-29cecb17-fabb-4ee5-a5b7-512570c6d4b8"
                   >
-                    <hm-ant-button text="新增" :type="'primary'" :ghost="true">
+                    <hm-ant-button
+                      text="新增"
+                      :type="'primary'"
+                      :ghost="true"
+                      @click="onEle29Cecb17Fabb4Ee5A5B7512570C6D4B8Click"
+                    >
                     </hm-ant-button>
                   </div>
                   <div
@@ -1208,6 +1213,10 @@ export default {
       },
       delViewActivityStoreModal: {},
       activityStoreTagList: {},
+      addChannelModal: {
+        visible: false,
+      },
+      channelSelect: {},
       importButton: {
         visible: false,
         headers: null,
@@ -1663,9 +1672,6 @@ export default {
       delChannelModal: {
         visible: false,
       },
-      addChannelModal: {
-        visible: false,
-      },
       impotChannelModal: {
         visible: false,
       },
@@ -2085,6 +2091,10 @@ export default {
         "/api/dkn/viewActivityStore/downExcelTemplate",
         {}
       );
+    },
+    onEle29Cecb17Fabb4Ee5A5B7512570C6D4B8Click() {
+      this.addChannelModal.visible = true;
+      this.channelSelect.value = [];
     },
   },
 };
