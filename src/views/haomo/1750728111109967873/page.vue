@@ -363,6 +363,7 @@
               width="320px"
               :z-index="1000"
               height="80px"
+              :auto-close="false"
               @ok="onRegistrationOrdersDeleteModalOk"
               @cancel="onRegistrationOrdersDeleteModalCancel"
             >
