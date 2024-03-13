@@ -883,7 +883,7 @@ export default {
         "this.userTotalText.text",
         "this.registrationOrdersTable.rowSelection"
       );
-
+      let self = this;
       //设置上传请求头
       this.$nextTick(() => {
         let token = localStorage.getItem("pro__Access-Token");
@@ -893,18 +893,19 @@ export default {
           };
         }
       });
-      if (this.$route.query.activityId) {
-        this.registrationOrdersFilter.value.activityId = this.$route.query.activityId;
+      if (self.$route.query.activityId) {
+        self.registrationOrdersFilter.value.activityId =
+          self.$route.query.activityId;
       }
-      this.processingData = function (data, paymentStatus, startTime, endTime) {
+      self.processingData = function (data, paymentStatus, startTime, endTime) {
         if (!data) {
           return "";
         }
         let splData = data.split(",");
         let resultButton = [];
-        const currentTimepick = this.$moment();
-        const startTimepick = this.$moment(startTime, "YYYY-MM-DD HH:mm:ss");
-        const endTimepick = this.$moment(endTime, "YYYY-MM-DD HH:mm:ss");
+        const currentTimepick = self.$moment();
+        const startTimepick = self.$moment(startTime, "YYYY-MM-DD HH:mm:ss");
+        const endTimepick = self.$moment(endTime, "YYYY-MM-DD HH:mm:ss");
 
         for (let i = 0; i < splData.length; i++) {
           let splText = splData[i].split(":");
@@ -929,12 +930,12 @@ export default {
                 if (paymentStatus === 0) {
                   //当前时间在核销时间之前
                   if (currentTimepick.isBetween(startTimepick, endTimepick)) {
-                    this.registrationOrdersDeleteModal.visible = true;
+                    self.registrationOrdersDeleteModal.visible = true;
                   } else {
-                    this.$message.error("超过核销截止时间了不可核销");
+                    self.$message.error("超过核销截止时间了不可核销");
                   }
                 } else {
-                  this.$message.error("已退款、待支付状态下不可核销");
+                  self.$message.error("已退款、待支付状态下不可核销");
                 }
               },
             })
