@@ -737,27 +737,6 @@ export default {
             },
             validator: function (value) {},
           },
-          activityId: {
-            type: "HmAntSelect",
-            title: "选择活动",
-            style: {
-              width: "50%",
-            },
-            props: {
-              title: "",
-              width: "242px",
-              url: "/api/dkn/activity/list",
-              params: {
-                pageNo: 1,
-                pageSize: -1,
-              },
-              dataMap: {
-                label: "name",
-                value: "id",
-              },
-            },
-            validator: function (value) {},
-          },
           paymentStatus: {
             type: "HmAntSelect",
             title: "报名状态",
