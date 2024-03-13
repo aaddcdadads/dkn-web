@@ -1656,7 +1656,7 @@ export default {
             name: "报名列表",
             callback: function (item) {
               self.$router.push({
-                path: `/haomo/1750728111109967873/page`,
+                path: `/haomo/1767760231825149953/page`,
                 query: { activityId: item.id },
               });
             },
