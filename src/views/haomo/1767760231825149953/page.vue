@@ -875,6 +875,7 @@ export default {
           self.$refs.registrationOrdersFilter.cSchema
         ),
         ...self.registrationOrdersTable.params,
+        columns: self.getColumns(),
       };
       self.$downloadFile("参与人列表.xlsx", url, params);
     },
