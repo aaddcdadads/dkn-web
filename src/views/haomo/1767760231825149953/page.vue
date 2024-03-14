@@ -645,7 +645,7 @@ export default {
               width: "242px",
               showSearch: true,
               params: {
-                type: 1,
+                type: 0,
               },
               dataMap: {
                 label: "itemText",
