@@ -695,11 +695,8 @@ export default {
                     self.$refs.registrationOrdersFilter.cSchema
                   ),
                 };
-                if (_.isEqual(params, self.registrationOrdersTable.params)) {
-                  self.$refs.registrationOrdersTable.getData();
-                } else {
-                  self.registrationOrdersTable.params = params;
-                }
+
+                self.registrationOrdersTable.params = params;
               },
             },
             validator: function (value) {},
@@ -726,11 +723,7 @@ export default {
                     self.$refs.registrationOrdersFilter.cSchema
                   ),
                 };
-                if (_.isEqual(params, self.registrationOrdersTable.params)) {
-                  self.$refs.registrationOrdersTable.getData();
-                } else {
-                  self.registrationOrdersTable.params = params;
-                }
+                self.registrationOrdersTable.params = params;
               },
             },
             validator: function (value) {},
