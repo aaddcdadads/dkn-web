@@ -207,6 +207,7 @@ const detail = (logic.detail = async (pageVm, eventData) => {
     self.addActivityImgTableTwo.visible = false;
     self.activityPickUpButton.visible = false;
     self.activityDictItemButton.visible = false;
+    self.customerService.disabled = true;
     setTimeout(() => {
       for (let key in self.activityForm.config) {
         self.activityForm.config[key].props.disabled = true;
