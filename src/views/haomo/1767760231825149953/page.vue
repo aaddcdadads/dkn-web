@@ -790,8 +790,8 @@ export default {
           console.log("columns", columns);
           let par = {
             title: "组别名",
-            dataIndex: "code",
-            key: "code",
+            dataIndex: "alias",
+            key: "alias",
           };
           self.registrationOrdersTable.columns = [
             par,
