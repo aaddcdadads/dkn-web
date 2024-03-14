@@ -863,13 +863,19 @@ export default {
     onBaoMingImportButtonClick() {
       let self = this;
       let url = "/api/dkn/viewOrderProject/exportExcel";
+      let columns = self.registrationOrdersTable.columns.map((e) => {
+        return {
+          title: e.title,
+          dataIndex: e.dataIndex,
+        };
+      });
       let params = {
         ...self.$getFilterValues(
           self.$refs.registrationOrdersFilter.getFormValues(),
           self.$refs.registrationOrdersFilter.cSchema
         ),
         ...self.registrationOrdersTable.params,
-        columns: self.registrationOrdersTable.columns,
+        columns,
       };
       self.$downloadFile("参与人列表.xlsx", url, params);
     },
