@@ -861,7 +861,15 @@ export default {
       };
     },
     onBaoMingImportButtonClick() {
-      exportRegistrationOrders(this, arguments);
+      let self = this;
+      let url = "/api/dkn/viewOrderProject/exportExcel";
+      let params = {
+        ...self.$getFilterValues(
+          self.$refs.registrationOrdersFilter.getFormValues(),
+          self.$refs.registrationOrdersFilter.cSchema
+        ),
+      };
+      self.$downloadFile("参与人列表.xlsx", url, params);
     },
     onInvisibleImportSearchLogicBtnClick() {
       searchRegistrationOrders(this, arguments);
