@@ -20,14 +20,13 @@
               height="100%"
               class="ele-titleCard"
             >
-              <div
-                class="ele-wrapper ele-wrapper-80d9b125-92bb-46b5-87b7-d8b4b451d860"
-              >
+              <div class="ele-wrapper ele-wrapper-title">
                 <hm-ant-icon-text
-                  icon="fa fa-tasks"
-                  font-size="14px"
-                  text="创建活动"
-                  class="ele-80d9b125-92bb-46b5-87b7-d8b4b451d860"
+                  ref="title"
+                  :text="title.text"
+                  :icon="title.icon"
+                  :font-size="title.fontSize"
+                  class="ele-title"
                 >
                 </hm-ant-icon-text>
               </div>
@@ -35,9 +34,9 @@
                 class="ele-wrapper ele-wrapper-230f0090-9b76-4e5d-9556-f91759f40cf8"
               >
                 <hm-ant-bg-text
-                  color="#999999"
-                  font-size="14px"
                   text="* 为必填项"
+                  font-size="14px"
+                  color="#999999"
                 >
                 </hm-ant-bg-text>
               </div>
@@ -112,14 +111,15 @@
                         >
                         </hm-ant-bg-text>
                       </div>
-                      <div class="ele-wrapper ele-wrapper-addBtn1">
+                      <div class="ele-wrapper ele-wrapper-addActivityProject">
                         <hm-ant-button
-                          ref="addBtn1"
-                          icon="fa fa-plus"
-                          text="添加"
-                          :type="'primary'"
-                          @click="onAddBtn1Click"
-                          class="ele-addBtn1"
+                          ref="addActivityProject"
+                          :text="addActivityProject.text"
+                          :type="addActivityProject.type"
+                          :icon="addActivityProject.icon"
+                          :visible="addActivityProject.visible"
+                          @click="onAddActivityProjectClick"
+                          class="ele-addActivityProject"
                         >
                         </hm-ant-button>
                       </div>
@@ -219,14 +219,17 @@
                             >
                             </hm-ant-bg-text>
                           </div>
-                          <div class="ele-wrapper ele-wrapper-addBtn2">
+                          <div
+                            class="ele-wrapper ele-wrapper-addActivityImgTableTwo"
+                          >
                             <hm-ant-button
-                              ref="addBtn2"
-                              text="添加"
-                              :type="'primary'"
-                              icon="fa fa-plus"
-                              @click="onAddBtn2Click"
-                              class="ele-addBtn2"
+                              ref="addActivityImgTableTwo"
+                              :text="addActivityImgTableTwo.text"
+                              :type="addActivityImgTableTwo.type"
+                              :icon="addActivityImgTableTwo.icon"
+                              :visible="addActivityImgTableTwo.visible"
+                              @click="onAddActivityImgTableTwoClick"
+                              class="ele-addActivityImgTableTwo"
                             >
                             </hm-ant-button>
                           </div>
@@ -391,16 +394,15 @@
                                 </hm-ant-bg-text>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-277cb52c-4cb2-4fd3-9725-2aac9220c5be"
+                                class="ele-wrapper ele-wrapper-activityPickUpButton"
                               >
                                 <hm-ant-button
+                                  ref="activityPickUpButton"
                                   text="添加"
                                   :type="'primary'"
                                   icon="fa fa-plus"
-                                  @click="
-                                    onEle277Cb52C4Cb24Fd397252Aac9220C5BeClick
-                                  "
-                                  class="ele-277cb52c-4cb2-4fd3-9725-2aac9220c5be"
+                                  @click="onActivityPickUpButtonClick"
+                                  class="ele-activityPickUpButton"
                                 >
                                 </hm-ant-button>
                               </div>
@@ -554,14 +556,15 @@
                     >
                     </hm-ant-bg-text>
                   </div>
-                  <div class="ele-wrapper ele-wrapper-addBtn3">
+                  <div class="ele-wrapper ele-wrapper-addActivityImgTableOne">
                     <hm-ant-button
-                      ref="addBtn3"
-                      icon="fa fa-plus"
-                      text="添加"
-                      :type="'primary'"
-                      @click="onAddBtn3Click"
-                      class="ele-addBtn3"
+                      ref="addActivityImgTableOne"
+                      :text="addActivityImgTableOne.text"
+                      :type="addActivityImgTableOne.type"
+                      :icon="addActivityImgTableOne.icon"
+                      :visible="addActivityImgTableOne.visible"
+                      @click="onAddActivityImgTableOneClick"
+                      class="ele-addActivityImgTableOne"
                     >
                     </hm-ant-button>
                   </div>
@@ -1013,93 +1016,10 @@ export default {
   data() {
     let self = this;
     return {
-      activityForm: {
-        config: {
-          name: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动名称",
-            required: true,
-            props: {},
-          },
-          alias: {
-            style: {
-              width: "100%",
-            },
-            type: "Input",
-            title: "活动别称",
-            required: false,
-            props: {},
-          },
-          cycle: {
-            style: {
-              width: "100%",
-            },
-            type: "RangePicker",
-            title: "活动周期",
-            required: true,
-            props: {},
-          },
-          closeTime: {
-            style: {
-              width: "100%",
-            },
-            type: "DatePicker",
-            title: "报名截止",
-            required: true,
-            props: {
-              showTime: true,
-            },
-          },
-          status: {
-            default: 0,
-            style: {
-              width: "100%",
-            },
-            type: "RadioGroup",
-            title: "活动状态",
-            required: true,
-            props: {
-              options: [
-                {
-                  label: "启用",
-                  value: 0,
-                },
-                {
-                  label: "禁用",
-                  value: 1,
-                },
-              ],
-            },
-          },
-        },
-        value: {
-          status: 0,
-        },
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
+      title: {
+        text: "创建活动",
+        icon: "fa fa-tasks",
+        fontSize: "14px",
       },
       addproject: {
         visible: false,
@@ -1503,12 +1423,26 @@ export default {
           ],
         },
       },
-      title: {},
       isSaveOrUpdate: {},
       isTitle: {},
-      addActivityProject: {},
-      addActivityImgTableOne: {},
-      addActivityImgTableTwo: {},
+      addActivityProject: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
+      addActivityImgTableOne: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
+      addActivityImgTableTwo: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
       bgColourKit: {
         color: "#59c7f9",
       },
@@ -1518,6 +1452,94 @@ export default {
       },
       customerService: {
         value: "",
+      },
+      activityForm: {
+        config: {
+          name: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动名称",
+            required: true,
+            props: {},
+          },
+          alias: {
+            style: {
+              width: "100%",
+            },
+            type: "Input",
+            title: "活动别称",
+            required: false,
+            props: {},
+          },
+          cycle: {
+            style: {
+              width: "100%",
+            },
+            type: "RangePicker",
+            title: "活动周期",
+            required: true,
+            props: {},
+          },
+          closeTime: {
+            style: {
+              width: "100%",
+            },
+            type: "DatePicker",
+            title: "报名截止",
+            required: true,
+            props: {
+              showTime: true,
+            },
+          },
+          status: {
+            default: 0,
+            style: {
+              width: "100%",
+            },
+            type: "RadioGroup",
+            title: "活动状态",
+            required: true,
+            props: {
+              options: [
+                {
+                  label: "启用",
+                  value: 0,
+                },
+                {
+                  label: "禁用",
+                  value: 1,
+                },
+              ],
+            },
+          },
+        },
+        value: {
+          status: 0,
+        },
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
+        },
       },
       activityProjectTable: {
         columns: [
@@ -2290,7 +2312,7 @@ export default {
       };
     },
 
-    onAddBtn1Click() {
+    onAddActivityProjectClick() {
       this.addproject.visible = true;
       this.activityProjectTableStatus = 1;
     },
@@ -2426,7 +2448,7 @@ export default {
         }
       }
     },
-    onAddBtn2Click() {
+    onAddActivityImgTableTwoClick() {
       this.addprize.visible = true;
       this.activityImgTableTwoStatus = 1;
     },
@@ -2476,7 +2498,7 @@ export default {
       this.addprize.visible = false;
       this.$refs.addActivityImgFormTwo.reset();
     },
-    onEle277Cb52C4Cb24Fd397252Aac9220C5BeClick() {
+    onActivityPickUpButtonClick() {
       this.activityPickUpModal.visible = true;
       this.activityPickUpTableStatus = 1;
     },
@@ -2597,7 +2619,7 @@ export default {
       this.activityDictItemModal.visible = false;
       this.$refs.activityDictItemForm.reset();
     },
-    onAddBtn3Click() {
+    onAddActivityImgTableOneClick() {
       this.addBackground.visible = true;
       this.activityImgTableOneStatus = 1;
     },
@@ -2740,7 +2762,7 @@ export default {
   }
 }
 
-.ele-wrapper-80d9b125-92bb-46b5-87b7-d8b4b451d860 {
+.ele-wrapper-title {
   .hm-bg-text {
     display: flex;
     align-items: center;
@@ -2787,7 +2809,7 @@ export default {
   }
 }
 
-.ele-wrapper-addBtn1 {
+.ele-wrapper-addActivityProject {
   margin-left: 5px;
 }
 
@@ -2835,7 +2857,7 @@ export default {
   }
 }
 
-.ele-wrapper-addBtn2 {
+.ele-wrapper-addActivityImgTableTwo {
   margin-left: 5px;
   margin-top: 15px;
 }
@@ -2918,7 +2940,7 @@ export default {
   }
 }
 
-.ele-wrapper-277cb52c-4cb2-4fd3-9725-2aac9220c5be {
+.ele-wrapper-activityPickUpButton {
   margin-left: 5px;
   margin-top: 15px;
 }
@@ -2962,7 +2984,7 @@ export default {
   }
 }
 
-.ele-wrapper-addBtn3 {
+.ele-wrapper-addActivityImgTableOne {
   margin-left: 5px;
 }
 
