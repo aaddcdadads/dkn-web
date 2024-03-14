@@ -459,6 +459,11 @@ export default {
         },
         columns: [
           {
+            title: "核销状态",
+            dataIndex: "orderPickUp",
+            key: "orderPickUp",
+          },
+          {
             title: "用户ID",
             dataIndex: "code",
             key: "code",
