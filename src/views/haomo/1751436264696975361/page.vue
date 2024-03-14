@@ -738,13 +738,13 @@
           <div class="ele-wrapper ele-wrapper-isSaveOrUpdate">
             <hm-bg-card
               ref="isSaveOrUpdate"
-              :box-shadow-blur="isSaveOrUpdate.boxShadowBlur"
-              :hidden="isSaveOrUpdate.hidden"
-              :box-shadow-v-shadow="isSaveOrUpdate.boxShadowVShadow"
-              :border-radius="isSaveOrUpdate.borderRadius"
               :width="isSaveOrUpdate.width"
               :height="isSaveOrUpdate.height"
+              :border-radius="isSaveOrUpdate.borderRadius"
               :text-align="isSaveOrUpdate.textAlign"
+              :box-shadow-v-shadow="isSaveOrUpdate.boxShadowVShadow"
+              :box-shadow-blur="isSaveOrUpdate.boxShadowBlur"
+              :hidden="isSaveOrUpdate.hidden"
               class="ele-isSaveOrUpdate"
             >
               <div
@@ -815,12 +815,12 @@ export default {
     let self = this;
     return {
       isSaveOrUpdate: {
-        boxShadowBlur: "",
-        boxShadowVShadow: "",
-        borderRadius: "",
         width: "100%",
         height: "100%",
+        borderRadius: "",
         textAlign: "center",
+        boxShadowVShadow: "",
+        boxShadowBlur: "",
         hidden: false,
       },
       addproject: {
@@ -2055,6 +2055,7 @@ export default {
     onAddActivityImgTableOneClick() {
       this.addBackground.visible = true;
       this.activityImgTableOneStatus = 1;
+      this.activityImgFormOne.config.imgPath.props.imageUrl = "";
     },
     async onAddBackgroundOk() {
       let self = this;
