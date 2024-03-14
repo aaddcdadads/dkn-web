@@ -603,11 +603,11 @@
                     class="ele-wrapper ele-wrapper-89ea97da-357c-4295-9803-b1d0b63db0a2"
                   >
                     <hm-bg-card
-                      box-shadow-blur=""
-                      box-shadow-v-shadow=""
-                      border-radius=""
                       width="100%"
                       height="100%"
+                      border-radius=""
+                      box-shadow-v-shadow=""
+                      box-shadow-blur=""
                       class="ele-89ea97da-357c-4295-9803-b1d0b63db0a2"
                     >
                       <div class="ele-wrapper ele-wrapper-activityImgTableOne">
@@ -2655,6 +2655,7 @@ export default {
     onAddActivityImgTableOneClick() {
       this.addBackground.visible = true;
       this.activityImgTableOneStatus = 1;
+      this.activityImgFormOne.config.imgPath.props.imageUrl = null;
     },
     onAddBackgroundCancel() {
       this.addBackground.visible = false;
