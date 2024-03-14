@@ -1008,10 +1008,12 @@ export default {
 
 .ele-wrapper-userTotalText {
   margin-right: 20px;
+  display: none;
 }
 
 .ele-wrapper-bacthHeImportButton {
   margin-right: 20px;
+  display: none;
 }
 
 .ele-wrapper-activitySelect {
