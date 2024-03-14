@@ -838,6 +838,12 @@ export default {
       if (this.$route.query.activityId) {
         this.registrationOrdersFilter.value.activityId = this.$route.query.activityId;
       }
+      let self = this;
+      self.getColumns = function () {
+        return self.registrationOrdersTable.columns.map((e) => {
+          return e.key;
+        });
+      };
     },
 
     onAddButtonClick() {
