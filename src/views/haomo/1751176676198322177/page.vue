@@ -115,9 +115,9 @@
                       <div class="ele-wrapper ele-wrapper-addBtn1">
                         <hm-ant-button
                           ref="addBtn1"
-                          icon="fa fa-plus"
                           text="添加"
                           :type="'primary'"
+                          icon="fa fa-plus"
                           @click="onAddBtn1Click"
                           class="ele-addBtn1"
                         >
@@ -2263,6 +2263,7 @@ export default {
     onAddBtn1Click() {
       this.addproject.visible = true;
       this.activityProjectTableStatus = 1;
+      this.activityProjectForm.config.imgPath.props.imageUrl = null;
     },
     async onAddprojectOk() {
       let self = this;
