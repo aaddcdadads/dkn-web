@@ -868,6 +868,7 @@ export default {
           self.$refs.registrationOrdersFilter.getFormValues(),
           self.$refs.registrationOrdersFilter.cSchema
         ),
+        ...self.registrationOrdersTable.params,
       };
       self.$downloadFile("参与人列表.xlsx", url, params);
     },
