@@ -398,9 +398,10 @@
                               >
                                 <hm-ant-button
                                   ref="activityPickUpButton"
-                                  text="添加"
-                                  :type="'primary'"
-                                  icon="fa fa-plus"
+                                  :text="activityPickUpButton.text"
+                                  :type="activityPickUpButton.type"
+                                  :icon="activityPickUpButton.icon"
+                                  :visible="activityPickUpButton.visible"
                                   @click="onActivityPickUpButtonClick"
                                   class="ele-activityPickUpButton"
                                 >
@@ -466,16 +467,16 @@
                                 </hm-ant-bg-text>
                               </div>
                               <div
-                                class="ele-wrapper ele-wrapper-2a08a42c-a92e-46de-8f8d-b5724cfc40ea"
+                                class="ele-wrapper ele-wrapper-activityDictItemButton"
                               >
                                 <hm-ant-button
-                                  text="添加"
-                                  :type="'primary'"
-                                  icon="fa fa-plus"
-                                  @click="
-                                    onEle2A08A42CA92E46De8F8DB5724Cfc40EaClick
-                                  "
-                                  class="ele-2a08a42c-a92e-46de-8f8d-b5724cfc40ea"
+                                  ref="activityDictItemButton"
+                                  :text="activityDictItemButton.text"
+                                  :type="activityDictItemButton.type"
+                                  :icon="activityDictItemButton.icon"
+                                  :visible="activityDictItemButton.visible"
+                                  @click="onActivityDictItemButtonClick"
+                                  class="ele-activityDictItemButton"
                                 >
                                 </hm-ant-button>
                               </div>
@@ -1443,6 +1444,18 @@ export default {
         type: "primary",
         icon: "fa fa-plus",
       },
+      activityPickUpButton: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
+      activityDictItemButton: {
+        visible: true,
+        text: "添加",
+        type: "primary",
+        icon: "fa fa-plus",
+      },
       bgColourKit: {
         color: "#59c7f9",
       },
@@ -2246,6 +2259,8 @@ export default {
       self.addActivityProject.visible = true;
       self.addActivityImgTableOne.visible = true;
       self.addActivityImgTableTwo.visible = true;
+      self.activityPickUpButton.visible = true;
+      self.activityDictItemButton.visible = true;
       self.bgColourKit.color = "#59c7f9";
       self.colourKit.color = "#59c7f9";
       self.textColourKit.color = "#59c7f9";
@@ -2557,7 +2572,7 @@ export default {
       this.activityPickUpModal.visible = false;
       this.$refs.activityPickUpForm.reset();
     },
-    onEle2A08A42CA92E46De8F8DB5724Cfc40EaClick() {
+    onActivityDictItemButtonClick() {
       this.activityDictItemModal.visible = true;
       this.activityDictItemStatus = 1;
     },
@@ -2960,7 +2975,7 @@ export default {
   }
 }
 
-.ele-wrapper-2a08a42c-a92e-46de-8f8d-b5724cfc40ea {
+.ele-wrapper-activityDictItemButton {
   margin-left: 5px;
   margin-top: 15px;
 }
