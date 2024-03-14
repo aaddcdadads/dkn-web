@@ -2348,6 +2348,7 @@ export default {
     onAddActivityProjectClick() {
       this.addproject.visible = true;
       this.activityProjectTableStatus = 1;
+      this.activityProjectForm.config.imgPath.props.imageUrl = null;
     },
     async onAddprojectOk() {
       let self = this;
