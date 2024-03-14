@@ -747,13 +747,13 @@
                       <div class="ele-wrapper ele-wrapper-activityTwoForm">
                         <hm-ant-formily
                           ref="activityTwoForm"
-                          :schema="activityTwoForm.schema"
-                          :wrapper-col="16"
-                          :col-num="0"
-                          :label-col="4"
-                          :col-min-width="380"
                           :config="activityTwoForm.config"
                           v-model:value="activityTwoForm.value"
+                          :col-num="0"
+                          :col-min-width="380"
+                          :schema="activityTwoForm.schema"
+                          :label-col="4"
+                          :wrapper-col="16"
                           class="ele-activityTwoForm"
                         >
                         </hm-ant-formily>
@@ -799,13 +799,13 @@
                           >
                             <hm-ant-formily
                               ref="activityImgFormTre"
-                              :schema="activityImgFormTre.schema"
-                              :wrapper-col="14"
-                              :col-num="0"
-                              :label-col="7"
-                              :col-min-width="380"
                               :config="activityImgFormTre.config"
                               v-model:value="activityImgFormTre.value"
+                              :col-num="0"
+                              :col-min-width="380"
+                              :schema="activityImgFormTre.schema"
+                              :label-col="7"
+                              :wrapper-col="14"
                             >
                             </hm-ant-formily>
                           </div>
@@ -1315,6 +1315,7 @@ export default {
       dictItem: {},
       activityDictItemTableItem: {},
       activityImgTableOneItem: {},
+      imgItem: {},
       activityRules: {
         value: "",
         toolbarConfig: {
@@ -2077,28 +2078,6 @@ export default {
         rowClassName: {},
       },
       activityTwoForm: {
-        schema: {
-          type: "object",
-          properties: {
-            form: {
-              "x-component": "Form",
-              "x-component-props": {
-                "wrapper-col": {
-                  span: 14,
-                },
-                "label-col": {
-                  span: 7,
-                },
-                style: {
-                  flexWrap: "wrap",
-                  display: "flex",
-                },
-              },
-              type: "void",
-              properties: {},
-            },
-          },
-        },
         config: {
           unrealStatus: {
             style: {
@@ -2142,6 +2121,28 @@ export default {
         },
         value: {
           unrealStatus: 1,
+        },
+        schema: {
+          type: "object",
+          properties: {
+            form: {
+              "x-component": "Form",
+              "x-component-props": {
+                "wrapper-col": {
+                  span: 14,
+                },
+                "label-col": {
+                  span: 7,
+                },
+                style: {
+                  flexWrap: "wrap",
+                  display: "flex",
+                },
+              },
+              type: "void",
+              properties: {},
+            },
+          },
         },
       },
       sharingImageTable: {
@@ -2211,6 +2212,21 @@ export default {
         rowClassName: {},
       },
       activityImgFormTre: {
+        config: {
+          imgPath: {
+            style: {
+              width: "100%",
+            },
+            type: "UploadImage",
+            title: "图片",
+            required: true,
+            props: {
+              action: "/api/sys/common/upload",
+              accept: ".jpg,.png",
+            },
+          },
+        },
+        value: {},
         schema: {
           type: "object",
           properties: {
@@ -2233,21 +2249,6 @@ export default {
             },
           },
         },
-        config: {
-          imgPath: {
-            style: {
-              width: "100%",
-            },
-            type: "UploadImage",
-            title: "图片",
-            required: true,
-            props: {
-              action: "/api/sys/common/upload",
-              accept: ".jpg,.png",
-            },
-          },
-        },
-        value: {},
       },
     };
   },
@@ -2699,55 +2700,23 @@ export default {
     },
     async onSharingImageSettingsOk() {
       let self = this;
-      await self.$refs.activityImgFormOne.validate();
-      let item = self.$refs.activityImgFormOne.getFormValues();
+      await self.$refs.activityImgFormTre.validate();
+      let item = self.$refs.activityImgFormTre.getFormValues();
+      item.index = Math.floor(Math.random() * 10000);
 
       //处理图片
       if (item.imgPath?.file?.response?.message) {
         item.path = item.imgPath?.file?.response?.message;
       } else {
-        item.path = self.activityImgTableOneItem.path;
+        item.path = self.imgItem.path;
       }
       delete item.imgPath;
-      item.imgSize = "375 * 667";
-      if (self.activityImgTableOneStatus === 1) {
-        item.index = Math.floor(Math.random() * 10000);
+      item.imgSize = "375 * 607";
+      self.$refs.sharingImageTable.cData = [item];
+      //self.$refs.sharingImageTable.cData.push(item)
 
-        self.$refs.activityImgTableOne.cData.push(item);
-      } else {
-        if (
-          self.activityImgTableOneItem.index ||
-          self.activityImgTableOneItem.index == 0
-        ) {
-          self.$refs.activityImgTableOne.cData.forEach((e, index) => {
-            if (e.index == self.activityImgTableOneItem.index) {
-              self.$refs.activityImgTableOne.cData[index] = {
-                index: self.activityImgTableOneItem.index,
-                ...item,
-              };
-            }
-          });
-        } else {
-          self.$refs.activityImgTableOne.cData.forEach((e, index) => {
-            if (e.id == self.activityImgTableOneItem.id) {
-              self.$refs.activityImgTableOne.cData[index] = {
-                index: self.activityImgTableOneItem.index,
-                ...e,
-                ...item,
-              };
-            }
-          });
-        }
-      }
-      self.$refs.activityImgTableOne.cData.sort((a, b) => a.sortNo - b.sortNo);
-      self.$refs.activityImgTableOne.cData.forEach((e, index) => {
-        e.imgSize = "375 * 667";
-        if (index === 0) {
-          e.imgSize = "375 * 455";
-        }
-      });
-      self.addBackground.visible = false;
-      self.$refs.activityImgFormOne.reset();
+      self.sharingImageSettings.visible = false;
+      self.$refs.activityImgFormTre.reset();
     },
     onSharingImageSettingsCancel() {
       this.sharingImageSettings.visible = false;
