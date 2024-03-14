@@ -929,6 +929,7 @@
                           ref="customerService"
                           v-model:value="customerService.value"
                           title="活动咨询客服"
+                          :disabled="customerService.disabled"
                           width="480"
                           class="ele-customerService"
                         >
@@ -1462,15 +1463,16 @@ export default {
         type: "primary",
         icon: "fa fa-plus",
       },
+      customerService: {
+        disabled: false,
+        value: "",
+      },
       bgColourKit: {
         color: "#59c7f9",
       },
       colourKit: {},
       textColourKit: {
         color: "#59c7f9",
-      },
-      customerService: {
-        value: "",
       },
       activityForm: {
         config: {
@@ -2267,6 +2269,7 @@ export default {
       self.addActivityImgTableTwo.visible = true;
       self.activityPickUpButton.visible = true;
       self.activityDictItemButton.visible = true;
+      self.customerService.disabled = false;
       self.bgColourKit.color = "#59c7f9";
       self.colourKit.color = "#59c7f9";
       self.textColourKit.color = "#59c7f9";
