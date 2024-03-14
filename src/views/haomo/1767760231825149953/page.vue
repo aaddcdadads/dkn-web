@@ -449,12 +449,6 @@ export default {
         padding: "0",
         titleBlockColor: "#1890FF00",
       },
-      registrationOrdersDeleteModal: {
-        visible: false,
-      },
-      registrationOrdersAddModal: {
-        visible: false,
-      },
       registrationOrdersTable: {
         params: {
           databaseId: "",
@@ -533,6 +527,12 @@ export default {
         isFlatAction: true,
         backgroundColor: "#FFFFFF",
         rowClassName: {},
+      },
+      registrationOrdersDeleteModal: {
+        visible: false,
+      },
+      registrationOrdersAddModal: {
+        visible: false,
       },
       selectTempArr: {},
       bacthHeImportButton: {
@@ -688,7 +688,18 @@ export default {
             },
             events: {
               "@click": function (e) {
-                searchRegistrationOrders(self, null);
+                let params = {
+                  ...self.registrationOrdersTable.params,
+                  ...self.$getFilterValues(
+                    self.$refs.registrationOrdersFilter.getFormValues(),
+                    self.$refs.registrationOrdersFilter.cSchema
+                  ),
+                };
+                if (_.isEqual(params, self.registrationOrdersTable.params)) {
+                  self.$refs.registrationOrdersTable.getData();
+                } else {
+                  self.registrationOrdersTable.params = params;
+                }
               },
             },
             validator: function (value) {},
@@ -707,7 +718,19 @@ export default {
             events: {
               "@click": function (e) {
                 self.$refs.registrationOrdersFilter.reset();
-                searchRegistrationOrders(self, null);
+
+                let params = {
+                  ...self.registrationOrdersTable.params,
+                  ...self.$getFilterValues(
+                    self.$refs.registrationOrdersFilter.getFormValues(),
+                    self.$refs.registrationOrdersFilter.cSchema
+                  ),
+                };
+                if (_.isEqual(params, self.registrationOrdersTable.params)) {
+                  self.$refs.registrationOrdersTable.getData();
+                } else {
+                  self.registrationOrdersTable.params = params;
+                }
               },
             },
             validator: function (value) {},
