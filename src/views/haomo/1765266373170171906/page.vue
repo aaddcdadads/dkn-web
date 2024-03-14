@@ -940,15 +940,15 @@
               </div>
             </hm-bg-card>
           </div>
-          <div
-            class="ele-wrapper ele-wrapper-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6"
-          >
+          <div class="ele-wrapper ele-wrapper-isSaveOrUpdate">
             <hm-bg-card
-              width="100%"
-              height="100%"
-              border-radius=""
-              :text-align="'center'"
-              class="ele-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6"
+              ref="isSaveOrUpdate"
+              :width="isSaveOrUpdate.width"
+              :height="isSaveOrUpdate.height"
+              :border-radius="isSaveOrUpdate.borderRadius"
+              :text-align="isSaveOrUpdate.textAlign"
+              :hidden="isSaveOrUpdate.hidden"
+              class="ele-isSaveOrUpdate"
             >
               <div
                 class="ele-wrapper ele-wrapper-78fb2568-9250-4a78-987d-c766b916f771"
@@ -1017,10 +1017,12 @@ export default {
   data() {
     let self = this;
     return {
-      title: {
-        text: "创建活动",
-        icon: "fa fa-tasks",
-        fontSize: "14px",
+      isSaveOrUpdate: {
+        width: "100%",
+        height: "100%",
+        borderRadius: "",
+        textAlign: "center",
+        hidden: false,
       },
       addproject: {
         visible: false,
@@ -1424,7 +1426,11 @@ export default {
           ],
         },
       },
-      isSaveOrUpdate: {},
+      title: {
+        text: "创建活动",
+        icon: "fa fa-tasks",
+        fontSize: "14px",
+      },
       isTitle: {},
       addActivityProject: {
         visible: true,
@@ -3180,7 +3186,7 @@ export default {
   }
 }
 
-.ele-wrapper-cc8ed92e-79cc-488a-9d3f-77d0a2fddce6 {
+.ele-wrapper-isSaveOrUpdate {
   width: 100%;
   border-top: 1px solid #f2f2f2;
 }
