@@ -45,12 +45,12 @@
           <div class="ele-wrapper ele-wrapper-message_1">
             <hm-bg-card
               ref="message_1"
-              padding=""
-              box-shadow-blur=""
-              box-shadow-v-shadow=""
-              border-radius=""
               width="100%"
               height="100%"
+              border-radius=""
+              padding=""
+              box-shadow-v-shadow=""
+              box-shadow-blur=""
               class="ele-message_1"
             >
               <div
@@ -2714,7 +2714,9 @@ export default {
       item.imgSize = "375 * 607";
       self.$refs.sharingImageTable.cData = [item];
       //self.$refs.sharingImageTable.cData.push(item)
-
+      if (self.imgItem && self.imgItem.id) {
+        item.id = self.imgItem.id;
+      }
       self.sharingImageSettings.visible = false;
       self.$refs.activityImgFormTre.reset();
     },
