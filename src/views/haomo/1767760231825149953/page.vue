@@ -644,14 +644,7 @@ export default {
               title: "",
               width: "242px",
               showSearch: true,
-              params: {
-                type: 0,
-              },
-              dataMap: {
-                label: "itemText",
-                value: "itemValue",
-              },
-              url: "/api/dkn/viewActivityDictItem/list",
+              url: "/api/sys/dict/getDictItems/channel",
             },
             validator: function (value) {},
           },
