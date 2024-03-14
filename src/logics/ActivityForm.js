@@ -234,6 +234,14 @@ const detail = (logic.detail = async (pageVm, eventData) => {
       self.sharingImageTable.columns.length - 1,
       1
     );
+    self.activityPickUpTable.columns.splice(
+      self.activityPickUpTable.columns.length - 1,
+      1
+    );
+    self.activityDictItemTable.columns.splice(
+      self.activityDictItemTable.columns.length - 1,
+      1
+    );
   } else {
     self.title.text = "编辑活动";
   }
