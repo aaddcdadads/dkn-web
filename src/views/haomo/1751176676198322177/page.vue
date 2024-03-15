@@ -1264,7 +1264,7 @@ export default {
           },
           imgPath: {
             style: {
-              width: "126px",
+              width: "100%",
               height: "126px",
             },
             type: "UploadImage",
