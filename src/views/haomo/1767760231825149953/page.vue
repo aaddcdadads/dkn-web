@@ -584,6 +584,10 @@ export default {
             props: {
               title: "",
               width: "242px",
+              dataMap: {
+                label: "alias",
+                value: "alias",
+              },
               url: "/api/dkn/activityProject/list",
             },
             validator: function (value) {},
