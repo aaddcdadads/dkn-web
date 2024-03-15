@@ -27,6 +27,7 @@
                   text="筛选查询"
                   icon="fa fa-search"
                   width=""
+                  font-size="14px"
                   class="ele-42e9cd13-e4ac-4d63-9746-3a6cf3a0fde9"
                 >
                 </hm-ant-icon-text>
@@ -34,7 +35,11 @@
               <div
                 class="ele-wrapper ele-wrapper-5518bf04-ae33-435a-9d23-20eb81f147ad"
               >
-                <hm-ant-bg-text> </hm-ant-bg-text>
+                <hm-ant-bg-text
+                  text="（当前活动：xxx活动名称）"
+                  font-size="14px"
+                >
+                </hm-ant-bg-text>
               </div>
               <div class="ele-wrapper ele-wrapper-registrationOrdersFilter">
                 <hm-ant-formily
@@ -105,7 +110,7 @@
               >
                 <hm-panel
                   height=""
-                  title="报名列表"
+                  title="报名列表 (报名用总数：9999 参与人次总数：99999）)"
                   class="ele-acb9ca38-a2dc-4615-8ff9-d19194092922"
                 >
                   <template v-slot:slot-title-icon>
