@@ -2315,7 +2315,7 @@ export default {
         if (items.length === 0) {
           return true;
         }
-        if (items.length === 3) {
+        if (items.length === 3 && self.activityPickUpTableStatus === 1) {
           self.$message.error("最多设置3轮核销");
           return false;
         }
