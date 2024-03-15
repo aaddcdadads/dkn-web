@@ -674,6 +674,9 @@ export default {
             key: "action",
             fixed: "right",
             customRender: function (item) {
+              let statusFlag =
+                !item.record.writeStatusGroups ||
+                item.record.writeStatusGroups.includes("已核销");
               return h(
                 "div",
                 {
@@ -689,7 +692,7 @@ export default {
                   h(HmAntButton, {
                     disabled:
                       item.record.pickUpStatus == 0 ||
-                      item.record.writeStatusGroups.includes("已核销") ||
+                      statusFlag ||
                       item.record.paymentStatus == 1 ||
                       item.record.paymentStatus == 2 ||
                       !item.record.money
