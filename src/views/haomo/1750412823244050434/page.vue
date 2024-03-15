@@ -1,12 +1,6 @@
 <template>
   <div class="page card">
     <div class="page-wrapper">
-      <div class="ele-wrapper ele-wrapper-da541548-bfc6-4553-818d-b26b5dfe89f4">
-        <hm-multi-grid :row-num="3" :col-num="3"> </hm-multi-grid>
-      </div>
-      <div class="ele-wrapper ele-wrapper-8e2e7b94-2ded-4e31-bd32-35084d9e5cf6">
-        <hm-grid :col-num="3"> </hm-grid>
-      </div>
       <div class="ele-wrapper ele-wrapper-testFormily">
         <hm-ant-formily
           ref="testFormily"
@@ -26,15 +20,11 @@
 
 <script>
 import { h } from "vue";
-import HmMultiGrid from "/@/components/built-in/layout/HmMultiGrid.vue";
-import HmGrid from "/@/components/built-in/layout/HmGrid.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 
 export default {
   name: "Test",
   components: {
-    HmMultiGrid,
-    HmGrid,
     HmAntFormily,
   },
   data() {
