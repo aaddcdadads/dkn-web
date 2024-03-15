@@ -418,6 +418,7 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
     activityDictItems,
     delActivityPickUpList: self.delActivityPickUpList,
     delActivityDictItemList: self.delActivityDictItemList,
+    address: self.address.value,
   };
 
   await editRequest();
