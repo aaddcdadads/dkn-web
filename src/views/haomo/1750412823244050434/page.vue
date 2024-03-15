@@ -1,23 +1,34 @@
 <template>
   <div class="page card">
     <div class="page-wrapper">
-      <div class="ele-wrapper ele-wrapper-7e95f20f-0e3a-4f66-b2ed-9fce3bd719f4">
-        <hm-bg-card> </hm-bg-card>
+      <div class="ele-wrapper ele-wrapper-da541548-bfc6-4553-818d-b26b5dfe89f4">
+        <hm-multi-grid :row-num="3" :col-num="3"> </hm-multi-grid>
       </div>
-      <div class="ele-wrapper ele-wrapper-01929ac7-9d94-4122-84bc-bd9aed3c454e">
-        <hm-bg-card> </hm-bg-card>
+      <div class="ele-wrapper ele-wrapper-8e2e7b94-2ded-4e31-bd32-35084d9e5cf6">
+        <hm-grid :col-num="3"> </hm-grid>
       </div>
-      <div class="ele-wrapper ele-wrapper-baa72cc8-01e6-4421-a17d-a02097814193">
-        <hm-bg-card> </hm-bg-card>
+      <div class="ele-wrapper ele-wrapper-e11cea7e-a02a-469b-a2a5-afa7fcae77ff">
+        <hm-ant-radio
+          value="undefined"
+          :craido-l-ist="[
+            { state: false, value: 'raido1' },
+            { state: true, value: 'raido2' },
+            { state: false, value: 'raido3' },
+          ]"
+        >
+        </hm-ant-radio>
       </div>
-      <div class="ele-wrapper ele-wrapper-32eea8c3-0498-4fe2-a144-9a004fdaa60d">
-        <hm-bg-card> </hm-bg-card>
-      </div>
-      <div class="ele-wrapper ele-wrapper-b887353f-cf53-4f8c-82e6-bb5ac781fdc2">
-        <hm-bg-card> </hm-bg-card>
-      </div>
-      <div class="ele-wrapper ele-wrapper-121cc922-b1eb-439a-b418-860f53e4bc9f">
-        <hm-color-kit> </hm-color-kit>
+      <div class="ele-wrapper ele-wrapper-testFormily">
+        <hm-ant-formily
+          ref="testFormily"
+          v-model:value="testFormily.value"
+          :col-num="0"
+          :col-min-width="380"
+          :label-col="7"
+          :wrapper-col="14"
+          class="ele-testFormily"
+        >
+        </hm-ant-formily>
       </div>
     </div>
   </div>
@@ -25,18 +36,43 @@
 
 <script>
 import { h } from "vue";
-import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
-import HmColorKit from "/@/components/built-in/jeecg/HmColorKit.vue";
+import HmMultiGrid from "/@/components/built-in/layout/HmMultiGrid.vue";
+import HmGrid from "/@/components/built-in/layout/HmGrid.vue";
+import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
+import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 
 export default {
   name: "Test",
   components: {
-    HmBgCard,
-    HmColorKit,
+    HmMultiGrid,
+    HmGrid,
+    HmAntRadio,
+    HmAntFormily,
   },
   data() {
     let self = this;
-    return {};
+    return {
+      "e11cea7e-a02a-469b-a2a5-afa7fcae77ff": {
+        value: null,
+        craidoLIst: [
+          {
+            state: false,
+            value: "raido1",
+          },
+          {
+            state: true,
+            value: "raido2",
+          },
+          {
+            state: false,
+            value: "raido3",
+          },
+        ],
+      },
+      testFormily: {
+        value: {},
+      },
+    };
   },
   watch: {},
   methods: {},
@@ -45,5 +81,9 @@ export default {
 
 <style lang="less" scoped>
 .page {
+}
+
+.ele-wrapper-testFormily {
+  width: 100%;
 }
 </style>
