@@ -504,7 +504,7 @@
                                       v-model:value="activityDictItemForm.value"
                                       :col-num="0"
                                       :col-min-width="380"
-                                      :label-col="7"
+                                      :label-col="8"
                                       :wrapper-col="14"
                                     >
                                     </hm-ant-formily>
