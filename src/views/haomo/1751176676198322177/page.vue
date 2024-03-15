@@ -1901,7 +1901,7 @@ export default {
         config: {
           sysDictItemId: {
             type: "HmAntSelect",
-            title: "参与人配置项：",
+            title: "参与人配置项",
             style: {
               width: "100%",
             },
