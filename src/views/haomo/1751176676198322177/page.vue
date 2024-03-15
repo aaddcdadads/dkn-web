@@ -246,13 +246,13 @@
                               >
                                 <hm-ant-formily
                                   ref="addActivityImgFormTwo"
-                                  :schema="addActivityImgFormTwo.schema"
-                                  :wrapper-col="14"
-                                  :col-num="0"
-                                  :label-col="7"
-                                  :col-min-width="380"
                                   :config="addActivityImgFormTwo.config"
                                   v-model:value="addActivityImgFormTwo.value"
+                                  :col-num="0"
+                                  :col-min-width="380"
+                                  :schema="addActivityImgFormTwo.schema"
+                                  :label-col="7"
+                                  :wrapper-col="14"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -1265,6 +1265,7 @@ export default {
           imgPath: {
             style: {
               width: "100%",
+              height: "126px",
             },
             type: "UploadImage",
             title: "奖品图片",
@@ -1286,6 +1287,7 @@ export default {
             },
           },
         },
+        value: {},
         schema: {
           type: "object",
           properties: {
@@ -1308,7 +1310,6 @@ export default {
             },
           },
         },
-        value: {},
       },
       activityPickUpModal: {
         visible: false,
