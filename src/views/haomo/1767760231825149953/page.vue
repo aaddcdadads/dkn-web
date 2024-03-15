@@ -112,6 +112,7 @@
                 <hm-panel
                   height=""
                   title="报名列表 (报名用总数：9999 参与人次总数：99999）"
+                  box-shadow-color="#00000000"
                   class="ele-acb9ca38-a2dc-4615-8ff9-d19194092922"
                 >
                   <template v-slot:slot-title-icon>
