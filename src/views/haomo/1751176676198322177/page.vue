@@ -1918,8 +1918,7 @@ export default {
             },
             events: {
               "@change": function (e, i) {
-                const s = i.findIndex((a) => a.id === e);
-                self.dictItem = JSON.parse(JSON.stringify(i[s]));
+                self.dictItem = JSON.parse(JSON.stringify(i));
               },
             },
           },
