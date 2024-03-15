@@ -653,13 +653,10 @@ export default {
             customRender: function (data) {
               console.log("ss实际核销门店----", data.text, data);
               if (!data.text) return;
-              let names = data.text.split(",");
-              let filterNames = names.filter((item) => item !== "");
-              if (
-                filterNames.some(
-                  (item) => item !== data.record.originalPickUpName
-                )
-              ) {
+              //let names = data.text.split(",");
+              //let filterNames = names.filter(item => item !== "");
+              //filterNames.some(item => item !==  data.record.originalPickUpName
+              if (data.record.storeDifference) {
                 return self.processingColorData(data.text, "#fe8989");
               }
               return self.processingColorData(data.text);
