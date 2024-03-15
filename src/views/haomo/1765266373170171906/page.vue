@@ -212,9 +212,9 @@
                             class="ele-wrapper ele-wrapper-2030f92c-96b3-41e7-8403-353b98f5e6a6"
                           >
                             <hm-ant-bg-text
-                              padding="2"
-                              font-size="14px"
                               text="活动奖品设置（可为空）"
+                              font-size="14px"
+                              padding="2"
                               class="ele-2030f92c-96b3-41e7-8403-353b98f5e6a6"
                             >
                             </hm-ant-bg-text>
@@ -1204,6 +1204,7 @@ export default {
           name: {
             style: {
               width: "100%",
+              marginTop: "10px",
             },
             type: "Input",
             title: "奖品名称",
