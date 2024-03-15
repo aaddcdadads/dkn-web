@@ -1057,7 +1057,8 @@ export default {
 }
 
 .ele-wrapper-acb9ca38-a2dc-4615-8ff9-d19194092922 {
-  width: 100%;
+  width: 99%;
+  margin-left: 1%;
 }
 
 .ele-wrapper-numberUsers {
