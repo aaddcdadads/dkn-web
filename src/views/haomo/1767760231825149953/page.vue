@@ -548,85 +548,7 @@ export default {
       registrationOrdersEditModal: {
         visible: false,
       },
-      importButton: {
-        visible: false,
-        headers: null,
-        fileList: [],
-      },
-      exportButton: {
-        visible: false,
-        text: "导出",
-        type: "primary",
-        icon: "fa fa-download",
-      },
-      registrationOrdersAddForm: {
-        config: {
-          code: {
-            type: "HmAntSelect",
-            title: "编码",
-            style: {
-              width: "50%",
-            },
-            props: {
-              title: "",
-            },
-            validator: function (value) {},
-            required: false,
-            disabled: false,
-          },
-        },
-        value: {
-          span: "文字内容",
-        },
-        schema: {},
-      },
-      registrationOrdersEditForm: {
-        config: {
-          code: {
-            type: "HmAntSelect",
-            title: "编码",
-            style: {
-              width: "50%",
-            },
-            props: {
-              title: "",
-            },
-            validator: function (value) {},
-            required: false,
-            disabled: false,
-          },
-        },
-        value: {
-          span: "文字内容",
-        },
-        schema: {},
-      },
-      registrationOrdersDetailForm: {
-        config: {
-          code: {
-            type: "Span",
-            title: "编码",
-            style: {
-              width: "50%",
-            },
-            props: {},
-            validator: function (value) {},
-            required: false,
-            disabled: false,
-          },
-        },
-        value: {
-          span: "文字内容",
-        },
-        schema: {},
-      },
-      userTotalText: {
-        text: "(用户总数:0)",
-      },
       registrationOrdersFilter: {
-        value: {
-          span: "文字内容",
-        },
         config: {
           code: {
             type: "Input",
@@ -730,7 +652,85 @@ export default {
             validator: function (value) {},
           },
         },
+        value: {
+          span: "文字内容",
+        },
         schema: {},
+      },
+      importButton: {
+        visible: false,
+        headers: null,
+        fileList: [],
+      },
+      exportButton: {
+        visible: false,
+        text: "导出",
+        type: "primary",
+        icon: "fa fa-download",
+      },
+      registrationOrdersAddForm: {
+        config: {
+          code: {
+            type: "HmAntSelect",
+            title: "编码",
+            style: {
+              width: "50%",
+            },
+            props: {
+              title: "",
+            },
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+        },
+        value: {
+          span: "文字内容",
+        },
+        schema: {},
+      },
+      registrationOrdersEditForm: {
+        config: {
+          code: {
+            type: "HmAntSelect",
+            title: "编码",
+            style: {
+              width: "50%",
+            },
+            props: {
+              title: "",
+            },
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+        },
+        value: {
+          span: "文字内容",
+        },
+        schema: {},
+      },
+      registrationOrdersDetailForm: {
+        config: {
+          code: {
+            type: "Span",
+            title: "编码",
+            style: {
+              width: "50%",
+            },
+            props: {},
+            validator: function (value) {},
+            required: false,
+            disabled: false,
+          },
+        },
+        value: {
+          span: "文字内容",
+        },
+        schema: {},
+      },
+      userTotalText: {
+        text: "(用户总数:0)",
       },
       registrationOrdersDetailModal: {
         visible: false,
@@ -783,6 +783,9 @@ export default {
       if (this.$route.query.activityId) {
         this.registrationOrdersTable.params.activityId = this.$route.query.activityId;
         this.activityId = this.$route.query.activityId;
+        this.registrationOrdersFilter.config.channel.props.params = {
+          activityId: this.activityId,
+        };
       }
       let self = this;
       self.setColumns = async function () {
