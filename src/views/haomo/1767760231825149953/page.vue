@@ -813,7 +813,8 @@ export default {
           activityId: this.activityId,
           pageSize: -1,
         };
-        self.activityPanel.title = "";
+        let item = this.$route.query;
+        self.activityPanel.title = `报名列表 (报名用总数：${item.orders} 参与人次总数：${item.ordersTotal}）`;
       }
       self.setColumns = async function () {
         if (!self.activityId) {
