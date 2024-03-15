@@ -777,6 +777,10 @@ export default {
         this.registrationOrdersFilter.config.channel.props.params = {
           activityId: this.activityId,
         };
+        this.registrationOrdersFilter.config.alias.props.params = {
+          activityId: this.activityId,
+          pageSize: -1,
+        };
       }
       let self = this;
       self.setColumns = async function () {
