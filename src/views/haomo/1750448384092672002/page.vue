@@ -1682,7 +1682,12 @@ export default {
             callback: function (item) {
               self.$router.push({
                 path: `/haomo/1767760231825149953/page`,
-                query: { activityId: item.id },
+                query: {
+                  activityId: item.id,
+                  orders: item.orders,
+                  ordersTotal: item.ordersTotal,
+                  activityName: item.name,
+                },
               });
             },
             type: "link",
