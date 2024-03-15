@@ -1191,6 +1191,7 @@ export default {
           imgPath: {
             style: {
               width: "100%",
+              height: "126px",
             },
             type: "UploadImage",
             title: "奖品图片",
