@@ -689,7 +689,7 @@ export default {
                   h(HmAntButton, {
                     disabled:
                       item.record.pickUpStatus == 0 ||
-                      item.record.writeTimeGroups.includes("已核销") ||
+                      item.record.writeStatusGroups.includes("已核销") ||
                       item.record.paymentStatus == 1 ||
                       item.record.paymentStatus == 2 ||
                       !item.record.money
