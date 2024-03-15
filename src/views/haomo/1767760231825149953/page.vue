@@ -28,6 +28,7 @@
                   icon="fa fa-search"
                   width=""
                   font-size="14px"
+                  icon-size="14px"
                   class="ele-42e9cd13-e4ac-4d63-9746-3a6cf3a0fde9"
                 >
                 </hm-ant-icon-text>
@@ -110,7 +111,7 @@
               >
                 <hm-panel
                   height=""
-                  title="报名列表 (报名用总数：9999 参与人次总数：99999）)"
+                  title="报名列表 (报名用总数：9999 参与人次总数：99999）"
                   class="ele-acb9ca38-a2dc-4615-8ff9-d19194092922"
                 >
                   <template v-slot:slot-title-icon>
