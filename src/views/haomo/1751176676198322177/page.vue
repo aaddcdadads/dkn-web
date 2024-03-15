@@ -1278,6 +1278,7 @@ export default {
           name: {
             style: {
               width: "100%",
+              marginTop: "10px",
             },
             type: "Input",
             title: "奖品名称",
