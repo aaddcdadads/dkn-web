@@ -576,7 +576,7 @@ export default {
             validator: function (value) {},
           },
           alias: {
-            type: "Input",
+            type: "HmAntSelect",
             title: "组别名",
             style: {
               width: "50%",
@@ -584,16 +584,7 @@ export default {
             props: {
               title: "",
               width: "242px",
-              options: [
-                {
-                  label: "已核销",
-                  value: 0,
-                },
-                {
-                  label: "待核销",
-                  value: 1,
-                },
-              ],
+              url: "/api/dkn/activityProject/list",
             },
             validator: function (value) {},
           },
