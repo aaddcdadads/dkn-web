@@ -43,9 +43,19 @@ export default {
       testFormily: {
         config: {
           radio: {
-            type: "array",
+            type: "RadioGroup",
             props: {
               label: "测试",
+              options: [
+                {
+                  label: "Apple",
+                  value: "Apple",
+                },
+                {
+                  label: "Pear",
+                  value: "Pear",
+                },
+              ],
             },
           },
         },
