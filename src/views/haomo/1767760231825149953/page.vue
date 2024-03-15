@@ -33,10 +33,9 @@
                 >
                 </hm-ant-icon-text>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-5518bf04-ae33-435a-9d23-20eb81f147ad"
-              >
+              <div class="ele-wrapper ele-wrapper-activityName">
                 <hm-ant-bg-text
+                  ref="activityName"
                   text="（当前活动：xxx活动名称）"
                   font-size="14px"
                 >
@@ -106,14 +105,13 @@
                 >
                 </hm-ant-button>
               </div>
-              <div
-                class="ele-wrapper ele-wrapper-acb9ca38-a2dc-4615-8ff9-d19194092922"
-              >
+              <div class="ele-wrapper ele-wrapper-activityName">
                 <hm-panel
+                  ref="activityName"
                   height=""
                   title="报名列表 (报名用总数：9999 参与人次总数：99999）"
                   box-shadow-color="#00000000"
-                  class="ele-acb9ca38-a2dc-4615-8ff9-d19194092922"
+                  class="ele-activityName"
                 >
                   <template v-slot:slot-title-icon>
                     <div class="ele-wrapper ele-wrapper-numberUsers">
@@ -1057,7 +1055,7 @@ export default {
   margin: 0 0 0 1%;
 }
 
-.ele-wrapper-acb9ca38-a2dc-4615-8ff9-d19194092922 {
+.ele-wrapper-activityName {
   width: 99%;
   margin-left: 1%;
 }
