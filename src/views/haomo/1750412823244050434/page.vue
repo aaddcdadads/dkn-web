@@ -73,6 +73,7 @@ export default {
       testFormily: {
         config: {
           radio: {
+            type: "RadioGroup",
             props: {
               label: "测试",
             },
