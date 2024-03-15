@@ -1869,7 +1869,11 @@ export default {
             type: "RangePicker",
             title: "核销时间段",
             required: true,
-            props: {},
+            props: {
+              disabledDate: function (current) {
+                return current && current < self.$moment().endOf("day");
+              },
+            },
           },
         },
         value: {},
