@@ -105,13 +105,13 @@
                 >
                 </hm-ant-button>
               </div>
-              <div class="ele-wrapper ele-wrapper-activityName">
+              <div class="ele-wrapper ele-wrapper-activityPanel">
                 <hm-panel
-                  ref="activityName"
-                  height=""
-                  title="报名列表 (报名用总数：9999 参与人次总数：99999）"
-                  box-shadow-color="#00000000"
-                  class="ele-activityName"
+                  ref="activityPanel"
+                  :height="activityPanel.height"
+                  :title="activityPanel.title"
+                  :box-shadow-color="activityPanel.boxShadowColor"
+                  class="ele-activityPanel"
                 >
                   <template v-slot:slot-title-icon>
                     <div class="ele-wrapper ele-wrapper-numberUsers">
@@ -673,6 +673,11 @@ export default {
         },
         schema: {},
       },
+      activityPanel: {
+        title: "报名列表 (报名用总数：9999 参与人次总数：99999）",
+        height: "",
+        boxShadowColor: "#00000000",
+      },
       importButton: {
         visible: false,
         headers: null,
@@ -796,6 +801,8 @@ export default {
   },
   methods: {
     onCreated() {
+      let self = this;
+
       if (this.$route.query.activityId) {
         this.registrationOrdersTable.params.activityId = this.$route.query.activityId;
         this.activityId = this.$route.query.activityId;
@@ -806,8 +813,8 @@ export default {
           activityId: this.activityId,
           pageSize: -1,
         };
+        self.activityPanel.title = "";
       }
-      let self = this;
       self.setColumns = async function () {
         if (!self.activityId) {
           self.$message.error("获取活动失败");
@@ -1055,7 +1062,7 @@ export default {
   margin: 0 0 0 1%;
 }
 
-.ele-wrapper-activityName {
+.ele-wrapper-activityPanel {
   width: 99%;
   margin-left: 1%;
 }
