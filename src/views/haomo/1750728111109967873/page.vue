@@ -569,9 +569,10 @@ export default {
             customRender: function (item) {
               return self.processingData(
                 item.record.pickUpStatusAction,
-                item.record.paymentStatus,
-                item.record.pickUpStartTime,
-                item.record.pickUpEndTime
+                item.record.id,
+                item.record.activityId,
+                item.record.storeId,
+                item.record.paymentStatus
               );
             },
           },
