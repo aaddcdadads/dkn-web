@@ -7,17 +7,6 @@
       <div class="ele-wrapper ele-wrapper-8e2e7b94-2ded-4e31-bd32-35084d9e5cf6">
         <hm-grid :col-num="3"> </hm-grid>
       </div>
-      <div class="ele-wrapper ele-wrapper-e11cea7e-a02a-469b-a2a5-afa7fcae77ff">
-        <hm-ant-radio
-          value="undefined"
-          :craido-l-ist="[
-            { state: false, value: 'raido1' },
-            { state: true, value: 'raido2' },
-            { state: false, value: 'raido3' },
-          ]"
-        >
-        </hm-ant-radio>
-      </div>
       <div class="ele-wrapper ele-wrapper-testFormily">
         <hm-ant-formily
           ref="testFormily"
@@ -39,7 +28,6 @@
 import { h } from "vue";
 import HmMultiGrid from "/@/components/built-in/layout/HmMultiGrid.vue";
 import HmGrid from "/@/components/built-in/layout/HmGrid.vue";
-import HmAntRadio from "/@/components/built-in/jeecg/HmAntRadio.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 
 export default {
@@ -47,29 +35,11 @@ export default {
   components: {
     HmMultiGrid,
     HmGrid,
-    HmAntRadio,
     HmAntFormily,
   },
   data() {
     let self = this;
     return {
-      "e11cea7e-a02a-469b-a2a5-afa7fcae77ff": {
-        value: null,
-        craidoLIst: [
-          {
-            state: false,
-            value: "raido1",
-          },
-          {
-            state: true,
-            value: "raido2",
-          },
-          {
-            state: false,
-            value: "raido3",
-          },
-        ],
-      },
       testFormily: {
         config: {
           radio: {
