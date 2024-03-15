@@ -72,7 +72,11 @@ export default {
       },
       testFormily: {
         config: {
-          radio: {},
+          radio: {
+            props: {
+              label: "测试",
+            },
+          },
         },
         value: {},
       },
