@@ -631,8 +631,8 @@ export default {
           },
           {
             title: "核销时间",
-            dataIndex: "writeTimeGroups",
-            key: "writeTimeGroups",
+            dataIndex: "pickUpTimes",
+            key: "pickUpTimes",
             customRender: function (data) {
               console.log("核销时间===", data);
               return self.processingData(data.text);
