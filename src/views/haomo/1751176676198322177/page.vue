@@ -1909,6 +1909,7 @@ export default {
               params: {
                 code: "member_detail",
               },
+              mode: "multiple",
               url: "/api/sys/dict/getDictItem",
               dataMap: {
                 label: "itemText",
