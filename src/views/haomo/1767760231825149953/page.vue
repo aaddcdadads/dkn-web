@@ -20,6 +20,22 @@
               :title-block-color="crudPagePanel.titleBlockColor"
               class="ele-crudPagePanel"
             >
+              <div
+                class="ele-wrapper ele-wrapper-42e9cd13-e4ac-4d63-9746-3a6cf3a0fde9"
+              >
+                <hm-ant-icon-text
+                  text="筛选查询"
+                  icon="fa fa-search"
+                  width=""
+                  class="ele-42e9cd13-e4ac-4d63-9746-3a6cf3a0fde9"
+                >
+                </hm-ant-icon-text>
+              </div>
+              <div
+                class="ele-wrapper ele-wrapper-5518bf04-ae33-435a-9d23-20eb81f147ad"
+              >
+                <hm-ant-bg-text> </hm-ant-bg-text>
+              </div>
               <div class="ele-wrapper ele-wrapper-registrationOrdersFilter">
                 <hm-ant-formily
                   ref="registrationOrdersFilter"
@@ -406,15 +422,15 @@
 import { h } from "vue";
 import HmBgCard from "/@/components/built-in/layout/HmBgCard.vue";
 import HmPanel from "/@/components/built-in/layout/HmPanel.vue";
+import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
+import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmAntFormily from "/@/components/built-in/jeecg/HmAntFormily.vue";
 import HmAntButton from "/@/components/built-in/jeecg/HmAntButton.vue";
 import HmAntUpload from "/@/components/built-in/jeecg/HmAntUpload.vue";
-import HmAntBgText from "/@/components/built-in/jeecg/HmAntBgText.vue";
 import HmAntSelect from "/@/components/built-in/jeecg/HmAntSelect.vue";
 import HmAntTable from "/@/components/built-in/jeecg/HmAntTable.vue";
 import HmAntCheckbox from "/@/components/built-in/jeecg/HmAntCheckbox.vue";
 import HmModal from "/@/components/built-in/layout/HmModal.vue";
-import HmAntIconText from "/@/components/built-in/jeecg/HmAntIconText.vue";
 
 import {
   downloadTemplate,
@@ -430,15 +446,15 @@ export default {
   components: {
     HmBgCard,
     HmPanel,
+    HmAntIconText,
+    HmAntBgText,
     HmAntFormily,
     HmAntButton,
     HmAntUpload,
-    HmAntBgText,
     HmAntSelect,
     HmAntTable,
     HmAntCheckbox,
     HmModal,
-    HmAntIconText,
   },
   data() {
     let self = this;
@@ -1002,6 +1018,10 @@ export default {
   /deep/ .panel_title_icon {
     display: none;
   }
+}
+
+.ele-wrapper-42e9cd13-e4ac-4d63-9746-3a6cf3a0fde9 {
+  margin-left: 1%;
 }
 
 .ele-wrapper-registrationOrdersFilter {
