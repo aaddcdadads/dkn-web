@@ -1970,7 +1970,9 @@ export default {
             type: "RangePicker",
             title: "核销时间段",
             required: true,
-            props: {},
+            props: {
+              disabledDate: true,
+            },
           },
         },
         value: {},
