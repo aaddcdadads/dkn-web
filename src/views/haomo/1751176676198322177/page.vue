@@ -105,9 +105,9 @@
                         class="ele-wrapper ele-wrapper-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
                       >
                         <hm-ant-bg-text
-                          padding="2"
-                          font-size="14px"
                           text="活动项目设置（至少一个）"
+                          font-size="14px"
+                          padding="2"
                           class="ele-42f5eb5a-31b3-4f7a-8ddd-9bb948ae5a17"
                         >
                         </hm-ant-bg-text>
@@ -308,9 +308,9 @@
                                 class="ele-wrapper ele-wrapper-37b100fe-30bf-47b0-9bed-b98bbfebd6f1"
                               >
                                 <hm-ant-bg-text
-                                  padding="2"
-                                  font-size="14px"
                                   text="活动运动信息"
+                                  font-size="14px"
+                                  padding="2"
                                   class="ele-37b100fe-30bf-47b0-9bed-b98bbfebd6f1"
                                 >
                                 </hm-ant-bg-text>
@@ -482,7 +482,7 @@
                               >
                                 <hm-modal
                                   ref="activityDictItemModal"
-                                  title="核销轮次"
+                                  title="参与人信息配置"
                                   v-model:visible="
                                     activityDictItemModal.visible
                                   "
