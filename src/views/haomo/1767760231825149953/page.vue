@@ -818,7 +818,7 @@ export default {
           pageSize: -1,
         };
         let item = this.$route.query;
-        self.activityPanel.title = `报名列表 (报名用总数：${item.orders} 参与人次总数：${item.ordersTotal}）`;
+        self.activityPanel.title = `报名列表 (报名用户总数：${item.orders} 参与人次总数：${item.ordersTotal}）`;
         self.activityName.text = `（当前活动：${item.activityName}）`;
       }
       self.setColumns = async function () {
