@@ -590,13 +590,13 @@ export default {
               let money = data.record.money ? data.record.money : 0;
               return `￥${money}`;
             },
-            width: 50,
+            width: 80,
           },
           {
             title: "报名渠道",
             dataIndex: "channel",
             key: "channel",
-            width: 100,
+            width: 140,
           },
           {
             title: "支付状态",
