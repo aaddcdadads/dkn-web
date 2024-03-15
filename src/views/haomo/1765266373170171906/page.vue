@@ -2012,6 +2012,7 @@ export default {
               params: {
                 code: "member_detail",
               },
+              mode: "multiple",
               dataMap: {
                 label: "itemText",
                 value: "id",
