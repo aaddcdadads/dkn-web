@@ -562,7 +562,7 @@ export default {
             title: "手机号",
             dataIndex: "phone",
             key: "phone",
-            width: 100,
+            width: 120,
           },
           {
             title: "姓名/昵称",
