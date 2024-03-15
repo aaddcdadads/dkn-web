@@ -21,6 +21,7 @@
       <div class="ele-wrapper ele-wrapper-testFormily">
         <hm-ant-formily
           ref="testFormily"
+          :config="testFormily.config"
           v-model:value="testFormily.value"
           :col-num="0"
           :col-min-width="380"
@@ -70,6 +71,9 @@ export default {
         ],
       },
       testFormily: {
+        config: {
+          radio: {},
+        },
         value: {},
       },
     };
