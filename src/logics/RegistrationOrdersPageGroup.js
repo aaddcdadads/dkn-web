@@ -249,37 +249,6 @@ const startOrdersLoad = (logic.startOrdersLoad = async (pageVm, eventData) => {
 
 /********************** startOrdersHeXiao 开始 *********************/
 /**
- * 单个请求
- */
-const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
-  let res = await self.$putAction(`/api/dkn/orderPickUp/edit`, {
-    id: self.orderPickUpId,
-    pickUpStatus: 0,
-  });
-  self.ajaxOrdersHeXiaoOneData = res;
-});
-
-/**
- * 成功处理
- */
-const behaviorOrdersHeXiaoOneSucc = (logic.behaviorOrdersHeXiaoOneSucc = function () {
-  self.$message.success("核销成功");
-  self.$refs.registrationOrdersTable.getData();
-  self.registrationOrdersDeleteModal.visible = false;
-  self.orderPickUpId = null;
-});
-
-/**
- * 失败处理
- */
-const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = function () {
-  self.$message.error("核销失败");
-  self.$refs.registrationOrdersTable.getData();
-  self.registrationOrdersDeleteModal.visible = false;
-  self.orderPickUpId = null;
-});
-
-/**
  * 参数处理
  */
 const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {
@@ -352,6 +321,66 @@ const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = functio
 });
 
 /**
+ * 处理
+ */
+const behavior = (logic.behavior = function () {
+  let splText = splData[i].split("#");
+  if (splText[2] == "999") {
+    //添加
+    let params = {
+      orderId: orderId,
+      activityId: activityId,
+      activityPickUpId: splText[5],
+      storeId: storeId,
+      pickUpStatus: 0,
+      pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
+    };
+
+    self.$postAction("/api/dkn/orderPickUp/addHx", params);
+    self.$refs.registrationOrdersTable.getData();
+  } else {
+    //修改
+    let params = {
+      id: splText[2],
+      pickUpStatus: 0,
+    };
+    self.$putAction("/api/dkn/orderPickUp/edit", params);
+    self.$refs.registrationOrdersTable.getData();
+  }
+});
+
+/**
+ * 单个请求
+ */
+const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
+  let res = await self.$putAction(`/api/dkn/orderPickUp/edit`, {
+    id: self.orderPickUpId,
+    pickUpStatus: 0,
+  });
+  self.ajaxOrdersHeXiaoOneData = res;
+});
+
+/**
+ * 成功处理
+ */
+const behaviorOrdersHeXiaoOneSucc = (logic.behaviorOrdersHeXiaoOneSucc = function () {
+  self.$message.success("核销成功");
+  self.$refs.registrationOrdersTable.getData();
+  self.registrationOrdersDeleteModal.visible = false;
+  self.orderPickUpId = null;
+});
+
+/**
+ * 失败处理
+ */
+const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = function () {
+  self.$message.error("核销失败");
+  self.$refs.registrationOrdersTable.getData();
+  self.registrationOrdersDeleteModal.visible = false;
+  self.orderPickUpId = null;
+});
+
+/**
  * 逻辑流 startOrdersHeXiao 入口函数
  */
 const startOrdersHeXiao = (logic.startOrdersHeXiao = async (
@@ -363,6 +392,7 @@ const startOrdersHeXiao = (logic.startOrdersHeXiao = async (
   self.startOrdersHeXiaoData = eventData;
 
   if (self.hexiaotype) {
+    behavior();
     await ajaxOrdersHeXiaoOne();
     if (self.ajaxOrdersHeXiaoOneData.success) {
       behaviorOrdersHeXiaoOneSucc();
@@ -397,12 +427,13 @@ export {
   behaviorOrdersLoadSucc,
   behaviorOrdersLoadFaul,
   startOrdersLoad,
-  ajaxOrdersHeXiaoOne,
-  behaviorOrdersHeXiaoOneSucc,
-  behaviorOrdersHeXiaoOneFaul,
   behaviorOrdersHeDuoParam,
   ajaxOrdersHeDuo,
   behaviorOrdersHeXiaoDuoSucc,
   behaviorOrdersHeXiaoDuoFual,
+  behavior,
+  ajaxOrdersHeXiaoOne,
+  behaviorOrdersHeXiaoOneSucc,
+  behaviorOrdersHeXiaoOneFaul,
   startOrdersHeXiao,
 };
