@@ -283,8 +283,7 @@ const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = functio
  * 参数处理
  */
 const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {
-  self.heXiaoDuoAdd = [];
-  self.heXiaoDuoEdit = [];
+  self.heXiaoDuo = [];
   self.selectTempArr.forEach((e) => {
     let splData = e.pickUpStatusAction.split(",");
     for (let i = 0; i < splData.length; i++) {
@@ -299,14 +298,14 @@ const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {
           pickUpStatus: 0,
           pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
         };
-        self.heXiaoDuoAdd.push(params);
+        self.heXiaoDuo.push(params);
       } else {
         //修改
         let params = {
           id: splText[2],
           pickUpStatus: 0,
         };
-        self.heXiaoDuoEdit.push(params);
+        self.heXiaoDuo.push(params);
       }
     }
   });
