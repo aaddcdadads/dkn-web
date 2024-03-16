@@ -257,6 +257,7 @@
                                   :schema="addActivityImgFormTwo.schema"
                                   :label-col="7"
                                   :wrapper-col="14"
+                                  class="ele-addActivityImgFormTwo"
                                 >
                                 </hm-ant-formily>
                               </div>
@@ -2857,6 +2858,10 @@ export default {
   /deep/.hm-modal {
     min-height: 0px;
   }
+}
+
+.ele-wrapper-addActivityImgFormTwo {
+  height: 100%;
 }
 
 .ele-wrapper-ee49ad6d-dd0f-4f85-8ed8-dd1b1b7af98c {
