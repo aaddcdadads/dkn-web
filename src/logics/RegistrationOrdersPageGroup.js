@@ -316,8 +316,8 @@ const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {
  * 批量核销请求
  */
 const ajaxOrdersHeDuo = (logic.ajaxOrdersHeDuo = async function () {
-  let res = await self.$putAction(
-    `/api/dkn/orderPickUp/editBatch`,
+  let res = await self.$postAction(
+    `/api/dkn/orderPickUp/addBatchHx`,
     self.heXiaoDuo
   );
   self.ajaxOrdersHeDuoData = res;
