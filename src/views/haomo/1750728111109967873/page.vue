@@ -938,27 +938,9 @@ export default {
               type: "link",
               icon: "",
               onClick: function () {
-                if (splText[2] == "999") {
-                  //添加
-                  let params = {
-                    orderId: orderId,
-                    activityId: activityId,
-                    activityPickUpId: splText[5],
-                    storeId: storeId,
-                    pickUpStatus: 0,
-                    pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
-                  };
-                  self.$postAction("/api/dkn/orderPickUp/addHx", params);
-                  self.$refs.registrationOrdersTable.getData();
-                } else {
-                  //修改
-                  let params = {
-                    id: splText[2],
-                    pickUpStatus: 0,
-                  };
-                  self.$putAction("/api/dkn/orderPickUp/edit", params);
-                  self.$refs.registrationOrdersTable.getData();
-                }
+                self.orderPickUpId = splData[i];
+                self.hexiaotype = true;
+                self.registrationOrdersDeleteModal.visible = true;
               },
             })
           );
