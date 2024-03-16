@@ -508,7 +508,7 @@ export default {
               );
             },
             dataIndex: "activityName",
-            width: 300,
+            width: 280,
             title: "报名项目名称",
             key: "activityName",
           },
@@ -539,7 +539,7 @@ export default {
           },
           {
             dataIndex: "paymentTimeText",
-            width: 120,
+            width: 140,
             title: "报名付款时间",
             key: "paymentTimeText",
           },
