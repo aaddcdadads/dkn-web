@@ -321,36 +321,6 @@ const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = functio
 });
 
 /**
- * 处理
- */
-const behavior = (logic.behavior = function () {
-  let splText = self.orderPickUpId.split("#");
-  self.hxAddOrEdit = {};
-  if (splText[2] == "999") {
-    //添加
-    self.hxAddOrEdit = {
-      orderId: orderId,
-      activityId: activityId,
-      activityPickUpId: splText[5],
-      storeId: storeId,
-      pickUpStatus: 0,
-      pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
-    };
-
-    // self.$postAction("/api/dkn/orderPickUp/addHx", params);
-    //self.$refs.registrationOrdersTable.getData();
-  } else {
-    //修改
-    self.hxAddOrEdit = {
-      id: splText[2],
-      pickUpStatus: 0,
-    };
-    // self.$putAction("/api/dkn/orderPickUp/edit", params);
-    // self.$refs.registrationOrdersTable.getData();
-  }
-});
-
-/**
  * 单个请求
  */
 const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
@@ -393,7 +363,6 @@ const startOrdersHeXiao = (logic.startOrdersHeXiao = async (
   self.startOrdersHeXiaoData = eventData;
 
   if (self.hexiaotype) {
-    behavior();
     await ajaxOrdersHeXiaoOne();
     if (self.ajaxOrdersHeXiaoOneData.success) {
       behaviorOrdersHeXiaoOneSucc();
@@ -432,7 +401,6 @@ export {
   ajaxOrdersHeDuo,
   behaviorOrdersHeXiaoDuoSucc,
   behaviorOrdersHeXiaoDuoFual,
-  behavior,
   ajaxOrdersHeXiaoOne,
   behaviorOrdersHeXiaoOneSucc,
   behaviorOrdersHeXiaoOneFaul,
