@@ -996,20 +996,6 @@ export default {
         var currentTimepick = this.$moment();
         var flag = false;
         for (let i = 0; i < this.selectTempArr.length; i++) {
-          var startTimepick = this.$moment(
-            this.selectTempArr[i].pickUpStartTime,
-            "YYYY-MM-DD HH:mm:ss"
-          );
-          var endTimepick = this.$moment(
-            this.selectTempArr[i].pickUpEndTime,
-            "YYYY-MM-DD HH:mm:ss"
-          );
-          if (!currentTimepick.isBetween(startTimepick, endTimepick)) {
-            this.$message.error("超过核销截止时间了不可核销");
-            this.bacthHeImportButton.disabled = true;
-            flag = true;
-            return;
-          }
           if (this.selectTempArr[i].paymentStatus !== 0) {
             this.$message.error("数据中存在已退款、待支付状态下不可核销");
             this.bacthHeImportButton.disabled = true;
@@ -1019,9 +1005,18 @@ export default {
 
           let splData = this.selectTempArr[i].pickUpStatusAction.split(",");
           for (let i = 0; i < splData.length; i++) {
-            let splText = splData[i].split(":");
-            if (splText[1] === 0) {
+            let splText = splData[i].split("#");
+            debugger;
+            if (splText[1] == "0") {
               this.$message.error("数据已核销");
+              this.bacthHeImportButton.disabled = true;
+              flag = true;
+              return;
+            }
+            var startTimepick = this.$moment(splText[3], "YYYY-MM-DD HH:mm:ss");
+            var endTimepick = this.$moment(splText[4], "YYYY-MM-DD HH:mm:ss");
+            if (!currentTimepick.isBetween(startTimepick, endTimepick)) {
+              this.$message.error("超过核销截止时间了不可核销");
               this.bacthHeImportButton.disabled = true;
               flag = true;
               return;
