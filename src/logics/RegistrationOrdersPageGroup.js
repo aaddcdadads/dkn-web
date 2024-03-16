@@ -12,28 +12,24 @@ let logic = {};
 /**
  * 逻辑流 searchRegistrationOrders 入口函数
  */
-const searchRegistrationOrders = (logic.searchRegistrationOrders = async (
-  pageVm,
-  eventData
-) => {
-  console.log(`searchRegistrationOrders: `, pageVm, eventData);
+const searchRegistrationOrders = logic.searchRegistrationOrders = async (pageVm, eventData) => {
+  console.log(`searchRegistrationOrders: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.searchRegistrationOrdersData = eventData;
 
+  
   let params = {
     ...self.registrationOrdersTable.params,
-    ...self.$getFilterValues(
-      self.$refs.registrationOrdersFilter.getFormValues(),
-      self.$refs.registrationOrdersFilter.cSchema
-    ),
-  };
-  if (_.isEqual(params, self.registrationOrdersTable.params)) {
-    self.$refs.registrationOrdersTable.getData();
-  } else {
-    self.registrationOrdersTable.params = params;
-  }
+    ...self.$getFilterValues(self.$refs.registrationOrdersFilter.getFormValues(), self.$refs.registrationOrdersFilter.cSchema),
+}
+if (_.isEqual(params, self.registrationOrdersTable.params)) {
+    self.$refs.registrationOrdersTable.getData()
+} else {
+    self.registrationOrdersTable.params = params
+}
   await startOrdersLoad(self, self.startData, 1);
-});
+
+}
 
 /********************** end searchRegistrationOrders 开始 *********************/
 
@@ -41,34 +37,39 @@ const searchRegistrationOrders = (logic.searchRegistrationOrders = async (
 /**
  * 发送删除请求
  */
-const deleteRequest = (logic.deleteRequest = async function () {
-  let res = await self.$deleteAction(`/api/restify/registrationOrders/delete`, {
+const deleteRequest = logic.deleteRequest = async function () {
+  let res = await self.$deleteAction(
+    `/api/restify/registrationOrders/delete`,
+    {
     id: self.currentRegistrationOrdersId,
-    databaseId: "",
-  });
+    "databaseId": ""
+}
+  )
   self.deleteRequestData = res;
-});
+}
+
 
 /**
  * 逻辑流 deleteRegistrationOrders 入口函数
  */
-const deleteRegistrationOrders = (logic.deleteRegistrationOrders = async (
-  pageVm,
-  eventData
-) => {
-  console.log(`deleteRegistrationOrders: `, pageVm, eventData);
+const deleteRegistrationOrders = logic.deleteRegistrationOrders = async (pageVm, eventData) => {
+  console.log(`deleteRegistrationOrders: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.deleteRegistrationOrdersData = eventData;
 
+  
   await deleteRequest();
-  if (self.deleteRequestData.success) {
+  if(self.deleteRequestData.success){
     self.$message.success("删除成功");
-    self.$refs.registrationOrdersTable.getData();
-    self.registrationOrdersDeleteModal.visible = false;
-  } else {
+  self.$refs.registrationOrdersTable.getData()
+self.registrationOrdersDeleteModal.visible = false
+
+}else{
     self.$message.error("删除失败");
-  }
-});
+
+}
+
+}
 
 /********************** end deleteRegistrationOrders 开始 *********************/
 
@@ -77,23 +78,19 @@ const deleteRegistrationOrders = (logic.deleteRegistrationOrders = async (
 /**
  * 逻辑流 exportRegistrationOrders 入口函数
  */
-const exportRegistrationOrders = (logic.exportRegistrationOrders = async (
-  pageVm,
-  eventData
-) => {
-  console.log(`exportRegistrationOrders: `, pageVm, eventData);
+const exportRegistrationOrders = logic.exportRegistrationOrders = async (pageVm, eventData) => {
+  console.log(`exportRegistrationOrders: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.exportRegistrationOrdersData = eventData;
 
+  
   let url = "/api/dkn/viewRegistrationOrders/exportExcel";
-  let params = {
-    ...self.$getFilterValues(
-      self.$refs.registrationOrdersFilter.getFormValues(),
-      self.$refs.registrationOrdersFilter.cSchema
-    ),
-  };
-  self.$downloadFile("报名用户列表.xlsx", url, params);
-});
+let params = {
+    ...self.$getFilterValues(self.$refs.registrationOrdersFilter.getFormValues(), self.$refs.registrationOrdersFilter.cSchema),
+};
+self.$downloadFile("报名用户列表.xlsx", url, params);
+
+}
 
 /********************** end exportRegistrationOrders 开始 *********************/
 
@@ -101,35 +98,40 @@ const exportRegistrationOrders = (logic.exportRegistrationOrders = async (
 /**
  * 发送添加请求
  */
-const addRequest = (logic.addRequest = async function () {
-  let res = await self.$postAction(`/api/restify/registrationOrders/add`, {
-    ...self.$refs.registrationOrdersAddForm.getFormValues(),
-  });
+const addRequest = logic.addRequest = async function () {
+  let res = await self.$postAction(
+    `/api/restify/registrationOrders/add`,
+    {
+    ...self.$refs.registrationOrdersAddForm.getFormValues()
+}
+  )
   self.addRequestData = res;
-});
+}
+
 
 /**
  * 逻辑流 addRegistrationOrders 入口函数
  */
-const addRegistrationOrders = (logic.addRegistrationOrders = async (
-  pageVm,
-  eventData
-) => {
-  console.log(`addRegistrationOrders: `, pageVm, eventData);
+const addRegistrationOrders = logic.addRegistrationOrders = async (pageVm, eventData) => {
+  console.log(`addRegistrationOrders: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.addRegistrationOrdersData = eventData;
 
-  await self.$refs.registrationOrdersAddForm.validate();
+  
+  await self.$refs.registrationOrdersAddForm.validate()
   await addRequest();
-  if (self.addRequestData.success) {
+  if(self.addRequestData.success){
     self.$message.success("添加成功");
-    self.$refs.registrationOrdersAddForm.reset();
-    self.registrationOrdersAddModal.visible = false;
-    self.$refs.registrationOrdersTable.getData();
-  } else {
+  self.$refs.registrationOrdersAddForm.reset();
+self.registrationOrdersAddModal.visible = false;
+  self.$refs.registrationOrdersTable.getData()
+
+}else{
     self.$message.error("添加失败");
-  }
-});
+
+}
+
+}
 
 /********************** end addRegistrationOrders 开始 *********************/
 
@@ -138,20 +140,15 @@ const addRegistrationOrders = (logic.addRegistrationOrders = async (
 /**
  * 逻辑流 downloadTemplate 入口函数
  */
-const downloadTemplate = (logic.downloadTemplate = async (
-  pageVm,
-  eventData
-) => {
-  console.log(`downloadTemplate: `, pageVm, eventData);
+const downloadTemplate = logic.downloadTemplate = async (pageVm, eventData) => {
+  console.log(`downloadTemplate: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.downloadTemplateData = eventData;
 
-  self.$downloadFile(
-    "报名订单列表数据模板.xlsx",
-    "/api/restify/registrationOrders/downExcelTemplate",
-    {}
-  );
-});
+  
+  self.$downloadFile("报名订单列表数据模板.xlsx", "/api/restify/registrationOrders/downExcelTemplate", {})
+
+}
 
 /********************** end downloadTemplate 开始下载模板 *********************/
 
@@ -159,36 +156,41 @@ const downloadTemplate = (logic.downloadTemplate = async (
 /**
  * 发送修改请求
  */
-const editRequest = (logic.editRequest = async function () {
-  let res = await self.$putAction(`/api/restify/registrationOrders/edit`, {
+const editRequest = logic.editRequest = async function () {
+  let res = await self.$putAction(
+    `/api/restify/registrationOrders/edit`,
+    {
     ...self.$refs.registrationOrdersEditForm.getFormValues(),
-    id: self.currentRegistrationOrdersId,
-  });
+    id: self.currentRegistrationOrdersId
+}
+  )
   self.editRequestData = res;
-});
+}
+
 
 /**
  * 逻辑流 editRegistrationOrders 入口函数
  */
-const editRegistrationOrders = (logic.editRegistrationOrders = async (
-  pageVm,
-  eventData
-) => {
-  console.log(`editRegistrationOrders: `, pageVm, eventData);
+const editRegistrationOrders = logic.editRegistrationOrders = async (pageVm, eventData) => {
+  console.log(`editRegistrationOrders: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.editRegistrationOrdersData = eventData;
 
-  await self.$refs.registrationOrdersEditForm.validate();
+  
+  await self.$refs.registrationOrdersEditForm.validate()
   await editRequest();
-  if (self.editRequestData.success) {
+  if(self.editRequestData.success){
     self.$message.success("编辑成功");
-    self.$refs.registrationOrdersEditForm.reset();
-    self.registrationOrdersEditModal.visible = false;
-    self.$refs.registrationOrdersTable.getData();
-  } else {
+  self.$refs.registrationOrdersEditForm.reset();
+self.registrationOrdersEditModal.visible = false;
+  self.$refs.registrationOrdersTable.getData()
+
+}else{
     self.$message.error("编辑失败");
-  }
-});
+
+}
+
+}
 
 /********************** end editRegistrationOrders 开始 *********************/
 
@@ -196,54 +198,59 @@ const editRegistrationOrders = (logic.editRegistrationOrders = async (
 /**
  * 参数处理
  */
-const behaviorOrdersLoadPara = (logic.behaviorOrdersLoadPara = function () {
-  console.log("加载");
-});
+const behaviorOrdersLoadPara = logic.behaviorOrdersLoadPara = function() {
+  console.log("加载")
+}
 
 /**
  * 数据请求
  */
-const ajaxOrdersLoad = (logic.ajaxOrdersLoad = async function () {
-  let res = await self.$getAction(`/api/dkn/viewRegistrationOrders/listEntry`, {
+const ajaxOrdersLoad = logic.ajaxOrdersLoad = async function () {
+  let res = await self.$getAction(
+    `/api/dkn/viewRegistrationOrders/listEntry`,
+    {
     ...self.registrationOrdersTable.params,
-    ...self.$getFilterValues(
-      self.$refs.registrationOrdersFilter.getFormValues(),
-      self.$refs.registrationOrdersFilter.cSchema
-    ),
-  });
+    ...self.$getFilterValues(self.$refs.registrationOrdersFilter.getFormValues(), self.$refs.registrationOrdersFilter.cSchema),
+}
+  )
   self.ajaxOrdersLoadData = res;
-});
+}
 
 /**
  * 成功处理
  */
-const behaviorOrdersLoadSucc = (logic.behaviorOrdersLoadSucc = function () {
-  self.userTotalText.text = "用户总数:" + self.ajaxOrdersLoadData.result.total;
-});
+const behaviorOrdersLoadSucc = logic.behaviorOrdersLoadSucc = function() {
+   self.userTotalText.text="用户总数:"+self.ajaxOrdersLoadData.result.total;
+}
 
 /**
  * 失败处理
  */
-const behaviorOrdersLoadFaul = (logic.behaviorOrdersLoadFaul = function () {
-  self.userTotalText.text = "用户总数:0";
-});
+const behaviorOrdersLoadFaul = logic.behaviorOrdersLoadFaul = function() {
+  self.userTotalText.text="用户总数:0";
+}
+
 
 /**
  * 逻辑流 startOrdersLoad 入口函数
  */
-const startOrdersLoad = (logic.startOrdersLoad = async (pageVm, eventData) => {
-  console.log(`startOrdersLoad: `, pageVm, eventData);
+const startOrdersLoad = logic.startOrdersLoad = async (pageVm, eventData) => {
+  console.log(`startOrdersLoad: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.startOrdersLoadData = eventData;
 
+  
   behaviorOrdersLoadPara();
   await ajaxOrdersLoad();
-  if (self.ajaxOrdersLoadData.success) {
+  if(self.ajaxOrdersLoadData.success){
     behaviorOrdersLoadSucc();
-  } else {
+
+}else{
     behaviorOrdersLoadFaul();
-  }
-});
+
+}
+
+}
 
 /********************** end startOrdersLoad 开始 *********************/
 
@@ -251,166 +258,178 @@ const startOrdersLoad = (logic.startOrdersLoad = async (pageVm, eventData) => {
 /**
  * 参数处理
  */
-const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {
-  self.heXiaoDuo = [];
-  self.selectTempArr.forEach((e) => {
-    let splData = e.pickUpStatusAction.split(",");
-    for (let i = 0; i < splData.length; i++) {
-      let splText = splData[i].split("#");
-      if (splText[2] == "999") {
-        //添加
-        let params = {
-          orderId: orderId,
-          activityId: activityId,
-          activityPickUpId: splText[5],
-          storeId: storeId,
-          pickUpStatus: 0,
-          pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
-        };
-        self.heXiaoDuo.push(params);
-      } else {
-        //修改
-        let params = {
-          id: splText[2],
-          pickUpStatus: 0,
-        };
-        self.heXiaoDuo.push(params);
-      }
+const behaviorOrdersHeDuoParam = logic.behaviorOrdersHeDuoParam = function() {
+    self.heXiaoDuo=[];
+    self.selectTempArr.forEach(e=>{
+      let splData = e.pickUpStatusAction.split(",");
+      for (let i = 0; i < splData.length; i++) {
+          let splText = splData[i].split("#");
+              if (splText[2] == "999") {
+                  //添加
+                  let params = {
+                    orderId: orderId,
+                    activityId: activityId,
+                    activityPickUpId: splText[5],
+                    storeId: storeId,
+                    pickUpStatus: 0,
+                    pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
+                  };
+                  self.heXiaoDuo.push(params);
+                } else {
+                  //修改
+                  let params = {
+                    id: splText[2],
+                    pickUpStatus: 0,
+                  };
+                  self.heXiaoDuo.push(params);
+                }
     }
-  });
-});
+    });
+
+
+
+}
 
 /**
  * 批量核销请求
  */
-const ajaxOrdersHeDuo = (logic.ajaxOrdersHeDuo = async function () {
+const ajaxOrdersHeDuo = logic.ajaxOrdersHeDuo = async function () {
   let res = await self.$postAction(
     `/api/dkn/orderPickUp/addBatchHx`,
     self.heXiaoDuo
-  );
+  )
   self.ajaxOrdersHeDuoData = res;
-});
+}
 
 /**
  * 处理
  */
-const behaviorOrdersHeXiaoDuoSucc = (logic.behaviorOrdersHeXiaoDuoSucc = function () {
-  self.$message.success("核销成功");
-
-  self.registrationOrdersTable.rowSelection = { selectedRowKeys: [] };
-  self.$nextTick(() => {
+const behaviorOrdersHeXiaoDuoSucc = logic.behaviorOrdersHeXiaoDuoSucc = function() {
+      self.$message.success("核销成功");
+      
+  self.registrationOrdersTable.rowSelection = {"selectedRowKeys":[]};
+  self.$nextTick(()=>{
     self.registrationOrdersTable.rowSelection = {};
     self.$refs.registrationOrdersTable.getData();
   });
   self.bacthHeImportButton.disabled = true;
-  self.registrationOrdersDeleteModal.visible = false;
-});
+   self.registrationOrdersDeleteModal.visible=false;
+}
 
 /**
  * 处理
  */
-const behaviorOrdersHeXiaoDuoFual = (logic.behaviorOrdersHeXiaoDuoFual = function () {
-  self.$message.error("核销失败");
-  self.registrationOrdersTable.rowSelection = { selectedRowKeys: [] };
-  self.$nextTick(() => {
+const behaviorOrdersHeXiaoDuoFual = logic.behaviorOrdersHeXiaoDuoFual = function() {
+      self.$message.error("核销失败");
+      self.registrationOrdersTable.rowSelection = {"selectedRowKeys":[]};
+  self.$nextTick(()=>{
     self.registrationOrdersTable.rowSelection = {};
     self.$refs.registrationOrdersTable.getData();
   });
   self.bacthHeImportButton.disabled = true;
-  self.registrationOrdersDeleteModal.visible = false;
-});
+   self.registrationOrdersDeleteModal.visible=false;
+}
 
 /**
  * 处理
  */
-const behavior = (logic.behavior = function () {
-  let splText = splData[i].split("#");
-  if (splText[2] == "999") {
-    //添加
-    let params = {
-      orderId: orderId,
-      activityId: activityId,
-      activityPickUpId: splText[5],
-      storeId: storeId,
-      pickUpStatus: 0,
-      pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
-    };
-
-    self.$postAction("/api/dkn/orderPickUp/addHx", params);
-    self.$refs.registrationOrdersTable.getData();
-  } else {
-    //修改
-    let params = {
-      id: splText[2],
-      pickUpStatus: 0,
-    };
-    self.$putAction("/api/dkn/orderPickUp/edit", params);
-    self.$refs.registrationOrdersTable.getData();
-  }
-});
+const behavior = logic.behavior = function() {
+  let splText = self.orderPickUpId.split("#");
+  self.hxAddOrEdit={};
+  if (splText[2] == '999') {
+              //添加
+              self.hxAddOrEdit== {
+                orderId: orderId,
+                activityId: activityId,
+                activityPickUpId: splText[5],
+                storeId: storeId,
+                pickUpStatus: 0,
+                pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
+              }
+              
+             // self.$postAction("/api/dkn/orderPickUp/addHx", params);
+              //self.$refs.registrationOrdersTable.getData();
+            } else {
+              //修改
+              self.hxAddOrEdit= = {
+                id: splText[2],
+                pickUpStatus: 0
+              }
+             // self.$putAction("/api/dkn/orderPickUp/edit", params);
+             // self.$refs.registrationOrdersTable.getData();
+    }
+}
 
 /**
  * 单个请求
  */
-const ajaxOrdersHeXiaoOne = (logic.ajaxOrdersHeXiaoOne = async function () {
-  let res = await self.$putAction(`/api/dkn/orderPickUp/edit`, {
-    id: self.orderPickUpId,
-    pickUpStatus: 0,
-  });
+const ajaxOrdersHeXiaoOne = logic.ajaxOrdersHeXiaoOne = async function () {
+  let res = await self.$putAction(
+    `/api/dkn/orderPickUp/edit`,
+    self.hxAddOrEdit
+  )
   self.ajaxOrdersHeXiaoOneData = res;
-});
+}
 
 /**
  * 成功处理
  */
-const behaviorOrdersHeXiaoOneSucc = (logic.behaviorOrdersHeXiaoOneSucc = function () {
-  self.$message.success("核销成功");
-  self.$refs.registrationOrdersTable.getData();
-  self.registrationOrdersDeleteModal.visible = false;
-  self.orderPickUpId = null;
-});
+const behaviorOrdersHeXiaoOneSucc = logic.behaviorOrdersHeXiaoOneSucc = function() {
+    self.$message.success("核销成功");
+    self.$refs.registrationOrdersTable.getData();
+   self.registrationOrdersDeleteModal.visible=false;
+   self.orderPickUpId=null;
+}
 
 /**
  * 失败处理
  */
-const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = function () {
-  self.$message.error("核销失败");
-  self.$refs.registrationOrdersTable.getData();
-  self.registrationOrdersDeleteModal.visible = false;
-  self.orderPickUpId = null;
-});
+const behaviorOrdersHeXiaoOneFaul = logic.behaviorOrdersHeXiaoOneFaul = function() {
+   self.$message.error("核销失败");
+   self.$refs.registrationOrdersTable.getData();
+   self.registrationOrdersDeleteModal.visible=false;
+   self.orderPickUpId=null;
+   
+}
+
 
 /**
  * 逻辑流 startOrdersHeXiao 入口函数
  */
-const startOrdersHeXiao = (logic.startOrdersHeXiao = async (
-  pageVm,
-  eventData
-) => {
-  console.log(`startOrdersHeXiao: `, pageVm, eventData);
+const startOrdersHeXiao = logic.startOrdersHeXiao = async (pageVm, eventData) => {
+  console.log(`startOrdersHeXiao: `, pageVm, eventData)
   self = Object.assign(pageVm, logic);
   self.startOrdersHeXiaoData = eventData;
 
-  if (self.hexiaotype) {
+  
+  if(self.hexiaotype){
     behavior();
-    await ajaxOrdersHeXiaoOne();
-    if (self.ajaxOrdersHeXiaoOneData.success) {
-      behaviorOrdersHeXiaoOneSucc();
-    } else {
-      behaviorOrdersHeXiaoOneFaul();
-    }
-  } else {
+  await ajaxOrdersHeXiaoOne();
+  if(self.ajaxOrdersHeXiaoOneData.success){
+    behaviorOrdersHeXiaoOneSucc();
+
+}else{
+    behaviorOrdersHeXiaoOneFaul();
+
+}
+
+}else{
     behaviorOrdersHeDuoParam();
-    await ajaxOrdersHeDuo();
-    if (self.ajaxOrdersHeDuoData.success) {
-      behaviorOrdersHeXiaoDuoSucc();
-    } else {
-      behaviorOrdersHeXiaoDuoFual();
-    }
-  }
-});
+  await ajaxOrdersHeDuo();
+  if(self.ajaxOrdersHeDuoData.success){
+    behaviorOrdersHeXiaoDuoSucc();
+
+}else{
+    behaviorOrdersHeXiaoDuoFual();
+
+}
+
+}
+
+}
 
 /********************** end startOrdersHeXiao 开始 *********************/
+
 
 export {
   searchRegistrationOrders,
@@ -436,4 +455,4 @@ export {
   behaviorOrdersHeXiaoOneSucc,
   behaviorOrdersHeXiaoOneFaul,
   startOrdersHeXiao,
-};
+}
