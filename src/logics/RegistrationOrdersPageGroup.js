@@ -310,6 +310,14 @@ const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {
       }
     }
   });
+
+  if (self.heXiaoDuoAdd.length > 0) {
+    self.$postAction("/api/dkn/orderPickUp/addBatch", self.heXiaoDuoAdd);
+  }
+  if (self.heXiaoDuoEdit.length > 0) {
+    self.$putAction("/api/dkn/orderPickUp/editBatch", self.heXiaoDuoEdit);
+  }
+  self.$refs.registrationOrdersTable.getData();
 });
 
 /**
