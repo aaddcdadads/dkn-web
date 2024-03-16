@@ -236,6 +236,7 @@
                               title="奖品图片"
                               v-model:visible="addprize.visible"
                               :z-index="1000"
+                              height=""
                               :auto-close="false"
                               @ok="onAddprizeOk"
                               @cancel="onAddprizeCancel"
