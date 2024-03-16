@@ -283,16 +283,31 @@ const behaviorOrdersHeXiaoOneFaul = (logic.behaviorOrdersHeXiaoOneFaul = functio
  * 参数处理
  */
 const behaviorOrdersHeDuoParam = (logic.behaviorOrdersHeDuoParam = function () {
-  self.heXiaoDuo = [];
+  self.heXiaoDuoAdd = [];
+  self.heXiaoDuoEdit = [];
   self.selectTempArr.forEach((e) => {
     let splData = e.pickUpStatusAction.split(",");
     for (let i = 0; i < splData.length; i++) {
-      let splText = splData[i].split(":");
-      let par = {
-        id: splText[2],
-        pickUpStatus: 0,
-      };
-      self.heXiaoDuo.push(par);
+      let splText = splData[i].split("#");
+      if (splText[2] == "999") {
+        //添加
+        let params = {
+          orderId: orderId,
+          activityId: activityId,
+          activityPickUpId: splText[5],
+          storeId: storeId,
+          pickUpStatus: 0,
+          pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
+        };
+        self.heXiaoDuoAdd.push(params);
+      } else {
+        //修改
+        let params = {
+          id: splText[2],
+          pickUpStatus: 0,
+        };
+        self.heXiaoDuoEdit.push(params);
+      }
     }
   });
 });
