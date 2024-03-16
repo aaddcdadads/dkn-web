@@ -938,8 +938,31 @@ export default {
               type: "link",
               icon: "",
               onClick: function () {
-                self.orderPickUpId = splData[i];
                 self.hexiaotype = true;
+
+                self.hxAddOrEdit = {};
+                if (splText[2] == "999") {
+                  //添加
+                  self.hxAddOrEdit = {
+                    orderId: orderId,
+                    activityId: activityId,
+                    activityPickUpId: splText[5],
+                    storeId: storeId,
+                    pickUpStatus: 0,
+                    pickUpTime: self.$moment().format("YYYY-MM-DD HH:mm:ss"),
+                  };
+
+                  // self.$postAction("/api/dkn/orderPickUp/addHx", params);
+                  //self.$refs.registrationOrdersTable.getData();
+                } else {
+                  //修改
+                  self.hxAddOrEdit = {
+                    id: splText[2],
+                    pickUpStatus: 0,
+                  };
+                  // self.$putAction("/api/dkn/orderPickUp/edit", params);
+                  // self.$refs.registrationOrdersTable.getData();
+                }
                 self.registrationOrdersDeleteModal.visible = true;
               },
             })
