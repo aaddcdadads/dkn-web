@@ -469,16 +469,19 @@ export default {
           {
             title: "用户ID",
             dataIndex: "code",
+            fixed: "left",
             width: 100,
             key: "code",
           },
           {
             title: "手机号",
+            fixed: "left",
             dataIndex: "phone",
             width: 120,
             key: "phone",
           },
           {
+            fixed: "left",
             title: "姓名/昵称",
             dataIndex: "name",
             width: 120,
