@@ -1874,7 +1874,7 @@ export default {
             required: true,
             props: {
               disabledDate: function (current) {
-                return current && current < self.$moment().endOf("day");
+                return current && current < self.$moment().startOf("day");
               },
             },
           },
