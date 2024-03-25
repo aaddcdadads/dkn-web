@@ -2332,7 +2332,6 @@ export default {
         let status = true;
         items.forEach((e) => {
           if (self.activityPickUpTableStatus === 2) {
-            console.log("e", e, self.activityPickUpTableItem);
             if (
               self.activityPickUpTableItem.index ||
               self.activityPickUpTableItem.index == 0
