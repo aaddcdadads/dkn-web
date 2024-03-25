@@ -2246,6 +2246,20 @@ export default {
         ).getTime();
         let status = true;
         items.forEach((e) => {
+          if (self.activityPickUpTableStatus === 2) {
+            if (
+              self.activityPickUpTableItem.index ||
+              self.activityPickUpTableItem.index == 0
+            ) {
+              if (e.index == self.activityPickUpTableItem.index) {
+                return;
+              }
+            } else {
+              if (e.id == self.activityPickUpTableItem.id) {
+                return;
+              }
+            }
+          }
           let start = new Date(self.$moment(e.startTime)).getTime();
           let end = new Date(self.$moment(e.endTime)).getTime();
           try {
