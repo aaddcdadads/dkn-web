@@ -353,8 +353,8 @@ const saveOrUpdate = (logic.saveOrUpdate = async (pageVm, eventData) => {
     return;
   }
   if (activityDictItems.length === 0) {
-    self.$message.error("请添加至少一个参与人信息");
-    return;
+    // self.$message.error("请添加至少一个参与人信息")
+    //return
   }
   if (activityPickUps.length === 0) {
     self.$message.error("请添加至少一轮核销");
