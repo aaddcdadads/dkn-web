@@ -46,7 +46,7 @@
                   ref="registrationOrdersFilter"
                   :config="registrationOrdersFilter.config"
                   v-model:value="registrationOrdersFilter.value"
-                  :col-num="4"
+                  :col-num="5"
                   :col-min-width="380"
                   :schema="registrationOrdersFilter.schema"
                   :label-col="7"
