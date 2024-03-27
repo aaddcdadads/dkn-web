@@ -253,7 +253,9 @@
     },
     mounted() {
       this.cWidth = this.getCssUnit(this.width);
-      this.getData();
+      if (this.url) {
+       this.getData();
+      }
     },
     methods: {
       onSelect: function (e) {
