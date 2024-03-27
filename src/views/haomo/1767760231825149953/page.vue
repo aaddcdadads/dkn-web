@@ -1046,6 +1046,9 @@ export default {
   width: 98%;
   margin: 1%;
   margin-bottom: 0;
+  /deep/.ant-form-item {
+    max-width: 300px !important;
+  }
 }
 
 .ele-wrapper-addButton {
