@@ -68,6 +68,9 @@ export default {
     changePage(pageId){
       this.postIframeMessage("change-page", pageId)
     },
+    setContentPlacement(placement){
+      this.postIframeMessage("set-content-placement", placement)
+    },
     setCode(code){
       this.postIframeMessage("set-code", code)
     },
@@ -113,7 +116,7 @@ export default {
         const timeOut = setTimeout(() => {
           resolve(result)
           window.removeEventListener('message', windowListener)
-        }, 2000)
+        }, 5000)
         window.addEventListener('message', windowListener)
         //request new screenshot
         const iframe = document.getElementById(`tldraw-iframe`)

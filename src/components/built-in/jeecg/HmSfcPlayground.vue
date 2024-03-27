@@ -63,14 +63,23 @@ export default {
         case 'on-code-error':
           this.$emit("on-code-error", message.data)
           return
+        case 'on-code-ok':
+          this.$emit("on-code-ok")
+          return
       }
     },
     setFramework(framework){
       localStorage.setItem("framework", framework)
     },
+    setAutoScroll(flag){
+      this.postIframeMessage("set-auto-scroll", flag)
+    },
     setCode(code){
       localStorage.setItem("code", code)
       this.postIframeMessage("set-code", code)
+    },
+    getPageScreenshot(){
+      return this.getIframeData("take-page-screenshot")
     },
     postIframeMessage(action, data){
       const iframe = document.getElementById(`sfc-iframe`)
@@ -78,6 +87,32 @@ export default {
         iframe.contentWindow?.postMessage({ action, data }, '*')
       }
     },
+    getIframeData(action){
+      return new Promise((resolve) => {
+        let result = null;
+        if (window === undefined) return resolve(result)
+        const windowListener = (event) => {
+          if (event.data.action && event.data.action === action) {
+            result = event.data.data;
+            window.removeEventListener('message', windowListener)
+            clearTimeout(timeOut)
+            resolve(result)
+          }
+        }
+        const timeOut = setTimeout(() => {
+          resolve(result)
+          window.removeEventListener('message', windowListener)
+        }, 5000)
+        window.addEventListener('message', windowListener)
+        //request new screenshot
+        const iframe = document.getElementById(`sfc-iframe`)
+        if (iframe) {
+          iframe.contentWindow?.postMessage({ action }, '*')
+        } else {
+          console.log('first level iframe not found or not accessible')
+        }
+      });
+    }
   }
 };
 </script>
