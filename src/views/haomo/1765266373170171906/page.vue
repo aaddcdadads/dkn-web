@@ -1143,7 +1143,6 @@ export default {
             },
             type: "Input",
             title: "组别名",
-            required: true,
             props: {},
           },
         },
