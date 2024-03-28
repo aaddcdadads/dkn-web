@@ -1904,7 +1904,7 @@ export default {
         });
       };
       self.addActivityStore = async function () {
-        if (self.activityStoreTagList.length == 0) {
+        if (self.treeSelect.value.length == 0) {
           self.$message.error("请选择门店");
           return;
         }
