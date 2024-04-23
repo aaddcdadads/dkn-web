@@ -558,6 +558,15 @@
         "docUrl": "/storybook/block-design-jeecg/?path=/docs/HmAntvX6LogicFlow--docs",
         "type": 0,
         "isBuiltIn": true
+      },
+      {
+        "name": "HmGantt",
+        "title": "甘特图",
+        "importPath": "built-in/jeecg/haomo/HmGantt/index.vue",
+        "imgUrl": "built-in/jeecg/haomo/img/HmGantt.png",
+        "docUrl": "/storybook/block-design-jeecg/?path=/docs/HmGantt--docs",
+        "type": 0,
+        "isBuiltIn": true
       }
     ]
   },

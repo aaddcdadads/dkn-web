@@ -97,7 +97,7 @@ export default {
     }
   },
   watch: {
-    cvalue(value) {
+    value(value) {
       this.cvalue = value;
     },
     width(value) {
